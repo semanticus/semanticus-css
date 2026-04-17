@@ -7,6 +7,9 @@
   "main": "./dist/semanticus-css.css",
   "unpkg": "./dist/semanticus-css.min.css",
   "jsdelivr": "./dist/semanticus-css.min.css",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./dist/semanticus-css.css",
     "./min": "./dist/semanticus-css.min.css",
