@@ -1,0 +1,90 @@
+{
+  "name": "semanticus-css",
+  "version": "0.0.0",
+  "description": "lightweight semantic-first CSS framework enhanced with atomic utility classes",
+  "author": "goncalvesjoao",
+  "style": "./dist/semanticus-css.css",
+  "main": "./dist/semanticus-css.css",
+  "unpkg": "./dist/semanticus-css.min.css",
+  "jsdelivr": "./dist/semanticus-css.min.css",
+  "exports": {
+    ".": "./dist/semanticus-css.css",
+    "./min": "./dist/semanticus-css.min.css",
+    "./semantics": "./dist/semanticus-css-semantics.css",
+    "./semantics/min": "./dist/semanticus-css-semantics.min.css",
+    "./utilities": "./dist/semanticus-css-utilities.css",
+    "./utilities/min": "./dist/semanticus-css-utilities.min.css",
+    "./normalize": "./dist/semanticus-css-normalize.css",
+    "./normalize/min": "./dist/semanticus-css-normalize.min.css",
+    "./variables": "./src/variables/_index.css",
+    "./palettes/*": "./dist/palettes/semanticus-css.palette.*.css",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "NOTICE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goncalvesjoao/semanticus-css.git"
+  },
+  "homepage": "https://github.com/goncalvesjoao/semanticus-css#readme",
+  "bugs": {
+    "url": "https://github.com/goncalvesjoao/semanticus-css/issues"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "utility-first",
+    "picocss",
+    "tachyons",
+    "semantic",
+    "semantic-css",
+    "functional-css",
+    "design",
+    "responsive",
+    "performance",
+    "dark-mode",
+    "dark-theme",
+    "lightweight",
+    "minimal",
+    "native-html"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.12.1",
+  "sideEffects": [
+    "dist/**/*.css",
+    "src/**/*.css"
+  ],
+  "devDependencies": {
+    "browserslist": "^4.28.2",
+    "highlight.js": "^11.11.1",
+    "lightningcss": "^1.32.0",
+    "lightningcss-cli": "^1.32.0",
+    "stylelint": "^17.7.0",
+    "stylelint-config-standard": "^40.0.0",
+    "vitepress": "^2.0.0-alpha.17"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm run docs:dev",
+    "lint": "stylelint \"src/**/*.css\"",
+    "lint:fix": "stylelint \"src/**/*.css\" --fix",
+    "test": "npm run lint",
+    "check": "npm run lint && npm run build",
+    "prepublishOnly": "npm run build",
+    "build": "npm run build:css && npm run build:minify",
+    "build:css": "npm run build:full",
+    "build:full": "lightningcss --bundle --browserslist src/index.css -o dist/semanticus.css --custom-media",
+    "build:minify": "npm run build:minify:full",
+    "build:minify:full": "lightningcss --bundle --minify --browserslist src/index.css -o dist/semanticus.min.css --custom-media",
+    "docs:dev": "npm run build && vitepress dev docs",
+    "docs:build": "npm run build && vitepress build docs",
+    "docs:preview": "npm run build && vitepress preview docs"
+  }
+}
