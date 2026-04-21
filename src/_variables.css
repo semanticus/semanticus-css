@@ -10,52 +10,6 @@
 
 */
 
-/*
-   Shared Status Colors
-   ====================
-   Success / Info / Warning / Danger RGB channels used by both
-   the semantic layer (form validation) and the utility layer
-   (Bootstrap-style color classes).
-*/
-
-/* ==========================================================================
-   Light theme (default)
-   ========================================================================== */
-
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --success-rgb: 43, 122, 76;
-  --info-rgb: 4, 120, 120;
-  --warning-rgb: 255, 191, 0;
-  --danger-rgb: 197, 47, 33;
-}
-
-/* ==========================================================================
-   Dark theme (system preference)
-   ========================================================================== */
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --success-rgb: 110, 213, 157;
-    --info-rgb: 10, 194, 194;
-    --warning-rgb: 255, 191, 0;
-    --danger-rgb: 243, 143, 121;
-  }
-}
-
-/* ==========================================================================
-   Dark theme (explicit)
-   ========================================================================== */
-
-[data-theme="dark"] {
-  --success-rgb: 110, 213, 157;
-  --info-rgb: 10, 194, 194;
-  --warning-rgb: 255, 191, 0;
-  --danger-rgb: 243, 143, 121;
-}
-
 /* ==========================================================================
    1. Base Tokens
    ========================================================================== */
@@ -182,6 +136,12 @@
 :root:not([data-theme="dark"]),
 :host(:not([data-theme="dark"])) {
   color-scheme: light;
+
+  /* Status Colors */
+  --success-rgb: 43, 122, 76;
+  --info-rgb: 4, 120, 120;
+  --warning-rgb: 255, 191, 0;
+  --danger-rgb: 197, 47, 33;
 
   /* Core Colors – page-level background, body text, and text selection highlight */
   --color-background: #fff;
@@ -373,6 +333,12 @@
   :host(:not([data-theme])) {
     color-scheme: dark;
 
+    /* Status Colors */
+    --success-rgb: 110, 213, 157;
+    --info-rgb: 10, 194, 194;
+    --warning-rgb: 255, 191, 0;
+    --danger-rgb: 243, 143, 121;
+
     /* Core Colors */
     --color-background: rgb(19, 22.5, 30.5);
     --color-text: #c2c7d0;
@@ -548,6 +514,12 @@
 
 [data-theme="dark"] {
   color-scheme: dark;
+
+  /* Status Colors */
+  --success-rgb: 110, 213, 157;
+  --info-rgb: 10, 194, 194;
+  --warning-rgb: 255, 191, 0;
+  --danger-rgb: 243, 143, 121;
 
   /* Core Colors */
   --color-background: rgb(19, 22.5, 30.5);

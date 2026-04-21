@@ -16,13 +16,11 @@
 
 .sticky-top {
   position: sticky;
-  position: sticky;
   top: 0;
   z-index: 1020;
 }
 
 .sticky-bottom {
-  position: sticky;
   position: sticky;
   bottom: 0;
   z-index: 1020;
@@ -31,12 +29,10 @@
 @media (min-width: 576px) {
   .sticky-sm-top {
     position: sticky;
-    position: sticky;
     top: 0;
     z-index: 1020;
   }
   .sticky-sm-bottom {
-    position: sticky;
     position: sticky;
     bottom: 0;
     z-index: 1020;
@@ -45,12 +41,10 @@
 @media (min-width: 768px) {
   .sticky-md-top {
     position: sticky;
-    position: sticky;
     top: 0;
     z-index: 1020;
   }
   .sticky-md-bottom {
-    position: sticky;
     position: sticky;
     bottom: 0;
     z-index: 1020;
@@ -59,12 +53,10 @@
 @media (min-width: 992px) {
   .sticky-lg-top {
     position: sticky;
-    position: sticky;
     top: 0;
     z-index: 1020;
   }
   .sticky-lg-bottom {
-    position: sticky;
     position: sticky;
     bottom: 0;
     z-index: 1020;
@@ -73,12 +65,10 @@
 @media (min-width: 1200px) {
   .sticky-xl-top {
     position: sticky;
-    position: sticky;
     top: 0;
     z-index: 1020;
   }
   .sticky-xl-bottom {
-    position: sticky;
     position: sticky;
     bottom: 0;
     z-index: 1020;
@@ -87,12 +77,10 @@
 @media (min-width: 1400px) {
   .sticky-xxl-top {
     position: sticky;
-    position: sticky;
     top: 0;
     z-index: 1020;
   }
   .sticky-xxl-bottom {
-    position: sticky;
     position: sticky;
     bottom: 0;
     z-index: 1020;
@@ -116,6 +104,5 @@
 }
 
 .position-sticky {
-  position: sticky !important;
   position: sticky !important;
 }
