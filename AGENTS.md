@@ -66,6 +66,18 @@ npm test               # BackstopJS visual regression
 - **Modularity**: Each subfolder has a `modules.css` manifest that `@import`s its partials. Entry points import these manifests.
 - **Naming**: Semantic partials use `_<element>.css`. Utility partials use `_<category>.css` inside subfolders.
 
+## AI Agent Guidance
+
+When contributing code or edits, follow the project's motto and core principles: ARIA-centric, semantic HTML — enhanced by atomic utilities. Practical rules for agents:
+
+- **Prefer semantics over classes:** Implement features using native elements and ARIA roles before adding new utility classes.
+- **Follow ARIA patterns:** Use established ARIA patterns (menus, tooltips, dialogs, etc.) rather than creating ad-hoc components that duplicate behavior.
+- **Add files to the right layer:** New semantic styles → `src/semantics/_<name>.css`; utilities → `src/utilities/<category>/_<name>.css`; then import in the layer's `modules.css`.
+- **Use CSS variables:** Expose themeable values via `--*` properties rather than hard-coded values.
+- **Document and test:** Update docs in `docs/` for user-facing changes and run visual tests (`npm test`) when relevant.
+- **Accessibility as first-class:** Include ARIA attributes, keyboard support, and focus styles; mention accessibility rationale in PRs and docs.
+
+
 ## Dist Outputs
 
 All generated files land in `dist/`:

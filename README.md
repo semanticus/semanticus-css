@@ -4,34 +4,35 @@
 [![license](https://img.shields.io/npm/l/@goncalvesjoao/semanticus-css)](LICENSE)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@goncalvesjoao/semanticus-css)](https://bundlephobia.com/package/@goncalvesjoao/semanticus-css)
 
-**Semanticus** is a lightweight CSS framework that combines **semantic styling** with the flexibility of **atomic utility classes**, with emphasis on accessibility and modern design patterns.
+**Semanticus** is a lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities.
 
-## 🧠 Philosophy
+## Vision
 
-Inspired by [Pico CSS](https://picocss.com/) for its semantic approach and [Bootstrap Utilities](https://getbootstrap.com/docs/5.3/utilities/api/) for its utility class system. This project aims to offer:
+Enable authors to write clean, semantic HTML that looks great by default, guide them toward ARIA-centric patterns, and ensure core functionality works without JavaScript while allowing deliberate customization via a small, consistent set of utilities.
 
-- **Readability** - HTML doesn't need to be cluttered with classes to look beautiful. Clean, semantic markup is all you need.
-- **Accessibility** - Built with ARIA patterns in mind. Semantic elements and roles ensure inclusive, accessible interfaces.
-- **Flexibility** - Use semantic styles, utility classes, or both — whatever fits the situation. No rigid paradigms.
-- **Performance** - Minimal CSS footprint with zero JavaScript dependency. ~22 KB gzipped for lightning-fast loads.
-- **Consistency** - Predictable styling across your project. Semantic and utility layers share the same CSS variables.
-- **Customizability** - Override CSS variables to create your own themes, or choose from a list of pre-built color palettes and adjustable sizing options.
+## Core Principles
+
+- **Semantic-first:** Semantic styling for real HTML elements and ARIA roles rather than relying on heavy class scaffolding.
+- **Accessibility-focused:** Prefer ARIA patterns and semantic attributes over ad-hoc class-based components.
+- **Minimalism:** Keep utility classes to a necessary minimum; add classes only for intentional overrides.
+- **Predictable customization:** Centralize styling via CSS variables, assuring a consistent look for both semantic styles and atomic utilities.
+- **Progressive enhancement:** Ensure base semantics work without JavaScript, and enhance behavior when needed.
 
 ## 📦 Installation
 
 ### Option 1: CDN (quick start)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">
 
 <!-- costumize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.size.slim.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.blue.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.size.slim.css">
 ```
 
 ### Option 2: Install manually
 
-Download the CSS files and include them in your HTML `<head>`:
+Download the [distribution files](https://registry.npmjs.org/@goncalvesjoao%2Fsemanticus-css/-/semanticus-css-0.1.0.tgz), move the ones you need to your **stylesheets** folder and include them in your HTML `<head>`:
 
 ```html
 <link rel="stylesheet" href="/css/semanticus.min.css">
@@ -62,7 +63,7 @@ import 'semanticus-css/sizes/slim';
 
 > **Note:** The `import` syntax requires a bundler that supports CSS imports (e.g., Vite, Webpack, Rollup, or Parcel).
 
-Check out the [Palettes & Sizes](/guide/palettes-sizes) guide for more options.
+Check out the [Palettes & Sizes](https://semanticus.design/guide/palettes-sizes.html) guide for more options.
 
 ## 🚀 Usage
 
@@ -70,7 +71,7 @@ Semanticus CSS is built on three principles:
 
 ### 1. Semantic Styling
 
-PicoCSS design applied to plain HTML elements without adding any classes. See the [Semantic Styling](/docs/semantics) guide for more details.
+PicoCSS design applied to plain HTML elements without adding any classes. See the [Semantic Styling](https://semanticus.design/docs/semantics/) guide for more details.
 
 ```html
 <article>
@@ -82,7 +83,7 @@ PicoCSS design applied to plain HTML elements without adding any classes. See th
 
 ### 2. Variant Classes
 
-A minimal set of CSS classes that add style variations to **Semantic Styling**. See the [Variants](/docs/variants) guide for more details.
+A minimal set of CSS classes that add style variations to **Semantic Styling**. See the [Variants](https://semanticus.design/docs/variants/) guide for more details.
 
 ```html
 <button class="ghost">Ghost</button>
@@ -92,7 +93,7 @@ A minimal set of CSS classes that add style variations to **Semantic Styling**. 
 
 ### 3. Atomic Utilities
 
-Bootstrap utility classes adapted to the **Semantic Styling** and **Variant Classes** style sizes, spacing and colors for a consistent design. See the [Utilities](/docs/utilities) guide for more details.
+Bootstrap utility classes adapted to the **Semantic Styling** and **Variant Classes** style sizes, spacing and colors for a consistent design. See the [Utilities](https://semanticus.design/docs/utilities/) guide for more details.
 
 ```html
 <footer class="py-4 text-center text-bg-contrast-subtle">
@@ -112,7 +113,7 @@ You can override its variables to create your own themes and styles. For example
 }
 ```
 
-Check out the [CSS Variables](/guide/css-variables) guide for more details or the [Theme Builder](/theme-builder) to help you create your own custom styles.
+Check out the [CSS Variables](https://semanticus.design/guide/css-variables.html) guide for more details or the [Theme Builder](https://semanticus.design/theme-builder.html) to help you create your own custom styles.
 
 ## 🌐 Browser Support
 
@@ -124,7 +125,7 @@ Semanticus CSS targets modern browsers based on the following [Browserslist](htt
 
 ## 👨‍💻 Development
 
-Check out the [Development Guide](docs/guide/development.md) for instructions on setting up the development environment, running tests, and contributing to the project.
+Check out this [Guide](docs/guide/contributing.md) for instructions on setting up the development environment, running tests, and contributing to the project.
 
 ## 📄 License
 

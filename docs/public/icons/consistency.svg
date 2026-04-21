@@ -6,10 +6,8 @@
       <stop offset="100%" stop-color="#F9C846"/>
     </linearGradient>
   </defs>
-  <path stroke="url(#g)" d="M3 3h18v6H3z"/>
-  <path stroke="url(#g)" d="M3 15h18v6H3z"/>
-  <path stroke="url(#g)" d="M6 6h2"/>
-  <path stroke="url(#g)" d="M6 18h2"/>
-  <path stroke="url(#g)" d="M16 6h2"/>
-  <path stroke="url(#g)" d="M16 18h2"/>
+  <rect stroke="url(#g)" x="2" y="2" width="8" height="8" rx="2"/>
+  <rect stroke="url(#g)" x="14" y="2" width="8" height="8" rx="2"/>
+  <rect stroke="url(#g)" x="2" y="14" width="8" height="8" rx="2"/>
+  <rect stroke="url(#g)" x="14" y="14" width="8" height="8" rx="2"/>
 </svg>

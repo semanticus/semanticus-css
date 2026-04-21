@@ -8,7 +8,9 @@ import githubLight from 'highlight.js/styles/github.css?raw'
 import githubDark from 'highlight.js/styles/github-dark.css?raw'
 
 // isDark is a reactive Ref<boolean>
-const { isDark } = useData();
+const { isDark, site } = useData();
+
+const basePath = computed(() => site.value.base || '/');
 
 const cssStyles = computed(() => {
   return isDark.value ? githubDark : githubLight;
@@ -19,7 +21,9 @@ hljs.registerLanguage('html', html)
 
 const iframeContent = computed(() => {
   const theme = isDark.value ? 'dark' : 'light'
-  return rawIframeContent.replace(/data-theme="">/, `data-theme="${theme}">`)
+  return rawIframeContent
+    .replaceAll('__SEMANTICUS_BASE__', basePath.value)
+    .replace(/data-theme="">/, `data-theme="${theme}">`)
 })
 
 // ── Variable definitions ────────────────────────────────────────────────────
@@ -676,14 +680,14 @@ function downloadCSS() {
 }
 
 const exportSnippet = computed(() => {
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.min.css">\n`;
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">\n`;
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.size.${currentSize.value}.css">\n`
   }
-  result += `<link rel="stylesheet" href="semanticus.custom.css">`
+  result += `<link rel="stylesheet" href="/css/semanticus.custom.css">`
 
   return result;
 })
@@ -693,12 +697,12 @@ const highlightedExportSnippet = computed(() => {
 
 const inlineSnippet = computed(() => {
   const css = buildCustomCSS()
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.min.css">\n`
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">\n`
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.size.${currentSize.value}.css">\n`
   }
   result += `<style>\n${css}</style>`
 
@@ -1035,16 +1039,22 @@ function getPreviewStyle(v) {
       <!-- Preview -->
       <main class="builder-preview">
         <div class="preview-container">
-          <iframe
-            ref="iframeRef"
-            :srcdoc="iframeContent"
-            class="preview-iframe"
-            :class="{ 'compare-mode': compareMode }"
-            title="Theme Preview"
-            sandbox="allow-scripts allow-same-origin"
-            @load="onIframeLoad"
-          ></iframe>
-          <div v-if="compareMode" class="compare-divider"></div>
+          <ClientOnly>
+            <iframe
+              ref="iframeRef"
+              :srcdoc="iframeContent"
+              class="preview-iframe"
+              :class="{ 'compare-mode': compareMode }"
+              title="Theme Preview"
+              sandbox="allow-scripts allow-same-origin"
+              @load="onIframeLoad"
+            ></iframe>
+            <template #fallback>
+              <div class="preview-iframe preview-iframe-fallback">
+                <div class="preview-loading">Loading theme preview...</div>
+              </div>
+            </template>
+          </ClientOnly>
         </div>
       </main>
     </div>
@@ -1112,7 +1122,7 @@ function getPreviewStyle(v) {
 
           <!-- External File Mode -->
           <div v-if="exportMode === 'file'">
-            <p class="export-description">Include these lines in your HTML and download the CSS file:</p>
+            <p class="export-description">Download the <strong>semanticus.custom.css</strong> to your <strong>stylesheets</strong> folder and include these lines in your HTML:</p>
             <div class="export-code-block">
               <pre><code class="language-html" v-html="highlightedExportSnippet"></code></pre>
               <button
@@ -1907,18 +1917,6 @@ function getPreviewStyle(v) {
   background: var(--vp-c-brand-2);
 }
 
-/* ── Compare Mode ── */
-.compare-divider {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--vp-c-brand-1);
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
 /* ── Toolbar Help Button ── */
 .help-btn {
   display: inline-flex;
@@ -2276,6 +2274,18 @@ function getPreviewStyle(v) {
 
 .preview-iframe.compare-mode {
   /* Handled by postMessage to iframe */
+}
+
+.preview-iframe-fallback {
+  background: var(--vp-c-bg-soft, #f3f4f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-loading {
+  color: var(--vp-c-text-2, #6b7280);
+  font-size: 0.875rem;
 }
 
 /* ── Responsive ── */

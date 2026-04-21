@@ -11,7 +11,9 @@ hljs.registerLanguage('html', html)
 hljs.registerLanguage('bash', bash)
 hljs.registerLanguage('javascript', javascript)
 
-const { isDark } = useData();
+const { isDark, site } = useData();
+
+const basePath = computed(() => site.value.base || '/');
 
 const palettes = [
   { name: 'red', label: 'Red', color: '#ef4444', description: 'A bold red color palette' },
@@ -53,10 +55,11 @@ const previewHtml = computed(() => {
   const paletteName = currentPalette.value
   const sizeName = currentSize.value
   const dataTheme = isDark.value ? 'dark' : 'light'
-  const paletteCssPath = paletteName === 'azure' ? '' : `<link rel="stylesheet" href="/semanticus.palette.${paletteName}.css">`
-  const sizeCssPath = sizeName === 'default' ? '' : `<link rel="stylesheet" href="/semanticus.size.${sizeName}.css">`
+  const paletteCssPath = paletteName === 'azure' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.palette.${paletteName}.css">`
+  const sizeCssPath = sizeName === 'default' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.size.${sizeName}.css">`
 
   return rawPreviewHtml
+    .replaceAll('__SEMANTICUS_BASE__', basePath.value)
     .replace(/data-theme=""/, `data-theme="${dataTheme}"`)
     .replace('<!-- PALETTE_CSS -->', paletteCssPath)
     .replace('<!-- SIZE_CSS -->', sizeCssPath)
@@ -119,12 +122,12 @@ const manualSnippet = computed(() => {
 const cdnSnippet = computed(() => {
   const paletteName = currentPalette.value
   const sizeName = currentSize.value
-  let snippet = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.min.css">'
+  let snippet = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">'
   if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.palette.${paletteName}.css">`
+    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.${paletteName}.css">`
   }
   if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.size.${sizeName}.css">`
+    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.size.${sizeName}.css">`
   }
   return snippet
 })
@@ -222,12 +225,19 @@ const highlightedNpmImportSnippet = computed(() => {
         </div>
 
         <main class="preview">
-          <iframe
-            ref="previewFrame"
-            :srcdoc="previewHtml"
-            class="preview-frame"
-            sandbox="allow-scripts"
-          ></iframe>
+          <ClientOnly>
+            <iframe
+              ref="previewFrame"
+              :srcdoc="previewHtml"
+              class="preview-frame"
+              sandbox="allow-scripts"
+            ></iframe>
+            <template #fallback>
+              <div class="preview-frame preview-frame-fallback">
+                <div class="preview-loading">Loading preview...</div>
+              </div>
+            </template>
+          </ClientOnly>
         </main>
       </div>
     </div>
@@ -293,7 +303,7 @@ const highlightedNpmImportSnippet = computed(() => {
 
           <!-- Manual Mode -->
           <div v-if="installMode === 'manual'">
-            <p class="install-description">Download the CSS files and include them in your HTML <code>&lt;head&gt;</code>:</p>
+            <p class="install-description">Download the <a href="https://registry.npmjs.org/@goncalvesjoao%2Fsemanticus-css/-/semanticus-css-0.1.0.tgz" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
             <div class="install-code-block">
               <pre><code class="language-html" v-html="highlightedManualSnippet"></code></pre>
               <button class="copy-snippet-btn" @click="copyToClipboard(manualSnippet, 'manual')">
@@ -503,6 +513,18 @@ const highlightedNpmImportSnippet = computed(() => {
   border: none;
   background: var(--vp-c-bg);
   height: 100vh;
+}
+
+.preview-frame-fallback {
+  background: var(--vp-c-bg-soft, #f3f4f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-loading {
+  color: var(--vp-c-text-2, #6b7280);
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {

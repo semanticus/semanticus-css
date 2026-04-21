@@ -18,11 +18,11 @@ const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.min.css">
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
 <link rel="stylesheet" href="/css/semanticus.size.slim.css">`
 
-const cdnSnippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.min.css">
+const cdnSnippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">
 
 <!-- costumize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1/dist/semanticus.size.slim.css">`
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.blue.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.size.slim.css">`
 
 const npmInstallSnippet = 'npm install semanticus-css'
 
@@ -93,7 +93,7 @@ async function copyToClipboard(text, type) {
 
     <!-- Manual Mode -->
     <div v-if="installMode === 'manual'">
-      <p class="install-description">Download the CSS files and include them in your HTML <code>&lt;head&gt;</code>:</p>
+      <p class="install-description">Download the <a href="https://registry.npmjs.org/@goncalvesjoao%2Fsemanticus-css/-/semanticus-css-0.1.0.tgz" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
       <div class="install-code-block">
         <pre><code class="language-html" v-html="highlightedManualSnippet"></code></pre>
         <button class="copy-snippet-btn" @click="copyToClipboard(manualSnippet, 'manual')">

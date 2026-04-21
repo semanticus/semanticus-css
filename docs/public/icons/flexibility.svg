@@ -6,10 +6,6 @@
       <stop offset="100%" stop-color="#F9C846"/>
     </linearGradient>
   </defs>
-  <circle stroke="url(#g)" cx="6" cy="6" r="3"/>
-  <circle stroke="url(#g)" cx="18" cy="18" r="3"/>
-  <path stroke="url(#g)" d="M6 9v2a1 1 0 001 1h4"/>
-  <path stroke="url(#g)" d="M18 15v-2a1 1 0 00-1-1h-4"/>
-  <path stroke="url(#g)" d="M6 3V1"/>
-  <path stroke="url(#g)" d="M18 21v2"/>
+  <circle stroke="url(#g)" cx="9" cy="12" r="7"/>
+  <circle stroke="url(#g)" cx="15" cy="12" r="7"/>
 </svg>

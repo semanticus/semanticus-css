@@ -5,7 +5,22 @@ import fs from 'fs'
 const semanticusDistPath = path.resolve(process.cwd(), 'dist')
 const indexHtmlPath = path.resolve(__dirname, '../../index.html')
 
+function normalizeBase(base: string) {
+  const prefixedBase = base.startsWith('/') ? base : `/${base}`
+  return prefixedBase.endsWith('/') ? prefixedBase : `${prefixedBase}/`
+}
+
+// Use base: '/' for custom domain, otherwise use env or repo subpath
+const isCustomDomain = !!process.env.CUSTOM_DOMAIN || fs.existsSync(path.resolve(__dirname, '../../CNAME'));
+const docsBase = isCustomDomain
+  ? '/'
+  : normalizeBase(
+      process.env.SEMANTICUS_DOCS_BASE
+        ?? (process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '/')
+    );
+
 export default defineConfig({
+  base: docsBase,
   // appearance: 'force-auto',
   ignoreDeadLinks: true,
   markdown: {
@@ -33,7 +48,9 @@ export default defineConfig({
             const url = req.url || ''
             if (url.includes('/semanticus.palette.')) {
               const filename = url.replace(/^\//, '')
-              const match = filename.match(/semanticus\.palette\.(\w+)\.css$/)
+              // Remove query parameters for matching (e.g., ?t=123456)
+              const cleanFilename = filename.split('?')[0]
+              const match = cleanFilename.match(/semanticus\.palette\.(\w+)\.css$/)
               const paletteName = match ? match[1] : ''
 
               if (!paletteName) {
@@ -69,7 +86,9 @@ export default defineConfig({
             const url = req.url || ''
             if (url.includes('/semanticus.size.')) {
               const filename = url.replace(/^\//, '')
-              const match = filename.match(/semanticus\.size\.(\w+)\.css$/)
+              // Remove query parameters for matching (e.g., ?t=123456)
+              const cleanFilename = filename.split('?')[0]
+              const match = cleanFilename.match(/semanticus\.size\.(\w+)\.css$/)
               const sizeName = match ? match[1] : ''
 
               if (!sizeName) {
@@ -179,7 +198,7 @@ export default defineConfig({
     ]
   },
   title: "Semanticus CSS",
-  description: "A lightweight CSS framework blending semantic-first with utility-first classes",
+  description: "A lightweight, semantic CSS framework enhanced with atomic utility classes.",
   srcDir: '.',
   themeConfig: {
     logo: '/logo.svg',

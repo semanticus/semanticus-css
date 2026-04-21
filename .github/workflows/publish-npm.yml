@@ -6,7 +6,7 @@ on:
       - published
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
@@ -42,3 +42,44 @@ jobs:
 
       - name: Publish package
         run: npm publish --access public --provenance
+
+      - name: Prepare target branch
+        id: prepare-target-branch
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          PACKAGE_VERSION: ${{ github.event.release.tag_name }}
+          TARGET_COMMITISH: ${{ github.event.release.target_commitish }}
+        run: |
+            TARGET_BRANCH="$TARGET_COMMITISH"
+            if printf '%s' "$TARGET_BRANCH" | grep -Eq '^[0-9a-f]{40}$'; then
+              TARGET_BRANCH="$DEFAULT_BRANCH"
+            fi
+
+            CLEAN_VERSION="${PACKAGE_VERSION#v}"
+
+            git fetch origin "$TARGET_BRANCH"
+            git switch --create "$TARGET_BRANCH" --track "origin/$TARGET_BRANCH"
+
+            echo "target_branch=$TARGET_BRANCH" >> "$GITHUB_OUTPUT"
+            echo "package_version=$CLEAN_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Update versioned CDN URLs
+        env:
+          SEMANTICUS_CDN_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
+        run: npm run release:update-cdn-urls
+
+      - name: Commit updated CDN URLs
+        env:
+          PACKAGE_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
+          TARGET_BRANCH: ${{ steps.prepare-target-branch.outputs.target_branch }}
+        run: |
+            if git diff --quiet; then
+              echo "No CDN URL updates to commit."
+              exit 0
+            fi
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md docs scripts/update-cdn-urls.js package.json
+            git commit -m "docs: update CDN URLs for v$PACKAGE_VERSION"
+            git push origin "HEAD:$TARGET_BRANCH"

@@ -1,7 +1,7 @@
 {
   "name": "@goncalvesjoao/semanticus-css",
   "version": "0.1.0",
-  "description": "lightweight, semantic CSS framework enhanced with atomic utility classes. It emphasizes accessibility, clean markup and modern design patterns",
+  "description": "lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities",
   "author": "Joao Goncalves",
   "style": "./dist/semanticus.css",
   "main": "./dist/semanticus.css",
@@ -88,7 +88,8 @@
     "test:snapshot": "npx backstopjs reference",
     "test:kill-zombies": "pkill -f '(chrome)?(--headless)'",
     "check": "npm run lint && npm run build",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run lint && npm run build",
+    "release:update-cdn-urls": "node scripts/update-cdn-urls.js",
     "build": "npm run build:css && npm run build:minify && npm run build:palettes && npm run build:sizes && npm run build:update-size-claims",
     "build:css": "npm run build:full && npm run build:semantics && npm run build:variants && npm run build:utilities",
     "build:full": "lightningcss --bundle --browserslist src/index.css -o dist/semanticus.css --custom-media",

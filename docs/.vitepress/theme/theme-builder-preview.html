@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <title>Semanticus CSS Semantics • DEMO</title>
   <meta name="description" content="A pure HTML example, without dependencies.">
-  <link rel="stylesheet" href="/semanticus.css" id="theme-stylesheet">
+  <link rel="stylesheet" href="__SEMANTICUS_BASE__semanticus.css" id="theme-stylesheet">
   <style>
     /* Theme switch transition */
     body {
@@ -28,7 +28,7 @@
       flex: 0 0 50% !important;
       width: 50% !important;
       position: relative;
-      border-right: 2px solid #f27036;
+      /* border-right: 2px solid #f27036; */
       padding: 1rem;
       box-sizing: border-box;
     }
@@ -45,7 +45,7 @@
     .compare-mode .compare-side-label {
       display: block !important;
       position: absolute;
-      top: 0.5rem;
+      top: -0.5rem;
       font-size: 0.625rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -80,9 +80,9 @@
   </style>
 </head>
 
-<body class="p-4">
+<body class="px-2">
   <div id="preview-container" class="position-relative w-100 overflow-visible">
-    <div class="default-mode w-100 py-3">
+    <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Default</span>
       <div id="default-content">
         <main class="container" id="default-main">
@@ -767,7 +767,7 @@ console.log(theme);</code></pre>
         </main>
       </div>
     </div>
-    <div class="custom-mode d-none w-100 py-3">
+    <div class="custom-mode d-none w-100 py-3 my-4">
       <span class="compare-side-label d-none">Custom</span>
       <main class="container" id="custom-main"></main>
     </div>
@@ -821,7 +821,8 @@ console.log(theme);</code></pre>
             paletteStylesheet.rel = 'stylesheet';
             document.head.appendChild(paletteStylesheet);
           }
-          paletteStylesheet.href = `/palettes/semanticus.palette.${palette}.css`;
+          // Add cache-busting query parameter to prevent cached responses
+          paletteStylesheet.href = `__SEMANTICUS_BASE__semanticus.palette.${palette}.css?t=` + Date.now();
         }
 
         // Update or create size stylesheet (size files only contain CSS variables)
@@ -840,7 +841,7 @@ console.log(theme);</code></pre>
             sizeStylesheet.rel = 'stylesheet';
             document.head.appendChild(sizeStylesheet);
           }
-          sizeStylesheet.href = `/semanticus.size.${size}.css`;
+          sizeStylesheet.href = `__SEMANTICUS_BASE__semanticus.size.${size}.css?t=` + Date.now();
         }
       }
 
@@ -873,7 +874,7 @@ console.log(theme);</code></pre>
         if (!hlStyle) {
           hlStyle = document.createElement('style');
           hlStyle.id = 'theme-builder-highlight-style';
-          hlStyle.textContent = '.theme-builder-highlight { outline: 2px dashed #f27036 !important; outline-offset: 2px; }';
+          hlStyle.textContent = '.theme-builder-highlight { outline: 2px dashed var(--color-primary, #0172ad) !important; outline-offset: 2px; }';
           document.head.appendChild(hlStyle);
         }
 

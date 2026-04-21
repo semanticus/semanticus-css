@@ -7,8 +7,8 @@ const zlib = require('zlib');
 const repoRoot = path.join(__dirname, '..');
 const bundlePath = path.join(repoRoot, 'dist', 'semanticus.min.css');
 
+// Only update docs and agent guidance files — README should not be required to contain the size claim.
 const targetFiles = [
-  path.join(repoRoot, 'README.md'),
   path.join(repoRoot, 'docs', 'index.md'),
   path.join(repoRoot, 'AGENTS.md')
 ];

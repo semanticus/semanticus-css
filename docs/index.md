@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "Semanticus CSS"
-  text: "Semantic styling meets utility power"
-  tagline: "Beautiful HTML by default, with atomic utility classes when you need them. Lightweight, accessible, and zero JavaScript."
+  text: "ARIA-centric, semantic HTML"
+  tagline: "enhanced by atomic utilities."
   image:
     src: /logo.svg
     alt: Semanticus CSS
@@ -27,7 +27,7 @@ features:
   - icon:
       src: /icons/accessibility.svg
     title: Accessibility
-    details: Built with ARIA patterns in mind. Semantic elements and roles ensure inclusive, accessible interfaces by default.
+    details: ARIA-first patterns ensure accessible interfaces by default; core behavior works without JavaScript and can be enhanced progressively.
   - icon:
       src: /icons/flexibility.svg
     title: Best of Both Worlds
