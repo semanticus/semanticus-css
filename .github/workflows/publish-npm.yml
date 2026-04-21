@@ -31,11 +31,11 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
-          PACKAGE_VERSION="$(node -p \"require('./package.json').version\")"
-          if [ "$RELEASE_TAG" != "v$PACKAGE_VERSION" ] && [ "$RELEASE_TAG" != "$PACKAGE_VERSION" ]; then
-            echo "Release tag '$RELEASE_TAG' does not match package version '$PACKAGE_VERSION'." >&2
-            exit 1
-          fi
+            PACKAGE_VERSION="$(node -p 'require("./package.json").version')"
+            if [ "$RELEASE_TAG" != "v$PACKAGE_VERSION" ] && [ "$RELEASE_TAG" != "$PACKAGE_VERSION" ]; then
+              echo "Release tag '$RELEASE_TAG' does not match package version '$PACKAGE_VERSION'." >&2
+              exit 1
+            fi
 
       - name: Lint
         run: npm run lint
