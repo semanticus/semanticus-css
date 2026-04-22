@@ -67,19 +67,19 @@ Semanticus CSS is built on three principles:
 
 ### 1. Semantic Styling
 
-PicoCSS design applied to plain HTML elements without adding any classes. See the [Semantic Styling](/docs/semantics) guide for more details.
+Beautiful default styles for plain **ARIA-centric** HTML — no classes needed. See the [Semantic Styling](/docs/semantics) guide for more details.
 
 <HtmlPreviewer :code="example1Html" />
 
-### 2. Variant Classes
+### 2. Variants
 
-Minimal set of CSS classes that add variation styles to the semantic elements. See the [Variants](/docs/variants) guide for more details.
+Minimal set of CSS classes that add visual variation to the **Semantic Styling**. See the [Variants](/docs/variants) guide for more details.
 
 <HtmlPreviewer :code="example3Html" />
 
-### 3. Atomic Utilities
+### 3. Utilities
 
-Bootstrap utility classes adapted to the **semantic** and **variant** style sizes, spacing and colors for a consistent design. See the [Utilities](/docs/utilities) guide for more details.
+Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design. See the [Utilities](/docs/utilities) guide for more details.
 
 <HtmlPreviewer :code="example2Html" />
 

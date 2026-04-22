@@ -1,0 +1,38 @@
+/**
+ * Secondary variant
+ * Used on links, buttons, and form elements
+ */
+
+/* Links */
+:where(a:not([role="button"])),
+[role="link"] {
+  &.secondary {
+    --color-text: var(--color-secondary);
+    --underline: var(--color-secondary-underline);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: var(--color-secondary-hover);
+      --underline: var(--color-secondary-hover-underline);
+    }
+  }
+}
+
+/* Buttons */
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary {
+  --color-background: var(--color-secondary-bg);
+  --border-color: var(--color-secondary-border);
+  --color-text: var(--color-secondary-inverse);
+
+  cursor: pointer;
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+  --color-background: var(--color-secondary-hover-bg);
+  --border-color: var(--color-secondary-hover-border);
+  --color-text: var(--color-secondary-inverse);
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary:focus,
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary:is([aria-current]:not([aria-current="false"])):focus {
+  --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-secondary-focus);
+}

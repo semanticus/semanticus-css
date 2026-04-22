@@ -217,20 +217,36 @@ export default defineConfig({
         { text: 'Contributing', link: '/guide/contributing' },
       ],
       '/docs/': [
-        { text: 'Card', link: '/docs/card' },
-        { text: 'Dropdown', link: '/docs/dropdown' },
-        { text: 'Layout', link: '/docs/layout' },
-        { text: 'Loading', link: '/docs/loading' },
-        { text: 'Modal', link: '/docs/modal' },
-        { text: 'Tooltip', link: '/docs/tooltip' },
-        { text: 'Typography', link: '/docs/typography' },
+        {
+          text: 'Composites',
+          items: [
+            { text: 'Overview', link: '/docs/composites/' },
+            { text: 'Layout', link: '/docs/composites/layout' },
+            { text: 'Loading', link: '/docs/composites/loading' },
+            { text: 'Validation States', link: '/docs/composites/validation-states' },
+            {
+              text: 'Components',
+              items: [
+                { text: 'Card', link: '/docs/composites/card' },
+                { text: 'Dropdown', link: '/docs/composites/dropdown' },
+                { text: 'Modal', link: '/docs/composites/modal' },
+                { text: 'Pagination', link: '/docs/composites/pagination' },
+                { text: 'Search', link: '/docs/composites/search' },
+                { text: 'Tooltip', link: '/docs/composites/tooltip' },
+              ],
+            },
+          ],
+        },
         {
           text: 'Semantic Styling',
           items: [
+            { text: 'Overview', link: '/docs/semantics/' },
+            { text: 'Typography', link: '/docs/typography' },
             {
               text: 'Elements',
+              collapsed: true,
               items: [
-                { text: '&lt;a&gt;', link: '/docs/semantics/anchor' },
+                { text: '&lt;a&gt;', link: '/docs/semantics/a' },
                 { text: '&lt;article&gt;', link: '/docs/semantics/article' },
                 { text: '&lt;button&gt;', link: '/docs/semantics/button' },
                 { text: '&lt;details&gt;', link: '/docs/semantics/details' },
@@ -248,6 +264,7 @@ export default defineConfig({
             },
             {
               text: 'Attributes',
+              collapsed: true,
               items: [
                 { text: '[aria-busy]', link: '/docs/semantics/aria-busy' },
                 { text: '[aria-invalid]', link: '/docs/semantics/aria-invalid' },
@@ -265,20 +282,16 @@ export default defineConfig({
         {
           text: 'Variants',
           items: [
-            {
-              text: 'Elements',
-              items: [
-                { text: '&lt;a&gt;', link: '/docs/variants/anchor' },
-                { text: '&lt;details&gt;', link: '/docs/variants/details' },
-                { text: '&lt;button&gt;', link: '/docs/variants/button' },
-                { text: '&lt;dialog&gt;', link: '/docs/variants/dialog' },
-                { text: '&lt;table&gt;', link: '/docs/variants/table' },
-              ],
-            },
+            { text: 'Overview', link: '/docs/variants/' },
             {
               text: 'Classes',
+              collapsed: true,
               items: [
-                { text: 'container', link: '/docs/variants/container' },
+                { text: '.container', link: '/docs/variants/container' },
+                { text: '.secondary', link: '/docs/variants/secondary' },
+                { text: '.contrast', link: '/docs/variants/contrast' },
+                { text: '.ghost', link: '/docs/variants/ghost' },
+                { text: '.striped', link: '/docs/variants/striped' },
               ],
             },
           ],
@@ -286,16 +299,23 @@ export default defineConfig({
         {
           text: 'Utilities',
           items: [
-            { text: 'Borders', link: '/docs/utilities/borders' },
-            { text: 'Colors', link: '/docs/utilities/colors' },
-            { text: 'Display', link: '/docs/utilities/display' },
-            { text: 'Effects', link: '/docs/utilities/effects' },
-            { text: 'Flexbox', link: '/docs/utilities/flexbox' },
-            { text: 'Layout', link: '/docs/utilities/layout' },
-            { text: 'Positioning', link: '/docs/utilities/positioning' },
-            { text: 'Sizing', link: '/docs/utilities/sizing' },
-            { text: 'Spacing', link: '/docs/utilities/spacing' },
-            { text: 'Typography', link: '/docs/utilities/typography' },
+            { text: 'Overview', link: '/docs/utilities/' },
+            {
+              text: 'Categories',
+              collapsed: true,
+              items: [
+                { text: 'Borders', link: '/docs/utilities/borders' },
+                { text: 'Colors', link: '/docs/utilities/colors' },
+                { text: 'Display', link: '/docs/utilities/display' },
+                { text: 'Effects', link: '/docs/utilities/effects' },
+                { text: 'Flexbox', link: '/docs/utilities/flexbox' },
+                { text: 'Layout', link: '/docs/utilities/layout' },
+                { text: 'Positioning', link: '/docs/utilities/positioning' },
+                { text: 'Sizing', link: '/docs/utilities/sizing' },
+                { text: 'Spacing', link: '/docs/utilities/spacing' },
+                { text: 'Typography', link: '/docs/utilities/typography' },
+              ],
+            },
           ],
         },
       ]

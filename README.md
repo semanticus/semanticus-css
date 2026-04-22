@@ -67,11 +67,11 @@ Check out the [Palettes & Sizes](https://semanticus.design/guide/palettes-sizes.
 
 ## 🚀 Usage
 
-Semanticus CSS is built on three principles:
+Semanticus CSS is built on three complementary layers:
 
 ### 1. Semantic Styling
 
-PicoCSS design applied to plain HTML elements without adding any classes. See the [Semantic Styling](https://semanticus.design/docs/semantics/) guide for more details.
+Beautiful default styles for plain **ARIA-centric** HTML — no classes needed. See the [Semantic Styling](https://semanticus.design/docs/semantics/) guide for more details.
 
 ```html
 <article>
@@ -81,9 +81,9 @@ PicoCSS design applied to plain HTML elements without adding any classes. See th
 </article>
 ```
 
-### 2. Variant Classes
+### 2. Variants
 
-A minimal set of CSS classes that add style variations to **Semantic Styling**. See the [Variants](https://semanticus.design/docs/variants/) guide for more details.
+Minimal set of CSS classes that add visual variation to the **Semantic Styling**. See the [Variants](https://semanticus.design/docs/variants/) guide for more details.
 
 ```html
 <button class="ghost">Ghost</button>
@@ -91,9 +91,9 @@ A minimal set of CSS classes that add style variations to **Semantic Styling**. 
 <button class="contrast">Contrast</button>
 ```
 
-### 3. Atomic Utilities
+### 3. Utilities
 
-Bootstrap utility classes adapted to the **Semantic Styling** and **Variant Classes** style sizes, spacing and colors for a consistent design. See the [Utilities](https://semanticus.design/docs/utilities/) guide for more details.
+Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design. See the [Utilities](https://semanticus.design/docs/utilities/) guide for more details.
 
 ```html
 <footer class="py-4 text-center text-bg-contrast-subtle">

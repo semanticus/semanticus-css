@@ -6,6 +6,20 @@
   --scrollbar-width: 0px;
 }
 
+/* Prevent body scroll and interaction when modal is open */
+/* Uses :has() for automatic detection - no classes needed */
+body:has(dialog[open]) {
+  padding-right: var(--scrollbar-width, 0px);
+  overflow: hidden;
+  pointer-events: none;
+  touch-action: none;
+
+  & dialog[open] {
+    pointer-events: auto;
+    touch-action: auto;
+  }
+}
+
 dialog {
   display: flex;
   z-index: 999;
@@ -98,5 +112,28 @@ dialog {
   /* When dialog is targeted via anchor link (e.g., <a href="#modal-id">) */
   &:target {
     display: flex;
+  }
+}
+
+/* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
+/* Gracefully degrades to instant appearance in unsupported browsers */
+dialog,
+dialog > article {
+  transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+}
+
+dialog > article {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+@starting-style {
+  dialog {
+    backdrop-filter: none;
+    background-color: transparent;
+  }
+
+  dialog > article {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }

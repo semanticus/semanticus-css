@@ -1,0 +1,50 @@
+/**
+ * Contrast variant
+ * Used on links, buttons, and accordion elements
+ */
+
+/* Links */
+:where(a:not([role="button"])),
+[role="link"] {
+  &.contrast {
+    --color-text: var(--color-contrast);
+    --underline: var(--color-contrast-underline);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: var(--color-contrast-hover);
+      --underline: var(--color-contrast-hover-underline);
+    }
+  }
+}
+
+/* Buttons */
+:is(button, [type="submit"], [type="button"], [role="button"]) {
+  &.contrast {
+    --color-background: var(--color-contrast-bg);
+    --border-color: var(--color-contrast-border);
+    --color-text: var(--color-contrast-inverse);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-contrast-hover-bg);
+      --border-color: var(--color-contrast-hover-border);
+      --color-text: var(--color-contrast-inverse);
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-contrast-focus);
+    }
+  }
+}
+
+/* Accordion chevron dark mode override */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) details summary[role="button"].contrast::after,
+  :host(:not([data-theme])) details summary[role="button"].contrast::after {
+    filter: brightness(0);
+  }
+}
+
+[data-theme="dark"] details summary[role="button"].contrast::after {
+  filter: brightness(0);
+}

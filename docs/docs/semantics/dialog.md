@@ -112,5 +112,21 @@ Modals can be triggered without JavaScript using the `:target` pseudo-class. Thi
 - The modal automatically closes when clicking the browser's back button
 - This approach works in all modern browsers and degrades gracefully
 
-For animation utility classes (`.modal-is-open`, `.modal-is-opening`, `.modal-is-closing`), see [Modal Variants](/variants/components/modal).
+## Automatic Modal Behavior
 
+### Body Scroll Locking
+When a `<dialog>` element has the `[open]` attribute, the framework automatically:
+
+- Prevents scrolling on the body
+- Blocks pointer events and touch actions on the body (except on the dialog itself)
+- Compensates for scrollbar width to prevent layout shift
+
+No JavaScript or classes needed — it just works with pure CSS using the `:has()` selector.
+
+### Opening Animation
+
+Dialogs include a subtle fade-in animation when they open:
+- Backdrop fades in with a blur effect
+- Modal content slides down from the top
+
+This uses the `@starting-style` CSS at-rule for smooth entry animations. The animation gracefully degrades to instant appearance in browsers without support (e.g., Firefox ESR).

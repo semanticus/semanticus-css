@@ -1,32 +1,20 @@
 # Overview
 
-The docs are split in 3 layers:
+Semanticus CSS is built on three complementary layers:
 
-- [Semantic Styling](/docs/semantics/anchor) documents styles driven by HTML elements and attributes.
-- [Variants](/docs/variants/anchor) documents the optional class-based alternatives that extend or restyle selected semantic patterns.
-- [Utilities](/docs/utilities/layout) documents the atomic helpers for layout, spacing, sizing, typography, color, and effects.
+- **1. Semantic Styling**
 
----
+  Beautiful default styles for plain **ARIA-centric** HTML — no classes needed.
 
-**Semanticus CSS** can be used in 2 ways: Either by importing the full framework or by importing only the layers you need.
+- **2. Variants**
 
-- **semanticus.css** is the complete framework. It includes all three layers and is ideal for most projects that want a quick start with the full feature set.
+  Minimal set of CSS classes that add visual variation to the **Semantic Styling**.
 
-- **semanticus-semantics.css** includes only the **Semantic Styling** layer. This is ideal for projects that want to start with semantic HTML and add custom styles on top, without the optional variants or utilities.
+- **3. Utilities**
 
-- **semanticus-variants.css** includes only the **Variants** layer.
+  Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design.
 
-- **semanticus-utilities.css** includes only the **Utilities** layer.
-
-
-
-## Accessibility as part of the design
-
-In Semanticus CSS, accessibility is not treated as a separate pass after the interface is already designed.
-
-The semantics docs highlight patterns where accessible HTML naturally produces better styling hooks and clearer UI states. A loading region can be expressed with `aria-busy="true"`. Validation can be expressed with `aria-invalid`. Disabled controls remain native disabled controls. Tooltips use explicit attributes rather than anonymous decorative wrappers.
-
-This keeps the source markup easier to read and helps teams think about accessibility earlier, because the same decisions that improve semantics also unlock built-in styling.
+The docs are split by those 3 layers plus another one **Concepts** that explains the core ideas behind the framework.
 
 ## How the layers work together
 
@@ -37,3 +25,15 @@ The intended order is simple:
 3. Add utilities when layout or spacing needs fine-grained control.
 
 This gives you a path from minimal markup to more customized interfaces without abandoning the semantic base.
+
+## How to import it in your project
+
+**Semanticus CSS** can be used in 2 ways: Either by importing the full framework or by importing only the layers you need.
+
+- **semanticus.css** is the complete framework. It includes all three layers and is ideal for most projects that want a quick start with the full feature set.
+
+- **semanticus-semantics.css** includes only the **Semantic Styling** layer. This is ideal for projects that want to start with semantic HTML and add custom styles on top, without the optional variants or utilities.
+
+- **semanticus-variants.css** includes only the **Variants** layer.
+
+- **semanticus-utilities.css** includes only the **Atomic Utilities** layer.

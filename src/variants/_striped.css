@@ -1,5 +1,6 @@
 /**
- * Table variants
+ * Striped variant
+ * Alternating row background colors for tables
  */
 table.striped tbody tr:nth-child(odd) {
   & th,

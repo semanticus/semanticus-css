@@ -1,0 +1,58 @@
+/**
+ * Ghost variant
+ * Transparent background with colored text/border
+ * Used on buttons and accordion elements
+ */
+
+/* Buttons */
+:is(button, [type="submit"], [type="button"], [role="button"]) {
+  &.ghost {
+    --color-background: transparent;
+    --color-text: var(--color-primary);
+    --border-color: var(--color-primary);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: transparent;
+      --color-text: var(--color-primary-hover);
+      --border-color: var(--color-primary-hover);
+    }
+
+    &.secondary {
+      --color-text: var(--color-secondary);
+      --border-color: var(--color-secondary);
+
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-text: var(--color-secondary-hover);
+        --border-color: var(--color-secondary-hover);
+      }
+    }
+
+    &.contrast {
+      --color-text: var(--color-contrast);
+      --border-color: var(--color-contrast);
+
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-text: var(--color-contrast-hover);
+        --border-color: var(--color-contrast-hover);
+      }
+    }
+  }
+}
+
+/* Reset buttons */
+[type="reset"].ghost {
+  --color-background: transparent;
+  --color-text: var(--color-secondary);
+  --border-color: var(--color-secondary);
+
+  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    --color-text: var(--color-secondary-hover);
+    --border-color: var(--color-secondary-hover);
+  }
+}
+
+/* Accordion - ghost buttons have transparent backgrounds with colored text,
+   so the chevron should remain dark to match the text color */
+details summary[role="button"].ghost::after {
+  filter: none;
+}

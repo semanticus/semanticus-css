@@ -1,12 +1,11 @@
 /**
  * Semanticus CSS Variants
- * Class-based variant styles that extend semantic
+ * Class-based variant styles that extend semantic elements
  * Used by the full version which imports global variables, normalize, and semantics separately
  */
 
-@import "./_anchor.css";
-@import "./_button.css";
 @import "./_container.css";
-@import "./_details.css";
-@import "./_dialog.css";
-@import "./_table.css";
+@import "./_secondary.css";
+@import "./_contrast.css";
+@import "./_ghost.css";
+@import "./_striped.css";

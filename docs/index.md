@@ -60,19 +60,19 @@ Semanticus CSS is built on three complementary layers:
 
 ### 1. Semantic Styling
 
-Beautiful default styles for plain HTML elements — no classes needed.
+Beautiful default styles for plain **ARIA-centric** HTML — no classes needed.
 
 <HtmlPreviewer :code="example1Html" />
 
-### 2. Variant Classes
+### 2. Variants
 
-A minimal set of CSS classes that add style variations to **Semantic Styling**.
+Minimal set of CSS classes that add visual variation to the **Semantic Styling**.
 
 <HtmlPreviewer :code="example3Html" />
 
-### 3. Atomic Utilities
+### 3. Utilities
 
-Utility classes for spacing, layout, colors, and more — Bootstrap-style, but adapted to the **Semantic Styling** and **Variant Classes** values for a consistent design.
+Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design.
 
 <HtmlPreviewer :code="example2Html" />
 

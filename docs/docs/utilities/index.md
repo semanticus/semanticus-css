@@ -1,18 +1,9 @@
 # Utilities
 
-Add utility classes for precise control over spacing, colors, layout, and more.
+Set of CSS classes for precise control over **spacing**, **layout**, **colors**, and more.
 
----
+## Why do we need them?
 
-Responsive utility classes for rapid styling without custom CSS.
+While the **Semantic Styling** and **Variants** layers provide a solid foundation for most use cases, there are times when you need more granular control over specific properties.
 
-- [Borders](/utilities/borders) — Additive/subtractive borders, colors, width, radius
-- [Colors](/utilities/colors) — Background, text, and link colors with opacity control
-- [Display](/utilities/display) — Display, overflow, and visibility helpers
-- [Effects](/utilities/effects) — Opacity, shadows, focus rings, and transforms
-- [Flexbox](/utilities/flexbox) — Direction, alignment, wrapping, order, and stacks
-- [Layout](/utilities/layout) — Grid, ratios, object-fit, clearfix, and misc helpers
-- [Positioning](/utilities/positioning) — Position, float, z-index, fixed/sticky
-- [Sizing](/utilities/sizing) — Width, height, and viewport-relative sizing
-- [Spacing](/utilities/spacing) — Margin, padding, and gap utilities
-- [Typography](/utilities/typography) — Alignment, weight, size, decoration, and more
+The **Utilities** layer fills this gap by offering a comprehensive set of atomic classes that can be combined to achieve any design you need — all while staying consistent with the underlying design tokens and CSS variables of the framework.
