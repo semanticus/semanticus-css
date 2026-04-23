@@ -1,20 +1,18 @@
 /**
  * Modal (<dialog>)
  */
-:root,
-:host {
-  --scrollbar-width: 0px;
-}
 
 /* Prevent body scroll and interaction when modal is open */
 /* Uses :has() for automatic detection - no classes needed */
-body:has(dialog[open]) {
-  padding-right: var(--scrollbar-width, 0px);
+/* Accounts for both [open] attribute (JS) and :target (CSS-only) */
+body:has(dialog[open]),
+body:has(dialog:target) {
   overflow: hidden;
   pointer-events: none;
   touch-action: none;
 
-  & dialog[open] {
+  & dialog[open],
+  & dialog:target {
     pointer-events: auto;
     touch-action: auto;
   }
@@ -40,11 +38,17 @@ dialog {
   background-color: var(--modal-overlay-bg);
   color: var(--color-text);
 
-  & > :where(.card) {
+  /* Modal content box - styled like a card */
+  /* Works with: <dialog><article>...</article></dialog> */
+  & > article {
     width: 100%;
     max-height: calc(100vh - var(--spacing) * 2);
     margin: var(--spacing);
+    padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
     overflow: auto;
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
 
     @media (min-width: 576px) {
       max-width: 510px;
@@ -54,7 +58,28 @@ dialog {
       max-width: 700px;
     }
 
+    /* Header styling */
+    & > header {
+      margin: calc(var(--block-spacing-vertical) * -1) calc(var(--block-spacing-horizontal) * -1) var(--block-spacing-vertical);
+      padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
+      background-color: var(--card-section-bg);
+      border-bottom: var(--border-width) solid var(--card-border);
+      border-top-right-radius: var(--border-radius);
+      border-top-left-radius: var(--border-radius);
+
+      & > * {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Footer styling */
     & > footer {
+      margin: var(--block-spacing-vertical) calc(var(--block-spacing-horizontal) * -1) calc(var(--block-spacing-vertical) * -1);
+      padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
+      background-color: var(--card-section-bg);
+      border-top: var(--border-width) solid var(--card-border);
+      border-bottom-right-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
       text-align: right;
 
       & :where(button, [role=button]) {
@@ -65,46 +90,46 @@ dialog {
         }
       }
     }
+
+    /* Close button in header */
+    & > header :is(a, button)[rel=prev] {
+      margin: 0;
+      margin-left: var(--spacing);
+      padding: 0;
+      float: right;
+    }
+
+    /* Close button styling */
+    & :is(a, button)[rel=prev] {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin-top: calc(var(--spacing) * -1);
+      margin-bottom: var(--spacing);
+      margin-left: auto;
+      border: none;
+      border-radius: 0;
+      background-image: var(--icon-close);
+      background-position: center;
+      background-size: auto 1rem;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      box-shadow: none;
+      opacity: 0.5;
+      transition: opacity var(--transition);
+    }
+
+    & :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+      --color-background: transparent;
+      --border-color: transparent;
+      box-shadow: none;
+      opacity: 1;
+    }
   }
 
-  & > :where(.card > header > *) {
-    margin-bottom: 0;
-  }
-
-  & > .card > header :is(a, button)[rel=prev] {
-    margin: 0;
-    margin-left: var(--spacing);
-    padding: 0;
-    float: right;
-  }
-
-  & > .card :is(a, button)[rel=prev] {
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    margin-top: calc(var(--spacing) * -1);
-    margin-bottom: var(--spacing);
-    margin-left: auto;
-    border: none;
-    border-radius: 0;
-    background-image: var(--icon-close);
-    background-position: center;
-    background-size: auto 1rem;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    box-shadow: none;
-    opacity: 0.5;
-    transition: opacity var(--transition);
-  }
-
-  & > .card :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-    --color-background: transparent;
-    --border-color: transparent;
-    box-shadow: none;
-    opacity: 1;
-  }
-
-  &:not([open]), &[open=false] {
+  /* Hidden state */
+  &:not([open]),
+  &[open=false] {
     display: none;
   }
 
@@ -117,12 +142,11 @@ dialog {
 
 /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
 /* Gracefully degrades to instant appearance in unsupported browsers */
-dialog,
-dialog > .card {
+dialog {
   transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
 }
 
-dialog > .card {
+dialog > article {
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -132,7 +156,7 @@ dialog > .card {
     background-color: transparent;
   }
 
-  dialog > .card {
+  dialog > article {
     opacity: 0;
     transform: translateY(-20px);
   }

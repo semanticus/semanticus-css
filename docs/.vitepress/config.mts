@@ -250,7 +250,6 @@ export default defineConfig({
                 { text: '&lt;article&gt;', link: '/docs/semantics/article' },
                 { text: '&lt;button&gt;', link: '/docs/semantics/button' },
                 { text: '&lt;details&gt;', link: '/docs/semantics/details' },
-                { text: '&lt;dialog&gt;', link: '/docs/semantics/dialog' },
                 { text: '&lt;fieldset&gt;', link: '/docs/semantics/fieldset' },
                 { text: '&lt;input&gt;', link: '/docs/semantics/input' },
                 { text: '&lt;label&gt;', link: '/docs/semantics/label' },

@@ -38,12 +38,12 @@ const cardElementsHtml = `<!-- On article element (recommended for semantic cont
 `;
 
 const cardInDialogHtml = `<dialog open>
-  <article class="card">
+  <article>
     <header>
       <button aria-label="Close" rel="prev"></button>
       <h3>Modal Title</h3>
     </header>
-    <p>Modal dialogs use the <code>.card</code> class on their content container.</p>
+    <p>Modal dialogs use an <code>&lt;article&gt;</code> element for their content container.</p>
     <footer>
       <button class="secondary">Cancel</button>
       <button>Confirm</button>
@@ -81,7 +81,7 @@ The `.card` class works on any semantic element. Choose the element that best ma
 
 ## Cards in Modals
 
-When building modal dialogs, apply the `.card` class to the content container inside `<dialog>`:
+When building modal dialogs, use an `<article>` element as the content container inside `<dialog>`. The dialog styles will automatically apply card-like styling to the article:
 
 <HtmlPreviewer :code="cardInDialogHtml" />
 
