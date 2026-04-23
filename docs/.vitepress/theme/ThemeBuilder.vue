@@ -680,12 +680,12 @@ function downloadCSS() {
 }
 
 const exportSnippet = computed(() => {
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.2.1/dist/semanticus.css">\n`;
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.3.1/dist/semanticus.css">\n`;
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.2.1/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.3.1/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.2.1/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.3.1/dist/semanticus.size.${currentSize.value}.css">\n`
   }
   result += `<link rel="stylesheet" href="/css/semanticus.custom.css">`
 
@@ -697,12 +697,12 @@ const highlightedExportSnippet = computed(() => {
 
 const inlineSnippet = computed(() => {
   const css = buildCustomCSS()
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.2.1/dist/semanticus.css">\n`
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.3.1/dist/semanticus.css">\n`
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.2.1/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.3.1/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.2.1/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.3.1/dist/semanticus.size.${currentSize.value}.css">\n`
   }
   result += `<style>\n${css}</style>`
 
