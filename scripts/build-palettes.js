@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Build script for Semanticus CSS color variants
- * Copies palette variable files to dist/
+ * Minifies and copies palette variable files to dist/
  *
  * Palette files are pure color variable overrides.
  * Users should load a base version first, then the palette:
@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { transform } = require('lightningcss');
 
 const palettes = [
   'amber',
@@ -59,8 +60,15 @@ for (const palette of palettes) {
     // The @import '../_base.css'; line should be removed
     content = content.replace(/\/\* Import base variables \*\/\s*@import '\.\.\/_(base|semantics|index)\.css';\s*/g, '');
 
-    // Write to dist
-    fs.writeFileSync(distFile, content);
+    // Minify with LightningCSS
+    const result = transform({
+      filename: `${palette}.css`,
+      code: Buffer.from(content),
+      minify: true,
+    });
+
+    // Write minified content to dist
+    fs.writeFileSync(distFile, result.code.toString());
 
     console.log(`  ✓ ${distFile}`);
     successCount++;

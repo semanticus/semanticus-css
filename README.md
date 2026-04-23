@@ -23,7 +23,7 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 ### Option 1: CDN (quick start)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.blue.css">
@@ -35,7 +35,7 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 Download the [distribution files](https://registry.npmjs.org/@goncalvesjoao%2Fsemanticus-css/-/semanticus-css-0.1.0.tgz), move the ones you need to your **stylesheets** folder and include them in your HTML `<head>`:
 
 ```html
-<link rel="stylesheet" href="/css/semanticus.min.css">
+<link rel="stylesheet" href="/css/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">

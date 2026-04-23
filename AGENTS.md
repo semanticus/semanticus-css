@@ -82,10 +82,10 @@ When contributing code or edits, follow the project's motto and core principles:
 
 All generated files land in `dist/`:
 
-- `semanticus.css` / `.min.css`
-- `semanticus-semantics.css` / `.min.css`
-- `semanticus-utilities.css` / `.min.css`
-- `semanticus-variants.css` / `.min.css`
+- `semanticus.css`
+- `semanticus-semantics.css`
+- `semanticus-utilities.css`
+- `semanticus-variants.css`
 - `semanticus.palette.<name>.css`
 - `semanticus.size.<name>.css`
 

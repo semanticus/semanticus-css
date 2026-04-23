@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
-import semanticusStyles from '../../../dist/semanticus.min.css?raw';
+import semanticusStyles from '../../../dist/semanticus.css?raw';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import { useData } from 'vitepress'

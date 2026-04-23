@@ -19,7 +19,7 @@ const example4Html = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="semanticus.min.css">
+  <link rel="stylesheet" href="semanticus.css">
 </head>
 <body>
   <header class="container">

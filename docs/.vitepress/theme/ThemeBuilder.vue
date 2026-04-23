@@ -680,7 +680,7 @@ function downloadCSS() {
 }
 
 const exportSnippet = computed(() => {
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">\n`;
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.css">\n`;
   if (currentPalette.value !== 'azure') {
     result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
@@ -697,7 +697,7 @@ const highlightedExportSnippet = computed(() => {
 
 const inlineSnippet = computed(() => {
   const css = buildCustomCSS()
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">\n`
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.css">\n`
   if (currentPalette.value !== 'azure') {
     result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }

@@ -12,13 +12,13 @@ hljs.registerLanguage('javascript', javascript)
 const installMode = ref('cdn')
 const copiedFeedback = ref(null)
 
-const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.min.css">
+const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
 <link rel="stylesheet" href="/css/semanticus.size.slim.css">`
 
-const cdnSnippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">
+const cdnSnippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.blue.css">

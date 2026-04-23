@@ -122,7 +122,7 @@ const manualSnippet = computed(() => {
 const cdnSnippet = computed(() => {
   const paletteName = currentPalette.value
   const sizeName = currentSize.value
-  let snippet = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.min.css">'
+  let snippet = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.css">'
   if (paletteName !== 'azure') {
     snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@goncalvesjoao/semanticus-css@0.1.0/dist/semanticus.palette.${paletteName}.css">`
   }

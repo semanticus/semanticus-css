@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Build script for Semanticus CSS size variants
- * Copies size variable files to dist/
+ * Minifies and copies size variable files to dist/
  *
  * size files are pure size variable overrides.
  * Users should load a base version first, then the size:
@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { transform } = require('lightningcss');
 
 const sizes = [
   'slim'
@@ -41,8 +42,15 @@ for (const size of sizes) {
     // The @import '../_base.css'; line should be removed
     content = content.replace(/\/\* Import base variables \*\/\s*@import '\.\.\/_(base|semantics|index)\.css';\s*/g, '');
 
-    // Write to dist
-    fs.writeFileSync(distFile, content);
+    // Minify with LightningCSS
+    const result = transform({
+      filename: `${size}.css`,
+      code: Buffer.from(content),
+      minify: true,
+    });
+
+    // Write minified content to dist
+    fs.writeFileSync(distFile, result.code.toString());
 
     console.log(`  ✓ ${distFile}`);
     successCount++;
