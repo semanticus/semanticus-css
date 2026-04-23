@@ -76,7 +76,7 @@ const resetColorHtml = `<p class="text-body-secondary">
   Secondary body text with a <a href="#" class="text-reset">reset link</a>.
 </p>
 `;
-const practicalHtml = `<article>
+const practicalHtml = `<article class="card">
   <header>
     <p class="text-uppercase fw-semibold text-primary fs-6 mb-0">Featured Article</p>
     <h2 class="fw-bold">Getting Started with Utility Classes</h2>

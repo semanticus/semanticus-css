@@ -313,7 +313,7 @@
       <h2 class="text-body">Articles (Cards)</h2>
       <section id="articles" class="mb-3">
         <!-- Card-->
-        <article id="article" class="bg-body-secondary border rounded shadow-sm p-3 mb-3">
+        <article id="article" class="card bg-body-secondary border rounded shadow-sm p-3 mb-3">
           <h2 class="text-body">Basic Card</h2>
           <p class="text-body">
             This is a basic card component using utility classes for background, border,
@@ -322,7 +322,7 @@
         </article>
 
         <!-- Card with header & footer -->
-        <article id="article-header-footer" class="bg-body-secondary border rounded shadow-sm overflow-hidden mb-3">
+        <article id="article-header-footer" class="card bg-body-secondary border rounded shadow-sm overflow-hidden mb-3">
           <header class="bg-body-tertiary border-bottom p-3">
             <h3 class="text-body m-0">Card with Header and Footer</h3>
           </header>
@@ -343,7 +343,7 @@
       <h2 class="text-body">Loading States (aria-busy)</h2>
       <section id="loading" class="d-flex gap-3 flex-wrap">
         <section class="mb-3">
-          <article aria-busy="true" class="d-inline-block p-3"></article>
+          <article class="card" aria-busy="true" class="d-inline-block p-3"></article>
         </section>
 
         <section class="mb-3">
@@ -710,7 +710,7 @@
 
     <!-- Modal -->
     <dialog id="modal-example" class="position-fixed top-0 start-0 w-100 h-100 d-flex d-lg-none align-items-center justify-content-center bg-dark bg-opacity-75 border-0 p-0" style="z-index: 999;">
-      <article class="bg-body-secondary rounded shadow-lg overflow-auto m-3" style="max-width: 700px; max-height: calc(100vh - 2rem);">
+      <article class="card bg-body-secondary rounded shadow-lg overflow-auto m-3" style="max-width: 700px; max-height: calc(100vh - 2rem);">
         <header class="border-bottom p-3 d-flex justify-content-between align-items-center">
           <h3 class="text-body m-0">Modal Example</h3>
           <a href="#!" aria-label="Close" rel="prev" class="text-decoration-none text-muted fs-4">&times;</a>

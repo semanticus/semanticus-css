@@ -5,12 +5,12 @@ title: Modal
 <script setup>
 const modalExample = `<div style="min-height: 250px;">
   <dialog open>
-    <article>
+    <article class="card">
       <header>
         <button aria-label="Close" rel="prev"></button>
         <h3>Modal Title</h3>
       </header>
-      <p>This is a modal dialog built with the native <code>&lt;dialog&gt;</code> element and <code>&lt;article&gt;</code> for content.</p>
+      <p>This is a modal dialog built with the native <code>&lt;dialog&gt;</code> element and an element with the <code>.card</code> class for content.</p>
       <footer>
         <button class="secondary">Cancel</button>
         <button>Confirm</button>
@@ -23,7 +23,7 @@ const modalExample = `<div style="min-height: 250px;">
 
 # Modal
 
-Modals are implemented using the `<dialog>` element with an `<article>` inside.
+Modals are implemented using the `<dialog>` element with an element having the `.card` class inside.
 
 ## Basic Modal
 

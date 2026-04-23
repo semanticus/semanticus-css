@@ -21,7 +21,7 @@ const translateHtml = `<div class="position-relative border" style="width:200px;
   <div class="position-absolute top-50 start-50 translate-middle-x bg-success p-2 rounded" style="width:40px;height:40px"></div>
 </div>
 `;
-const practicalHtml = `<article class="shadow rounded p-0" style="overflow:hidden">
+const practicalHtml = `<article class="card shadow rounded p-0" style="overflow:hidden">
   <div class="bg-primary p-3">
     <h3 class="mb-0" style="color:white">Featured</h3>
   </div>

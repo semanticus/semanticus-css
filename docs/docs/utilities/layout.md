@@ -72,7 +72,7 @@ const vrHtml = `<div class="d-flex" style="height:80px">
   <div class="p-2">Right content</div>
 </div>
 `;
-const stretchedLinkHtml = `<article class="position-relative">
+const stretchedLinkHtml = `<article class="card position-relative">
   <h3>Card with stretched link</h3>
   <p>Some content that describes the linked destination.</p>
   <a href="#" class="stretched-link">Go somewhere</a>

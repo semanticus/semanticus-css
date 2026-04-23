@@ -3,7 +3,7 @@ title: Loading
 ---
 
 <script setup>
-const loadingCardExample = `<article aria-busy="true">
+const loadingCardExample = `<article class="card" aria-busy="true">
   <hgroup>
     <h3>Loading Content</h3>
     <p>Please wait while we fetch your data...</p>
@@ -15,7 +15,7 @@ const loadingButtonExample = `<button aria-busy="true" disabled>Processing...</b
 <button class="secondary">Cancel</button>
 `;
 
-const loadingProgressExample = `<article>
+const loadingProgressExample = `<article class="card">
   <h3>Uploading File...</h3>
   <progress value="65" max="100">65%</progress>
   <small>Uploading document.pdf (65% complete)</small>

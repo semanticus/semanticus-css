@@ -3,13 +3,13 @@ title: 'aria-busy="true"'
 ---
 
 <script setup>
-const example1Html = `<article aria-busy="true">
+const example1Html = `<article class="card" aria-busy="true">
   Loading content...
 </article>
 `;
 const example2Html = `<button aria-busy="true" disabled>Loading...</button>
 `;
-const example3Html = `<article aria-busy="true">
+const example3Html = `<article class="card" aria-busy="true">
   <header>
     <h3>Loading Title</h3>
   </header>

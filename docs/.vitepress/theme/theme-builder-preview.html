@@ -359,16 +359,16 @@
           <h2>Cards</h2>
           <section id="articles">
             <!-- Card-->
-            <article id="article">
+            <article id="article" class="card">
               <h2>Basic Card</h2>
               <p>
-                This is a basic card component using the article element. Cards provide a contained
+                This is a basic card component using the article element with the .card class. Cards provide a contained
                 space for content with consistent padding and styling.
               </p>
             </article>
 
             <!-- Card with header & footer -->
-            <article id="article-header-footer">
+            <article id="article-header-footer" class="card">
               <header>
                 <h3>Card with Header and Footer</h3>
               </header>
@@ -389,7 +389,7 @@
           <h2>Loading indicators</h2>
           <section id="loading" role="toolbar">
             <section>
-              <article aria-busy="true"></article>
+              <article class="card" aria-busy="true"></article>
             </section>
 
             <section>
@@ -776,22 +776,17 @@ console.log(theme);</code></pre>
 
   <!-- Modal example -->
   <dialog id="modal-example">
-    <article>
-      <header>
-        <a href="#!" aria-label="Close" rel="prev"></a>
-        <h3>Modal Example</h3>
-      </header>
-      <p>
-        This modal is triggered purely with CSS using the <code>:target</code> pseudo-class.
-        No JavaScript required! Click the close button or press the browser back button to dismiss.
-      </p>
-      <footer>
-        <a href="#!" role="button" aria-label="Close">
-          Cancel</a><a href="#!" role="button" autofocus>
-          Confirm
-        </a>
-      </footer>
-    </article>
+<article class="card">
+        <hgroup>
+          <h2>Card title</h2>
+          <p>description</p>
+        </hgroup>
+        <p>This is a sample card component styled with the <!-- PALETTE_NAME --> palette. It demonstrates the palette's card background, border, and text colors.</p>
+        <footer>
+          <a href="#!" role="button" aria-label="Close">Cancel</a>&nbsp;
+          <a href="#!" role="button">Save</a>
+        </footer>
+      </article>
   </dialog>
   <!-- ./ Modal example -->
 

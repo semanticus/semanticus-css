@@ -287,6 +287,7 @@ export default defineConfig({
               text: 'Classes',
               collapsed: true,
               items: [
+                { text: '.card', link: '/docs/variants/card' },
                 { text: '.container', link: '/docs/variants/container' },
                 { text: '.secondary', link: '/docs/variants/secondary' },
                 { text: '.contrast', link: '/docs/variants/contrast' },

@@ -5,7 +5,7 @@ title: dialog
 <script setup>
 const example1Html = `<div style="min-height: 215px;">
   <dialog open>
-    <article>
+    <article class="card">
       <header>
         <button aria-label="Close" rel="prev"></button>
         <p>
@@ -27,7 +27,7 @@ const example1Html = `<div style="min-height: 215px;">
 `;
 const example2Html = `<div style="min-height: 250px;">
   <dialog open>
-    <article>
+    <article class="card">
       <h2>Confirm Your Membership</h2>
       <p>
         Thank you for signing up for a membership!
@@ -53,7 +53,7 @@ const example3Html = `<div style="min-height: 250px;">
 
   <!-- Modal -->
   <dialog id="modal-example">
-    <article>
+    <article class="card">
       <header>
         <a href="#!" aria-label="Close" rel="prev"></a>
         <h3>CSS-only Modal</h3>
@@ -82,7 +82,7 @@ When opened programmatically with `.showModal()`, it traps focus and exposes bui
 
 ## Syntax
 
-Modals are built with `<dialog>` as a wrapper and `<article>` for the modal content.
+Modals are built with `<dialog>` as a wrapper and an element with the `.card` class for the modal content.
 
 Inside `<header>`, `<button rel="prev">` is defined to `float: right;` allowing a close icon to be top aligned with a title (Keep it before the title so it can float right without needing to be absolutely positioned).
 

@@ -10,6 +10,7 @@ The purpose of **ARIA** is to communicate semantics and interaction state to ass
 
 | Variant | Description | Elements |
 |---------|-------------|----------|
+| [`.card`](./card.md) | Visual container with background, shadow, and optional header/footer | Any block element |
 | [`.container`](./container.md) | Responsive width wrapper with horizontal padding | Any block element |
 | [`.secondary`](./secondary.md) | Lower-emphasis style for links and buttons | `<a>`, `<button>` |
 | [`.contrast`](./contrast.md) | High-contrast style for links, buttons, and accordions | `<a>`, `<button>`, `<details>` |

@@ -7,6 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <title>Semantics Demo - Semanticus CSS</title>
     <link rel="stylesheet" href="../dist/semanticus-semantics.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="../dist/semanticus-variants.css" id="theme-stylesheet">
     <link rel="stylesheet" href="../dist/semanticus.size.slim.css" id="theme-stylesheet">
     <style>
       body {
@@ -296,16 +297,16 @@
       <h2>Articles (Cards)</h2>
       <section id="articles">
         <!-- Card-->
-        <article id="article">
+        <article id="article" class="card">
           <h2>Basic Card</h2>
           <p>
-            This is a basic card component using the article element. Cards provide a contained
+            This is a basic card component using the article element with the .card class. Cards provide a contained
             space for content with consistent padding and styling.
           </p>
         </article>
 
         <!-- Card with header & footer -->
-        <article id="article-header-footer">
+        <article id="article-header-footer" class="card">
           <header>
             <h3>Card with Header and Footer</h3>
           </header>
@@ -326,7 +327,7 @@
       <h2>Loading States (aria-busy)</h2>
       <section id="loading" role="toolbar">
         <section>
-          <article aria-busy="true"></article>
+          <article class="card" aria-busy="true"></article>
         </section>
 
         <section>
@@ -707,7 +708,7 @@
 
     <!-- Modal -->
     <dialog id="modal-example">
-      <article>
+      <article class="card">
         <header>
           <a href="#!" aria-label="Close" rel="prev"></a>
           <h3>Modal Example</h3>

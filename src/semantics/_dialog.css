@@ -40,7 +40,7 @@ dialog {
   background-color: var(--modal-overlay-bg);
   color: var(--color-text);
 
-  & > :where(article) {
+  & > :where(.card) {
     width: 100%;
     max-height: calc(100vh - var(--spacing) * 2);
     margin: var(--spacing);
@@ -67,18 +67,18 @@ dialog {
     }
   }
 
-  & > :where(article > header > *) {
+  & > :where(.card > header > *) {
     margin-bottom: 0;
   }
 
-  & > article > header :is(a, button)[rel=prev] {
+  & > .card > header :is(a, button)[rel=prev] {
     margin: 0;
     margin-left: var(--spacing);
     padding: 0;
     float: right;
   }
 
-  & > article :is(a, button)[rel=prev] {
+  & > .card :is(a, button)[rel=prev] {
     display: block;
     width: 1rem;
     height: 1rem;
@@ -97,7 +97,7 @@ dialog {
     transition: opacity var(--transition);
   }
 
-  & > article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+  & > .card :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
     --color-background: transparent;
     --border-color: transparent;
     box-shadow: none;
@@ -118,11 +118,11 @@ dialog {
 /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
 /* Gracefully degrades to instant appearance in unsupported browsers */
 dialog,
-dialog > article {
+dialog > .card {
   transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
 }
 
-dialog > article {
+dialog > .card {
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -132,7 +132,7 @@ dialog > article {
     background-color: transparent;
   }
 
-  dialog > article {
+  dialog > .card {
     opacity: 0;
     transform: translateY(-20px);
   }
