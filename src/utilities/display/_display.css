@@ -42,7 +42,7 @@
   display: none !important;
 }
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .d-sm-inline {
     display: inline !important;
   }
@@ -78,7 +78,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .d-md-inline {
     display: inline !important;
   }
@@ -114,7 +114,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .d-lg-inline {
     display: inline !important;
   }
@@ -150,7 +150,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .d-xl-inline {
     display: inline !important;
   }
@@ -186,7 +186,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .d-xxl-inline {
     display: inline !important;
   }

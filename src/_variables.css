@@ -19,6 +19,17 @@
 }
 
 /* ==========================================================================
+   Responsive Breakpoints (custom media queries)
+   Used consistently across semantics, variants, and utilities.
+   ========================================================================== */
+
+@custom-media --breakpoint-sm (min-width: 576px);
+@custom-media --breakpoint-md (min-width: 768px);
+@custom-media --breakpoint-lg (min-width: 1024px);
+@custom-media --breakpoint-xl (min-width: 1280px);
+@custom-media --breakpoint-xxl (min-width: 1536px);
+
+/* ==========================================================================
    2. Typography & Layout Variables (from Pico Theme)
    ========================================================================== */
 
@@ -79,35 +90,35 @@
 }
 
 /* Responsive Font Sizes – progressively increase root font-size at wider viewports */
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   :root,
   :host {
     --font-size: 106.25%;
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   :root,
   :host {
     --font-size: 112.5%;
   }
 }
 
-@media (min-width: 1024px) {
+@media (--breakpoint-lg) {
   :root,
   :host {
     --font-size: 118.75%;
   }
 }
 
-@media (min-width: 1280px) {
+@media (--breakpoint-xl) {
   :root,
   :host {
     --font-size: 125%;
   }
 }
 
-@media (min-width: 1536px) {
+@media (--breakpoint-xxl) {
   :root,
   :host {
     --font-size: 131.25%;

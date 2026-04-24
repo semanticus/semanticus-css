@@ -79,7 +79,7 @@
 
 /* rtl:end:remove */
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .text-sm-start {
     text-align: left !important;
   }
@@ -91,7 +91,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .text-md-start {
     text-align: left !important;
   }
@@ -103,7 +103,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .text-lg-start {
     text-align: left !important;
   }
@@ -115,7 +115,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .text-xl-start {
     text-align: left !important;
   }
@@ -127,7 +127,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .text-xxl-start {
     text-align: left !important;
   }

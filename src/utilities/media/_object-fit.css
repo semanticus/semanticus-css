@@ -23,7 +23,7 @@
   object-fit: none !important;
 }
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .object-fit-sm-contain {
     -o-object-fit: contain !important;
     object-fit: contain !important;
@@ -46,7 +46,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .object-fit-md-contain {
     -o-object-fit: contain !important;
     object-fit: contain !important;
@@ -69,7 +69,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .object-fit-lg-contain {
     -o-object-fit: contain !important;
     object-fit: contain !important;
@@ -92,7 +92,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .object-fit-xl-contain {
     -o-object-fit: contain !important;
     object-fit: contain !important;
@@ -115,7 +115,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .object-fit-xxl-contain {
     -o-object-fit: contain !important;
     object-fit: contain !important;

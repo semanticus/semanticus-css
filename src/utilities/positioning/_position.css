@@ -26,7 +26,7 @@
   z-index: 1020;
 }
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .sticky-sm-top {
     position: sticky;
     top: 0;
@@ -38,7 +38,7 @@
     z-index: 1020;
   }
 }
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .sticky-md-top {
     position: sticky;
     top: 0;
@@ -50,7 +50,7 @@
     z-index: 1020;
   }
 }
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .sticky-lg-top {
     position: sticky;
     top: 0;
@@ -62,7 +62,7 @@
     z-index: 1020;
   }
 }
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .sticky-xl-top {
     position: sticky;
     top: 0;
@@ -74,7 +74,7 @@
     z-index: 1020;
   }
 }
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .sticky-xxl-top {
     position: sticky;
     top: 0;

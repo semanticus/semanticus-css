@@ -178,7 +178,7 @@
   padding-left: var(--spacer-5) !important;
 }
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .p-sm-0 {
     padding: 0 !important;
   }
@@ -319,7 +319,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .p-md-0 {
     padding: 0 !important;
   }
@@ -460,7 +460,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .p-lg-0 {
     padding: 0 !important;
   }
@@ -601,7 +601,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .p-xl-0 {
     padding: 0 !important;
   }
@@ -742,7 +742,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .p-xxl-0 {
     padding: 0 !important;
   }

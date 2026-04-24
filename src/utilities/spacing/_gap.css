@@ -76,7 +76,7 @@
   column-gap: var(--spacer-5) !important;
 }
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .gap-sm-0 {
     gap: 0 !important;
   }
@@ -139,7 +139,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .gap-md-0 {
     gap: 0 !important;
   }
@@ -202,7 +202,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .gap-lg-0 {
     gap: 0 !important;
   }
@@ -265,7 +265,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .gap-xl-0 {
     gap: 0 !important;
   }
@@ -328,7 +328,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .gap-xxl-0 {
     gap: 0 !important;
   }

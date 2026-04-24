@@ -208,7 +208,7 @@
   margin-left: auto !important;
 }
 
-@media (min-width: 576px) {
+@media (--breakpoint-sm) {
   .m-sm-0 {
     margin: 0 !important;
   }
@@ -372,7 +372,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (--breakpoint-md) {
   .m-md-0 {
     margin: 0 !important;
   }
@@ -536,7 +536,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--breakpoint-lg) {
   .m-lg-0 {
     margin: 0 !important;
   }
@@ -700,7 +700,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (--breakpoint-xl) {
   .m-xl-0 {
     margin: 0 !important;
   }
@@ -864,7 +864,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (--breakpoint-xxl) {
   .m-xxl-0 {
     margin: 0 !important;
   }
