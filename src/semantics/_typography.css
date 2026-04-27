@@ -84,7 +84,7 @@ hgroup {
     margin-bottom: 0;
 
     &:not(:first-child):last-child {
-      --color-text: var(--color-text-muted);
+      --color-text: color-mix(in srgb, var(--color-text), rgb(128, 128, 128) 70%);
       --font-weight: unset;
       font-size: 1rem;
     }
