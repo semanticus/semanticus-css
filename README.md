@@ -74,7 +74,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — no classes needed. 
 ```html
 <article>
   <h1>Hello World</h1>
-  <p>This is a paragraph with <strong>bold</strong> and <em>italic</em> text.</p>
+  <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   <button>Click me</button>
 </article>
 ```

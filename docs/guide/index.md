@@ -1,7 +1,9 @@
 <script setup>
 const example1Html = `<article>
   <h1>Hello World</h1>
-  <p>This is a paragraph with <strong>bold</strong> and <em>italic</em> text.</p>
+  <p>
+    Look at me, I'm <strong>bold</strong> and <em>stylish!</em>
+  </p>
   <button>Click me</button>
 </article>
 `;
@@ -22,7 +24,7 @@ const example4Html = `<!DOCTYPE html>
   <link rel="stylesheet" href="semanticus.css">
 </head>
 <body>
-  <header class="container">
+  <header class="container mb-4">
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
@@ -30,7 +32,7 @@ const example4Html = `<!DOCTYPE html>
 
       <ul>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#" role="button">Log In</a></li>
       </ul>
     </nav>
   </header>
@@ -43,8 +45,8 @@ const example4Html = `<!DOCTYPE html>
     <button class="secondary">Get Started</button>
   </main>
 
-  <footer class="mt-5 py-4 text-center text-bg-contrast-subtle">
-    <p class="mb-0">&copy; 2026 &lt;your brand&gt;. All rights reserved.</p>
+  <footer class="text-center text-bg-contrast-subtle mt-5">
+    <p>&copy; 2026 &lt;your brand&gt;. All rights reserved.</p>
   </footer>
 </body>
 </html>

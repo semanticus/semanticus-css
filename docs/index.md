@@ -81,8 +81,7 @@ Utility classes for **spacing**, **layout**, **colors**, and more — adapted to
 const example1Html = `<article>
   <h1>Hello World</h1>
   <p>
-    This is a paragraph with
-    <strong>bold</strong> and <em>italic</em> text.
+    Look at me, I'm <strong>bold</strong> and <em>stylish!</em>
   </p>
   <button>Click me</button>
 </article>
