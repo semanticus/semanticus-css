@@ -89,13 +89,8 @@
   --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(129, 145, 181, 0.15); /* Medium elevation – e.g. dropdowns */
   --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015); /* Multi-layer realistic shadow – e.g. cards, modals */
 
-  /* Headings – progressively lighter shades from h1 (darkest) to h6 (lightest) */
-  --color-h1: #2d3138;
-  --color-h2: #373c44;
-  --color-h3: #424751;
-  --color-h4: #4d535e;
-  --color-h5: #5c6370;
-  --color-h6: #646b79;
+  /* Headings - base color for progressive lightness via color-mix */
+  --color-heading-base: #2d3138;
 
   /* Mark & Text – colors for <mark>, <ins>, and <del> elements */
   --color-mark-bg: rgb(252.5, 230.5, 191.5); /* Background highlight for <mark> */
@@ -285,13 +280,8 @@
     --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15);
     --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
 
-    /* Headings */
-    --color-h1: #f0f1f3;
-    --color-h2: #e0e3e7;
-    --color-h3: #c2c7d0;
-    --color-h4: #b3b9c5;
-    --color-h5: #a4acba;
-    --color-h6: #8891a4;
+    /* Headings - base color for progressive lightness via color-mix */
+    --color-heading-base: #f0f1f3;
 
     /* Mark & Text */
     --color-mark-bg: #014063;
@@ -467,13 +457,8 @@
   --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15);
   --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
 
-  /* Headings */
-  --color-h1: #f0f1f3;
-  --color-h2: #e0e3e7;
-  --color-h3: #c2c7d0;
-  --color-h4: #b3b9c5;
-  --color-h5: #a4acba;
-  --color-h6: #8891a4;
+  /* Headings - base color for progressive lightness via color-mix */
+  --color-heading-base: #f0f1f3;
 
   /* Mark & Text */
   --color-mark-bg: #014063;
