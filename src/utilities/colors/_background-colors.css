@@ -1,5 +1,6 @@
 .text-bg-primary {
   --color-text: var(--color-primary-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-primary-inverse), black 18%);
 
   color: var(--color-primary-inverse) !important;
   background-color: rgba(var(--primary-rgb), var(--bg-opacity, 1)) !important;
@@ -7,6 +8,7 @@
 
 .text-bg-secondary {
   --color-text: var(--color-secondary-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-secondary-inverse), black 18%);
 
   color: var(--color-secondary-inverse) !important;
   background-color: rgba(var(--secondary-rgb), var(--bg-opacity, 1)) !important;
@@ -14,6 +16,7 @@
 
 .text-bg-success {
   --color-text: var(--color-success-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-success-inverse), black 18%);
 
   color: var(--color-success-inverse) !important;
   background-color: rgba(var(--success-rgb), var(--bg-opacity, 1)) !important;
@@ -21,6 +24,7 @@
 
 .text-bg-info {
   --color-text: var(--color-info-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-info-inverse), black 18%);
 
   color: var(--color-info-inverse) !important;
   background-color: rgba(var(--info-rgb), var(--bg-opacity, 1)) !important;
@@ -28,6 +32,7 @@
 
 .text-bg-warning {
   --color-text: var(--color-warning-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-warning-inverse), black 18%);
 
   color: var(--color-warning-inverse) !important;
   background-color: rgba(var(--warning-rgb), var(--bg-opacity, 1)) !important;
@@ -35,6 +40,7 @@
 
 .text-bg-danger {
   --color-text: var(--color-danger-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-danger-inverse), black 18%);
 
   color: var(--color-danger-inverse) !important;
   background-color: rgba(var(--danger-rgb), var(--bg-opacity, 1)) !important;
@@ -42,6 +48,7 @@
 
 .text-bg-contrast {
   --color-text: var(--color-contrast-inverse) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-contrast-inverse), black 18%);
 
   color: var(--color-contrast-inverse) !important;
   background-color: rgba(var(--contrast-rgb), var(--bg-opacity, 1)) !important;
@@ -206,4 +213,63 @@
 
 .bg-gradient {
   background-image: var(--gradient) !important;
+}
+
+/* Dark mode: headings should be lighter than inverse text (mix in white) */
+@media (prefers-color-scheme: dark) {
+  .text-bg-primary {
+    --color-heading-base: color-mix(in srgb, var(--color-primary-inverse), white 75%);
+  }
+
+  .text-bg-secondary {
+    --color-heading-base: color-mix(in srgb, var(--color-secondary-inverse), white 75%);
+  }
+
+  .text-bg-success {
+    --color-heading-base: color-mix(in srgb, var(--color-success-inverse), white 75%);
+  }
+
+  .text-bg-info {
+    --color-heading-base: color-mix(in srgb, var(--color-info-inverse), white 75%);
+  }
+
+  .text-bg-warning {
+    --color-heading-base: color-mix(in srgb, var(--color-warning-inverse), white 75%);
+  }
+
+  .text-bg-danger {
+    --color-heading-base: color-mix(in srgb, var(--color-danger-inverse), white 75%);
+  }
+
+  .text-bg-contrast {
+    --color-heading-base: color-mix(in srgb, var(--color-contrast-inverse), white 75%);
+  }
+}
+
+[data-theme="dark"] .text-bg-primary {
+  --color-heading-base: color-mix(in srgb, var(--color-primary-inverse), white 75%);
+}
+
+[data-theme="dark"] .text-bg-secondary {
+  --color-heading-base: color-mix(in srgb, var(--color-secondary-inverse), white 75%);
+}
+
+[data-theme="dark"] .text-bg-success {
+  --color-heading-base: color-mix(in srgb, var(--color-success-inverse), white 75%);
+}
+
+[data-theme="dark"] .text-bg-info {
+  --color-heading-base: color-mix(in srgb, var(--color-info-inverse), white 75%);
+}
+
+[data-theme="dark"] .text-bg-warning {
+  --color-heading-base: color-mix(in srgb, var(--color-warning-inverse), white 75%);
+}
+
+[data-theme="dark"] .text-bg-danger {
+  --color-heading-base: color-mix(in srgb, var(--color-danger-inverse), white 75%);
+}
+
+[data-theme="dark"] .text-bg-contrast {
+  --color-heading-base: color-mix(in srgb, var(--color-contrast-inverse), white 75%);
 }
