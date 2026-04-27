@@ -144,7 +144,7 @@
   --color-primary-rgb: 1, 114, 173;
   --color-primary-bg: #0172ad;
   --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(1, 114, 173, 0.5);
+  --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
   --color-primary-hover: #015887;
   --color-primary-hover-bg: #02659a;
   --color-primary-hover-border: var(--color-primary-hover-bg);
@@ -156,24 +156,24 @@
   --color-secondary-rgb: 93, 107, 137;
   --color-secondary-bg: #525f7a;
   --color-secondary-border: var(--color-secondary-bg);
-  --color-secondary-underline: rgba(93, 107, 137, 0.5);
+  --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
   --color-secondary-hover: #48536b;
   --color-secondary-hover-bg: #48536b;
   --color-secondary-hover-border: var(--color-secondary-hover-bg);
   --color-secondary-hover-underline: var(--color-secondary-hover);
-  --color-secondary-focus: rgba(93, 107, 137, 0.25);
+  --color-secondary-focus: rgba(var(--color-secondary-rgb), 0.25);
   --color-secondary-inverse: #fff;
 
   /* Contrast */
   --color-contrast-rgb: 24, 28, 37;
   --color-contrast-bg: #181c25;
   --color-contrast-border: var(--color-contrast-bg);
-  --color-contrast-underline: rgba(24, 28, 37, 0.5);
+  --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
   --color-contrast-hover: #000;
   --color-contrast-hover-bg: #000;
   --color-contrast-hover-border: var(--color-contrast-hover-bg);
   --color-contrast-hover-underline: var(--color-contrast-hover);
-  --color-contrast-focus: rgba(93, 107, 137, 0.25);
+  --color-contrast-focus: rgba(var(--color-contrast-rgb), 0.25);
   --color-contrast-inverse: #fff;
 
   /* Shadows – elevation levels used by cards, dropdowns, and other floating UI */
@@ -327,7 +327,7 @@
     /* Core Colors */
     --color-background: rgb(19, 22.5, 30.5);
     --color-text: #c2c7d0;
-    --color-text-selection: rgba(1, 170, 255, 0.1875);
+    --color-text-selection: rgba(var(--color-primary-rgb), 0.1875);
     --color-text-muted: #7b8495;
     --color-border-muted: #202632;
 
@@ -335,36 +335,36 @@
     --color-primary-rgb: 1, 170, 255;
     --color-primary-bg: #0172ad;
     --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(1, 170, 255, 0.5);
+    --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
     --color-primary-hover: #79c0ff;
     --color-primary-hover-bg: #017fc0;
     --color-primary-hover-border: var(--color-primary-hover-bg);
     --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(1, 170, 255, 0.375);
+    --color-primary-focus: rgba(var(--color-primary-rgb), 0.375);
     --color-primary-inverse: #fff;
 
     /* Secondary */
     --color-secondary-rgb: 150, 158, 175;
     --color-secondary-bg: #525f7a;
     --color-secondary-border: var(--color-secondary-bg);
-    --color-secondary-underline: rgba(150, 158, 175, 0.5);
+    --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
     --color-secondary-hover: #b3b9c5;
     --color-secondary-hover-bg: #5d6b89;
     --color-secondary-hover-border: var(--color-secondary-hover-bg);
     --color-secondary-hover-underline: var(--color-secondary-hover);
-    --color-secondary-focus: rgba(144, 158, 190, 0.25);
+    --color-secondary-focus: rgba(var(--color-secondary-rgb), 0.25);
     --color-secondary-inverse: #fff;
 
     /* Contrast */
     --color-contrast-rgb: 223, 227, 235;
     --color-contrast-bg: #eff1f4;
     --color-contrast-border: var(--color-contrast-bg);
-    --color-contrast-underline: rgba(223, 227, 235, 0.5);
+    --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
     --color-contrast-hover: #fff;
     --color-contrast-hover-bg: #fff;
     --color-contrast-hover-border: var(--color-contrast-hover-bg);
     --color-contrast-hover-underline: var(--color-contrast-hover);
-    --color-contrast-focus: rgba(207, 213, 226, 0.25);
+    --color-contrast-focus: rgba(var(--color-contrast-rgb), 0.25);
     --color-contrast-inverse: #000;
 
     /* Shadows */
@@ -504,7 +504,7 @@
   /* Core Colors */
   --color-background: rgb(19, 22.5, 30.5);
   --color-text: #c2c7d0;
-  --color-text-selection: rgba(1, 170, 255, 0.1875);
+  --color-text-selection: rgba(var(--color-primary-rgb), 0.1875);
   --color-text-muted: #7b8495;
   --color-border-muted: #202632;
 
@@ -512,36 +512,36 @@
   --color-primary-rgb: 1, 170, 255;
   --color-primary-bg: #0172ad;
   --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(1, 170, 255, 0.5);
+  --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
   --color-primary-hover: #79c0ff;
   --color-primary-hover-bg: #017fc0;
   --color-primary-hover-border: var(--color-primary-hover-bg);
   --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(1, 170, 255, 0.375);
+  --color-primary-focus: rgba(var(--color-primary-rgb), 0.375);
   --color-primary-inverse: #fff;
 
   /* Secondary */
   --color-secondary-rgb: 150, 158, 175;
   --color-secondary-bg: #525f7a;
   --color-secondary-border: var(--color-secondary-bg);
-  --color-secondary-underline: rgba(150, 158, 175, 0.5);
+  --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
   --color-secondary-hover: #b3b9c5;
   --color-secondary-hover-bg: #5d6b89;
   --color-secondary-hover-border: var(--color-secondary-hover-bg);
   --color-secondary-hover-underline: var(--color-secondary-hover);
-  --color-secondary-focus: rgba(144, 158, 190, 0.25);
+  --color-secondary-focus: rgba(var(--color-secondary-rgb), 0.25);
   --color-secondary-inverse: #fff;
 
   /* Contrast */
   --color-contrast-rgb: 223, 227, 235;
   --color-contrast-bg: #eff1f4;
   --color-contrast-border: var(--color-contrast-bg);
-  --color-contrast-underline: rgba(223, 227, 235, 0.5);
+  --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
   --color-contrast-hover: #fff;
   --color-contrast-hover-bg: #fff;
   --color-contrast-hover-border: var(--color-contrast-hover-bg);
   --color-contrast-hover-underline: var(--color-contrast-hover);
-  --color-contrast-focus: rgba(207, 213, 226, 0.25);
+  --color-contrast-focus: rgba(var(--color-contrast-rgb), 0.25);
   --color-contrast-inverse: #000;
 
   /* Shadows */
