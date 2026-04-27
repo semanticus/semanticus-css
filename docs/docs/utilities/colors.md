@@ -81,7 +81,7 @@ const linkUnderlineHtml = `<a href="#" class="link-underline-primary">Primary un
 <a href="#" class="link-underline-danger">Danger underline</a>
 `;
 const practicalHtml = `<article class="card text-bg-primary-subtle border border-primary-subtle">
-  <h3 class="text-primary-emphasis">Notification</h3>
+  <h3>Notification</h3>
   <p class="mb-0">Your changes have been saved successfully.</p>
 </article>
 `;

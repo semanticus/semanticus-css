@@ -56,6 +56,7 @@
 
 .text-bg-primary-subtle {
   --color-text: rgb(var(--color-primary-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-primary-emphasis-rgb)) !important;
   background-color: var(--color-primary-bg-subtle) !important;
@@ -63,6 +64,7 @@
 
 .text-bg-secondary-subtle {
   --color-text: rgb(var(--color-secondary-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-secondary-emphasis-rgb)) !important;
   background-color: var(--color-secondary-bg-subtle) !important;
@@ -70,6 +72,7 @@
 
 .text-bg-success-subtle {
   --color-text: rgb(var(--color-success-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-success-emphasis-rgb)) !important;
   background-color: var(--color-success-bg-subtle) !important;
@@ -77,6 +80,7 @@
 
 .text-bg-info-subtle {
   --color-text: rgb(var(--color-info-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-info-emphasis-rgb)) !important;
   background-color: var(--color-info-bg-subtle) !important;
@@ -84,6 +88,7 @@
 
 .text-bg-warning-subtle {
   --color-text: rgb(var(--color-warning-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-warning-emphasis-rgb)) !important;
   background-color: var(--color-warning-bg-subtle) !important;
@@ -91,6 +96,7 @@
 
 .text-bg-danger-subtle {
   --color-text: rgb(var(--color-danger-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-danger-emphasis-rgb)) !important;
   background-color: var(--color-danger-bg-subtle) !important;
@@ -98,6 +104,7 @@
 
 .text-bg-contrast-subtle {
   --color-text: rgb(var(--color-contrast-emphasis-rgb)) !important;
+  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: rgb(var(--color-contrast-emphasis-rgb)) !important;
   background-color: var(--color-contrast-bg-subtle) !important;
