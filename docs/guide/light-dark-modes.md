@@ -13,7 +13,7 @@ By default, Semanticus CSS respects the user's OS color scheme preference using 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.css">
 </head>
 <body>
   <!-- Content automatically adapts to system theme -->
