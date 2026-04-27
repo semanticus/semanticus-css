@@ -1,3 +1,11 @@
+.border-0 {
+  border-width: 0 !important;
+}
+
+.border-d {
+  border-width: var(--border-width-default) !important;
+}
+
 .border-1 {
   border-width: var(--border-width-1) !important;
 }

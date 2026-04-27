@@ -26,10 +26,12 @@ const borderSubtleHtml = `<span class="border border-primary-subtle p-3 d-inline
 <span class="border border-warning-subtle p-3 d-inline-block me-2 mb-2">warning subtle</span>
 <span class="border border-danger-subtle p-3 d-inline-block me-2 mb-2">danger subtle</span>
 `;
-const borderWidthHtml = `<span class="border border-1 p-3 d-inline-block me-2 mb-2">1</span>
+const borderWidthHtml = `<span class="border border-0 p-3 d-inline-block me-2 mb-2">0</span>
+<span class="border border-d p-3 d-inline-block me-2 mb-2">d</span>
+<span class="border border-1 p-3 d-inline-block me-2 mb-2">1</span>
 <span class="border border-2 p-3 d-inline-block me-2 mb-2">2</span>
 <span class="border border-3 p-3 d-inline-block me-2 mb-2">3</span>
-<span class="border border-4 p-3 d-inline-block me-2 mb-2">4</span>
+<span class="border border-4 p-3 d-inline-block me-2 mb-4">4</span>
 <span class="border border-5 p-3 d-inline-block me-2 mb-2">5</span>
 `;
 const borderOpacityHtml = `<div class="border border-success p-2 mb-2">Default success border</div>
@@ -45,6 +47,7 @@ const borderRadiusHtml = `<span class="border rounded p-3 d-inline-block me-2 mb
 <span class="border rounded-start p-3 d-inline-block me-2 mb-2">start</span>
 `;
 const borderRadiusSizesHtml = `<span class="border rounded-0 p-3 d-inline-block me-2 mb-2">0</span>
+<span class="border rounded-d p-3 d-inline-block me-2 mb-2">d</span>
 <span class="border rounded-1 p-3 d-inline-block me-2 mb-2">1</span>
 <span class="border rounded-2 p-3 d-inline-block me-2 mb-2">2</span>
 <span class="border rounded-3 p-3 d-inline-block me-2 mb-2">3</span>
@@ -88,6 +91,8 @@ Change the border color using semantic color utilities.
 
 ## Width
 
+Border width utilities range from `0` (no border) to `5` (thickest). Use `d` for the default border width (matches `--border-width`).
+
 <HtmlPreviewer :code="borderWidthHtml" />
 
 ## Opacity
@@ -104,7 +109,7 @@ Add rounded corners to elements.
 
 ### Radius Sizes
 
-Scale the border radius with size modifiers from `0` to `5`, plus `circle` and `pill`.
+Scale the border radius with size modifiers from `0` to `5`, plus `d` (default), `circle` and `pill`.
 
 <HtmlPreviewer :code="borderRadiusSizesHtml" />
 

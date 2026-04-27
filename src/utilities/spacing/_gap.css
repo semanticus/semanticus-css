@@ -2,6 +2,10 @@
   gap: 0 !important;
 }
 
+.gap-d {
+  gap: var(--spacer-default) !important;
+}
+
 .gap-1 {
   gap: var(--spacer-1) !important;
 }
@@ -24,6 +28,10 @@
 
 .row-gap-0 {
   row-gap: 0 !important;
+}
+
+.row-gap-d {
+  row-gap: var(--spacer-default) !important;
 }
 
 .row-gap-1 {
@@ -49,6 +57,11 @@
 .column-gap-0 {
   -moz-column-gap: 0 !important;
   column-gap: 0 !important;
+}
+
+.column-gap-d {
+  -moz-column-gap: var(--spacer-default) !important;
+  column-gap: var(--spacer-default) !important;
 }
 
 .column-gap-1 {
@@ -80,6 +93,9 @@
   .gap-sm-0 {
     gap: 0 !important;
   }
+  .gap-sm-d {
+    gap: var(--spacer-default) !important;
+  }
   .gap-sm-1 {
     gap: var(--spacer-1) !important;
   }
@@ -97,6 +113,9 @@
   }
   .row-gap-sm-0 {
     row-gap: 0 !important;
+  }
+  .row-gap-sm-d {
+    row-gap: var(--spacer-default) !important;
   }
   .row-gap-sm-1 {
     row-gap: var(--spacer-1) !important;
@@ -116,6 +135,10 @@
   .column-gap-sm-0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
+  }
+  .column-gap-sm-d {
+    -moz-column-gap: var(--spacer-default) !important;
+    column-gap: var(--spacer-default) !important;
   }
   .column-gap-sm-1 {
     -moz-column-gap: var(--spacer-1) !important;
@@ -143,6 +166,9 @@
   .gap-md-0 {
     gap: 0 !important;
   }
+  .gap-md-d {
+    gap: var(--spacer-default) !important;
+  }
   .gap-md-1 {
     gap: var(--spacer-1) !important;
   }
@@ -160,6 +186,9 @@
   }
   .row-gap-md-0 {
     row-gap: 0 !important;
+  }
+  .row-gap-md-d {
+    row-gap: var(--spacer-default) !important;
   }
   .row-gap-md-1 {
     row-gap: var(--spacer-1) !important;
@@ -179,6 +208,10 @@
   .column-gap-md-0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
+  }
+  .column-gap-md-d {
+    -moz-column-gap: var(--spacer-default) !important;
+    column-gap: var(--spacer-default) !important;
   }
   .column-gap-md-1 {
     -moz-column-gap: var(--spacer-1) !important;
@@ -206,6 +239,9 @@
   .gap-lg-0 {
     gap: 0 !important;
   }
+  .gap-lg-d {
+    gap: var(--spacer-default) !important;
+  }
   .gap-lg-1 {
     gap: var(--spacer-1) !important;
   }
@@ -223,6 +259,9 @@
   }
   .row-gap-lg-0 {
     row-gap: 0 !important;
+  }
+  .row-gap-lg-d {
+    row-gap: var(--spacer-default) !important;
   }
   .row-gap-lg-1 {
     row-gap: var(--spacer-1) !important;
@@ -242,6 +281,10 @@
   .column-gap-lg-0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
+  }
+  .column-gap-lg-d {
+    -moz-column-gap: var(--spacer-default) !important;
+    column-gap: var(--spacer-default) !important;
   }
   .column-gap-lg-1 {
     -moz-column-gap: var(--spacer-1) !important;
@@ -269,6 +312,9 @@
   .gap-xl-0 {
     gap: 0 !important;
   }
+  .gap-xl-d {
+    gap: var(--spacer-default) !important;
+  }
   .gap-xl-1 {
     gap: var(--spacer-1) !important;
   }
@@ -286,6 +332,9 @@
   }
   .row-gap-xl-0 {
     row-gap: 0 !important;
+  }
+  .row-gap-xl-d {
+    row-gap: var(--spacer-default) !important;
   }
   .row-gap-xl-1 {
     row-gap: var(--spacer-1) !important;
@@ -305,6 +354,10 @@
   .column-gap-xl-0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
+  }
+  .column-gap-xl-d {
+    -moz-column-gap: var(--spacer-default) !important;
+    column-gap: var(--spacer-default) !important;
   }
   .column-gap-xl-1 {
     -moz-column-gap: var(--spacer-1) !important;
@@ -332,6 +385,9 @@
   .gap-xxl-0 {
     gap: 0 !important;
   }
+  .gap-xxl-d {
+    gap: var(--spacer-default) !important;
+  }
   .gap-xxl-1 {
     gap: var(--spacer-1) !important;
   }
@@ -349,6 +405,9 @@
   }
   .row-gap-xxl-0 {
     row-gap: 0 !important;
+  }
+  .row-gap-xxl-d {
+    row-gap: var(--spacer-default) !important;
   }
   .row-gap-xxl-1 {
     row-gap: var(--spacer-1) !important;
@@ -368,6 +427,10 @@
   .column-gap-xxl-0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
+  }
+  .column-gap-xxl-d {
+    -moz-column-gap: var(--spacer-default) !important;
+    column-gap: var(--spacer-default) !important;
   }
   .column-gap-xxl-1 {
     -moz-column-gap: var(--spacer-1) !important;

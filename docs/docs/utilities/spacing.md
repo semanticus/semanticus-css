@@ -13,6 +13,7 @@ const marginHtml = `<div class="bg-primary-subtle border p-2 mb-2">
 </div>
 `;
 const paddingHtml = `<div class="p-0 bg-primary-subtle border mb-2">p-0</div>
+<div class="p-d bg-primary-subtle border mb-2">p-d (default)</div>
 <div class="p-1 bg-primary-subtle border mb-2">p-1</div>
 <div class="p-2 bg-primary-subtle border mb-2">p-2</div>
 <div class="p-3 bg-primary-subtle border mb-2">p-3</div>
@@ -30,8 +31,14 @@ const horizontalCenterHtml = `<div class="mx-auto p-2 bg-primary-subtle border w
   Centered element
 </div>
 `;
-const gapHtml = `<div class="d-grid gap-3" style="grid-template-columns:1fr 1fr">
-  <div class="p-2 bg-primary-subtle border">Grid item 1</div>
+const gapHtml = `<div class="d-grid gap-d mb-3" style="grid-template-columns:1fr 1fr">
+  <div class="p-2 bg-primary-subtle border">Grid item 1 (gap-d)</div>
+  <div class="p-2 bg-primary-subtle border">Grid item 2</div>
+  <div class="p-2 bg-primary-subtle border">Grid item 3</div>
+  <div class="p-2 bg-primary-subtle border">Grid item 4</div>
+</div>
+<div class="d-grid gap-3" style="grid-template-columns:1fr 1fr">
+  <div class="p-2 bg-primary-subtle border">Grid item 1 (gap-3)</div>
   <div class="p-2 bg-primary-subtle border">Grid item 2</div>
   <div class="p-2 bg-primary-subtle border">Grid item 3</div>
   <div class="p-2 bg-primary-subtle border">Grid item 4</div>
@@ -77,13 +84,13 @@ Responsive margin, padding, and gap utilities to control spacing.
 
 ## Margin
 
-Classes use the format `.m{side}-{size}`, where side is `t` (top), `b` (bottom), `s` (start), `e` (end), `x` (horizontal), `y` (vertical), or blank (all sides). Sizes range from `0` to `5`, plus `auto`.
+Classes use the format `.m{side}-{size}`, where side is `t` (top), `b` (bottom), `s` (start), `e` (end), `x` (horizontal), `y` (vertical), or blank (all sides). Sizes range from `0` to `5`, plus `d` (default) and `auto`.
 
 <HtmlPreviewer :code="marginHtml" />
 
 ## Padding
 
-Classes use the format `.p{side}-{size}`.
+Classes use the format `.p{side}-{size}`. Sizes range from `0` to `5`, plus `d` (default).
 
 <HtmlPreviewer :code="paddingHtml" />
 
@@ -99,7 +106,7 @@ Use `.mx-auto` to center fixed-width block elements.
 
 ## Gap
 
-Use `.gap-{size}` on grid or flex containers to set spacing between children. Sizes range from `0` to `5`. All gap utilities support responsive breakpoints.
+Use `.gap-{size}` on grid or flex containers to set spacing between children. Sizes range from `0` to `5`, plus `d` (default). All gap utilities support responsive breakpoints.
 
 <HtmlPreviewer :code="gapHtml" />
 

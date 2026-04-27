@@ -15,26 +15,30 @@
 
   /* Borders & radii */
   --border-style: solid;
-  --border-radius-sm: var(--border-radius);
-  --border-radius-lg: calc(var(--border-radius) * 2);
-  --border-radius-xl: calc(var(--border-radius) * 4);
-  --border-radius-xxl: calc(var(--border-radius) * 8);
+  --border-radius-default: var(--border-radius);
+  --border-radius-sm: var(--border-radius-default);
+  --border-radius-lg: calc(var(--border-radius-default) * 2);
+  --border-radius-xl: calc(var(--border-radius-default) * 4);
+  --border-radius-xxl: calc(var(--border-radius-default) * 8);
   --border-radius-pill: 50rem;
 
   /* Border-width scale */
-  --border-width-1: var(--border-width);
-  --border-width-2: calc(var(--border-width) * 2);
-  --border-width-3: calc(var(--border-width) * 3);
-  --border-width-4: calc(var(--border-width) * 4);
-  --border-width-5: calc(var(--border-width) * 5);
+  --border-width-default: var(--border-width);
+  --border-width-0: 0;
+  --border-width-1: var(--border-width-default);
+  --border-width-2: calc(var(--border-width-default) * 2);
+  --border-width-3: calc(var(--border-width-default) * 3);
+  --border-width-4: calc(var(--border-width-default) * 4);
+  --border-width-5: calc(var(--border-width-default) * 5);
 
   /* Spacing scale */
+  --spacer-default: var(--spacing);
   --spacer-0: 0;
-  --spacer-1: calc(var(--spacing) * 0.25);
-  --spacer-2: calc(var(--spacing) * 0.5);
-  --spacer-3: var(--spacing);
-  --spacer-4: calc(var(--spacing) * 1.5);
-  --spacer-5: calc(var(--spacing) * 3);
+  --spacer-1: calc(var(--spacer-default) * 0.25);
+  --spacer-2: calc(var(--spacer-default) * 0.5);
+  --spacer-3: var(--spacer-default);
+  --spacer-4: calc(var(--spacer-default) * 1.5);
+  --spacer-5: calc(var(--spacer-default) * 3);
 
   /* Focus ring */
   --focus-ring-width: var(--outline-width);

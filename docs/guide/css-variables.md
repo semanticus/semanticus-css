@@ -148,6 +148,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
+### Utility Scale Variables
+
+Spacing and border-width utilities use calculated scales based on default values:
+
+```css
+:root {
+  /* Spacing scale (used by .m-*, .p-*, .gap-* utilities) */
+  --spacer-default: var(--spacing);
+  --spacer-0: 0;
+  --spacer-1: calc(var(--spacer-default) * 0.25);
+  --spacer-2: calc(var(--spacer-default) * 0.5);
+  --spacer-3: var(--spacer-default);
+  --spacer-4: calc(var(--spacer-default) * 1.5);
+  --spacer-5: calc(var(--spacer-default) * 3);
+
+  /* Border-width scale (used by .border-* utilities) */
+  --border-width-default: var(--border-width);
+  --border-width-0: 0;
+  --border-width-1: var(--border-width-default);
+  --border-width-2: calc(var(--border-width-default) * 2);
+  --border-width-3: calc(var(--border-width-default) * 3);
+  --border-width-4: calc(var(--border-width-default) * 4);
+  --border-width-5: calc(var(--border-width-default) * 5);
+
+  /* Border-radius scale (used by .rounded-* utilities) */
+  --border-radius-default: var(--border-radius);
+  --border-radius-sm: var(--border-radius-default);
+  --border-radius-lg: calc(var(--border-radius-default) * 2);
+  --border-radius-xl: calc(var(--border-radius-default) * 4);
+  --border-radius-xxl: calc(var(--border-radius-default) * 8);
+}
+```
+
+Use the `-d` modifier on utility classes to apply the default value (e.g., `.p-d`, `.border-d`, `.rounded-d`, `.gap-d`).
+
 ## Shadows
 
 ```css
