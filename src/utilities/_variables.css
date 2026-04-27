@@ -48,9 +48,6 @@
   --emphasis-color: rgb(var(--color-contrast-rgb));
   --secondary-color: var(--color-text-muted);
   --border-color: var(--color-border-muted);
-  --box-shadow: var(--shadow-md);
-  --box-shadow-sm: var(--shadow-sm);
-  --box-shadow-lg: var(--shadow-lg);
   --focus-ring-color: var(--color-primary-focus);
 
   --max-z-index: 1050;

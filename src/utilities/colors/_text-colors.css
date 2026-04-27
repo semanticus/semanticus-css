@@ -152,7 +152,7 @@
 
 .text-muted {
   --text-opacity: 1;
-  --color-text: var(--secondary-color) !important;
+  --color-text: var(--color-text-muted) !important;
   --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: var(--color-text) !important;

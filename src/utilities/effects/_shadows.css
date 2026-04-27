@@ -4,15 +4,15 @@
 }
 
 .shadow {
-  box-shadow: var(--box-shadow) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 .shadow-sm {
-  box-shadow: var(--box-shadow-sm) !important;
+  box-shadow: var(--shadow-sm) !important;
 }
 
 .shadow-lg {
-  box-shadow: var(--box-shadow-lg) !important;
+  box-shadow: var(--shadow-lg) !important;
 }
 
 .shadow-none {
