@@ -13,25 +13,25 @@
 .border-success {
   --border-opacity: 1;
 
-  border-color: rgba(var(--success-rgb), var(--border-opacity)) !important;
+  border-color: rgba(var(--color-success-rgb), var(--border-opacity)) !important;
 }
 
 .border-info {
   --border-opacity: 1;
 
-  border-color: rgba(var(--info-rgb), var(--border-opacity)) !important;
+  border-color: rgba(var(--color-info-rgb), var(--border-opacity)) !important;
 }
 
 .border-warning {
   --border-opacity: 1;
 
-  border-color: rgba(var(--warning-rgb), var(--border-opacity)) !important;
+  border-color: rgba(var(--color-warning-rgb), var(--border-opacity)) !important;
 }
 
 .border-danger {
   --border-opacity: 1;
 
-  border-color: rgba(var(--danger-rgb), var(--border-opacity)) !important;
+  border-color: rgba(var(--color-danger-rgb), var(--border-opacity)) !important;
 }
 
 .border-contrast {

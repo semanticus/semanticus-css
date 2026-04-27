@@ -128,10 +128,10 @@
   color-scheme: light;
 
   /* Status Colors */
-  --success-rgb: 43, 122, 76;
-  --info-rgb: 4, 120, 120;
-  --warning-rgb: 255, 191, 0;
-  --danger-rgb: 197, 47, 33;
+  --color-success-rgb: 43, 122, 76;
+  --color-info-rgb: 4, 120, 120;
+  --color-warning-rgb: 255, 191, 0;
+  --color-danger-rgb: 197, 47, 33;
 
   /* Core Colors – page-level background, body text, and text selection highlight */
   --color-background: #fff;
@@ -216,12 +216,12 @@
   --form-active-border: var(--color-primary-border); /* Border when focused */
   --form-focus: var(--color-primary-border); /* Focus ring color */
   --form-disabled-opacity: 0.5; /* Opacity applied to disabled form elements */
-  --form-invalid-border: rgb(var(--danger-rgb)); /* Border for invalid fields (idle) */
-  --form-invalid-active-border: rgb(var(--danger-rgb)); /* Border for invalid fields (focused) */
-  --form-invalid-focus: rgba(var(--danger-rgb), 0.5); /* Focus ring for invalid fields */
-  --form-valid-border: rgb(var(--success-rgb)); /* Border for valid fields (idle) */
-  --form-valid-active-border: rgb(var(--success-rgb)); /* Border for valid fields (focused) */
-  --form-valid-focus: rgba(var(--success-rgb), 0.5); /* Focus ring for valid fields */
+  --form-invalid-border: rgb(var(--color-danger-rgb)); /* Border for invalid fields (idle) */
+  --form-invalid-active-border: rgb(var(--color-danger-rgb)); /* Border for invalid fields (focused) */
+  --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5); /* Focus ring for invalid fields */
+  --form-valid-border: rgb(var(--color-success-rgb)); /* Border for valid fields (idle) */
+  --form-valid-active-border: rgb(var(--color-success-rgb)); /* Border for valid fields (focused) */
+  --form-valid-focus: rgba(var(--color-success-rgb), 0.5); /* Focus ring for valid fields */
 
   /* Switch – toggle switch component (checkbox[role="switch"]) */
   --switch-bg: #bfc7d9; /* Track background (unchecked) */
@@ -319,10 +319,10 @@
     color-scheme: dark;
 
     /* Status Colors */
-    --success-rgb: 110, 213, 157;
-    --info-rgb: 10, 194, 194;
-    --warning-rgb: 255, 191, 0;
-    --danger-rgb: 243, 143, 121;
+    --color-success-rgb: 110, 213, 157;
+    --color-info-rgb: 10, 194, 194;
+    --color-warning-rgb: 255, 191, 0;
+    --color-danger-rgb: 243, 143, 121;
 
     /* Core Colors */
     --color-background: rgb(19, 22.5, 30.5);
@@ -407,12 +407,12 @@
     --form-active-border: var(--color-primary-border);
     --form-focus: var(--color-primary-border);
     --form-disabled-opacity: 0.5;
-    --form-invalid-border: rgb(var(--danger-rgb));
-    --form-invalid-active-border: rgb(var(--danger-rgb));
-    --form-invalid-focus: rgba(var(--danger-rgb), 0.5);
-    --form-valid-border: rgb(var(--success-rgb));
-    --form-valid-active-border: rgb(var(--success-rgb));
-    --form-valid-focus: rgba(var(--success-rgb), 0.5);
+    --form-invalid-border: rgb(var(--color-danger-rgb));
+    --form-invalid-active-border: rgb(var(--color-danger-rgb));
+    --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+    --form-valid-border: rgb(var(--color-success-rgb));
+    --form-valid-active-border: rgb(var(--color-success-rgb));
+    --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
 
     /* Switch */
     --switch-bg: #333c4e;
@@ -496,10 +496,10 @@
   color-scheme: dark;
 
   /* Status Colors */
-  --success-rgb: 110, 213, 157;
-  --info-rgb: 10, 194, 194;
-  --warning-rgb: 255, 191, 0;
-  --danger-rgb: 243, 143, 121;
+  --color-success-rgb: 110, 213, 157;
+  --color-info-rgb: 10, 194, 194;
+  --color-warning-rgb: 255, 191, 0;
+  --color-danger-rgb: 243, 143, 121;
 
   /* Core Colors */
   --color-background: rgb(19, 22.5, 30.5);
@@ -584,12 +584,12 @@
   --form-active-border: var(--color-primary-border);
   --form-focus: var(--color-primary-border);
   --form-disabled-opacity: 0.5;
-  --form-invalid-border: rgb(var(--danger-rgb));
-  --form-invalid-active-border: rgb(var(--danger-rgb));
-  --form-invalid-focus: rgba(var(--danger-rgb), 0.5);
-  --form-valid-border: rgb(var(--success-rgb));
-  --form-valid-active-border: rgb(var(--success-rgb));
-  --form-valid-focus: rgba(var(--success-rgb), 0.5);
+  --form-invalid-border: rgb(var(--color-danger-rgb));
+  --form-invalid-active-border: rgb(var(--color-danger-rgb));
+  --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+  --form-valid-border: rgb(var(--color-success-rgb));
+  --form-valid-active-border: rgb(var(--color-success-rgb));
+  --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
 
   /* Switch */
   --switch-bg: #333c4e;

@@ -294,11 +294,11 @@ textarea {
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=false] + small {
-  color: rgb(var(--success-rgb));
+  color: rgb(var(--color-success-rgb));
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=true] + small {
-  color: rgb(var(--danger-rgb));
+  color: rgb(var(--color-danger-rgb));
 }
 
 label > :where(input, select, textarea) {

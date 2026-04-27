@@ -28,19 +28,19 @@
 }
 
 .focus-ring-success {
-  --focus-ring-color: rgba(var(--success-rgb), var(--focus-ring-opacity));
+  --focus-ring-color: rgba(var(--color-success-rgb), var(--focus-ring-opacity));
 }
 
 .focus-ring-info {
-  --focus-ring-color: rgba(var(--info-rgb), var(--focus-ring-opacity));
+  --focus-ring-color: rgba(var(--color-info-rgb), var(--focus-ring-opacity));
 }
 
 .focus-ring-warning {
-  --focus-ring-color: rgba(var(--warning-rgb), var(--focus-ring-opacity));
+  --focus-ring-color: rgba(var(--color-warning-rgb), var(--focus-ring-opacity));
 }
 
 .focus-ring-danger {
-  --focus-ring-color: rgba(var(--danger-rgb), var(--focus-ring-opacity));
+  --focus-ring-color: rgba(var(--color-danger-rgb), var(--focus-ring-opacity));
 }
 
 .focus-ring-contrast {

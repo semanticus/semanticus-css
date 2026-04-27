@@ -159,11 +159,67 @@
 :host(:not([data-theme="dark"])) {
   color-scheme: light;
 
-  /* Status Colors */
-  --success-rgb: 43, 122, 76;
-  --info-rgb: 4, 120, 120;
-  --warning-rgb: 255, 191, 0;
-  --danger-rgb: 197, 47, 33;
+  /* RGB channels */
+  --color-primary-rgb: 1, 114, 173;
+  --color-secondary-rgb: 93, 107, 137;
+  --color-contrast-rgb: 24, 28, 37;
+  --color-success-rgb: 43, 122, 76;
+  --color-info-rgb: 4, 120, 120;
+  --color-warning-rgb: 255, 191, 0;
+  --color-danger-rgb: 197, 47, 33;
+
+  /* Body & emphasis RGB */
+  --color-body-rgb: 55, 60, 68;
+  --color-body-bg-rgb: 255, 255, 255;
+  --color-emphasis-rgb: 24, 28, 37;
+
+  /* Secondary surfaces */
+  --color-secondary-bg-rgb: 233, 236, 239;
+
+  /* Link RGB */
+  --color-link-rgb: 1, 114, 173;
+  --color-link-hover-rgb: 1, 88, 135;
+
+  /* Link hover RGB (per-variant) */
+  --color-secondary-hover-rgb: 72, 83, 107;
+  --color-success-hover-rgb: 32, 96, 59;
+  --color-info-hover-rgb: 2, 93, 93;
+  --color-warning-hover-rgb: 232, 174, 1;
+  --color-danger-hover-rgb: 155, 35, 24;
+  --color-contrast-hover-rgb: 249, 250, 251;
+
+  /* Text emphasis (darker/hover shades in light) */
+  --color-primary-text-emphasis: #015887;
+  --color-secondary-text-emphasis: #48536b;
+  --color-success-text-emphasis: #20603b;
+  --color-info-text-emphasis: #025d5d;
+  --color-warning-text-emphasis: #694d00;
+  --color-danger-text-emphasis: #9b2318;
+  --color-contrast-text-emphasis: #495057;
+
+  /* Subtle backgrounds (low opacity) */
+  --color-primary-bg-subtle: rgba(1, 114, 173, 0.1);
+  --color-secondary-bg-subtle: rgba(93, 107, 137, 0.1);
+  --color-success-bg-subtle: rgba(43, 122, 76, 0.1);
+  --color-info-bg-subtle: rgba(4, 120, 120, 0.1);
+  --color-warning-bg-subtle: rgba(255, 191, 0, 0.1);
+  --color-danger-bg-subtle: rgba(197, 47, 33, 0.1);
+  --color-contrast-bg-subtle: #ced4da;
+
+  /* Subtle borders (medium opacity) */
+  --color-primary-border-subtle: rgba(1, 114, 173, 0.35);
+  --color-secondary-border-subtle: rgba(93, 107, 137, 0.35);
+  --color-success-border-subtle: rgba(43, 122, 76, 0.35);
+  --color-info-border-subtle: rgba(4, 120, 120, 0.35);
+  --color-warning-border-subtle: rgba(255, 191, 0, 0.35);
+  --color-danger-border-subtle: rgba(197, 47, 33, 0.35);
+  --color-contrast-border-subtle: #adb5bd;
+
+  /* Status inverse colors */
+  --color-success-inverse: #fff;
+  --color-info-inverse: #fff;
+  --color-warning-inverse: #000;
+  --color-danger-inverse: #fff;
 
   /* Core Colors – page-level background, body text, and text selection highlight */
   --color-background: #fff;
@@ -248,12 +304,12 @@
   --form-active-border: var(--color-primary-border); /* Border when focused */
   --form-focus: var(--color-primary-border); /* Focus ring color */
   --form-disabled-opacity: 0.5; /* Opacity applied to disabled form elements */
-  --form-invalid-border: rgb(var(--danger-rgb)); /* Border for invalid fields (idle) */
-  --form-invalid-active-border: rgb(var(--danger-rgb)); /* Border for invalid fields (focused) */
-  --form-invalid-focus: rgba(var(--danger-rgb), 0.5); /* Focus ring for invalid fields */
-  --form-valid-border: rgb(var(--success-rgb)); /* Border for valid fields (idle) */
-  --form-valid-active-border: rgb(var(--success-rgb)); /* Border for valid fields (focused) */
-  --form-valid-focus: rgba(var(--success-rgb), 0.5); /* Focus ring for valid fields */
+  --form-invalid-border: rgb(var(--color-danger-rgb)); /* Border for invalid fields (idle) */
+  --form-invalid-active-border: rgb(var(--color-danger-rgb)); /* Border for invalid fields (focused) */
+  --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5); /* Focus ring for invalid fields */
+  --form-valid-border: rgb(var(--color-success-rgb)); /* Border for valid fields (idle) */
+  --form-valid-active-border: rgb(var(--color-success-rgb)); /* Border for valid fields (focused) */
+  --form-valid-focus: rgba(var(--color-success-rgb), 0.5); /* Focus ring for valid fields */
 
   /* Switch – toggle switch component (checkbox[role="switch"]) */
   --switch-bg: #bfc7d9; /* Track background (unchecked) */
@@ -350,11 +406,61 @@
   :host(:not([data-theme])) {
     color-scheme: dark;
 
-    /* Status Colors */
-    --success-rgb: 110, 213, 157;
-    --info-rgb: 10, 194, 194;
-    --warning-rgb: 255, 191, 0;
-    --danger-rgb: 243, 143, 121;
+    /* RGB channels */
+    --color-primary-rgb: 1, 170, 255;
+    --color-secondary-rgb: 150, 158, 175;
+    --color-contrast-rgb: 248, 249, 250;
+    --color-success-rgb: 110, 213, 157;
+    --color-info-rgb: 10, 194, 194;
+    --color-warning-rgb: 255, 191, 0;
+    --color-danger-rgb: 243, 143, 121;
+
+    /* Body & emphasis RGB */
+    --color-body-rgb: 194, 199, 208;
+    --color-body-bg-rgb: 19, 23, 31;
+    --color-emphasis-rgb: 223, 227, 235;
+
+    /* Secondary surfaces */
+    --color-secondary-bg-rgb: 42, 49, 64;
+
+    /* Link RGB */
+    --color-link-rgb: 1, 170, 255;
+    --color-link-hover-rgb: 121, 192, 255;
+
+    /* Link hover RGB (per-variant) */
+    --color-secondary-hover-rgb: 179, 185, 197;
+    --color-success-hover-rgb: 147, 222, 181;
+    --color-info-hover-rgb: 37, 221, 221;
+    --color-warning-hover-rgb: 232, 174, 1;
+    --color-danger-hover-rgb: 245, 183, 168;
+    --color-contrast-hover-rgb: 255, 255, 255;
+
+    /* Text emphasis (lighter/hover shades in dark) */
+    --color-primary-text-emphasis: #79c0ff;
+    --color-secondary-text-emphasis: #b3b9c5;
+    --color-success-text-emphasis: #93deb5;
+    --color-info-text-emphasis: #25dddd;
+    --color-warning-text-emphasis: #e8ae01;
+    --color-danger-text-emphasis: #f5b7a8;
+    --color-contrast-text-emphasis: #f8f9fa;
+
+    /* Subtle backgrounds */
+    --color-primary-bg-subtle: rgba(1, 170, 255, 0.15);
+    --color-secondary-bg-subtle: rgba(150, 158, 175, 0.15);
+    --color-success-bg-subtle: rgba(110, 213, 157, 0.15);
+    --color-info-bg-subtle: rgba(10, 194, 194, 0.15);
+    --color-warning-bg-subtle: rgba(255, 191, 0, 0.15);
+    --color-danger-bg-subtle: rgba(243, 143, 121, 0.15);
+    --color-contrast-bg-subtle: #2a3140;
+
+    /* Subtle borders */
+    --color-primary-border-subtle: rgba(1, 170, 255, 0.35);
+    --color-secondary-border-subtle: rgba(150, 158, 175, 0.35);
+    --color-success-border-subtle: rgba(110, 213, 157, 0.35);
+    --color-info-border-subtle: rgba(10, 194, 194, 0.35);
+    --color-warning-border-subtle: rgba(255, 191, 0, 0.35);
+    --color-danger-border-subtle: rgba(243, 143, 121, 0.35);
+    --color-contrast-border-subtle: #2a3140;
 
     /* Core Colors */
     --color-background: rgb(19, 22.5, 30.5);
@@ -439,12 +545,12 @@
     --form-active-border: var(--color-primary-border);
     --form-focus: var(--color-primary-border);
     --form-disabled-opacity: 0.5;
-    --form-invalid-border: rgb(var(--danger-rgb));
-    --form-invalid-active-border: rgb(var(--danger-rgb));
-    --form-invalid-focus: rgba(var(--danger-rgb), 0.5);
-    --form-valid-border: rgb(var(--success-rgb));
-    --form-valid-active-border: rgb(var(--success-rgb));
-    --form-valid-focus: rgba(var(--success-rgb), 0.5);
+    --form-invalid-border: rgb(var(--color-danger-rgb));
+    --form-invalid-active-border: rgb(var(--color-danger-rgb));
+    --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+    --form-valid-border: rgb(var(--color-success-rgb));
+    --form-valid-active-border: rgb(var(--color-success-rgb));
+    --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
 
     /* Switch */
     --switch-bg: #333c4e;
@@ -527,11 +633,61 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
-  /* Status Colors */
-  --success-rgb: 110, 213, 157;
-  --info-rgb: 10, 194, 194;
-  --warning-rgb: 255, 191, 0;
-  --danger-rgb: 243, 143, 121;
+  /* RGB channels */
+  --color-primary-rgb: 1, 170, 255;
+  --color-secondary-rgb: 150, 158, 175;
+  --color-contrast-rgb: 248, 249, 250;
+  --color-success-rgb: 110, 213, 157;
+  --color-info-rgb: 10, 194, 194;
+  --color-warning-rgb: 255, 191, 0;
+  --color-danger-rgb: 243, 143, 121;
+
+  /* Body & emphasis RGB */
+  --color-body-rgb: 194, 199, 208;
+  --color-body-bg-rgb: 19, 23, 31;
+  --color-emphasis-rgb: 223, 227, 235;
+
+  /* Secondary surfaces */
+  --color-secondary-bg-rgb: 42, 49, 64;
+
+  /* Link RGB */
+  --color-link-rgb: 1, 170, 255;
+  --color-link-hover-rgb: 121, 192, 255;
+
+  /* Link hover RGB (per-variant) */
+  --color-secondary-hover-rgb: 179, 185, 197;
+  --color-success-hover-rgb: 147, 222, 181;
+  --color-info-hover-rgb: 37, 221, 221;
+  --color-warning-hover-rgb: 232, 174, 1;
+  --color-danger-hover-rgb: 245, 183, 168;
+  --color-contrast-hover-rgb: 255, 255, 255;
+
+  /* Text emphasis (lighter/hover shades in dark) */
+  --color-primary-text-emphasis: #79c0ff;
+  --color-secondary-text-emphasis: #b3b9c5;
+  --color-success-text-emphasis: #93deb5;
+  --color-info-text-emphasis: #25dddd;
+  --color-warning-text-emphasis: #e8ae01;
+  --color-danger-text-emphasis: #f5b7a8;
+  --color-contrast-text-emphasis: #f8f9fa;
+
+  /* Subtle backgrounds */
+  --color-primary-bg-subtle: rgba(1, 170, 255, 0.15);
+  --color-secondary-bg-subtle: rgba(150, 158, 175, 0.15);
+  --color-success-bg-subtle: rgba(110, 213, 157, 0.15);
+  --color-info-bg-subtle: rgba(10, 194, 194, 0.15);
+  --color-warning-bg-subtle: rgba(255, 191, 0, 0.15);
+  --color-danger-bg-subtle: rgba(243, 143, 121, 0.15);
+  --color-contrast-bg-subtle: #2a3140;
+
+  /* Subtle borders */
+  --color-primary-border-subtle: rgba(1, 170, 255, 0.35);
+  --color-secondary-border-subtle: rgba(150, 158, 175, 0.35);
+  --color-success-border-subtle: rgba(110, 213, 157, 0.35);
+  --color-info-border-subtle: rgba(10, 194, 194, 0.35);
+  --color-warning-border-subtle: rgba(255, 191, 0, 0.35);
+  --color-danger-border-subtle: rgba(243, 143, 121, 0.35);
+  --color-contrast-border-subtle: #2a3140;
 
   /* Core Colors */
   --color-background: rgb(19, 22.5, 30.5);
@@ -616,12 +772,12 @@
   --form-active-border: var(--color-primary-border);
   --form-focus: var(--color-primary-border);
   --form-disabled-opacity: 0.5;
-  --form-invalid-border: rgb(var(--danger-rgb));
-  --form-invalid-active-border: rgb(var(--danger-rgb));
-  --form-invalid-focus: rgba(var(--danger-rgb), 0.5);
-  --form-valid-border: rgb(var(--success-rgb));
-  --form-valid-active-border: rgb(var(--success-rgb));
-  --form-valid-focus: rgba(var(--success-rgb), 0.5);
+  --form-invalid-border: rgb(var(--color-danger-rgb));
+  --form-invalid-active-border: rgb(var(--color-danger-rgb));
+  --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+  --form-valid-border: rgb(var(--color-success-rgb));
+  --form-valid-active-border: rgb(var(--color-success-rgb));
+  --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
 
   /* Switch */
   --switch-bg: #333c4e;

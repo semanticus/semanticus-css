@@ -19,7 +19,7 @@
   --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: var(--color-text) !important;
-  background-color: rgba(var(--success-rgb), var(--bg-opacity, 1)) !important;
+  background-color: rgba(var(--color-success-rgb), var(--bg-opacity, 1)) !important;
 }
 
 .text-bg-info {
@@ -27,7 +27,7 @@
   --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: var(--color-text) !important;
-  background-color: rgba(var(--info-rgb), var(--bg-opacity, 1)) !important;
+  background-color: rgba(var(--color-info-rgb), var(--bg-opacity, 1)) !important;
 }
 
 .text-bg-warning {
@@ -35,7 +35,7 @@
   --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: var(--color-text) !important;
-  background-color: rgba(var(--warning-rgb), var(--bg-opacity, 1)) !important;
+  background-color: rgba(var(--color-warning-rgb), var(--bg-opacity, 1)) !important;
 }
 
 .text-bg-danger {
@@ -43,7 +43,7 @@
   --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
 
   color: var(--color-text) !important;
-  background-color: rgba(var(--danger-rgb), var(--bg-opacity, 1)) !important;
+  background-color: rgba(var(--color-danger-rgb), var(--bg-opacity, 1)) !important;
 }
 
 .text-bg-contrast {
@@ -118,25 +118,25 @@
 .bg-success {
   --bg-opacity: 1;
 
-  background-color: rgba(var(--success-rgb), var(--bg-opacity)) !important;
+  background-color: rgba(var(--color-success-rgb), var(--bg-opacity)) !important;
 }
 
 .bg-info {
   --bg-opacity: 1;
 
-  background-color: rgba(var(--info-rgb), var(--bg-opacity)) !important;
+  background-color: rgba(var(--color-info-rgb), var(--bg-opacity)) !important;
 }
 
 .bg-warning {
   --bg-opacity: 1;
 
-  background-color: rgba(var(--warning-rgb), var(--bg-opacity)) !important;
+  background-color: rgba(var(--color-warning-rgb), var(--bg-opacity)) !important;
 }
 
 .bg-danger {
   --bg-opacity: 1;
 
-  background-color: rgba(var(--danger-rgb), var(--bg-opacity)) !important;
+  background-color: rgba(var(--color-danger-rgb), var(--bg-opacity)) !important;
 }
 
 .bg-contrast {

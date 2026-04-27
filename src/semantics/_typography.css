@@ -133,12 +133,12 @@ abbr[title] {
 }
 
 ins {
-  color: rgb(var(--success-rgb));
+  color: rgb(var(--color-success-rgb));
   text-decoration: none;
 }
 
 del {
-  color: rgb(var(--danger-rgb));
+  color: rgb(var(--color-danger-rgb));
 }
 
 ::selection {
