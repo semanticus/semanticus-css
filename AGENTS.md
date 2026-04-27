@@ -84,8 +84,6 @@ All generated files land in `dist/`:
 
 - `semanticus.css`
 - `semanticus-semantics.css`
-- `semanticus-utilities.css`
-- `semanticus-variants.css`
 - `semanticus.palette.<name>.css`
 - `semanticus.size.<name>.css`
 

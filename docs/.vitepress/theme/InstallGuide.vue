@@ -28,10 +28,8 @@ const npmInstallSnippet = 'npm install semanticus-css'
 
 const npmImportSnippet = `import 'semanticus-css';
 
-// Or import individual modules
+// Or import only the semantic layer
 import 'semanticus-css/semantics';
-import 'semanticus-css/variants';
-import 'semanticus-css/utilities';
 
 // Or add a palette / size on top
 import 'semanticus-css/palettes/blue';

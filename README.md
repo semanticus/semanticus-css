@@ -51,10 +51,8 @@ npm install @semanticus/semanticus-css
 ```js
 import '@semanticus/semanticus-css';
 
-// Or import individual modules
+// Or import only the semantic layer
 import '@semanticus/semanticus-css/semantics';
-import '@semanticus/semanticus-css/variants';
-import '@semanticus/semanticus-css/utilities';
 
 // Or add a palette / size on top
 import '@semanticus/semanticus-css/palettes/blue';
