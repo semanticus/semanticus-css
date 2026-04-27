@@ -1,7 +1,13 @@
 /**
  * Semanticus CSS Utilities Modules
+ *
  * Just the utility classes (no global variables, no normalize)
  * Used by the full version which imports global variables and normalize separately
+ *
+ * Adapted from Bootstrap v5.3.8 utilities (https://getbootstrap.com/)
+ * Original work: Copyright (c) 2011-2026 The Bootstrap Authors
+ * Modifications: Copyright (c) 2026 Joao Goncalves
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
 @import './_variables.css';

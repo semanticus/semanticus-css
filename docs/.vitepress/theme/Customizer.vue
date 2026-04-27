@@ -122,18 +122,23 @@ const manualSnippet = computed(() => {
 const cdnSnippet = computed(() => {
   const paletteName = currentPalette.value
   const sizeName = currentSize.value
-  let snippet = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">'
+  const version = __SEMANTICUS_VERSION__
+  let snippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">`
   if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.${paletteName}.css">`
+    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.${paletteName}.css">`
   }
   if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.${sizeName}.css">`
+    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.${sizeName}.css">`
   }
   return snippet
 })
 
 const npmInstallSnippet = computed(() => {
   return 'npm install semanticus-css'
+})
+
+const tarballUrl = computed(() => {
+  return `https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-${__SEMANTICUS_VERSION__}.tgz`
 })
 
 const npmImportSnippet = computed(() => {
@@ -303,7 +308,7 @@ const highlightedNpmImportSnippet = computed(() => {
 
           <!-- Manual Mode -->
           <div v-if="installMode === 'manual'">
-            <p class="install-description">Download the <a href="https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-0.7.0.tgz" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
+            <p class="install-description">Download the <a :href="tarballUrl" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
             <div class="install-code-block">
               <pre><code class="language-html" v-html="highlightedManualSnippet"></code></pre>
               <button class="copy-snippet-btn" @click="copyToClipboard(manualSnippet, 'manual')">

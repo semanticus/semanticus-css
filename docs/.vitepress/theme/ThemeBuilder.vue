@@ -65,7 +65,7 @@ const variableGroups = [
     vars: [
       { name: '--font-family', label: 'Font Family', desc: 'Base font family for body text. Applied to the entire page.', type: 'text', lightDefault: 'system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif', scope: 'root', selectors: 'body, p, li, label, h2, h3, h4, h5, h6, button, input, select, th, td, summary, blockquote, small' },
       { name: '--font-family-monospace', label: 'Monospace Font', desc: 'Font family for code blocks, kbd, and monospaced text.', type: 'text', lightDefault: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace', scope: 'root', selectors: 'code, pre, kbd, samp' },
-      { name: '--font-size', label: 'Base Font Size', desc: 'Root font size as a percentage. Controls the global text scale.', type: 'text', lightDefault: '100%', scope: 'root', selectors: 'body, h2, h3, h4, h5, h6' },
+      { name: '--font-size', label: 'Base Font Size', desc: 'Root font size as a percentage. Controls the global text scale.', type: 'text', lightDefault: '97%', scope: 'root', selectors: 'body, h2, h3, h4, h5, h6' },
       { name: '--line-height', label: 'Line Height', desc: 'Default line height for body text. Unitless multiplier.', type: 'text', lightDefault: '1.5', scope: 'root', selectors: 'body, p, h2, h3, h4, h5, h6, input, select, button' },
       { name: '--font-weight', label: 'Font Weight', desc: 'Default font weight for body text (400 = normal, 700 = bold).', type: 'text', lightDefault: '400', scope: 'root', selectors: 'body, p, h2, h3, h4, h5, h6, label, input, select, button, th, td, code, kbd' },
       { name: '--text-underline-offset', label: 'Underline Offset', desc: 'Distance between text baseline and underline decoration.', type: 'text', lightDefault: '0.1rem', scope: 'root', selectors: 'a:not([role=button])' },
@@ -83,14 +83,14 @@ const variableGroups = [
   {
     label: 'Spacing',
     vars: [
-      { name: '--spacing', label: 'Base Spacing', desc: 'Shared base unit used for padding, margins, and gaps throughout the layout.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
+      { name: '--spacing', label: 'Base Spacing', desc: 'Shared base unit used for padding, margins, and gaps throughout the layout.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
       { name: '--typography-spacing-vertical', label: 'Typography Spacing', desc: 'Vertical margin below typographic elements (paragraphs, lists, etc.).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h2, h3, h4, h5, h6, p, ul, ol, blockquote' },
-      { name: '--block-spacing-vertical', label: 'Block Spacing (V)', desc: 'Vertical padding inside block-level components (cards, modals).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'section, article, dialog' },
-      { name: '--block-spacing-horizontal', label: 'Block Spacing (H)', desc: 'Horizontal padding inside block-level components.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'article, dialog' },
-      { name: '--grid-column-gap', label: 'Grid Column Gap', desc: 'Column gap in CSS Grid layouts.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: '.grid' },
-      { name: '--grid-row-gap', label: 'Grid Row Gap', desc: 'Row gap in CSS Grid layouts.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: '.grid' },
-      { name: '--form-element-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
-      { name: '--form-element-spacing-horizontal', label: 'Input Padding (H)', desc: 'Horizontal padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
+      { name: '--block-spacing-vertical', label: 'Block Spacing (V)', desc: 'Vertical padding inside block-level components (cards, modals).', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'section, article, dialog' },
+      { name: '--block-spacing-horizontal', label: 'Block Spacing (H)', desc: 'Horizontal padding inside block-level components.', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'article, dialog' },
+      { name: '--grid-column-gap', label: 'Grid Column Gap', desc: 'Column gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
+      { name: '--grid-row-gap', label: 'Grid Row Gap', desc: 'Row gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
+      { name: '--form-element-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
+      { name: '--form-element-spacing-horizontal', label: 'Input Padding (H)', desc: 'Horizontal padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.7rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
     ]
   },
   {
@@ -112,10 +112,13 @@ const variableGroups = [
   {
     label: 'Primary Colors',
     vars: [
-      { name: '--color-primary', label: 'Primary', desc: 'Text/border color for primary links and ghost (outline) primary buttons. Also used as accent on progress bars.', type: 'color', lightDefault: '#0172ad', darkDefault: '#01aaff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast), progress' },
       { name: '--color-primary-bg', label: 'Primary BG', desc: 'Background fill for primary buttons, checked checkboxes, and checked radios.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=checkbox]:not([role=switch]), [type=radio]' },
+      { name: '--color-primary-border', label: 'Primary Border', desc: 'Border color for primary elements.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
+      { name: '--color-primary-underline', label: 'Primary Underline', desc: 'Underline color for primary links.', type: 'text', lightDefault: 'rgba(1, 114, 173, 0.5)', darkDefault: 'rgba(1, 170, 255, 0.5)', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast)' },
       { name: '--color-primary-hover', label: 'Primary Hover', desc: 'Text/border color on hover for primary links and ghost (outline) primary buttons.', type: 'color', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast)' },
       { name: '--color-primary-hover-bg', label: 'Primary Hover BG', desc: 'Background on hover for primary filled buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
+      { name: '--color-primary-hover-border', label: 'Primary Hover Border', desc: 'Border color on hover for primary buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
+      { name: '--color-primary-hover-underline', label: 'Primary Hover Underline', desc: 'Underline color on hover for primary links.', type: 'text', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast)' },
       { name: '--color-primary-focus', label: 'Primary Focus', desc: 'Semi-transparent focus ring color for primary buttons, links, and accordion summaries.', type: 'color', lightDefault: 'rgba(2, 154, 232, 0.5)', darkDefault: 'rgba(1, 170, 255, 0.375)', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast), a:not([role=button]):not(.secondary):not(.contrast), details summary' },
       { name: '--color-primary-inverse', label: 'Primary Inverse', desc: 'Text color on top of primary background (e.g., white text on colored button).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=radio]' },
     ]
@@ -123,10 +126,13 @@ const variableGroups = [
   {
     label: 'Secondary Colors',
     vars: [
-      { name: '--color-secondary', label: 'Secondary', desc: 'Text/border color for secondary links and ghost (outline) secondary buttons.', type: 'color', lightDefault: '#5d6b89', darkDefault: '#969eaf', scope: 'theme', selectors: 'a.secondary, button.ghost.secondary' },
       { name: '--color-secondary-bg', label: 'Secondary BG', desc: 'Background fill for secondary buttons and file inputs.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
+      { name: '--color-secondary-border', label: 'Secondary Border', desc: 'Border color for secondary elements.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
+      { name: '--color-secondary-underline', label: 'Secondary Underline', desc: 'Underline color for secondary links.', type: 'text', lightDefault: 'rgba(93, 107, 137, 0.5)', darkDefault: 'rgba(150, 158, 175, 0.5)', scope: 'theme', selectors: 'a.secondary' },
       { name: '--color-secondary-hover', label: 'Secondary Hover', desc: 'Text/border color on hover for secondary links and ghost (outline) secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary, button.ghost.secondary' },
       { name: '--color-secondary-hover-bg', label: 'Secondary Hover BG', desc: 'Background on hover for secondary filled buttons and file inputs.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
+      { name: '--color-secondary-hover-border', label: 'Secondary Hover Border', desc: 'Border color on hover for secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
+      { name: '--color-secondary-hover-underline', label: 'Secondary Hover Underline', desc: 'Underline color on hover for secondary links.', type: 'text', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary' },
       { name: '--color-secondary-focus', label: 'Secondary Focus', desc: 'Focus ring color for secondary buttons and file inputs.', type: 'color', lightDefault: 'rgba(93, 107, 137, 0.25)', darkDefault: 'rgba(144, 158, 190, 0.25)', scope: 'theme', selectors: 'button.secondary, [type=file]' },
       { name: '--color-secondary-inverse', label: 'Secondary Inverse', desc: 'Text on top of secondary background.', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.secondary:not(.ghost)' },
     ]
@@ -134,10 +140,13 @@ const variableGroups = [
   {
     label: 'Contrast Colors',
     vars: [
-      { name: '--color-contrast', label: 'Contrast', desc: 'Text/border color for contrast links and ghost (outline) contrast buttons.', type: 'color', lightDefault: '#181c25', darkDefault: '#dfe3eb', scope: 'theme', selectors: 'a.contrast, button.ghost.contrast' },
       { name: '--color-contrast-bg', label: 'Contrast BG', desc: 'Background fill for contrast buttons.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-border', label: 'Contrast Border', desc: 'Border color for contrast elements.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-underline', label: 'Contrast Underline', desc: 'Underline color for contrast links.', type: 'text', lightDefault: 'rgba(24, 28, 37, 0.5)', darkDefault: 'rgba(248, 249, 250, 0.5)', scope: 'theme', selectors: 'a.contrast' },
       { name: '--color-contrast-hover', label: 'Contrast Hover', desc: 'Text/border color on hover for contrast links and ghost (outline) contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast, button.ghost.contrast' },
       { name: '--color-contrast-hover-bg', label: 'Contrast Hover BG', desc: 'Background on hover for contrast filled buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-hover-border', label: 'Contrast Hover Border', desc: 'Border color on hover for contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-hover-underline', label: 'Contrast Hover Underline', desc: 'Underline color on hover for contrast links.', type: 'text', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast' },
       { name: '--color-contrast-focus', label: 'Contrast Focus', desc: 'Focus ring color for contrast buttons.', type: 'color', lightDefault: 'rgba(93, 107, 137, 0.25)', darkDefault: 'rgba(207, 213, 226, 0.25)', scope: 'theme', selectors: 'button.contrast' },
       { name: '--color-contrast-inverse', label: 'Contrast Inverse', desc: 'Text on top of contrast background.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
     ]
@@ -145,12 +154,13 @@ const variableGroups = [
   {
     label: 'Headings',
     vars: [
-      { name: '--color-h1', label: 'H1 Color', desc: 'Color for <h1> headings (darkest heading level).', type: 'color', lightDefault: '#2d3138', darkDefault: '#f0f1f3', scope: 'theme', selectors: 'h1' },
-      { name: '--color-h2', label: 'H2 Color', desc: 'Color for <h2> headings.', type: 'color', lightDefault: '#373c44', darkDefault: '#e0e3e7', scope: 'theme', selectors: 'h2' },
-      { name: '--color-h3', label: 'H3 Color', desc: 'Color for <h3> headings.', type: 'color', lightDefault: '#424751', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'h3' },
-      { name: '--color-h4', label: 'H4 Color', desc: 'Color for <h4> headings.', type: 'color', lightDefault: '#4d535e', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'h4' },
-      { name: '--color-h5', label: 'H5 Color', desc: 'Color for <h5> headings.', type: 'color', lightDefault: '#5c6370', darkDefault: '#a4acba', scope: 'theme', selectors: 'h5' },
-      { name: '--color-h6', label: 'H6 Color', desc: 'Color for <h6> headings.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'h6' },
+      { name: '--color-heading-base', label: 'Heading Base Color', desc: 'Base color for all headings. Lighter/darker variants are calculated via color-mix.', type: 'color', lightDefault: '#2d3138', darkDefault: '#f0f1f3', scope: 'theme', selectors: 'h1, h2, h3, h4, h5, h6' },
+      { name: '--fs-1', label: 'H1 Font Size', desc: 'Font size for <h1> headings.', type: 'text', lightDefault: '2rem', scope: 'root', selectors: 'h1' },
+      { name: '--fs-2', label: 'H2 Font Size', desc: 'Font size for <h2> headings.', type: 'text', lightDefault: '1.75rem', scope: 'root', selectors: 'h2' },
+      { name: '--fs-3', label: 'H3 Font Size', desc: 'Font size for <h3> headings.', type: 'text', lightDefault: '1.5rem', scope: 'root', selectors: 'h3' },
+      { name: '--fs-4', label: 'H4 Font Size', desc: 'Font size for <h4> headings.', type: 'text', lightDefault: '1.25rem', scope: 'root', selectors: 'h4' },
+      { name: '--fs-5', label: 'H5 Font Size', desc: 'Font size for <h5> headings.', type: 'text', lightDefault: '1.125rem', scope: 'root', selectors: 'h5' },
+      { name: '--fs-6', label: 'H6 Font Size', desc: 'Font size for <h6> headings.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h6' },
     ]
   },
   {
@@ -678,12 +688,13 @@ function downloadCSS() {
 }
 
 const exportSnippet = computed(() => {
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">\n`;
+  const version = __SEMANTICUS_VERSION__
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">\n`;
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.${currentSize.value}.css">\n`
   }
   result += `<link rel="stylesheet" href="/css/semanticus.custom.css">`
 
@@ -695,12 +706,13 @@ const highlightedExportSnippet = computed(() => {
 
 const inlineSnippet = computed(() => {
   const css = buildCustomCSS()
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">\n`
+  const version = __SEMANTICUS_VERSION__
+  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">\n`
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.${currentPalette.value}.css">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.${currentSize.value}.css">\n`
   }
   result += `<style>\n${css}</style>`
 

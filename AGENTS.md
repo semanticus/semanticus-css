@@ -4,7 +4,7 @@ Quick reference for AI agents working on this codebase.
 
 ## What This Is
 
-**Semanticus CSS** is a lightweight, semantic CSS framework (~23 KB gzipped) that combines:
+**Semanticus CSS** is a lightweight, semantic CSS framework (~24 KB gzipped) that combines:
 - **Semantic-first** HTML element styling (PicoCSS-inspired)
 - **Atomic utility classes** (Bootstrap Utilities-inspired)
 - Zero JavaScript dependency

@@ -35,7 +35,7 @@ features:
   - icon:
       src: /icons/performance.svg
     title: Lightweight
-    details: Minimal CSS footprint with zero JavaScript dependency. ~23 KB gzipped for lightning-fast page loads.
+    details: Minimal CSS footprint with zero JavaScript dependency. ~24 KB gzipped for lightning-fast page loads.
   - icon:
       src: /icons/consistency.svg
     title: Consistent Design
@@ -81,8 +81,7 @@ Utility classes for **spacing**, **layout**, **colors**, and more — adapted to
 const example1Html = `<article>
   <h1>Hello World</h1>
   <p>
-    This is a paragraph with
-    <strong>bold</strong> and <em>italic</em> text.
+    Look at me, I'm <strong>bold</strong> and <em>stylish!</em>
   </p>
   <button>Click me</button>
 </article>

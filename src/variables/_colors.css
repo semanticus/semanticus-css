@@ -1,0 +1,366 @@
+/* ==========================================================================
+   Color Variables
+   ==========================================================================
+
+   Semantic color system with RGB values for opacity manipulation,
+   theme-aware variables for light/dark modes, and component color roles.
+
+   Naming convention:
+     --color-{role}           Text color for links, buttons, inline elements
+     --color-{role}-bg        Background fill
+     --color-{role}-border    Border color
+     --color-{role}-underline Semi-transparent underline for links
+     --color-{role}-hover     Text color on hover
+     --color-{role}-hover-bg  Background on hover
+     --color-{role}-focus     Focus ring / outline color
+     --color-{role}-inverse   Text on top of filled backgrounds
+
+   Roles: primary (brand CTA), secondary (neutral actions), contrast (high-emphasis)
+   ========================================================================== */
+
+/* ==========================================================================
+   Light Theme (Default)
+   ========================================================================== */
+
+[data-theme="light"],
+:root:not([data-theme="dark"]),
+:host(:not([data-theme="dark"])) {
+  color-scheme: light;
+
+  /* RGB channels */
+  --color-primary-rgb: 1, 114, 173;
+  --color-secondary-rgb: 93, 107, 137;
+  --color-contrast-rgb: 24, 28, 37;
+  --color-success-rgb: 43, 122, 76;
+  --color-info-rgb: 4, 120, 120;
+  --color-warning-rgb: 255, 191, 0;
+  --color-danger-rgb: 197, 47, 33;
+
+  /* Body & emphasis RGB */
+  --color-body-rgb: 55, 60, 68;
+  --color-text-rgb: 55, 60, 68;
+  --color-body-bg-rgb: 255, 255, 255;
+  --color-emphasis-rgb: 24, 28, 37;
+
+  /* Secondary surfaces */
+  --color-secondary-bg-rgb: 233, 236, 239;
+
+  /* Link RGB */
+  --color-link-rgb: 1, 114, 173;
+
+  /* Emphasis colors (RGB format for use with rgba()) */
+  --color-primary-emphasis-rgb: 1, 88, 135;
+  --color-secondary-emphasis-rgb: 72, 83, 107;
+  --color-success-emphasis-rgb: 32, 96, 59;
+  --color-info-emphasis-rgb: 2, 93, 93;
+  --color-warning-emphasis-rgb: 105, 77, 0;
+  --color-danger-emphasis-rgb: 155, 35, 24;
+  --color-contrast-emphasis-rgb: 249, 250, 251;
+
+  /* Subtle backgrounds (low opacity) */
+  --color-primary-bg-subtle: rgba(var(--color-primary-rgb), 0.1);
+  --color-secondary-bg-subtle: rgba(var(--color-secondary-rgb), 0.1);
+  --color-success-bg-subtle: rgba(var(--color-success-rgb), 0.1);
+  --color-info-bg-subtle: rgba(var(--color-info-rgb), 0.1);
+  --color-warning-bg-subtle: rgba(var(--color-warning-rgb), 0.1);
+  --color-danger-bg-subtle: rgba(var(--color-danger-rgb), 0.1);
+  --color-contrast-bg-subtle: #ced4da;
+
+  /* Subtle borders (medium opacity) */
+  --color-primary-border-subtle: rgba(var(--color-primary-rgb), 0.35);
+  --color-secondary-border-subtle: rgba(var(--color-secondary-rgb), 0.35);
+  --color-success-border-subtle: rgba(var(--color-success-rgb), 0.35);
+  --color-info-border-subtle: rgba(var(--color-info-rgb), 0.35);
+  --color-warning-border-subtle: rgba(var(--color-warning-rgb), 0.35);
+  --color-danger-border-subtle: rgba(var(--color-danger-rgb), 0.35);
+  --color-contrast-border-subtle: #adb5bd;
+
+  /* Status inverse colors */
+  --color-success-inverse: #fff;
+  --color-info-inverse: #fff;
+  --color-warning-inverse: #000;
+  --color-danger-inverse: #fff;
+
+  /* Core Colors */
+  --color-background: #fff;
+  --color-text: rgb(var(--color-text-rgb));
+  --color-text-selection: rgba(2, 154, 232, 0.25);
+  --color-text-muted: color-mix(in srgb, rgb(var(--color-text-rgb)), rgb(128, 128, 128) 70%);
+  --color-border-muted: rgb(231, 234, 239.5);
+
+  /* Primary */
+  --color-primary-bg: #0172ad;
+  --color-primary-border: var(--color-primary-bg);
+  --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
+  --color-primary-hover: #015887;
+  --color-primary-hover-bg: #02659a;
+  --color-primary-hover-border: var(--color-primary-hover-bg);
+  --color-primary-hover-underline: var(--color-primary-hover);
+  --color-primary-focus: rgba(2, 154, 232, 0.5);
+  --color-primary-inverse: #fff;
+
+  /* Secondary */
+  --color-secondary-bg: #525f7a;
+  --color-secondary-border: var(--color-secondary-bg);
+  --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
+  --color-secondary-hover: #48536b;
+  --color-secondary-hover-bg: #48536b;
+  --color-secondary-hover-border: var(--color-secondary-hover-bg);
+  --color-secondary-hover-underline: var(--color-secondary-hover);
+  --color-secondary-focus: rgba(var(--color-secondary-rgb), 0.25);
+  --color-secondary-inverse: #fff;
+
+  /* Contrast */
+  --color-contrast-bg: #181c25;
+  --color-contrast-border: var(--color-contrast-bg);
+  --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
+  --color-contrast-hover: #000;
+  --color-contrast-hover-bg: #000;
+  --color-contrast-hover-border: var(--color-contrast-hover-bg);
+  --color-contrast-hover-underline: var(--color-contrast-hover);
+  --color-contrast-focus: rgba(93, 107, 137, 0.25);
+  --color-contrast-inverse: #fff;
+
+  /* Shadows */
+  --shadow-sm: 0 0.0625rem 0.125rem rgba(129, 145, 181, 0.1);
+  --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(129, 145, 181, 0.15);
+  --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+
+  /* Headings - base color for progressive lightness via color-mix */
+  --color-heading-base: #2d3138;
+
+  /* Mark & Text */
+  --color-mark-bg: rgb(252.5, 230.5, 191.5);
+  --color-mark-text: #0f1114;
+
+  /* Blockquote */
+  --blockquote-border-color: var(--color-border-muted);
+  --blockquote-footer-color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Dark Theme (System Preference)
+   ========================================================================== */
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  :host(:not([data-theme])) {
+    color-scheme: dark;
+
+    /* RGB channels */
+    --color-primary-rgb: 1, 170, 255;
+    --color-secondary-rgb: 150, 158, 175;
+    --color-contrast-rgb: 248, 249, 250;
+    --color-success-rgb: 110, 213, 157;
+    --color-info-rgb: 10, 194, 194;
+    --color-warning-rgb: 255, 191, 0;
+    --color-danger-rgb: 243, 143, 121;
+
+    /* Body & emphasis RGB */
+    --color-body-rgb: 194, 199, 208;
+    --color-text-rgb: 194, 199, 208;
+    --color-body-bg-rgb: 19, 23, 31;
+    --color-emphasis-rgb: 223, 227, 235;
+
+    /* Secondary surfaces */
+    --color-secondary-bg-rgb: 42, 49, 64;
+
+    /* Link RGB */
+    --color-link-rgb: 1, 170, 255;
+
+    /* Emphasis colors */
+    --color-primary-emphasis-rgb: 121, 192, 255;
+    --color-secondary-emphasis-rgb: 179, 185, 197;
+    --color-success-emphasis-rgb: 147, 222, 181;
+    --color-info-emphasis-rgb: 37, 221, 221;
+    --color-warning-emphasis-rgb: 232, 174, 1;
+    --color-danger-emphasis-rgb: 245, 183, 168;
+    --color-contrast-emphasis-rgb: 255, 255, 255;
+
+    /* Subtle backgrounds */
+    --color-primary-bg-subtle: rgba(var(--color-primary-rgb), 0.15);
+    --color-secondary-bg-subtle: rgba(var(--color-secondary-rgb), 0.15);
+    --color-success-bg-subtle: rgba(var(--color-success-rgb), 0.15);
+    --color-info-bg-subtle: rgba(var(--color-info-rgb), 0.15);
+    --color-warning-bg-subtle: rgba(var(--color-warning-rgb), 0.15);
+    --color-danger-bg-subtle: rgba(var(--color-danger-rgb), 0.15);
+    --color-contrast-bg-subtle: #2a3140;
+
+    /* Subtle borders */
+    --color-primary-border-subtle: rgba(var(--color-primary-rgb), 0.35);
+    --color-secondary-border-subtle: rgba(var(--color-secondary-rgb), 0.35);
+    --color-success-border-subtle: rgba(var(--color-success-rgb), 0.35);
+    --color-info-border-subtle: rgba(var(--color-info-rgb), 0.35);
+    --color-warning-border-subtle: rgba(var(--color-warning-rgb), 0.35);
+    --color-danger-border-subtle: rgba(var(--color-danger-rgb), 0.35);
+    --color-contrast-border-subtle: #2a3140;
+
+    /* Core Colors */
+    --color-background: rgb(19, 22.5, 30.5);
+    --color-text: rgb(var(--color-text-rgb));
+    --color-text-selection: rgba(var(--color-primary-rgb), 0.1875);
+    --color-text-muted: color-mix(in srgb, rgb(var(--color-text-rgb)), rgb(128, 128, 128) 70%);
+    --color-border-muted: #202632;
+
+    /* Primary */
+    --color-primary-bg: #0172ad;
+    --color-primary-border: var(--color-primary-bg);
+    --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
+    --color-primary-hover: #79c0ff;
+    --color-primary-hover-bg: #017fc0;
+    --color-primary-hover-border: var(--color-primary-hover-bg);
+    --color-primary-hover-underline: var(--color-primary-hover);
+    --color-primary-focus: rgba(var(--color-primary-rgb), 0.375);
+    --color-primary-inverse: #fff;
+
+    /* Secondary */
+    --color-secondary-bg: #525f7a;
+    --color-secondary-border: var(--color-secondary-bg);
+    --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
+    --color-secondary-hover: #b3b9c5;
+    --color-secondary-hover-bg: #5d6b89;
+    --color-secondary-hover-border: var(--color-secondary-hover-bg);
+    --color-secondary-hover-underline: var(--color-secondary-hover);
+    --color-secondary-focus: rgba(144, 158, 190, 0.25);
+    --color-secondary-inverse: #fff;
+
+    /* Contrast */
+    --color-contrast-bg: #eff1f4;
+    --color-contrast-border: var(--color-contrast-bg);
+    --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
+    --color-contrast-hover: #fff;
+    --color-contrast-hover-bg: #fff;
+    --color-contrast-hover-border: var(--color-contrast-hover-bg);
+    --color-contrast-hover-underline: var(--color-contrast-hover);
+    --color-contrast-focus: rgba(207, 213, 226, 0.25);
+    --color-contrast-inverse: #000;
+
+    /* Shadows */
+    --shadow-sm: 0 0.0625rem 0.125rem rgba(7, 8.5, 12, 0.1);
+    --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15);
+    --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+
+    /* Headings */
+    --color-heading-base: #f0f1f3;
+
+    /* Mark & Text */
+    --color-mark-bg: #014063;
+    --color-mark-text: #fff;
+
+    /* Blockquote */
+    --blockquote-border-color: var(--color-border-muted);
+    --blockquote-footer-color: var(--color-text-muted);
+  }
+}
+
+/* ==========================================================================
+   Dark Theme (Explicit)
+   ========================================================================== */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* RGB channels */
+  --color-primary-rgb: 1, 170, 255;
+  --color-secondary-rgb: 150, 158, 175;
+  --color-contrast-rgb: 248, 249, 250;
+  --color-success-rgb: 110, 213, 157;
+  --color-info-rgb: 10, 194, 194;
+  --color-warning-rgb: 255, 191, 0;
+  --color-danger-rgb: 243, 143, 121;
+
+  /* Body & emphasis RGB */
+  --color-body-rgb: 194, 199, 208;
+  --color-text-rgb: 194, 199, 208;
+  --color-body-bg-rgb: 19, 23, 31;
+  --color-emphasis-rgb: 223, 227, 235;
+
+  /* Secondary surfaces */
+  --color-secondary-bg-rgb: 42, 49, 64;
+
+  /* Link RGB */
+  --color-link-rgb: 1, 170, 255;
+
+  /* Emphasis colors */
+  --color-primary-emphasis-rgb: 121, 192, 255;
+  --color-secondary-emphasis-rgb: 179, 185, 197;
+  --color-success-emphasis-rgb: 147, 222, 181;
+  --color-info-emphasis-rgb: 37, 221, 221;
+  --color-warning-emphasis-rgb: 232, 174, 1;
+  --color-danger-emphasis-rgb: 245, 183, 168;
+  --color-contrast-emphasis-rgb: 255, 255, 255;
+
+  /* Subtle backgrounds */
+  --color-primary-bg-subtle: rgba(var(--color-primary-rgb), 0.15);
+  --color-secondary-bg-subtle: rgba(var(--color-secondary-rgb), 0.15);
+  --color-success-bg-subtle: rgba(var(--color-success-rgb), 0.15);
+  --color-info-bg-subtle: rgba(var(--color-info-rgb), 0.15);
+  --color-warning-bg-subtle: rgba(var(--color-warning-rgb), 0.15);
+  --color-danger-bg-subtle: rgba(var(--color-danger-rgb), 0.15);
+  --color-contrast-bg-subtle: #2a3140;
+
+  /* Subtle borders */
+  --color-primary-border-subtle: rgba(var(--color-primary-rgb), 0.35);
+  --color-secondary-border-subtle: rgba(var(--color-secondary-rgb), 0.35);
+  --color-success-border-subtle: rgba(var(--color-success-rgb), 0.35);
+  --color-info-border-subtle: rgba(var(--color-info-rgb), 0.35);
+  --color-warning-border-subtle: rgba(var(--color-warning-rgb), 0.35);
+  --color-danger-border-subtle: rgba(var(--color-danger-rgb), 0.35);
+  --color-contrast-border-subtle: #2a3140;
+
+  /* Core Colors */
+  --color-background: rgb(19, 22.5, 30.5);
+  --color-text: #c2c7d0;
+  --color-text-selection: rgba(var(--color-primary-rgb), 0.1875);
+  --color-text-muted: color-mix(in srgb, rgb(var(--color-text-rgb)), rgb(128, 128, 128) 70%);
+  --color-border-muted: #202632;
+
+  /* Primary */
+  --color-primary-bg: #0172ad;
+  --color-primary-border: var(--color-primary-bg);
+  --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
+  --color-primary-hover: #79c0ff;
+  --color-primary-hover-bg: #017fc0;
+  --color-primary-hover-border: var(--color-primary-hover-bg);
+  --color-primary-hover-underline: var(--color-primary-hover);
+  --color-primary-focus: rgba(var(--color-primary-rgb), 0.375);
+  --color-primary-inverse: #fff;
+
+  /* Secondary */
+  --color-secondary-bg: #525f7a;
+  --color-secondary-border: var(--color-secondary-bg);
+  --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
+  --color-secondary-hover: #b3b9c5;
+  --color-secondary-hover-bg: #5d6b89;
+  --color-secondary-hover-border: var(--color-secondary-hover-bg);
+  --color-secondary-hover-underline: var(--color-secondary-hover);
+  --color-secondary-focus: rgba(144, 158, 190, 0.25);
+  --color-secondary-inverse: #fff;
+
+  /* Contrast */
+  --color-contrast-bg: #eff1f4;
+  --color-contrast-border: var(--color-contrast-bg);
+  --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
+  --color-contrast-hover: #fff;
+  --color-contrast-hover-bg: #fff;
+  --color-contrast-hover-border: var(--color-contrast-hover-bg);
+  --color-contrast-hover-underline: var(--color-contrast-hover);
+  --color-contrast-focus: rgba(207, 213, 226, 0.25);
+  --color-contrast-inverse: #000;
+
+  /* Shadows */
+  --shadow-sm: 0 0.0625rem 0.125rem rgba(7, 8.5, 12, 0.1);
+  --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15);
+  --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+
+  /* Headings */
+  --color-heading-base: #f0f1f3;
+
+  /* Mark & Text */
+  --color-mark-bg: #014063;
+  --color-mark-text: #fff;
+
+  /* Blockquote */
+  --blockquote-border-color: var(--color-border-muted);
+  --blockquote-footer-color: var(--color-text-muted);
+}

@@ -23,16 +23,16 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 ### Option 1: CDN (quick start)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.pico.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.palette.blue.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.size.pico.css">
 ```
 
 ### Option 2: Install manually
 
-Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-0.7.0.tgz), move the ones you need to your **stylesheets** folder and include them in your HTML `<head>`:
+Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-0.8.0.tgz), move the ones you need to your **stylesheets** folder and include them in your HTML `<head>`:
 
 ```html
 <link rel="stylesheet" href="/css/semanticus.css">
@@ -74,7 +74,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — no classes needed. 
 ```html
 <article>
   <h1>Hello World</h1>
-  <p>This is a paragraph with <strong>bold</strong> and <em>italic</em> text.</p>
+  <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   <button>Click me</button>
 </article>
 ```

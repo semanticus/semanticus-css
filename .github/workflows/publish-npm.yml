@@ -63,23 +63,23 @@ jobs:
             echo "target_branch=$TARGET_BRANCH" >> "$GITHUB_OUTPUT"
             echo "package_version=$CLEAN_VERSION" >> "$GITHUB_OUTPUT"
 
-      - name: Update versioned CDN URLs
+      - name: Update versioned references
         env:
           SEMANTICUS_CDN_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
-        run: npm run release:update-cdn-urls
+        run: npm run release:sync-versions
 
-      - name: Commit updated CDN URLs
+      - name: Commit updated version references
         env:
           PACKAGE_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
           TARGET_BRANCH: ${{ steps.prepare-target-branch.outputs.target_branch }}
         run: |
             if git diff --quiet; then
-              echo "No CDN URL updates to commit."
+              echo "No version reference updates to commit."
               exit 0
             fi
 
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add README.md docs scripts/update-cdn-urls.js package.json
-            git commit -m "docs: update CDN URLs for v$PACKAGE_VERSION"
+            git add README.md docs scripts/sync-version-references.js src/ LICENSE NOTICE package.json
+            git commit -m "chore: sync version references for v$PACKAGE_VERSION"
             git push origin "HEAD:$TARGET_BRANCH"

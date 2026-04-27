@@ -1,0 +1,199 @@
+/* ==========================================================================
+   Element-Scoped Variables
+   ==========================================================================
+
+   These selectors override global :root variables on a per-element basis
+   so each component can have its own defaults (font-size, weight,
+   line-height, border-radius, etc.) without class-name bloat.
+
+   This enables semantic HTML elements to have appropriate styling
+   out of the box.
+   ========================================================================== */
+
+/* Links */
+a {
+  --text-decoration: underline;
+}
+
+a.secondary,
+a.contrast {
+  --text-decoration: underline;
+}
+
+/* Small text */
+small {
+  --font-size: 0.875em;
+}
+
+/* ==========================================================================
+   Heading Typography
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --font-weight: 700;
+}
+
+h1 {
+  --font-size: var(--fs-1);
+  --line-height: 1.125;
+  --typography-headings-top: 3rem;
+}
+
+h2 {
+  --font-size: var(--fs-2);
+  --line-height: 1.15;
+  --typography-headings-top: 2.625rem;
+}
+
+h3 {
+  --font-size: var(--fs-3);
+  --line-height: 1.175;
+  --typography-headings-top: 2.25rem;
+}
+
+h4 {
+  --font-size: var(--fs-4);
+  --line-height: 1.2;
+  --typography-headings-top: 1.874rem;
+}
+
+h5 {
+  --font-size: var(--fs-5);
+  --line-height: 1.225;
+  --typography-headings-top: 1.6875rem;
+}
+
+h6 {
+  --font-size: var(--fs-6);
+  --line-height: 1.25;
+  --typography-headings-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Table Elements
+   ========================================================================== */
+
+thead th,
+thead td,
+tfoot th,
+tfoot td {
+  --font-weight: 600;
+  --border-width: 0.1875rem;
+}
+
+/* ==========================================================================
+   Code Elements
+   ========================================================================== */
+
+pre,
+code,
+kbd,
+samp {
+  --font-family: var(--font-family-monospace);
+}
+
+kbd {
+  --font-weight: bolder;
+}
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+
+/* Text-style form inputs use a thinner outline */
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ),
+:where(select, textarea) {
+  --outline-width: 0.0625rem;
+}
+
+/* Search inputs are pill-shaped */
+[type="search"] {
+  --border-radius: 5rem;
+}
+
+/* Checkboxes & radios use a slightly thicker border */
+[type="checkbox"],
+[type="radio"] {
+  --border-width: 0.125rem;
+}
+
+/* Toggle switches get an even thicker border */
+[type="checkbox"][role="switch"] {
+  --border-width: 0.1875rem;
+}
+
+/* Search role wrappers are pill-shaped */
+[role="search"] {
+  --border-radius: 5rem;
+}
+
+/* ==========================================================================
+   Button Group Focus Ring Overrides
+   ========================================================================== */
+
+/* Secondary button focus in groups */
+[role="search"]:has(
+    button.secondary:focus,
+    [type="submit"].secondary:focus,
+    [type="button"].secondary:focus,
+    [role="button"].secondary:focus
+  ),
+[role="group"]:has(
+    button.secondary:focus,
+    [type="submit"].secondary:focus,
+    [type="button"].secondary:focus,
+    [role="button"].secondary:focus
+  ) {
+  --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-secondary-focus);
+}
+
+/* Contrast button focus in groups */
+[role="search"]:has(
+    button.contrast:focus,
+    [type="submit"].contrast:focus,
+    [type="button"].contrast:focus,
+    [role="button"].contrast:focus
+  ),
+[role="group"]:has(
+    button.contrast:focus,
+    [type="submit"].contrast:focus,
+    [type="button"].contrast:focus,
+    [role="button"].contrast:focus
+  ) {
+  --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-contrast-focus);
+}
+
+/* Buttons inside search/group combos get wider horizontal padding */
+[role="search"] button,
+[role="search"] [type="submit"],
+[role="search"] [type="button"],
+[role="search"] [role="button"],
+[role="group"] button,
+[role="group"] [type="submit"],
+[role="group"] [type="button"],
+[role="group"] [role="button"] {
+  --form-element-spacing-horizontal: 1rem;
+}
+
+/* ==========================================================================
+   Form Element Accent Color
+   ========================================================================== */
+
+/* Native browser accent-color for checkboxes, radios, and range sliders */
+[type="checkbox"],
+[type="radio"],
+[type="range"] {
+  accent-color: rgb(var(--color-primary-rgb));
+}

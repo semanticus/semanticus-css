@@ -1,7 +1,12 @@
-/**
- * Semanticus CSS Semantics
- * Variables + Normalize + Semantic HTML components
- * Perfect for semantic-first development without utility classes
+/*!
+ * Semanticus CSS Semantics Bundle v0.8.0 (https://semanticus.design/)
+ *
+ * Semantic-first HTML styling (no variants or utility classes)
+ *
+ * Adapted from Pico CSS (https://picocss.com)
+ * Original work: Copyright (c) 2019-2024 Pico CSS
+ * Modifications: Copyright (c) 2026 Joao Goncalves
+ * Licensed under MIT (https://github.com/semanticus/semanticus-css/blob/main/LICENSE)
  */
 
 /* Variables */

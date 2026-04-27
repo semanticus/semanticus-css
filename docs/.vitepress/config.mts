@@ -2,6 +2,11 @@ import { defineConfig } from 'vitepress'
 import path from 'path'
 import fs from 'fs'
 
+// Load package.json for version info
+const packageJsonPath = path.resolve(process.cwd(), 'package.json')
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
+const packageVersion = packageJson.version
+
 const semanticusDistPath = path.resolve(process.cwd(), 'dist')
 const indexHtmlPath = path.resolve(__dirname, '../../index.html')
 
@@ -29,6 +34,9 @@ export default defineConfig({
     }
   },
   vite: {
+    define: {
+      __SEMANTICUS_VERSION__: JSON.stringify(packageVersion)
+    },
     vue: {
       exclude: [/\.md$/]
     },

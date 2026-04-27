@@ -18,11 +18,14 @@ const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
 <link rel="stylesheet" href="/css/semanticus.size.pico.css">`
 
-const cdnSnippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">
+const cdnSnippet = computed(() => {
+  const version = __SEMANTICUS_VERSION__
+  return `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.pico.css">`
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.blue.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.pico.css">`
+})
 
 const npmInstallSnippet = 'npm install semanticus-css'
 
@@ -35,12 +38,16 @@ import 'semanticus-css/semantics';
 import 'semanticus-css/palettes/blue';
 import 'semanticus-css/sizes/pico';`
 
+const tarballUrl = computed(() => {
+  return `https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-${__SEMANTICUS_VERSION__}.tgz`
+})
+
 const highlightedManualSnippet = computed(() => {
   return hljs.highlight(manualSnippet, { language: 'html' }).value
 })
 
 const highlightedCdnSnippet = computed(() => {
-  return hljs.highlight(cdnSnippet, { language: 'html' }).value
+  return hljs.highlight(cdnSnippet.value, { language: 'html' }).value
 })
 
 const highlightedNpmInstallSnippet = computed(() => {
@@ -91,7 +98,7 @@ async function copyToClipboard(text, type) {
 
     <!-- Manual Mode -->
     <div v-if="installMode === 'manual'">
-      <p class="install-description">Download the <a href="https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-0.7.0.tgz" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
+      <p class="install-description">Download the <a :href="tarballUrl" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
       <div class="install-code-block">
         <pre><code class="language-html" v-html="highlightedManualSnippet"></code></pre>
         <button class="copy-snippet-btn" @click="copyToClipboard(manualSnippet, 'manual')">

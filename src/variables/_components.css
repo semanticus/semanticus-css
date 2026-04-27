@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Component Variables
+   ==========================================================================
+
+   Component-specific CSS custom properties organized by UI component.
+   These define the appearance of buttons, forms, tables, cards, modals,
+   and other interactive elements.
+
+   Each component section is self-contained with all its color, spacing,
+   and state variable definitions.
+   ========================================================================== */
+
+/* ==========================================================================
+   Light Theme Component Variables
+   ========================================================================== */
+
+[data-theme="light"],
+:root:not([data-theme="dark"]),
+:host(:not([data-theme="dark"])) {
+  /* Button */
+  --button-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --button-shadow-hover: 0 0 0 rgba(0, 0, 0, 0);
+
+  /* Table */
+  --table-border-color: var(--color-border-muted);
+  --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
+
+  /* Code */
+  --color-code-bg: rgb(243, 244.5, 246.75);
+  --color-code-text: #646b79;
+  --color-kbd-bg: var(--color-text);
+  --color-kbd-text: var(--color-background);
+
+  /* Form Elements */
+  --form-bg: rgb(251, 251.5, 252.25);
+  --form-selected-bg: #dfe3eb;
+  --form-border-color: #cfd5e2;
+  --form-text-color: #23262c;
+  --form-placeholder-color: var(--color-text-muted);
+  --form-active-bg: #fff;
+  --form-active-border: var(--color-primary-border);
+  --form-focus: var(--color-primary-border);
+  --form-disabled-opacity: 0.5;
+  --form-invalid-border: rgb(var(--color-danger-rgb));
+  --form-invalid-active-border: rgb(var(--color-danger-rgb));
+  --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+  --form-valid-border: rgb(var(--color-success-rgb));
+  --form-valid-active-border: rgb(var(--color-success-rgb));
+  --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
+
+  /* Switch */
+  --switch-bg: #bfc7d9;
+  --switch-checked-bg: var(--color-primary-bg);
+  --switch-thumb-color: #fff;
+  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  /* Range */
+  --range-border-color: #dfe3eb;
+  --range-active-border: #bfc7d9;
+  --range-thumb-border: var(--color-background);
+  --range-thumb-color: var(--color-secondary-bg);
+  --range-thumb-active: var(--color-primary-bg);
+
+  /* Accordion */
+  --accordion-border: var(--color-border-muted);
+  --accordion-active-summary: var(--color-primary-hover);
+  --accordion-closed-summary: var(--color-text);
+  --accordion-open-summary: var(--color-text-muted);
+
+  /* Card */
+  --card-bg: var(--color-background);
+  --card-border: var(--color-border-muted);
+  --card-shadow: var(--shadow-lg);
+  --card-section-bg: rgb(251, 251.5, 252.25);
+
+  /* Dropdown */
+  --dropdown-bg: #fff;
+  --dropdown-border: #eff1f4;
+  --dropdown-shadow: var(--shadow-lg);
+  --dropdown-text: var(--color-text);
+  --dropdown-hover-bg: #eff1f4;
+
+  /* Loading & Modal */
+  --loading-spinner-opacity: 0.5;
+  --modal-overlay-bg: rgba(232, 234, 237, 0.75);
+
+  /* Progress */
+  --progress-bg: #dfe3eb;
+  --progress-fill: var(--color-primary-bg);
+
+  /* Tooltip */
+  --tooltip-bg: var(--color-contrast-bg);
+  --tooltip-text: var(--color-contrast-inverse);
+}
+
+/* Form focus override for actionable input types in light mode */
+[data-theme="light"] input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ),
+:root:not([data-theme="dark"]) input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ),
+:host(:not([data-theme="dark"])) input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ) {
+  --form-focus: var(--color-primary-focus);
+}
+
+/* ==========================================================================
+   Dark Theme Component Variables (System Preference)
+   ========================================================================== */
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  :host(:not([data-theme])) {
+    /* Button */
+    --button-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --button-shadow-hover: 0 0 0 rgba(0, 0, 0, 0);
+
+    /* Table */
+    --table-border-color: var(--color-border-muted);
+    --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
+
+    /* Code */
+    --color-code-bg: rgb(26, 30.5, 40.25);
+    --color-code-text: #8891a4;
+    --color-kbd-bg: var(--color-text);
+    --color-kbd-text: var(--color-background);
+
+    /* Form Elements */
+    --form-bg: rgb(28, 33, 43.5);
+    --form-selected-bg: #2a3140;
+    --form-border-color: #2a3140;
+    --form-text-color: #e0e3e7;
+    --form-placeholder-color: #8891a4;
+    --form-active-bg: rgb(26, 30.5, 40.25);
+    --form-active-border: var(--color-primary-border);
+    --form-focus: var(--color-primary-border);
+    --form-disabled-opacity: 0.5;
+    --form-invalid-border: rgb(var(--color-danger-rgb));
+    --form-invalid-active-border: rgb(var(--color-danger-rgb));
+    --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+    --form-valid-border: rgb(var(--color-success-rgb));
+    --form-valid-active-border: rgb(var(--color-success-rgb));
+    --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
+
+    /* Switch */
+    --switch-bg: #333c4e;
+    --switch-checked-bg: var(--color-primary-bg);
+    --switch-thumb-color: #fff;
+    --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    /* Range */
+    --range-border-color: #202632;
+    --range-active-border: #2a3140;
+    --range-thumb-border: var(--color-background);
+    --range-thumb-color: var(--color-secondary-bg);
+    --range-thumb-active: var(--color-primary-bg);
+
+    /* Accordion */
+    --accordion-border: var(--color-border-muted);
+    --accordion-active-summary: var(--color-primary-hover);
+    --accordion-closed-summary: var(--color-text);
+    --accordion-open-summary: var(--color-text-muted);
+
+    /* Card */
+    --card-bg: #181c25;
+    --card-border: var(--card-bg);
+    --card-shadow: var(--shadow-lg);
+    --card-section-bg: rgb(26, 30.5, 40.25);
+
+    /* Dropdown */
+    --dropdown-bg: #181c25;
+    --dropdown-border: #202632;
+    --dropdown-shadow: var(--shadow-lg);
+    --dropdown-text: var(--color-text);
+    --dropdown-hover-bg: #202632;
+
+    /* Loading & Modal */
+    --loading-spinner-opacity: 0.5;
+    --modal-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
+
+    /* Progress */
+    --progress-bg: #202632;
+    --progress-fill: var(--color-primary-bg);
+
+    /* Tooltip */
+    --tooltip-bg: var(--color-contrast-bg);
+    --tooltip-text: var(--color-contrast-inverse);
+  }
+
+  :root:not([data-theme]) input:is(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]
+    ),
+  :host(:not([data-theme])) input:is(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]
+    ) {
+    --form-focus: var(--color-primary-focus);
+  }
+}
+
+/* ==========================================================================
+   Dark Theme Component Variables (Explicit)
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* Button */
+  --button-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --button-shadow-hover: 0 0 0 rgba(0, 0, 0, 0);
+
+  /* Table */
+  --table-border-color: var(--color-border-muted);
+  --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
+
+  /* Code */
+  --color-code-bg: rgb(26, 30.5, 40.25);
+  --color-code-text: #8891a4;
+  --color-kbd-bg: var(--color-text);
+  --color-kbd-text: var(--color-background);
+
+  /* Form Elements */
+  --form-bg: rgb(28, 33, 43.5);
+  --form-selected-bg: #2a3140;
+  --form-border-color: #2a3140;
+  --form-text-color: #e0e3e7;
+  --form-placeholder-color: #8891a4;
+  --form-active-bg: rgb(26, 30.5, 40.25);
+  --form-active-border: var(--color-primary-border);
+  --form-focus: var(--color-primary-border);
+  --form-disabled-opacity: 0.5;
+  --form-invalid-border: rgb(var(--color-danger-rgb));
+  --form-invalid-active-border: rgb(var(--color-danger-rgb));
+  --form-invalid-focus: rgba(var(--color-danger-rgb), 0.5);
+  --form-valid-border: rgb(var(--color-success-rgb));
+  --form-valid-active-border: rgb(var(--color-success-rgb));
+  --form-valid-focus: rgba(var(--color-success-rgb), 0.5);
+
+  /* Switch */
+  --switch-bg: #333c4e;
+  --switch-checked-bg: var(--color-primary-bg);
+  --switch-thumb-color: #fff;
+  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  /* Range */
+  --range-border-color: #202632;
+  --range-active-border: #2a3140;
+  --range-thumb-border: var(--color-background);
+  --range-thumb-color: var(--color-secondary-bg);
+  --range-thumb-active: var(--color-primary-bg);
+
+  /* Accordion */
+  --accordion-border: var(--color-border-muted);
+  --accordion-active-summary: var(--color-primary-hover);
+  --accordion-closed-summary: var(--color-text);
+  --accordion-open-summary: var(--color-text-muted);
+
+  /* Card */
+  --card-bg: #181c25;
+  --card-border: var(--card-bg);
+  --card-shadow: var(--shadow-lg);
+  --card-section-bg: rgb(26, 30.5, 40.25);
+
+  /* Dropdown */
+  --dropdown-bg: #181c25;
+  --dropdown-border: #202632;
+  --dropdown-shadow: var(--shadow-lg);
+  --dropdown-text: var(--color-text);
+  --dropdown-hover-bg: #202632;
+
+  /* Loading & Modal */
+  --loading-spinner-opacity: 0.5;
+  --modal-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
+
+  /* Progress */
+  --progress-bg: #202632;
+  --progress-fill: var(--color-primary-bg);
+
+  /* Tooltip */
+  --tooltip-bg: var(--color-contrast-bg);
+  --tooltip-text: var(--color-contrast-inverse);
+}
+
+/* Form focus override for actionable input types in explicit dark mode */
+[data-theme="dark"] input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ) {
+  --form-focus: var(--color-primary-focus);
+}
