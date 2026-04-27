@@ -40,7 +40,7 @@ const palettes = [
 
 const sizes = [
   { name: 'default', label: 'Default', description: 'Standard sizing for all elements' },
-  { name: 'slim', label: 'Slim', description: 'Reduced sizing and spacing' }
+  { name: 'pico', label: 'PicoCSS', description: 'PicoCSS original values' }
 ]
 
 const currentPalette = ref('azure')
@@ -254,7 +254,7 @@ const highlightedNpmImportSnippet = computed(() => {
             The Customizer lets you preview different color palettes and size variants for Semanticus CSS.
           </p>
           <ul class="help-list">
-            <li><strong>Sizes</strong> — Choose between <em>Default</em> (standard spacing) or <em>Slim</em> (compact spacing).</li>
+            <li><strong>Sizes</strong> — Choose between <em>Default</em> (standard spacing) or <em>PicoCSS</em> (compact spacing).</li>
             <li><strong>Palettes</strong> — Pick a color palette. The preview updates instantly to show how components look.</li>
             <li><strong>How to install</strong> — Click the top-right button to get copy-paste ready snippets for your project.</li>
           </ul>

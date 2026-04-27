@@ -1,29 +1,5 @@
-/* ==========================================================================
-   Responsive Breakpoints (custom media queries)
-   Used consistently across semantics, variants, and utilities.
-   ========================================================================== */
-
-@import './_breakpoints.css';
-
-/*
-
-   Consolidated Theme Variables
-   ============================
-
-   This file defines the semantic theme variables for Semanticus CSS.
-   - Semantic colors: Theme-aware variables for light/dark modes using
-     --color-primary, --color-secondary, and --color-contrast roles
-   - Layout variables: Typography, spacing, and component sizing
-
-*/
-
-:root {
-  --transparent: transparent;
-}
-
-/* ==========================================================================
-   2. Typography & Layout Variables (from Pico Theme)
-   ========================================================================== */
+/* Shared variables */
+@import '../variables/_breakpoints.css';
 
 :root,
 :host {
@@ -36,7 +12,7 @@
   /* Typography – base defaults inherited by all elements */
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 97%; /* Root font-size; overridden per breakpoint below and per element in §6 */
+  --font-size: 100%; /* Root font-size; overridden per breakpoint below and per element in §6 */
   --text-underline-offset: 0.1rem;
 
   /* Borders & Effects – global defaults for border-radius, border-width, outline, and transition */
@@ -46,15 +22,15 @@
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
-  --spacing: 0.75rem;
+  --spacing: 1rem;
   --responsive-multiplier: 1; /* Multiplier applied to spacing for responsive adjustments at wider breakpoints */
   --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
-  --block-spacing-vertical: 1.2rem; /* Vertical padding inside block-level components (cards, modals, etc.) */
-  --block-spacing-horizontal: 1.2rem; /* Horizontal padding inside block-level components */
+  --block-spacing-vertical: var(--spacing); /* Vertical padding inside block-level components (cards, modals, etc.) */
+  --block-spacing-horizontal: var(--spacing); /* Horizontal padding inside block-level components */
   --grid-column-gap: var(--spacing); /* Column gap in CSS Grid layouts */
   --grid-row-gap: var(--spacing); /* Row gap in CSS Grid layouts */
-  --form-element-spacing-vertical: 0.5rem; /* Vertical padding inside form inputs, selects, and textareas */
-  --form-element-spacing-horizontal: 0.7rem; /* Horizontal padding inside form inputs, selects, and textareas */
+  --form-element-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
+  --form-element-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
   /* Shadows – used by [role="group"] and [role="search"] button/input combos */
   --group-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Default (no shadow) */
@@ -82,11 +58,11 @@
   --sidebar-width: 25%; /* Sidebar width */
 }
 
-/* Responsive Font Sizes – progressively increase root font-size at wider viewports (25% less than original) */
+/* Responsive Font Sizes – progressively increase root font-size at wider viewports */
 @media (--breakpoint-sm) {
   :root,
   :host {
-    --font-size: 98%;
+    --font-size: 106.25%;
     --sidebar-width: max(25%, 150px);
     --responsive-multiplier: 1.25;
   }
@@ -95,7 +71,7 @@
 @media (--breakpoint-md) {
   :root,
   :host {
-    --font-size: 99%;
+    --font-size: 112.5%;
     --sidebar-width: max(22%, 180px);
     --responsive-multiplier: 1.5;
   }
@@ -104,7 +80,7 @@
 @media (--breakpoint-lg) {
   :root,
   :host {
-    --font-size: 100%;
+    --font-size: 118.75%;
     --sidebar-width: max(20%, 200px);
     --responsive-multiplier: 1.75;
   }
@@ -113,18 +89,18 @@
 @media (--breakpoint-xl) {
   :root,
   :host {
-    --font-size: 101%;
+    --font-size: 125%;
     --sidebar-width: max(18%, 220px);
-    --responsive-multiplier: 1.85;
+    --responsive-multiplier: 2;
   }
 }
 
 @media (--breakpoint-xxl) {
   :root,
   :host {
-    --font-size: 102%;
+    --font-size: 131.25%;
     --sidebar-width: clamp(240px, 16%, 300px);
-    --responsive-multiplier: 2;
+    --responsive-multiplier: 2.25;
   }
 }
 
@@ -844,7 +820,7 @@ input:not(
 [role="group"] [type="submit"],
 [role="group"] [type="button"],
 [role="group"] [role="button"] {
-  --form-element-spacing-horizontal: 1rem;
+  --form-element-spacing-horizontal: 2rem;
 }
 
 /* ==========================================================================

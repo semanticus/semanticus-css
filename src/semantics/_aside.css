@@ -1,6 +1,6 @@
 /**
- * Aside its width changes according to breakpoints (see src/variables/_shared.css),
- * its height grows to fill the available space,
+ * Aside its width changes according to certain breakpoints,
+ * and its height grows to fill the available space,
  * and stacks its children in a column with space between them (like a <nav> would).
  * In case of a single child, this child will fill the entire height.
  */

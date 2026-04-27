@@ -16,13 +16,13 @@ const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
-<link rel="stylesheet" href="/css/semanticus.size.slim.css">`
+<link rel="stylesheet" href="/css/semanticus.size.pico.css">`
 
 const cdnSnippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.slim.css">`
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.pico.css">`
 
 const npmInstallSnippet = 'npm install semanticus-css'
 
@@ -33,7 +33,7 @@ import 'semanticus-css/semantics';
 
 // Or add a palette / size on top
 import 'semanticus-css/palettes/blue';
-import 'semanticus-css/sizes/slim';`
+import 'semanticus-css/sizes/pico';`
 
 const highlightedManualSnippet = computed(() => {
   return hljs.highlight(manualSnippet, { language: 'html' }).value

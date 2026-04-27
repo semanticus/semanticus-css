@@ -27,7 +27,7 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.slim.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.7.0/dist/semanticus.size.pico.css">
 ```
 
 ### Option 2: Install manually
@@ -39,7 +39,7 @@ Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fseman
 
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
-<link rel="stylesheet" href="/css/semanticus.size.slim.css">
+<link rel="stylesheet" href="/css/semanticus.size.pico.css">
 ```
 
 ### Option 3: NPM
@@ -56,7 +56,7 @@ import '@semanticus/semanticus-css/semantics';
 
 // Or add a palette / size on top
 import '@semanticus/semanticus-css/palettes/blue';
-import '@semanticus/semanticus-css/sizes/slim';
+import '@semanticus/semanticus-css/sizes/pico';
 ```
 
 > **Note:** The `import` syntax requires a bundler that supports CSS imports (e.g., Vite, Webpack, Rollup, or Parcel).

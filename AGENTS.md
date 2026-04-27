@@ -4,7 +4,7 @@ Quick reference for AI agents working on this codebase.
 
 ## What This Is
 
-**Semanticus CSS** is a lightweight, semantic CSS framework (~24 KB gzipped) that combines:
+**Semanticus CSS** is a lightweight, semantic CSS framework (~23 KB gzipped) that combines:
 - **Semantic-first** HTML element styling (PicoCSS-inspired)
 - **Atomic utility classes** (Bootstrap Utilities-inspired)
 - Zero JavaScript dependency
@@ -31,7 +31,7 @@ The framework is organized into 5 layers, all in `src/`:
 ### Palettes & Sizes
 
 - `src/palettes/` — 19 color palette overrides (e.g., `blue.css`, `zinc.css`)
-- `src/sizes/` — size variant overrides (e.g., `slim.css`)
+- `src/sizes/` — size variant overrides (e.g., `pico.css`)
 - These are standalone variable overrides meant to be loaded **after** a base bundle.
 
 ## Build System

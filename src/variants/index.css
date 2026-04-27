@@ -1,9 +1,0 @@
-/**
- * Semanticus CSS Variants
- * Class-based variant styles that extend semantic
- */
-
-/* Shared variables */
-@import '../variables/_shared.css';
-
-@import "./modules.css";

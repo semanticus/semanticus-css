@@ -309,7 +309,7 @@ const palettes = [
 // Available size variants
 const sizes = [
   { name: 'default', label: 'Default', description: 'Standard sizing for all elements' },
-  { name: 'slim', label: 'Slim', description: 'Reduced sizing and spacing' },
+  { name: 'pico', label: 'PicoCSS', description: 'PicoCSS original values' },
 ]
 
 // Initialize all groups as expanded

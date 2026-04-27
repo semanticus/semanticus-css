@@ -7,7 +7,7 @@
  * Users should load a base version first, then the size:
  *
  *   <link rel="stylesheet" href="semanticus-semantics.css">
- *   <link rel="stylesheet" href="semanticus.size.slim.css">
+ *   <link rel="stylesheet" href="semanticus.size.pico.css">
  */
 
 const fs = require('fs');
