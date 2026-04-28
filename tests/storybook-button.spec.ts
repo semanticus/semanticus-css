@@ -4,7 +4,7 @@ test.use({ viewport: { width: 400, height: 200 } });
 
 test('Semantics/Button - Default visual snapshot', async ({ page }) => {
   await page.goto('http://localhost:6006/iframe.html?id=semantics-button--default');
-  const button = page.locator('button');
+  const button = page.locator('#default-button');
   await expect(button).toBeVisible();
-  await expect(button).toHaveScreenshot({ name: 'semantics-button-default.png', animations: 'disabled' });
+  await expect(button).toHaveScreenshot({ animations: 'disabled' });
 });
