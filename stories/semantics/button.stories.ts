@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/html';
 
 const meta: Meta = {
-  title: 'Semantics/Button',
+  title: 'Semantics/<button>',
 };
 
 export default meta;

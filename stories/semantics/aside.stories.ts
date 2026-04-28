@@ -4,16 +4,18 @@ import * as NavStories from './nav.stories';
 type Args = {
   class: string;
   slot: string;
-  minHeight?: string;
 };
 
+export function render(args: Partial<Args>): string {
+  return `<aside class="${args.class}">
+  ${args.slot}
+</aside>`;
+}
+
 const meta: Meta<Args> = {
-  title: 'Semantics/Aside',
-  render: (args: Args) => `
-    <aside class="${args.class}" style="min-height: ${args.minHeight};">
-      ${args.slot}
-    </aside>
-  `,
+  title: 'Semantics/<aside>',
+  render,
+  excludeStories: ['render'],
 };
 
 export default meta;
@@ -27,7 +29,6 @@ export const Default: StoryObj<Args> = {
 export const LeftSidebarNavigation: StoryObj<Args> = {
   args: {
     class: 'sidebar',
-    minHeight: '500px',
     slot: `<h4>Composites</h4>
     ${NavStories.render(NavStories.PagesNavigation.args)}
 
@@ -38,7 +39,6 @@ export const LeftSidebarNavigation: StoryObj<Args> = {
 export const RightSidebarNavigation: StoryObj<Args> = {
   args: {
     class: 'sidebar',
-    minHeight: '200px',
     slot: `<h4>On this page</h4>
     ${NavStories.render(NavStories.PageNavigation.args)}`,
   }

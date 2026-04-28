@@ -12,7 +12,7 @@ export function render(args: Partial<Args>): string {
 }
 
 const meta: Meta<Args> = {
-  title: 'Semantics/Nav',
+  title: 'Semantics/<nav>',
   render,
   excludeStories: ['render'],
   // render: (args: Args) => {
@@ -32,7 +32,7 @@ export const Default: StoryObj<Args> = {
   },
 };
 
-export const TopBar: StoryObj<Args> = {
+export const HeaderNavigation: StoryObj<Args> = {
   args: {
     slot: `<h2>Logo</h2>
 
@@ -44,7 +44,17 @@ export const TopBar: StoryObj<Args> = {
   }
 };
 
-export const SearchAndDropdown: StoryObj<Args> = {
+export const FooterNavigation: StoryObj<Args> = {
+  args: {
+    slot: `<p>Copyright</p>
+
+<ul>
+  <li><a href="#!">Contact Us</a></li>
+</ul>`,
+  }
+};
+
+export const HeaderSearchNavigation: StoryObj<Args> = {
   args: {
     slot: `<input class="w-auto" type="search" name="search" placeholder="Search" aria-label="Search" />
 

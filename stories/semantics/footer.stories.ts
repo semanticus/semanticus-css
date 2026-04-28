@@ -7,13 +7,13 @@ type Args = {
 };
 
 export function render(args: Partial<Args>): string {
-  return `<header class="${args.class}">
+  return `<footer class="${args.class}">
     ${args.slot}
-  </header>`;
+  </footer>`;
 };
 
 const meta: Meta<Args> = {
-  title: 'Semantics/<header>',
+  title: 'Semantics/<footer>',
   excludeStories: ['render'],
   render,
 };
@@ -22,20 +22,13 @@ export default meta;
 
 export const Default: StoryObj<Args> = {
   args: {
-    slot: "<h2>Logo</h2>",
+    slot: "<p>Semanticus CSS</p>",
   },
 };
 
 export const WithNavigation: StoryObj<Args> = {
   args: {
     ...Default.args,
-    slot: NavStories.render(NavStories.HeaderNavigation.args),
-  },
-};
-
-export const WithSearchNavigation: StoryObj<Args> = {
-  args: {
-    ...Default.args,
-    slot: NavStories.render(NavStories.HeaderSearchNavigation.args),
+    slot: NavStories.render(NavStories.FooterNavigation.args),
   },
 };
