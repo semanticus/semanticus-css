@@ -38,7 +38,7 @@ The framework is organized into 5 layers, all in `src/`:
 
 - **Bundler**: [LightningCSS](https://lightningcss.dev/) (bundles, minifies, handles custom media queries)
 - **Linting**: stylelint (`npm run lint` / `npm run lint:fix`)
-- **Visual Regression**: BackstopJS (`npm test` / `npm run test:snapshot`)
+- **Visual Regression**: playwright (`npm run test:visual-regression` / `npm run test:update-snapshots`)
 - **Docs**: VitePress in `docs/`
 
 ### Key Scripts
@@ -50,7 +50,8 @@ npm run build:minify   # Build minified bundles
 npm run demo           # Run demo page
 npm run docs:dev       # Dev server for docs
 npm run lint           # Lint all CSS
-npm test               # BackstopJS visual regression
+npm run test:visual-regression   # Playwright visual regression
+npm run test:update-snapshots    # Update visual regression snapshots
 ```
 
 ## Conventions
@@ -145,7 +146,7 @@ This project follows [SemVer](https://semver.org/). When making changes, conside
 - Node >= 18
 - npm >= 11
 - No runtime JS dependencies
-- Dev deps: LightningCSS, stylelint, VitePress, BackstopJS, Puppeteer
+- Dev deps: LightningCSS, stylelint, VitePress, Playwright, Storybook
 
 ## License
 

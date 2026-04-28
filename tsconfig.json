@@ -28,7 +28,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "backstop_data",
     "html_report",
     "public",
     "demo"
