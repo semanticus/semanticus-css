@@ -12,7 +12,7 @@ export const AsideDemoArgs = {
     slot: `<h4>Guide</h4>
 ${NavDemo.pagesLinks()}
 
-<a href="#">Help</a>`,
+<a href="#" role="button" class="ghost">Support</a>`,
   },
 
   pageLinksSidebar: {
