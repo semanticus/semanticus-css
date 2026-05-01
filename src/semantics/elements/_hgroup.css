@@ -1,0 +1,14 @@
+hgroup {
+  margin-bottom: var(--typography-spacing-vertical);
+
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &:not(:first-child):last-child {
+      color: color-mix(in srgb, var(--color-text), rgb(128, 128, 128) 70%);
+      --font-weight: unset;
+      font-size: 1rem;
+    }
+  }
+}

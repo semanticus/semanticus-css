@@ -1,0 +1,22 @@
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: var(--typography-spacing-vertical);
+  color: var(--color-text);
+  font-style: normal;
+  font-weight: var(--font-weight);
+}
+
+:where(ol, ul) li {
+  margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+}
+
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+  margin-top: calc(var(--typography-spacing-vertical) * 0.25);
+}
+
+ul li {
+  list-style: square;
+}

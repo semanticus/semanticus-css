@@ -1,0 +1,34 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--typography-spacing-vertical);
+  color: var(--color-text);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+}
+
+/* Headings - progressive lightness using color-mix */
+h1 { --color-text: var(--color-heading-base); }
+h2 { --color-text: color-mix(in srgb, var(--color-heading-base), white 12%); }
+h3 { --color-text: color-mix(in srgb, var(--color-heading-base), white 22%); }
+h4 { --color-text: color-mix(in srgb, var(--color-heading-base), white 32%); }
+h5 { --color-text: color-mix(in srgb, var(--color-heading-base), white 45%); }
+h6 { --color-text: color-mix(in srgb, var(--color-heading-base), white 55%); }
+
+/* Dark mode headings - base is lightest, mix in black for lower levels */
+[data-theme="dark"] h1 { --color-text: var(--color-heading-base); }
+[data-theme="dark"] h2 { --color-text: color-mix(in srgb, var(--color-heading-base), black 8%); }
+[data-theme="dark"] h3 { --color-text: color-mix(in srgb, var(--color-heading-base), black 18%); }
+[data-theme="dark"] h4 { --color-text: color-mix(in srgb, var(--color-heading-base), black 28%); }
+[data-theme="dark"] h5 { --color-text: color-mix(in srgb, var(--color-heading-base), black 38%); }
+[data-theme="dark"] h6 { --color-text: color-mix(in srgb, var(--color-heading-base), black 48%); }
+
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul, hr) ~ :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--typography-spacing-top);
+}

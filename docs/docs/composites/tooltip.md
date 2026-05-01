@@ -3,15 +3,7 @@ title: Tooltip
 ---
 
 <script setup>
-const tooltipExample = `<p>
-  Hover over this
-  <span>
-    <a href="#" aria-describedby="tooltip-example">link</a>
-    <span id="tooltip-example" role="tooltip" data-placement="bottom">This is a tooltip</span>
-  </span>
-  to see a tooltip.
-</p>
-`;
+import { TooltipDemo } from "@demos/composites";
 </script>
 
 # Tooltip
@@ -20,7 +12,7 @@ Tooltips are implemented using the [ARIA: tooltip pattern](https://developer.moz
 
 ## Basic Tooltip
 
-<HtmlPreviewer :code="tooltipExample" />
+<HtmlPreviewer :code="TooltipDemo.basicTooltip()" />
 
 ## Reference
 

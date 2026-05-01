@@ -1,0 +1,10 @@
+/**
+ * Horizontal Rule
+ */
+hr {
+  height: 0;
+  margin: var(--typography-spacing-vertical) 0;
+  border: 0;
+  border-top: 1px solid var(--color-border-muted);
+  color: inherit;
+}

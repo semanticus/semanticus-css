@@ -3,17 +3,7 @@ title: Card
 ---
 
 <script setup>
-const cardExample = `<article class="card">
-  <header>
-    <h3>Card Title</h3>
-  </header>
-  <p>This is a basic card with header and content. Apply the <code>.card</code> class to any element to create a card component.</p>
-  <footer>
-    <button class="secondary">Cancel</button>
-    <button>Confirm</button>
-  </footer>
-</article>
-`;
+import { CardDemo } from "@demos/composites";
 </script>
 
 # Card
@@ -22,7 +12,7 @@ Cards are implemented using the `.card` class. This class can be applied to any 
 
 ## Basic Card
 
-<HtmlPreviewer :code="cardExample" />
+<HtmlPreviewer :code="CardDemo.basicCard()" />
 
 ## When to use `.card`
 

@@ -3,11 +3,7 @@ title: Search
 ---
 
 <script setup>
-const basicSearch = `<form role="search">
-  <input type="search" placeholder="Search...">
-  <button type="submit">Search</button>
-</form>
-`;
+import { SearchDemo } from "@demos/composites";
 </script>
 
 # Search
@@ -18,7 +14,7 @@ Screen readers expose it as a "search" landmark, allowing users to jump directly
 
 ## Basic Search
 
-<HtmlPreviewer :code="basicSearch" />
+<HtmlPreviewer :code="SearchDemo.basicSearch()" />
 
 ## Reference
 

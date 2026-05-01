@@ -1,0 +1,18 @@
+blockquote {
+  border-inline-end: none;
+  border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  border-left: 0.25rem solid var(--blockquote-border-color);
+  border-right: none;
+  color: var(--color-text);
+  display: block;
+  font-style: normal;
+  font-weight: var(--font-weight);
+  margin-bottom: var(--typography-spacing-vertical);
+  margin-top: 0;
+  padding: var(--spacing);
+
+  & footer {
+    margin-top: calc(var(--typography-spacing-vertical) * 0.5);
+    color: var(--blockquote-footer-color);
+  }
+}

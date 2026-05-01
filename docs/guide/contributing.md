@@ -98,22 +98,16 @@ npm run docs:dev
 
 ## Visual Regression Testing
 
-Semanticus CSS uses [BackstopJS](https://github.com/garris/BackstopJS) for visual regression testing.
+Semanticus CSS uses [Playwright](https://playwright.dev/docs/test-snapshots) for visual regression testing.
 
 - Capture reference snapshots
 
 ```bash
-npm run test:snapshot
+npm run test:update-snapshots
 ```
 
 - Run visual regression tests against the reference snapshots
 
 ```bash
-npm test
-```
-
-- Kill any leftover headless Chrome processes (if tests fail or hang)
-
-```bash
-npm run test:kill-zombies
+npm run test:visual-regression
 ```

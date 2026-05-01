@@ -3,15 +3,7 @@ title: Dropdown
 ---
 
 <script setup>
-const dropdownExample = `<details>
-  <summary aria-haspopup="menu">Choose an option</summary>
-  <ul role="menu">
-    <li><a role="menuitem" href="#">Profile</a></li>
-    <li><a role="menuitem" href="#">Settings</a></li>
-    <li><a role="menuitem" href="#">Logout</a></li>
-  </ul>
-</details>
-`;
+import { DropdownDemo } from "@demos/composites";
 </script>
 
 # Dropdown
@@ -20,7 +12,7 @@ Dropdowns are implemented using the [ARIA: menu pattern](https://developer.mozil
 
 ## Basic Dropdown
 
-<HtmlPreviewer :code="dropdownExample" />
+<HtmlPreviewer :code="DropdownDemo.basicDropdown()" />
 
 ## Reference
 

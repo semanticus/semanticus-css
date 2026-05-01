@@ -3,24 +3,7 @@ title: Loading
 ---
 
 <script setup>
-const loadingCardExample = `<article class="card" aria-busy="true">
-  <hgroup>
-    <h3>Loading Content</h3>
-    <p>Please wait while we fetch your data...</p>
-  </hgroup>
-</article>
-`;
-
-const loadingButtonExample = `<button aria-busy="true" disabled>Processing...</button>
-<button class="secondary">Cancel</button>
-`;
-
-const loadingProgressExample = `<article class="card">
-  <h3>Uploading File...</h3>
-  <progress value="65" max="100">65%</progress>
-  <small>Uploading document.pdf (65% complete)</small>
-</article>
-`;
+import { LoadingDemo } from "@demos/composites";
 </script>
 
 # Loading
@@ -33,19 +16,19 @@ Or with the `<progress>` element for operations with measurable progress.
 
 Use `aria-busy="true"` on containers like cards to indicate content is loading:
 
-<HtmlPreviewer :code="loadingCardExample" />
+<HtmlPreviewer :code="LoadingDemo.loadingCard()" />
 
 ## Loading Button
 
 For buttons, combine `aria-busy="true"` with the `disabled` attribute:
 
-<HtmlPreviewer :code="loadingButtonExample" />
+<HtmlPreviewer :code="LoadingDemo.loadingButton()" />
 
 ## Loading with Progress
 
 For operations with measurable progress, use the `<progress>` element to show completion percentage:
 
-<HtmlPreviewer :code="loadingProgressExample" />
+<HtmlPreviewer :code="LoadingDemo.loadingWithProgress()" />
 
 ## Related
 

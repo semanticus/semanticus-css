@@ -3,27 +3,7 @@ title: Pagination
 ---
 
 <script setup>
-const basicExample = `<nav aria-label="Pagination">
-  <div role="group">
-    <button disabled>Previous</button>
-    <button>1</button>
-    <button aria-current="page">2</button>
-    <button>3</button>
-    <button>Next</button>
-  </div>
-</nav>
-`;
-
-const anchorsExample = `<nav aria-label="Pagination">
-  <div role="group">
-    <a href="#" role="button" disabled>Previous</a>
-    <a href="#page-1" role="button">1</a>
-    <a href="#page-2" role="button" aria-current="page">2</a>
-    <a href="#page-3" role="button">3</a>
-    <a href="#page-3" role="button">Next</a>
-  </div>
-</nav>
-`;
+import { PaginationDemo } from "@demos/composites";
 </script>
 
 # Pagination
@@ -39,13 +19,13 @@ Pagination is a navigation pattern that allows users to move between pages of co
 
 The simplest pagination pattern uses buttons within a group:
 
-<HtmlPreviewer :code="basicExample" />
+<HtmlPreviewer :code="PaginationDemo.basicPagination()" />
 
 ## Link-Based Pagination
 
 For server-side rendering or distinct page URLs, use anchor elements with `role="button"`:
 
-<HtmlPreviewer :code="anchorsExample" />
+<HtmlPreviewer :code="PaginationDemo.linkBasedPagination()" />
 
 ## Accessibility Considerations
 
