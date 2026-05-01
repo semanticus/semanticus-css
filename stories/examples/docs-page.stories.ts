@@ -7,12 +7,13 @@ import {
 } from "@demos/semantics/elements";
 
 const meta: Meta = {
-  title: "Demo/DocsPageExample",
+  title: "Examples/DocsPage",
+  tags: ["!autodocs"],
 };
 
 export default meta;
 
-export const DocsPageExample: StoryObj = {
+export const DocsPage: StoryObj = {
   render() {
     return `<div class="flow-h container">
   ${AsideDemo.leftSidebar({ class: "bg-secondary-subtle py-4" })}

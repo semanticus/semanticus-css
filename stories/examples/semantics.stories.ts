@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import rawDemoSemanticsHtml from "./semantics.html?raw";
 
 const meta: Meta = {
-  title: "Demo/Semantics",
+  title: "Examples/Semantics",
   tags: ["!autodocs"],
 };
 

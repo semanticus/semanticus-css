@@ -311,22 +311,17 @@ export default defineConfig({
           text: "Composites",
           items: [
             { text: "Overview", link: "/docs/composites/" },
+            { text: "Card", link: "/docs/composites/card" },
+            { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Loading", link: "/docs/composites/loading" },
+            { text: "Modal", link: "/docs/composites/modal" },
+            { text: "Pagination", link: "/docs/composites/pagination" },
+            { text: "Search", link: "/docs/composites/search" },
+            { text: "Tooltip", link: "/docs/composites/tooltip" },
             {
               text: "Validation States",
               link: "/docs/composites/validation-states",
-            },
-            {
-              text: "Components",
-              items: [
-                { text: "Card", link: "/docs/composites/card" },
-                { text: "Dropdown", link: "/docs/composites/dropdown" },
-                { text: "Modal", link: "/docs/composites/modal" },
-                { text: "Pagination", link: "/docs/composites/pagination" },
-                { text: "Search", link: "/docs/composites/search" },
-                { text: "Tooltip", link: "/docs/composites/tooltip" },
-              ],
             },
           ],
         },
