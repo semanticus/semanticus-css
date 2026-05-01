@@ -1,3 +1,5 @@
-export const basic = `<div role="button" tabindex="0">
+export function basic() {
+  return `<div role="button" tabindex="0">
   Div as button
 </div>`;
+}

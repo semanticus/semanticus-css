@@ -12,24 +12,24 @@ The `disabled` attribute prevents interaction with a form element and removes it
 
 ## Basic Usage
 
-<HtmlPreviewer :code="DisabledDemo.basic" />
+<HtmlPreviewer :code="DisabledDemo.basic()" />
 
 ## Input
 
-<HtmlPreviewer :code="DisabledDemo.input" />
+<HtmlPreviewer :code="DisabledDemo.input()" />
 
 ### Range
 
-<HtmlPreviewer :code="DisabledDemo.range" />
+<HtmlPreviewer :code="DisabledDemo.range()" />
 
 ## Select
 
-<HtmlPreviewer :code="DisabledDemo.select" />
+<HtmlPreviewer :code="DisabledDemo.select()" />
 
 ## Switch
 
-<HtmlPreviewer :code="DisabledDemo.switch_" />
+<HtmlPreviewer :code="DisabledDemo.switch_()" />
 
 ## Textarea
 
-<HtmlPreviewer :code="DisabledDemo.textarea" />
+<HtmlPreviewer :code="DisabledDemo.textarea()" />

@@ -14,7 +14,7 @@ Screen readers expose it as a navigation landmark, allowing users to jump direct
 
 ## Basic Usage
 
-<HtmlPreviewer :code="NavDemo.basic" />
+<HtmlPreviewer :code="NavDemo.basic()" />
 
 `<ul>` are automatically distributed horizontally.
 
@@ -26,36 +26,36 @@ Screen readers expose it as a navigation landmark, allowing users to jump direct
 
 You can use `.secondary`, `.contrast`, and `.ghost` classes (not available in the [class-less version](/guide/installation)).
 
-<HtmlPreviewer :code="NavDemo.contrastLinks" />
+<HtmlPreviewer :code="NavDemo.contrastLinks()" />
 
-<HtmlPreviewer :code="NavDemo.iconButtons" />
+<HtmlPreviewer :code="NavDemo.iconButtons()" />
 
 ## Buttons
 
 You can use `<button>` inside `<li>`. Button sizes automatically match link size and margin.
 
-<HtmlPreviewer :code="NavDemo.withButton" />
+<HtmlPreviewer :code="NavDemo.withButton()" />
 
 ## Dropdowns
 
 You can use [dropdowns](/semantics/components/dropdown) inside Nav.
 
-<HtmlPreviewer :code="NavDemo.withDropdown" />
+<HtmlPreviewer :code="NavDemo.withDropdown()" />
 
 ## Vertical stacking
 
 Navs can be stacked vertically with `<ul>` inside `<aside>`.
 
-<HtmlPreviewer :code="NavDemo.verticalInAside" />
+<HtmlPreviewer :code="NavDemo.verticalInAside()" />
 
 ## Breadcrumb
 
 Breadcrumb navigation allows users to keep track of their location within the website.
 
-<HtmlPreviewer :code="NavDemo.breadcrumb" />
+<HtmlPreviewer :code="NavDemo.breadcrumb()" />
 
 ## Overflow
 
 When there is not enough space, the Nav items are not wrapped, and the Nav overflows on the horizontal axis.
 
-<HtmlPreviewer :code="NavDemo.overflow" />
+<HtmlPreviewer :code="NavDemo.overflow()" />

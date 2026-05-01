@@ -1,21 +1,30 @@
-export const basic = `<button disabled>Disabled</button>`;
+export function basic() {
+  return `<button disabled>Disabled</button>`;
+}
 
-export const input = `<input type="text" name="text" placeholder="Disabled" aria-label="Disabled input" disabled />
+export function input() {
+  return `<input type="text" name="text" placeholder="Disabled" aria-label="Disabled input" disabled />
 `;
+}
 
-export const range = `<label>
+export function range() {
+  return `<label>
   Disabled slider
   <input type="range" disabled />
 </label>
 `;
+}
 
-export const select = `<select name="meal-type" aria-label="Select a meal type..." disabled>
+export function select() {
+  return `<select name="meal-type" aria-label="Select a meal type..." disabled>
   <option>Select a meal type...</option>
   <option>...</option>
 </select>
 `;
+}
 
-export const switch_ = `<fieldset>
+export function switch_() {
+  return `<fieldset>
   <label>
     <input name="publish" type="checkbox" role="switch" disabled />
     Publish on my profile
@@ -26,8 +35,11 @@ export const switch_ = `<fieldset>
   </label>
 </fieldset>
 `;
+}
 
-export const textarea = `<textarea name="disabled" disabled>
+export function textarea() {
+  return `<textarea name="disabled" disabled>
   Disabled
 </textarea>
 `;
+}

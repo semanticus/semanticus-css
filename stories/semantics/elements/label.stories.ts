@@ -8,11 +8,11 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: LabelDemo.basic },
+  args: { html: LabelDemo.basic() },
   render: (args) => args.html,
 };
 
 export const inputInside: StoryObj = {
-  args: { html: LabelDemo.inputInside },
+  args: { html: LabelDemo.inputInside() },
   render: (args) => args.html,
 };

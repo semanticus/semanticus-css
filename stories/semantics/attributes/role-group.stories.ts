@@ -9,31 +9,31 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleGroupDemo.basic },
+  args: { html: RoleGroupDemo.basic() },
   render: (args) => args.html,
 };
 
 export const inputWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.inputWithButton },
+  args: { html: RoleGroupDemo.inputWithButton() },
   render: (args) => args.html,
 };
 
 export const selectWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.selectWithButton },
+  args: { html: RoleGroupDemo.selectWithButton() },
   render: (args) => args.html,
 };
 
 export const multipleInputs: StoryObj = {
-  args: { html: RoleGroupDemo.multipleInputs },
+  args: { html: RoleGroupDemo.multipleInputs() },
   render: (args) => args.html,
 };
 
 export const paginationExample: StoryObj = {
-  args: { html: RoleGroupDemo.paginationExample },
+  args: { html: RoleGroupDemo.paginationExample() },
   render: (args) => args.html,
 };
 
 export const newsletterExample: StoryObj = {
-  args: { html: RoleGroupDemo.newsletterExample },
+  args: { html: RoleGroupDemo.newsletterExample() },
   render: (args) => args.html,
 };

@@ -12,20 +12,20 @@ The `<select>` element creates a dropdown list of `<option>` items. Use the `mul
 
 ## Basic Usage
 
-<HtmlPreviewer :code="SelectDemo.basic" />
+<HtmlPreviewer :code="SelectDemo.basic()" />
 
 ## Select Multiple
 
-<HtmlPreviewer :code="SelectDemo.multipleSelect" />
+<HtmlPreviewer :code="SelectDemo.multipleSelect()" />
 
 ## With Optgroup
 
-<HtmlPreviewer :code="SelectDemo.withOptgroup" />
+<HtmlPreviewer :code="SelectDemo.withOptgroup()" />
 
 ## Dropdown
 
 The dropdown component allows you to build a custom select with the same style as the native select.
 See [Dropdown](/variants/components/dropdown).
 
-<HtmlPreviewer :code="SelectDemo.dropdown" />
+<HtmlPreviewer :code="SelectDemo.dropdown()" />
 

@@ -1,14 +1,19 @@
-export const basic = `<form role="search">
+export function basic() {
+  return `<form role="search">
   <input type="search" placeholder="Search...">
   <button type="submit">Search</button>
 </form>`;
+}
 
-export const withIconButton = `<form role="search">
+export function withIconButton() {
+  return `<form role="search">
   <input type="search" placeholder="Search products...">
   <button type="submit" aria-label="Search">→</button>
 </form>`;
+}
 
-export const filterSearch = `<form role="search">
+export function filterSearch() {
+  return `<form role="search">
   <select aria-label="Category">
     <option>All Categories</option>
     <option>Products</option>
@@ -18,3 +23,4 @@ export const filterSearch = `<form role="search">
   <input type="search" placeholder="Search...">
   <button type="submit">Go</button>
 </form>`;
+}

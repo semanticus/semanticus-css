@@ -5,19 +5,19 @@ title: input
 <script setup>
 import { InputDemo } from "@demos/semantics/elements";
 const basicUsage = [
-  InputDemo.basic,
-  InputDemo.email,
-  InputDemo.number,
-  InputDemo.password,
-  InputDemo.telephone,
-  InputDemo.url,
+  InputDemo.basic(),
+  InputDemo.email(),
+  InputDemo.number(),
+  InputDemo.password(),
+  InputDemo.telephone(),
+  InputDemo.url(),
 ].join('\n');
 const dateUsage = [
-  InputDemo.date,
-  InputDemo.datetime,
-  InputDemo.datetime,
-  InputDemo.month,
-  InputDemo.time,
+  InputDemo.date(),
+  InputDemo.datetime(),
+  InputDemo.datetime(),
+  InputDemo.month(),
+  InputDemo.time(),
 ].join('\n');
 </script>
 
@@ -47,19 +47,19 @@ Datetime inputs come with an icon.
 
 `type="search"` comes with a distinctive style.
 
-<HtmlPreviewer :code="InputDemo.search" />
+<HtmlPreviewer :code="InputDemo.search()" />
 
 ## Color Input
 
 `type="color"` is also consistent with the other input types.
 
-<HtmlPreviewer :code="InputDemo.color" />
+<HtmlPreviewer :code="InputDemo.color()" />
 
 ## File Input
 
 Input type file button has a secondary button style.
 
-<HtmlPreviewer :code="InputDemo.file" />
+<HtmlPreviewer :code="InputDemo.file()" />
 
 ## Checkboxes
 
@@ -67,16 +67,16 @@ The native `<input type="checkbox">` with a custom and responsive style.
 
 ### Basic Usage
 
-<HtmlPreviewer :code="InputDemo.checkbox" />
+<HtmlPreviewer :code="InputDemo.checkbox()" />
 
 ### Horizontal Stacking
 
-<HtmlPreviewer :code="InputDemo.horizontalCheckbox" />
+<HtmlPreviewer :code="InputDemo.horizontalCheckbox()" />
 
 
 ### Single Checkbox
 
-<HtmlPreviewer :code="InputDemo.singleCheckbox" />
+<HtmlPreviewer :code="InputDemo.singleCheckbox()" />
 
 ## Radios
 
@@ -84,11 +84,11 @@ The native `<input type="radio">` with a custom and responsive style.
 
 ### Basic Radio
 
-<HtmlPreviewer :code="InputDemo.basicRadio" />
+<HtmlPreviewer :code="InputDemo.basicRadio()" />
 
 ### Horizontal Stacking
 
-<HtmlPreviewer :code="InputDemo.horizontalRadio" />
+<HtmlPreviewer :code="InputDemo.horizontalRadio()" />
 
 ## Range
 
@@ -96,15 +96,15 @@ The native `<input type="range">` with a custom and responsive style.
 
 ### Basic Range
 
-<HtmlPreviewer :code="InputDemo.basicRange" />
+<HtmlPreviewer :code="InputDemo.basicRange()" />
 
 ### With Min and Max
 
-<HtmlPreviewer :code="InputDemo.rangeWithMinMax" />
+<HtmlPreviewer :code="InputDemo.rangeWithMinMax()" />
 
 ### With Step
 
-<HtmlPreviewer :code="InputDemo.rangeWithStep" />
+<HtmlPreviewer :code="InputDemo.rangeWithStep()" />
 
 ## Switch
 
@@ -112,5 +112,5 @@ The native `<input type="checkbox">` styled as a switch, using the `role="switch
 
 ### Basic Switch
 
-<HtmlPreviewer :code="InputDemo.basicSwitch" />
+<HtmlPreviewer :code="InputDemo.basicSwitch()" />
 

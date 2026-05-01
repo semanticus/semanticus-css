@@ -9,6 +9,6 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleToolbarDemo.basic },
+  args: { html: RoleToolbarDemo.basic() },
   render: (args) => args.html,
 };

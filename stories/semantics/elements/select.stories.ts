@@ -8,21 +8,21 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: SelectDemo.basic },
+  args: { html: SelectDemo.basic() },
   render: (args) => args.html,
 };
 
 export const multipleSelect: StoryObj = {
-  args: { html: SelectDemo.multipleSelect },
+  args: { html: SelectDemo.multipleSelect() },
   render: (args) => args.html,
 };
 
 export const withOptgroup: StoryObj = {
-  args: { html: SelectDemo.withOptgroup },
+  args: { html: SelectDemo.withOptgroup() },
   render: (args) => args.html,
 };
 
 export const dropdown: StoryObj = {
-  args: { html: SelectDemo.dropdown },
+  args: { html: SelectDemo.dropdown() },
   render: (args) => args.html,
 };

@@ -14,4 +14,4 @@ You can use `role="toolbar"` to display elements in a grid.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleToolbarDemo.basic" />
+<HtmlPreviewer :code="RoleToolbarDemo.basic()" />

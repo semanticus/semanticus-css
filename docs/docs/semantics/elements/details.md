@@ -14,7 +14,7 @@ Use the `open` attribute to expand it by default. Set the same `name` attribute 
 
 ## Basic Usage
 
-<HtmlPreviewer :code="DetailsDemo.basic" />
+<HtmlPreviewer :code="DetailsDemo.basic()" />
 
 For style variants, see [Details Variants](/docs/variants/details).
 
@@ -28,7 +28,7 @@ Unless they are in a `<nav>`, dropdowns are `width: 100%;` by default.
 
 For style consistency with the form elements, dropdowns are styled like a select by default.
 
-<HtmlPreviewer :code="DetailsDemo.basicDropdown" />
+<HtmlPreviewer :code="DetailsDemo.basicDropdown()" />
 
 ### Dropdowns with Checkboxes and Radios
 
@@ -36,11 +36,11 @@ Dropdowns can be used as custom selects with `<input type="radio">` or `<input t
 
 #### Radio Buttons
 
-<HtmlPreviewer :code="DetailsDemo.dropdownWithRadios" />
+<HtmlPreviewer :code="DetailsDemo.dropdownWithRadios()" />
 
 #### Checkboxes
 
-<HtmlPreviewer :code="DetailsDemo.dropdownWithCheckboxes" />
+<HtmlPreviewer :code="DetailsDemo.dropdownWithCheckboxes()" />
 
 ### Variants
 
@@ -50,20 +50,20 @@ Use `<ul dir="rtl">` to change the alignment of the dropdown menu.
 
 When using dropdowns inside a `<nav>`, they are automatically styled to fit the navigation layout.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownInNav" />
+<HtmlPreviewer :code="DetailsDemo.dropdownInNav()" />
 
 #### Dropdown as Button
 
 `<summary role="button">` transforms the dropdown into a button.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownAsButton" />
+<HtmlPreviewer :code="DetailsDemo.dropdownAsButton()" />
 
 #### Validation States
 
 Just like any form elements, validation states are provided with `aria-invalid`.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownValidationStates" />
+<HtmlPreviewer :code="DetailsDemo.dropdownValidationStates()" />
 
 ## FAQ Page Example
 
-<HtmlPreviewer :code="DetailsDemo.faq" />
+<HtmlPreviewer :code="DetailsDemo.faq()" />

@@ -18,28 +18,28 @@ Use it to semantically cluster controls and communicate their relationship to as
 
 Use `role="group"` to create connected groups of buttons or form elements. For search groups, see [[role="search"]](/docs/semantics/role-search).
 
-<HtmlPreviewer :code="RoleGroupDemo.basic" />
+<HtmlPreviewer :code="RoleGroupDemo.basic()" />
 
 ## Input Groups
 
 ### Input with Button
 
-<HtmlPreviewer :code="RoleGroupDemo.inputWithButton" />
+<HtmlPreviewer :code="RoleGroupDemo.inputWithButton()" />
 
 ### Select with Button
 
-<HtmlPreviewer :code="RoleGroupDemo.selectWithButton" />
+<HtmlPreviewer :code="RoleGroupDemo.selectWithButton()" />
 
 ### Multiple Inputs
 
-<HtmlPreviewer :code="RoleGroupDemo.multipleInputs" />
+<HtmlPreviewer :code="RoleGroupDemo.multipleInputs()" />
 
 ## Pagination Groups
 
-<HtmlPreviewer :code="RoleGroupDemo.paginationExample" />
+<HtmlPreviewer :code="RoleGroupDemo.paginationExample()" />
 
 ## Practical Examples
 
 ### Newsletter Signup
 
-<HtmlPreviewer :code="RoleGroupDemo.newsletterExample" />
+<HtmlPreviewer :code="RoleGroupDemo.newsletterExample()" />

@@ -8,11 +8,11 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: HiddenDemo.basic },
+  args: { html: HiddenDemo.basic() },
   render: (args) => args.html,
 };
 
 export const toggle: StoryObj = {
-  args: { html: HiddenDemo.toggle },
+  args: { html: HiddenDemo.toggle() },
   render: (args) => args.html,
 };

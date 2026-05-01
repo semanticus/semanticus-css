@@ -1,11 +1,10 @@
 import * as NavDemo from "@demos/semantics/elements/nav.demo";
+import { renderElement } from "@demos/utils";
 
-export const basic = `<header>
-  ${NavDemo.logoTaglineLinks}
-</header>
-`;
+export function basic(attrs: Record<string, string> = {}) {
+  return renderElement("header", attrs, NavDemo.logoTaglineLinks());
+}
 
-export const withSearchDropdownAndLinks = `<header>
-  ${NavDemo.searchDropdownAndLinks}
-</header>
-`;
+export function withSearchDropdownAndLinks(attrs: Record<string, string> = {}) {
+  return renderElement("header", attrs, NavDemo.searchDropdownAndLinks());
+}

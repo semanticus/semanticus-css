@@ -1,6 +1,6 @@
 import * as NavDemo from "@demos/semantics/elements/nav.demo";
+import { renderElement } from "@demos/utils";
 
-export const basic = `<footer>
-  ${NavDemo.copyrightAndContactUs}
-</footer>
-`;
+export function basic(attrs: Record<string, string> = {}) {
+  return renderElement("footer", attrs, NavDemo.copyrightAndContactUs());
+}

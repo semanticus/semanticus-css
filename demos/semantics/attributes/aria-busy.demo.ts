@@ -1,12 +1,17 @@
-export const basic = `<article class="card" aria-busy="true">
+export function basic() {
+  return `<article class="card" aria-busy="true">
   Loading content...
 </article>
 `;
+}
 
-export const loadingButton = `<button aria-busy="true" disabled>Loading...</button>
+export function loadingButton() {
+  return `<button aria-busy="true" disabled>Loading...</button>
 `;
+}
 
-export const loadingForm = `<form aria-busy="true">
+export function loadingForm() {
+  return `<form aria-busy="true">
   <label>Name</label>
   <input type="text" disabled>
   <label>Email</label>
@@ -14,3 +19,4 @@ export const loadingForm = `<form aria-busy="true">
   <button disabled>Submit</button>
 </form>
 `;
+}

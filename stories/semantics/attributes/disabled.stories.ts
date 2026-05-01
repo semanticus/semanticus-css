@@ -8,32 +8,32 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: DisabledDemo.basic },
+  args: { html: DisabledDemo.basic() },
   render: (args) => args.html,
 };
 
 export const input: StoryObj = {
-  args: { html: DisabledDemo.input },
+  args: { html: DisabledDemo.input() },
   render: (args) => args.html,
 };
 
 export const range: StoryObj = {
-  args: { html: DisabledDemo.range },
+  args: { html: DisabledDemo.range() },
   render: (args) => args.html,
 };
 
 export const select: StoryObj = {
-  args: { html: DisabledDemo.select },
+  args: { html: DisabledDemo.select() },
   render: (args) => args.html,
 };
 
 export const switch_: StoryObj = {
   name: "Switch",
-  args: { html: DisabledDemo.switch_ },
+  args: { html: DisabledDemo.switch_() },
   render: (args) => args.html,
 };
 
 export const textarea: StoryObj = {
-  args: { html: DisabledDemo.textarea },
+  args: { html: DisabledDemo.textarea() },
   render: (args) => args.html,
 };

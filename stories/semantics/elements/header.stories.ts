@@ -8,11 +8,11 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: HeaderDemo.basic },
+  args: { html: HeaderDemo.basic() },
   render: (args) => args.html,
 };
 
 export const WithSearchDropdownAndLinks: StoryObj = {
-  args: { html: HeaderDemo.withSearchDropdownAndLinks },
+  args: { html: HeaderDemo.withSearchDropdownAndLinks() },
   render: (args) => args.html,
 };

@@ -14,15 +14,15 @@ Use it on any container or interactive element to communicate a loading state.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="AriaBusyDemo.basic" />
+<HtmlPreviewer :code="AriaBusyDemo.basic()" />
 
 ## Loading Button
 
-<HtmlPreviewer :code="AriaBusyDemo.loadingButton" />
+<HtmlPreviewer :code="AriaBusyDemo.loadingButton()" />
 
 ## Loading Form
 
-<HtmlPreviewer :code="AriaBusyDemo.loadingForm" />
+<HtmlPreviewer :code="AriaBusyDemo.loadingForm()" />
 
 ## Best Practices
 

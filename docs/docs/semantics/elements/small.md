@@ -14,4 +14,4 @@ Use `aria-describedby` to associate it with the input.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="SmallDemo.basic" />
+<HtmlPreviewer :code="SmallDemo.basic()" />

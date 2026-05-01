@@ -9,16 +9,16 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleSearchDemo.basic },
+  args: { html: RoleSearchDemo.basic() },
   render: (args) => args.html,
 };
 
 export const withIconButton: StoryObj = {
-  args: { html: RoleSearchDemo.withIconButton },
+  args: { html: RoleSearchDemo.withIconButton() },
   render: (args) => args.html,
 };
 
 export const filterSearch: StoryObj = {
-  args: { html: RoleSearchDemo.filterSearch },
+  args: { html: RoleSearchDemo.filterSearch() },
   render: (args) => args.html,
 };

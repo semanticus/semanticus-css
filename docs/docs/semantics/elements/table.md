@@ -12,6 +12,6 @@ The `<table>` element represents tabular data arranged in rows and columns. Use 
 
 ## Basic Usage
 
-<HtmlPreviewer :code="TableDemo.basic" />
+<HtmlPreviewer :code="TableDemo.basic()" />
 
 For `.striped` table styles, see [Table Variants](/variants/components/tables).

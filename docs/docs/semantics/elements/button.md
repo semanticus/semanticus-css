@@ -14,7 +14,7 @@ Use `type="submit"` for form submission, `type="reset"` to clear a form, without
 
 ## Basic Usage
 
-<HtmlPreviewer :code="ButtonDemo.basic" />
+<HtmlPreviewer :code="ButtonDemo.basic()" />
 
 For `.secondary`, `.contrast` and `.ghost` styles, see [Button Variants](/variants/components/buttons).
 
@@ -24,14 +24,14 @@ On how to turn non-button elements into buttons, see [[role="button"]](/docs/sem
 
 `type="submit"` and `type="button"` inputs are also displayed as buttons. All form buttons are `width: 100%;` by default, to match with the other form elements.
 
-<HtmlPreviewer :code="ButtonDemo.formButtons" />
+<HtmlPreviewer :code="ButtonDemo.formButtons()" />
 
 Reset inputs have the secondary style by default.
 
-<HtmlPreviewer :code="ButtonDemo.resetButton" />
+<HtmlPreviewer :code="ButtonDemo.resetButton()" />
 
 ## Practical Examples
 
 ### Login Form
 
-<HtmlPreviewer :code="ButtonDemo.loginForm" />
+<HtmlPreviewer :code="ButtonDemo.loginForm()" />

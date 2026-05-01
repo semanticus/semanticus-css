@@ -1,4 +1,5 @@
-export const basic = `<nav>
+export function basic() {
+  return `<nav>
   <ul>
     <li><strong>Acme Corp</strong></li>
   </ul>
@@ -8,8 +9,10 @@ export const basic = `<nav>
     <li><a href="#">Products</a></li>
   </ul>
 </nav>`;
+}
 
-export const logoTaglineLinks = `<nav>
+export function logoTaglineLinks() {
+  return `<nav>
   <h2>logo</h2>
 
   <h3>tagline</h3>
@@ -18,8 +21,10 @@ export const logoTaglineLinks = `<nav>
     <li><a href="#!">Log out</a></li>
   </ul>
 </nav>`;
+}
 
-export const searchDropdownAndLinks = `<nav>
+export function searchDropdownAndLinks() {
+  return `<nav>
   <input class="w-auto" type="search" name="search" placeholder="Search" aria-label="Search" />
 
   <ul>
@@ -37,30 +42,38 @@ export const searchDropdownAndLinks = `<nav>
   <li><a href="#" role="button" class="secondary">Log In</a></li>
   </ul>
 </nav>`;
+}
 
-export const copyrightAndContactUs = `<nav>
+export function copyrightAndContactUs() {
+  return `<nav>
   <p>Copyright</p>
 
   <ul>
     <li><a href="#!">Contact Us</a></li>
   </ul>
 </nav>`;
+}
 
-export const pagesLinks = `<nav>
+export function pagesLinks() {
+  return `<nav>
   <ul>
     <li><a href="#">Overview</a></li>
     <li><a href="#">Layout</a></li>
   </ul>
 </nav>`;
+}
 
-export const pageLinks = `<nav>
+export function pageLinks() {
+  return `<nav>
   <ul>
     <li><a href="#">Install</a></li>
     <li><a href="#">Usage</a></li>
   </ul>
 </nav>`;
+}
 
-export const contrastLinks = `<nav>
+export function contrastLinks() {
+  return `<nav>
   <ul>
     <li><strong>Acme Corp</strong></li>
   </ul>
@@ -70,8 +83,10 @@ export const contrastLinks = `<nav>
     <li><a href="#" class="contrast">Products</a></li>
   </ul>
 </nav>`;
+}
 
-export const iconButtons = `<nav>
+export function iconButtons() {
+  return `<nav>
   <ul>
     <li><a href="#" class="secondary" aria-label="Menu">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path d="M4 18l16 0"></path></svg>
@@ -86,8 +101,10 @@ export const iconButtons = `<nav>
     </a></li>
   </ul>
 </nav>`;
+}
 
-export const withButton = `<nav>
+export function withButton() {
+  return `<nav>
   <ul><li><strong>Acme Corp</strong></li></ul>
   <ul>
     <li><a href="#">About</a></li>
@@ -96,8 +113,10 @@ export const withButton = `<nav>
   </ul>
 </nav>
 `;
+}
 
-export const withDropdown = `<nav>
+export function withDropdown() {
+  return `<nav>
   <ul><li><strong>Acme Corp</strong></li></ul>
   <ul>
     <li><a href="#" class="secondary">Services</a></li>
@@ -114,8 +133,10 @@ export const withDropdown = `<nav>
     </li>
   </ul>
 </nav>`;
+}
 
-export const verticalInAside = `<aside>
+export function verticalInAside() {
+  return `<aside>
   <nav>
     <ul>
       <li><a href="#">Home</a></li>
@@ -125,16 +146,20 @@ export const verticalInAside = `<aside>
     </ul>
   </nav>
 </aside>`;
+}
 
-export const breadcrumb = `<nav aria-label="breadcrumb">
+export function breadcrumb() {
+  return `<nav aria-label="breadcrumb">
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Category</a></li>
     <li>Page</li>
   </ul>
 </nav>`;
+}
 
-export const overflow = `<nav>
+export function overflow() {
+  return `<nav>
   <ul>
     <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
@@ -143,3 +168,4 @@ export const overflow = `<nav>
     <li><a href="#">Products</a></li>
   </ul>
 </nav>`;
+}

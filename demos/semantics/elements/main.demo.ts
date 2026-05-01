@@ -24,7 +24,7 @@ export const MainDemo = {
     return this.render({
       ...MainDemoArgs.default,
       ...restArgs,
-      slot: `${HeaderDemo.default({ class: headerClass })}
+      slot: `${HeaderDemo.basic({ class: headerClass })}
 ${MainDemoArgs.default.slot}`,
     });
   },
@@ -36,7 +36,7 @@ ${MainDemoArgs.default.slot}`,
       ...MainDemoArgs.default,
       ...restArgs,
       slot: `${MainDemoArgs.default.slot}
-${FooterDemo.default({ class: footerClass })}`,
+${FooterDemo.basic({ class: footerClass })}`,
     });
   },
 
@@ -51,9 +51,9 @@ ${FooterDemo.default({ class: footerClass })}`,
     return this.render({
       ...MainDemoArgs.default,
       ...restArgs,
-      slot: `${HeaderDemo.default({ class: headerClass })}
+      slot: `${HeaderDemo.basic({ class: headerClass })}
 ${MainDemoArgs.default.slot}
-${FooterDemo.default({ class: footerClass })}`,
+${FooterDemo.basic({ class: footerClass })}`,
     });
   },
 
@@ -63,7 +63,7 @@ ${FooterDemo.default({ class: footerClass })}`,
     return this.render({
       ...MainDemoArgs.default,
       ...restArgs,
-      slot: `${ArticleDemo.default({ class: articleClass })}`,
+      slot: `${ArticleDemo.basic({ class: articleClass })}`,
     });
   },
 
@@ -78,8 +78,8 @@ ${FooterDemo.default({ class: footerClass })}`,
     return this.render({
       ...MainDemoArgs.default,
       ...restArgs,
-      slot: `${HeaderDemo.default({ class: headerClass })}
-${ArticleDemo.default({ class: articleClass })}`,
+      slot: `${HeaderDemo.basic({ class: headerClass })}
+${ArticleDemo.basic({ class: articleClass })}`,
     });
   },
 
@@ -94,8 +94,8 @@ ${ArticleDemo.default({ class: articleClass })}`,
     return this.render({
       ...MainDemoArgs.default,
       ...restArgs,
-      slot: `${ArticleDemo.default({ class: articleClass })}
-${FooterDemo.default({ class: footerClass })}`,
+      slot: `${ArticleDemo.basic({ class: articleClass })}
+${FooterDemo.basic({ class: footerClass })}`,
     });
   },
 
@@ -111,9 +111,9 @@ ${FooterDemo.default({ class: footerClass })}`,
     return this.render({
       ...MainDemoArgs.default,
       ...restArgs,
-      slot: `${HeaderDemo.default({ class: headerClass })}
-${ArticleDemo.default({ class: articleClass })}
-${FooterDemo.default({ class: footerClass })}`,
+      slot: `${HeaderDemo.basic({ class: headerClass })}
+${ArticleDemo.basic({ class: articleClass })}
+${FooterDemo.basic({ class: footerClass })}`,
     });
   },
 };

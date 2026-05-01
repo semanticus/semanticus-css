@@ -19,13 +19,13 @@ export const DocsPage: StoryObj = {
   ${AsideDemo.leftSidebar({ class: "bg-secondary-subtle py-4" })}
 
   <main>
-    ${HeaderDemo.searchDropdownAndLinks({ class: "border-bottom ps-4 mb-4 bg-body" })}
+    ${HeaderDemo.withSearchDropdownAndLinks({ class: "border-bottom ps-4 mb-4 bg-body" })}
 
     <div class="flow-h mt-5">
       <div class="flow-v w-60 mx-auto">
         ${ArticleDemo.multipleParagraphs()}
 
-        ${FooterDemo.default({ class: "border-top mt-5" })}
+        ${FooterDemo.basic({ class: "border-top mt-5" })}
       </div>
 
       ${AsideDemo.rightSidebar({ class: "border-start sticky-top" })}

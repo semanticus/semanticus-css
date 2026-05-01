@@ -8,16 +8,16 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: AsideDemo.basic },
+  args: { html: AsideDemo.basic() },
   render: (args) => args.html,
 };
 
 export const LeftSidebar: StoryObj = {
-  args: { html: AsideDemo.leftSidebar },
+  args: { html: AsideDemo.leftSidebar() },
   render: (args) => args.html,
 };
 
 export const RightSidebar: StoryObj = {
-  args: { html: AsideDemo.rightSidebar },
+  args: { html: AsideDemo.rightSidebar() },
   render: (args) => args.html,
 };

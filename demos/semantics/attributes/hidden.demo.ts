@@ -1,9 +1,12 @@
-export const basic = `<p>This content is visible</p>
+export function basic() {
+  return `<p>This content is visible</p>
 <p hidden>This content is hidden</p>
 <p>This content is also visible</p>
 `;
+}
 
-export const toggle = `<div>
+export function toggle() {
+  return `<div>
   <button onclick="document.getElementById('toggle-content').toggleAttribute('hidden')">
     Toggle Content
   </button>
@@ -12,3 +15,4 @@ export const toggle = `<div>
   </p>
 </div>
 `;
+}

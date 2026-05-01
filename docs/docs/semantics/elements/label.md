@@ -16,12 +16,12 @@ Labels associate text descriptions with form controls.
 
 Use `for` on the label and a matching `id` on the input to associate them explicitly.
 
-<HtmlPreviewer :code="LabelDemo.basic" />
+<HtmlPreviewer :code="LabelDemo.basic()" />
 
 ## Input inside
 
 Wrapping an input inside a label implicitly associates them.
 
-<HtmlPreviewer :code="LabelDemo.inputInside" />
+<HtmlPreviewer :code="LabelDemo.inputInside()" />
 
 For helper text using `<small>`, see [&lt;small&gt;](/docs/semantics/small).

@@ -1,4 +1,5 @@
-export const basic = `<input
+export function basic() {
+  return `<input
   type="email"
   name="email"
   placeholder="Email"
@@ -8,3 +9,4 @@ export const basic = `<input
 />
 <small id="email-helper">We'll never share your email with anyone else.</small>
 `;
+}

@@ -1,10 +1,13 @@
-export const basic = `<fieldset>
+export function basic() {
+  return `<fieldset>
   <label>First name</label>
   <input placeholder="First name" autocomplete="given-name" />
 </fieldset>
 `;
+}
 
-export const insideForm = `<form>
+export function insideForm() {
+  return `<form>
   <fieldset>
     <label>
       First name
@@ -18,8 +21,10 @@ export const insideForm = `<form>
   <input type="submit" value="Subscribe" />
 </form>
 `;
+}
 
-export const disabled = `<fieldset disabled>
+export function disabled() {
+  return `<fieldset disabled>
   <legend>Disabled fieldset</legend>
   <label>
     Username
@@ -32,8 +37,10 @@ export const disabled = `<fieldset disabled>
   <input type="submit" value="Sign in" />
 </fieldset>
 `;
+}
 
-export const section = `<fieldset>
+export function section() {
+  return `<fieldset>
   <legend>Personal Information</legend>
   <label>
     First name
@@ -49,11 +56,14 @@ export const section = `<fieldset>
   </label>
 </fieldset>
 `;
+}
 
-export const withGroup = `<form>
+export function withGroup() {
+  return `<form>
   <fieldset role="group">
     <input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
     <input type="submit" value="Subscribe" />
   </fieldset>
 </form>
 `;
+}

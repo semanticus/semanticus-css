@@ -9,16 +9,16 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: AriaBusyDemo.basic },
+  args: { html: AriaBusyDemo.basic() },
   render: (args) => args.html,
 };
 
 export const loadingButton: StoryObj = {
-  args: { html: AriaBusyDemo.loadingButton },
+  args: { html: AriaBusyDemo.loadingButton() },
   render: (args) => args.html,
 };
 
 export const loadingForm: StoryObj = {
-  args: { html: AriaBusyDemo.loadingForm },
+  args: { html: AriaBusyDemo.loadingForm() },
   render: (args) => args.html,
 };

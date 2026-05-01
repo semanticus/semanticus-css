@@ -1,4 +1,5 @@
-export const basic = `<select name="favorite-cuisine" aria-label="Select your favorite cuisine..." required>
+export function basic() {
+  return `<select name="favorite-cuisine" aria-label="Select your favorite cuisine..." required>
   <option selected disabled value="">
     Select your favorite cuisine...
   </option>
@@ -9,8 +10,10 @@ export const basic = `<select name="favorite-cuisine" aria-label="Select your fa
   <option>French</option>
 </select>
 `;
+}
 
-export const multipleSelect = `<select aria-label="Select your favorite snacks..." multiple size="6">
+export function multipleSelect() {
+  return `<select aria-label="Select your favorite snacks..." multiple size="6">
   <option disabled>
     Select your favorite snacks...
   </option>
@@ -21,8 +24,10 @@ export const multipleSelect = `<select aria-label="Select your favorite snacks..
   <option>Crackers</option>
 </select>
 `;
+}
 
-export const withOptgroup = `<select>
+export function withOptgroup() {
+  return `<select>
   <optgroup label="North America">
     <option>United States</option>
     <option>Canada</option>
@@ -33,8 +38,10 @@ export const withOptgroup = `<select>
   </optgroup>
 </select>
 `;
+}
 
-export const dropdown = `<details>
+export function dropdown() {
+  return `<details>
   <summary aria-haspopup="menu">Select your favorite French dessert...</summary>
   <ul role="menu">
     <li><label><input type="radio" name="french-dessert" value="Crème brûlée"/>Crème brûlée</label></li>
@@ -44,3 +51,4 @@ export const dropdown = `<details>
   </ul>
 </details>
 `;
+}

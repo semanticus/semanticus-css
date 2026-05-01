@@ -16,12 +16,12 @@ Pair with a `<label>` to give it an accessible name for screen readers.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="ProgressDemo.basic" />
+<HtmlPreviewer :code="ProgressDemo.basic()" />
 
 ## Indeterminate Progress
 
-<HtmlPreviewer :code="ProgressDemo.indeterminate" />
+<HtmlPreviewer :code="ProgressDemo.indeterminate()" />
 
 ## Progress with Label
 
-<HtmlPreviewer :code="ProgressDemo.withLabel" />
+<HtmlPreviewer :code="ProgressDemo.withLabel()" />

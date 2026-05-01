@@ -1,30 +1,57 @@
-export const basic = `<input type="text" name="text" placeholder="Text" aria-label="Text" />`;
+export function basic() {
+  return `<input type="text" name="text" placeholder="Text" aria-label="Text" />`;
+}
 
-export const email = `<input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" />`;
+export function email() {
+  return `<input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" />`;
+}
 
-export const number = `<input type="number" name="number" placeholder="Number" aria-label="Number" />`;
+export function number() {
+  return `<input type="number" name="number" placeholder="Number" aria-label="Number" />`;
+}
 
-export const password = `<input type="password" name="password" placeholder="Password" aria-label="Password" />`;
+export function password() {
+  return `<input type="password" name="password" placeholder="Password" aria-label="Password" />`;
+}
 
-export const telephone = `<input type="tel" name="tel" placeholder="Tel" aria-label="Tel" autocomplete="tel" />`;
+export function telephone() {
+  return `<input type="tel" name="tel" placeholder="Tel" aria-label="Tel" autocomplete="tel" />`;
+}
 
-export const url = `<input type="url" name="url" placeholder="Url" aria-label="Url" />`;
+export function url() {
+  return `<input type="url" name="url" placeholder="Url" aria-label="Url" />`;
+}
 
-export const date = `<input type="date" name="date" aria-label="Date" />`;
+export function date() {
+  return `<input type="date" name="date" aria-label="Date" />`;
+}
 
-export const datetime = `<input type="datetime-local" name="datetime-local" aria-label="Datetime local" />`;
+export function datetime() {
+  return `<input type="datetime-local" name="datetime-local" aria-label="Datetime local" />`;
+}
 
-export const month = `<input type="month" name="month" aria-label="Month" />`;
+export function month() {
+  return `<input type="month" name="month" aria-label="Month" />`;
+}
 
-export const time = `<input type="time" name="time" aria-label="Time" />`;
+export function time() {
+  return `<input type="time" name="time" aria-label="Time" />`;
+}
 
-export const search = `<input type="search" name="search" placeholder="Search" aria-label="Search" />`;
+export function search() {
+  return `<input type="search" name="search" placeholder="Search" aria-label="Search" />`;
+}
 
-export const color = `<input type="color" value="#ff9500" aria-label="Color picker" />`;
+export function color() {
+  return `<input type="color" value="#ff9500" aria-label="Color picker" />`;
+}
 
-export const file = `<input type="file" />`;
+export function file() {
+  return `<input type="file" />`;
+}
 
-export const checkbox = `<fieldset>
+export function checkbox() {
+  return `<fieldset>
   <legend>Language preferences:</legend>
   <label>
     <input type="checkbox" name="english" checked />
@@ -40,8 +67,10 @@ export const checkbox = `<fieldset>
   </label>
 </fieldset>
 `;
+}
 
-export const horizontalCheckbox = `<fieldset>
+export function horizontalCheckbox() {
+  return `<fieldset>
   <legend>Language preferences:</legend>
   <input type="checkbox" id="hindi" name="hindi" checked />
   <label for="hindi">Hindi</label>
@@ -51,14 +80,18 @@ export const horizontalCheckbox = `<fieldset>
   <label for="navi" aria-disabled="true">Na'vi</label>
 </fieldset>
 `;
+}
 
-export const singleCheckbox = `<label>
+export function singleCheckbox() {
+  return `<label>
   <input type="checkbox" name="agree">
   I agree to the terms
 </label>
 `;
+}
 
-export const basicRadio = `<fieldset>
+export function basicRadio() {
+  return `<fieldset>
   <legend>Language preference:</legend>
   <label>
     <input type="radio" name="language" checked value="english" />
@@ -74,8 +107,10 @@ export const basicRadio = `<fieldset>
   </label>
 </fieldset>
 `;
+}
 
-export const horizontalRadio = `<fieldset>
+export function horizontalRadio() {
+  return `<fieldset>
   <legend>Second language:</legend>
   <input type="radio" id="hindi" name="second-language" checked value="hindi" />
   <label for="hindi">Hindi</label>
@@ -85,8 +120,10 @@ export const horizontalRadio = `<fieldset>
   <label for="navi" aria-disabled="true">Na'vi</label>
 </fieldset>
 `;
+}
 
-export const basicRange = `<label>
+export function basicRange() {
+  return `<label>
   Brightness
   <input type="range" />
 </label>
@@ -96,20 +133,26 @@ export const basicRange = `<label>
   <input type="range" value="40" />
 </label>
 `;
+}
 
-export const rangeWithMinMax = `<label>
+export function rangeWithMinMax() {
+  return `<label>
   Volume
   <input type="range" min="0" max="100" value="50" />
 </label>
 `;
+}
 
-export const rangeWithStep = `<label>
+export function rangeWithStep() {
+  return `<label>
   Rating (0-10)
   <input type="range" min="0" max="10" step="1" value="5" />
 </label>
 `;
+}
 
-export const basicSwitch = `<fieldset>
+export function basicSwitch() {
+  return `<fieldset>
   <label>
     <input name="terms" type="checkbox" role="switch" />
     I agree to the Terms
@@ -120,3 +163,4 @@ export const basicSwitch = `<fieldset>
   </label>
 </fieldset>
 `;
+}

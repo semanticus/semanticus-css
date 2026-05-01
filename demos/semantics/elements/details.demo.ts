@@ -1,4 +1,5 @@
-export const basic = `<details open name="accordion-group">
+export function basic() {
+  return `<details open name="accordion-group">
   <summary>Accordion 1</summary>
   <p>Flamingos are known for their bright pink feathers and distinctive long necks. These birds are social creatures that live in large groups, and a group of flamingos is called a flamboyance. They can often be seen standing on one leg, which helps them conserve body heat.</p>
 </details>
@@ -16,8 +17,10 @@ export const basic = `<details open name="accordion-group">
   </ul>
 </details>
 `;
+}
 
-export const basicDropdown = `<details>
+export function basicDropdown() {
+  return `<details>
   <summary aria-haspopup="menu">Dropdown</summary>
   <ul role="menu">
     <li><a role="menuitem" href="#">Solid</a></li>
@@ -35,8 +38,10 @@ export const basicDropdown = `<details>
   <option>Plasma</option>
 </select>
 `;
+}
 
-export const dropdownWithRadios = `<details>
+export function dropdownWithRadios() {
+  return `<details>
   <summary aria-haspopup="menu">Select a phase of matter...</summary>
   <ul role="menu">
     <li>
@@ -54,8 +59,10 @@ export const dropdownWithRadios = `<details>
   </ul>
 </details>
 `;
+}
 
-export const dropdownWithCheckboxes = `<details>
+export function dropdownWithCheckboxes() {
+  return `<details>
   <summary aria-haspopup="menu">Select phases of matter...</summary>
   <ul role="menu">
     <li>
@@ -73,8 +80,10 @@ export const dropdownWithCheckboxes = `<details>
   </ul>
 </details>
 `;
+}
 
-export const dropdownAsButton = `<details>
+export function dropdownAsButton() {
+  return `<details>
   <summary role="button" aria-haspopup="menu">Dropdown as a button</summary>
   <ul role="menu">
     <li><a role="menuitem" href="#">Solid</a></li>
@@ -84,8 +93,10 @@ export const dropdownAsButton = `<details>
   </ul>
 </details>
 `;
+}
 
-export const dropdownValidationStates = `<details>
+export function dropdownValidationStates() {
+  return `<details>
   <summary aria-haspopup="menu" aria-invalid="false">Valid phase of matter: Solid</summary>
   <ul role="menu">
     <li><a role="menuitem" href="#">Solid</a></li>
@@ -105,8 +116,10 @@ export const dropdownValidationStates = `<details>
   </ul>
 </details>
 `;
+}
 
-export const dropdownInNav = `<nav>
+export function dropdownInNav() {
+  return `<nav>
   <ul>
     <li><strong>Acme Corp</strong></li>
   </ul>
@@ -127,8 +140,10 @@ export const dropdownInNav = `<nav>
   </ul>
 </nav>
 `;
+}
 
-export const faq = `<h1>Frequently Asked Questions</h1>
+export function faq() {
+  return `<h1>Frequently Asked Questions</h1>
 
 <details>
   <summary>How do I get started?</summary>
@@ -155,3 +170,4 @@ export const faq = `<h1>Frequently Asked Questions</h1>
   </div>
 </details>
 `;
+}

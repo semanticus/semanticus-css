@@ -8,16 +8,16 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: TextareaDemo.basic },
+  args: { html: TextareaDemo.basic() },
   render: (args) => args.html,
 };
 
 export const withLabel: StoryObj = {
-  args: { html: TextareaDemo.withLabel },
+  args: { html: TextareaDemo.withLabel() },
   render: (args) => args.html,
 };
 
 export const withRows: StoryObj = {
-  args: { html: TextareaDemo.withRows },
+  args: { html: TextareaDemo.withRows() },
   render: (args) => args.html,
 };

@@ -14,12 +14,12 @@ Screen readers expose it as a "search" landmark, allowing users to jump directly
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleSearchDemo.basic" />
+<HtmlPreviewer :code="RoleSearchDemo.basic()" />
 
 ## Search with Icon Button
 
-<HtmlPreviewer :code="RoleSearchDemo.withIconButton" />
+<HtmlPreviewer :code="RoleSearchDemo.withIconButton()" />
 
 ## Filter Search
 
-<HtmlPreviewer :code="RoleSearchDemo.filterSearch" />
+<HtmlPreviewer :code="RoleSearchDemo.filterSearch()" />

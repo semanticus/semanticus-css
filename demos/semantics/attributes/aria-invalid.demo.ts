@@ -1,8 +1,11 @@
-export const basic = `<input type="text" name="valid" value="Valid" aria-invalid="false" />
+export function basic() {
+  return `<input type="text" name="valid" value="Valid" aria-invalid="false" />
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" />
 `;
+}
 
-export const inputHelper = `<input type="text" name="valid" value="Valid" aria-invalid="false" aria-describedby="valid-helper" />
+export function inputHelper() {
+  return `<input type="text" name="valid" value="Valid" aria-invalid="false" aria-describedby="valid-helper" />
 <small id="valid-helper">Looks good!</small>
 
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" aria-describedby="invalid-helper" />
@@ -10,8 +13,10 @@ export const inputHelper = `<input type="text" name="valid" value="Valid" aria-i
   Please provide a valid value!
 </small>
 `;
+}
 
-export const checkbox = `<label>
+export function checkbox() {
+  return `<label>
   <input type="checkbox" name="valid" aria-invalid="false" />
   Valid
 </label>
@@ -21,8 +26,10 @@ export const checkbox = `<label>
   Invalid
 </label>
 `;
+}
 
-export const radio = `<fieldset>
+export function radio() {
+  return `<fieldset>
   <label>
     <input type="radio" name="validation-states" aria-invalid="false" />
     Valid
@@ -34,8 +41,10 @@ export const radio = `<fieldset>
   </label>
 </fieldset>
 `;
+}
 
-export const select = `<select aria-invalid="false">
+export function select() {
+  return `<select aria-invalid="false">
   <option selected disabled value="">
     Select your favorite pizza topping...
   </option>
@@ -61,8 +70,10 @@ export const select = `<select aria-invalid="false">
   Please select your favorite pizza topping!
 </small>
 `;
+}
 
-export const switch_ = `<fieldset>
+export function switch_() {
+  return `<fieldset>
   <label>
     <input name="2fa" type="checkbox" role="switch" aria-invalid="false" />
     Enable two-factor authentication
@@ -73,8 +84,10 @@ export const switch_ = `<fieldset>
   </label>
 </fieldset>
 `;
+}
 
-export const textarea = `<textarea name="valid" aria-invalid="false">
+export function textarea() {
+  return `<textarea name="valid" aria-invalid="false">
   Valid
 </textarea>
 
@@ -82,8 +95,10 @@ export const textarea = `<textarea name="valid" aria-invalid="false">
   Invalid
 </textarea>
 `;
+}
 
-export const textareaHelper = `<textarea
+export function textareaHelper() {
+  return `<textarea
   name="valid"
   aria-invalid="false"
   aria-describedby="valid-helper"
@@ -103,3 +118,4 @@ export const textareaHelper = `<textarea
   Please provide a valid value!
 </small>
 `;
+}

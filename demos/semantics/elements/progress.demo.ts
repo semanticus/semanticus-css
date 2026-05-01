@@ -1,13 +1,19 @@
-export const basic = `<progress value="0" max="100"></progress>
+export function basic() {
+  return `<progress value="0" max="100"></progress>
 <progress value="50" max="100"></progress>
 <progress value="100" max="100"></progress>
 `;
+}
 
-export const indeterminate = `<progress></progress>
+export function indeterminate() {
+  return `<progress></progress>
 `;
+}
 
-export const withLabel = `<label>
+export function withLabel() {
+  return `<label>
   Upload progress
   <progress value="50" max="100">50%</progress>
 </label>
 `;
+}

@@ -8,21 +8,21 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: ButtonDemo.basic },
+  args: { html: ButtonDemo.basic() },
   render: (args) => args.html,
 };
 
 export const formButtons: StoryObj = {
-  args: { html: ButtonDemo.formButtons },
+  args: { html: ButtonDemo.formButtons() },
   render: (args) => args.html,
 };
 
 export const resetButton: StoryObj = {
-  args: { html: ButtonDemo.resetButton },
+  args: { html: ButtonDemo.resetButton() },
   render: (args) => args.html,
 };
 
 export const loginForm: StoryObj = {
-  args: { html: ButtonDemo.loginForm },
+  args: { html: ButtonDemo.loginForm() },
   render: (args) => args.html,
 };

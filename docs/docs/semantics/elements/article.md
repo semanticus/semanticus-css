@@ -16,23 +16,23 @@ It carries semantic meaning that distinguishes it from a generic `<div>`.
 
 By default, the `<article>` element has no visual styling.
 
-<HtmlPreviewer :code="ArticleDemo.basic" />
+<HtmlPreviewer :code="ArticleDemo.basic()" />
 
 ## Card
 
-<HtmlPreviewer :code="ArticleDemo.card" />
+<HtmlPreviewer :code="ArticleDemo.card()" />
 
 ## Card with Header
 
-<HtmlPreviewer :code="ArticleDemo.cardWithHeader" />
+<HtmlPreviewer :code="ArticleDemo.cardWithHeader()" />
 
 ## Card with Footer
 
-<HtmlPreviewer :code="ArticleDemo.cardWithFooter" />
+<HtmlPreviewer :code="ArticleDemo.cardWithFooter()" />
 
 ## Complete Card
 
-<HtmlPreviewer :code="ArticleDemo.completeCard" />
+<HtmlPreviewer :code="ArticleDemo.completeCard()" />
 
 ## Semantic vs Visual
 

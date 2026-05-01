@@ -1,8 +1,8 @@
 import { renderElement } from "@demos/utils";
-import { AsideDemo } from "@demos/semantics/elements/aside.demo";
-import { FooterDemo } from "@demos/semantics/elements/footer.demo";
-import { HeaderDemo } from "@demos/semantics/elements/header.demo";
-import { MainDemo } from "@demos/semantics/elements/main.demo";
+import * as AsideDemo from "@demos/semantics/elements/aside.demo";
+import * as FooterDemo from "@demos/semantics/elements/footer.demo";
+import * as HeaderDemo from "@demos/semantics/elements/header.demo";
+import * as MainDemo from "@demos/semantics/elements/main.demo";
 
 export type LayoutDemoArgsType = Record<string, any> & {
   class?: string;

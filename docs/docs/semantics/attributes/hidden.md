@@ -14,10 +14,10 @@ Elements with the `[hidden]` attribute are hidden by default. For `<template>` e
 
 Content with `hidden` attribute is not displayed.
 
-<HtmlPreviewer :code="HiddenDemo.basic" />
+<HtmlPreviewer :code="HiddenDemo.basic()" />
 
 ## Toggle Visibility
 
 Hidden content can be shown by removing the attribute.
 
-<HtmlPreviewer :code="HiddenDemo.toggle" />
+<HtmlPreviewer :code="HiddenDemo.toggle()" />

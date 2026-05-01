@@ -9,11 +9,11 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleTooltipDemo.basic },
+  args: { html: RoleTooltipDemo.basic() },
   render: (args) => args.html,
 };
 
 export const placement: StoryObj = {
-  args: { html: RoleTooltipDemo.placement },
+  args: { html: RoleTooltipDemo.placement() },
   render: (args) => args.html,
 };
