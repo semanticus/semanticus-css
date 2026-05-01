@@ -78,10 +78,8 @@
     "vitepress": "^2.0.0-alpha.17"
   },
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "dev": "storybook dev -p 6006",
     "start": "npm run docs:dev",
-    "demo": "node scripts/demo.js",
     "lint": "stylelint \"src/**/*.css\"",
     "lint:fix": "stylelint \"src/**/*.css\" --fix",
     "check": "npm run lint && npm run build",

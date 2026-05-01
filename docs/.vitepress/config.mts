@@ -329,7 +329,6 @@ export default defineConfig({
           text: "Semantic Styling",
           items: [
             { text: "Overview", link: "/docs/semantics/" },
-            { text: "Typography", link: "/docs/semantics/typography" },
             {
               text: "Elements",
               collapsed: true,

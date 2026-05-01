@@ -27,10 +27,8 @@ pre {
   display: block;
   font-style: normal;
   font-weight: var(--font-weight);
-  margin-bottom: var(--spacing);
   margin-bottom: var(--typography-spacing-vertical);
   margin-top: 0;
-  overflow-x: auto;
   overflow: auto;
 
   & code,
