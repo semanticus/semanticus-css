@@ -14,13 +14,9 @@ Unlike a toolbar, it does not enforce keyboard navigation patterns between items
 
 Use it to semantically cluster controls and communicate their relationship to assistive technologies.
 
-## Overview
+## Basic Usage
 
 Use `role="group"` to create connected groups of buttons or form elements. For search groups, see [[role="search"]](/docs/semantics/role-search).
-
-## Button Groups
-
-### Basic Group
 
 <HtmlPreviewer :code="RoleGroupDemo.basic" />
 

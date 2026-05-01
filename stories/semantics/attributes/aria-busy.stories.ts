@@ -8,18 +8,13 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicLoading: StoryObj = {
-  args: { html: AriaBusyDemo.basicLoading },
+export const BasicUsage: StoryObj = {
+  args: { html: AriaBusyDemo.basic },
   render: (args) => args.html,
 };
 
 export const loadingButton: StoryObj = {
   args: { html: AriaBusyDemo.loadingButton },
-  render: (args) => args.html,
-};
-
-export const loadingCard: StoryObj = {
-  args: { html: AriaBusyDemo.loadingCard },
   render: (args) => args.html,
 };
 

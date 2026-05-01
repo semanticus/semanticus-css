@@ -1,5 +1,4 @@
-export const input = `<input type="text" name="valid" value="Valid" aria-invalid="false" />
-
+export const basic = `<input type="text" name="valid" value="Valid" aria-invalid="false" />
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" />
 `;
 

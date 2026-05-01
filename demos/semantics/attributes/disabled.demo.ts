@@ -1,9 +1,4 @@
-export const button = `<div role="toolbar">
-  <button disabled>Disabled</button>
-  <button class="secondary" disabled>Disabled</button>
-  <button class="contrast" disabled>Disabled</button>
-</div>
-`;
+export const basic = `<button disabled>Disabled</button>`;
 
 export const input = `<input type="text" name="text" placeholder="Disabled" aria-label="Disabled input" disabled />
 `;

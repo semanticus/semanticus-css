@@ -14,9 +14,9 @@ Set it to `"true"` for an invalid field and `"false"` for a valid one.
 
 Pair it with a helper message via `aria-describedby` to explain the error.
 
-## Input
+## Basic Usage
 
-<HtmlPreviewer :code="AriaInvalidDemo.input" />
+<HtmlPreviewer :code="AriaInvalidDemo.basic" />
 
 Helper texts defined with `<small>` below the form element inherit the validation state color.
 

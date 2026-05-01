@@ -12,7 +12,7 @@ The `role="search"` attribute marks a landmark region containing site or applica
 
 Screen readers expose it as a "search" landmark, allowing users to jump directly to the search form.
 
-## Basic Search
+## Basic Usage
 
 <HtmlPreviewer :code="RoleSearchDemo.basic" />
 

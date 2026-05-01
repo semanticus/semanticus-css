@@ -10,11 +10,11 @@ import { HiddenDemo } from "@demos/semantics/attributes";
 
 Elements with the `[hidden]` attribute are hidden by default. For `<template>` elements, see [&lt;template&gt;](/docs/semantics/template).
 
-## Hidden Attribute
+## Basic Usage
 
 Content with `hidden` attribute is not displayed.
 
-<HtmlPreviewer :code="HiddenDemo.hidden" />
+<HtmlPreviewer :code="HiddenDemo.basic" />
 
 ## Toggle Visibility
 

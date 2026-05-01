@@ -12,6 +12,6 @@ A toolbar is a container for grouping a set of controls, allowing keyboard navig
 
 You can use `role="toolbar"` to display elements in a grid.
 
-## Basic Toolbar
+## Basic Usage
 
 <HtmlPreviewer :code="RoleToolbarDemo.basic" />

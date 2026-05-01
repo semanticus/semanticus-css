@@ -1,17 +1,9 @@
-export const basicLoading = `<article class="card" aria-busy="true">
+export const basic = `<article class="card" aria-busy="true">
   Loading content...
 </article>
 `;
 
 export const loadingButton = `<button aria-busy="true" disabled>Loading...</button>
-`;
-
-export const loadingCard = `<article class="card" aria-busy="true">
-  <header>
-    <h3>Loading Title</h3>
-  </header>
-  <p>Loading content...</p>
-</article>
 `;
 
 export const loadingForm = `<form aria-busy="true">

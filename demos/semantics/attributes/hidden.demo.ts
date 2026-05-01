@@ -1,4 +1,4 @@
-export const hidden = `<p>This content is visible</p>
+export const basic = `<p>This content is visible</p>
 <p hidden>This content is hidden</p>
 <p>This content is also visible</p>
 `;

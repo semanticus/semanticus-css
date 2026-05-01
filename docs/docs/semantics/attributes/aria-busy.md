@@ -12,17 +12,13 @@ The `aria-busy="true"` attribute signals to assistive technologies that an eleme
 
 Use it on any container or interactive element to communicate a loading state.
 
-## Basic Loading
+## Basic Usage
 
-<HtmlPreviewer :code="AriaBusyDemo.basicLoading" />
+<HtmlPreviewer :code="AriaBusyDemo.basic" />
 
 ## Loading Button
 
 <HtmlPreviewer :code="AriaBusyDemo.loadingButton" />
-
-## Loading Card
-
-<HtmlPreviewer :code="AriaBusyDemo.loadingCard" />
 
 ## Loading Form
 

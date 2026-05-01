@@ -8,8 +8,8 @@ const meta: Meta = {
 
 export default meta;
 
-export const input: StoryObj = {
-  args: { html: AriaInvalidDemo.input },
+export const BasicUsage: StoryObj = {
+  args: { html: AriaInvalidDemo.basic },
   render: (args) => args.html,
 };
 
