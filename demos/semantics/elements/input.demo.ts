@@ -1,136 +1,296 @@
-export function basic() {
-  return `<input type="text" name="text" placeholder="Text" aria-label="Text" />`;
+import { renderElement } from "@demos/utils";
+
+function render(attrs: Record<string, string>) {
+  return renderElement("input", attrs);
 }
 
-export function email() {
-  return `<input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" />`;
+export function basic(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "text",
+    name: "text",
+    placeholder: "Text",
+    "aria-label": "Text",
+  });
 }
 
-export function number() {
-  return `<input type="number" name="number" placeholder="Number" aria-label="Number" />`;
+export function button(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "button",
+    value: "Input Button"
+  });
 }
 
-export function password() {
-  return `<input type="password" name="password" placeholder="Password" aria-label="Password" />`;
+export function submit(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "submit",
+    value: "Input Submit"
+  });
 }
 
-export function telephone() {
-  return `<input type="tel" name="tel" placeholder="Tel" aria-label="Tel" autocomplete="tel" />`;
+export function reset(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "reset",
+    value: "Input Reset"
+  });
 }
 
-export function url() {
-  return `<input type="url" name="url" placeholder="Url" aria-label="Url" />`;
+export function email(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "email",
+    placeholder: "email@example.com",
+    "aria-label": "Email",
+    autocomplete: "email",
+  });
 }
 
-export function date() {
-  return `<input type="date" name="date" aria-label="Date" />`;
+export function number(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "number",
+    placeholder: "Number",
+    "aria-label": "Number",
+  });
 }
 
-export function datetime() {
-  return `<input type="datetime-local" name="datetime-local" aria-label="Datetime local" />`;
+export function password(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "password",
+    placeholder: "Password",
+    "aria-label": "Password",
+  });
 }
 
-export function month() {
-  return `<input type="month" name="month" aria-label="Month" />`;
+export function telephone(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "tel",
+    placeholder: "Tel",
+    "aria-label": "Tel",
+    autocomplete: "tel",
+  });
 }
 
-export function time() {
-  return `<input type="time" name="time" aria-label="Time" />`;
+export function url(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "url",
+    placeholder: "https://example.com",
+    "aria-label": "Url",
+  });
 }
 
-export function search() {
-  return `<input type="search" name="search" placeholder="Search" aria-label="Search" />`;
+export function date(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "date",
+    "aria-label": "Date",
+  });
 }
 
-export function color() {
-  return `<input type="color" value="#ff9500" aria-label="Color picker" />`;
+export function datetime(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "datetime-local",
+    "aria-label": "Datetime local",
+  });
 }
 
-export function file() {
-  return `<input type="file" />`;
+export function month(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "month",
+    "aria-label": "Month",
+  });
 }
 
-export function checkbox() {
+export function time(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "time",
+    "aria-label": "Time",
+  });
+}
+
+export function search(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "search",
+    placeholder: "Search",
+    "aria-label": "Search",
+  });
+}
+
+export function color(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "color",
+    value: "#ff9500",
+    "aria-label": "Color picker",
+  });
+}
+
+export function file(attrs: Record<string, string> = {}) {
+  return render({
+    ...attrs,
+    type: "file",
+  });
+}
+
+export function checkboxBasic(attrs: Record<string, string> = {}) {
+  return `<label>
+  ${render({
+    ...attrs,
+    type: "checkbox",
+    checked: "checked",
+  })}
+  Checkbox
+</label>
+`;
+}
+
+export function checkboxVertical() {
   return `<fieldset>
   <legend>Language preferences:</legend>
   <label>
-    <input type="checkbox" name="english" checked />
+    ${render({
+      type: "checkbox",
+      name: "english",
+      checked: "checked",
+    })}
     English
   </label>
   <label>
-    <input type="checkbox" name="mandarin" />
+    ${render({
+      type: "checkbox",
+      name: "mandarin",
+    })}
     Mandarin
   </label>
   <label aria-disabled="true">
-    <input type="checkbox" name="dothraki" disabled />
+    ${render({
+      type: "checkbox",
+      name: "dothraki",
+      disabled: "disabled",
+    })}
     Dothraki
   </label>
 </fieldset>
 `;
 }
 
-export function horizontalCheckbox() {
+export function checkboxHorizontal() {
   return `<fieldset>
   <legend>Language preferences:</legend>
-  <input type="checkbox" id="hindi" name="hindi" checked />
+  ${render({
+    type: "checkbox",
+    id: "hindi",
+    name: "hindi",
+    checked: "checked",
+  })}
   <label for="hindi">Hindi</label>
-  <input type="checkbox" id="swahili" name="swahili" />
+  ${render({
+    type: "checkbox",
+    id: "swahili",
+    name: "swahili",
+  })}
   <label for="swahili">Swahili</label>
-  <input type="checkbox" id="navi" name="navi" disabled />
+  ${render({
+    type: "checkbox",
+    id: "navi",
+    name: "navi",
+    disabled: "disabled",
+  })}
   <label for="navi" aria-disabled="true">Na'vi</label>
 </fieldset>
 `;
 }
 
-export function singleCheckbox() {
+export function radioBasic(attrs: Record<string, string> = {}) {
   return `<label>
-  <input type="checkbox" name="agree">
-  I agree to the terms
+  ${render({
+    ...attrs,
+    type: "radio",
+    checked: "checked",
+    value: "yes",
+  })}
+  Radio button
 </label>
 `;
 }
 
-export function basicRadio() {
+export function radioVertical() {
   return `<fieldset>
   <legend>Language preference:</legend>
   <label>
-    <input type="radio" name="language" checked value="english" />
+    ${render({
+      type: "radio",
+      name: "language",
+      checked: "checked",
+      value: "english",
+    })}
     English
   </label>
   <label>
-    <input type="radio" name="language" value="mandarin" />
+    ${render({
+      type: "radio",
+      name: "language",
+      value: "mandarin",
+    })}
     Mandarin
   </label>
   <label aria-disabled="true">
-    <input type="radio" name="language" value="dothraki" disabled />
+    ${render({
+      type: "radio",
+      name: "language",
+      value: "dothraki",
+      disabled: "disabled",
+    })}
     Dothraki
   </label>
 </fieldset>
 `;
 }
 
-export function horizontalRadio() {
+export function radioHorizontal() {
   return `<fieldset>
   <legend>Second language:</legend>
-  <input type="radio" id="hindi" name="second-language" checked value="hindi" />
+  ${render({
+    type: "radio",
+    id: "hindi",
+    name: "second-language",
+    checked: "checked",
+    value: "hindi",
+  })}
   <label for="hindi">Hindi</label>
-  <input type="radio" id="swahili" name="second-language" value="swahili" />
+  ${render({
+    type: "radio",
+    id: "swahili",
+    name: "second-language",
+    value: "swahili",
+  })}
   <label for="swahili">Swahili</label>
-  <input type="radio" id="navi" name="second-language" value="navi" disabled />
+  ${render({
+    type: "radio",
+    id: "navi",
+    name: "second-language",
+    value: "navi",
+    disabled: "disabled",
+  })}
   <label for="navi" aria-disabled="true">Na'vi</label>
 </fieldset>
 `;
 }
 
-export function basicRange() {
+export function rangeBasic(attrs: Record<string, string> = {}) {
   return `<label>
-  Brightness
-  <input type="range" />
-</label>
-
-<label>
-  Contrast
-  <input type="range" value="40" />
+  Range slider
+  ${render({ ...attrs, type: "range" })}
 </label>
 `;
 }
@@ -138,7 +298,7 @@ export function basicRange() {
 export function rangeWithMinMax() {
   return `<label>
   Volume
-  <input type="range" min="0" max="100" value="50" />
+  ${render({ type: "range", min: "0", max: "100", value: "50" })}
 </label>
 `;
 }
@@ -146,21 +306,20 @@ export function rangeWithMinMax() {
 export function rangeWithStep() {
   return `<label>
   Rating (0-10)
-  <input type="range" min="0" max="10" step="1" value="5" />
+  ${render({ type: "range", min: "0", max: "10", step: "1", value: "5" })}
 </label>
 `;
 }
 
-export function basicSwitch() {
-  return `<fieldset>
-  <label>
-    <input name="terms" type="checkbox" role="switch" />
-    I agree to the Terms
-  </label>
-  <label>
-    <input name="opt-in" type="checkbox" role="switch" checked />
-    Receive news and offers
-  </label>
-</fieldset>
+export function switchBasic(attrs: Record<string, string> = {}) {
+  return `<label>
+  ${render({
+    ...attrs,
+    type: "checkbox",
+    checked: "checked",
+    role: "switch",
+  })}
+  Switch
+</label>
 `;
 }

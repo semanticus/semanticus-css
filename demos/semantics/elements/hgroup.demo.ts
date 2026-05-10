@@ -1,7 +1,7 @@
 export function basic() {
   return `<hgroup>
-  <h1>Hello World</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.</p>
+  <h2>Heading Group</h2>
+  <p>The <code>&lt;hgroup&gt;</code> last child gets muted text — ideal for page titles with a description or byline.</p>
 </hgroup>
 `;
 }

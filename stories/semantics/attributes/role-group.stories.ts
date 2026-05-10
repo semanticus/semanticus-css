@@ -23,17 +23,17 @@ export const selectWithButton: StoryObj = {
   render: (args) => args.html,
 };
 
-export const multipleInputs: StoryObj = {
-  args: { html: RoleGroupDemo.multipleInputs() },
+export const twoInputsWithButton: StoryObj = {
+  args: { html: RoleGroupDemo.twoInputsWithButton() },
   render: (args) => args.html,
 };
 
-export const paginationExample: StoryObj = {
-  args: { html: RoleGroupDemo.paginationExample() },
+export const pagination: StoryObj = {
+  args: { html: RoleGroupDemo.pagination() },
   render: (args) => args.html,
 };
 
-export const newsletterExample: StoryObj = {
-  args: { html: RoleGroupDemo.newsletterExample() },
+export const newsletterForm: StoryObj = {
+  args: { html: RoleGroupDemo.newsletterForm() },
   render: (args) => args.html,
 };

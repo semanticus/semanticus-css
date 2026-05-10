@@ -10,10 +10,6 @@ import { HeadingsDemo } from "@demos/semantics/elements";
 
 Semanticus styles headings with progressively lighter colors as the level increases, using `color-mix()` to blend toward the muted text color.
 
-## All Levels
+## Basic Usage
 
-<HtmlPreviewer :code="HeadingsDemo.allLevels()" />
-
-## In Context
-
-<HtmlPreviewer :code="HeadingsDemo.inContext()" />
+<HtmlPreviewer :code="HeadingsDemo.basic()" />

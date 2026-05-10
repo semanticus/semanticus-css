@@ -72,33 +72,38 @@ export const file: StoryObj = {
   render: (args) => args.html,
 };
 
-export const checkbox: StoryObj = {
-  args: { html: InputDemo.checkbox() },
+export const checkboxBasicUsage: StoryObj = {
+  args: { html: InputDemo.checkboxBasic() },
   render: (args) => args.html,
 };
 
-export const horizontalCheckbox: StoryObj = {
-  args: { html: InputDemo.horizontalCheckbox() },
+export const checkboxVerticalStack: StoryObj = {
+  args: { html: InputDemo.checkboxVertical() },
   render: (args) => args.html,
 };
 
-export const singleCheckbox: StoryObj = {
-  args: { html: InputDemo.singleCheckbox() },
+export const checkboxHorizontalStack: StoryObj = {
+  args: { html: InputDemo.checkboxHorizontal() },
   render: (args) => args.html,
 };
 
-export const basicRadio: StoryObj = {
-  args: { html: InputDemo.basicRadio() },
+export const radioBasicUsage: StoryObj = {
+  args: { html: InputDemo.radioBasic() },
   render: (args) => args.html,
 };
 
-export const horizontalRadio: StoryObj = {
-  args: { html: InputDemo.horizontalRadio() },
+export const radioVerticalStack: StoryObj = {
+  args: { html: InputDemo.radioVertical() },
   render: (args) => args.html,
 };
 
-export const basicRange: StoryObj = {
-  args: { html: InputDemo.basicRange() },
+export const radioHorizontalStack: StoryObj = {
+  args: { html: InputDemo.radioHorizontal() },
+  render: (args) => args.html,
+};
+
+export const rangeBasicUsage: StoryObj = {
+  args: { html: InputDemo.rangeBasic() },
   render: (args) => args.html,
 };
 
@@ -112,7 +117,7 @@ export const rangeWithStep: StoryObj = {
   render: (args) => args.html,
 };
 
-export const basicSwitch: StoryObj = {
-  args: { html: InputDemo.basicSwitch() },
+export const switchBasicUsage: StoryObj = {
+  args: { html: InputDemo.switchBasic() },
   render: (args) => args.html,
 };

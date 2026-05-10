@@ -67,36 +67,39 @@ The native `<input type="checkbox">` with a custom and responsive style.
 
 ### Basic Usage
 
-<HtmlPreviewer :code="InputDemo.checkbox()" />
+<HtmlPreviewer :code="InputDemo.checkboxBasic()" />
+
+### Vertical Stacking
+
+<HtmlPreviewer :code="InputDemo.checkboxVertical()" />
 
 ### Horizontal Stacking
 
-<HtmlPreviewer :code="InputDemo.horizontalCheckbox()" />
-
-
-### Single Checkbox
-
-<HtmlPreviewer :code="InputDemo.singleCheckbox()" />
+<HtmlPreviewer :code="InputDemo.checkboxHorizontal()" />
 
 ## Radios
 
 The native `<input type="radio">` with a custom and responsive style.
 
-### Basic Radio
+### Basic Usage
 
-<HtmlPreviewer :code="InputDemo.basicRadio()" />
+<HtmlPreviewer :code="InputDemo.radioBasic()" />
+
+### Vertical Stacking
+
+<HtmlPreviewer :code="InputDemo.radioVertical()" />
 
 ### Horizontal Stacking
 
-<HtmlPreviewer :code="InputDemo.horizontalRadio()" />
+<HtmlPreviewer :code="InputDemo.radioHorizontal()" />
 
 ## Range
 
 The native `<input type="range">` with a custom and responsive style.
 
-### Basic Range
+### Basic Usage
 
-<HtmlPreviewer :code="InputDemo.basicRange()" />
+<HtmlPreviewer :code="InputDemo.rangeBasic()" />
 
 ### With Min and Max
 
@@ -110,7 +113,7 @@ The native `<input type="range">` with a custom and responsive style.
 
 The native `<input type="checkbox">` styled as a switch, using the `role="switch"` for accessibility.
 
-### Basic Switch
+### Basic Usage
 
-<HtmlPreviewer :code="InputDemo.basicSwitch()" />
+<HtmlPreviewer :code="InputDemo.switchBasic()" />
 

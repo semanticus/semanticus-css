@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html";
-import rawDemoSemanticsHtml from "./semantics.html?raw";
+import { OverviewDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Examples/Semantics",
@@ -9,5 +9,5 @@ const meta: Meta = {
 export default meta;
 
 export const Semantics: StoryObj = {
-  render: () => rawDemoSemanticsHtml,
+  render: () => OverviewDemo.completeExample(),
 };
