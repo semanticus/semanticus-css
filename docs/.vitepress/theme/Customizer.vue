@@ -1,11 +1,31 @@
 <script setup>
 import { ref, onMounted, watch, computed } from 'vue'
 import { useData } from 'vitepress'
-import rawPreviewHtml from './customizer-preview.html?raw'
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import javascript from 'highlight.js/lib/languages/javascript'
+import { OverviewDemo } from '@demos/semantics';
+
+function htmlTemplate(style, theme) {
+  return `<!DOCTYPE html>
+<html lang="en" data-theme="${theme}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    ${style}
+    body {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  ${OverviewDemo.simpleExample({ class: 'container-fluid' })}
+</body>`;
+}
 
 hljs.registerLanguage('html', html)
 hljs.registerLanguage('bash', bash)
@@ -58,12 +78,13 @@ const previewHtml = computed(() => {
   const paletteCssPath = paletteName === 'azure' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.palette.${paletteName}.css">`
   const sizeCssPath = sizeName === 'default' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.size.${sizeName}.css">`
 
-  return rawPreviewHtml
-    .replaceAll('__SEMANTICUS_BASE__', basePath.value)
-    .replace(/data-theme=""/, `data-theme="${dataTheme}"`)
-    .replace('<!-- PALETTE_CSS -->', paletteCssPath)
-    .replace('<!-- SIZE_CSS -->', sizeCssPath)
-    .replace('<!-- PALETTE_NAME -->', paletteName)
+  const style = `
+    @import url('${basePath.value}semanticus.css');
+    ${paletteName !== 'azure' ? `@import url('${basePath.value}semanticus.palette.${paletteName}.css');` : ''}
+    ${sizeName !== 'default' ? `@import url('${basePath.value}semanticus.size.${sizeName}.css');` : ''}
+  `
+
+  return htmlTemplate(style, dataTheme);
 })
 
 watch([currentPalette, currentSize, isDark], () => {

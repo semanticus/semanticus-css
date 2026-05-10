@@ -1,3 +1,5 @@
+import { renderElement } from "@demos/utils";
+
 import * as TypographyDemo from '@demos/semantics/typography.demo';
 
 import {
@@ -45,10 +47,10 @@ export function links() {
   </header>
 
   <section role="group">
-    <a href="#">Primary</a>
-    <a href="#" aria-current="page">Active</a>
-    <a href="#" class="secondary">Secondary</a>
-    <a href="#" class="contrast">Contrast</a>
+    <a href="#" onclick="event.preventDefault()">Primary</a>
+    <a href="#" aria-current="page" onclick="event.preventDefault()">Active</a>
+    <a href="#" class="secondary" onclick="event.preventDefault()">Secondary</a>
+    <a href="#" class="contrast" onclick="event.preventDefault()">Contrast</a>
   </section>
 `;
 }
@@ -473,8 +475,8 @@ function address() {
 </section>`;
 }
 
-export function simpleExample() {
-  return `<main class="container">
+export function simpleExample(attrs: Record<string, string> = {}) {
+  return renderElement("main", { class: 'container', ...attrs }, `
   ${buttons()}
 
   <hr>
@@ -530,16 +532,16 @@ export function simpleExample() {
       </hgroup>
       <p>This is a sample card component styled with the <!-- PALETTE_NAME --> palette. It demonstrates the palette's card background, border, and text colors.</p>
       <footer>
-        <a href="#!" role="button" aria-label="Close">Cancel</a>&nbsp;
-        <a href="#!" role="button">Save</a>
+        <button aria-label="Close">Cancel</button>&nbsp;
+        <button>Save</button>
       </footer>
     </article>
   </section>
-`;
+`);
 }
 
-export function completeExample() {
-  return `<header class="container">
+export function completeExample(attrs: Record<string, string> = {}) {
+  return renderElement("main", { class: 'container', ...attrs }, `
   <h1 class="title">Semantics Demo</h1>
 </header>
 
@@ -617,5 +619,5 @@ export function completeExample() {
   <hr>
 
   ${address()}
-</main>`;
+</main>`);
 }
