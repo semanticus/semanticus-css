@@ -1,5 +1,11 @@
-export function basic() {
-  return `<select name="favorite-cuisine" aria-label="Select your favorite cuisine..." required>
+import { renderElement } from "@demos/utils";
+
+function render(attrs: Record<string, string>, slot: string) {
+  return renderElement("select", attrs, slot);
+}
+
+export function basic(attrs: Record<string, string> = {}) {
+  return render({ ...attrs, name: "favorite-cuisine", "aria-label": "Select your favorite cuisine...", required: "required" }, `
   <option selected disabled value="">
     Select your favorite cuisine...
   </option>
@@ -9,11 +15,11 @@ export function basic() {
   <option>Thai</option>
   <option>French</option>
 </select>
-`;
+`);
 }
 
-export function multipleSelect() {
-  return `<select aria-label="Select your favorite snacks..." multiple size="6">
+export function multipleSelect(attrs: Record<string, string> = {}) {
+  return render({ ...attrs, "aria-label": "Select your favorite snacks...", multiple: "multiple", size: "6" }, `
   <option disabled>
     Select your favorite snacks...
   </option>
@@ -23,11 +29,11 @@ export function multipleSelect() {
   <option>Chocolate</option>
   <option>Crackers</option>
 </select>
-`;
+`);
 }
 
-export function withOptgroup() {
-  return `<select>
+export function withOptgroup(attrs: Record<string, string> = {}) {
+  return render({ ...attrs, "aria-label": "Select your country..." }, `
   <optgroup label="North America">
     <option>United States</option>
     <option>Canada</option>
@@ -37,7 +43,7 @@ export function withOptgroup() {
     <option>France</option>
   </optgroup>
 </select>
-`;
+`);
 }
 
 export function dropdown() {

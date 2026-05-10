@@ -20,15 +20,15 @@ For `.secondary`, `.contrast` and `.ghost` styles, see [Button Variants](/docs/v
 
 On how to turn non-button elements into buttons, see [[role="button"]](/docs/semantics/attributes/role-button).
 
-## Form Buttons
+## Input Buttons
 
 `type="submit"` and `type="button"` inputs are also displayed as buttons. All form buttons are `width: 100%;` by default, to match with the other form elements.
 
-<HtmlPreviewer :code="ButtonDemo.formButtons()" />
+<HtmlPreviewer :code="ButtonDemo.inputButtons()" />
 
 Reset inputs have the secondary style by default.
 
-<HtmlPreviewer :code="ButtonDemo.resetButton()" />
+<HtmlPreviewer :code="ButtonDemo.inputResetButton()" />
 
 ## Practical Examples
 

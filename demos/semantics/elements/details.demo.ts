@@ -1,22 +1,36 @@
+import { renderElement } from "@demos/utils";
+
+function render(attrs: Record<string, string>, slot: string = "") {
+  return renderElement("details", attrs, slot);
+}
+
 export function basic() {
-  return `<details open name="accordion-group">
+  return `<details name="accordion-group">
   <summary>Accordion 1</summary>
-  <p>Flamingos are known for their bright pink feathers and distinctive long necks. These birds are social creatures that live in large groups, and a group of flamingos is called a flamboyance. They can often be seen standing on one leg, which helps them conserve body heat.</p>
+  <p>
+    This content is hidden by default and revealed when you click the summary.
+    Accordions are great for organizing content into collapsible sections.
+  </p>
 </details>
 
 <hr />
 
-<details name="accordion-group">
+<details name="accordion-group" open>
   <summary>Accordion 2</summary>
   <ul>
-    <li>Kangaroos are marsupials that are native to Australia.</li>
-    <li>They are known for their powerful hind legs, which they use to hop around.</li>
-    <li>Kangaroos can't walk backwards due to the shape of their legs and tail.</li>
-    <li>Baby kangaroos, called joeys, are born very small and undeveloped and must crawl into their mother's pouch to continue developing.</li>
-    <li>Some species of kangaroos can leap up to 30 feet in a single bound.</li>
+    <li>This accordion starts in the open state.</li>
+    <li>Use the <code>open</code> attribute to expand by default.</li>
+    <li>Click the summary to collapse.</li>
+    <li>Great for FAQ sections or settings panels.</li>
   </ul>
-</details>
-`;
+</details>`;
+}
+
+export function asButton() {
+  return `<details>
+  <summary role="button">Button-style Accordion</summary>
+  <p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>
+</details>`;
 }
 
 export function basicDropdown() {
@@ -61,25 +75,22 @@ export function dropdownWithRadios() {
 `;
 }
 
-export function dropdownWithCheckboxes() {
-  return `<details>
-  <summary aria-haspopup="menu">Select phases of matter...</summary>
-  <ul role="menu">
-    <li>
-      <label>
-        <input type="checkbox" name="solid" />
-        Solid
-      </label>
-    </li>
-    <li>
-      <label>
-        <input type="checkbox" name="liquid" />
-        Liquid
-      </label>
-    </li>
-  </ul>
-</details>
-`;
+export function dropdownWithCheckboxes(attrs: Record<string, string> = {}) {
+  return render(attrs, `<summary aria-haspopup="menu">Select phases of matter...</summary>
+<ul role="menu">
+  <li>
+    <label>
+      <input type="checkbox" name="solid" />
+      Solid
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" name="liquid" />
+      Liquid
+    </label>
+  </li>
+</ul>`);
 }
 
 export function dropdownAsButton() {

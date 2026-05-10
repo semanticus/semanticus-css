@@ -22,40 +22,16 @@ Screen readers expose it as a navigation landmark, allowing users to jump direct
 
 `<a>` are underlined only on `:hover`.
 
-## Link variants
-
-You can use `.secondary`, `.contrast`, and `.ghost` classes (not available in the [class-less version](/guide/)).
-
-<HtmlPreviewer :code="NavDemo.contrastLinks()" />
-
-<HtmlPreviewer :code="NavDemo.iconButtons()" />
-
-## Buttons
-
 You can use `<button>` inside `<li>`. Button sizes automatically match link size and margin.
 
-<HtmlPreviewer :code="NavDemo.withButton()" />
-
-## Dropdowns
-
-You can use [dropdowns](/docs/composites/dropdown) inside Nav.
-
-<HtmlPreviewer :code="NavDemo.withDropdown()" />
-
-## Vertical stacking
-
-Navs can be stacked vertically with `<ul>` inside `<aside>`.
-
-<HtmlPreviewer :code="NavDemo.verticalInAside()" />
-
-## Breadcrumb
+## Breadcrumbs
 
 Breadcrumb navigation allows users to keep track of their location within the website.
 
-<HtmlPreviewer :code="NavDemo.breadcrumb()" />
+<HtmlPreviewer :code="NavDemo.breadcrumbs()" />
 
-## Overflow
+## Vertical stacking
 
-When there is not enough space, the Nav items are not wrapped, and the Nav overflows on the horizontal axis.
+Navs get stacked vertically when inside a `<aside>`.
 
-<HtmlPreviewer :code="NavDemo.overflow()" />
+<HtmlPreviewer :code="NavDemo.verticalInAside()" />

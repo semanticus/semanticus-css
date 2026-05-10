@@ -1,7 +1,7 @@
 import { renderElement } from "@demos/utils";
 
 export function basic(attrs: Record<string, string> = {}) {
-  return `<a href="#demo-modal" role="button">Open Modal</a>
+  return `<a href="#demo-modal" role="button" class="contrast">Launch Modal</a>
 <dialog id="demo-modal">
   <article>
     <header>

@@ -32,14 +32,14 @@ Use `role="group"` to create connected groups of buttons or form elements. For s
 
 ### Multiple Inputs
 
-<HtmlPreviewer :code="RoleGroupDemo.multipleInputs()" />
+<HtmlPreviewer :code="RoleGroupDemo.twoInputsWithButton()" />
 
 ## Pagination Groups
 
-<HtmlPreviewer :code="RoleGroupDemo.paginationExample()" />
+<HtmlPreviewer :code="RoleGroupDemo.pagination()" />
 
 ## Practical Examples
 
 ### Newsletter Signup
 
-<HtmlPreviewer :code="RoleGroupDemo.newsletterExample()" />
+<HtmlPreviewer :code="RoleGroupDemo.newsletterForm()" />

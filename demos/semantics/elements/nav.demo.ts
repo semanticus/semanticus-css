@@ -1,14 +1,28 @@
-export function basic() {
-  return `<nav>
-  <ul>
-    <li><strong>Acme Corp</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Products</a></li>
-  </ul>
-</nav>`;
+import { renderElement } from "@demos/utils";
+
+function render(attrs: Record<string, string>, slot: string = "") {
+  return renderElement("nav", attrs, slot);
+}
+
+export function basic(attrs: Record<string, string> = {}) {
+  return render(attrs, `<ul>
+  <li><h2>logo</h2></li>
+</ul>
+
+<ul>
+  <li><a href="#" aria-current="page" onclick="event.preventDefault()">Products</a></li>
+  <li>
+    <details>
+      <summary aria-haspopup="menu">About</summary>
+      <ul dir="rtl" role="menu">
+        <li><a role="menuitem" href="#" onclick="event.preventDefault()">Services</a></li>
+        <li><a role="menuitem" href="#" onclick="event.preventDefault()">Portfolio</a></li>
+        <li><a role="menuitem" href="#" onclick="event.preventDefault()">Careers</a></li>
+      </ul>
+    </details>
+  </li>
+  <li><button>Log In</button></li>
+</ul>`);
 }
 
 export function logoTaglineLinks() {
@@ -72,69 +86,6 @@ export function pageLinks() {
 </nav>`;
 }
 
-export function contrastLinks() {
-  return `<nav>
-  <ul>
-    <li><strong>Acme Corp</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#" class="contrast">About</a></li>
-    <li><a href="#" class="contrast">Services</a></li>
-    <li><a href="#" class="contrast">Products</a></li>
-  </ul>
-</nav>`;
-}
-
-export function iconButtons() {
-  return `<nav>
-  <ul>
-    <li><a href="#" class="secondary" aria-label="Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path d="M4 18l16 0"></path></svg>
-    </a></li>
-  </ul>
-  <ul>
-    <li><strong>Acme Corp</strong></li>
-  </ul>
-  <ul>
-    <li><a href="#" class="secondary" aria-label="Twitter">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
-    </a></li>
-  </ul>
-</nav>`;
-}
-
-export function withButton() {
-  return `<nav>
-  <ul><li><strong>Acme Corp</strong></li></ul>
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><button class="secondary">Products</button></li>
-  </ul>
-</nav>
-`;
-}
-
-export function withDropdown() {
-  return `<nav>
-  <ul><li><strong>Acme Corp</strong></li></ul>
-  <ul>
-    <li><a href="#" class="secondary">Services</a></li>
-    <li>
-      <details>
-        <summary aria-haspopup="menu">Account</summary>
-        <ul role="menu" dir="rtl">
-          <li><a role="menuitem" href="#">Profile</a></li>
-          <li><a role="menuitem" href="#">Settings</a></li>
-          <li><a role="menuitem" href="#">Security</a></li>
-          <li><a role="menuitem" href="#">Logout</a></li>
-        </ul>
-      </details>
-    </li>
-  </ul>
-</nav>`;
-}
-
 export function verticalInAside() {
   return `<aside>
   <nav>
@@ -148,24 +99,12 @@ export function verticalInAside() {
 </aside>`;
 }
 
-export function breadcrumb() {
+export function breadcrumbs() {
   return `<nav aria-label="breadcrumb">
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Category</a></li>
     <li>Page</li>
-  </ul>
-</nav>`;
-}
-
-export function overflow() {
-  return `<nav>
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-  </ul>
-  <ul>
-    <li><a href="#">Products</a></li>
   </ul>
 </nav>`;
 }

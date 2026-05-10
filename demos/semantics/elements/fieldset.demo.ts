@@ -1,7 +1,13 @@
+import * as InputDemo from '@demos/semantics/elements/input.demo';
+import * as RoleGroupDemo from '@demos/semantics/attributes/role-group.demo';
+
 export function basic() {
   return `<fieldset>
-  <label>First name</label>
-  <input placeholder="First name" autocomplete="given-name" />
+  <label>Email</label>
+  ${InputDemo.email({ "aria-describedby": "email-helper" })}
+  <small id="email-helper">
+    We'll never share your email with anyone else.
+  </small>
 </fieldset>
 `;
 }
@@ -59,11 +65,5 @@ export function section() {
 }
 
 export function withGroup() {
-  return `<form>
-  <fieldset role="group">
-    <input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
-    <input type="submit" value="Subscribe" />
-  </fieldset>
-</form>
-`;
+  return RoleGroupDemo.inputWithButton("fieldset");
 }

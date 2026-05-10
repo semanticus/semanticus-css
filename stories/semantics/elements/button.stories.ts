@@ -12,13 +12,13 @@ export const BasicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
-export const formButtons: StoryObj = {
-  args: { html: ButtonDemo.formButtons() },
+export const inputButtons: StoryObj = {
+  args: { html: ButtonDemo.inputButtons() },
   render: (args) => args.html,
 };
 
-export const resetButton: StoryObj = {
-  args: { html: ButtonDemo.resetButton() },
+export const inputResetButton: StoryObj = {
+  args: { html: ButtonDemo.inputResetButton() },
   render: (args) => args.html,
 };
 
