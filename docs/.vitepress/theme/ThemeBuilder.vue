@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useData } from 'vitepress'
-import rawIframeContent from './theme-builder-preview.html?raw';
+import { OverviewDemo } from '@demos/semantics';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
@@ -12,6 +12,139 @@ const { isDark, site } = useData();
 
 const basePath = computed(() => site.value.base || '/');
 
+function htmlTemplate(base, theme) {
+  return `<!DOCTYPE html>
+<html lang="en" data-theme="${theme}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Semanticus CSS Theme Builder</title>
+  <link rel="stylesheet" href="${base}semanticus.css" id="theme-stylesheet">
+  <style>
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+    .compare-mode { display: flex !important; flex-direction: row; width: 100%; gap: 0; }
+    .compare-mode .default-mode { display: block !important; flex: 0 0 50% !important; width: 50% !important; position: relative; padding: 1rem; box-sizing: border-box; }
+    .compare-mode .custom-mode { display: block !important; flex: 0 0 50% !important; width: 50% !important; position: relative; padding: 1rem; box-sizing: border-box; }
+    .compare-mode .compare-side-label { display: block !important; position: absolute; top: -0.5rem; font-size: 0.625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--vp-c-text-3, #646b79); background: var(--vp-c-bg-soft, #f3f4f6); padding: 0.125rem 0.5rem; border-radius: 3px; z-index: 5; }
+    .compare-mode .default-mode .compare-side-label { left: 0.5rem; }
+    .compare-mode .custom-mode .compare-side-label { right: 0.5rem; }
+    .compare-mode .compare-divider { display: block !important; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #f27036; transform: translateX(-50%); pointer-events: none; z-index: 10; }
+  </style>
+</head>
+<body class="px-2">
+  <div id="preview-container" class="position-relative w-100 overflow-visible">
+    <div class="default-mode w-100 py-3 my-4">
+      <span class="compare-side-label d-none">Default</span>
+      <div id="default-content">
+        ${OverviewDemo.completeExample({ id: 'default-main' })}
+      </div>
+    </div>
+    <div class="custom-mode d-none w-100 py-3 my-4">
+      <span class="compare-side-label d-none">Custom</span>
+      <main class="container" id="custom-main"></main>
+    </div>
+    <div class="compare-divider d-none"></div>
+  </div>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'update-theme') {
+        const { palette, size } = event.data;
+        let paletteStylesheet = document.getElementById('palette-stylesheet');
+        if (palette === 'azure') {
+          if (paletteStylesheet) paletteStylesheet.remove();
+        } else {
+          if (!paletteStylesheet) {
+            paletteStylesheet = document.createElement('link');
+            paletteStylesheet.id = 'palette-stylesheet';
+            paletteStylesheet.rel = 'stylesheet';
+            document.head.appendChild(paletteStylesheet);
+          }
+          paletteStylesheet.href = \`${base}semanticus.palette.\${palette}.css?t=\` + Date.now();
+        }
+        let sizeStylesheet = document.getElementById('size-stylesheet');
+        if (size === 'default') {
+          if (sizeStylesheet) sizeStylesheet.remove();
+        } else {
+          if (!sizeStylesheet) {
+            sizeStylesheet = document.createElement('link');
+            sizeStylesheet.id = 'size-stylesheet';
+            sizeStylesheet.rel = 'stylesheet';
+            document.head.appendChild(sizeStylesheet);
+          }
+          sizeStylesheet.href = \`${base}semanticus.size.\${size}.css?t=\` + Date.now();
+        }
+      }
+      if (event.data && event.data.type === 'update-custom-css') {
+        var customStyle = document.getElementById('theme-builder-custom');
+        if (!customStyle) {
+          customStyle = document.createElement('style');
+          customStyle.id = 'theme-builder-custom';
+          document.head.appendChild(customStyle);
+        }
+        customStyle.textContent = event.data.css || '';
+        if (event.data.theme) {
+          document.documentElement.setAttribute('data-theme', event.data.theme);
+        }
+      }
+      if (event.data && event.data.type === 'highlight-elements') {
+        var prev = document.querySelectorAll('.theme-builder-highlight');
+        for (var i = 0; i < prev.length; i++) prev[i].classList.remove('theme-builder-highlight');
+        var hlStyle = document.getElementById('theme-builder-highlight-style');
+        if (!hlStyle) {
+          hlStyle = document.createElement('style');
+          hlStyle.id = 'theme-builder-highlight-style';
+          hlStyle.textContent = '.theme-builder-highlight { outline: 2px dashed var(--color-primary, #0172ad) !important; outline-offset: 2px; }';
+          document.head.appendChild(hlStyle);
+        }
+        if (event.data.selectors) {
+          try {
+            var targets = document.querySelectorAll(event.data.selectors);
+            for (var j = 0; j < targets.length; j++) targets[j].classList.add('theme-builder-highlight');
+          } catch (e) {}
+        }
+      }
+      if (event.data && event.data.type === 'set-compare-mode') {
+        const container = document.getElementById('preview-container');
+        const customMain = document.getElementById('custom-main');
+        const defaultContent = document.getElementById('default-content');
+        if (event.data.enabled) {
+          customMain.innerHTML = defaultContent.innerHTML;
+          container.classList.add('compare-mode');
+        } else {
+          container.classList.remove('compare-mode');
+          customMain.innerHTML = '';
+        }
+      }
+    });
+    document.addEventListener('click', function(e) {
+      var anchor = e.target.closest('a[href]');
+      if (!anchor) return;
+      var href = anchor.getAttribute('href');
+      if (!href) return;
+      if (href.startsWith('#') && href !== '#' && href !== '#!') {
+        var targetEl = document.getElementById(href.slice(1));
+        if (targetEl && targetEl.tagName === 'DIALOG') {
+          e.preventDefault();
+          targetEl.setAttribute('open', '');
+          return;
+        }
+      }
+      if (href === '#' || href === '#!') {
+        var dialog = anchor.closest('dialog');
+        if (dialog) {
+          e.preventDefault();
+          dialog.removeAttribute('open');
+          return;
+        }
+      }
+    });
+  <\/script>
+</body>
+</html>`;
+}
+
 const cssStyles = computed(() => {
   return isDark.value ? githubDark : githubLight;
 });
@@ -21,9 +154,7 @@ hljs.registerLanguage('html', html)
 
 const iframeContent = computed(() => {
   const theme = isDark.value ? 'dark' : 'light'
-  return rawIframeContent
-    .replaceAll('__SEMANTICUS_BASE__', basePath.value)
-    .replace(/data-theme="">/, `data-theme="${theme}">`)
+  return htmlTemplate(basePath.value, theme)
 })
 
 // ── Variable definitions ────────────────────────────────────────────────────
