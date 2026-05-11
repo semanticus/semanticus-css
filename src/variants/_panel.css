@@ -10,7 +10,6 @@
   border-radius: var(--border-radius);
   border: var(--border-width) solid var(--border-color);
   color: var(--color-text);
-
   padding-block: var(--block-spacing);
   padding-inline: var(--block-spacing);
   margin-bottom: var(--block-spacing);
