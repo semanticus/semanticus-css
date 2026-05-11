@@ -6,8 +6,8 @@
  */
 aside {
   width: var(--sidebar-width) !important;
-  padding-block: var(--block-spacing);
-  padding-inline: var(--block-spacing);
+  padding-block: var(--spacing);
+  padding-inline: var(--spacing);
 
   :where(ol, ul, li) {
     align-items: stretch !important;

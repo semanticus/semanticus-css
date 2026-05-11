@@ -2,13 +2,14 @@ import { renderElement } from "@demos/utils";
 
 import * as TypographyDemo from '@demos/semantics/typography.demo';
 
+import { ModalDemo } from '@demos/composites';
+
 import {
   InputDemo,
   DetailsDemo,
   SelectDemo,
   TextareaDemo,
   FieldsetDemo,
-  DialogDemo,
   ProgressDemo,
   TableDemo,
   FigureDemo,
@@ -132,13 +133,22 @@ export function inputElements() {
 
   ${InputDemo.search()}
 
-  <section role="toolbar">
-    ${InputDemo.date()}
+  <fieldset role="toolbar">
+    <label>
+      Date
+      ${InputDemo.date()}
+    </label>
 
-    ${InputDemo.time()}
+    <label>
+      Time
+      ${InputDemo.time()}
+    </label>
 
-    ${InputDemo.color()}
-  </section>
+    <label>
+      Color
+      ${InputDemo.color()}
+    </label>
+  </fieldset>
 
   <section role="toolbar">
     ${InputDemo.checkboxBasic()}
@@ -285,7 +295,7 @@ function dialogs() {
     <p>Click the button below to open a modal dialog</p>
   </hgroup>
 
-  ${DialogDemo.basic()}
+  ${ModalDemo.withHeaderAndFooter()}
 </section>`;
 }
 
@@ -427,14 +437,16 @@ function address() {
 }
 
 export function simpleExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `
+  return renderElement("main", { class: 'container', ...attrs }, `<br>
   ${buttons()}
 
   <hr>
+  <br>
 
   ${links()}
 
   <hr>
+  <br>
 
   <section id="input-elements">
     <h2>Input Elements</h2>
@@ -468,6 +480,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
   </section>
 
   <hr>
+  <br>
 
   <section id="cards">
     <h2>Cards</h2>
@@ -479,7 +492,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
       </hgroup>
       <p>This is a sample card component styled with the <!-- PALETTE_NAME --> palette. It demonstrates the palette's card background, border, and text colors.</p>
       <footer>
-        <button aria-label="Close">Cancel</button>&nbsp;
+        <button aria-label="Close">Cancel</button>
         <button>Save</button>
       </footer>
     </article>
@@ -495,50 +508,62 @@ export function completeExample(attrs: Record<string, string> = {}) {
 ${buttons()}
 
 <hr>
+<br>
 
 ${links()}
 
 <hr>
+<br>
 
 ${inputElements()}
 
 <hr>
+<br>
 
 ${fieldsets()}
 
 <hr>
+<br>
 
 ${cards()}
 
 <hr>
+<br>
 
 ${loadingStates()}
 
 <hr>
+<br>
 
 ${tooltips()}
 
 <hr>
+<br>
 
 ${accordions()}
 
 <hr>
+<br>
 
 ${dialogs()}
 
 <hr>
+<br>
 
 ${tables()}
 
 <hr>
+<br>
 
 ${progressBars()}
 
 <hr>
+<br>
 
 ${figures()}
 
 <hr>
+<br>
 
 ${navigation()}
 
@@ -547,22 +572,27 @@ ${navigation()}
 ${typography()}
 
 <hr>
+<br>
 
 ${headingGroup()}
 
 <hr>
+<br>
 
 ${lists()}
 
 <hr>
+<br>
 
 ${blockquotes()}
 
 <hr>
+<br>
 
 ${codeBlocks()}
 
 <hr>
+<br>
 
 ${address()}`);
 }

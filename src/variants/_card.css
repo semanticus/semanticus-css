@@ -4,9 +4,9 @@
  * Can be applied to any element (article, div, section, etc.)
  */
 .card {
-  padding-block: var(--block-spacing);
-  padding-inline: var(--block-spacing);
-  margin-bottom: var(--block-spacing);
+  padding-block: var(--spacing);
+  padding-inline: var(--spacing);
+  margin-bottom: var(--spacing);
   border-radius: var(--border-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
@@ -14,23 +14,25 @@
   & > header,
   & > footer {
     width: auto;
-    margin-inline: calc(var(--block-spacing) * -1);
-    padding-inline: var(--block-spacing);
+    margin-inline: calc(var(--spacing) * -1);
+    padding-inline: var(--spacing);
     background-color: var(--card-section-bg);
   }
 
   & > header {
-    margin-top: calc(var(--block-spacing) * -1);
+    margin-top: calc(var(--spacing) * -1);
     border-bottom: var(--border-width) solid var(--card-border);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
   }
 
   & > footer {
-    margin-bottom: calc(var(--block-spacing) * -1);
+    margin-bottom: calc(var(--spacing) * -1);
     border-top: var(--border-width) solid var(--card-border);
     border-bottom-right-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
-    text-align: right;
+    display: flex;
+    justify-content: end;
+    gap: calc(var(--nav-link-spacing) * 1.5);
   }
 }

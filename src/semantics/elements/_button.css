@@ -118,8 +118,8 @@ aside {
 
 nav {
   :where(button, [role=button], [type=button], input:not([type=checkbox], [type=radio], [type=range], [type=file]), select) {
-    --form-element-spacing-vertical: calc(var(--nav-link-spacing-vertical) - var(--border-width) * 2);
-    --form-element-spacing-horizontal: var(--nav-link-spacing-horizontal);
+    --form-element-spacing-vertical: calc(var(--nav-link-spacing) - var(--border-width) * 2);
+    --form-element-spacing-horizontal: var(--nav-link-spacing);
 
     height: auto;
     margin-right: inherit;

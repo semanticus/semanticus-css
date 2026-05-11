@@ -85,8 +85,8 @@ const variableGroups = [
     vars: [
       { name: '--spacing', label: 'Base Spacing', desc: 'Shared base unit used for padding, margins, and gaps throughout the layout.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
       { name: '--typography-spacing-vertical', label: 'Typography Spacing', desc: 'Vertical margin below typographic elements (paragraphs, lists, etc.).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h2, h3, h4, h5, h6, p, ul, ol, blockquote' },
-      { name: '--block-spacing-vertical', label: 'Block Spacing (V)', desc: 'Vertical padding inside block-level components (cards, modals).', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'section, article, dialog' },
-      { name: '--block-spacing-horizontal', label: 'Block Spacing (H)', desc: 'Horizontal padding inside block-level components.', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'article, dialog' },
+      { name: '--spacing-vertical', label: 'Block Spacing (V)', desc: 'Vertical padding inside block-level components (cards, modals).', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'section, article, dialog' },
+      { name: '--spacing-horizontal', label: 'Block Spacing (H)', desc: 'Horizontal padding inside block-level components.', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'article, dialog' },
       { name: '--grid-column-gap', label: 'Grid Column Gap', desc: 'Column gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
       { name: '--grid-row-gap', label: 'Grid Row Gap', desc: 'Row gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
       { name: '--form-element-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },

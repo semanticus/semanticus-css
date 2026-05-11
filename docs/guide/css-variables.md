@@ -169,7 +169,6 @@ h1, h2, h3, h4, h5, h6 {
 ```css
 :root {
   --spacing: 0.75rem;
-  --block-spacing: 1.2rem;
   --typography-spacing-vertical: 1rem;
   --form-element-spacing-vertical: 0.5rem;
   --form-element-spacing-horizontal: 0.7rem;
@@ -247,8 +246,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --nav-link-spacing-vertical: 0.5rem;
-  --nav-link-spacing-horizontal: 0.5rem;
+  --nav-link-spacing: 0.5rem;
   --nav-breadcrumb-divider: ">";
 }
 ```

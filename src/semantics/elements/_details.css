@@ -269,7 +269,7 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex;
     align-items: center;
     height: auto;
-    padding: calc(var(--nav-link-spacing-vertical) - var(--border-width) * 2) var(--nav-link-spacing-horizontal);
+    padding: calc(var(--nav-link-spacing) - var(--border-width) * 2) var(--nav-link-spacing);
   }
 
   & > :where(summary:not([role]):focus-visible) {
@@ -286,6 +286,6 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     align-items: center;
     width: auto;
     height: auto;
-    padding: calc(var(--nav-link-spacing-vertical) - var(--border-width) * 2) var(--nav-link-spacing-horizontal);
+    padding: calc(var(--nav-link-spacing) - var(--border-width) * 2) var(--nav-link-spacing);
   }
 }
