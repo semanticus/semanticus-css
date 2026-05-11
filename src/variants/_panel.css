@@ -2,9 +2,6 @@
  * Panel akin to a flat card.
  */
 .panel {
-  --block-spacing-vertical: calc(var(--spacing) * var(--responsive-multiplier));
-  --block-spacing-horizontal: calc(var(--spacing) * var(--responsive-multiplier));
-
   --color-background: var(--card-bg);
   --border-color: var(--card-border);
   --color-text: var(--color-text);
@@ -13,6 +10,8 @@
   border-radius: var(--border-radius);
   border: var(--border-width) solid var(--border-color);
   color: var(--color-text);
-  margin-bottom: var(--block-spacing-vertical);
-  padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+
+  padding-block: var(--block-spacing);
+  padding-inline: var(--block-spacing);
+  margin-bottom: var(--block-spacing);
 }

@@ -3,10 +3,7 @@
  */
 
 /* Prevent body scroll and interaction when modal is open */
-/* Uses :has() for automatic detection - no classes needed */
-/* Accounts for both [open] attribute (JS) and :target (CSS-only) */
-body:has(dialog[open]),
-body:has(dialog:target) {
+body:has(dialog[open]) {
   overflow: hidden;
   pointer-events: none;
   touch-action: none;
@@ -19,106 +16,22 @@ body:has(dialog:target) {
 }
 
 dialog {
-  display: flex;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  min-width: 100%;
-  height: inherit;
-  min-height: 100%;
-  padding: 0;
+  max-height: calc(100vh - var(--block-spacing) * 2);
+  margin: auto;
+  overflow: auto;
+  padding-block: var(--block-spacing);
+  padding-inline: var(--block-spacing);
+  border-radius: var(--border-radius);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
   border: 0;
-  backdrop-filter: var(--modal-overlay-backdrop-filter);
-  background-color: var(--modal-overlay-bg);
-  color: var(--color-text);
 
-  /* Modal content box - styled like a card */
-  /* Works with: <dialog><article>...</article></dialog> */
-  & > article {
-    position: relative;
-    width: 100%;
-    max-height: calc(100vh - var(--spacing) * 2);
-    margin: var(--spacing);
-    padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
-    overflow: auto;
-    border-radius: var(--border-radius);
-    background: var(--card-bg);
-    box-shadow: var(--card-shadow);
+  @media (--breakpoint-sm) {
+    max-width: 510px;
+  }
 
-    @media (--breakpoint-sm) {
-      max-width: 510px;
-    }
-
-    @media (--breakpoint-md) {
-      max-width: 700px;
-    }
-
-    /* Header styling */
-    & > header {
-      width: calc(100% + var(--block-spacing-horizontal) * 2);
-      margin: calc(var(--block-spacing-vertical) * -1) calc(var(--block-spacing-horizontal) * -1) var(--block-spacing-vertical);
-      padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
-      background-color: var(--card-section-bg);
-      border-bottom: var(--border-width) solid var(--card-border);
-      border-top-right-radius: var(--border-radius);
-      border-top-left-radius: var(--border-radius);
-
-      & > * {
-        margin-bottom: 0;
-      }
-    }
-
-    /* Footer styling */
-    & > footer {
-      width: calc(100% + var(--block-spacing-horizontal) * 2);
-      margin: var(--block-spacing-vertical) calc(var(--block-spacing-horizontal) * -1) calc(var(--block-spacing-vertical) * -1);
-      padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
-      background-color: var(--card-section-bg);
-      border-top: var(--border-width) solid var(--card-border);
-      border-bottom-right-radius: var(--border-radius);
-      border-bottom-left-radius: var(--border-radius);
-      text-align: right;
-
-      & :where(button, [role=button]) {
-        margin-bottom: 0;
-
-        &:not(:first-of-type) {
-          margin-left: calc(var(--spacing) * 0.5);
-        }
-      }
-    }
-
-    /* Close button styling */
-    & :is(a, button)[rel=prev]:not([role=button]) {
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      top: calc(var(--block-spacing-vertical) * .66);
-      right: var(--block-spacing-horizontal);
-      border: none;
-      border-radius: 0;
-      background-image: var(--icon-close);
-      background-position: center;
-      background-size: auto 1rem;
-      background-repeat: no-repeat;
-      background-color: transparent;
-      box-shadow: none;
-      opacity: 0.5;
-      transition: opacity var(--transition);
-
-      &:hover {
-        opacity: 1;
-      }
-    }
+  @media (--breakpoint-md) {
+    max-width: 700px;
   }
 
   /* Hidden state */
@@ -127,31 +40,82 @@ dialog {
     display: none;
   }
 
-  /* CSS-only modal triggering using :target pseudo-class */
-  /* When dialog is targeted via anchor link (e.g., <a href="#modal-id">) */
-  &:target {
-    display: flex;
+  /* Backdrop overlay for native modal (showModal()) */
+  &::backdrop {
+    backdrop-filter: var(--modal-overlay-backdrop-filter);
+    background-color: var(--modal-overlay-bg);
+  }
+
+  > header,
+  > footer {
+    width: auto;
+    margin-inline: calc(var(--block-spacing) * -1);
+    padding-inline: var(--block-spacing);
+    background-color: var(--card-section-bg);
+  }
+
+  /* Header styling */
+  > header {
+    margin-top: calc(var(--block-spacing) * -1);
+    border-bottom: var(--border-width) solid var(--card-border);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+  }
+
+  /* Footer styling */
+  > footer {
+    margin-bottom: calc(var(--block-spacing) * -1);
+    border-top: var(--border-width) solid var(--card-border);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    text-align: right;
+  }
+
+  /* Close button styling */
+  [rel=prev] {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    top: calc(var(--block-spacing) * .66);
+    right: var(--block-spacing);
+    border: none;
+    border-radius: 0;
+    background-image: var(--icon-close);
+    background-position: center;
+    background-size: auto 1rem;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 0.5;
+    transition: opacity var(--transition);
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
 /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
 /* Gracefully degrades to instant appearance in unsupported browsers */
 dialog {
-  transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
-}
-
-dialog > article {
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-@starting-style {
-  dialog {
-    backdrop-filter: none;
-    background-color: transparent;
-  }
+dialog::backdrop {
+  transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
 
-  dialog > article {
+@starting-style {
+  dialog[open] {
     opacity: 0;
     transform: translateY(-20px);
+  }
+
+  dialog[open]::backdrop {
+    backdrop-filter: none;
+    background-color: transparent;
   }
 }

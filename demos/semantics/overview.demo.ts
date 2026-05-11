@@ -27,9 +27,7 @@ import {
 
 export function buttons() {
   return `<section id="buttons">
-  <header>
-    <h2>Buttons</h2>
-  </header>
+  <h2>Buttons</h2>
 
   <section role="toolbar">
     <button>Primary</button>
@@ -42,11 +40,9 @@ export function buttons() {
 
 export function links() {
   return `<section id="links">
-  <header>
-    <h2>Links</h2>
-  </header>
+  <h2>Links</h2>
 
-  <section role="group">
+  <section role="toolbar">
     <a href="#" onclick="event.preventDefault()">Primary</a>
     <a href="#" aria-current="page" onclick="event.preventDefault()">Active</a>
     <a href="#" class="secondary" onclick="event.preventDefault()">Secondary</a>
@@ -57,9 +53,7 @@ export function links() {
 
 export function inputButtons() {
   return `<section id="input-buttons">
-  <header>
-    <h4>Input buttons (type="button|submit|reset")</h4>
-  </header>
+  <h4>Input buttons (type="button|submit|reset")</h4>
 
   <section role="toolbar">
     ${InputDemo.button()}
@@ -72,9 +66,7 @@ export function inputButtons() {
 
 export function disabledState() {
   return `<section id="disabled-state">
-  <header>
-    <h4>Disabled State</h4>
-  </header>
+  <h4>Disabled State</h4>
 
   <section role="toolbar">
     ${DisabledDemo.input()}
@@ -96,9 +88,7 @@ export function disabledState() {
 
 export function validState() {
   return `<section id="valid-state">
-  <header>
-    <h4>Valid State (aria-invalid="false")</h4>
-  </header>
+  <h4>Valid State (aria-invalid="false")</h4>
 
   <section role="toolbar">
     ${InputDemo.basic({ "aria-invalid": "false" })}
@@ -116,9 +106,7 @@ export function validState() {
 
 export function invalidState() {
   return `<section id="invalid-state">
-  <header>
-    <h4>Invalid State (aria-invalid="true")</h4>
-  </header>
+  <h4>Invalid State (aria-invalid="true")</h4>
 
   <section role="toolbar">
     ${InputDemo.basic({ "aria-invalid": "true" })}
@@ -136,9 +124,7 @@ export function invalidState() {
 
 export function inputElements() {
   return `<section id="input-elements">
-  <header>
-    <h2>Input Elements</h2>
-  </header>
+  <h2>Input Elements</h2>
 
   <input type="text" name="text" placeholder="Text" aria-label="Text" />
 
@@ -186,23 +172,17 @@ export function inputElements() {
 
 function fieldsets() {
   return `<section id="fieldsets">
-  <header>
-    <hgroup>
-      <h2>Fieldsets</h2>
-      <p>Use fieldsets to group related form elements together.</p>
-    </hgroup>
-  </header>
-
-  <br />
+  <hgroup>
+    <h2>Fieldsets</h2>
+    <p>Use fieldsets to group related form elements together.</p>
+  </hgroup>
 
   <section>
     ${FieldsetDemo.basic()}
   </section>
 
   <section>
-    <header>
-      <h4>Group fieldset (role="group")</h4>
-    </header>
+    <h4>Group fieldset (role="group")</h4>
 
     <section>
       ${RoleGroupDemo.inputWithButton("fieldset")}
@@ -212,9 +192,7 @@ function fieldsets() {
   </section>
 
   <section>
-    <header>
-      <h4>Search fieldset (role="search")</h4>
-    </header>
+    <h4>Search fieldset (role="search")</h4>
 
     <section>
       ${RoleSearchDemo.basic("fieldset")}
@@ -226,9 +204,7 @@ function fieldsets() {
 
 function cards() {
   return `<section id="cards">
-  <header>
-    <h2>Cards</h2>
-  </header>
+  <h2>Cards</h2>
 
   <article id="article" class="card">
     <h2>Basic Card</h2>
@@ -241,14 +217,15 @@ function cards() {
   <!-- Card with header & footer -->
   <article id="article-header-footer" class="card">
     <header>
-      <h3>Card with Header and Footer</h3>
+      <h2>Card with Header and Footer</h2>
     </header>
+
     <p>
       Cards support optional <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> sections.
       These use a distinct background and border to visually separate them from the card body.
     </p>
     <footer>
-      <a href="#!" role="button" aria-label="Close">Cancel</a>&nbsp;
+      <a href="#!" role="button" aria-label="Close">Cancel</a>
       <a href="#!" role="button">Save</a>
     </footer>
   </article>
@@ -257,9 +234,7 @@ function cards() {
 
 function loadingStates() {
   return `<section id="loading-states">
-  <header>
-    <h2>Loading States (aria-busy="true")</h2>
-  </header>
+  <h2>Loading States (aria-busy="true")</h2>
 
   <section role="toolbar">
     <section>
@@ -277,12 +252,10 @@ function loadingStates() {
 
 function tooltips() {
   return `<section id="tooltips">
-  <header>
-    <hgroup>
-      <h2>Tooltips (role="tooltip")</h2>
-      <p>Pair a trigger element with <code>aria-describedby</code> and another with <code>[role="tooltip"]</code>.</p>
-    </hgroup>
-  </header>
+  <hgroup>
+    <h2>Tooltips (role="tooltip")</h2>
+    <p>Pair a trigger element with <code>aria-describedby</code> and another with <code>[role="tooltip"]</code>.</p>
+  </hgroup>
 
   ${RoleTooltipDemo.basic()}
 </section>`;
@@ -290,9 +263,7 @@ function tooltips() {
 
 function accordions() {
   return `<section id="accordions">
-  <header>
-    <h2>Accordions</h2>
-  </header>
+  <h2>Accordions</h2>
 
   <section>
     ${DetailsDemo.basic()}
@@ -309,12 +280,10 @@ function accordions() {
 
 function dialogs() {
   return `<section id="dialogs">
-  <header>
-    <hgroup>
-      <h2>Modal</h2>
-      <p>Click the button below to open a modal dialog</p>
-    </hgroup>
-  </header>
+  <hgroup>
+    <h2>Modal</h2>
+    <p>Click the button below to open a modal dialog</p>
+  </hgroup>
 
   ${DialogDemo.basic()}
 </section>`;
@@ -322,9 +291,7 @@ function dialogs() {
 
 function tables() {
   return `<section id="tables">
-  <header>
-    <h2>Tables</h2>
-  </header>
+  <h2>Tables</h2>
 
   ${TableDemo.bigExample()}
 </section>`;
@@ -332,9 +299,7 @@ function tables() {
 
 function progressBars() {
   return `<section id="progressBars">
-  <header>
-    <h2>Progress Bars</h2>
-  </header>
+  <h2>Progress Bars</h2>
 
   ${ProgressDemo.basic()}
   ${ProgressDemo.indeterminate()}
@@ -343,9 +308,7 @@ function progressBars() {
 
 function figures() {
   return `<section id="figures">
-  <header>
-    <h2>Figures</h2>
-  </header>
+  <h2>Figures</h2>
 
   ${FigureDemo.withoutImage()}
 </section>`;
@@ -353,9 +316,7 @@ function figures() {
 
 function navigation() {
   return `<section id="navigation">
-  <header>
-    <h2>Navigation</h2>
-  </header>
+  <h2>Navigation</h2>
 
   <section>
     ${NavDemo.basic()}
@@ -379,9 +340,7 @@ function navigation() {
 
 function typography() {
   return `<section id="typography">
-  <header>
-    <h2>Typography</h2>
-  </header>
+  <h2>Typography</h2>
 
   <section role="toolbar">
     <section>
@@ -414,9 +373,7 @@ function headingGroup() {
 
 function lists() {
   return `<section id="lists">
-  <header>
-    <h2>Lists</h2>
-  </header>
+  <h2>Lists</h2>
 
   <section>
     <h4>Unordered</h4>
@@ -441,9 +398,7 @@ function lists() {
 
 function blockquotes() {
   return `<section id="blockquotes">
-  <header>
-    <h2>Blockquote</h2>
-  </header>
+  <h2>Blockquote</h2>
 
   <section>
     ${TypographyDemo.blockquote()}
@@ -453,9 +408,7 @@ function blockquotes() {
 
 function codeBlocks() {
   return `<section id="codeBlocks">
-  <header>
-    <h2>Code Block</h2>
-  </header>
+  <h2>Code Block</h2>
 
   <section>
     ${TypographyDemo.codeBlock()}
@@ -465,9 +418,7 @@ function codeBlocks() {
 
 function address() {
   return `<section id="address">
-  <header>
-    <h2>Address</h2>
-  </header>
+  <h2>Address</h2>
 
   <section>
     ${TypographyDemo.address()}
@@ -486,9 +437,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
   <hr>
 
   <section id="input-elements">
-    <header>
-      <h2>Input Elements</h2>
-    </header>
+    <h2>Input Elements</h2>
 
     <fieldset role="toolbar">
       <label>
@@ -521,9 +470,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
   <hr>
 
   <section id="cards">
-    <header>
-      <h2>Cards</h2>
-    </header>
+    <h2>Cards</h2>
 
     <article class="card">
       <hgroup>
@@ -541,83 +488,81 @@ export function simpleExample(attrs: Record<string, string> = {}) {
 }
 
 export function completeExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `
+  return renderElement("main", { class: 'container', ...attrs }, `<header>
   <h1 class="title">Semantics Demo</h1>
 </header>
 
-<main class="container" id="default-main">
-  ${buttons()}
+${buttons()}
 
-  <hr>
+<hr>
 
-  ${links()}
+${links()}
 
-  <hr>
+<hr>
 
-  ${inputElements()}
+${inputElements()}
 
-  <hr>
+<hr>
 
-  ${fieldsets()}
+${fieldsets()}
 
-  <hr>
+<hr>
 
-  ${cards()}
+${cards()}
 
-  <hr>
+<hr>
 
-  ${loadingStates()}
+${loadingStates()}
 
-  <hr>
+<hr>
 
-  ${tooltips()}
+${tooltips()}
 
-  <hr>
+<hr>
 
-  ${accordions()}
+${accordions()}
 
-  <hr>
+<hr>
 
-  ${dialogs()}
+${dialogs()}
 
-  <hr>
+<hr>
 
-  ${tables()}
+${tables()}
 
-  <hr>
+<hr>
 
-  ${progressBars()}
+${progressBars()}
 
-  <hr>
+<hr>
 
-  ${figures()}
+${figures()}
 
-  <hr>
+<hr>
 
-  ${navigation()}
+${navigation()}
 
-  <hr>
+<hr>
 
-  ${typography()}
+${typography()}
 
-  <hr>
+<hr>
 
-  ${headingGroup()}
+${headingGroup()}
 
-  <hr>
+<hr>
 
-  ${lists()}
+${lists()}
 
-  <hr>
+<hr>
 
-  ${blockquotes()}
+${blockquotes()}
 
-  <hr>
+<hr>
 
-  ${codeBlocks()}
+${codeBlocks()}
 
-  <hr>
+<hr>
 
-  ${address()}
-</main>`);
+${address()}`);
 }

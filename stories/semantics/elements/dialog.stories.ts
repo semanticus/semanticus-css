@@ -3,16 +3,17 @@ import { DialogDemo } from "@demos/semantics/elements";
 
 const meta: Meta = {
   title: "Semantics/Elements/<dialog>",
+  tags: ["!autodocs"],
 };
 
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: DialogDemo.basic() },
+  args: { html: DialogDemo.basic({ open: 'true' }) },
   render: (args) => args.html,
 };
 
-export const WithForm: StoryObj = {
-  args: { html: DialogDemo.withForm() },
+export const withHeaderAndFooter: StoryObj = {
+  args: { html: DialogDemo.withHeaderAndFooter({ open: 'true' }) },
   render: (args) => args.html,
 };

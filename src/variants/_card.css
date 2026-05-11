@@ -4,42 +4,33 @@
  * Can be applied to any element (article, div, section, etc.)
  */
 .card {
-  --block-spacing-vertical: calc(var(--spacing) * var(--responsive-multiplier));
-  --block-spacing-horizontal: calc(var(--spacing) * var(--responsive-multiplier));
-
-  margin-bottom: var(--block-spacing-vertical);
-  padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+  padding-block: var(--block-spacing);
+  padding-inline: var(--block-spacing);
+  margin-bottom: var(--block-spacing);
   border-radius: var(--border-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
 
   & > header,
   & > footer {
-    width: calc(100% + var(--block-spacing-horizontal) * 2);
-    margin-right: calc(var(--block-spacing-horizontal) * -1);
-    margin-left: calc(var(--block-spacing-horizontal) * -1);
-    padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
+    width: auto;
+    margin-inline: calc(var(--block-spacing) * -1);
+    padding-inline: var(--block-spacing);
     background-color: var(--card-section-bg);
   }
 
   & > header {
-    margin-top: calc(var(--block-spacing-vertical) * -1);
-    margin-bottom: var(--block-spacing-vertical);
+    margin-top: calc(var(--block-spacing) * -1);
     border-bottom: var(--border-width) solid var(--card-border);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
   }
 
   & > footer {
-    margin-top: var(--block-spacing-vertical);
-    margin-bottom: calc(var(--block-spacing-vertical) * -1);
+    margin-bottom: calc(var(--block-spacing) * -1);
     border-top: var(--border-width) solid var(--card-border);
     border-bottom-right-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
-  }
-
-  & > header > :last-child,
-  & > footer > :last-child {
-    margin-bottom: 0;
+    text-align: right;
   }
 }

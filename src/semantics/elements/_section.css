@@ -2,8 +2,6 @@
  * Section
  */
 section {
-  --block-spacing-vertical: calc(var(--spacing) * var(--responsive-multiplier));
-  --block-spacing-horizontal: calc(var(--spacing) * var(--responsive-multiplier));
-
-  margin-bottom: var(--block-spacing-vertical);
+  width: 100%;
+  margin-bottom: var(--block-spacing);
 }
