@@ -8,14 +8,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicModal: StoryObj = {
-  render: () => ModalDemo.basicModal(),
+export const BasicUsage: StoryObj = {
+  render: () => ModalDemo.basic(),
 };
 
-export const WithFooter: StoryObj = {
-  render: () => ModalDemo.withFooter(),
-};
-
-export const CssOnlyModal: StoryObj = {
-  render: () => ModalDemo.cssOnlyModal(),
+export const WithHeaderAndFooter: StoryObj = {
+  render: () => ModalDemo.withHeaderAndFooter(),
 };

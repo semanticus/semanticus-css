@@ -8,14 +8,20 @@ import { DialogDemo } from "@demos/semantics/elements";
 
 # &lt;dialog&gt;
 
-The `<dialog>` element represents a modal or non-modal dialog. Semanticus provides full styling for dialog modals using the CSS-only `:target` technique — no JavaScript required for basic open/close behavior.
+The `<dialog>` element represents a modal or non-modal dialog.
 
-Use an `<a href="#dialog-id">` to open the dialog, and `<a href="#" rel="prev">` inside the dialog header to close it.
+See more about using `<dialog>` as a modal in the [Modal composite documentation](/docs/composites/modal).
 
 ## Basic Usage
 
-<HtmlPreviewer :code="DialogDemo.basic()" />
+Inside the `<dialog>`, if a `<button rel="prev">` is present, it will be styled as a close icon.
 
-## With Form
+<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 200px;&quot;&gt;
+${DialogDemo.basic({ open: true })}
+&lt;/div&gt;`" />
 
-<HtmlPreviewer :code="DialogDemo.withForm()" />
+## With Header and Footer
+
+<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
+${DialogDemo.withHeaderAndFooter({ open: true })}
+&lt;/div&gt;`" />

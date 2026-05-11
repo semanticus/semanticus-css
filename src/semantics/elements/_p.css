@@ -4,4 +4,8 @@ p {
   font-weight: var(--font-weight);
   margin-bottom: var(--typography-spacing-vertical);
   margin-top: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }

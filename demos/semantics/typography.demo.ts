@@ -15,6 +15,30 @@ export function paragraphs() {
 <p>The last paragraph in a container has its margin trimmed, avoiding extra whitespace at the bottom.</p>`;
 }
 
+export function codeBlock() {
+  return `<pre><code>function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+console.log(greet("World"));</code></pre>`;
+}
+
+export function address() {
+  return `<address>
+  <strong>Acme Corp</strong><br>
+  123 Main Street<br>
+  Springfield, IL 62701<br>
+  <a href="mailto:hello@acme.example">hello@acme.example</a>
+</address>`;
+}
+
+export function blockquote() {
+  return `<blockquote>"Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+<footer>
+  <cite>- Phasellus eget lacinia</cite>
+</footer></blockquote>`;
+}
+
 export function inlineElements() {
   return `<div role="toolbar">
   <p>${ADemo.basic()}</p>
@@ -72,30 +96,6 @@ export function subAndSup() {
 
 export function delAndIns() {
   return `<p>The original price was <del>$99.00</del> <ins>$49.00</ins>.</p>`;
-}
-
-export function codeBlock() {
-  return `<pre><code>function greet(name) {
-  return \`Hello, \${name}!\`;
-}
-
-console.log(greet("World"));</code></pre>`;
-}
-
-export function address() {
-  return `<address>
-  <strong>Acme Corp</strong><br>
-  123 Main Street<br>
-  Springfield, IL 62701<br>
-  <a href="mailto:hello@acme.example">hello@acme.example</a>
-</address>`;
-}
-
-export function blockquote() {
-  return `<blockquote>"Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
-<footer>
-  <cite>- Phasellus eget lacinia</cite>
-</footer></blockquote>`;
 }
 
 export function keyboard() {

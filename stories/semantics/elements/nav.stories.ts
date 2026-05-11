@@ -37,37 +37,12 @@ export const PageLinks: StoryObj = {
   render: (args) => args.html,
 };
 
-export const ContrastLinks: StoryObj = {
-    args: { html: NavDemo.contrastLinks() },
-  render: (args) => args.html,
-};
-
-export const IconButtons: StoryObj = {
-    args: { html: NavDemo.iconButtons() },
-  render: (args) => args.html,
-};
-
-export const WithButton: StoryObj = {
-    args: { html: NavDemo.withButton() },
-  render: (args) => args.html,
-};
-
-export const WithDropdown: StoryObj = {
-    args: { html: NavDemo.withDropdown() },
-  render: (args) => args.html,
-};
-
 export const VerticalInAside: StoryObj = {
     args: { html: NavDemo.verticalInAside() },
   render: (args) => args.html,
 };
 
-export const Breadcrumb: StoryObj = {
-    args: { html: NavDemo.breadcrumb() },
-  render: (args) => args.html,
-};
-
-export const Overflow: StoryObj = {
-    args: { html: NavDemo.overflow() },
+export const Breadcrumbs: StoryObj = {
+    args: { html: NavDemo.breadcrumbs() },
   render: (args) => args.html,
 };

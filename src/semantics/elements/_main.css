@@ -3,8 +3,5 @@
  * Stacks its children vertically.
  */
 main {
-  --block-spacing-vertical: calc(var(--spacing) * var(--responsive-multiplier));
-  --block-spacing-horizontal: calc(var(--spacing) * var(--responsive-multiplier));
-
   width: 100%;
 }
