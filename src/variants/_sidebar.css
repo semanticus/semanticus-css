@@ -1,11 +1,18 @@
 aside {
   &.sidebar {
     z-index: 1020;
-    position: sticky;
+    position: sticky !important;
     top: 0;
     max-height: 100svh;
     align-self: stretch;
     display: flex;
     flex-direction: column;
+
+    &[popover] {
+      &:popover-open {
+        display: flex !important;
+        width: 60% !important;
+      }
+    }
   }
 }

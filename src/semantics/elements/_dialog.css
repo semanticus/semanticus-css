@@ -19,8 +19,7 @@ dialog {
   max-height: calc(100vh - var(--spacing) * 2);
   margin: auto;
   overflow: auto;
-  padding-block: var(--spacing);
-  padding-inline: var(--spacing);
+  padding: var(--spacing);
   border-radius: var(--border-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
