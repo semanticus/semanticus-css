@@ -1,7 +1,7 @@
 blockquote {
   border-inline-end: none;
-  border-inline-start: 0.25rem solid var(--blockquote-border-color);
-  border-left: 0.25rem solid var(--blockquote-border-color);
+  border-inline-start: 0.25rem solid var(--color-border-muted);
+  border-left: 0.25rem solid var(--color-border-muted);
   border-right: none;
   color: var(--color-text);
   display: block;
@@ -13,6 +13,6 @@ blockquote {
 
   & footer {
     margin-top: calc(var(--typography-spacing-vertical) * 0.5);
-    color: var(--blockquote-footer-color);
+    color: var(--color-text-muted);
   }
 }

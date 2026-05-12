@@ -55,9 +55,6 @@
   --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-primary-focus);
   --group-shadow-focus-with-input: 0 0 0 0.0625rem var(--form-border-color);
 
-  /* Modal */
-  --modal-overlay-backdrop-filter: blur(0.375rem);
-
   /* Navigation */
   --nav-link-spacing: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";

@@ -1,23 +1,14 @@
 [popover] {
-  left: unset;
   max-height: calc(100vh - var(--spacing) * 2);
   overflow: auto;
-  box-shadow: var(--card-shadow);
   border: 0;
   padding: 0;
   color: var(--color-text);
   background-color: var(--color-background);
   height: unset;
   margin: unset;
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:popover-open {
     display: block !important;
-  }
-
-  &::backdrop {
-    backdrop-filter: var(--modal-overlay-backdrop-filter);
-    background-color: var(--modal-overlay-bg);
-    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 }

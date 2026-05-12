@@ -3,20 +3,27 @@
  */
 :where(a:not([role=button])),
 [role=link] {
-  --color-text: rgb(var(--color-primary-rgb));
   --color-background: transparent;
+  --border-color: transparent;
+  --color-text: rgb(var(--color-primary-rgb));
+  --shadow-lg: transparent;
   --underline: var(--color-primary-underline);
   outline: none;
+  padding: 0;
   background-color: var(--color-background);
   color: var(--color-text);
   text-decoration: var(--text-decoration);
   text-decoration-color: var(--underline);
   text-underline-offset: 0.125em;
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
-}
 
-:where(a:not([role=button])),
-[role=link] {
+  &:is(:hover, :active, :focus) {
+    --color-background: transparent;
+    --border-color: transparent;
+    --color-text: rgb(var(--color-primary-rgb));
+    --shadow-lg: transparent;
+  }
+
   &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
     --color-text: var(--color-primary-hover);
     --underline: var(--color-primary-hover-underline);

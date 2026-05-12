@@ -80,9 +80,8 @@
   --dropdown-text: var(--color-text);
   --dropdown-hover-bg: #eff1f4;
 
-  /* Loading & Modal */
+  /* Loading */
   --loading-spinner-opacity: 0.5;
-  --modal-overlay-bg: rgba(232, 234, 237, 0.75);
 
   /* Progress */
   --progress-bg: #dfe3eb;
@@ -193,7 +192,6 @@
 
     /* Loading & Modal */
     --loading-spinner-opacity: 0.5;
-    --modal-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 
     /* Progress */
     --progress-bg: #202632;
@@ -292,9 +290,8 @@
   --dropdown-text: var(--color-text);
   --dropdown-hover-bg: #202632;
 
-  /* Loading & Modal */
+  /* Loading */
   --loading-spinner-opacity: 0.5;
-  --modal-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 
   /* Progress */
   --progress-bg: #202632;

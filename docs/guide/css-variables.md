@@ -253,12 +253,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-### Modal
+### Popover Overlay
 
 ```css
 :root {
-  --modal-overlay-bg: rgba(232, 234, 237, 0.75);
-  --modal-overlay-backdrop-filter: blur(0.375rem);
+  --color-backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
+  --filter-backdrop-overlay: blur(0.375rem);
 }
 ```
 

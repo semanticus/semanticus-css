@@ -25,6 +25,10 @@ dialog {
   box-shadow: var(--card-shadow);
   border: 0;
 
+  /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
+  /* Gracefully degrades to instant appearance in unsupported browsers */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
   @media (--breakpoint-sm) {
     max-width: 510px;
   }
@@ -39,10 +43,11 @@ dialog {
     display: none;
   }
 
-  /* Backdrop overlay for native modal (showModal()) */
+  /* Backdrop overlay */
   &::backdrop {
-    backdrop-filter: var(--modal-overlay-backdrop-filter);
-    background-color: var(--modal-overlay-bg);
+    backdrop-filter: var(--filter-backdrop-overlay);
+    background-color: var(--color-backdrop-overlay-bg);
+    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 
   > header,
@@ -97,16 +102,6 @@ dialog {
       opacity: 1;
     }
   }
-}
-
-/* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
-/* Gracefully degrades to instant appearance in unsupported browsers */
-dialog {
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-dialog::backdrop {
-  transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 @starting-style {

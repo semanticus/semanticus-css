@@ -82,7 +82,8 @@
   --color-danger-inverse: #fff;
 
   /* Core Colors */
-  --color-background: #fff;
+  --color-body-bg: rgb(var(--color-body-bg-rgb));
+  --color-background: var(--color-body-bg);
   --color-text: rgb(var(--color-text-rgb));
   --color-text-selection: rgba(2, 154, 232, 0.25);
   --color-text-muted: color-mix(in srgb, rgb(var(--color-text-rgb)), rgb(128, 128, 128) 70%);
@@ -133,9 +134,9 @@
   --color-mark-bg: rgb(252.5, 230.5, 191.5);
   --color-mark-text: #0f1114;
 
-  /* Blockquote */
-  --blockquote-border-color: var(--color-border-muted);
-  --blockquote-footer-color: var(--color-text-muted);
+  /* Popover Overlay */
+  --filter-backdrop-overlay: blur(0.375rem);
+  --color-backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
 }
 
 /* ==========================================================================
@@ -247,9 +248,9 @@
     --color-mark-bg: #014063;
     --color-mark-text: #fff;
 
-    /* Blockquote */
-    --blockquote-border-color: var(--color-border-muted);
-    --blockquote-footer-color: var(--color-text-muted);
+    /* Popover Overlay */
+    --filter-backdrop-overlay: blur(0.375rem);
+    --color-backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
   }
 }
 
@@ -360,7 +361,7 @@
   --color-mark-bg: #014063;
   --color-mark-text: #fff;
 
-  /* Blockquote */
-  --blockquote-border-color: var(--color-border-muted);
-  --blockquote-footer-color: var(--color-text-muted);
+  /* Popover Overlay */
+  --filter-backdrop-overlay: blur(0.375rem);
+  --color-backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 }

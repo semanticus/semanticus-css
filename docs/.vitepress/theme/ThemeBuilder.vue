@@ -387,17 +387,10 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Modal',
+    label: 'Backdrop Overlay',
     vars: [
-      { name: '--modal-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
-      { name: '--modal-overlay-backdrop-filter', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
-    ]
-  },
-  {
-    label: 'Blockquote',
-    vars: [
-      { name: '--blockquote-border-color', label: 'Border Color', desc: 'Left border color of blockquote elements.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#202632', scope: 'theme', selectors: 'blockquote' },
-      { name: '--blockquote-footer-color', label: 'Footer Color', desc: 'Text color for blockquote footer citations.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'blockquote footer' },
+      { name: '--color-backdrop-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
+      { name: '--filter-backdrop-overlay', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
     ]
   },
 ]

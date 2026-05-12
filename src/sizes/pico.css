@@ -36,9 +36,6 @@
   --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-primary-focus); /* Focus ring when a button inside the group is focused */
   --group-shadow-focus-with-input: 0 0 0 0.0625rem var(--form-border-color); /* Focus ring when an input inside the group is focused */
 
-  /* Modal – backdrop overlay settings */
-  --modal-overlay-backdrop-filter: blur(0.375rem); /* Applies a blur behind the modal overlay */
-
   /* Navigation – spacing and breadcrumb configuration */
   --nav-link-spacing: calc(var(--spacing) * 0.5); /* padding inside nav links */
   --nav-breadcrumb-divider: ">"; /* Character displayed between breadcrumb items */
