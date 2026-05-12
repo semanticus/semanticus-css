@@ -211,10 +211,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --card-bg: var(--color-background);
-  --card-border: var(--color-border-muted);
-  --card-shadow: var(--shadow-lg);
-  --card-section-bg: rgb(251, 251.5, 252.25);
+  --pane-bg: var(--color-background);
+  --pane-section-border: var(--color-border-muted);
+  --pane-shadow: var(--shadow-lg);
+  --pane-section-bg: rgb(251, 251.5, 252.25);
 }
 ```
 

@@ -68,10 +68,11 @@
   --accordion-open-summary: var(--color-text-muted);
 
   /* Card */
-  --card-bg: var(--color-background);
-  --card-border: var(--color-border-muted);
-  --card-shadow: var(--shadow-lg);
-  --card-section-bg: rgb(251, 251.5, 252.25);
+  --pane-bg: var(--color-background);
+  --pane-border: transparent;
+  --pane-shadow: none;
+  --pane-section-border: var(--color-border-muted);
+  --pane-section-bg: rgb(251, 251.5, 252.25);
 
   /* Menu & Dropdown */
   --menu-bg: #fff;
@@ -182,10 +183,11 @@
     --accordion-open-summary: var(--color-text-muted);
 
     /* Card */
-    --card-bg: #181c25;
-    --card-border: var(--card-bg);
-    --card-shadow: var(--shadow-lg);
-    --card-section-bg: rgb(26, 30.5, 40.25);
+    --pane-bg: #181c25;
+    --pane-border: transparent;
+    --pane-shadow: none;
+    --pane-section-border: var(--pane-bg);
+    --pane-section-bg: rgb(26, 30.5, 40.25);
 
     /* Dropdown */
     --menu-bg: #181c25;
@@ -286,10 +288,11 @@
   --accordion-open-summary: var(--color-text-muted);
 
   /* Card */
-  --card-bg: #181c25;
-  --card-border: var(--card-bg);
-  --card-shadow: var(--shadow-lg);
-  --card-section-bg: rgb(26, 30.5, 40.25);
+  --pane-bg: #181c25;
+  --pane-border: transparent;
+  --pane-shadow: none;
+  --pane-section-border: var(--pane-bg);
+  --pane-section-bg: rgb(26, 30.5, 40.25);
 
   /* Dropdown */
   --menu-bg: #181c25;

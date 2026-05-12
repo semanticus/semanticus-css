@@ -10,7 +10,7 @@ export function leftSidebar(attrs: Record<string, string> = {}) {
   return renderElement("aside", { ...attrs, class: `sidebar ${attrs.class || ""}`.trim() }, `<h4>Guide</h4>
   ${NavDemo.pagesLinks()}
 
-  <a href="#" role="button" class="ghost">Support</a>`);
+  <a href="#" role="button" class="contrast">Support</a>`);
 }
 
 export function rightSidebar(attrs: Record<string, string> = {}) {

@@ -16,7 +16,7 @@ aside.sidebar {
 
     display: flex !important;
     width: 60% !important;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--pane-shadow);
     background-color: var(--color-background) !important;
     left: 0;
     right: unset;

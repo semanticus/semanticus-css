@@ -348,11 +348,11 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Cards',
+    label: 'Pane, Panel & Card',
     vars: [
-      { name: '--card-bg', label: 'Card Background', desc: 'Background color of card (article) components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
-      { name: '--card-border', label: 'Card Border', desc: 'Border color of card header/footer sections.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
-      { name: '--card-section-bg', label: 'Card Section BG', desc: 'Background for header/footer sections inside a card.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
+      { name: '--pane-bg', label: 'Background', desc: 'Background color of panel, panel and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
+      { name: '--pane-section-border', label: 'Section Border', desc: 'Border color of header/footer sections.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
+      { name: '--pane-section-bg', label: 'Section Background', desc: 'Background for header/footer sections.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
     ]
   },
   {

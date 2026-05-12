@@ -40,7 +40,7 @@ export const DocsPage: StoryObj = {
 
     <div class="flow-h pt-d">
       <div class="flow-v mx-0 mx-md-5">
-        ${ArticleDemo.multipleParagraphs({ class: "pb-d" })}
+        ${ArticleDemo.multipleParagraphs({ class: "panel secondary" })}
 
         ${FooterDemo.basic({ class: "border-top" })}
       </div>
