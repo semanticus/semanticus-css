@@ -47,7 +47,7 @@ pre {
 }
 
 kbd {
-  background-color: var(--color-kbd-bg);
-  color: var(--color-kbd-text);
+  background-color: var(--kbd-bg);
+  color: var(--kbd-color);
   vertical-align: baseline;
 }

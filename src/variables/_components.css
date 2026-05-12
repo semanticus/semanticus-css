@@ -28,8 +28,8 @@
   /* Code */
   --code-bg: rgb(243, 244.5, 246.75);
   --code-color: #646b79;
-  --color-kbd-bg: var(--color-text);
-  --color-kbd-text: var(--color-background);
+  --kbd-bg: var(--color-text);
+  --kbd-color: var(--color-background);
 
   /* Form Elements */
   --form-bg: rgb(251, 251.5, 252.25);
@@ -142,8 +142,8 @@
     /* Code */
     --code-bg: rgb(26, 30.5, 40.25);
     --code-color: #8891a4;
-    --color-kbd-bg: var(--color-text);
-    --color-kbd-text: var(--color-background);
+    --kbd-bg: var(--color-text);
+    --kbd-color: var(--color-background);
 
     /* Form Elements */
     --form-bg: rgb(28, 33, 43.5);
@@ -246,8 +246,8 @@
   /* Code */
   --code-bg: rgb(26, 30.5, 40.25);
   --code-color: #8891a4;
-  --color-kbd-bg: var(--color-text);
-  --color-kbd-text: var(--color-background);
+  --kbd-bg: var(--color-text);
+  --kbd-color: var(--color-background);
 
   /* Form Elements */
   --form-bg: rgb(28, 33, 43.5);
