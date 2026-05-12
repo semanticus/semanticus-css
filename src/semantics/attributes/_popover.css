@@ -1,5 +1,4 @@
 [popover] {
-  max-height: calc(100vh - var(--spacing) * 2);
   overflow: auto;
   border: 0;
   padding: 0;

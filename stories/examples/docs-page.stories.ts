@@ -18,7 +18,7 @@ export const DocsPage: StoryObj = {
   render() {
     return `<div class="flow-h container">
   ${AsideDemo.leftSidebar({
-    class: "start-0 bg-secondary-subtle d-none d-md-flex",
+    class: "bg-secondary-subtle d-none d-md-flex",
     popover: "auto",
     id: "left-sidebar"
   })}
@@ -46,7 +46,7 @@ export const DocsPage: StoryObj = {
       </div>
 
       ${AsideDemo.rightSidebar({
-        class: "end-0 border-start d-none d-xl-flex",
+        class: "border-start d-none d-xl-flex",
         popover: "auto",
         id: "right-sidebar",
         "data-placement": "right"
