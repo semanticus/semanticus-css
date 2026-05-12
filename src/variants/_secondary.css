@@ -17,21 +17,23 @@
   }
 }
 
-:is(button, [type="submit"], [type="button"], [role="button"]).secondary {
-  --color-background: var(--color-secondary-bg);
-  --border-color: var(--color-secondary-border);
-  --color-text: var(--color-secondary-inverse);
-}
+:is(button, [type="submit"], [type="button"], [role="button"]) {
+  &.secondary {
+    --color-background: var(--color-secondary-bg);
+    --border-color: var(--color-secondary-border);
+    --color-text: var(--color-secondary-inverse);
 
-:is(button, [type="submit"], [type="button"], [role="button"]).secondary:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-  --color-background: var(--color-secondary-hover-bg);
-  --border-color: var(--color-secondary-hover-border);
-  --color-text: var(--color-secondary-inverse);
-}
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-secondary-hover-bg);
+      --border-color: var(--color-secondary-hover-border);
+      --color-text: var(--color-secondary-inverse);
+    }
 
-:is(button, [type="submit"], [type="button"], [role="button"]).secondary:focus,
-:is(button, [type="submit"], [type="button"], [role="button"]).secondary:is([aria-current]:not([aria-current="false"])):focus {
-  --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-secondary-focus);
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-secondary-focus);
+    }
+  }
 }
 
 :is(.card, .pane, .panel).secondary {
@@ -39,6 +41,7 @@
   --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
   --pane-bg: var(--color-secondary-bg-subtle);
 }
+
 :is(.panel).secondary {
   --pane-section-border: var(--color-secondary-border-subtle);
   --pane-border: var(--color-secondary-border-subtle);

@@ -10,47 +10,54 @@
   background-color: var(--color-background) !important;
 }
 
-:is(button, [type="submit"], [type="button"], [role="button"]).ghost {
-  --color-background: transparent;
-  --color-text: rgb(var(--color-primary-rgb));
-  --border-color: rgb(var(--color-primary-rgb));
-}
+:is(button, [type="submit"], [type="button"], [role="button"]) {
+  &.ghost {
+    --color-background: transparent;
+    --border-color: rgb(var(--color-primary-rgb));
+    --color-text: rgb(var(--color-primary-rgb));
 
-:is(button, [type="submit"], [type="button"], [role="button"]).ghost:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-  --color-background: transparent;
-  --color-text: var(--color-primary-hover);
-  --border-color: var(--color-primary-hover);
-}
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-primary-hover-bg);
+      --border-color: var(--color-primary-hover-border);
+      --color-text: var(--color-primary-inverse);
+    }
 
-:is(.panel, button, [type="submit"], [type="button"], [role="button"]).ghost.secondary {
-  --color-text: rgb(var(--color-secondary-rgb));
-  --border-color: rgb(var(--color-secondary-rgb));
-}
+    &.secondary {
+      --color-background: transparent;
+      --border-color: rgb(var(--color-secondary-rgb));
+      --color-text: rgb(var(--color-secondary-rgb));
 
-:is(button, [type="submit"], [type="button"], [role="button"]).ghost.secondary:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-  --color-text: var(--color-secondary-hover);
-  --border-color: var(--color-secondary-hover);
-}
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-background: var(--color-secondary-hover-bg);
+        --border-color: var(--color-secondary-hover-border);
+        --color-text: var(--color-secondary-inverse);
+      }
+    }
 
-:is(.panel, button, [type="submit"], [type="button"], [role="button"]).ghost.contrast {
-  --color-text: rgb(var(--color-contrast-rgb));
-  --border-color: rgb(var(--color-contrast-rgb));
-}
+    &.contrast {
+      --color-background: transparent;
+      --border-color: rgb(var(--color-contrast-rgb));
+      --color-text: rgb(var(--color-contrast-rgb));
 
-:is(button, [type="submit"], [type="button"], [role="button"]).ghost.contrast:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-  --color-text: var(--color-contrast-hover);
-  --border-color: var(--color-contrast-hover);
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-background: var(--color-contrast-hover-bg);
+        --border-color: var(--color-contrast-hover-border);
+        --color-text: var(--color-contrast-inverse);
+      }
+    }
+  }
 }
 
 /* Reset buttons */
 [type="reset"].ghost {
   --color-background: transparent;
-  --color-text: rgb(var(--color-secondary-rgb));
   --border-color: rgb(var(--color-secondary-rgb));
+  --color-text: rgb(var(--color-secondary-rgb));
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --color-text: var(--color-secondary-hover);
-    --border-color: var(--color-secondary-hover);
+    --color-background: var(--color-secondary-hover-bg);
+    --border-color: var(--color-secondary-hover-border);
+    --color-text: var(--color-secondary-inverse);
   }
 }
 
