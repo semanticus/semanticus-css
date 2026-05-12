@@ -45,8 +45,8 @@ dialog {
 
   /* Backdrop overlay */
   &::backdrop {
-    backdrop-filter: var(--filter-backdrop-overlay);
-    background-color: var(--color-backdrop-overlay-bg);
+    backdrop-filter: var(--backdrop-overlay-filter);
+    background-color: var(--backdrop-overlay-bg);
     transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 

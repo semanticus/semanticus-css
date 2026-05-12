@@ -90,6 +90,10 @@
   /* Tooltip */
   --tooltip-bg: var(--color-contrast-bg);
   --tooltip-text: var(--color-contrast-inverse);
+
+  /* Backdrop Overlay */
+  --backdrop-overlay-filter: blur(0.375rem);
+  --backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
 }
 
 /* Form focus override for actionable input types in light mode */
@@ -200,6 +204,10 @@
     /* Tooltip */
     --tooltip-bg: var(--color-contrast-bg);
     --tooltip-text: var(--color-contrast-inverse);
+
+    /* Backdrop Overlay */
+    --backdrop-overlay-filter: blur(0.375rem);
+    --backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
   }
 
   :root:not([data-theme]) input:is(
@@ -300,6 +308,10 @@
   /* Tooltip */
   --tooltip-bg: var(--color-contrast-bg);
   --tooltip-text: var(--color-contrast-inverse);
+
+  /* Backdrop Overlay */
+  --backdrop-overlay-filter: blur(0.375rem);
+  --backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 }
 
 /* Form focus override for actionable input types in explicit dark mode */

@@ -133,10 +133,6 @@
   /* Mark & Text */
   --color-mark-bg: rgb(252.5, 230.5, 191.5);
   --color-mark-text: #0f1114;
-
-  /* Popover Overlay */
-  --filter-backdrop-overlay: blur(0.375rem);
-  --color-backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
 }
 
 /* ==========================================================================
@@ -247,10 +243,6 @@
     /* Mark & Text */
     --color-mark-bg: #014063;
     --color-mark-text: #fff;
-
-    /* Popover Overlay */
-    --filter-backdrop-overlay: blur(0.375rem);
-    --color-backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
   }
 }
 
@@ -360,8 +352,4 @@
   /* Mark & Text */
   --color-mark-bg: #014063;
   --color-mark-text: #fff;
-
-  /* Popover Overlay */
-  --filter-backdrop-overlay: blur(0.375rem);
-  --color-backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 }

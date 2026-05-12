@@ -389,8 +389,8 @@ const variableGroups = [
   {
     label: 'Backdrop Overlay',
     vars: [
-      { name: '--color-backdrop-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
-      { name: '--filter-backdrop-overlay', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
+      { name: '--backdrop-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
+      { name: '--backdrop-overlay-filter', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
     ]
   },
 ]

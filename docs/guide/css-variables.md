@@ -257,8 +257,8 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --color-backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
-  --filter-backdrop-overlay: blur(0.375rem);
+  --backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
+  --backdrop-overlay-filter: blur(0.375rem);
 }
 ```
 
