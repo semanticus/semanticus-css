@@ -26,8 +26,8 @@
   --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
 
   /* Code */
-  --color-code-bg: rgb(243, 244.5, 246.75);
-  --color-code-text: #646b79;
+  --code-bg: rgb(243, 244.5, 246.75);
+  --code-color: #646b79;
   --color-kbd-bg: var(--color-text);
   --color-kbd-text: var(--color-background);
 
@@ -140,8 +140,8 @@
     --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
 
     /* Code */
-    --color-code-bg: rgb(26, 30.5, 40.25);
-    --color-code-text: #8891a4;
+    --code-bg: rgb(26, 30.5, 40.25);
+    --code-color: #8891a4;
     --color-kbd-bg: var(--color-text);
     --color-kbd-text: var(--color-background);
 
@@ -244,8 +244,8 @@
   --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
 
   /* Code */
-  --color-code-bg: rgb(26, 30.5, 40.25);
-  --color-code-text: #8891a4;
+  --code-bg: rgb(26, 30.5, 40.25);
+  --code-color: #8891a4;
   --color-kbd-bg: var(--color-text);
   --color-kbd-text: var(--color-background);
 

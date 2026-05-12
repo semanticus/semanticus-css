@@ -343,8 +343,8 @@ const variableGroups = [
   {
     label: 'Code',
     vars: [
-      { name: '--color-code-bg', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
-      { name: '--color-code-text', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
+      { name: '--code-bg', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
+      { name: '--code-color', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
     ]
   },
   {
