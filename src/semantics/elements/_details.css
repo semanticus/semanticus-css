@@ -173,11 +173,11 @@ details:has(> summary[aria-haspopup="menu"]) {
     margin: 0;
     margin-top: var(--outline-width);
     padding: 0;
-    border: var(--border-width) solid var(--dropdown-border);
+    border: var(--border-width) solid var(--menu-border);
     border-radius: var(--border-radius);
-    background-color: var(--dropdown-bg);
-    box-shadow: var(--dropdown-shadow);
-    color: var(--dropdown-text);
+    background-color: var(--menu-bg);
+    box-shadow: var(--menu-shadow);
+    color: var(--menu-text);
     white-space: nowrap;
     opacity: 0;
     transition: opacity var(--transition), transform 0s ease-in-out 1s;
@@ -208,7 +208,7 @@ details:has(> summary[aria-haspopup="menu"]) {
       padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
       overflow: hidden;
       border-radius: 0;
-      color: var(--dropdown-text);
+      color: var(--menu-text);
       text-decoration: none;
       text-overflow: ellipsis;
 
@@ -217,7 +217,7 @@ details:has(> summary[aria-haspopup="menu"]) {
       &:active,
       &:focus-visible,
       &[aria-current]:not([aria-current=false]) {
-        background-color: var(--dropdown-hover-bg);
+        background-color: var(--menu-hover-bg);
       }
     }
 
@@ -226,7 +226,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     &:has(label):hover {
-      background-color: var(--dropdown-hover-bg);
+      background-color: var(--menu-hover-bg);
     }
   }
 

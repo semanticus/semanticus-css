@@ -73,12 +73,12 @@
   --card-shadow: var(--shadow-lg);
   --card-section-bg: rgb(251, 251.5, 252.25);
 
-  /* Dropdown */
-  --dropdown-bg: #fff;
-  --dropdown-border: #eff1f4;
-  --dropdown-shadow: var(--shadow-lg);
-  --dropdown-text: var(--color-text);
-  --dropdown-hover-bg: #eff1f4;
+  /* Menu & Dropdown */
+  --menu-bg: #fff;
+  --menu-border: #eff1f4;
+  --menu-shadow: var(--shadow-lg);
+  --menu-text: var(--color-text);
+  --menu-hover-bg: #eff1f4;
 
   /* Loading */
   --loading-spinner-opacity: 0.5;
@@ -184,11 +184,11 @@
     --card-section-bg: rgb(26, 30.5, 40.25);
 
     /* Dropdown */
-    --dropdown-bg: #181c25;
-    --dropdown-border: #202632;
-    --dropdown-shadow: var(--shadow-lg);
-    --dropdown-text: var(--color-text);
-    --dropdown-hover-bg: #202632;
+    --menu-bg: #181c25;
+    --menu-border: #202632;
+    --menu-shadow: var(--shadow-lg);
+    --menu-text: var(--color-text);
+    --menu-hover-bg: #202632;
 
     /* Loading & Modal */
     --loading-spinner-opacity: 0.5;
@@ -284,11 +284,11 @@
   --card-section-bg: rgb(26, 30.5, 40.25);
 
   /* Dropdown */
-  --dropdown-bg: #181c25;
-  --dropdown-border: #202632;
-  --dropdown-shadow: var(--shadow-lg);
-  --dropdown-text: var(--color-text);
-  --dropdown-hover-bg: #202632;
+  --menu-bg: #181c25;
+  --menu-border: #202632;
+  --menu-shadow: var(--shadow-lg);
+  --menu-text: var(--color-text);
+  --menu-hover-bg: #202632;
 
   /* Loading */
   --loading-spinner-opacity: 0.5;

@@ -364,12 +364,12 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Dropdown',
+    label: 'Menus & Dropdowns',
     vars: [
-      { name: '--dropdown-bg', label: 'Dropdown BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--dropdown-border', label: 'Dropdown Border', desc: 'Border color of dropdown menus.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--dropdown-text', label: 'Dropdown Text', desc: 'Text color inside dropdown menus.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--dropdown-hover-bg', label: 'Dropdown Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-bg', label: 'Menus & Dropdowns BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-border', label: 'Menus & Dropdowns Border', desc: 'Border color of dropdown menus.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-text', label: 'Menus & Dropdowns Text', desc: 'Text color inside dropdown menus.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-hover-bg', label: 'Menus & Dropdowns Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
     ]
   },
   {
