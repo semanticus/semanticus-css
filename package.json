@@ -55,6 +55,7 @@
   "packageManager": "npm@11.12.1",
   "publishConfig": {
     "access": "public",
+    "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": [
