@@ -62,38 +62,28 @@ Semanticus CSS is built on three complementary layers:
 
 Beautiful default styles for plain **ARIA-centric** HTML — no classes needed.
 
-<HtmlPreviewer :code="example1Html" />
+<HtmlPreviewer :code="GettingStartedDemo.semanticStyling()" />
 
 ### 2. Variants
 
 Minimal set of CSS classes that add visual variation to the **Semantic Styling**.
 
-<HtmlPreviewer :code="example3Html" />
+<HtmlPreviewer :code="GettingStartedDemo.variants()" />
 
 ### 3. Utilities
 
 Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design.
 
-<HtmlPreviewer :code="example2Html" />
+<HtmlPreviewer :code="GettingStartedDemo.utilities()" />
 
+## Starter HTML template
+
+Here's an off-to-a-great-start HTML template using semantic styling, its variants, and utilities:
+
+<HtmlPreviewer :code="GettingStartedDemo.starterHtmlTemplateDemo()" />
 
 <script setup>
-const example1Html = `<article>
-  <h1>Hello World</h1>
-  <p>
-    Look at me, I'm <strong>bold</strong> and <em>stylish!</em>
-  </p>
-  <button>Click me</button>
-</article>
-`;
-const example2Html = `<footer class="py-4 text-center text-bg-contrast-subtle">
-  <p class="mb-0">Star us on GitHub!</p>
-</footer>
-`;
-const example3Html = `<button class="ghost">Ghost</button>
-<button class="secondary">Secondary</button>
-<button class="contrast">Contrast</button>
-`;
+import { GettingStartedDemo } from "@demos/examples";
 </script>
 
 <style>

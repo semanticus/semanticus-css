@@ -8,7 +8,7 @@ import { ModalDemo } from "@demos/composites";
 
 # Modal
 
-Modals are implemented using the `<dialog>` element, which Semanticus provides full styling for and no JavaScript required for basic open/close behavior.
+Modals are implemented using the `<dialog>` element in combination with the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API), for basic open/close behavior.
 
 1. Give your `<dialog>` a unique `id` attribute
 2. Create an opening button with `command="show-modal" commandfor="your-modal-id"`

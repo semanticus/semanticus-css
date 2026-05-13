@@ -14,7 +14,7 @@ const copiedFeedback = ref(null)
 
 const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 
-<!-- costumize it with a palette or size variation if needed -->
+<!-- customize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
 <link rel="stylesheet" href="/css/semanticus.size.pico.css">`
 
@@ -22,7 +22,7 @@ const cdnSnippet = computed(() => {
   const version = __SEMANTICUS_VERSION__
   return `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">
 
-<!-- costumize it with a palette or size variation if needed -->
+<!-- customize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.blue.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.pico.css">`
 })
