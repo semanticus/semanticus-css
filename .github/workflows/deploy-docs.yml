@@ -40,6 +40,7 @@ jobs:
         env:
           # SEMANTICUS_DOCS_BASE: /${{ github.event.repository.name }}/
           SEMANTICUS_DOCS_BASE: /
+          GTAG_ID: ${{ secrets.GTAG_ID }}
         run: npm run docs:build
 
       - name: Upload Pages artifact

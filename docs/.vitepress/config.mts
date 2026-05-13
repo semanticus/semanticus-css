@@ -46,9 +46,25 @@ const docsBase = isCustomDomain
           : "/"),
     );
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export default defineConfig({
   base: docsBase,
   // appearance: 'force-auto',
+  head: !isProd ? [] : [
+    [
+      'script',
+      { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG_ID}` }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${process.env.GTAG_ID}');`
+    ]
+  ],
   ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
