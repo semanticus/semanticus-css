@@ -1,29 +1,35 @@
-import type { Meta, StoryObj } from "@storybook/html";
 import {
   FooterDemo,
   AsideDemo,
   HeaderDemo,
   ArticleDemo,
 } from "@demos/semantics/elements";
-import { placement } from "@demos/semantics/attributes/role-tooltip.demo";
 
-const meta: Meta = {
-  title: "Examples/DocsPage",
-  tags: ["!autodocs"],
-};
+export function page() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.css">
+</head>
 
-export default meta;
+<body class="vstack">
+  ${basic()}
+</body>
+</html>`;
+}
 
-export const DocsPage: StoryObj = {
-  render() {
-    return `<div class="flow-h container">
+export function basic() {
+  return `<div class="flow-h container">
   ${AsideDemo.leftSidebar({
     class: "bg-secondary-subtle d-none d-md-flex",
     popover: "auto",
     id: "left-sidebar"
   })}
 
-  <main>
+  <main class="flex-grow-1">
     ${HeaderDemo.withSearchDropdownAndLinks({ class: "border-bottom ps-0 ps-md-d bg-body" })}
 
     <nav class="d-flex d-xl-none border-bottom pb-d mb-d ps-0 ps-md-d">
@@ -40,7 +46,7 @@ export const DocsPage: StoryObj = {
 
     <div class="flow-h pt-d">
       <div class="flow-v mx-0 mx-md-5">
-        ${ArticleDemo.multipleParagraphs({ class: "panel secondary" })}
+        ${ArticleDemo.multipleParagraphs({ class: "pb-d" })}
 
         ${FooterDemo.basic({ class: "border-top" })}
       </div>
@@ -54,5 +60,4 @@ export const DocsPage: StoryObj = {
     </div>
   </main>
 </div>`;
-  },
-};
+}

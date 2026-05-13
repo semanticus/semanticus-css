@@ -294,23 +294,30 @@ export default defineConfig({
     logo: "/logo.svg",
     siteTitle: "Semanticus CSS",
     nav: [
+      { text: "About", link: "/about/" },
       { text: "Guide", link: "/guide/" },
       { text: "Docs", link: "/docs/" },
-      { text: "Builder", link: "/theme-builder" },
+      { text: "Examples", link: "/examples/" },
     ],
     sidebar: {
+      "/about/": [
+        { text: "About", link: "/about/" },
+        { text: "Vision", link: "/about/vision" },
+        { text: "Contributing", link: "/about/contributing" },
+        { text: "Roadmap", link: "/about/roadmap" },
+        { text: "Usecase Scenarios", link: "/about/usecase-scenarios" },
+      ],
       "/guide/": [
         { text: "Getting Started", link: "/guide/" },
         { text: "Light & Dark Modes", link: "/guide/light-dark-modes" },
         { text: "Palettes & Sizes", link: "/guide/palettes-sizes" },
         { text: "CSS Variables", link: "/guide/css-variables" },
-        { text: "Contributing", link: "/guide/contributing" },
+        { text: "Theme Builder", link: "/guide/theme-builder" },
       ],
       "/docs/": [
         {
           text: "Composites",
           items: [
-            { text: "Overview", link: "/docs/composites/" },
             { text: "Card", link: "/docs/composites/card" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
@@ -319,6 +326,7 @@ export default defineConfig({
             { text: "Pagination", link: "/docs/composites/pagination" },
             { text: "Search", link: "/docs/composites/search" },
             { text: "Tooltip", link: "/docs/composites/tooltip" },
+            { text: "Typography", link: "/docs/composites/typography" },
             {
               text: "Validation States",
               link: "/docs/composites/validation-states",
@@ -329,10 +337,9 @@ export default defineConfig({
           text: "Semantic Styling",
           items: [
             { text: "Overview", link: "/docs/semantics/" },
-            { text: "Typography", link: "/docs/semantics/typography" },
             {
               text: "Elements",
-              collapsed: false,
+              collapsed: true,
               items: [
                 { text: "&lt;a&gt;", link: "/docs/semantics/elements/a" },
                 { text: "&lt;article&gt;", link: "/docs/semantics/elements/article" },
@@ -361,7 +368,7 @@ export default defineConfig({
             },
             {
               text: "Attributes",
-              collapsed: false,
+              collapsed: true,
               items: [
                 {
                   text: "[aria-busy]",
@@ -440,6 +447,12 @@ export default defineConfig({
             },
           ],
         },
+      ],
+      "/examples/": [
+        { text: "Starter HTML template", link: "/examples/" },
+        { text: "Documentation Page", link: "/examples/documentation-page" },
+        { text: "Login Page", link: "/examples/login-page" },
+        { text: "Landing Page", link: "/examples/landing-page" },
       ],
     },
     socialLinks: [

@@ -1,14 +1,8 @@
----
-title: Layout
----
-
-<script setup>
-import { CompositesLayoutDemo } from "@demos/composites";
-</script>
-
 # Layout
 
-Semanticus CSS provides layout utilities for building responsive page structures.
+🚧 WIP
+
+**DISCLAIMER**: Currently **Semanticus CSS** does not have a grid system, but it is planned for the future.
 
 ## Common Layout Pattern
 
@@ -23,3 +17,6 @@ For more layout options, see:
 - [Container](/docs/variants/container) — responsive width wrappers (`.container`, `.container-fluid`)
 - [Layout utilities](/docs/utilities/layout) — grid, aspect ratios, object-fit, and more
 
+<script setup>
+import { CompositesLayoutDemo } from "@demos/composites";
+</script>

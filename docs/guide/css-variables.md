@@ -12,6 +12,8 @@ After importing any of semanticus-css's css files, you can further customize it 
 }
 ```
 
+To help you create your own custom styles, check out the [Theme Builder](/guide/theme-builder) tool.
+
 ## Color Variables List
 
 ```css
@@ -207,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ## Component Variables
 
-### Cards
+### Pane, Panel and Card
 
 ```css
 :root {
@@ -253,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-### Popover Overlay
+### Dialog and Popover Backdrop Overlay
 
 ```css
 :root {
@@ -304,3 +306,5 @@ Here is a complete customization file:
   --color-primary-hover-bg: #4f46e5;
 }
 ```
+
+To help you create your own custom styles, check out the [Theme Builder](/guide/theme-builder) tool.

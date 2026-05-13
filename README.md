@@ -2,11 +2,14 @@
 
 [![npm version](https://img.shields.io/npm/v/@semanticus/semanticus-css)](https://www.npmjs.com/package/@semanticus/semanticus-css)
 [![license](https://img.shields.io/npm/l/@semanticus/semanticus-css)](LICENSE)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@semanticus/semanticus-css)](https://bundlephobia.com/package/@semanticus/semanticus-css)
 
 **Semanticus** is a lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities.
 
 ## Vision
+
+Contribute to a more accessible friendly world wide web.
+
+## Mission
 
 Enable authors to write clean, semantic HTML that looks great by default, guide them toward ARIA-centric patterns, and ensure core functionality works without JavaScript while allowing deliberate customization via a small, consistent set of utilities.
 
@@ -18,14 +21,14 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 - **Predictable customization:** Centralize styling via CSS variables, assuring a consistent look for both semantic styles and atomic utilities.
 - **Progressive enhancement:** Ensure base semantics work without JavaScript, and enhance behavior when needed.
 
-## 📦 Installation
+## Installation
 
 ### Option 1: CDN (quick start)
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.css">
 
-<!-- costumize it with a palette or size variation if needed -->
+<!-- customize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.palette.blue.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.size.pico.css">
 ```
@@ -37,7 +40,7 @@ Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fseman
 ```html
 <link rel="stylesheet" href="/css/semanticus.css">
 
-<!-- costumize it with a palette or size variation if needed -->
+<!-- customize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
 <link rel="stylesheet" href="/css/semanticus.size.pico.css">
 ```
@@ -63,7 +66,7 @@ import '@semanticus/semanticus-css/sizes/pico';
 
 Check out the [Palettes & Sizes](https://semanticus.design/guide/palettes-sizes.html) guide for more options.
 
-## 🚀 Usage
+## Usage
 
 Semanticus CSS is built on three complementary layers:
 
@@ -99,7 +102,49 @@ Utility classes for **spacing**, **layout**, **colors**, and more — adapted to
 </footer>
 ```
 
-## 🛠️ Customization
+## Starter HTML template
+
+Here's an off-to-a-great-start HTML template using semantic styling, its variants, and utilities:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.css">
+</head>
+
+<body class="vstack">
+  <header class="container sticky-top bg-body">
+    <nav>
+      <h3><a href="#">Acme Corp</a></h3>
+
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#" role="button">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container py-d flex-grow-1">
+    <hgroup>
+      <h1>Welcome to Semanticus CSS</h1>
+      <p>A lightweight CSS framework for modern web development.</p>
+    </hgroup>
+
+    <button class="secondary">Get Started</button>
+  </main>
+
+  <footer class="text-center text-bg-secondary-subtle">
+    <p>Acme Corp &copy; 2026. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+```
+
+## Customization
 
 You can override its variables to create your own themes and styles. For example:
 
@@ -113,7 +158,7 @@ You can override its variables to create your own themes and styles. For example
 
 Check out the [CSS Variables](https://semanticus.design/guide/css-variables.html) guide for more details or the [Theme Builder](https://semanticus.design/theme-builder.html) to help you create your own custom styles.
 
-## 🌐 Browser Support
+## Browser Support
 
 Semanticus CSS targets modern browsers based on the following [Browserslist](https://browsersl.ist/) configuration:
 
@@ -121,18 +166,26 @@ Semanticus CSS targets modern browsers based on the following [Browserslist](htt
 - Firefox ESR
 - No dead browsers
 
-## 👨‍💻 Development
+## Limitations
 
-Check out this [Guide](docs/guide/contributing.md) for instructions on setting up the development environment, running tests, and contributing to the project.
+Semanticus CSS is inspired by the semantic and accessible foundations of Pico CSS￼ and the flexibility of utility-first composition patterns popularized by Bootstrap.
 
-## 📄 License
+It is not a full UI component framework. Semanticus CSS intentionally avoids shipping exhaustive pre-built components or JavaScript-driven interactions, favoring semantic HTML, composable styling utilities, and framework-agnostic integration instead.
+
+It does however provide documentation and examples on how to implement common UI patterns using semantic HTML and ARIA attributes, along with a small set of utility classes for visual variation and layout.
+
+## Development
+
+Check out this [How to setup the project](docs/about/contributing.md#how-to-setup-the-project) inside the contributing guide.
+
+## License
 
 Semanticus CSS is licensed under the [MIT License](LICENSE).
 
 This project incorporates concepts and patterns from [Pico CSS](https://picocss.com/) and [Bootstrap](https://getbootstrap.com/), including Bootstrap's utilities system, both under the MIT License.
 See the [NOTICE](NOTICE) file for full attribution and copyright details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Semanticus CSS wouldn't exist without the incredible work of the authors of:
 
