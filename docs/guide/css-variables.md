@@ -269,10 +269,10 @@ CSS variables are organized into separate files for maintainability:
 | File | Contents |
 |------|----------|
 | `_breakpoints.css` | Responsive breakpoint custom media queries |
-| `_layout.css` | Typography, spacing, sizing, base icons |
+| `_layout.css` | Typography, spacing, and sizing |
 | `_colors.css` | Color palette, RGB values, light/dark themes |
 | `_components.css` | Component-specific variables |
-| `_icons.css` | Theme-specific validation icons |
+| `_icons.css` | Base UI icons and theme-specific validation icons |
 | `_elements.css` | Element-scoped variable overrides |
 
 ## Complete Example
