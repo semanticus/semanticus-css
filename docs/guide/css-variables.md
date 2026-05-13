@@ -168,8 +168,9 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --spacing: 0.75rem;
-  --block-spacing: 1.2rem;
+  --base-spacing: 0.75rem;
+  --responsive-multiplier: 1;
+  --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
   --typography-spacing-vertical: 1rem;
   --form-element-spacing-vertical: 0.5rem;
   --form-element-spacing-horizontal: 0.7rem;
@@ -210,10 +211,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --card-bg: var(--color-background);
-  --card-border: var(--color-border-muted);
-  --card-shadow: var(--shadow-lg);
-  --card-section-bg: rgb(251, 251.5, 252.25);
+  --pane-bg: var(--color-background);
+  --pane-section-border: var(--color-border-muted);
+  --pane-shadow: var(--shadow-lg);
+  --pane-section-bg: rgb(251, 251.5, 252.25);
 }
 ```
 
@@ -247,18 +248,17 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --nav-link-spacing-vertical: 0.5rem;
-  --nav-link-spacing-horizontal: 0.5rem;
+  --nav-link-spacing: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
 }
 ```
 
-### Modal
+### Popover Overlay
 
 ```css
 :root {
-  --modal-overlay-bg: rgba(232, 234, 237, 0.75);
-  --modal-overlay-backdrop-filter: blur(0.375rem);
+  --backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
+  --backdrop-overlay-filter: blur(0.375rem);
 }
 ```
 
@@ -269,10 +269,10 @@ CSS variables are organized into separate files for maintainability:
 | File | Contents |
 |------|----------|
 | `_breakpoints.css` | Responsive breakpoint custom media queries |
-| `_layout.css` | Typography, spacing, sizing, base icons |
+| `_layout.css` | Typography, spacing, and sizing |
 | `_colors.css` | Color palette, RGB values, light/dark themes |
 | `_components.css` | Component-specific variables |
-| `_icons.css` | Theme-specific validation icons |
+| `_icons.css` | Base UI icons and theme-specific validation icons |
 | `_elements.css` | Element-scoped variable overrides |
 
 ## Complete Example

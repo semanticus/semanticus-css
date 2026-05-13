@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useData } from 'vitepress'
-import rawIframeContent from './theme-builder-preview.html?raw';
+import { OverviewDemo } from '@demos/semantics';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
@@ -12,6 +12,139 @@ const { isDark, site } = useData();
 
 const basePath = computed(() => site.value.base || '/');
 
+function htmlTemplate(base, theme) {
+  return `<!DOCTYPE html>
+<html lang="en" data-theme="${theme}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Semanticus CSS Theme Builder</title>
+  <link rel="stylesheet" href="${base}semanticus.css" id="theme-stylesheet">
+  <style>
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+    .compare-mode { display: flex !important; flex-direction: row; width: 100%; gap: 0; }
+    .compare-mode .default-mode { display: block !important; flex: 0 0 50% !important; width: 50% !important; position: relative; padding: 1rem; box-sizing: border-box; }
+    .compare-mode .custom-mode { display: block !important; flex: 0 0 50% !important; width: 50% !important; position: relative; padding: 1rem; box-sizing: border-box; }
+    .compare-mode .compare-side-label { display: block !important; position: absolute; top: -0.5rem; font-size: 0.625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--vp-c-text-3, #646b79); background: var(--vp-c-bg-soft, #f3f4f6); padding: 0.125rem 0.5rem; border-radius: 3px; z-index: 5; }
+    .compare-mode .default-mode .compare-side-label { left: 0.5rem; }
+    .compare-mode .custom-mode .compare-side-label { right: 0.5rem; }
+    .compare-mode .compare-divider { display: block !important; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #f27036; transform: translateX(-50%); pointer-events: none; z-index: 10; }
+  </style>
+</head>
+<body class="px-2">
+  <div id="preview-container" class="position-relative w-100 overflow-visible">
+    <div class="default-mode w-100 py-3 my-4">
+      <span class="compare-side-label d-none">Default</span>
+      <div id="default-content">
+        ${OverviewDemo.completeExample({ id: 'default-main' })}
+      </div>
+    </div>
+    <div class="custom-mode d-none w-100 py-3 my-4">
+      <span class="compare-side-label d-none">Custom</span>
+      <main class="container" id="custom-main"></main>
+    </div>
+    <div class="compare-divider d-none"></div>
+  </div>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'update-theme') {
+        const { palette, size } = event.data;
+        let paletteStylesheet = document.getElementById('palette-stylesheet');
+        if (palette === 'azure') {
+          if (paletteStylesheet) paletteStylesheet.remove();
+        } else {
+          if (!paletteStylesheet) {
+            paletteStylesheet = document.createElement('link');
+            paletteStylesheet.id = 'palette-stylesheet';
+            paletteStylesheet.rel = 'stylesheet';
+            document.head.appendChild(paletteStylesheet);
+          }
+          paletteStylesheet.href = \`${base}semanticus.palette.\${palette}.css?t=\` + Date.now();
+        }
+        let sizeStylesheet = document.getElementById('size-stylesheet');
+        if (size === 'default') {
+          if (sizeStylesheet) sizeStylesheet.remove();
+        } else {
+          if (!sizeStylesheet) {
+            sizeStylesheet = document.createElement('link');
+            sizeStylesheet.id = 'size-stylesheet';
+            sizeStylesheet.rel = 'stylesheet';
+            document.head.appendChild(sizeStylesheet);
+          }
+          sizeStylesheet.href = \`${base}semanticus.size.\${size}.css?t=\` + Date.now();
+        }
+      }
+      if (event.data && event.data.type === 'update-custom-css') {
+        var customStyle = document.getElementById('theme-builder-custom');
+        if (!customStyle) {
+          customStyle = document.createElement('style');
+          customStyle.id = 'theme-builder-custom';
+          document.head.appendChild(customStyle);
+        }
+        customStyle.textContent = event.data.css || '';
+        if (event.data.theme) {
+          document.documentElement.setAttribute('data-theme', event.data.theme);
+        }
+      }
+      if (event.data && event.data.type === 'highlight-elements') {
+        var prev = document.querySelectorAll('.theme-builder-highlight');
+        for (var i = 0; i < prev.length; i++) prev[i].classList.remove('theme-builder-highlight');
+        var hlStyle = document.getElementById('theme-builder-highlight-style');
+        if (!hlStyle) {
+          hlStyle = document.createElement('style');
+          hlStyle.id = 'theme-builder-highlight-style';
+          hlStyle.textContent = '.theme-builder-highlight { outline: 2px dashed var(--color-primary, #0172ad) !important; outline-offset: 2px; }';
+          document.head.appendChild(hlStyle);
+        }
+        if (event.data.selectors) {
+          try {
+            var targets = document.querySelectorAll(event.data.selectors);
+            for (var j = 0; j < targets.length; j++) targets[j].classList.add('theme-builder-highlight');
+          } catch (e) {}
+        }
+      }
+      if (event.data && event.data.type === 'set-compare-mode') {
+        const container = document.getElementById('preview-container');
+        const customMain = document.getElementById('custom-main');
+        const defaultContent = document.getElementById('default-content');
+        if (event.data.enabled) {
+          customMain.innerHTML = defaultContent.innerHTML;
+          container.classList.add('compare-mode');
+        } else {
+          container.classList.remove('compare-mode');
+          customMain.innerHTML = '';
+        }
+      }
+    });
+    document.addEventListener('click', function(e) {
+      var anchor = e.target.closest('a[href]');
+      if (!anchor) return;
+      var href = anchor.getAttribute('href');
+      if (!href) return;
+      if (href.startsWith('#') && href !== '#' && href !== '#!') {
+        var targetEl = document.getElementById(href.slice(1));
+        if (targetEl && targetEl.tagName === 'DIALOG') {
+          e.preventDefault();
+          targetEl.setAttribute('open', '');
+          return;
+        }
+      }
+      if (href === '#' || href === '#!') {
+        var dialog = anchor.closest('dialog');
+        if (dialog) {
+          e.preventDefault();
+          dialog.removeAttribute('open');
+          return;
+        }
+      }
+    });
+  <\/script>
+</body>
+</html>`;
+}
+
 const cssStyles = computed(() => {
   return isDark.value ? githubDark : githubLight;
 });
@@ -21,9 +154,7 @@ hljs.registerLanguage('html', html)
 
 const iframeContent = computed(() => {
   const theme = isDark.value ? 'dark' : 'light'
-  return rawIframeContent
-    .replaceAll('__SEMANTICUS_BASE__', basePath.value)
-    .replace(/data-theme="">/, `data-theme="${theme}">`)
+  return htmlTemplate(basePath.value, theme)
 })
 
 // ── Variable definitions ────────────────────────────────────────────────────
@@ -83,10 +214,10 @@ const variableGroups = [
   {
     label: 'Spacing',
     vars: [
-      { name: '--spacing', label: 'Base Spacing', desc: 'Shared base unit used for padding, margins, and gaps throughout the layout.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
+      { name: '--base-spacing', label: 'Base Spacing Unit', desc: 'Foundational spacing unit. Combined with --responsive-multiplier to derive --spacing.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
+      { name: '--responsive-multiplier', label: 'Responsive Multiplier', desc: 'Scales --spacing responsively at each breakpoint (1 at mobile, up to 1.5 at xxl).', type: 'text', lightDefault: '1', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
+      { name: '--spacing', label: 'Spacing', desc: 'Derived spacing unit used for padding, margins, and gaps. Equals base-spacing × responsive-multiplier.', type: 'text', lightDefault: 'calc(var(--base-spacing) * var(--responsive-multiplier))', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
       { name: '--typography-spacing-vertical', label: 'Typography Spacing', desc: 'Vertical margin below typographic elements (paragraphs, lists, etc.).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h2, h3, h4, h5, h6, p, ul, ol, blockquote' },
-      { name: '--block-spacing-vertical', label: 'Block Spacing (V)', desc: 'Vertical padding inside block-level components (cards, modals).', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'section, article, dialog' },
-      { name: '--block-spacing-horizontal', label: 'Block Spacing (H)', desc: 'Horizontal padding inside block-level components.', type: 'text', lightDefault: '1.2rem', scope: 'root', selectors: 'article, dialog' },
       { name: '--grid-column-gap', label: 'Grid Column Gap', desc: 'Column gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
       { name: '--grid-row-gap', label: 'Grid Row Gap', desc: 'Row gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
       { name: '--form-element-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
@@ -96,8 +227,7 @@ const variableGroups = [
   {
     label: 'Navigation',
     vars: [
-      { name: '--nav-link-spacing-vertical', label: 'Nav Link Spacing (V)', desc: 'Vertical padding inside nav links.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'nav li a' },
-      { name: '--nav-link-spacing-horizontal', label: 'Nav Link Spacing (H)', desc: 'Horizontal padding inside nav links.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'nav li a' },
+      { name: '--nav-link-spacing', label: 'Nav Link Spacing', desc: 'Padding inside nav links. Derived from --spacing.', type: 'text', lightDefault: 'calc(var(--spacing) * 0.5)', scope: 'root', selectors: 'nav li a' },
     ]
   },
   {
@@ -213,16 +343,16 @@ const variableGroups = [
   {
     label: 'Code',
     vars: [
-      { name: '--color-code-bg', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
-      { name: '--color-code-text', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
+      { name: '--code-bg', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
+      { name: '--code-color', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
     ]
   },
   {
-    label: 'Cards',
+    label: 'Pane, Panel & Card',
     vars: [
-      { name: '--card-bg', label: 'Card Background', desc: 'Background color of card (article) components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
-      { name: '--card-border', label: 'Card Border', desc: 'Border color of card header/footer sections.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
-      { name: '--card-section-bg', label: 'Card Section BG', desc: 'Background for header/footer sections inside a card.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
+      { name: '--pane-bg', label: 'Background', desc: 'Background color of panel, panel and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
+      { name: '--pane-section-border', label: 'Section Border', desc: 'Border color of header/footer sections.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
+      { name: '--pane-section-bg', label: 'Section Background', desc: 'Background for header/footer sections.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
     ]
   },
   {
@@ -234,12 +364,12 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Dropdown',
+    label: 'Menus & Dropdowns',
     vars: [
-      { name: '--dropdown-bg', label: 'Dropdown BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--dropdown-border', label: 'Dropdown Border', desc: 'Border color of dropdown menus.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--dropdown-text', label: 'Dropdown Text', desc: 'Text color inside dropdown menus.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--dropdown-hover-bg', label: 'Dropdown Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-bg', label: 'Menus & Dropdowns BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-border', label: 'Menus & Dropdowns Border', desc: 'Border color of dropdown menus.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-text', label: 'Menus & Dropdowns Text', desc: 'Text color inside dropdown menus.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-hover-bg', label: 'Menus & Dropdowns Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
     ]
   },
   {
@@ -257,17 +387,10 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Modal',
+    label: 'Backdrop Overlay',
     vars: [
-      { name: '--modal-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
-      { name: '--modal-overlay-backdrop-filter', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
-    ]
-  },
-  {
-    label: 'Blockquote',
-    vars: [
-      { name: '--blockquote-border-color', label: 'Border Color', desc: 'Left border color of blockquote elements.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#202632', scope: 'theme', selectors: 'blockquote' },
-      { name: '--blockquote-footer-color', label: 'Footer Color', desc: 'Text color for blockquote footer citations.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'blockquote footer' },
+      { name: '--backdrop-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
+      { name: '--backdrop-overlay-filter', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
     ]
   },
 ]

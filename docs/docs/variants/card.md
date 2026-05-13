@@ -91,7 +91,7 @@ Cards use these CSS variables for theming:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `--card-bg` | `var(--color-background)` | Card background color |
-| `--card-border` | `var(--color-border-muted)` | Border color for header/footer |
-| `--card-shadow` | `var(--shadow-lg)` | Box shadow |
-| `--card-section-bg` | `rgb(251, 251.5, 252.25)` | Header/footer background |
+| `--pane-bg` | `var(--color-background)` | Card background color |
+| `--pane-section-border` | `var(--color-border-muted)` | Border color for header/footer |
+| `--pane-shadow` | `var(--shadow-lg)` | Box shadow |
+| `--pane-section-bg` | `rgb(251, 251.5, 252.25)` | Header/footer background |

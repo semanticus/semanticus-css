@@ -1,11 +1,51 @@
-aside {
-  &.sidebar {
-    z-index: 1020;
-    position: sticky;
-    top: 0;
-    max-height: 100svh;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
+aside.sidebar {
+  z-index: 1020;
+  position: sticky !important;
+  top: 0;
+  max-height: 100svh;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+
+  /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
+  /* Gracefully degrades to instant appearance in unsupported browsers */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  &:popover-open {
+    --color-background: var(--color-body-bg);
+
+    display: flex !important;
+    width: 60% !important;
+    box-shadow: var(--pane-shadow);
+    background-color: var(--color-background) !important;
+    left: 0;
+    right: unset;
+
+    &[data-placement="right"] {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &::backdrop {
+    backdrop-filter: var(--backdrop-overlay-filter);
+    background-color: var(--backdrop-overlay-bg);
+    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+}
+
+@starting-style {
+  aside.sidebar:popover-open {
+    opacity: 0;
+    transform: translateX(-20px);
+
+    &[data-placement="right"] {
+      transform: translateX(20px);
+    }
+  }
+
+  aside.sidebar:popover-open::backdrop {
+    backdrop-filter: none;
+    background-color: transparent;
   }
 }

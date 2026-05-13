@@ -15,11 +15,6 @@ a {
   --text-decoration: underline;
 }
 
-a.secondary,
-a.contrast {
-  --text-decoration: underline;
-}
-
 /* Small text */
 small {
   --font-size: 0.875em;

@@ -8,7 +8,7 @@ import { SectionDemo } from "@demos/semantics/elements";
 
 # &lt;section&gt;
 
-The `<section>` element groups thematically related content. Semanticus adds a bottom margin via `--block-spacing` to separate sections visually.
+The `<section>` element groups thematically related content. Semanticus adds a bottom margin via `--spacing` to separate sections visually.
 
 ## Basic Usage
 

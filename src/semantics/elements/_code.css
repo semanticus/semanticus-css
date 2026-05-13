@@ -8,8 +8,8 @@ samp {
   font-size: 0.875em;
   font-family: var(--font-family);
   border-radius: var(--border-radius);
-  background: var(--color-code-bg);
-  color: var(--color-code-text);
+  background: var(--code-bg);
+  color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
 }
@@ -47,7 +47,7 @@ pre {
 }
 
 kbd {
-  background-color: var(--color-kbd-bg);
-  color: var(--color-kbd-text);
+  background-color: var(--kbd-bg);
+  color: var(--kbd-color);
   vertical-align: baseline;
 }

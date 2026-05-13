@@ -55,7 +55,7 @@
   --color-info-emphasis-rgb: 2, 93, 93;
   --color-warning-emphasis-rgb: 105, 77, 0;
   --color-danger-emphasis-rgb: 155, 35, 24;
-  --color-contrast-emphasis-rgb: 249, 250, 251;
+  --color-contrast-emphasis-rgb: 248, 249, 250;
 
   /* Subtle backgrounds (low opacity) */
   --color-primary-bg-subtle: rgba(var(--color-primary-rgb), 0.1);
@@ -64,7 +64,7 @@
   --color-info-bg-subtle: rgba(var(--color-info-rgb), 0.1);
   --color-warning-bg-subtle: rgba(var(--color-warning-rgb), 0.1);
   --color-danger-bg-subtle: rgba(var(--color-danger-rgb), 0.1);
-  --color-contrast-bg-subtle: #ced4da;
+  --color-contrast-bg-subtle: rgba(var(--color-contrast-rgb), 0.85);
 
   /* Subtle borders (medium opacity) */
   --color-primary-border-subtle: rgba(var(--color-primary-rgb), 0.35);
@@ -73,7 +73,7 @@
   --color-info-border-subtle: rgba(var(--color-info-rgb), 0.35);
   --color-warning-border-subtle: rgba(var(--color-warning-rgb), 0.35);
   --color-danger-border-subtle: rgba(var(--color-danger-rgb), 0.35);
-  --color-contrast-border-subtle: #adb5bd;
+  --color-contrast-border-subtle: rgb(var(--color-contrast-rgb));
 
   /* Status inverse colors */
   --color-success-inverse: #fff;
@@ -82,7 +82,8 @@
   --color-danger-inverse: #fff;
 
   /* Core Colors */
-  --color-background: #fff;
+  --color-body-bg: rgb(var(--color-body-bg-rgb));
+  --color-background: var(--color-body-bg);
   --color-text: rgb(var(--color-text-rgb));
   --color-text-selection: rgba(2, 154, 232, 0.25);
   --color-text-muted: color-mix(in srgb, rgb(var(--color-text-rgb)), rgb(128, 128, 128) 70%);
@@ -132,10 +133,6 @@
   /* Mark & Text */
   --color-mark-bg: rgb(252.5, 230.5, 191.5);
   --color-mark-text: #0f1114;
-
-  /* Blockquote */
-  --blockquote-border-color: var(--color-border-muted);
-  --blockquote-footer-color: var(--color-text-muted);
 }
 
 /* ==========================================================================
@@ -175,7 +172,7 @@
     --color-info-emphasis-rgb: 37, 221, 221;
     --color-warning-emphasis-rgb: 232, 174, 1;
     --color-danger-emphasis-rgb: 245, 183, 168;
-    --color-contrast-emphasis-rgb: 255, 255, 255;
+    --color-contrast-emphasis-rgb: 24, 28, 37;
 
     /* Subtle backgrounds */
     --color-primary-bg-subtle: rgba(var(--color-primary-rgb), 0.15);
@@ -184,7 +181,7 @@
     --color-info-bg-subtle: rgba(var(--color-info-rgb), 0.15);
     --color-warning-bg-subtle: rgba(var(--color-warning-rgb), 0.15);
     --color-danger-bg-subtle: rgba(var(--color-danger-rgb), 0.15);
-    --color-contrast-bg-subtle: #2a3140;
+    --color-contrast-bg-subtle: color-mix(in srgb, rgb(var(--color-contrast-rgb)), black 7%);
 
     /* Subtle borders */
     --color-primary-border-subtle: rgba(var(--color-primary-rgb), 0.35);
@@ -193,7 +190,7 @@
     --color-info-border-subtle: rgba(var(--color-info-rgb), 0.35);
     --color-warning-border-subtle: rgba(var(--color-warning-rgb), 0.35);
     --color-danger-border-subtle: rgba(var(--color-danger-rgb), 0.35);
-    --color-contrast-border-subtle: #2a3140;
+    --color-contrast-border-subtle: rgb(var(--color-contrast-rgb));
 
     /* Core Colors */
     --color-background: rgb(19, 22.5, 30.5);
@@ -246,10 +243,6 @@
     /* Mark & Text */
     --color-mark-bg: #014063;
     --color-mark-text: #fff;
-
-    /* Blockquote */
-    --blockquote-border-color: var(--color-border-muted);
-    --blockquote-footer-color: var(--color-text-muted);
   }
 }
 
@@ -288,7 +281,7 @@
   --color-info-emphasis-rgb: 37, 221, 221;
   --color-warning-emphasis-rgb: 232, 174, 1;
   --color-danger-emphasis-rgb: 245, 183, 168;
-  --color-contrast-emphasis-rgb: 255, 255, 255;
+  --color-contrast-emphasis-rgb: 24, 28, 37;
 
   /* Subtle backgrounds */
   --color-primary-bg-subtle: rgba(var(--color-primary-rgb), 0.15);
@@ -297,7 +290,7 @@
   --color-info-bg-subtle: rgba(var(--color-info-rgb), 0.15);
   --color-warning-bg-subtle: rgba(var(--color-warning-rgb), 0.15);
   --color-danger-bg-subtle: rgba(var(--color-danger-rgb), 0.15);
-  --color-contrast-bg-subtle: #2a3140;
+  --color-contrast-bg-subtle: color-mix(in srgb, rgb(var(--color-contrast-rgb)), black 7%);
 
   /* Subtle borders */
   --color-primary-border-subtle: rgba(var(--color-primary-rgb), 0.35);
@@ -306,7 +299,7 @@
   --color-info-border-subtle: rgba(var(--color-info-rgb), 0.35);
   --color-warning-border-subtle: rgba(var(--color-warning-rgb), 0.35);
   --color-danger-border-subtle: rgba(var(--color-danger-rgb), 0.35);
-  --color-contrast-border-subtle: #2a3140;
+  --color-contrast-border-subtle: rgb(var(--color-contrast-rgb));
 
   /* Core Colors */
   --color-background: rgb(19, 22.5, 30.5);
@@ -359,8 +352,4 @@
   /* Mark & Text */
   --color-mark-bg: #014063;
   --color-mark-text: #fff;
-
-  /* Blockquote */
-  --blockquote-border-color: var(--color-border-muted);
-  --blockquote-footer-color: var(--color-text-muted);
 }

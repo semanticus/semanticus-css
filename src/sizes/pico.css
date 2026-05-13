@@ -22,9 +22,10 @@
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
-  --spacing: 1rem;
+  --base-spacing: 1rem;
+  --responsive-multiplier: 1;
+  --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
   --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
-  --block-spacing: var(--spacing);
   --grid-column-gap: var(--spacing); /* Column gap in CSS Grid layouts */
   --grid-row-gap: var(--spacing); /* Row gap in CSS Grid layouts */
   --form-element-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
@@ -35,12 +36,8 @@
   --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-primary-focus); /* Focus ring when a button inside the group is focused */
   --group-shadow-focus-with-input: 0 0 0 0.0625rem var(--form-border-color); /* Focus ring when an input inside the group is focused */
 
-  /* Modal – backdrop overlay settings */
-  --modal-overlay-backdrop-filter: blur(0.375rem); /* Applies a blur behind the modal overlay */
-
   /* Navigation – spacing and breadcrumb configuration */
-  --nav-link-spacing-vertical: 0.5rem; /* Vertical padding inside nav links */
-  --nav-link-spacing-horizontal: 0.5rem; /* Horizontal padding inside nav links */
+  --nav-link-spacing: calc(var(--spacing) * 0.5); /* padding inside nav links */
   --nav-breadcrumb-divider: ">"; /* Character displayed between breadcrumb items */
 
   --sidebar-width: 25%; /* Sidebar width */
@@ -52,7 +49,9 @@
   :host {
     --font-size: 106.25%;
     --sidebar-width: max(25%, 150px);
-    --block-spacing: calc(var(--spacing) * 1.25);
+    --responsive-multiplier: 1.25;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
   }
 }
 
@@ -61,7 +60,9 @@
   :host {
     --font-size: 112.5%;
     --sidebar-width: max(22%, 180px);
-    --block-spacing: calc(var(--spacing) * 1.5);
+    --responsive-multiplier: 1.5;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
   }
 }
 
@@ -70,7 +71,9 @@
   :host {
     --font-size: 118.75%;
     --sidebar-width: max(20%, 200px);
-    --block-spacing: calc(var(--spacing) * 1.75);
+    --responsive-multiplier: 1.75;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
   }
 }
 
@@ -79,7 +82,9 @@
   :host {
     --font-size: 125%;
     --sidebar-width: max(18%, 220px);
-    --block-spacing: calc(var(--spacing) * 2);
+    --responsive-multiplier: 2;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
   }
 }
 
@@ -88,6 +93,8 @@
   :host {
     --font-size: 131.25%;
     --sidebar-width: clamp(240px, 16%, 300px);
-    --block-spacing: calc(var(--spacing) * 2.25);
+    --responsive-multiplier: 2.25;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
   }
 }

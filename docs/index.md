@@ -35,7 +35,7 @@ features:
   - icon:
       src: /icons/performance.svg
     title: Lightweight
-    details: Minimal CSS footprint with zero JavaScript dependency. ~23 KB gzipped for lightning-fast page loads.
+    details: Minimal CSS footprint with zero JavaScript dependency. ~24 KB gzipped for lightning-fast page loads.
   - icon:
       src: /icons/consistency.svg
     title: Consistent Design

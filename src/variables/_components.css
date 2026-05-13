@@ -26,10 +26,10 @@
   --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
 
   /* Code */
-  --color-code-bg: rgb(243, 244.5, 246.75);
-  --color-code-text: #646b79;
-  --color-kbd-bg: var(--color-text);
-  --color-kbd-text: var(--color-background);
+  --code-bg: rgb(243, 244.5, 246.75);
+  --code-color: #646b79;
+  --kbd-bg: var(--color-text);
+  --kbd-color: var(--color-background);
 
   /* Form Elements */
   --form-bg: rgb(251, 251.5, 252.25);
@@ -68,21 +68,21 @@
   --accordion-open-summary: var(--color-text-muted);
 
   /* Card */
-  --card-bg: var(--color-background);
-  --card-border: var(--color-border-muted);
-  --card-shadow: var(--shadow-lg);
-  --card-section-bg: rgb(251, 251.5, 252.25);
+  --pane-bg: var(--color-background);
+  --pane-border: transparent;
+  --pane-shadow: none;
+  --pane-section-border: var(--color-border-muted);
+  --pane-section-bg: rgb(251, 251.5, 252.25);
 
-  /* Dropdown */
-  --dropdown-bg: #fff;
-  --dropdown-border: #eff1f4;
-  --dropdown-shadow: var(--shadow-lg);
-  --dropdown-text: var(--color-text);
-  --dropdown-hover-bg: #eff1f4;
+  /* Menu & Dropdown */
+  --menu-bg: #fff;
+  --menu-border: #eff1f4;
+  --menu-shadow: var(--shadow-lg);
+  --menu-text: var(--color-text);
+  --menu-hover-bg: #eff1f4;
 
-  /* Loading & Modal */
+  /* Loading */
   --loading-spinner-opacity: 0.5;
-  --modal-overlay-bg: rgba(232, 234, 237, 0.75);
 
   /* Progress */
   --progress-bg: #dfe3eb;
@@ -91,6 +91,10 @@
   /* Tooltip */
   --tooltip-bg: var(--color-contrast-bg);
   --tooltip-text: var(--color-contrast-inverse);
+
+  /* Backdrop Overlay */
+  --backdrop-overlay-filter: blur(0.375rem);
+  --backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
 }
 
 /* Form focus override for actionable input types in light mode */
@@ -137,10 +141,10 @@
     --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
 
     /* Code */
-    --color-code-bg: rgb(26, 30.5, 40.25);
-    --color-code-text: #8891a4;
-    --color-kbd-bg: var(--color-text);
-    --color-kbd-text: var(--color-background);
+    --code-bg: rgb(26, 30.5, 40.25);
+    --code-color: #8891a4;
+    --kbd-bg: var(--color-text);
+    --kbd-color: var(--color-background);
 
     /* Form Elements */
     --form-bg: rgb(28, 33, 43.5);
@@ -179,21 +183,21 @@
     --accordion-open-summary: var(--color-text-muted);
 
     /* Card */
-    --card-bg: #181c25;
-    --card-border: var(--card-bg);
-    --card-shadow: var(--shadow-lg);
-    --card-section-bg: rgb(26, 30.5, 40.25);
+    --pane-bg: #181c25;
+    --pane-border: transparent;
+    --pane-shadow: none;
+    --pane-section-border: var(--pane-bg);
+    --pane-section-bg: rgb(26, 30.5, 40.25);
 
     /* Dropdown */
-    --dropdown-bg: #181c25;
-    --dropdown-border: #202632;
-    --dropdown-shadow: var(--shadow-lg);
-    --dropdown-text: var(--color-text);
-    --dropdown-hover-bg: #202632;
+    --menu-bg: #181c25;
+    --menu-border: #202632;
+    --menu-shadow: var(--shadow-lg);
+    --menu-text: var(--color-text);
+    --menu-hover-bg: #202632;
 
     /* Loading & Modal */
     --loading-spinner-opacity: 0.5;
-    --modal-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 
     /* Progress */
     --progress-bg: #202632;
@@ -202,6 +206,10 @@
     /* Tooltip */
     --tooltip-bg: var(--color-contrast-bg);
     --tooltip-text: var(--color-contrast-inverse);
+
+    /* Backdrop Overlay */
+    --backdrop-overlay-filter: blur(0.375rem);
+    --backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
   }
 
   :root:not([data-theme]) input:is(
@@ -238,10 +246,10 @@
   --table-row-stripe-bg: rgba(111, 120, 135, 0.0375);
 
   /* Code */
-  --color-code-bg: rgb(26, 30.5, 40.25);
-  --color-code-text: #8891a4;
-  --color-kbd-bg: var(--color-text);
-  --color-kbd-text: var(--color-background);
+  --code-bg: rgb(26, 30.5, 40.25);
+  --code-color: #8891a4;
+  --kbd-bg: var(--color-text);
+  --kbd-color: var(--color-background);
 
   /* Form Elements */
   --form-bg: rgb(28, 33, 43.5);
@@ -280,21 +288,21 @@
   --accordion-open-summary: var(--color-text-muted);
 
   /* Card */
-  --card-bg: #181c25;
-  --card-border: var(--card-bg);
-  --card-shadow: var(--shadow-lg);
-  --card-section-bg: rgb(26, 30.5, 40.25);
+  --pane-bg: #181c25;
+  --pane-border: transparent;
+  --pane-shadow: none;
+  --pane-section-border: var(--pane-bg);
+  --pane-section-bg: rgb(26, 30.5, 40.25);
 
   /* Dropdown */
-  --dropdown-bg: #181c25;
-  --dropdown-border: #202632;
-  --dropdown-shadow: var(--shadow-lg);
-  --dropdown-text: var(--color-text);
-  --dropdown-hover-bg: #202632;
+  --menu-bg: #181c25;
+  --menu-border: #202632;
+  --menu-shadow: var(--shadow-lg);
+  --menu-text: var(--color-text);
+  --menu-hover-bg: #202632;
 
-  /* Loading & Modal */
+  /* Loading */
   --loading-spinner-opacity: 0.5;
-  --modal-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 
   /* Progress */
   --progress-bg: #202632;
@@ -303,6 +311,10 @@
   /* Tooltip */
   --tooltip-bg: var(--color-contrast-bg);
   --tooltip-text: var(--color-contrast-inverse);
+
+  /* Backdrop Overlay */
+  --backdrop-overlay-filter: blur(0.375rem);
+  --backdrop-overlay-bg: rgba(7.5, 8.5, 10, 0.75);
 }
 
 /* Form focus override for actionable input types in explicit dark mode */

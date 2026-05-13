@@ -3,5 +3,5 @@
  */
 section {
   width: 100%;
-  margin-bottom: var(--block-spacing);
+  margin-bottom: var(--spacing);
 }

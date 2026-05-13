@@ -3,8 +3,8 @@
  */
 footer {
   width: 100%;
-  padding-block: var(--block-spacing);
-  margin-top: var(--block-spacing);
+  padding-block: var(--spacing);
+  margin-top: var(--spacing);
 
   & > * {
     margin-top: 0 !important;
