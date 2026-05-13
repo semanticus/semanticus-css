@@ -5,6 +5,12 @@
 
 **Semanticus** is a lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities.
 
+> [!CAUTION]
+> Semanticus CSS hasn't been seriously battle tested in production yet.
+
+> [!IMPORTANT]
+> CALL TO ARMS: Even with the advent of AI, building an open source project requires a lot of work, if you are interested to help out, check out the [roadmap](/about/roadmap), the [contributing guide](/about/contributing) and join us in this journey!
+
 ## Vision
 
 Contribute to a more accessible friendly world wide web.
