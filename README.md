@@ -34,15 +34,9 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.css">
 
-<<<<<<< disclaimer
-<!-- customize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.8.0/dist/semanticus.size.pico.css">
-=======
 <!-- costumize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.palette.blue.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.size.pico.css">
->>>>>>> main
 ```
 
 ### Option 2: Install manually
