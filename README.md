@@ -9,7 +9,7 @@
 > Semanticus CSS hasn't been seriously battle tested in production yet.
 
 > [!IMPORTANT]
-> CALL TO ARMS: Even with the advent of AI, building an open source project requires a lot of work, if you are interested to help out, check out the [roadmap](/about/roadmap), the [contributing guide](/about/contributing) and join us in this journey!
+> CALL TO ARMS: Even with the advent of AI, building an open source project requires a lot of work, if you are interested to help out, check out the [roadmap](https://semanticus.design/about/roadmap), the [contributing guide](https://semanticus.design/about/contributing) and join us in this journey!
 
 ## Vision
 
