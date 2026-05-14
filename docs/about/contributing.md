@@ -34,7 +34,7 @@ When contributing, please keep the [Core Principles](/about/vision.html#core-pri
   - and the visual regression tests if your change affects styles:
 
   ```bash
-  npm run test:visual-regression
+  npm test
   ```
 
 ### Documentation

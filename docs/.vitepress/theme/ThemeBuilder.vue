@@ -39,7 +39,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Default</span>
       <div id="default-content">
-        ${Semantics.Demo.completeExample({ id: 'default-main' })}
+        ${Semantics.Demo.main({ id: 'default-main' })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">

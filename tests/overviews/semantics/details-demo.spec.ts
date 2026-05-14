@@ -16,12 +16,12 @@ test('/overviews/semantics/details-demo - visual snapshot', async ({ page }) => 
   const dropdown = page.locator('#dropdown-1');
   const dropdownSummary = dropdown.locator('summary');
 
-  dropdownSummary.click();
+  await dropdownSummary.click();
 
   await expect(page).toHaveScreenshot('open-dropdown.png', screenshotOptions);
   await expect(dropdown.locator('[role="menu"]')).toBeVisible();
 
-  dropdownSummary.click();
+  await dropdownSummary.click();
 
   await expect(page).toHaveScreenshot('closed-dropdown.png', screenshotOptions);
   await expect(dropdown.locator('[role="menu"]')).not.toBeVisible();
@@ -34,7 +34,7 @@ test('/overviews/semantics/details-demo - visual snapshot', async ({ page }) => 
   await expect(firstEntangledAccordion.locator('p')).not.toBeVisible();
   await expect(secondEntangledAccordion.locator('ul')).toBeVisible();
 
-  firstEntangledAccordion.locator('summary').click();
+  await firstEntangledAccordion.locator('summary').click();
 
   await expect(firstEntangledAccordion.locator('p')).toBeVisible();
   await expect(secondEntangledAccordion.locator('ul')).not.toBeVisible();
