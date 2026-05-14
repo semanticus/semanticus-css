@@ -18,16 +18,17 @@ The framework is organized into 6 layers, all in `src/`:
 | Variables | `src/variables/_all.css` | Global CSS custom properties (colors, spacing, typography, theming) |
 | Normalize | `src/_normalize.css` | CSS reset / normalize |
 | Semantics | `src/semantics/` | Styles for raw HTML elements + ARIA roles (buttons, inputs, nav, dialog, typography, etc.) |
-| Variants | `src/variants/` | Tweaks existing element styles via CSS variables only (`.secondary`, `.contrast`, etc.) |
 | Components | `src/components/` | Component-specific styles (`.card`, `.modal`, `.accordion`, etc.) |
+| Variants | `src/variants/` | Tweaks existing element styles via CSS variables only (`.secondary`, `.contrast`, etc.) |
 | Utilities | `src/utilities/` | Atomic utility classes (spacing, colors, flexbox, grid, display, positioning, typography, effects, borders, sizing) |
 
 ### Entry Points
 
-- `src/index.css` — full bundle (variables + normalize + semantics + variants + utilities)
+- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities)
 - `src/semantics/index.css` — semantics only
-- `src/utilities/index.css` — utilities only
+- `src/components/index.css` — components only
 - `src/variants/index.css` — variants only
+- `src/utilities/index.css` — utilities only
 
 ### Palettes & Sizes
 

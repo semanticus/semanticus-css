@@ -1,6 +1,6 @@
 # Overview
 
-The docs are organized into four main sections:
+The docs are organized into five sections:
 
 - **Composites**
   UI patterns that you can use as building blocks for your applications, implemented using all four layers of **Semanticus CSS**.
@@ -11,7 +11,7 @@ The docs are organized into four main sections:
 
 - **Layer 2 - Components**
 
-  Minimal set of reusable building blocks, that extend the **Semantic Styling**.
+  Minimal set of reusable building blocks that extend the **Semantic Styling**.
 
 - **Layer 3 - Variants**
 

@@ -1,6 +1,6 @@
 # Components
 
-Minimal set of reusable building blocks, that extend the **Semantic Styling**.
+Minimal set of reusable building blocks that extend the **Semantic Styling**.
 
 ## Why do we need them?
 

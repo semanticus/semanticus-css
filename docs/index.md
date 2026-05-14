@@ -66,7 +66,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — simply write plain 
 
 ### 2. Components
 
-Minimal set of reusable building blocks, that extend the **Semantic Styling** - add a [component](/docs/components/) when you need a specific UI pattern.
+Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](/docs/components/) when you need a specific UI pattern.
 
 <HtmlPreviewer :code="GettingStartedDemo.components()" />
 
