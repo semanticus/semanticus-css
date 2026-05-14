@@ -8,5 +8,5 @@
 
 For more layout options, see:
 
-- [Container](/docs/variants/container) — responsive width wrappers (`.container`, `.container-fluid`)
+- [Container](/docs/components/container) — responsive width wrappers (`.container`, `.container-fluid`)
 - [Layout utilities](/docs/utilities/layout) — grid, aspect ratios, object-fit, and more
