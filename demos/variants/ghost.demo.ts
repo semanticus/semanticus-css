@@ -1,4 +1,4 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(tagName: string, attrs: Record<string, string>, slot: string) {
   const attributes = { ...attrs };

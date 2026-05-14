@@ -1,11 +1,12 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useData } from 'vitepress'
-import { OverviewDemo } from '@demos/semantics';
+import { SemanticsDemo } from '@demos/overviews';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
 import githubDark from 'highlight.js/styles/github-dark.css?raw'
+import { cdnBaseUrl } from '@scripts/utils';
 
 // isDark is a reactive Ref<boolean>
 const { isDark, site } = useData();
@@ -38,7 +39,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Default</span>
       <div id="default-content">
-        ${OverviewDemo.completeExample({ id: 'default-main' })}
+        ${SemanticsDemo.completeExample({ id: 'default-main' })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">
@@ -811,13 +812,12 @@ function downloadCSS() {
 }
 
 const exportSnippet = computed(() => {
-  const version = __SEMANTICUS_VERSION__
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">\n`;
+  let result = `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n`;
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${currentPalette.value}.css`)}">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${currentSize.value}.css`)}">\n`
   }
   result += `<link rel="stylesheet" href="/css/semanticus.custom.css">`
 
@@ -829,13 +829,12 @@ const highlightedExportSnippet = computed(() => {
 
 const inlineSnippet = computed(() => {
   const css = buildCustomCSS()
-  const version = __SEMANTICUS_VERSION__
-  let result = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">\n`
+  let result = `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n`
   if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.${currentPalette.value}.css">\n`
+    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${currentPalette.value}.css`)}">\n`
   }
   if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.${currentSize.value}.css">\n`
+    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${currentSize.value}.css`)}">\n`
   }
   result += `<style>\n${css}</style>`
 

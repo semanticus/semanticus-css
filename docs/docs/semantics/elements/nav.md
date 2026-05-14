@@ -14,7 +14,7 @@ Screen readers expose it as a navigation landmark, allowing users to jump direct
 
 ## Basic Usage
 
-<HtmlPreviewer :code="NavDemo.basic()" />
+<HtmlPreviewer :code="NavDemo.main()" />
 
 `<ul>` are automatically distributed horizontally.
 

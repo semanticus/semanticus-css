@@ -9,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  render: () => PanelDemo.basic(),
+  render: () => PanelDemo.main(),
 };
 
 export const WithHeader: StoryObj = {
@@ -25,7 +25,7 @@ export const WithHeaderAndFooter: StoryObj = {
 };
 
 export const SecondaryBasicUsage: StoryObj = {
-  render: () => PanelDemo.basic("div", { class: "secondary" }),
+  render: () => PanelDemo.main("div", { class: "secondary" }),
 };
 
 export const SecondaryWithHeader: StoryObj = {
@@ -41,7 +41,7 @@ export const SecondaryWithHeaderAndFooter: StoryObj = {
 };
 
 export const ContrastBasicUsage: StoryObj = {
-  render: () => PanelDemo.basic("div", { class: "contrast" }),
+  render: () => PanelDemo.main("div", { class: "contrast" }),
 };
 
 export const ContrastWithHeader: StoryObj = {

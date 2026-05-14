@@ -17,7 +17,7 @@ See more about using `<dialog>` as a modal in the [Modal composite documentation
 Inside the `<dialog>`, if a `<button rel="prev">` is present, it will be styled as a close icon.
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 200px;&quot;&gt;
-${DialogDemo.basic({ open: true })}
+${DialogDemo.main({ open: true })}
 &lt;/div&gt;`" />
 
 ## With Header and Footer

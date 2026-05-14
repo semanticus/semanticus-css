@@ -8,6 +8,6 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: BodyDemo.basic() },
+  args: { html: BodyDemo.main() },
   render: (args) => args.html,
 };

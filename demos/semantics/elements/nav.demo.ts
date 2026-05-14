@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>, slot: string = "") {
   return renderElement("nav", attrs, slot);
 }
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return render(attrs, `<ul>
   <li><h2>logo</h2></li>
 </ul>
@@ -42,18 +42,18 @@ export function searchDropdownAndLinks() {
   <input class="w-auto" type="search" name="search" placeholder="Search" aria-label="Search" />
 
   <ul>
-  <li><a href="#" aria-current="page">Docs</a></li>
-  <li>
-    <details>
-      <summary aria-haspopup="menu">About</summary>
-      <ul dir="rtl" role="menu">
-        <li><a role="menuitem" href="#" onclick="event.preventDefault()">Services</a></li>
-        <li><a role="menuitem" href="#" onclick="event.preventDefault()">Company</a></li>
-        <li><a role="menuitem" href="#" onclick="event.preventDefault()">Careers</a></li>
-      </ul>
-    </details>
-  </li>
-  <li><a href="#" role="button" class="secondary">Log In</a></li>
+    <li><a href="#" aria-current="page">Docs</a></li>
+    <li>
+      <details>
+        <summary aria-haspopup="menu">About</summary>
+        <ul dir="rtl" role="menu">
+          <li><a role="menuitem" href="#" onclick="event.preventDefault()">Services</a></li>
+          <li><a role="menuitem" href="#" onclick="event.preventDefault()">Company</a></li>
+          <li><a role="menuitem" href="#" onclick="event.preventDefault()">Careers</a></li>
+        </ul>
+      </details>
+    </li>
+    <li><a href="#" role="button" class="secondary">Log In</a></li>
   </ul>
 </nav>`;
 }

@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<label for="first_name">First name</label>
 <input name="first_name" id="first_name" placeholder="First name" autocomplete="given-name" />`;
 }

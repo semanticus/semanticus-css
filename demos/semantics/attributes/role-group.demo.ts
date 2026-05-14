@@ -1,11 +1,11 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 import * as DetailsDemo from "@demos/semantics/elements/details.demo";
 
 function render(tagName: string, attrs: Record<string, string>, slot: string = "") {
   return renderElement(tagName, attrs, slot);
 }
 
-export function basic(tagName: string = "div", attrs: Record<string, string> = {}) {
+export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
   return render(tagName, { ...attrs, role: "group" }, `<button>One</button>
 <button>Two</button>
 <button>Three</button>`);

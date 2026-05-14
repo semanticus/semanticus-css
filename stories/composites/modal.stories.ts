@@ -9,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  render: () => ModalDemo.basic(),
+  render: () => ModalDemo.main(),
 };
 
 export const WithHeaderAndFooter: StoryObj = {

@@ -34,8 +34,10 @@ Utility classes for **spacing**, **layout**, **colors**, and more — adapted to
 
 Here's an off-to-a-great-start HTML template using semantic styling, its variants, and utilities:
 
-<HtmlPreviewer :code="GettingStartedDemo.starterHtmlTemplateDemo()" />
+<HtmlPreviewer :code="renderHtmlTemplate(StarterHtmlTemplateDemo.main())" />
 
 <script setup>
-import { GettingStartedDemo } from "@demos/examples";
+import * as GettingStartedDemo from "@demos/getting-started.demo";
+import { StarterHtmlTemplateDemo } from "@demos/examples";
+import { renderHtmlTemplate } from "@scripts/utils";
 </script>

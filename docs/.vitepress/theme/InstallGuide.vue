@@ -4,6 +4,7 @@ import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import javascript from 'highlight.js/lib/languages/javascript'
+import { cdnBaseUrl, npmRegistryTarballUrl } from '@scripts/utils';
 
 hljs.registerLanguage('html', html)
 hljs.registerLanguage('bash', bash)
@@ -19,12 +20,11 @@ const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 <link rel="stylesheet" href="/css/semanticus.size.pico.css">`
 
 const cdnSnippet = computed(() => {
-  const version = __SEMANTICUS_VERSION__
-  return `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">
+  return `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">
 
 <!-- customize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.pico.css">`
+<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.blue.css`)}">
+<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.pico.css`)}">`
 })
 
 const npmInstallSnippet = 'npm install semanticus-css'
@@ -38,9 +38,7 @@ import 'semanticus-css/semantics';
 import 'semanticus-css/palettes/blue';
 import 'semanticus-css/sizes/pico';`
 
-const tarballUrl = computed(() => {
-  return `https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-${__SEMANTICUS_VERSION__}.tgz`
-})
+const tarballUrl = npmRegistryTarballUrl();
 
 const highlightedManualSnippet = computed(() => {
   return hljs.highlight(manualSnippet, { language: 'html' }).value

@@ -1,7 +1,7 @@
 import * as CardPanePanelDemo from "@demos/variants/card-pane-panel.demo";
 
-export function basic(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return CardPanePanelDemo.basic("pane", tagName, attrs);
+export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return CardPanePanelDemo.main("pane", tagName, attrs);
 }
 
 export function withHeader(tagName: string = "div", attrs: Record<string, string> = {}) {

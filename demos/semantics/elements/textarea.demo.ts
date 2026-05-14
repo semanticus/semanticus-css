@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<textarea
   name="bio"
   placeholder="Write a professional short bio..."

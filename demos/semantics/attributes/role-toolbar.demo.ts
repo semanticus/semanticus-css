@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<div role="toolbar">
   <button>Bold</button>
   <button>Italic</button>

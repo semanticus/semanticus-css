@@ -16,7 +16,7 @@ It carries semantic meaning that distinguishes it from a generic `<div>`.
 
 By default, the `<article>` element has no visual styling.
 
-<HtmlPreviewer :code="ArticleDemo.basic()" />
+<HtmlPreviewer :code="ArticleDemo.main()" />
 
 ## Card
 

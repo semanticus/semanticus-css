@@ -2,8 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test.use({ viewport: { width: 400, height: 200 } });
 
-test('Examples/DocsPage - visual snapshot', async ({ page }) => {
-  await page.goto('/iframe.html?id=examples-docspage--docs-page');
+test('/examples/documentation-page-demo - visual snapshot', async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 900 });
+  await page.goto('/examples/documentation-page-demo');
   const main = page.locator('main');
 
   await expect(main).toBeVisible();

@@ -12,7 +12,7 @@ The `<figure>` element wraps self-contained media content. Semanticus removes th
 
 ## Basic Usage
 
-<HtmlPreviewer :code="FigureDemo.basic()" />
+<HtmlPreviewer :code="FigureDemo.main()" />
 
 ## With Code
 

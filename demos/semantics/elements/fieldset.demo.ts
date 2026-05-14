@@ -1,7 +1,7 @@
 import * as InputDemo from '@demos/semantics/elements/input.demo';
 import * as RoleGroupDemo from '@demos/semantics/attributes/role-group.demo';
 
-export function basic() {
+export function main() {
   return `<fieldset>
   <label>Email</label>
   ${InputDemo.email({ "aria-describedby": "email-helper" })}

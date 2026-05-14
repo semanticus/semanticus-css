@@ -121,7 +121,6 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.css">
 </head>
-
 <body class="vstack">
   <header class="container sticky-top bg-body">
     <nav>

@@ -9,7 +9,5 @@ const meta: Meta = {
 export default meta;
 
 export const DocumentationPage: StoryObj = {
-  render() {
-    return DocumentationPageDemo.basic();
-  },
+  render: () => DocumentationPageDemo.main("div"),
 };

@@ -14,7 +14,7 @@ Use `type="submit"` for form submission, `type="reset"` to clear a form, without
 
 ## Basic Usage
 
-<HtmlPreviewer :code="ButtonDemo.basic()" />
+<HtmlPreviewer :code="ButtonDemo.main()" />
 
 For `.secondary`, `.contrast` and `.ghost` styles, see [Button Variants](/docs/variants/).
 

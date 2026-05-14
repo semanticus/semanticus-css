@@ -12,7 +12,7 @@ import { FieldsetDemo } from "@demos/semantics/elements";
 
 ## Basic Usage
 
-<HtmlPreviewer :code="FieldsetDemo.basic()" />
+<HtmlPreviewer :code="FieldsetDemo.main()" />
 
 ## Inside a Form
 

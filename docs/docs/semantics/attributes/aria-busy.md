@@ -14,7 +14,7 @@ Use it on any container or interactive element to communicate a loading state.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="AriaBusyDemo.basic()" />
+<HtmlPreviewer :code="AriaBusyDemo.main()" />
 
 ## Loading Button
 

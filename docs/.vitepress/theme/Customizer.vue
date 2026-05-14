@@ -5,7 +5,8 @@ import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import javascript from 'highlight.js/lib/languages/javascript'
-import { OverviewDemo } from '@demos/semantics';
+import { SemanticsDemo } from '@demos/overviews';
+import { cdnBaseUrl, npmRegistryTarballUrl } from '@scripts/utils';
 
 function htmlTemplate(style, theme) {
   return `<!DOCTYPE html>
@@ -23,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${OverviewDemo.simpleExample({ class: 'container-fluid' })}
+  ${SemanticsDemo.simpleExample({ class: 'container-fluid' })}
 </body>`;
 }
 
@@ -132,10 +133,10 @@ const manualSnippet = computed(() => {
   const sizeName = currentSize.value
   let snippet = '<link rel="stylesheet" href="/css/semanticus.css">'
   if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="semanticus.palette.${paletteName}.css">`
+    snippet += `\n<link rel="stylesheet" href="/css/semanticus.palette.${paletteName}.css">`
   }
   if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="semanticus.size.${sizeName}.css">`
+    snippet += `\n<link rel="stylesheet" href="/css/semanticus.size.${sizeName}.css">`
   }
   return snippet
 })
@@ -143,13 +144,12 @@ const manualSnippet = computed(() => {
 const cdnSnippet = computed(() => {
   const paletteName = currentPalette.value
   const sizeName = currentSize.value
-  const version = __SEMANTICUS_VERSION__
-  let snippet = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.css">`
+  let snippet = `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">`
   if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.palette.${paletteName}.css">`
+    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${paletteName}.css`)}">`
   }
   if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@${version}/dist/semanticus.size.${sizeName}.css">`
+    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${sizeName}.css`)}">`
   }
   return snippet
 })
@@ -158,9 +158,7 @@ const npmInstallSnippet = computed(() => {
   return 'npm install semanticus-css'
 })
 
-const tarballUrl = computed(() => {
-  return `https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-${__SEMANTICUS_VERSION__}.tgz`
-})
+const tarballUrl = npmRegistryTarballUrl();
 
 const npmImportSnippet = computed(() => {
   const paletteName = currentPalette.value

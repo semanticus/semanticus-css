@@ -6,8 +6,9 @@ aside: false
 
 <br>
 
-<HtmlPreviewer :code="GettingStartedDemo.starterHtmlTemplateDemo()" />
+<HtmlPreviewer :code="renderHtmlTemplate(StarterHtmlTemplateDemo.main())" />
 
 <script setup>
-import { GettingStartedDemo } from "@demos/examples";
+import { StarterHtmlTemplateDemo } from "@demos/examples";
+import { renderHtmlTemplate } from "@scripts/utils";
 </script>

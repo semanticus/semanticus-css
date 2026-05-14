@@ -5,7 +5,7 @@ title: input
 <script setup>
 import { InputDemo } from "@demos/semantics/elements";
 const basicUsage = [
-  InputDemo.basic(),
+  InputDemo.main(),
   InputDemo.email(),
   InputDemo.number(),
   InputDemo.password(),

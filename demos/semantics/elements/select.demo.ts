@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>, slot: string) {
   return renderElement("select", attrs, slot);
 }
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return render({ ...attrs, name: "favorite-cuisine", "aria-label": "Select your favorite cuisine...", required: "required" }, `
   <option selected disabled value="">
     Select your favorite cuisine...

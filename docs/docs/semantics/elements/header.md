@@ -12,7 +12,7 @@ The `<header>` element represents introductory content for its nearest sectionin
 
 ## Basic Usage
 
-<HtmlPreviewer :code="HeaderDemo.basic()" />
+<HtmlPreviewer :code="HeaderDemo.main()" />
 
 ## With Search, Dropdown, and Links
 

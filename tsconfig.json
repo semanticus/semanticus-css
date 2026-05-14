@@ -17,6 +17,7 @@
     "strict": false,
     "types": ["node"],
     "paths": {
+      "@scripts/*": ["./scripts/*"],
       "@demos/*": ["./demos/*"],
       "@stories/*": ["./stories/*"],
       "@tests/*": ["./tests/*"],

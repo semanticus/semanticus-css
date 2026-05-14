@@ -9,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleSearchDemo.basic() },
+  args: { html: RoleSearchDemo.main() },
   render: (args) => args.html,
 };
 

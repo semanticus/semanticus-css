@@ -16,7 +16,7 @@ Pair it with a helper message via `aria-describedby` to explain the error.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="AriaInvalidDemo.basic()" />
+<HtmlPreviewer :code="AriaInvalidDemo.main()" />
 
 Helper texts defined with `<small>` below the form element inherit the validation state color.
 

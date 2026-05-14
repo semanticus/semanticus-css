@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<a href="#">Regular link</a>`;
 }
 

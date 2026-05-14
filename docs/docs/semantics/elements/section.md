@@ -12,4 +12,4 @@ The `<section>` element groups thematically related content. Semanticus adds a b
 
 ## Basic Usage
 
-<HtmlPreviewer :code="SectionDemo.basic()" />
+<HtmlPreviewer :code="SectionDemo.main()" />

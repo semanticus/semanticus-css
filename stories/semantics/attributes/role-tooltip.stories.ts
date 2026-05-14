@@ -9,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleTooltipDemo.basic() },
+  args: { html: RoleTooltipDemo.main() },
   render: (args) => args.html,
 };
 

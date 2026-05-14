@@ -12,7 +12,7 @@ The `<aside>` element represents content tangentially related to the main conten
 
 ## Basic Usage
 
-<HtmlPreviewer :code="AsideDemo.basic()" />
+<HtmlPreviewer :code="AsideDemo.main()" />
 
 ## Left Sidebar
 
