@@ -1,11 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-function render(attrs: Record<string, string>, slot: string) {
-  return renderElement("select", attrs, slot);
-}
-
 export function main(attrs: Record<string, string> = {}) {
-  return render({ ...attrs, name: "favorite-cuisine", "aria-label": "Select your favorite cuisine...", required: "required" }, `
+  return renderElement("select", { ...attrs, name: "favorite-cuisine", "aria-label": "Select your favorite cuisine...", required: "required" }, `
   <option selected disabled value="">
     Select your favorite cuisine...
   </option>
@@ -19,7 +15,7 @@ export function main(attrs: Record<string, string> = {}) {
 }
 
 export function multipleSelect(attrs: Record<string, string> = {}) {
-  return render({ ...attrs, "aria-label": "Select your favorite snacks...", multiple: "multiple", size: "6" }, `
+  return renderElement("select", { ...attrs, "aria-label": "Select your favorite snacks...", multiple: "multiple", size: "6" }, `
   <option disabled>
     Select your favorite snacks...
   </option>
@@ -33,7 +29,7 @@ export function multipleSelect(attrs: Record<string, string> = {}) {
 }
 
 export function withOptgroup(attrs: Record<string, string> = {}) {
-  return render({ ...attrs, "aria-label": "Select your country..." }, `
+  return renderElement("select", { ...attrs, "aria-label": "Select your country..." }, `
   <optgroup label="North America">
     <option>United States</option>
     <option>Canada</option>

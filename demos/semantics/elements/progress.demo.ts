@@ -1,17 +1,14 @@
-export function main() {
-  return `<progress value="0" max="100"></progress>
-<progress value="50" max="100"></progress>`;
+import { renderElement } from "@scripts/utils";
+
+export function main(attrs: Record<string, string> = {}) {
+  return renderElement("progress", { value: "50", max: "100", ...attrs }, '&nbsp;');
 }
 
-export function indeterminate() {
-  return `<progress></progress>
-`;
+export function indeterminate(attrs: Record<string, string> = {}) {
+  return renderElement("progress", attrs, '&nbsp;');
 }
 
-export function withLabel() {
-  return `<label>
-  Upload progress
-  <progress value="50" max="100">50%</progress>
-</label>
-`;
+export function withLabel(attrs: Record<string, string> = {}) {
+  return renderElement("label", {}, `Upload progress
+${renderElement("progress", { value: "50", max: "100", ...attrs }, "50%")}`);
 }

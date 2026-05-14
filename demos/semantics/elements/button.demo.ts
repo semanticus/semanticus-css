@@ -1,20 +1,16 @@
 import * as InputDemo from '@demos/semantics/elements/input.demo';
 import { renderElement } from "@scripts/utils";
 
-function render(attrs: Record<string, string>, slot: string = "") {
-  return renderElement("button", attrs, slot);
-}
-
 export function main(attrs: Record<string, string> = {}, slot: string = "Button") {
-  return render({ ...attrs }, slot);
+  return renderElement("button", { ...attrs }, slot);
 }
 
 export function submit(attrs: Record<string, string> = {}, slot: string = "Submit") {
-  return render({ ...attrs, type: "submit" }, slot);
+  return renderElement("button", { ...attrs, type: "submit" }, slot);
 }
 
 export function reset(attrs: Record<string, string> = {}, slot: string = "Reset") {
-  return render({ ...attrs, type: "reset" }, slot);
+  return renderElement("button", { ...attrs, type: "reset" }, slot);
 }
 
 export function inputButtons() {

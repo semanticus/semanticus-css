@@ -5,7 +5,7 @@ import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import javascript from 'highlight.js/lib/languages/javascript'
-import { SemanticsDemo } from '@demos/overviews';
+import { Semantics } from '@demos/overviews';
 import { cdnBaseUrl, npmRegistryTarballUrl } from '@scripts/utils';
 
 function htmlTemplate(style, theme) {
@@ -24,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${SemanticsDemo.simpleExample({ class: 'container-fluid' })}
+  ${Semantics.Demo.simpleExample({ class: 'container-fluid' })}
 </body>`;
 }
 

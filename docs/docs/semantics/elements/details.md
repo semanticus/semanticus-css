@@ -10,13 +10,18 @@ import { DetailsDemo } from "@demos/semantics/elements";
 
 The `<details>` element creates a native disclosure widget — a collapsible section that users can open and close without JavaScript. Its `<summary>` child acts as the visible label and toggle control.
 
-Use the `open` attribute to expand it by default. Set the same `name` attribute on multiple `<details>` elements to create an exclusive accordion where only one can be open at a time.
-
+Use the `open` attribute to expand it by default.
 ## Basic Usage
 
 <HtmlPreviewer :code="DetailsDemo.main()" />
 
 For style variants, see [Details Variants](/docs/variants/).
+
+## Entangled accordions
+
+Set the same `name` attribute on multiple `<details>` elements to create an exclusive accordion where only one can be open at a time.
+
+<HtmlPreviewer :code="DetailsDemo.entangledAccordions()" />
 
 ## Dropdown
 

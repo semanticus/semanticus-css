@@ -1,11 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-function render(attrs: Record<string, string>, slot: string) {
-  return renderElement("dialog", attrs, slot);
-}
-
 export function main(attrs: Record<string, string> = {}) {
-  return render({ id: "dialog-basic", ...attrs }, `<button aria-label="Close" rel="prev" commandfor="dialog-basic" command="close"></button>
+  return renderElement("dialog", { id: "dialog-basic", ...attrs }, `<button aria-label="Close" rel="prev" commandfor="dialog-basic" command="close"></button>
 <h3>&#x1F4C5; Thank You for Registering!</h3>
 
 <p>
@@ -20,8 +16,14 @@ export function main(attrs: Record<string, string> = {}) {
 </ul>`);
 }
 
+export function showModal(attrs: Record<string, string> = {}) {
+  return `<button command="show-modal" commandfor="dialog-basic" class="contrast">Show Modal</button>
+
+${main(attrs)}`;
+}
+
 export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return render({ id: "dialog-header-footer", ...attrs }, `<header>
+  return renderElement("dialog", { id: "dialog-header-footer", ...attrs }, `<header>
   <h2>Confirm Your Membership</h2>
   <button aria-label="Close" rel="prev" commandfor="dialog-header-footer" command="close"></button>
 </header>
@@ -42,4 +44,10 @@ export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
   </button>
   <button commandfor="dialog-header-footer" command="close">Confirm</button>
 </footer>`);
+}
+
+export function showModalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
+    return `<button command="show-modal" commandfor="dialog-header-footer" class="contrast">Show Modal</button>
+
+${withHeaderAndFooter(attrs)}`;
 }

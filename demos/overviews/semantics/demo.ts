@@ -276,7 +276,7 @@ function accordions() {
   <h2>Accordions</h2>
 
   <section>
-    ${DetailsDemo.main()}
+    ${DetailsDemo.entangledAccordions()}
   </section>
 
   <br>
@@ -311,7 +311,9 @@ function progressBars() {
   return `<section id="progressBars">
   <h2>Progress Bars</h2>
 
-  ${ProgressDemo.main()}
+  ${ProgressDemo.main({ value: "0" })}
+  ${ProgressDemo.main({ value: "50" })}
+  ${ProgressDemo.main({ value: "100" })}
   ${ProgressDemo.indeterminate()}
 </section>`;
 }

@@ -1,11 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-function render(attrs: Record<string, string>) {
-  return renderElement("input", attrs);
-}
-
 export function main(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "text",
     name: "text",
@@ -15,7 +11,7 @@ export function main(attrs: Record<string, string> = {}) {
 }
 
 export function button(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "button",
     value: "Input Button"
@@ -23,7 +19,7 @@ export function button(attrs: Record<string, string> = {}) {
 }
 
 export function submit(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "submit",
     value: "Input Submit"
@@ -31,7 +27,7 @@ export function submit(attrs: Record<string, string> = {}) {
 }
 
 export function reset(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "reset",
     value: "Input Reset"
@@ -39,7 +35,7 @@ export function reset(attrs: Record<string, string> = {}) {
 }
 
 export function email(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "email",
     placeholder: "email@example.com",
@@ -49,7 +45,7 @@ export function email(attrs: Record<string, string> = {}) {
 }
 
 export function number(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "number",
     placeholder: "Number",
@@ -58,7 +54,7 @@ export function number(attrs: Record<string, string> = {}) {
 }
 
 export function password(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "password",
     placeholder: "Password",
@@ -67,7 +63,7 @@ export function password(attrs: Record<string, string> = {}) {
 }
 
 export function telephone(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "tel",
     placeholder: "Tel",
@@ -77,7 +73,7 @@ export function telephone(attrs: Record<string, string> = {}) {
 }
 
 export function url(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "url",
     placeholder: "https://example.com",
@@ -86,7 +82,7 @@ export function url(attrs: Record<string, string> = {}) {
 }
 
 export function date(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "date",
     "aria-label": "Date",
@@ -94,7 +90,7 @@ export function date(attrs: Record<string, string> = {}) {
 }
 
 export function datetime(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "datetime-local",
     "aria-label": "Datetime local",
@@ -102,7 +98,7 @@ export function datetime(attrs: Record<string, string> = {}) {
 }
 
 export function month(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "month",
     "aria-label": "Month",
@@ -110,7 +106,7 @@ export function month(attrs: Record<string, string> = {}) {
 }
 
 export function time(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "time",
     "aria-label": "Time",
@@ -118,7 +114,7 @@ export function time(attrs: Record<string, string> = {}) {
 }
 
 export function search(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "search",
     placeholder: "Search",
@@ -127,7 +123,7 @@ export function search(attrs: Record<string, string> = {}) {
 }
 
 export function color(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "color",
     value: "#ff9500",
@@ -136,7 +132,7 @@ export function color(attrs: Record<string, string> = {}) {
 }
 
 export function file(attrs: Record<string, string> = {}) {
-  return render({
+  return renderElement("input", {
     ...attrs,
     type: "file",
   });
@@ -144,7 +140,7 @@ export function file(attrs: Record<string, string> = {}) {
 
 export function checkboxBasic(attrs: Record<string, string> = {}) {
   return `<label>
-  ${render({
+  ${renderElement("input", {
     ...attrs,
     type: "checkbox",
     checked: "checked",
@@ -158,7 +154,7 @@ export function checkboxVertical() {
   return `<fieldset>
   <legend>Language preferences:</legend>
   <label>
-    ${render({
+    ${renderElement("input", {
       type: "checkbox",
       name: "english",
       checked: "checked",
@@ -166,14 +162,14 @@ export function checkboxVertical() {
     English
   </label>
   <label>
-    ${render({
+    ${renderElement("input", {
       type: "checkbox",
       name: "mandarin",
     })}
     Mandarin
   </label>
   <label aria-disabled="true">
-    ${render({
+    ${renderElement("input", {
       type: "checkbox",
       name: "dothraki",
       disabled: "disabled",
@@ -187,20 +183,20 @@ export function checkboxVertical() {
 export function checkboxHorizontal() {
   return `<fieldset>
   <legend>Language preferences:</legend>
-  ${render({
+  ${renderElement("input", {
     type: "checkbox",
     id: "hindi",
     name: "hindi",
     checked: "checked",
   })}
   <label for="hindi">Hindi</label>
-  ${render({
+  ${renderElement("input", {
     type: "checkbox",
     id: "swahili",
     name: "swahili",
   })}
   <label for="swahili">Swahili</label>
-  ${render({
+  ${renderElement("input", {
     type: "checkbox",
     id: "navi",
     name: "navi",
@@ -213,7 +209,7 @@ export function checkboxHorizontal() {
 
 export function radioBasic(attrs: Record<string, string> = {}) {
   return `<label>
-  ${render({
+  ${renderElement("input", {
     ...attrs,
     type: "radio",
     checked: "checked",
@@ -228,7 +224,7 @@ export function radioVertical() {
   return `<fieldset>
   <legend>Language preference:</legend>
   <label>
-    ${render({
+    ${renderElement("input", {
       type: "radio",
       name: "language",
       checked: "checked",
@@ -237,7 +233,7 @@ export function radioVertical() {
     English
   </label>
   <label>
-    ${render({
+    ${renderElement("input", {
       type: "radio",
       name: "language",
       value: "mandarin",
@@ -245,7 +241,7 @@ export function radioVertical() {
     Mandarin
   </label>
   <label aria-disabled="true">
-    ${render({
+    ${renderElement("input", {
       type: "radio",
       name: "language",
       value: "dothraki",
@@ -260,7 +256,7 @@ export function radioVertical() {
 export function radioHorizontal() {
   return `<fieldset>
   <legend>Second language:</legend>
-  ${render({
+  ${renderElement("input", {
     type: "radio",
     id: "hindi",
     name: "second-language",
@@ -268,14 +264,14 @@ export function radioHorizontal() {
     value: "hindi",
   })}
   <label for="hindi">Hindi</label>
-  ${render({
+  ${renderElement("input", {
     type: "radio",
     id: "swahili",
     name: "second-language",
     value: "swahili",
   })}
   <label for="swahili">Swahili</label>
-  ${render({
+  ${renderElement("input", {
     type: "radio",
     id: "navi",
     name: "second-language",
@@ -290,7 +286,7 @@ export function radioHorizontal() {
 export function rangeBasic(attrs: Record<string, string> = {}) {
   return `<label>
   Range slider
-  ${render({ ...attrs, type: "range" })}
+  ${renderElement("input", { ...attrs, type: "range" })}
 </label>
 `;
 }
@@ -298,7 +294,7 @@ export function rangeBasic(attrs: Record<string, string> = {}) {
 export function rangeWithMinMax() {
   return `<label>
   Volume
-  ${render({ type: "range", min: "0", max: "100", value: "50" })}
+  ${renderElement("input", { type: "range", min: "0", max: "100", value: "50" })}
 </label>
 `;
 }
@@ -306,14 +302,14 @@ export function rangeWithMinMax() {
 export function rangeWithStep() {
   return `<label>
   Rating (0-10)
-  ${render({ type: "range", min: "0", max: "10", step: "1", value: "5" })}
+  ${renderElement("input", { type: "range", min: "0", max: "10", step: "1", value: "5" })}
 </label>
 `;
 }
 
 export function switchBasic(attrs: Record<string, string> = {}) {
   return `<label>
-  ${render({
+  ${renderElement("input", {
     ...attrs,
     type: "checkbox",
     checked: "checked",
