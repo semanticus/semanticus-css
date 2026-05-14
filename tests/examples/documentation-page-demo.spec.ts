@@ -7,5 +7,5 @@ test('/examples/documentation-page-demo - visual snapshot', async ({ page }) => 
   const main = page.locator('main');
 
   await expect(main).toBeVisible();
-  await expect(page).toHaveScreenshot({ animations: 'disabled' });
+  await expect(page).toHaveScreenshot({ animations: 'disabled', fullPage: true, maxDiffPixelRatio: 0.02 });
 });

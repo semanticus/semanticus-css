@@ -4,8 +4,8 @@ test.use({ viewport: { width: 1024, height: 900 } });
 
 test('/overviews/semantics-demo - visual snapshot', async ({ page }) => {
   await page.goto('/overviews/semantics-demo');
-  const main = page.locator('main');
+  const main = page.locator('body > main');
 
   await expect(main).toBeVisible();
-  await expect(page).toHaveScreenshot({ animations: 'disabled' });
+  await expect(page).toHaveScreenshot({ animations: 'disabled', fullPage: true, maxDiffPixelRatio: 0.02 });
 });

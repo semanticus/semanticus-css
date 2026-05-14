@@ -87,6 +87,8 @@
     "demo:server": "tsx --tsconfig scripts/tsconfig.json scripts/demo-server.ts",
     "test:visual-regression": "npx playwright test",
     "test:update-snapshots": "npx playwright test -u",
+    "kill-zombies": "sh -c 'PORT=${PORT:-4000}; pids=$(lsof -t -i :$PORT); if [ -n \"$pids\" ]; then echo \"Killing PIDs: $pids\"; kill -9 $pids; else echo \"No processes listening on port $PORT\"; fi'",
+    "kill-playwright": "sh -c 'pgrep -af playwright | awk \"{print $1}\" | xargs -r kill -9 || true'",
     "prepublishOnly": "npm run lint && npm run build",
     "release:sync-versions": "tsx --tsconfig scripts/tsconfig.json scripts/sync-version-references.ts",
     "build": "npm run build:css && npm run build:palettes && npm run build:sizes && npm run build:update-size-claims",

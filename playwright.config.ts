@@ -77,7 +77,7 @@ export default defineConfig({
   * https://github.com/motdotla/dotenv
   */
   webServer: {
-    command: `PORT=${PORT} npm run demo:server`,
+    command: `bash -lc "if nc -z localhost ${PORT}; then echo 'Port ${PORT} already in use; skipping demo server start'; else PORT=${PORT} npm run demo:server; fi"`,
     url: baseUrl,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
