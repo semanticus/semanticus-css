@@ -82,5 +82,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Semantics overview |
 | ✅ | Documentation page example |
 | ✅ | Layout combinations |
+| ✅ | Modal launch |
 | ✅ | `.secondary` variant combinations |
 | ✅ | `.contrast` variant combinations |
