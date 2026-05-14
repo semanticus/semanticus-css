@@ -1,8 +1,3 @@
-/**
- * Contained
- * Applies container constraints (max-width and horizontal margins) to all direct children
- * instead of the container itself
- */
 .contained,
 .contained-fluid {
   width: 100%;

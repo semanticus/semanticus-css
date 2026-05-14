@@ -4,29 +4,31 @@ Quick reference for AI agents working on this codebase.
 
 ## What This Is
 
-**Semanticus CSS** is a lightweight, semantic CSS framework (~24 KB gzipped) that combines:
+**Semanticus CSS** is a lightweight, semantic CSS framework (~23 KB gzipped) that combines:
 - **Semantic-first** HTML element styling (PicoCSS-inspired)
 - **Atomic utility classes** (Bootstrap Utilities-inspired)
 - Zero JavaScript dependency
 
 ## Architecture
 
-The framework is organized into 5 layers, all in `src/`:
+The framework is organized into 6 layers, all in `src/`:
 
 | Layer | Path | Purpose |
 |-------|------|---------|
 | Variables | `src/variables/_all.css` | Global CSS custom properties (colors, spacing, typography, theming) |
 | Normalize | `src/_normalize.css` | CSS reset / normalize |
 | Semantics | `src/semantics/` | Styles for raw HTML elements + ARIA roles (buttons, inputs, nav, dialog, typography, etc.) |
-| Variants | `src/variants/` | Class-based extensions (`.container`, button variants, table variants, etc.) |
+| Components | `src/components/` | Component-specific styles (`.card`, `.modal`, `.accordion`, etc.) |
+| Variants | `src/variants/` | Tweaks existing element styles via CSS variables only (`.secondary`, `.contrast`, etc.) |
 | Utilities | `src/utilities/` | Atomic utility classes (spacing, colors, flexbox, grid, display, positioning, typography, effects, borders, sizing) |
 
 ### Entry Points
 
-- `src/index.css` — full bundle (variables + normalize + semantics + variants + utilities)
+- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities)
 - `src/semantics/index.css` — semantics only
-- `src/utilities/index.css` — utilities only
+- `src/components/index.css` — components only
 - `src/variants/index.css` — variants only
+- `src/utilities/index.css` — utilities only
 
 ### Palettes & Sizes
 
@@ -47,8 +49,7 @@ The framework is organized into 5 layers, all in `src/`:
 npm start              # Build + Storybook
 npm test               # Playwright visual regression
 npm run build          # Build all bundles + palettes + sizes
-npm run build:css      # Build unminified bundles
-npm run build:minify   # Build minified bundles
+npm run build:css      # Build minified CSS bundles
 npm run demo:server    # Run demo server used for visual regression testing
 npm run docs:dev       # Dev server for docs
 npm run lint           # Lint all CSS

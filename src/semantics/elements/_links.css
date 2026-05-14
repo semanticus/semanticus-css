@@ -1,6 +1,3 @@
-/**
- * Link
- */
 :where(a:not([role=button])),
 [role=link] {
   --color-background: transparent;

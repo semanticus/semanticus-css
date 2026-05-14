@@ -1,7 +1,3 @@
-/**
- * Main fills up the available width, and has a height defined by its content.
- * Stacks its children vertically.
- */
 main {
   width: 100%;
 }

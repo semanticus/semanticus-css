@@ -1,6 +1,3 @@
-/**
- * Group ([role="group"], [role="search"])
- */
 [role="search"],
 [role="group"] {
     border-radius: var(--border-radius);

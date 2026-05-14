@@ -1,8 +1,3 @@
-/**
- * Semanticus CSS Semantics Modules
- * Just the semantic component styles (no variables, no normalize)
- * Used by the full version which imports variables/normalize separately
- */
 @import "./_misc.css";
 
 @import "./attributes/_aria-busy.css";

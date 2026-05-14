@@ -1,18 +1,11 @@
 # Variants
 
-Minimal set of CSS classes that add visual variation to the **Semantic Styling**, without affecting the underlying semantics.
-
-## Why do we need them?
-
-The purpose of **ARIA** is to communicate semantics and interaction state to assistive technologies: **pressed**, **expanded**, **selected**, **disabled**, **current**, etc. Things like *This button is visually less important* is a presentation concern, not an accessibility semantic.
+CSS classes that tweak the pre-built styles via **CSS variables**, without adding new styling or affecting the underlying behavior.
 
 ## Available Variants
 
 | Variant | Description | Elements |
 |---------|-------------|----------|
-| [`.card`](./card.md) | Visual container with background, shadow, and optional header/footer | Any block element |
-| [`.container`](./container.md) | Responsive width wrapper with horizontal padding | Any block element |
-| [`.secondary`](./secondary.md) | Lower-emphasis style for links and buttons | `<a>`, `<button>` |
-| [`.contrast`](./contrast.md) | High-contrast style for links, buttons, and accordions | `<a>`, `<button>`, `<details>` |
-| [`.ghost`](./ghost.md) | Transparent background with colored text/border | `<button>`, `<details>` |
-| [`.striped`](./striped.md) | Alternating row background colors | `<table>` |
+| `.secondary` | Lower-emphasis style for links and buttons | `<a>`, `<button>`, `.card`, `.pane`, `.panel` |
+| `.contrast` | High-contrast style for links, buttons, and accordions | `<a>`, `<button>`, `<details>`, `.card`, `.pane`, `.panel` |
+| `.ghost` | Transparent background with colored text/border | `<button>`, `<details>` |

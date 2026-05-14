@@ -1,25 +1,43 @@
 export function semanticStyling() {
-  return `<form>
+  return `<article>
   <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <fieldset role="group">
-    <input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
-    <input type="submit" value="Subscribe" />
-  </fieldset>
-</form>`;
+  <button>Click me</button>
+</article>`;
+}
+
+export function components() {
+  return `<article class="card">
+  <hgroup>
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
+  <button>Click me</button>
+</article>`;
 }
 
 export function variants() {
-  return `<button class="ghost">Ghost</button>
-<button class="secondary">Secondary</button>
-<button class="contrast">Contrast</button>`;
+  return `<article class="card secondary">
+  <hgroup>
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
+  <button class="ghost">Click me</button>
+</article>`;
 }
 
 export function utilities() {
-  return `<footer class="py-4 text-center text-bg-contrast-subtle">
-  <p class="mb-0">Star us on GitHub!</p>
-</footer>`;
+  return `<article class="card secondary text-center w-75 mx-auto">
+  <hgroup class="p-3">
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
+  <button class="ghost">Click me</button>
+</article>`;
 }

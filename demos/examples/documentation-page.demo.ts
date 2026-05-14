@@ -4,7 +4,7 @@ import {
   HeaderDemo,
   ArticleDemo,
 } from "@demos/semantics/elements";
-import { renderElement, renderHtmlTemplate } from "@scripts/utils";
+import { renderElement } from "@scripts/utils";
 
 export function main(tagName: string = "body", attrs: Record<string, string> = {}) {
   return renderElement(tagName, { ...attrs, class: ["vstack", ...(attrs.class ? [attrs.class] : [])].join(' ') }, renderElement("div", { class: "flow-h container" } , `${AsideDemo.leftSidebar({

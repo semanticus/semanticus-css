@@ -1,8 +1,3 @@
-/**
- * Document
- * Semantic document-level styles (variables applied)
- */
-
 :where(:root),
 :where(:host) {
   background-color: var(--color-background);

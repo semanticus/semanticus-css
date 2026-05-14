@@ -1,6 +1,3 @@
-/**
- * Checkboxes, Radios and Switches
- */
 label:has([type=checkbox], [type=radio]) {
   width: fit-content;
   cursor: pointer;
