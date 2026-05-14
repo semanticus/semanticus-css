@@ -79,6 +79,6 @@
 | --- | --- |
 | [x] | Semantics overview |
 | [x] | Documentation page example |
-| 🚧 | Layout combinations |
+| [x] | Layout combinations |
 | [ ] | `.secondary` variant combinations |
 | [ ] | `.contrast` variant combinations |
