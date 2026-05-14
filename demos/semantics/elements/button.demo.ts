@@ -1,11 +1,11 @@
 import * as InputDemo from '@demos/semantics/elements/input.demo';
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>, slot: string = "") {
   return renderElement("button", attrs, slot);
 }
 
-export function basic(attrs: Record<string, string> = {}, slot: string = "Button") {
+export function main(attrs: Record<string, string> = {}, slot: string = "Button") {
   return render({ ...attrs }, slot);
 }
 

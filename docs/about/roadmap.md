@@ -63,9 +63,10 @@ Legend:
 | ✅ | Visual regression testing |
 | ✅ | Single source of truth demonstration files |
 | ✅ | Simplified the build process by removing the need for Sass |
-| ✅ | ARIA pattern documentation |
+| ✅ | Live code previewer and editor |
 | ✅ | Palette and Size picker |
 | ✅ | Theme Builder to help the developer visualize which CSS variable does what |
+| ✅ | ARIA pattern documentation |
 | 🚧 | Exhaustive HTML elements and attributes documentation |
 | 🚧 | Exhaustive Composites documentation |
 | 🚧 | Exhaustive variants documentation and their combinations with HTML elements |

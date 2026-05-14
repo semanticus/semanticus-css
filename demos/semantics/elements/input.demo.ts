@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>) {
   return renderElement("input", attrs);
 }
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return render({
     ...attrs,
     type: "text",

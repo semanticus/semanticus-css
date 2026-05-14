@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<table>
   <thead>
     <tr>

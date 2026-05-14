@@ -12,4 +12,4 @@ The `<hr>` element represents a thematic break between sections. Semanticus rend
 
 ## Basic Usage
 
-<HtmlPreviewer :code="HrDemo.basic()" />
+<HtmlPreviewer :code="HrDemo.main()" />

@@ -1,4 +1,4 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 export function image(attrs: Record<string, string> = {}) {
   return `<img src="https://picsum.photos/800/400" alt="A placeholder landscape image" />`;

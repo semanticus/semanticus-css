@@ -20,7 +20,7 @@ Modals are implemented using the `<dialog>` element in combination with the [Inv
 Inside the `<dialog>`, if a `<button rel="prev">` is present, it will be styled as a close icon.
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 200px;&quot;&gt;
-${ModalDemo.basic({ open: true })}
+${ModalDemo.main({ open: true })}
 &lt;/div&gt;`" />
 
 ## With Header and Footer

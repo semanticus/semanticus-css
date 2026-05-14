@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(tagName: string, attrs: Record<string, string>, slot: string = "") {
   return renderElement(tagName, attrs, slot);
 }
 
-export function basic(tagName: string = "div", attrs: Record<string, string> = {}) {
+export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
   return render(tagName, { ...attrs, role: "search" }, `<input type="search" placeholder="Search...">
 <button type="submit">Search</button>`);
 }

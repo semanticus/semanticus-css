@@ -16,7 +16,7 @@ Labels associate text descriptions with form controls.
 
 Use `for` on the label and a matching `id` on the input to associate them explicitly.
 
-<HtmlPreviewer :code="LabelDemo.basic()" />
+<HtmlPreviewer :code="LabelDemo.main()" />
 
 ## Input inside
 

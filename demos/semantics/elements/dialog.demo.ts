@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>, slot: string) {
   return renderElement("dialog", attrs, slot);
 }
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return render({ id: "dialog-basic", ...attrs }, `<button aria-label="Close" rel="prev" commandfor="dialog-basic" command="close"></button>
 <h3>&#x1F4C5; Thank You for Registering!</h3>
 

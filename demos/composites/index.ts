@@ -1,6 +1,6 @@
 export * from "./card.demo";
 export * from "./dropdown.demo";
-export * from "./layout.demo";
+export * as LayoutDemo from "./layout.demo";
 export * from "./loading.demo";
 export * as ModalDemo from "./modal.demo";
 export * from "./pagination.demo";

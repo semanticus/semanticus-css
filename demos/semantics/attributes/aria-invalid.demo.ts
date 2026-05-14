@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<input type="text" name="valid" value="Valid" aria-invalid="false" />
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" />
 `;

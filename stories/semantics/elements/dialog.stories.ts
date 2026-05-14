@@ -9,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: DialogDemo.basic({ open: 'true' }) },
+  args: { html: DialogDemo.main({ open: 'true' }) },
   render: (args) => args.html,
 };
 

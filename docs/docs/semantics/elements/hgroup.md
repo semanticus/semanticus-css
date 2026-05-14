@@ -12,4 +12,4 @@ The `<hgroup>` element groups a heading with related metadata — such as a subh
 
 ## Basic Usage
 
-<HtmlPreviewer :code="HgroupDemo.basic()" />
+<HtmlPreviewer :code="HgroupDemo.main()" />

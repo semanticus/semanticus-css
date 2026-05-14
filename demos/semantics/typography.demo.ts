@@ -41,7 +41,7 @@ export function blockquote() {
 
 export function inlineElements() {
   return `<div role="toolbar">
-  <p>${ADemo.basic()}</p>
+  <p>${ADemo.main()}</p>
   <p>${ADemo.active()}</p>
   <p><code>Code</code></p>
 </div>

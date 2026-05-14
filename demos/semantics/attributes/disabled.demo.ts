@@ -2,8 +2,8 @@ import * as ButtonDemo from '@demos/semantics/elements/button.demo';
 import * as InputDemo from '@demos/semantics/elements/input.demo';
 import * as SelectDemo from '@demos/semantics/elements/select.demo';
 
-export function basic() {
-  return ButtonDemo.basic({ disabled: "disabled", "aria-label": "Disabled button" });
+export function main() {
+  return ButtonDemo.main({ disabled: "disabled", "aria-label": "Disabled button" });
 }
 
 export function inputButtons() {
@@ -13,7 +13,7 @@ ${InputDemo.reset({ disabled: "disabled", "aria-label": "Disabled input reset" }
 }
 
 export function input() {
-  return InputDemo.basic({ disabled: "disabled", "aria-label": "Disabled input" });
+  return InputDemo.main({ disabled: "disabled", "aria-label": "Disabled input" });
 }
 
 export function range() {
@@ -21,7 +21,7 @@ export function range() {
 }
 
 export function select() {
-  return SelectDemo.basic({ disabled: "disabled", "aria-label": "Disabled select" });
+  return SelectDemo.main({ disabled: "disabled", "aria-label": "Disabled select" });
 }
 
 export function checkbox() {

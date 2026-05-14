@@ -12,4 +12,4 @@ The `<footer>` element represents the footer for its nearest sectioning ancestor
 
 ## Basic Usage
 
-<HtmlPreviewer :code="FooterDemo.basic()" />
+<HtmlPreviewer :code="FooterDemo.main()" />

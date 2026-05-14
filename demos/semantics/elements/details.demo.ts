@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>, slot: string = "") {
   return renderElement("details", attrs, slot);
 }
 
-export function basic() {
+export function main() {
   return `<details name="accordion-group">
   <summary>Accordion 1</summary>
   <p>

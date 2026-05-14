@@ -6,8 +6,9 @@ aside: false
 
 <br>
 
-<HtmlPreviewer :code="DocumentationPageDemo.page()" />
+<HtmlPreviewer :code="renderHtmlTemplate(DocumentationPageDemo.main())" />
 
 <script setup>
 import { DocumentationPageDemo } from "@demos/examples";
+import { renderHtmlTemplate } from "@scripts/utils";
 </script>

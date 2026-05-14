@@ -1,13 +1,13 @@
 import * as HgroupDemo from "@demos/semantics/elements/hgroup.demo";
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return renderElement("article", attrs, `<h2>Hello World</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.</p>`);
 }
 
 export function hgroup(attrs: Record<string, string> = {}) {
-  return renderElement("article", attrs, HgroupDemo.basic());
+  return renderElement("article", attrs, HgroupDemo.main());
 }
 
 export function card(attrs: Record<string, string> = {}) {

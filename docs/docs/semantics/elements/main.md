@@ -12,7 +12,7 @@ The `<main>` element represents the dominant content of the document body. There
 
 ## Basic Usage
 
-<HtmlPreviewer :code="MainDemo.basic()" />
+<HtmlPreviewer :code="MainDemo.main()" />
 
 ## With Header
 

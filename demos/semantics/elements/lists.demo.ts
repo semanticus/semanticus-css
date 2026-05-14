@@ -1,4 +1,4 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 export function unordered(attrs: Record<string, string> = {}) {
   return renderElement("ul", attrs, `<li>Aliquam lobortis lacus eu libero ornare facilisis.</li>

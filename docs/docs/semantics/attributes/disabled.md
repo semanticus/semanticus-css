@@ -12,7 +12,7 @@ The `disabled` attribute prevents interaction with a form element and removes it
 
 ## Basic Usage
 
-<HtmlPreviewer :code="DisabledDemo.basic()" />
+<HtmlPreviewer :code="DisabledDemo.main()" />
 
 ## Input
 

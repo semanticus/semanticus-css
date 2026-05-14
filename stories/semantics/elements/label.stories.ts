@@ -8,7 +8,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: LabelDemo.basic() },
+  args: { html: LabelDemo.main() },
   render: (args) => args.html,
 };
 

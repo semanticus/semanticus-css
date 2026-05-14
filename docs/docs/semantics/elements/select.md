@@ -12,7 +12,7 @@ The `<select>` element creates a dropdown list of `<option>` items. Use the `mul
 
 ## Basic Usage
 
-<HtmlPreviewer :code="SelectDemo.basic()" />
+<HtmlPreviewer :code="SelectDemo.main()" />
 
 ## Select Multiple
 

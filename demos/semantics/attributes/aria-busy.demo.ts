@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(tagName: string, attrs: Record<string, string> = {}, slot: string = "") {
   return renderElement(tagName, attrs, slot);
 }
 
-export function basic(tagName: string = "article", attrs: Record<string, string> = {}, slot: string = "Loading content...") {
+export function main(tagName: string = "article", attrs: Record<string, string> = {}, slot: string = "Loading content...") {
   return render(tagName, { class: 'card', ...attrs, "aria-busy": "true" }, slot);
 }
 

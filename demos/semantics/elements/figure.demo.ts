@@ -1,10 +1,10 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(attrs: Record<string, string>, slot: string = "") {
   return renderElement("figure", attrs, slot);
 }
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return render(attrs, `<img src="https://picsum.photos/800/400" alt="A scenic placeholder image" />
 <figcaption>Figure 1 — A placeholder image demonstrating the figure element.</figcaption>`);
 }

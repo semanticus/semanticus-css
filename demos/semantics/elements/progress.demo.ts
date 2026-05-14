@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<progress value="0" max="100"></progress>
 <progress value="50" max="100"></progress>`;
 }

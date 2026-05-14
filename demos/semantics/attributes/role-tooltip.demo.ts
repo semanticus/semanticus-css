@@ -1,4 +1,4 @@
-export function basic() {
+export function main() {
   return `<p>
   Tooltip on a <span>
     <a href="#" aria-describedby="tip-link">link</a>

@@ -14,7 +14,7 @@ Use the `open` attribute to expand it by default. Set the same `name` attribute 
 
 ## Basic Usage
 
-<HtmlPreviewer :code="DetailsDemo.basic()" />
+<HtmlPreviewer :code="DetailsDemo.main()" />
 
 For style variants, see [Details Variants](/docs/variants/).
 

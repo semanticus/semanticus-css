@@ -14,7 +14,7 @@ Screen readers expose it as a "search" landmark, allowing users to jump directly
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleSearchDemo.basic()" />
+<HtmlPreviewer :code="RoleSearchDemo.main()" />
 
 ## Search with Reset Button
 

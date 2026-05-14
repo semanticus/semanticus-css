@@ -9,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: AriaInvalidDemo.basic() },
+  args: { html: AriaInvalidDemo.main() },
   render: (args) => args.html,
 };
 

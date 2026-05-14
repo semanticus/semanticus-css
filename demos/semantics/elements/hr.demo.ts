@@ -1,6 +1,6 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return renderElement("article", attrs, `<h3>Section One</h3>
   <p>Content for the first section.</p>
   <hr />

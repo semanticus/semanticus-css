@@ -8,7 +8,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: DisabledDemo.basic() },
+  args: { html: DisabledDemo.main() },
   render: (args) => args.html,
 };
 

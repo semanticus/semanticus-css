@@ -12,4 +12,4 @@ The `<body>` element receives `width: 100%` and `min-height: 100svh`, ensuring i
 
 ## Overview
 
-<HtmlPreviewer :code="BodyDemo.basic()" />
+<HtmlPreviewer :code="BodyDemo.main()" />

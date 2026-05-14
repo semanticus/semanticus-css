@@ -1,4 +1,4 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 import * as TypographyDemo from '@demos/semantics/typography.demo';
 
@@ -92,8 +92,8 @@ export function validState() {
   <h4>Valid State (aria-invalid="false")</h4>
 
   <section role="toolbar">
-    ${InputDemo.basic({ "aria-invalid": "false" })}
-    ${SelectDemo.basic({ "aria-invalid": "false" })}
+    ${InputDemo.main({ "aria-invalid": "false" })}
+    ${SelectDemo.main({ "aria-invalid": "false" })}
   </section>
 
   <section role="toolbar">
@@ -110,8 +110,8 @@ export function invalidState() {
   <h4>Invalid State (aria-invalid="true")</h4>
 
   <section role="toolbar">
-    ${InputDemo.basic({ "aria-invalid": "true" })}
-    ${SelectDemo.basic({ "aria-invalid": "true" })}
+    ${InputDemo.main({ "aria-invalid": "true" })}
+    ${SelectDemo.main({ "aria-invalid": "true" })}
   </section>
 
   <section role="toolbar">
@@ -129,7 +129,7 @@ export function inputElements() {
 
   <input type="text" name="text" placeholder="Text" aria-label="Text" />
 
-  ${SelectDemo.basic()}
+  ${SelectDemo.main()}
 
   ${InputDemo.search()}
 
@@ -159,7 +159,7 @@ export function inputElements() {
   </section>
 
   <section role="toolbar">
-    ${TextareaDemo.basic()}
+    ${TextareaDemo.main()}
 
     ${SelectDemo.multipleSelect()}
   </section>
@@ -188,7 +188,7 @@ function fieldsets() {
   </hgroup>
 
   <section>
-    ${FieldsetDemo.basic()}
+    ${FieldsetDemo.main()}
   </section>
 
   <section>
@@ -205,7 +205,7 @@ function fieldsets() {
     <h4>Search fieldset (role="search")</h4>
 
     <section>
-      ${RoleSearchDemo.basic("fieldset")}
+      ${RoleSearchDemo.main("fieldset")}
       ${RoleSearchDemo.withResetButton("fieldset")}
     </section>
   </section>
@@ -248,7 +248,7 @@ function loadingStates() {
 
   <section role="toolbar">
     <section>
-      ${AriaBusyDemo.basic("article", {}, "")}
+      ${AriaBusyDemo.main("article", {}, "")}
     </section>
     <section>
       ${AriaBusyDemo.loadingButton({})}
@@ -267,7 +267,7 @@ function tooltips() {
     <p>Pair a trigger element with <code>aria-describedby</code> and another with <code>[role="tooltip"]</code>.</p>
   </hgroup>
 
-  ${RoleTooltipDemo.basic()}
+  ${RoleTooltipDemo.main()}
 </section>`;
 }
 
@@ -276,7 +276,7 @@ function accordions() {
   <h2>Accordions</h2>
 
   <section>
-    ${DetailsDemo.basic()}
+    ${DetailsDemo.main()}
   </section>
 
   <br>
@@ -311,7 +311,7 @@ function progressBars() {
   return `<section id="progressBars">
   <h2>Progress Bars</h2>
 
-  ${ProgressDemo.basic()}
+  ${ProgressDemo.main()}
   ${ProgressDemo.indeterminate()}
 </section>`;
 }
@@ -329,7 +329,7 @@ function navigation() {
   <h2>Navigation</h2>
 
   <section>
-    ${NavDemo.basic()}
+    ${NavDemo.main()}
   </section>
 
   <br>
@@ -376,7 +376,7 @@ function typography() {
 function headingGroup() {
   return `<section id="headingGroup">
   <header>
-    ${HgroupDemo.basic()}
+    ${HgroupDemo.main()}
   </header>
 </section>`;
 }
@@ -459,7 +459,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
 
       <label>
         Select
-        ${SelectDemo.basic()}
+        ${SelectDemo.main()}
       </label>
     </fieldset>
 
@@ -500,7 +500,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
 `);
 }
 
-export function completeExample(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return renderElement("main", { class: 'container', ...attrs }, `<header>
   <h1 class="title">Semantics Demo</h1>
 </header>

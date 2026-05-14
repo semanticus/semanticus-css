@@ -1,16 +1,18 @@
-#!/usr/bin/env node
+#!/usr/bin/env tsx
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
+import { packageProps } from './utils/package-props';
+
+const packageName = packageProps.name;
+const packageJsonVersion = packageProps.version;
+const packageAuthor = packageProps.author;
+const packageSlug = packageProps.slug;
+const encodedPackageName = packageProps.encodedName;
+
+const packageVersion = process.env.SEMANTICUS_CDN_VERSION || packageJsonVersion;
 
 const repoRoot = path.join(__dirname, '..');
-const packageJsonPath = path.join(repoRoot, 'package.json');
-const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-const packageName = packageJson.name;
-const packageVersion = process.env.SEMANTICUS_CDN_VERSION || packageJson.version;
-const packageAuthor = packageJson.author || 'Joao Goncalves';
-const packageSlug = packageName.split('/').pop();
-const encodedPackageName = packageName.replace('/', '%2F');
 
 // Specific files to update (entry points with version headers)
 const specificFiles = [
@@ -54,7 +56,7 @@ const copyrightPattern = new RegExp(
   `Copyright \\(c\\) (\\d{4})(?:(-)(\\d{4}))? ${escapeRegex(packageAuthor)}`,
   'g'
 );
-const updateCopyright = (match, startYear, dash, existingEndYear) => {
+const updateCopyright = (match: string, startYear: string) => {
   if (currentYear > parseInt(startYear)) {
     return `Copyright (c) ${startYear}-${currentYear} ${packageAuthor}`;
   }
@@ -77,7 +79,7 @@ for (const targetPath of targetPaths) {
 
 console.log(`Version sync complete. Updated ${updatedFiles} file(s) to v${packageVersion}.`);
 
-function visitPath(targetPath) {
+function visitPath(targetPath: string): void {
   if (!fs.existsSync(targetPath)) {
     return;
   }
@@ -106,11 +108,11 @@ function visitPath(targetPath) {
   updateFile(targetPath, false);
 }
 
-function shouldIgnoreDirectory(relativePath) {
+function shouldIgnoreDirectory(relativePath: string): boolean {
   return ignoredDirectories.has(relativePath);
 }
 
-function updateFile(filePath, isSpecificFile) {
+function updateFile(filePath: string, isSpecificFile: boolean): void {
   const original = fs.readFileSync(filePath, 'utf8');
   let updated = original;
 
@@ -143,6 +145,6 @@ function updateFile(filePath, isSpecificFile) {
   console.log(`Updated ${path.relative(repoRoot, filePath)}`);
 }
 
-function escapeRegex(value) {
+function escapeRegex(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

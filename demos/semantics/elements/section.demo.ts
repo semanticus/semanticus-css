@@ -1,6 +1,6 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return `${renderElement("section", attrs, `<h2>Introduction</h2>
   <p>Sections group thematically related content. Each section gets a bottom margin via <code>--spacing-vertical</code>.</p>`)}
 ${renderElement("section", {}, `<h2>Features</h2>

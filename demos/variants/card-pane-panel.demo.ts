@@ -1,4 +1,4 @@
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
 function render(tagName: string, type: string, attrs: Record<string, string>, slot: string) {
   const attributes = { ...attrs };
@@ -7,7 +7,7 @@ function render(tagName: string, type: string, attrs: Record<string, string>, sl
   return renderElement(tagName, attributes, slot);
 }
 
-export function basic(type: string, tagName: string = "div", attrs: Record<string, string> = {}) {
+export function main(type: string, tagName: string = "div", attrs: Record<string, string> = {}) {
   return render(tagName, type, attrs, `<hgroup>
   <h2>${type} title</h2>
   <p>${type} description</p>

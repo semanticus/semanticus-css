@@ -1,7 +1,7 @@
 import * as NavDemo from "@demos/semantics/elements/nav.demo";
-import { renderElement } from "@demos/utils";
+import { renderElement } from "@scripts/utils";
 
-export function basic(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}) {
   return renderElement("aside", attrs, `<h4>BrandName</h4>
   <a href="#">Dashboard</a>`);
 }

@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const baseUrl = 'http://localhost:6006';
+const PORT = process.env.PORT || 4000;
+const baseUrl = `http://localhost:${PORT}`;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -76,7 +77,7 @@ export default defineConfig({
   * https://github.com/motdotla/dotenv
   */
   webServer: {
-    command: 'npm run storybook',
+    command: `PORT=${PORT} npm run demo:server`,
     url: baseUrl,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
