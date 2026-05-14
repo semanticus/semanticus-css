@@ -13,12 +13,12 @@ test('/overviews/semantics/dialog-demo - visual snapshot', async ({ page }) => {
   const button = page.locator('body > main > button');
   const dialog = page.locator('dialog');
 
-  button.click();
+  await button.click();
 
   await expect(page).toHaveScreenshot('open-modal.png', screenshotOptions);
   await expect(dialog).toBeVisible();
 
-  dialog.locator('[rel="prev"]').click();
+  await dialog.locator('[rel="prev"]').click();
 
   await expect(page).toHaveScreenshot('closed-modal.png', screenshotOptions);
   await expect(dialog).not.toBeVisible();

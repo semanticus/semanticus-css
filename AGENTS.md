@@ -38,19 +38,20 @@ The framework is organized into 5 layers, all in `src/`:
 
 - **Bundler**: [LightningCSS](https://lightningcss.dev/) (bundles, minifies, handles custom media queries)
 - **Linting**: stylelint (`npm run lint` / `npm run lint:fix`)
-- **Visual Regression**: playwright (`npm run test:visual-regression` / `npm run test:update-snapshots`)
+- **Visual Regression**: playwright (`npm test` / `npm run test:update-snapshots`)
 - **Docs**: VitePress in `docs/`
 
 ### Key Scripts
 
 ```bash
+npm start              # Build + Storybook
+npm test               # Playwright visual regression
 npm run build          # Build all bundles + palettes + sizes
 npm run build:css      # Build unminified bundles
 npm run build:minify   # Build minified bundles
-npm run demo           # Run demo page
+npm run demo:server    # Run demo server used for visual regression testing
 npm run docs:dev       # Dev server for docs
 npm run lint           # Lint all CSS
-npm run test:visual-regression   # Playwright visual regression
 npm run test:update-snapshots    # Update visual regression snapshots
 ```
 

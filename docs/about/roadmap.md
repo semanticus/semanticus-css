@@ -86,7 +86,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Documentation page example |
 | ✅ | Layout combinations |
 | ✅ | Modal interaction |
-| ✅ | Accorddion interaction |
+| ✅ | Accordion interaction |
 | ✅ | Dropdown interaction |
 | ✅ | `.secondary` variant combinations |
 | ✅ | `.contrast` variant combinations |
