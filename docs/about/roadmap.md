@@ -82,5 +82,5 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Semantics overview |
 | ✅ | Documentation page example |
 | ✅ | Layout combinations |
-| 🚧 | `.secondary` variant combinations |
-| ⌛ | `.contrast` variant combinations |
+| ✅ | `.secondary` variant combinations |
+| ✅ | `.contrast` variant combinations |
