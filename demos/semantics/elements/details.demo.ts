@@ -1,9 +1,5 @@
 import { renderElement } from "@scripts/utils";
 
-function render(attrs: Record<string, string>, slot: string = "") {
-  return renderElement("details", attrs, slot);
-}
-
 export function main() {
   return `<details name="accordion-group">
   <summary>Accordion 1</summary>
@@ -76,7 +72,7 @@ export function dropdownWithRadios() {
 }
 
 export function dropdownWithCheckboxes(attrs: Record<string, string> = {}) {
-  return render(attrs, `<summary aria-haspopup="menu">Select phases of matter...</summary>
+  return renderElement("details", attrs, `<summary aria-haspopup="menu">Select phases of matter...</summary>
 <ul role="menu">
   <li>
     <label>
