@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useData } from 'vitepress'
-import { SemanticsDemo } from '@demos/overviews';
+import { Semantics } from '@demos/overviews';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
@@ -39,7 +39,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Default</span>
       <div id="default-content">
-        ${SemanticsDemo.completeExample({ id: 'default-main' })}
+        ${Semantics.Demo.completeExample({ id: 'default-main' })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">

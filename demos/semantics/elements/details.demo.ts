@@ -1,6 +1,14 @@
 import { renderElement } from "@scripts/utils";
 
-export function main() {
+export function main(attrs: Record<string, string> = {}) {
+  return renderElement("details", attrs, `<summary>Accordion 1</summary>
+<p>
+  This content is hidden by default and revealed when you click the summary.
+  Accordions are great for organizing content into collapsible sections.
+</p>`);
+}
+
+export function entangledAccordions() {
   return `<details name="accordion-group">
   <summary>Accordion 1</summary>
   <p>
@@ -29,25 +37,14 @@ export function asButton() {
 </details>`;
 }
 
-export function basicDropdown() {
-  return `<details>
-  <summary aria-haspopup="menu">Dropdown</summary>
-  <ul role="menu">
-    <li><a role="menuitem" href="#">Solid</a></li>
-    <li><a role="menuitem" href="#">Liquid</a></li>
-    <li><a role="menuitem" href="#">Gas</a></li>
-    <li><a role="menuitem" href="#">Plasma</a></li>
-  </ul>
-</details>
-
-<select name="select" aria-label="Select" required>
-  <option selected disabled value="">Select</option>
-  <option>Solid</option>
-  <option>Liquid</option>
-  <option>Gas</option>
-  <option>Plasma</option>
-</select>
-`;
+export function basicDropdown(attrs: Record<string, string> = {}) {
+  return renderElement("details", attrs, `<summary aria-haspopup="menu">Dropdown</summary>
+<ul role="menu">
+  <li><a role="menuitem" href="#">Solid</a></li>
+  <li><a role="menuitem" href="#">Liquid</a></li>
+  <li><a role="menuitem" href="#">Gas</a></li>
+  <li><a role="menuitem" href="#">Plasma</a></li>
+</ul>`);
 }
 
 export function dropdownWithRadios() {

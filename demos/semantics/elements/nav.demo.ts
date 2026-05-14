@@ -1,11 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-function render(attrs: Record<string, string>, slot: string = "") {
-  return renderElement("nav", attrs, slot);
-}
-
 export function main(attrs: Record<string, string> = {}) {
-  return render(attrs, `<ul>
+  return renderElement("nav", attrs, `<ul>
   <li><h2>logo</h2></li>
 </ul>
 

@@ -39,9 +39,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Invoker Commands API modal patterns |
 | ✅ | Dropdown menu primitives |
 | 🚧 | Anchor Positioning tooltips |
-| ⌛ | Tabs |
-| ⌛ | Alerts |
-| ⌛ | Toasts |
+| ⌛ | Tab |
+| ⌛ | Alert |
+| ⌛ | Confirm |
+| ⌛ | Prompt |
+| ⌛ | Popover |
+| ⌛ | Toast |
 
 ## Layout
 
@@ -82,6 +85,14 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Semantics overview |
 | ✅ | Documentation page example |
 | ✅ | Layout combinations |
-| ✅ | Modal launch |
+| ✅ | Modal interaction |
+| ✅ | Accorddion interaction |
+| ✅ | Dropdown interaction |
 | ✅ | `.secondary` variant combinations |
 | ✅ | `.contrast` variant combinations |
+| ⌛ | `.sidebar` popover interaction |
+| ⌛ | Alert interaction |
+| ⌛ | Prompt interaction |
+| ⌛ | Confirm interaction |
+| ⌛ | Popover interaction |
+| ⌛ | Tabs interaction |

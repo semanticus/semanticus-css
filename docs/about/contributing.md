@@ -88,18 +88,24 @@ npm run docs:dev
 
 In both scenarios, you will probably want add or update the existing `*.demo.ts` files in the `demos/` directory that contain the HTML examples used both by **storybook** and **vitepress**.
 
-## Visual Regression Testing
+## Testing
 
 Semanticus CSS uses [Playwright](https://playwright.dev/docs/test-snapshots) for visual regression testing.
 
-- Capture reference snapshots
+To run the test suite, use:
+
+```bash
+npm test
+```
+
+In case you want to update all existing snapshots after making changes to the codebase, you can run:
 
 ```bash
 npm run test:update-snapshots
 ```
 
-- Run visual regression tests against the reference snapshots
+When the need to debug a specific test arises, you can run:
 
 ```bash
-npm run test:visual-regression
+npm test <path to the spec.ts file> -- --debug
 ```

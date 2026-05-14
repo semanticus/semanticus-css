@@ -1,11 +1,11 @@
-export function main() {
-  return `<label for="first_name">First name</label>
-<input name="first_name" id="first_name" placeholder="First name" autocomplete="given-name" />`;
+import { renderElement } from "@scripts/utils";
+
+export function main(attrs: Record<string, string> = {}) {
+  return `${renderElement("label", { ...attrs, for: "first_name" }, "First name")}
+${renderElement("input", { name: "first_name", id: "first_name", placeholder: "First name" }, "")}`;
 }
 
-export function inputInside() {
-  return `<label>
-  Last name
-  <input name="last_name" placeholder="Last name" autocomplete="family-name" />
-</label>`;
+export function inputInside(attrs: Record<string, string> = {}) {
+  return renderElement("label", { ...attrs }, `Last name
+${renderElement("input", { name: "last_name", placeholder: "Last name" }, "")}`);
 }
