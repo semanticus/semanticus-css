@@ -118,7 +118,7 @@ CSS classes that tweak **Semantic Styling** and **Components** via **CSS variabl
   </hgroup>
 
   <button class="ghost">Click me</button>
-</article>`
+</article>
 ```
 
 ### 4. Utilities
