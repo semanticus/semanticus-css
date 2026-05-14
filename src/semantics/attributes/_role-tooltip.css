@@ -1,6 +1,3 @@
-/**
- * Tooltip ([role="tooltip"])
- */
 :has(> [role="tooltip"]) {
   position: relative;
   display: inline-block;

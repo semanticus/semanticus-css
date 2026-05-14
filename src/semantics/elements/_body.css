@@ -1,7 +1,3 @@
-/**
- * Body fills up the available width, and has the same height as the viewport.
- * Stacks its children vertically.
- */
 body {
   width: 100%;
   min-height: 100svh;

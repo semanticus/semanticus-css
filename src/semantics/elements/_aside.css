@@ -1,9 +1,3 @@
-/**
- * Aside its width changes according to certain breakpoints,
- * and its height grows to fill the available space,
- * and stacks its children in a column with space between them (like a <nav> would).
- * In case of a single child, this child will fill the entire height.
- */
 aside {
   width: var(--sidebar-width) !important;
   padding: var(--spacing) !important;

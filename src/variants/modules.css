@@ -1,10 +1,4 @@
-/**
- * Semanticus CSS Variants
- * Class-based variant styles that extend semantic elements
- * Used by the full version which imports global variables, normalize, and semantics separately
- */
-
-@import "./modifiers/_contrast.css";
-@import "./modifiers/_secondary.css";
+@import "./_contrast.css";
+@import "./_secondary.css";
 /* Needs to be imported after other variants to override colors */
-@import "./modifiers/_ghost.css";
+@import "./_ghost.css";

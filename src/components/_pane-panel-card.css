@@ -1,8 +1,3 @@
-/**
- * Pane, Panel and Card
- * A container component for grouped content with visual pane, panel and card styling
- * Can be applied to any element (article, div, section, etc.)
- */
 .pane,
 .panel,
 .card {

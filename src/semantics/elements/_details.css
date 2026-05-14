@@ -1,6 +1,3 @@
-/**
- * Accordion (<details>)
- */
 details {
   display: block;
   margin-bottom: var(--spacing);
