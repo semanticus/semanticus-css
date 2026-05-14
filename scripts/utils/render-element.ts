@@ -13,7 +13,13 @@ export function renderElement(
 ): string {
   const content = slot.length > 0 ? sanitizeNewLines(ident(slot, 2)) : slot;
 
-  let renderedAttrs = Object.entries(attrs || {})
+  const attributes = { ...attrs || {} };
+
+  if (attributes.class) {
+    attributes.class = attributes.class.split(" ").filter(Boolean).join(" ");
+  }
+
+  let renderedAttrs = Object.entries(attributes)
     .map(([key, val]) => ((val ?? "") !== "" ? `${key}="${val}"` : undefined))
     .filter((attribute) => attribute !== undefined)
     .join(" ");

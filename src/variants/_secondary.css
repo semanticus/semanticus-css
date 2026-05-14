@@ -17,7 +17,7 @@
   }
 }
 
-:is(button, [type="submit"], [type="button"], [role="button"]) {
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.secondary {
     --color-background: var(--color-secondary-bg);
     --border-color: var(--color-secondary-border);

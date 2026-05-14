@@ -1,43 +1,37 @@
-<script setup>
-const linkHtml = `<a href="#">Primary link</a>
-<hr>
-<a href="#" class="contrast">Contrast link</a>
-`;
-
-const buttonHtml = `<div role="toolbar">
-  <button>Primary</button>
-  <button class="contrast">Contrast</button>
-</div>
-`;
-
-const accordionHtml = `<!-- Contrast accordion -->
-<details>
-  <summary role="button" class="contrast">Contrast Accordion</summary>
-  <p>Koalas are arboreal marsupials that are native to Australia. They are known for their cute and cuddly appearance, but they can be quite aggressive if provoked.</p>
-</details>
-`;
-</script>
-
-# Contrast Variant
+# .contrast
 
 The `.contrast` class provides a high-contrast visual style for links, buttons, and accordion elements. Use it to draw attention or indicate primary actions in high-visibility contexts.
 
 ## Links
 
-Apply `.contrast` to `<a>` elements or elements with `[role="link"]` for high-contrast links.
+Apply `.contrast` to `<a>` elements or elements with `[role="link"]` to de-emphasize them.
 
-<HtmlPreviewer :code="linkHtml" />
+<HtmlPreviewer :code="ContrastDemo.links()" />
 
 ## Buttons
 
-Apply `.contrast` to `<button>` elements or elements with `[role="button"]` for high-contrast action buttons.
+Apply `.contrast` to `<button>` elements or elements with `[role="button"]` for a contrast action button.
 
-<HtmlPreviewer :code="buttonHtml" />
+<HtmlPreviewer :code="ContrastDemo.buttons()" />
 
-## Accordion
+## Panes
 
-Apply `.contrast` to accordion `<summary>` elements with `role="button"` for high-contrast expandable sections.
+Apply `.contrast` to `<div>` elements with `.pane` for a contrast action pane.
 
-<HtmlPreviewer :code="accordionHtml" />
+<HtmlPreviewer :code="ContrastDemo.panes()" />
 
-<!-- markdownlint-enable MD033 -->
+## Panels
+
+Apply `.contrast` to `<div>` elements with `.panel` for a contrast action panel.
+
+<HtmlPreviewer :code="ContrastDemo.panels()" />
+
+## Cards
+
+Apply `.contrast` to `<div>` elements with `.card` for a contrast action card.
+
+<HtmlPreviewer :code="ContrastDemo.cards()" />
+
+<script setup>
+import { ContrastDemo } from "@demos/variants";
+</script>

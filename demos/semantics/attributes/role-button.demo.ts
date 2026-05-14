@@ -1,5 +1,5 @@
-export function main() {
-  return `<div role="button" tabindex="0">
-  Div as button
-</div>`;
+import { renderElement } from "@scripts/utils";
+
+export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return renderElement(tagName, { ...attrs, role: "button" }, `${tagName} as button`);
 }
