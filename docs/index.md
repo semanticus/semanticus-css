@@ -56,23 +56,29 @@ Add Semanticus CSS to your project via CDN, manual download, or npm:
 
 ## How It Works
 
-Semanticus CSS is built on three complementary layers:
+Semanticus CSS is built on four complementary layers:
 
 ### 1. Semantic Styling
 
-Beautiful default styles for plain **ARIA-centric** HTML — no classes needed.
+Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](/docs/semantics/) will make it look great by default.
 
 <HtmlPreviewer :code="GettingStartedDemo.semanticStyling()" />
 
-### 2. Variants
+### 2. Components
 
-Minimal set of CSS classes that add visual variation to the **Semantic Styling**.
+Minimal set of reusable building blocks, that extend the **Semantic Styling** - add a [component](/docs/components/) when you need a specific UI pattern.
+
+<HtmlPreviewer :code="GettingStartedDemo.components()" />
+
+### 3. Variants
+
+CSS classes that tweak **Semantic Styling** and **Components** via **CSS variables** - throw in a [variant](/docs/variants/) when you want to add or reduce visual flair.
 
 <HtmlPreviewer :code="GettingStartedDemo.variants()" />
 
-### 3. Utilities
+### 4. Utilities
 
-Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design.
+[Utility](/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
 
 <HtmlPreviewer :code="GettingStartedDemo.utilities()" />
 
@@ -95,7 +101,7 @@ import { renderHtmlTemplate } from "@scripts/utils";
 
 /* VitePress doc content below home features */
 .VPHome .vp-doc {
-  max-width: 600px;
+  max-width: 675px;
   margin: 0 auto;
   padding: 0 24px 80px;
 

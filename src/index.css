@@ -20,8 +20,11 @@
 /* Semantics */
 @import './semantics/modules.css';
 
-/* Utilities */
-@import './utilities/modules.css';
+/* Components */
+@import './components/modules.css';
 
 /* Variants */
 @import './variants/modules.css';
+
+/* Utilities */
+@import './utilities/modules.css';

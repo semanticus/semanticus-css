@@ -74,9 +74,6 @@ export default defineConfig({
     resolve: {
       alias: loadTsconfigAliases(),
     },
-    vue: {
-      exclude: [/\.md$/],
-    },
     publicDir: "public",
     plugins: [
       {
@@ -348,7 +345,6 @@ export default defineConfig({
         {
           text: "Semantic Styling",
           items: [
-            { text: "Overview", link: "/docs/semantics/" },
             {
               text: "Elements",
               collapsed: true,
@@ -420,43 +416,34 @@ export default defineConfig({
           ],
         },
         {
+          text: "Components",
+          items: [
+            { text: ".card", link: "/docs/components/card" },
+            { text: ".container", link: "/docs/components/container" },
+            { text: ".striped", link: "/docs/components/striped" },
+          ],
+        },
+        {
           text: "Variants",
           items: [
-            { text: "Overview", link: "/docs/variants/" },
-            {
-              text: "Classes",
-              collapsed: true,
-              items: [
-                { text: ".card", link: "/docs/variants/card" },
-                { text: ".container", link: "/docs/variants/container" },
-                { text: ".secondary", link: "/docs/variants/secondary" },
-                { text: ".contrast", link: "/docs/variants/contrast" },
-                { text: ".ghost", link: "/docs/variants/ghost" },
-                { text: ".striped", link: "/docs/variants/striped" },
-              ],
-            },
+            { text: ".secondary", link: "/docs/variants/secondary" },
+            { text: ".contrast", link: "/docs/variants/contrast" },
+            { text: ".ghost", link: "/docs/variants/ghost" },
           ],
         },
         {
           text: "Utilities",
           items: [
-            { text: "Overview", link: "/docs/utilities/" },
-            {
-              text: "Categories",
-              collapsed: true,
-              items: [
-                { text: "Borders", link: "/docs/utilities/borders" },
-                { text: "Colors", link: "/docs/utilities/colors" },
-                { text: "Display", link: "/docs/utilities/display" },
-                { text: "Effects", link: "/docs/utilities/effects" },
-                { text: "Flexbox", link: "/docs/utilities/flexbox" },
-                { text: "Layout", link: "/docs/utilities/layout" },
-                { text: "Positioning", link: "/docs/utilities/positioning" },
-                { text: "Sizing", link: "/docs/utilities/sizing" },
-                { text: "Spacing", link: "/docs/utilities/spacing" },
-                { text: "Typography", link: "/docs/utilities/typography" },
-              ],
-            },
+            { text: "Borders", link: "/docs/utilities/borders" },
+            { text: "Colors", link: "/docs/utilities/colors" },
+            { text: "Display", link: "/docs/utilities/display" },
+            { text: "Effects", link: "/docs/utilities/effects" },
+            { text: "Flexbox", link: "/docs/utilities/flexbox" },
+            { text: "Layout", link: "/docs/utilities/layout" },
+            { text: "Positioning", link: "/docs/utilities/positioning" },
+            { text: "Sizing", link: "/docs/utilities/sizing" },
+            { text: "Spacing", link: "/docs/utilities/spacing" },
+            { text: "Typography", link: "/docs/utilities/typography" },
           ],
         },
       ],

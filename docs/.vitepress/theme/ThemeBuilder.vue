@@ -44,7 +44,7 @@ function htmlTemplate(base, theme) {
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">
       <span class="compare-side-label d-none">Custom</span>
-      <main class="container" id="custom-main"></main>
+      <div class="container" id="custom-main"></div>
     </div>
     <div class="compare-divider d-none"></div>
   </div>

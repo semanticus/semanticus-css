@@ -11,14 +11,15 @@ Quick reference for AI agents working on this codebase.
 
 ## Architecture
 
-The framework is organized into 5 layers, all in `src/`:
+The framework is organized into 6 layers, all in `src/`:
 
 | Layer | Path | Purpose |
 |-------|------|---------|
 | Variables | `src/variables/_all.css` | Global CSS custom properties (colors, spacing, typography, theming) |
 | Normalize | `src/_normalize.css` | CSS reset / normalize |
 | Semantics | `src/semantics/` | Styles for raw HTML elements + ARIA roles (buttons, inputs, nav, dialog, typography, etc.) |
-| Variants | `src/variants/` | Class-based extensions (`.container`, button variants, table variants, etc.) |
+| Variants | `src/variants/` | Tweaks existing element styles via CSS variables only (`.secondary`, `.contrast`, etc.) |
+| Components | `src/components/` | Component-specific styles (`.card`, `.modal`, `.accordion`, etc.) |
 | Utilities | `src/utilities/` | Atomic utility classes (spacing, colors, flexbox, grid, display, positioning, typography, effects, borders, sizing) |
 
 ### Entry Points
@@ -47,8 +48,7 @@ The framework is organized into 5 layers, all in `src/`:
 npm start              # Build + Storybook
 npm test               # Playwright visual regression
 npm run build          # Build all bundles + palettes + sizes
-npm run build:css      # Build unminified bundles
-npm run build:minify   # Build minified bundles
+npm run build:css      # Build minified CSS bundles
 npm run demo:server    # Run demo server used for visual regression testing
 npm run docs:dev       # Dev server for docs
 npm run lint           # Lint all CSS

@@ -72,40 +72,68 @@ import '@semanticus/semanticus-css/sizes/pico';
 
 Check out the [Palettes & Sizes](https://semanticus.design/guide/palettes-sizes.html) guide for more options.
 
-## Usage
+## How It Works
 
-Semanticus CSS is built on three complementary layers:
+Semanticus CSS is built on four complementary layers:
 
 ### 1. Semantic Styling
 
-Beautiful default styles for plain **ARIA-centric** HTML — no classes needed. See the [Semantic Styling](https://semanticus.design/docs/semantics/) guide for more details.
+Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](https://semanticus.design/docs/semantics/) will make it look great by default.
 
 ```html
 <article>
-  <h1>Hello World</h1>
-  <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  <hgroup>
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
   <button>Click me</button>
 </article>
 ```
 
-### 2. Variants
+### 2. Components
 
-Minimal set of CSS classes that add visual variation to the **Semantic Styling**. See the [Variants](https://semanticus.design/docs/variants/) guide for more details.
+Minimal set of reusable building blocks, that extend the **Semantic Styling** - add a [component](https://semanticus.design/docs/components/) when you need a specific UI pattern.
 
 ```html
-<button class="ghost">Ghost</button>
-<button class="secondary">Secondary</button>
-<button class="contrast">Contrast</button>
+<article class="card">
+  <hgroup>
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
+  <button>Click me</button>
+</article>
 ```
 
-### 3. Utilities
+### 3. Variants
 
-Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Variants** values for a consistent design. See the [Utilities](https://semanticus.design/docs/utilities/) guide for more details.
+CSS classes that tweak **Semantic Styling** and **Components** via **CSS variables** - throw in a [variant](https://semanticus.design/docs/variants/) when you want to add or reduce visual flair.
 
 ```html
-<footer class="py-4 text-center text-bg-contrast-subtle">
-  <p class="mb-0">Star us on GitHub!</p>
-</footer>
+<article class="card secondary">
+  <hgroup>
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
+  <button class="ghost">Click me</button>
+</article>`
+```
+
+### 4. Utilities
+
+[Utility](https://semanticus.design/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
+
+```html
+<article class="card secondary text-center w-75 mx-auto">
+  <hgroup class="p-3">
+    <h1>Hello World</h1>
+    <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
+  </hgroup>
+
+  <button class="ghost">Click me</button>
+</article>
 ```
 
 ## Starter HTML template
@@ -122,7 +150,7 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@0.9.0/dist/semanticus.css">
 </head>
 <body class="vstack">
-  <header class="container sticky-top bg-body">
+  <header class="container">
     <nav>
       <h3><a href="#">Acme Corp</a></h3>
 

@@ -1,7 +1,7 @@
-import { renderElement, renderHtmlTemplate } from "@scripts/utils";
+import { renderElement } from "@scripts/utils";
 
 export function main(tagName: string = "body", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, class: ["vstack", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header class="container sticky-top bg-body">
+  return renderElement(tagName, { ...attrs, class: ["vstack", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header class="container">
   <nav>
     <h3><a href="#">Acme Corp</a></h3>
 
