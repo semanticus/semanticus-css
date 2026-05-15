@@ -1,56 +1,36 @@
-/*
-  Semanticus CSS Palette: Green
-  Overrides primary color variables for the green palette
-*/
+:root {
+  /* --color-green-950: #0b1305; */
+  /* --color-green-900: #131f07; */
+  /* --color-green-850: #152b07; */
+  /* --color-green-800: #173806; */
+  /* --color-green-750: #1a4405; */
+  /* --color-green-700: #205107; */
+  --color-green-650: #265e09;
+  /* --color-green-600: #2c6c0c; */
+  --color-green-550: #33790f;
+  --color-green-500: #398712;
+  --color-green-450: #409614;
+  --color-green-400: #47a417;
+  --color-green-350: #4eb31b;
+  /* --color-green-300: #55c21e; */
+  --color-green-250: #5dd121;
+  /* --color-green-200: #62d926; */
+  /* --color-green-150: #77ef3d; */
+  /* --color-green-100: #95fb62; */
+  /* --color-green-50: #d7fbc1; */
+  /* --color-green: var(--color-green-550); */
 
-/* Light theme - Green */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(92, 199, 142, 0.25);
-  --color-primary-rgb: 43, 122, 76;
-  --color-primary-bg: #2b7a4c;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(43, 122, 76, 0.5);
-  --color-primary-hover: #20603b;
-  --color-primary-hover-bg: #256d43;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(92, 199, 142, 0.5);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-green-400) l c h / 0.25), oklch(from var(--color-green-350) l c h / 0.1875));
 
-/* Dark theme - Green */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(110, 213, 157, 0.1875);
-    --color-primary-rgb: 110, 213, 157;
-    --color-primary-bg: #2b7a4c;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(110, 213, 157, 0.5);
-    --color-primary-hover: #93deb5;
-    --color-primary-hover-bg: #348e59;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(110, 213, 157, 0.375);
-    --color-primary-inverse: #fff;
-    --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
+  --color-primary-text: light-dark(var(--color-green-550), var(--color-green-350));
+  --color-primary-fill: light-dark(var(--color-green-500), var(--color-green-500));
+  --color-primary-underline: light-dark(oklch(from var(--color-green-550) l c h / 0.5), oklch(from var(--color-green-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-green-650), var(--color-green-250));
+  --color-primary-fill-hover: light-dark(var(--color-green-550), var(--color-green-450));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-green-400) l c h / 0.5), oklch(from var(--color-green-350) l c h / 0.375));
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(110, 213, 157, 0.1875);
-  --color-primary-rgb: 110, 213, 157;
-  --color-primary-bg: #2b7a4c;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(110, 213, 157, 0.5);
-  --color-primary-hover: #93deb5;
-  --color-primary-hover-bg: #348e59;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(110, 213, 157, 0.375);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
 }

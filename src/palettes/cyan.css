@@ -1,56 +1,36 @@
-/*
-  Semanticus CSS Palette: Cyan
-  Overrides primary color variables for the cyan palette
-*/
+:root {
+  /* --color-cyan-950: #041413; */
+  /* --color-cyan-900: #051f1f; */
+  /* --color-cyan-850: #052b2b; */
+  /* --color-cyan-800: #043737; */
+  /* --color-cyan-750: #014343; */
+  /* --color-cyan-700: #015050; */
+  --color-cyan-650: #025d5d;
+  --color-cyan-600: #046a6a;
+  --color-cyan-550: #047878;
+  --color-cyan-500: #058686;
+  /* --color-cyan-450: #059494; */
+  --color-cyan-400: #05a2a2;
+  --color-cyan-350: #0ab1b1;
+  /* --color-cyan-300: #0ac2c2; */
+  --color-cyan-250: #0ccece;
+  /* --color-cyan-200: #25dddd; */
+  /* --color-cyan-150: #3deceb; */
+  /* --color-cyan-100: #58faf9; */
+  /* --color-cyan-50: #c3fcfa; */
+  /* --color-cyan: var(--color-cyan-550); */
 
-/* Light theme - Cyan */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(92, 167, 250, 0.25);
-  --color-primary-rgb: 4, 120, 120;
-  --color-primary-bg: #047878;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(4, 120, 120, 0.5);
-  --color-primary-hover: #025d5d;
-  --color-primary-hover-bg: #046a6a;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(92, 167, 250, 0.5);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-cyan-400) l c h / 0.25), oklch(from var(--color-cyan-350) l c h / 0.1875));
 
-/* Dark theme - Cyan */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(11, 194, 194, 0.1875);
-    --color-primary-rgb: 10, 194, 194;
-    --color-primary-bg: #047878;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(11, 194, 194, 0.5);
-    --color-primary-hover: #25dddd;
-    --color-primary-hover-bg: #058686;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(11, 194, 194, 0.375);
-    --color-primary-inverse: #fff;
-    --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
+  --color-primary-text: light-dark(var(--color-cyan-550), var(--color-cyan-350));
+  --color-primary-fill: light-dark(var(--color-cyan-550), var(--color-cyan-550));
+  --color-primary-underline: light-dark(oklch(from var(--color-cyan-550) l c h / 0.5), oklch(from var(--color-cyan-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-cyan-650), var(--color-cyan-250));
+  --color-primary-fill-hover: light-dark(var(--color-cyan-600), var(--color-cyan-500));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-cyan-400) l c h / 0.5), oklch(from var(--color-cyan-350) l c h / 0.375));
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(11, 194, 194, 0.1875);
-  --color-primary-rgb: 10, 194, 194;
-  --color-primary-bg: #047878;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(11, 194, 194, 0.5);
-  --color-primary-hover: #25dddd;
-  --color-primary-hover-bg: #058686;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(11, 194, 194, 0.375);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
 }

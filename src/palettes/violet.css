@@ -1,56 +1,36 @@
-/*
-  Semanticus CSS Palette: Violet
-  Overrides primary color variables for the violet palette
-*/
+:root {
+  /* --color-violet-950: #190928; */
+  /* --color-violet-900: #251140; */
+  /* --color-violet-850: #321856; */
+  /* --color-violet-800: #3f1e6d; */
+  /* --color-violet-750: #4d2585; */
+  /* --color-violet-700: #5b2d9c; */
+  --color-violet-650: #6935b3;
+  --color-violet-600: #7540bf;
+  --color-violet-550: #8352c5;
+  /* --color-violet-500: #9062ca; */
+  /* --color-violet-450: #9b71cf; */
+  --color-violet-400: #a780d4;
+  --color-violet-350: #b290d9;
+  /* --color-violet-300: #bd9fdf; */
+  --color-violet-250: #c9afe4;
+  /* --color-violet-200: #d3bfe8; */
+  /* --color-violet-150: #decfed; */
+  /* --color-violet-100: #e8dff2; */
+  /* --color-violet-50: #f3eff7; */
+  /* --color-violet: var(--color-violet-550); */
 
-/* Light theme - Violet */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(167, 128, 212, 0.25);
-  --color-primary-rgb: 117, 64, 191;
-  --color-primary-bg: #7540bf;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(117, 64, 191, 0.5);
-  --color-primary-hover: #6935b3;
-  --color-primary-hover-bg: #6935b3;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(167, 128, 212, 0.5);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-violet-400) l c h / 0.25), oklch(from var(--color-violet-350) l c h / 0.1875));
 
-/* Dark theme - Violet */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(189, 159, 223, 0.1875);
-    --color-primary-rgb: 189, 159, 223;
-    --color-primary-bg: #7540bf;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(189, 159, 223, 0.5);
-    --color-primary-hover: #d3bfe8;
-    --color-primary-hover-bg: #8352c5;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(189, 159, 223, 0.375);
-    --color-primary-inverse: #fff;
-    --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
+  --color-primary-text: light-dark(var(--color-violet-550), var(--color-violet-350));
+  --color-primary-fill: light-dark(var(--color-violet-600), var(--color-violet-600));
+  --color-primary-underline: light-dark(oklch(from var(--color-violet-550) l c h / 0.5), oklch(from var(--color-violet-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-violet-650), var(--color-violet-250));
+  --color-primary-fill-hover: light-dark(var(--color-violet-650), var(--color-violet-550));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-violet-400) l c h / 0.5), oklch(from var(--color-violet-350) l c h / 0.375));
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(189, 159, 223, 0.1875);
-  --color-primary-rgb: 189, 159, 223;
-  --color-primary-bg: #7540bf;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(189, 159, 223, 0.5);
-  --color-primary-hover: #d3bfe8;
-  --color-primary-hover-bg: #8352c5;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(189, 159, 223, 0.375);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
 }

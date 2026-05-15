@@ -1,4 +1,4 @@
-@import '../colors/_azure.css';
+@import '../palettes/azure.css';
 @import './_breakpoints.css';
 @import './_theme.css';
 @import './_layout.css';

@@ -1,56 +1,36 @@
-/*
-  Semanticus CSS Palette: Zinc
-  Overrides primary color variables for the zinc palette
-*/
+:root {
+  /* --color-zinc-950: #0f1114; */
+  /* --color-zinc-900: #191c20; */
+  /* --color-zinc-850: #23262c; */
+  /* --color-zinc-800: #2d3138; */
+  /* --color-zinc-750: #373c44; */
+  /* --color-zinc-700: #424751; */
+  --color-zinc-650: #4d535e;
+  --color-zinc-600: #5c6370;
+  --color-zinc-550: #646b79;
+  --color-zinc-500: #6f7887;
+  /* --color-zinc-450: #7b8495; */
+  --color-zinc-400: #8891a4;
+  --color-zinc-350: #969eaf;
+  /* --color-zinc-300: #a4acba; */
+  --color-zinc-250: #b3b9c5;
+  /* --color-zinc-200: #c2c7d0; */
+  /* --color-zinc-150: #d1d5db; */
+  /* --color-zinc-100: #e0e3e7; */
+  /* --color-zinc-50: #f0f1f3; */
+  /* --color-zinc: var(--color-zinc-550); */
 
-/* Light theme - Zinc */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(127, 139, 158, 0.25);
-  --color-primary-rgb: 82, 95, 122;
-  --color-primary-bg: #525f7a;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(82, 95, 122, 0.5);
-  --color-primary-hover: #424b61;
-  --color-primary-hover-bg: #424b61;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(127, 139, 158, 0.5);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-zinc-400) l c h / 0.25), oklch(from var(--color-zinc-350) l c h / 0.1875));
 
-/* Dark theme - Zinc */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(155, 168, 189, 0.1875);
-    --color-primary-rgb: 155, 168, 189;
-    --color-primary-bg: #525f7a;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(155, 168, 189, 0.5);
-    --color-primary-hover: #bac5d4;
-    --color-primary-hover-bg: #5d6b89;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(155, 168, 189, 0.375);
-    --color-primary-inverse: #fff;
-    --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
+  --color-primary-text: light-dark(var(--color-zinc-550), var(--color-zinc-350));
+  --color-primary-fill: light-dark(var(--color-zinc-550), var(--color-zinc-550));
+  --color-primary-underline: light-dark(oklch(from var(--color-zinc-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-zinc-650), var(--color-zinc-250));
+  --color-primary-fill-hover: light-dark(var(--color-zinc-600), var(--color-zinc-500));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-zinc-400) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.375));
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(155, 168, 189, 0.1875);
-  --color-primary-rgb: 155, 168, 189;
-  --color-primary-bg: #525f7a;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(155, 168, 189, 0.5);
-  --color-primary-hover: #bac5d4;
-  --color-primary-hover-bg: #5d6b89;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(155, 168, 189, 0.375);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
 }

@@ -1,56 +1,36 @@
-/*
-  Semanticus CSS Palette: Pumpkin
-  Overrides primary color variables for the pumpkin palette
-*/
+:root {
+  /* --color-pumpkin-950: #180f04; */
+  /* --color-pumpkin-900: #271805; */
+  /* --color-pumpkin-850: #372004; */
+  /* --color-pumpkin-800: #482802; */
+  /* --color-pumpkin-750: #593100; */
+  /* --color-pumpkin-700: #693a00; */
+  --color-pumpkin-650: #7a4400;
+  /* --color-pumpkin-600: #8b4f00; */
+  --color-pumpkin-550: #9c5900;
+  /* --color-pumpkin-500: #ad6400; */
+  /* --color-pumpkin-450: #bf6e00; */
+  --color-pumpkin-400: #d27a01;
+  --color-pumpkin-350: #e48500;
+  --color-pumpkin-300: #ff9500;
+  --color-pumpkin-250: #ffa23a;
+  /* --color-pumpkin-200: #feb670; */
+  /* --color-pumpkin-150: #fcca9b; */
+  /* --color-pumpkin-100: #fcdcc1; */
+  /* --color-pumpkin-50: #fceee3; */
+  /* --color-pumpkin: var(--color-pumpkin-550); */
 
-/* Light theme - Pumpkin */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(232, 120, 62, 0.25);
-  --color-primary-rgb: 158, 56, 6;
-  --color-primary-bg: #f4a37d;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(158, 56, 6, 0.5);
-  --color-primary-hover: #7a2b05;
-  --color-primary-hover-bg: #f6b091;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(232, 120, 62, 0.5);
-  --color-primary-inverse: #000;
-  --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-pumpkin-400) l c h / 0.25), oklch(from var(--color-pumpkin-350) l c h / 0.1875));
 
-/* Dark theme - Pumpkin */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(243, 153, 111, 0.1875);
-    --color-primary-rgb: 243, 153, 111;
-    --color-primary-bg: #f4a37d;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(243, 153, 111, 0.5);
-    --color-primary-hover: #f5b7a8;
-    --color-primary-hover-bg: #f5b7a8;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(243, 153, 111, 0.375);
-    --color-primary-inverse: #000;
-    --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  }
-}
+  --color-primary-text: light-dark(var(--color-pumpkin-550), var(--color-pumpkin-350));
+  --color-primary-fill: light-dark(var(--color-pumpkin-300), var(--color-pumpkin-300));
+  --color-primary-underline: light-dark(oklch(from var(--color-pumpkin-550) l c h / 0.5), oklch(from var(--color-pumpkin-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-pumpkin-650), var(--color-pumpkin-250));
+  --color-primary-fill-hover: light-dark(var(--color-pumpkin-350), var(--color-pumpkin-250));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-pumpkin-400) l c h / 0.5), oklch(from var(--color-pumpkin-350) l c h / 0.375));
+  --color-primary-on-fill: black;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(243, 153, 111, 0.1875);
-  --color-primary-rgb: 243, 153, 111;
-  --color-primary-bg: #f4a37d;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(243, 153, 111, 0.5);
-  --color-primary-hover: #f5b7a8;
-  --color-primary-hover-bg: #f5b7a8;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(243, 153, 111, 0.375);
-  --color-primary-inverse: #000;
-  --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0 / 0.25), 0 0 0.5rem oklch(0% 0 0 / 0.25));
 }
