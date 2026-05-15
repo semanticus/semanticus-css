@@ -313,6 +313,7 @@ export default defineConfig({
         { text: "About", link: "/about/" },
         { text: "Vision", link: "/about/vision" },
         { text: "Contributing", link: "/about/contributing" },
+        { text: "Token Conventions", link: "/about/token-conventions" },
         { text: "Roadmap", link: "/about/roadmap" },
         { text: "Usecase Scenarios", link: "/about/usecase-scenarios" },
       ],

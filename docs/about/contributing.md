@@ -22,7 +22,7 @@ When contributing, please keep the [Core Principles](/about/vision.html#core-pri
 
 ### Code Style
 
-- Follow the existing CSS conventions
+- Follow the existing CSS conventions — see [Token Conventions](/about/token-conventions) for the naming rules applied to CSS custom properties
 - Use CSS custom properties (`--*`) for theming rather than hard-coded values
 - Before submitting:
   - Run the linter:

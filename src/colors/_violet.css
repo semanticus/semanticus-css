@@ -28,5 +28,5 @@
   --color-primary-fill-hover: light-dark(var(--color-violet-650), var(--color-violet-550));
   --color-primary-focus-ring: light-dark(oklch(from var(--color-violet-400) l c h / 0.5), oklch(from var(--color-violet-350) l c h / 0.375));
   --color-primary-on-fill: color-contrast(var(--color-primary-fill));
-  --switch-thumb-box-shadow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
 }
