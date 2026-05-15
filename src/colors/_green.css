@@ -1,0 +1,32 @@
+:root {
+  --color-primary-950: #0b1305;
+  --color-primary-900: #131f07;
+  --color-primary-850: #152b07;
+  --color-primary-800: #173806;
+  --color-primary-750: #1a4405;
+  --color-primary-700: #205107;
+  --color-primary-650: #265e09;
+  --color-primary-600: #2c6c0c;
+  --color-primary-550: #33790f;
+  --color-primary-500: #398712;
+  --color-primary-450: #409614;
+  --color-primary-400: #47a417;
+  --color-primary-350: #4eb31b;
+  --color-primary-300: #55c21e;
+  --color-primary-250: #5dd121;
+  --color-primary-200: #62d926;
+  --color-primary-150: #77ef3d;
+  --color-primary-100: #95fb62;
+  --color-primary-50: #d7fbc1;
+  --color-primary: var(--color-primary-550);
+
+  --text-selection-color: light-dark(oklch(from var(--color-primary-400) l c h / 0.25), oklch(from var(--color-primary-350) l c h / 0.1875));
+  --primary: light-dark(var(--color-primary-550), var(--color-primary-350));
+  --primary-background: light-dark(var(--color-primary-500), var(--color-primary-500));
+  --primary-underline: light-dark(oklch(from var(--color-primary-550) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.5));
+  --primary-hover: light-dark(var(--color-primary-650), var(--color-primary-250));
+  --primary-hover-background: light-dark(var(--color-primary-550), var(--color-primary-450));
+  --primary-focus: light-dark(oklch(from var(--color-primary-400) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.375));
+  --primary-inverse: color-contrast(var(--primary-background));
+  --switch-thumb-box-shadow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
+}

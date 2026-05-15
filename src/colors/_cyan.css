@@ -1,0 +1,32 @@
+:root {
+  --color-primary-950: #041413;
+  --color-primary-900: #051f1f;
+  --color-primary-850: #052b2b;
+  --color-primary-800: #043737;
+  --color-primary-750: #014343;
+  --color-primary-700: #015050;
+  --color-primary-650: #025d5d;
+  --color-primary-600: #046a6a;
+  --color-primary-550: #047878;
+  --color-primary-500: #058686;
+  --color-primary-450: #059494;
+  --color-primary-400: #05a2a2;
+  --color-primary-350: #0ab1b1;
+  --color-primary-300: #0ac2c2;
+  --color-primary-250: #0ccece;
+  --color-primary-200: #25dddd;
+  --color-primary-150: #3deceb;
+  --color-primary-100: #58faf9;
+  --color-primary-50: #c3fcfa;
+  --color-primary: var(--color-primary-550);
+
+  --text-selection-color: light-dark(oklch(from var(--color-primary-400) l c h / 0.25), oklch(from var(--color-primary-350) l c h / 0.1875));
+  --primary: light-dark(var(--color-primary-550), var(--color-primary-350));
+  --primary-background: light-dark(var(--color-primary-550), var(--color-primary-550));
+  --primary-underline: light-dark(oklch(from var(--color-primary-550) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.5));
+  --primary-hover: light-dark(var(--color-primary-650), var(--color-primary-250));
+  --primary-hover-background: light-dark(var(--color-primary-600), var(--color-primary-500));
+  --primary-focus: light-dark(oklch(from var(--color-primary-400) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.375));
+  --primary-inverse: color-contrast(var(--primary-background));
+  --switch-thumb-box-shadow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
+}
