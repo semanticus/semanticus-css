@@ -8,6 +8,10 @@
     --theme: dark;
     color-scheme: dark;
   }
+
+  --color-primary-border: var(--color-primary-fill);
+  --color-primary-border-hover: var(--color-primary-fill-hover);
+  --color-primary-underline-hover: var(--color-primary-text-hover);
 }
 
 [data-theme="light"] {
