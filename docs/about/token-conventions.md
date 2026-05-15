@@ -5,14 +5,14 @@
 ### 1. System tokens — palette/theme level
 
 ```
---{type}-{variant}-{role}[-{state}]
+--{type}-{variant}-{role-or-effect}[-{state}]
 ```
 
 | Segment | Description | Examples |
-|---------|-------------|---------|
+|---------|-------------|-------|
 | `type` | What kind of value | `color`, `shadow`, `filter` |
 | `variant` | Design variant | `primary`, `secondary`, `contrast` |
-| `role` | What it styles *(not the CSS property)* | `text`, `fill`, `underline`, `focus-ring`, `on-fill`, `selection` |
+| `role-or-effect` | What it styles or does *(not the CSS property)* | `text`, `fill`, `on-fill`, `underline`, `focus-ring`, `selection`, `border`, `radius`, `glow`, `shadow`, `ring`, `opacity` |
 | `state` *(optional)* | Interaction state | `hover`, `active`, `focus`, `disabled` |
 
 **Examples:**
@@ -40,7 +40,7 @@
 |---------|-------------|---------|
 | `component` | The component targeted | `switch`, `button`, `input`, `dialog`, `nav`, `progress`, `details`, `table`, `range`, `select` |
 | `part` *(optional)* | Sub-element — include whenever the effect targets a specific part, even if it's the only part with that effect | `thumb`, `track`, `trigger`, `overlay`, `header`, `row`, `cell`, `indicator` |
-| `role-or-effect` | What it does or means *(not the CSS property)* | `fill`, `border`, `radius`, `glow`, `shadow`, `ring`, `gap`, `size`, `opacity` |
+| `role-or-effect` | What it styles or does *(not the CSS property)* | `text`, `fill`, `on-fill`, `underline`, `focus-ring`, `border`, `radius`, `glow`, `shadow`, `ring`, `gap`, `size`, `opacity` |
 | `state` *(optional)* | Interaction or ARIA state | `hover`, `active`, `focus`, `checked`, `disabled`, `invalid`, `valid`, `open`, `expanded` |
 
 **`component` — targeting a specific element or widget:**

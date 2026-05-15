@@ -58,6 +58,7 @@ npm run test:update-snapshots    # Update visual regression snapshots
 
 ## Conventions
 
+- **Token Naming**: CSS custom properties follow a strict naming convention — see [`docs/about/token-conventions.md`](docs/about/token-conventions.md) before adding or renaming any `--*` variable.
 - **CSS Custom Properties**: All theming uses `--*` variables. Light/dark modes via `data-theme` attribute and `prefers-color-scheme`.
 - **Semantic Selectors**: Target raw elements (`button`, `input`, `nav`) and ARIA roles (`[role=button]`, `[role=tooltip]`).
 - **Utility Classes**: Bootstrap-style naming, always use `!important`.
