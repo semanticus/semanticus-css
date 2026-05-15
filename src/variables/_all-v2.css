@@ -82,11 +82,21 @@
   --color-contrast-underline-hover: var(--color-contrast-text-hover);
   --color-contrast-underline: light-dark(oklch(from var(--color-slate-900) l c h / 0.5), oklch(from var(--color-slate-100) l c h / 0.5));
 
+  /* Muted colors */
+  --color-muted-border-hover: light-dark(var(--color-slate-100), var(--color-slate-800));
+  --color-muted-border: light-dark(color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)), var(--color-slate-850));
+  --color-muted-fill-hover: light-dark(var(--color-slate-50), var(--color-slate-800));
+  --color-muted-fill: light-dark(color-mix(in srgb, var(--color-slate-50) 50%, white), var(--color-slate-850));
+  --color-muted-focus-ring: light-dark(oklch(from var(--color-zinc-500) l c h / 0.25), oklch(from var(--color-zinc-450) l c h / 0.25));
+  --color-muted-on-fill: color-contrast(var(--color-muted-fill));
+  --color-muted-text-hover: light-dark(var(--color-zinc-650), var(--color-zinc-350));
+  --color-muted-text: light-dark(var(--color-zinc-550), var(--color-zinc-450));
+  --color-muted-underline-hover: var(--color-muted-text-hover);
+  --color-muted-underline: light-dark(oklch(from var(--color-zinc-550) l c h / 0.5), oklch(from var(--color-zinc-450) l c h / 0.5));
+
   /* === Global system tokens === */
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
-  --color-muted-text: light-dark(var(--color-zinc-550), var(--color-zinc-450));
-  --color-muted-border: light-dark(color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)), var(--color-slate-850));
 
   /* Shadow — each layer's color switches via light-dark() */
   --shadow:
