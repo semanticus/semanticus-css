@@ -1,0 +1,65 @@
+@import '../colors/_azure.css';
+
+:root {
+  --theme: light;
+  color-scheme: light;
+
+  @media (prefers-color-scheme: dark) {
+    --theme: dark;
+    color-scheme: dark;
+  }
+
+  --color-slate-900: #181c25;
+  --color-slate-650: #48536b;
+  --color-slate-600: #525f7a;
+  --color-slate-550: #5d6b89;
+  --color-slate-350: #909ebe;
+  --color-slate-100: #dfe3eb;
+  --color-slate-50: #eff1f4;
+
+  --color-zinc-350: #969eaf;
+  --color-zinc-250: #b3b9c5;
+
+  --color-primary-border-hover: var(--color-primary-fill-hover);
+  --color-primary-border: var(--color-primary-fill);
+  --color-primary-on-fill: color-contrast(var(--color-primary-fill));
+  --color-primary-underline-hover: var(--color-primary-text-hover);
+
+  --color-secondary-border-hover: var(--color-secondary-fill-hover);
+  --color-secondary-border: var(--color-secondary-fill);
+  --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
+  --color-secondary-fill: light-dark(var(--color-slate-600), var(--color-slate-600));
+  --color-secondary-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-350) l c h / 0.25));
+  --color-secondary-on-fill: color-contrast(var(--color-secondary-fill));
+  --color-secondary-text-hover: light-dark(var(--color-slate-650), var(--color-zinc-250));
+  --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
+  --color-secondary-underline-hover: var(--color-secondary-text-hover);
+  --color-secondary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));
+
+  --color-contrast-border-hover: var(--color-contrast-fill-hover);
+  --color-contrast-border: var(--color-contrast-fill);
+  --color-contrast-fill-hover: light-dark(black, white);
+  --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
+  --color-contrast-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-150) l c h / 0.25));
+  --color-contrast-on-fill: color-contrast(var(--color-contrast-fill));
+  --color-contrast-text-hover: light-dark(black, white);
+  --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
+  --color-contrast-underline-hover: var(--color-contrast-text-hover);
+  --color-contrast-underline: light-dark(oklch(from var(--color-slate-900) l c h / 0.5), oklch(from var(--color-slate-100) l c h / 0.5));
+}
+
+[data-theme="light"] {
+  --theme: light;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --theme: dark;
+  color-scheme: dark;
+}
+
+body {
+  @container style(--theme: dark) {
+    /* dark theme overrides */
+  }
+}
