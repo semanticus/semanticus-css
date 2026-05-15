@@ -13,36 +13,36 @@
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.ghost {
     --color-background: transparent;
-    --border-color: rgb(var(--color-primary-rgb));
-    --color-text: rgb(var(--color-primary-rgb));
+    --border-color: var(--color-primary-text);
+    --color-text: var(--color-primary-text);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: var(--color-primary-hover-bg);
-      --border-color: var(--color-primary-hover-border);
-      --color-text: var(--color-primary-inverse);
+      --color-background: var(--color-primary-fill-hover);
+      --border-color: var(--color-primary-border-hover);
+      --color-text: var(--color-primary-on-fill);
     }
 
     &.secondary {
       --color-background: transparent;
-      --border-color: rgb(var(--color-secondary-rgb));
-      --color-text: rgb(var(--color-secondary-rgb));
+      --border-color: var(--color-secondary-text);
+      --color-text: var(--color-secondary-text);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-secondary-hover-bg);
-        --border-color: var(--color-secondary-hover-border);
-        --color-text: var(--color-secondary-inverse);
+        --color-background: var(--color-secondary-fill-hover);
+        --border-color: var(--color-secondary-border-hover);
+        --color-text: var(--color-secondary-on-fill);
       }
     }
 
     &.contrast {
       --color-background: transparent;
-      --border-color: rgb(var(--color-contrast-rgb));
-      --color-text: rgb(var(--color-contrast-rgb));
+      --border-color: var(--color-contrast-text);
+      --color-text: var(--color-contrast-text);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-contrast-hover-bg);
-        --border-color: var(--color-contrast-hover-border);
-        --color-text: var(--color-contrast-inverse);
+        --color-background: var(--color-contrast-fill-hover);
+        --border-color: var(--color-contrast-border-hover);
+        --color-text: var(--color-contrast-on-fill);
       }
     }
   }
@@ -51,13 +51,13 @@
 /* Reset buttons */
 [type="reset"].ghost {
   --color-background: transparent;
-  --border-color: rgb(var(--color-secondary-rgb));
-  --color-text: rgb(var(--color-secondary-rgb));
+  --border-color: var(--color-secondary-text);
+  --color-text: var(--color-secondary-text);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --color-background: var(--color-secondary-hover-bg);
-    --border-color: var(--color-secondary-hover-border);
-    --color-text: var(--color-secondary-inverse);
+    --color-background: var(--color-secondary-fill-hover);
+    --border-color: var(--color-secondary-border-hover);
+    --color-text: var(--color-secondary-on-fill);
   }
 }
 

@@ -7,31 +7,31 @@
 :where(a:not([role="button"])),
 [role="link"] {
   &.contrast {
-    --color-text: rgb(var(--color-contrast-rgb));
+    --color-text: var(--color-contrast-text);
     --underline: var(--color-contrast-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-text: var(--color-contrast-hover);
-      --underline: var(--color-contrast-hover-underline);
+      --color-text: var(--color-contrast-text-hover);
+      --underline: var(--color-contrast-underline-hover);
     }
   }
 }
 
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.contrast {
-    --color-background: var(--color-contrast-bg);
+    --color-background: var(--color-contrast-fill);
     --border-color: var(--color-contrast-border);
-    --color-text: var(--color-contrast-inverse);
+    --color-text: var(--color-contrast-on-fill);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: var(--color-contrast-hover-bg);
-      --border-color: var(--color-contrast-hover-border);
-      --color-text: var(--color-contrast-inverse);
+      --color-background: var(--color-contrast-fill-hover);
+      --border-color: var(--color-contrast-border-hover);
+      --color-text: var(--color-contrast-on-fill);
     }
 
     &:focus,
     &:is([aria-current]:not([aria-current="false"])):focus {
-      --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-contrast-focus);
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-contrast-focus-ring);
     }
   }
 }
@@ -49,13 +49,12 @@
 }
 
 :is(.card, .pane, .panel).contrast {
-  --color-text: rgb(var(--color-contrast-emphasis-rgb)) !important;
-  --color-heading-base: color-mix(in srgb, var(--color-text), black 18%);
-  --pane-bg: var(--color-contrast-bg-subtle);
-  --pane-section-bg: rgba(var(--color-contrast-rgb), 0.6);
-  --pane-section-border: var(--color-contrast-border-subtle);
+  --color-text: var(--color-contrast-text) !important;
+  --card-fill: var(--color-muted-fill);
+  --card-section-fill: oklch(from var(--color-contrast-fill) l c h / 0.6);
+  --card-border: var(--color-muted-border);
 }
 
 :is(.panel).contrast {
-  --pane-border: var(--color-contrast-border);
+  --card-border: var(--color-contrast-border);
 }
