@@ -20,13 +20,13 @@
   /* --color-slate-50: #eff1f4; */
   /* --color-slate: var(--color-slate-550); */
 
-  --text-selection-color: light-dark(oklch(from var(--color-slate-400) l c h / 0.25), oklch(from var(--color-slate-350) l c h / 0.1875));
-  --primary: light-dark(var(--color-slate-550), var(--color-slate-350));
-  --primary-background: light-dark(var(--color-slate-600), var(--color-slate-600));
-  --primary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-slate-350) l c h / 0.5));
-  --primary-hover: light-dark(var(--color-slate-650), var(--color-slate-250));
-  --primary-hover-background: light-dark(var(--color-slate-650), var(--color-slate-550));
-  --primary-focus: light-dark(oklch(from var(--color-slate-400) l c h / 0.5), oklch(from var(--color-slate-350) l c h / 0.375));
-  --primary-inverse: color-contrast(var(--primary-background));
+  --color-selection: light-dark(oklch(from var(--color-slate-400) l c h / 0.25), oklch(from var(--color-slate-350) l c h / 0.1875));
+  --color-primary-text: light-dark(var(--color-slate-550), var(--color-slate-350));
+  --color-primary-fill: light-dark(var(--color-slate-600), var(--color-slate-600));
+  --color-primary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-slate-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-slate-650), var(--color-slate-250));
+  --color-primary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-slate-400) l c h / 0.5), oklch(from var(--color-slate-350) l c h / 0.375));
+  --color-primary-on-fill: color-contrast(var(--color-primary-fill));
   --switch-thumb-box-shadow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
 }

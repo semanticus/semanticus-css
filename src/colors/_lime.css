@@ -20,13 +20,13 @@
   /* --color-lime-50: #defc85; */
   /* --color-lime: var(--color-lime-550); */
 
-  --text-selection-color: light-dark(oklch(from var(--color-lime-400) l c h / 0.25), oklch(from var(--color-lime-350) l c h / 0.1875));
-  --primary: light-dark(var(--color-lime-550), var(--color-lime-350));
-  --primary-background: light-dark(var(--color-lime-200), var(--color-lime-200));
-  --primary-underline: light-dark(oklch(from var(--color-lime-550) l c h / 0.5), oklch(from var(--color-lime-350) l c h / 0.5));
-  --primary-hover: light-dark(var(--color-lime-650), var(--color-lime-250));
-  --primary-hover-background: light-dark(var(--color-lime-250), var(--color-lime-150));
-  --primary-focus: light-dark(oklch(from var(--color-lime-400) l c h / 0.5), oklch(from var(--color-lime-350) l c h / 0.375));
-  --primary-inverse: color-contrast(var(--primary-background));
+  --color-selection: light-dark(oklch(from var(--color-lime-400) l c h / 0.25), oklch(from var(--color-lime-350) l c h / 0.1875));
+  --color-primary-text: light-dark(var(--color-lime-550), var(--color-lime-350));
+  --color-primary-fill: light-dark(var(--color-lime-200), var(--color-lime-200));
+  --color-primary-underline: light-dark(oklch(from var(--color-lime-550) l c h / 0.5), oklch(from var(--color-lime-350) l c h / 0.5));
+  --color-primary-text-hover: light-dark(var(--color-lime-650), var(--color-lime-250));
+  --color-primary-fill-hover: light-dark(var(--color-lime-250), var(--color-lime-150));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-lime-400) l c h / 0.5), oklch(from var(--color-lime-350) l c h / 0.375));
+  --color-primary-on-fill: color-contrast(var(--color-primary-fill));
   --switch-thumb-box-shadow: light-dark(0 0 0.5rem oklch(0% 0 0 / 0.25), 0 0 0.5rem oklch(0% 0 0 / 0.25));
 }
