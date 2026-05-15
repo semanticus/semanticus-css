@@ -1,32 +1,32 @@
 :root {
-  --color-primary-950: #141103;
-  --color-primary-900: #1f1c02;
-  --color-primary-850: #2b2600;
-  --color-primary-800: #363100;
-  --color-primary-750: #423c00;
-  --color-primary-700: #4e4700;
-  --color-primary-650: #5b5300;
-  --color-primary-600: #685f00;
-  --color-primary-550: #756b00;
-  --color-primary-500: #827800;
-  --color-primary-450: #908501;
-  --color-primary-400: #9e9200;
-  --color-primary-350: #ad9f00;
-  --color-primary-300: #bbac00;
-  --color-primary-250: #caba01;
-  --color-primary-200: #d9c800;
-  --color-primary-150: #e8d600;
-  --color-primary-100: #f2df0d;
-  --color-primary-50: #fdf1b4;
-  --color-primary: var(--color-primary-550);
+  /* --color-yellow-950: #141103; */
+  /* --color-yellow-900: #1f1c02; */
+  /* --color-yellow-850: #2b2600; */
+  /* --color-yellow-800: #363100; */
+  /* --color-yellow-750: #423c00; */
+  /* --color-yellow-700: #4e4700; */
+  --color-yellow-650: #5b5300;
+  /* --color-yellow-600: #685f00; */
+  --color-yellow-550: #756b00;
+  /* --color-yellow-500: #827800; */
+  /* --color-yellow-450: #908501; */
+  --color-yellow-400: #9e9200;
+  --color-yellow-350: #ad9f00;
+  /* --color-yellow-300: #bbac00; */
+  --color-yellow-250: #caba01;
+  /* --color-yellow-200: #d9c800; */
+  --color-yellow-150: #e8d600;
+  --color-yellow-100: #f2df0d;
+  --color-yellow-50: #fdf1b4;
+  /* --color-yellow: var(--color-yellow-550); */
 
-  --text-selection-color: light-dark(oklch(from var(--color-primary-400) l c h / 0.25), oklch(from var(--color-primary-350) l c h / 0.1875));
-  --primary: light-dark(var(--color-primary-550), var(--color-primary-350));
-  --primary-background: light-dark(var(--color-primary-100), var(--color-primary-100));
-  --primary-underline: light-dark(oklch(from var(--color-primary-550) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.5));
-  --primary-hover: light-dark(var(--color-primary-650), var(--color-primary-250));
-  --primary-hover-background: light-dark(var(--color-primary-150), color-mix(in oklch, var(--color-primary-100), var(--color-primary-50)));
-  --primary-focus: light-dark(oklch(from var(--color-primary-400) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.375));
+  --text-selection-color: light-dark(oklch(from var(--color-yellow-400) l c h / 0.25), oklch(from var(--color-yellow-350) l c h / 0.1875));
+  --primary: light-dark(var(--color-yellow-550), var(--color-yellow-350));
+  --primary-background: light-dark(var(--color-yellow-100), var(--color-yellow-100));
+  --primary-underline: light-dark(oklch(from var(--color-yellow-550) l c h / 0.5), oklch(from var(--color-yellow-350) l c h / 0.5));
+  --primary-hover: light-dark(var(--color-yellow-650), var(--color-yellow-250));
+  --primary-hover-background: light-dark(var(--color-yellow-150), color-mix(in oklch, var(--color-yellow-100), var(--color-yellow-50)));
+  --primary-focus: light-dark(oklch(from var(--color-yellow-400) l c h / 0.5), oklch(from var(--color-yellow-350) l c h / 0.375));
   --primary-inverse: color-contrast(var(--primary-background));
   --switch-thumb-box-shadow: light-dark(0 0 0.5rem oklch(0% 0 0 / 0.25), 0 0 0.5rem oklch(0% 0 0 / 0.25));
 }

@@ -1,32 +1,32 @@
 :root {
-  --color-primary-950: #04121d;
-  --color-primary-900: #061e2f;
-  --color-primary-850: #052940;
-  --color-primary-800: #033452;
-  --color-primary-750: #014063;
-  --color-primary-700: #014c75;
-  --color-primary-650: #015887;
-  --color-primary-600: #02659a;
-  --color-primary-550: #0172ad;
-  --color-primary-500: #017fc0;
-  --color-primary-450: #018cd4;
-  --color-primary-400: #029ae8;
-  --color-primary-350: #01aaff;
-  --color-primary-300: #51b4ff;
-  --color-primary-250: #79c0ff;
-  --color-primary-200: #9bccfd;
-  --color-primary-150: #b7d9fc;
-  --color-primary-100: #d1e5fb;
-  --color-primary-50: #e9f2fc;
-  --color-primary: var(--color-primary-550);
+  /* --color-azure-950: #04121d; */
+  /* --color-azure-900: #061e2f; */
+  /* --color-azure-850: #052940; */
+  /* --color-azure-800: #033452; */
+  /* --color-azure-750: #014063; */
+  /* --color-azure-700: #014c75; */
+  --color-azure-650: #015887;
+  --color-azure-600: #02659a;
+  --color-azure-550: #0172ad;
+  --color-azure-500: #017fc0;
+  /* --color-azure-450: #018cd4; */
+  --color-azure-400: #029ae8;
+  --color-azure-350: #01aaff;
+  /* --color-azure-300: #51b4ff; */
+  --color-azure-250: #79c0ff;
+  /* --color-azure-200: #9bccfd; */
+  /* --color-azure-150: #b7d9fc; */
+  /* --color-azure-100: #d1e5fb; */
+  /* --color-azure-50: #e9f2fc; */
+  /* --color-azure: var(--color-azure-550); */
 
-  --text-selection-color: light-dark(oklch(from var(--color-primary-400) l c h / 0.25), oklch(from var(--color-primary-350) l c h / 0.1875));
-  --primary: light-dark(var(--color-primary-550), var(--color-primary-350));
-  --primary-background: light-dark(var(--color-primary-550), var(--color-primary-550));
-  --primary-underline: light-dark(oklch(from var(--color-primary-550) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.5));
-  --primary-hover: light-dark(var(--color-primary-650), var(--color-primary-250));
-  --primary-hover-background: light-dark(var(--color-primary-600), var(--color-primary-500));
-  --primary-focus: light-dark(oklch(from var(--color-primary-400) l c h / 0.5), oklch(from var(--color-primary-350) l c h / 0.375));
+  --text-selection-color: light-dark(oklch(from var(--color-azure-400) l c h / 0.25), oklch(from var(--color-azure-350) l c h / 0.1875));
+  --primary: light-dark(var(--color-azure-550), var(--color-azure-350));
+  --primary-background: light-dark(var(--color-azure-550), var(--color-azure-550));
+  --primary-underline: light-dark(oklch(from var(--color-azure-550) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.5));
+  --primary-hover: light-dark(var(--color-azure-650), var(--color-azure-250));
+  --primary-hover-background: light-dark(var(--color-azure-600), var(--color-azure-500));
+  --primary-focus: light-dark(oklch(from var(--color-azure-400) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.375));
   --primary-inverse: color-contrast(var(--primary-background));
   --switch-thumb-box-shadow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0.5rem oklch(0% 0 0 / 0.25));
 }
