@@ -17,8 +17,8 @@ dialog {
   overflow: auto;
   padding: var(--spacing);
   border-radius: var(--border-radius);
-  background: var(--pane-bg);
-  box-shadow: var(--pane-shadow);
+  background: var(--card-fill);
+  box-shadow: var(--card-shadow);
   border: 0;
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
@@ -41,8 +41,8 @@ dialog {
 
   /* Backdrop overlay */
   &::backdrop {
-    backdrop-filter: var(--backdrop-overlay-filter);
-    background-color: var(--backdrop-overlay-bg);
+    backdrop-filter: blur(0.375rem);
+    background-color: var(--dialog-overlay);
     transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
   }
 
@@ -51,13 +51,13 @@ dialog {
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--pane-section-bg);
+    background-color: var(--card-section-fill);
   }
 
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-width) solid var(--pane-section-border);
+    border-bottom: var(--border-width) solid var(--card-border);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
   }
@@ -65,7 +65,7 @@ dialog {
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-width) solid var(--pane-section-border);
+    border-top: var(--border-width) solid var(--card-border);
     border-bottom-right-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     display: flex;

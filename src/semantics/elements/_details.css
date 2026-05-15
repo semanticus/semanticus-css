@@ -9,7 +9,7 @@ details {
     transition: color var(--transition);
 
     &:not([role]) {
-      color: var(--accordion-closed-summary);
+      color: var(--details-summary-text);
     }
 
     &::-webkit-details-marker {
@@ -43,14 +43,14 @@ details {
       outline: none;
 
       &:not([role]) {
-        color: var(--accordion-active-summary);
+        color: var(--details-summary-text-hover);
       }
     }
 
     &:focus-visible:not([role]) {
-      outline: var(--outline-width) solid var(--color-primary-focus);
+      outline: var(--outline-width) solid var(--color-primary-focus-ring);
       outline-offset: calc(var(--spacing, 1rem) * 0.5);
-      color: rgb(var(--color-primary-rgb));
+      color: var(--color-primary-text);
     }
 
     &[role=button] {
@@ -58,7 +58,7 @@ details {
       text-align: left;
 
       &:focus-visible {
-        outline: var(--outline-width) solid var(--color-primary-focus);
+        outline: var(--outline-width) solid var(--color-primary-focus-ring);
         outline-offset: calc(var(--spacing, 1rem) * 0.5);
       }
 
@@ -73,7 +73,7 @@ details {
     margin-bottom: var(--spacing);
 
     &:not([role]):not(:focus) {
-      color: var(--accordion-open-summary);
+        color: var(--details-summary-text-open);
     }
 
     &::after {
@@ -124,10 +124,10 @@ details:has(> summary[aria-haspopup="menu"]) {
     align-items: center;
     height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
     padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
-    border: var(--border-width) solid var(--form-border-color);
+    border: var(--border-width) solid var(--input-border);
     border-radius: var(--border-radius);
-    background-color: var(--form-bg);
-    color: var(--form-placeholder-color);
+    background-color: var(--input-fill);
+    color: var(--input-placeholder-text);
     line-height: inherit;
     cursor: pointer;
     user-select: none;
@@ -135,12 +135,12 @@ details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & > :where(summary:not([role]):active, summary:not([role]):focus) {
-    border-color: var(--form-active-border);
-    background-color: var(--form-active-bg);
+    border-color: var(--input-border-focus);
+    background-color: var(--input-fill-active);
   }
 
   & > :where(summary:not([role]):focus) {
-    box-shadow: 0 0 0 var(--outline-width) var(--form-focus);
+    box-shadow: 0 0 0 var(--outline-width) var(--input-border-focus);
   }
 
   & > :where(summary:not([role]):focus-visible) {
@@ -148,15 +148,13 @@ details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & > :where(summary:not([role])[aria-invalid=false]) {
-    --form-border-color: var(--form-valid-border);
-    --form-active-border: var(--form-valid-focus);
-    --form-focus: var(--form-valid-focus);
+    --input-border: var(--input-border-valid);
+    --input-border-focus: var(--input-border-valid);
   }
 
   & > :where(summary:not([role])[aria-invalid=true]) {
-    --form-border-color: var(--form-invalid-border);
-    --form-active-border: var(--form-invalid-focus);
-    --form-focus: var(--form-invalid-focus);
+    --input-border: var(--input-border-invalid);
+    --input-border-focus: var(--input-border-invalid);
   }
 
   & > :where(summary + ul[role="menu"]) {
@@ -172,7 +170,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     padding: 0;
     border: var(--border-width) solid var(--menu-border);
     border-radius: var(--border-radius);
-    background-color: var(--menu-bg);
+    background-color: var(--menu-fill);
     box-shadow: var(--menu-shadow);
     color: var(--menu-text);
     white-space: nowrap;
@@ -214,7 +212,7 @@ details:has(> summary[aria-haspopup="menu"]) {
       &:active,
       &:focus-visible,
       &[aria-current]:not([aria-current=false]) {
-        background-color: var(--menu-hover-bg);
+        background-color: var(--menu-fill-hover);
       }
     }
 
@@ -223,7 +221,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     &:has(label):hover {
-      background-color: var(--menu-hover-bg);
+      background-color: var(--menu-fill-hover);
     }
   }
 
@@ -270,7 +268,7 @@ nav details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & > :where(summary:not([role]):focus-visible) {
-    box-shadow: 0 0 0 var(--outline-width) var(--color-primary-focus);
+    box-shadow: 0 0 0 var(--outline-width) var(--color-primary-focus-ring);
   }
 
   & summary:focus-visible {

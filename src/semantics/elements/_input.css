@@ -115,15 +115,15 @@ textarea {
 input,
 select,
 textarea {
-  --color-background: var(--form-bg);
-  --border-color: var(--form-border-color);
-  --color-text: var(--form-text-color);
-  --shadow-lg: none;
+  --color-background: var(--input-fill);
+  --border-color: var(--input-border);
+  --color-text: var(--input-text);
+  --shadow: none;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
   background-color: var(--color-background);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
   color: var(--color-text);
   font-weight: var(--font-weight);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
@@ -136,12 +136,12 @@ input:not([type=submit],
 [type=radio],
 [readonly]):is(:active, :focus),
 :where(select, textarea):not([readonly]):is(:active, :focus) {
-  --color-background: var(--form-active-bg);
+  --color-background: var(--input-fill-active);
 }
 
 input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
 :where(select, textarea):not([readonly]):is(:active, :focus) {
-  --border-color: var(--form-active-border);
+  --border-color: var(--input-border-focus);
 }
 
 input:not([type=submit],
@@ -151,7 +151,7 @@ input:not([type=submit],
 [type=file],
 [readonly]):focus,
 :where(select, textarea):not([readonly]):focus {
-  --shadow-lg: 0 0 0 var(--outline-width) var(--form-focus);
+  --shadow: 0 0 0 var(--outline-width) var(--input-border-focus);
 }
 
 input:not([type=submit], [type=button], [type=reset])[disabled],
@@ -159,7 +159,7 @@ select[disabled],
 textarea[disabled],
 label[aria-disabled=true],
 :where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
-  opacity: var(--form-disabled-opacity);
+  opacity: var(--input-opacity-disabled);
   pointer-events: none;
 }
 
@@ -205,23 +205,23 @@ label[aria-disabled=true] input[disabled] {
 }
 
 :is(input, select, textarea)[aria-invalid=false] {
-  --border-color: var(--form-valid-border);
+  --border-color: var(--input-border-valid);
 }
 :is(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
-  --border-color: var(--form-valid-active-border);
+  --border-color: var(--input-border-valid-active);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=false]:is(:active, :focus), select[aria-invalid=false]:is(:active, :focus), textarea[aria-invalid=false]:is(:active, :focus) {
-  --shadow-lg: 0 0 0 var(--outline-width) var(--form-valid-focus);
+  --shadow: 0 0 0 var(--outline-width) var(--input-border-valid);
 }
 
 :is(input, select, textarea)[aria-invalid=true] {
-  --border-color: var(--form-invalid-border);
+  --border-color: var(--input-border-invalid);
 }
 :is(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
-  --border-color: var(--form-invalid-active-border);
+  --border-color: var(--input-border-invalid-active);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=true]:is(:active, :focus), select[aria-invalid=true]:is(:active, :focus), textarea[aria-invalid=true]:is(:active, :focus) {
-  --shadow-lg: 0 0 0 var(--outline-width) var(--form-invalid-focus);
+  --shadow: 0 0 0 var(--outline-width) var(--input-border-invalid);
 }
 
 :where([dir=rtl] :is(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false])) {
@@ -233,7 +233,7 @@ input::-webkit-input-placeholder,
 textarea::placeholder,
 textarea::-webkit-input-placeholder,
 select:invalid {
-  color: var(--form-placeholder-color);
+  color: var(--input-placeholder-text);
   opacity: 1;
 }
 
@@ -261,8 +261,8 @@ select {
   }
 
   &[multiple] option:checked {
-    background: var(--form-selected-bg);
-    color: var(--form-text-color);
+    background: var(--input-fill-selected);
+    color: var(--input-text);
   }
 }
 
@@ -286,15 +286,15 @@ textarea {
   width: 100%;
   margin-top: calc(var(--spacing) * -0.75);
   margin-bottom: var(--spacing);
-  color: var(--color-text-muted);
+  color: var(--color-muted-text);
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=false] + small {
-  color: rgb(var(--color-success-rgb));
+  color: var(--ins-text);
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=true] + small {
-  color: rgb(var(--color-danger-rgb));
+  color: var(--del-text);
 }
 
 label > :where(input, select, textarea) {

@@ -2,8 +2,8 @@
 [role=link] {
   --color-background: transparent;
   --border-color: transparent;
-  --color-text: rgb(var(--color-primary-rgb));
-  --shadow-lg: transparent;
+  --color-text: var(--color-primary-text);
+  --shadow: transparent;
   --underline: var(--color-primary-underline);
   outline: none;
   padding: 0;
@@ -17,18 +17,18 @@
   &:is(:hover, :active, :focus) {
     --color-background: transparent;
     --border-color: transparent;
-    --color-text: rgb(var(--color-primary-rgb));
-    --shadow-lg: transparent;
+    --color-text: var(--color-primary-text);
+    --shadow: transparent;
   }
 
   &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-    --color-text: var(--color-primary-hover);
-    --underline: var(--color-primary-hover-underline);
+    --color-text: var(--color-primary-text-hover);
+    --underline: var(--color-primary-underline-hover);
     --text-decoration: underline;
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 var(--outline-width) var(--color-primary-focus);
+    box-shadow: 0 0 0 var(--outline-width) var(--color-primary-focus-ring);
   }
 }
 

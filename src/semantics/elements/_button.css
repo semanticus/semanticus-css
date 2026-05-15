@@ -18,16 +18,16 @@ button,
 [type=button],
 [type=file]::file-selector-button,
 [role=button] {
-  --color-background: var(--color-primary-bg);
+  --color-background: var(--color-primary-fill);
   --border-color: var(--color-primary-border);
-  --color-text: var(--color-primary-inverse);
-  --shadow-lg: var(--button-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --color-text: var(--color-primary-on-fill);
+  --shadow: var(--button-shadow, 0 0 0 rgba(0, 0, 0, 0));
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
   background-color: var(--color-background);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
   color: var(--color-text);
   font-weight: var(--font-weight);
   font-size: 1rem;
@@ -49,10 +49,10 @@ button:is([aria-current]:not([aria-current=false])), button:is(:hover, :active, 
 [type=file]::file-selector-button:is(:hover, :active, :focus),
 [role=button]:is([aria-current]:not([aria-current=false])),
 [role=button]:is(:hover, :active, :focus) {
-  --color-background: var(--color-primary-hover-bg);
-  --border-color: var(--color-primary-hover-border);
-  --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0));
-  --color-text: var(--color-primary-inverse);
+  --color-background: var(--color-primary-fill-hover);
+  --border-color: var(--color-primary-border-hover);
+  --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0));
+  --color-text: var(--color-primary-on-fill);
 }
 
 button:focus, button:is([aria-current]:not([aria-current=false])):focus,
@@ -65,7 +65,7 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 [type=file]::file-selector-button:focus,
 [role=button]:focus,
 [role=button]:is([aria-current]:not([aria-current=false])):focus {
-  --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-primary-focus);
+  --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-primary-focus-ring);
 }
 
 [type=submit],
@@ -77,25 +77,25 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 [type=reset],
 [type=file]::file-selector-button,
 [aria-label="Close"] {
-  --color-background: var(--color-secondary-bg);
+  --color-background: var(--color-secondary-fill);
   --border-color: var(--color-secondary-border);
-  --color-text: var(--color-secondary-inverse);
+  --color-text: var(--color-secondary-on-fill);
   cursor: pointer;
 }
 
 [type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
 [type=file]::file-selector-button:is(:hover, :active, :focus),
 [aria-label="Close"]:is(:hover, :active, :focus) {
-  --color-background: var(--color-secondary-hover-bg);
-  --border-color: var(--color-secondary-hover-border);
-  --color-text: var(--color-secondary-inverse);
+  --color-background: var(--color-secondary-fill-hover);
+  --border-color: var(--color-secondary-border-hover);
+  --color-text: var(--color-secondary-on-fill);
 }
 
 [type=reset]:focus,
 [aria-label="Close"]:focus,
 [type=reset]:is([aria-current]:not([aria-current=false])):focus,
 [type=file]::file-selector-button:focus {
-  --shadow-lg: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-secondary-focus);
+  --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-secondary-focus-ring);
 }
 
 :is(button, [type=submit], [type=reset], [type=button], [role=button])[disabled],

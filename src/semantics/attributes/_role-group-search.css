@@ -110,7 +110,7 @@
                 --button-shadow: 0 0 0 var(--border-width)
                     var(--color-primary-border);
                 --button-shadow-hover: 0 0 0 var(--border-width)
-                    var(--color-primary-hover-border);
+                    var(--color-primary-border-hover);
             }
         }
 

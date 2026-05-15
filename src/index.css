@@ -12,7 +12,7 @@
  */
 
 /* Global variables */
-@import './variables/_all.css';
+@import './variables/_all-v2.css';
 
 /* Normalize */
 @import './_normalize.css';
