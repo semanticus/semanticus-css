@@ -53,7 +53,6 @@
   /* Primary color aliases */
   --color-primary-border-hover: var(--color-primary-fill-hover);
   --color-primary-border: var(--color-primary-fill);
-  --color-primary-on-fill: color-contrast(var(--color-primary-fill));
   --color-primary-underline-hover: var(--color-primary-text-hover);
 
   /* Secondary colors */
@@ -62,7 +61,7 @@
   --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
   --color-secondary-fill: light-dark(var(--color-slate-600), var(--color-slate-600));
   --color-secondary-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-350) l c h / 0.25));
-  --color-secondary-on-fill: color-contrast(var(--color-secondary-fill));
+  --color-secondary-on-fill: white;
   --color-secondary-text-hover: light-dark(var(--color-slate-650), var(--color-zinc-250));
   --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
   --color-secondary-underline-hover: var(--color-secondary-text-hover);
@@ -74,7 +73,7 @@
   --color-contrast-fill-hover: light-dark(black, white);
   --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
   --color-contrast-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-150) l c h / 0.25));
-  --color-contrast-on-fill: color-contrast(var(--color-contrast-fill));
+  --color-contrast-on-fill: light-dark(white, black);
   --color-contrast-text-hover: light-dark(black, white);
   --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
   --color-contrast-underline-hover: var(--color-contrast-text-hover);
@@ -86,7 +85,7 @@
   --color-muted-fill-hover: light-dark(var(--color-slate-50), var(--color-slate-800));
   --color-muted-fill: light-dark(color-mix(in srgb, var(--color-slate-50) 50%, white), var(--color-slate-850));
   --color-muted-focus-ring: light-dark(oklch(from var(--color-zinc-500) l c h / 0.25), oklch(from var(--color-zinc-450) l c h / 0.25));
-  --color-muted-on-fill: color-contrast(var(--color-muted-fill));
+  --color-muted-on-fill: light-dark(var(--color-zinc-750), var(--color-zinc-200));
   --color-muted-text-hover: light-dark(var(--color-zinc-650), var(--color-zinc-350));
   --color-muted-text: light-dark(var(--color-zinc-550), var(--color-zinc-450));
   --color-muted-underline-hover: var(--color-muted-text-hover);

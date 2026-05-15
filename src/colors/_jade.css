@@ -29,6 +29,7 @@
   --color-primary-text-hover: light-dark(var(--color-jade-650), var(--color-jade-250));
   --color-primary-fill-hover: light-dark(var(--color-jade-600), var(--color-jade-500));
   --color-primary-focus-ring: light-dark(oklch(from var(--color-jade-400) l c h / 0.5), oklch(from var(--color-jade-350) l c h / 0.375));
+  --color-primary-on-fill: white;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));

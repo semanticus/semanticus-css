@@ -192,3 +192,9 @@ input:not(
 [type="range"] {
   accent-color: var(--color-primary-fill);
 }
+
+/* Text selection color */
+
+::selection {
+  background-color: var(--color-selection);
+}

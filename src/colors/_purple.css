@@ -29,6 +29,7 @@
   --color-primary-text-hover: light-dark(var(--color-purple-650), var(--color-purple-250));
   --color-primary-fill-hover: light-dark(var(--color-purple-650), var(--color-purple-550));
   --color-primary-focus-ring: light-dark(oklch(from var(--color-purple-400) l c h / 0.5), oklch(from var(--color-purple-350) l c h / 0.375));
+  --color-primary-on-fill: white;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
