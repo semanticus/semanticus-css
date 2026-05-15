@@ -2,29 +2,63 @@
 
 :root {
   --theme: light;
+
   color-scheme: light;
 
   @media (prefers-color-scheme: dark) {
     --theme: dark;
+
     color-scheme: dark;
   }
 
+  /* Slate shades */
+  --color-slate-950: #0e1118;
   --color-slate-900: #181c25;
+  --color-slate-850: #202632;
+  --color-slate-800: #2a3140;
+  --color-slate-750: #333c4e;
   --color-slate-650: #48536b;
   --color-slate-600: #525f7a;
   --color-slate-550: #5d6b89;
   --color-slate-350: #909ebe;
+  --color-slate-200: #bfc7d9;
+  --color-slate-150: #cfd5e2;
   --color-slate-100: #dfe3eb;
   --color-slate-50: #eff1f4;
 
+  /* Zinc shades */
+  --color-zinc-950: #0f1114;
+  --color-zinc-850: #23262c;
+  --color-zinc-800: #2d3138;
+  --color-zinc-750: #373c44;
+  --color-zinc-700: #424751;
+  --color-zinc-650: #4d535e;
+  --color-zinc-600: #5c6370;
+  --color-zinc-550: #646b79;
+  --color-zinc-500: #6f7887;
+  --color-zinc-450: #7b8495;
+  --color-zinc-400: #8891a4;
   --color-zinc-350: #969eaf;
+  --color-zinc-300: #a4acba;
   --color-zinc-250: #b3b9c5;
+  --color-zinc-200: #c2c7d0;
+  --color-zinc-100: #e0e3e7;
+  --color-zinc-50: #f0f1f3;
 
+  /* Semantic utility colors (fixed — not palette-dependent) */
+  --color-red-500: #d93526;
+  --color-jade-450: #029764;
+  --color-amber-100: #fddea6;
+  --color-amber-50: #fcefd9;
+  --color-azure-750: #014063;
+
+  /* Primary color aliases */
   --color-primary-border-hover: var(--color-primary-fill-hover);
   --color-primary-border: var(--color-primary-fill);
   --color-primary-on-fill: color-contrast(var(--color-primary-fill));
   --color-primary-underline-hover: var(--color-primary-text-hover);
 
+  /* Secondary colors */
   --color-secondary-border-hover: var(--color-secondary-fill-hover);
   --color-secondary-border: var(--color-secondary-fill);
   --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
@@ -36,6 +70,7 @@
   --color-secondary-underline-hover: var(--color-secondary-text-hover);
   --color-secondary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));
 
+  /* Contrast colors */
   --color-contrast-border-hover: var(--color-contrast-fill-hover);
   --color-contrast-border: var(--color-contrast-fill);
   --color-contrast-fill-hover: light-dark(black, white);
@@ -46,15 +81,157 @@
   --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
   --color-contrast-underline-hover: var(--color-contrast-text-hover);
   --color-contrast-underline: light-dark(oklch(from var(--color-slate-900) l c h / 0.5), oklch(from var(--color-slate-100) l c h / 0.5));
+
+  /* === Global system tokens === */
+  --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
+  --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
+  --color-muted-text: light-dark(var(--color-zinc-550), var(--color-zinc-450));
+  --color-muted-border: light-dark(color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)), var(--color-slate-850));
+
+  /* Shadow — each layer's color switches via light-dark() */
+  --shadow:
+    0.0145rem 0.029rem 0.174rem light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
+    0.0335rem 0.067rem 0.402rem light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)),
+    0.0625rem 0.125rem 0.75rem light-dark(rgb(129 145 181 / 0.03), rgb(7 9 12 / 0.03)),
+    0.1125rem 0.225rem 1.35rem light-dark(rgb(129 145 181 / 0.036), rgb(7 9 12 / 0.036)),
+    0.2085rem 0.417rem 2.502rem light-dark(rgb(129 145 181 / 0.04302), rgb(7 9 12 / 0.04302)),
+    0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
+    0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
+
+  /* === Typography tokens === */
+  --h1-text: light-dark(var(--color-zinc-800), var(--color-zinc-50));
+  --h2-text: light-dark(var(--color-zinc-750), var(--color-zinc-100));
+  --h3-text: light-dark(var(--color-zinc-700), var(--color-zinc-200));
+  --h4-text: light-dark(var(--color-zinc-650), var(--color-zinc-250));
+  --h5-text: light-dark(var(--color-zinc-600), var(--color-zinc-300));
+  --h6-text: light-dark(var(--color-zinc-550), var(--color-zinc-400));
+
+  /* mark: amber highlight in light, deep azure in dark */
+  --mark-fill: light-dark(color-mix(in srgb, var(--color-amber-100), var(--color-amber-50)), var(--color-azure-750));
+  --mark-text: light-dark(var(--color-zinc-950), white);
+
+  --ins-text: light-dark(
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-750)),
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-200))
+  );
+  --del-text: light-dark(
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-750)),
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-200))
+  );
+
+  --blockquote-border: var(--color-muted-border);
+  --blockquote-footer-text: var(--color-muted-text);
+
+  /* === Button tokens === */
+  --button-shadow: 0 0 0 rgb(0 0 0 / 0);
+  --button-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
+
+  /* === Table tokens === */
+  --table-border: var(--color-muted-border);
+  --table-row-fill-striped: oklch(from var(--color-zinc-500) l c h / 0.0375);
+
+  /* === Code tokens === */
+  --code-fill: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 75%, white),
+    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  );
+  --code-text: light-dark(var(--color-zinc-550), var(--color-zinc-400));
+  --kbd-fill: var(--color-text);
+  --kbd-text: var(--color-background);
+
+  /* === Input / Form tokens === */
+  --input-fill: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-900), var(--color-slate-850))
+  );
+  --input-fill-selected: light-dark(var(--color-slate-100), var(--color-slate-800));
+  --input-fill-active: light-dark(
+    white,
+    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  );
+  --input-border: light-dark(var(--color-slate-150), var(--color-slate-800));
+  --input-text: light-dark(var(--color-zinc-850), var(--color-zinc-100));
+  --input-placeholder-text: var(--color-muted-text);
+  --input-border-focus: var(--color-primary-border);
+  --input-opacity-disabled: 0.5;
+  --input-border-invalid: light-dark(
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-350)),
+    color-mix(in srgb, var(--color-red-500), var(--color-slate-600))
+  );
+  --input-border-invalid-active: light-dark(
+    color-mix(in srgb, var(--color-red-500) 75%, var(--color-zinc-350)),
+    color-mix(in srgb, var(--color-red-500) 75%, var(--color-slate-600))
+  );
+  --input-border-valid: light-dark(
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-350)),
+    color-mix(in srgb, var(--color-jade-450), var(--color-slate-600))
+  );
+  --input-border-valid-active: light-dark(
+    color-mix(in srgb, var(--color-jade-450) 75%, var(--color-zinc-350)),
+    color-mix(in srgb, var(--color-jade-450) 75%, var(--color-slate-600))
+  );
+
+  /* === Switch tokens === */
+  --switch-fill: light-dark(var(--color-slate-200), var(--color-slate-750));
+  --switch-fill-checked: var(--color-primary-fill);
+  --switch-thumb-fill: white;
+
+  /* === Range tokens === */
+  --range-track-border: light-dark(var(--color-slate-100), var(--color-slate-850));
+  --range-track-border-active: light-dark(var(--color-slate-200), var(--color-slate-800));
+  --range-thumb-border: var(--color-background);
+  --range-thumb-fill: var(--color-secondary-fill);
+  --range-thumb-fill-active: var(--color-primary-fill);
+
+  /* === Details / Accordion tokens === */
+  --details-border: var(--color-muted-border);
+  --details-summary-text: var(--color-text);
+  --details-summary-text-hover: var(--color-primary-text-hover);
+  --details-summary-text-open: var(--color-muted-text);
+
+  /* === Card tokens === */
+  --card-fill: light-dark(var(--color-background), var(--color-slate-900));
+  --card-border: light-dark(var(--color-muted-border), var(--color-slate-900));
+  --card-shadow: var(--shadow);
+  --card-section-fill: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  );
+
+  /* === Menu / Dropdown tokens === */
+  --menu-fill: light-dark(white, var(--color-slate-900));
+  --menu-border: light-dark(var(--color-slate-50), var(--color-slate-850));
+  --menu-shadow: var(--shadow);
+  --menu-text: var(--color-text);
+  --menu-fill-hover: light-dark(var(--color-slate-50), var(--color-slate-850));
+
+  /* === Loading tokens === */
+  --loading-spinner-opacity: 0.5;
+
+  /* === Dialog tokens === */
+  --dialog-overlay: light-dark(
+    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
+    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
+  );
+
+  /* === Progress tokens === */
+  --progress-track-fill: light-dark(var(--color-slate-100), var(--color-slate-850));
+  --progress-fill: var(--color-primary-fill);
+
+  /* === Tooltip tokens === */
+  --tooltip-fill: var(--color-contrast-fill);
+  --tooltip-text: var(--color-contrast-on-fill);
 }
 
 [data-theme="light"] {
   --theme: light;
+
   color-scheme: light;
 }
 
 [data-theme="dark"] {
   --theme: dark;
+
   color-scheme: dark;
 }
 

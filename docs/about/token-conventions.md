@@ -5,13 +5,13 @@
 ### 1. System tokens — palette/theme level
 
 ```
---{type}-{variant}-{role-or-effect}[-{state}]
+--{type}[-{variant}]-{role-or-effect}[-{state}]
 ```
 
 | Segment | Description | Examples |
 |---------|-------------|-------|
 | `type` | What kind of value | `color`, `shadow`, `filter` |
-| `variant` | Design variant | `primary`, `secondary`, `contrast` |
+| `variant` *(optional)* | Design variant — omit for global/page-level tokens that apply to the whole document | `primary`, `secondary`, `contrast`, `muted` |
 | `role-or-effect` | What it styles or does *(not the CSS property)* | `text`, `fill`, `on-fill`, `underline`, `focus-ring`, `selection`, `border`, `radius`, `glow`, `shadow`, `ring`, `opacity` |
 | `state` *(optional)* | Interaction state | `hover`, `active`, `focus`, `disabled` |
 
@@ -25,8 +25,16 @@
 --color-primary-focus-ring    /* color / primary / focus ring indicator */
 --color-primary-text-hover    /* color / primary / text foreground / hover state */
 --color-primary-fill-hover    /* color / primary / background fill / hover state */
---color-selection             /* color / (no variant — global) / selection highlight */
+--color-muted-text            /* color / muted / text — a neutral variant, not primary/secondary/contrast */
+--color-muted-border          /* color / muted / border — subtle dividers */
+--color-selection             /* color / (no variant) / global text selection highlight */
+--color-text                  /* color / (no variant) / page body text */
+--color-background            /* color / (no variant) / page background fill */
 ```
+
+> **Omitting the variant:** drop the variant segment only for page-level global tokens
+> that apply to the document as a whole — body text, page background, text selection.
+> Design-role tokens (`primary`, `secondary`, `contrast`, `muted`) always include a variant.
 
 ---
 
@@ -111,3 +119,57 @@ State always comes last. Multiple states are hyphenated in interaction order:
 --switch-fill-checked
 --switch-thumb-glow-checked-hover   /* checked AND hovered — uncommon, but valid */
 ```
+
+---
+
+## Theme-invariant tokens
+
+Some component tokens have the same value in both light and dark mode. Define them as plain values — no `light-dark()` needed:
+
+```css
+--button-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
+--input-opacity-disabled: 0.5;            /* always half-opacity */
+--switch-thumb-fill: white;               /* thumb always white */
+--loading-spinner-opacity: 0.5;
+```
+
+These still follow the naming convention; the absence of `light-dark()` is intentional, not an omission.
+
+---
+
+## Standalone multi-value tokens
+
+Not all tokens carry a `--color-` prefix. Properties like `box-shadow` or `backdrop-filter` produce multi-value output and get a plain descriptive name at the component or global level:
+
+```css
+--shadow                      /* global page/card shadow stack */
+--button-shadow               /* button-specific shadow */
+--button-shadow-hover         /* button shadow on hover */
+```
+
+For theme-aware shadows, use `light-dark()` inside each layer's color rather than duplicating the whole declaration:
+
+```css
+--shadow:
+  0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
+  0 0 0 0.0625rem  light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
+```
+
+---
+
+## Inline typographic elements
+
+`<mark>`, `<ins>`, `<del>`, `<blockquote>` are typographic HTML elements, not interactive widgets. Treat them as components in the component token pattern — use the element name as the `component` segment:
+
+```css
+--mark-fill                   /* <mark> / highlight background */
+--mark-text                   /* <mark> / text color */
+--ins-text                    /* <ins> / inserted-text color */
+--del-text                    /* <del> / deleted-text color */
+--blockquote-border           /* <blockquote> / left accent border */
+--blockquote-footer-text      /* <blockquote> footer (<footer>, <cite>) / text color */
+--h1-text                     /* <h1> / heading text color */
+--h6-text                     /* <h6> / heading text color */
+```
+
+Heading tokens (`--h1-text` … `--h6-text`) follow the same pattern: element name + role.
