@@ -6,20 +6,18 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
-  color: var(--color-text);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-family: var(--font-family);
 }
 
-/* Headings - per-level text color tokens */
-h1 { --color-text: var(--h1-text); }
-h2 { --color-text: var(--h2-text); }
-h3 { --color-text: var(--h3-text); }
-h4 { --color-text: var(--h4-text); }
-h5 { --color-text: var(--h5-text); }
-h6 { --color-text: var(--h6-text); }
+h1 { color: var(--color-text); }
+h2 { color: color-mix(in srgb, var(--color-text) 90%, light-dark(white, black)); }
+h3 { color: color-mix(in srgb, var(--color-text) 80%, light-dark(white, black)); }
+h4 { color: color-mix(in srgb, var(--color-text) 70%, light-dark(white, black)); }
+h5 { color: color-mix(in srgb, var(--color-text) 60%, light-dark(white, black)); }
+h6 { color: color-mix(in srgb, var(--color-text) 65%, light-dark(white, black)); }
 
 :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul, hr) ~ :is(h1, h2, h3, h4, h5, h6) {
   margin-top: var(--heading-gap-top);

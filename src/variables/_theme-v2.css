@@ -156,12 +156,6 @@
 :root,
 :host {
   /* === Typography tokens === */
-  --h1-text: var(--color-text);
-  --h2-text: color-mix(in srgb, var(--color-text) 90%, light-dark(white, black));
-  --h3-text: color-mix(in srgb, var(--color-text) 80%, light-dark(white, black));
-  --h4-text: color-mix(in srgb, var(--color-text) 70%, light-dark(white, black));
-  --h5-text: color-mix(in srgb, var(--color-text) 60%, light-dark(white, black));
-  --h6-text: color-mix(in srgb, var(--color-text) 65%, light-dark(white, black));
   --h1-size: 2rem;
   --h2-size: 1.75rem;
   --h3-size: 1.5rem;
