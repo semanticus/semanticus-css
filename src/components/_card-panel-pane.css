@@ -1,6 +1,6 @@
-.pane,
+.card,
 .panel,
-.card {
+.pane {
   padding-block: var(--spacing);
   padding-inline: var(--spacing);
   margin-bottom: var(--spacing);
@@ -35,11 +35,11 @@
   }
 }
 
-.pane,
-.panel {
+.panel,
+.pane {
   --card-shadow: none;
 }
 
-.card {
-  --card-shadow: var(--shadow);
+.pane {
+  --card-border: transparent;
 }
