@@ -76,7 +76,7 @@ textarea {
 }
 
 input:not([type=checkbox], [type=radio], [type=range]) {
-  height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-width) * 2);
+  height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
 }
 
 fieldset {
@@ -119,8 +119,8 @@ textarea {
   --border-color: var(--input-border);
   --color-text: var(--input-text);
   --shadow: none;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border: var(--border-size) solid var(--border-color);
+  border-radius: var(--radius);
   outline: none;
   background-color: var(--color-background);
   box-shadow: var(--shadow);
@@ -151,7 +151,7 @@ input:not([type=submit],
 [type=file],
 [readonly]):focus,
 :where(select, textarea):not([readonly]):focus {
-  --shadow: 0 0 0 var(--outline-width) var(--input-border-focus);
+  --shadow: 0 0 0 var(--outline-size) var(--input-border-focus);
 }
 
 input:not([type=submit], [type=button], [type=reset])[disabled],
@@ -211,7 +211,7 @@ label[aria-disabled=true] input[disabled] {
   --border-color: var(--input-border-valid-active);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=false]:is(:active, :focus), select[aria-invalid=false]:is(:active, :focus), textarea[aria-invalid=false]:is(:active, :focus) {
-  --shadow: 0 0 0 var(--outline-width) var(--input-border-valid);
+  --shadow: 0 0 0 var(--outline-size) var(--input-border-valid);
 }
 
 :is(input, select, textarea)[aria-invalid=true] {
@@ -221,7 +221,7 @@ input:not([type=checkbox], [type=radio])[aria-invalid=false]:is(:active, :focus)
   --border-color: var(--input-border-invalid-active);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=true]:is(:active, :focus), select[aria-invalid=true]:is(:active, :focus), textarea[aria-invalid=true]:is(:active, :focus) {
-  --shadow: 0 0 0 var(--outline-width) var(--input-border-invalid);
+  --shadow: 0 0 0 var(--outline-size) var(--input-border-invalid);
 }
 
 :where([dir=rtl] :is(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false])) {
@@ -276,7 +276,7 @@ textarea {
 }
 
 :where(textarea[aria-invalid]) {
-  --icon-height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-width) * 2);
+  --icon-height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
   background-position: top right 0.75rem;
   background-size: 1rem var(--icon-height);
 }

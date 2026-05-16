@@ -19,18 +19,18 @@
   --border-color: var(--color-border-muted);
   --border-color-opacity: 1;
   --border-radius-pill: 50rem;
-  --border-radius-1: calc(var(--border-radius) * 0.66);
-  --border-radius-2: var(--border-radius);
-  --border-radius-3: calc(var(--border-radius) * 1.33);
-  --border-radius-4: calc(var(--border-radius) * 2.66);
-  --border-radius-5: calc(var(--border-radius) * 5.33);
+  --border-radius-1: calc(var(--radius) * 0.66);
+  --border-radius-2: var(--radius);
+  --border-radius-3: calc(var(--radius) * 1.33);
+  --border-radius-4: calc(var(--radius) * 2.66);
+  --border-radius-5: calc(var(--radius) * 5.33);
 
   /* Border-width scale */
-  --border-width-1: var(--border-width);
-  --border-width-2: calc(var(--border-width) * 2);
-  --border-width-3: calc(var(--border-width) * 3);
-  --border-width-4: calc(var(--border-width) * 4);
-  --border-width-5: calc(var(--border-width) * 5);
+  --border-width-1: var(--border-size);
+  --border-width-2: calc(var(--border-size) * 2);
+  --border-width-3: calc(var(--border-size) * 3);
+  --border-width-4: calc(var(--border-size) * 4);
+  --border-width-5: calc(var(--border-size) * 5);
 
   /* Spacing scale */
   --spacer-default: var(--spacing);
@@ -42,7 +42,7 @@
   --spacer-5: calc(var(--spacer-default) * 3);
 
   /* Focus ring */
-  --focus-ring-width: var(--outline-width);
+  --focus-ring-width: var(--outline-size);
   --focus-ring-opacity: 0.25;
 
   /* Auto-switching mappings (resolved at computed-value time via Semanticus CSS) */

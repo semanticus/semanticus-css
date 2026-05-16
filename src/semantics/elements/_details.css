@@ -48,7 +48,7 @@ details {
     }
 
     &:focus-visible:not([role]) {
-      outline: var(--outline-width) solid var(--color-primary-focus-ring);
+      outline: var(--outline-size) solid var(--color-primary-focus-ring);
       outline-offset: calc(var(--spacing, 1rem) * 0.5);
       color: var(--color-primary-text);
     }
@@ -58,7 +58,7 @@ details {
       text-align: left;
 
       &:focus-visible {
-        outline: var(--outline-width) solid var(--color-primary-focus-ring);
+        outline: var(--outline-size) solid var(--color-primary-focus-ring);
         outline-offset: calc(var(--spacing, 1rem) * 0.5);
       }
 
@@ -116,16 +116,16 @@ details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & summary:not([role="button"]) {
-    --outline-width: 0.0625rem;
+    --outline-size: 0.0625rem;
   }
 
   & > :where(summary:not([role])) {
     display: flex;
     align-items: center;
-    height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-width) * 2);
+    height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
     padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
-    border: var(--border-width) solid var(--input-border);
-    border-radius: var(--border-radius);
+    border: var(--border-size) solid var(--input-border);
+    border-radius: var(--radius);
     background-color: var(--input-fill);
     color: var(--input-placeholder-text);
     line-height: inherit;
@@ -140,7 +140,7 @@ details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & > :where(summary:not([role]):focus) {
-    box-shadow: 0 0 0 var(--outline-width) var(--input-border-focus);
+    box-shadow: 0 0 0 var(--outline-size) var(--input-border-focus);
   }
 
   & > :where(summary:not([role]):focus-visible) {
@@ -166,10 +166,10 @@ details:has(> summary[aria-haspopup="menu"]) {
     width: 100%;
     min-width: fit-content;
     margin: 0;
-    margin-top: var(--outline-width);
+    margin-top: var(--outline-size);
     padding: 0;
-    border: var(--border-width) solid var(--menu-border);
-    border-radius: var(--border-radius);
+    border: var(--border-size) solid var(--menu-border);
+    border-radius: var(--radius);
     background-color: var(--menu-fill);
     box-shadow: var(--menu-shadow);
     color: var(--menu-text);
@@ -264,15 +264,15 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex;
     align-items: center;
     height: auto;
-    padding: calc(var(--nav-link-gap) - var(--border-width) * 2) var(--nav-link-gap);
+    padding: calc(var(--nav-link-gap) - var(--border-size) * 2) var(--nav-link-gap);
   }
 
   & > :where(summary:not([role]):focus-visible) {
-    box-shadow: 0 0 0 var(--outline-width) var(--color-primary-focus-ring);
+    box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
   }
 
   & summary:focus-visible {
-    --outline-width: 0.125rem;
+    --outline-size: 0.125rem;
   }
 
   /* Styles for dropdowns with role="button" inside nav */
@@ -281,6 +281,6 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     align-items: center;
     width: auto;
     height: auto;
-    padding: calc(var(--nav-link-gap) - var(--border-width) * 2) var(--nav-link-gap);
+    padding: calc(var(--nav-link-gap) - var(--border-size) * 2) var(--nav-link-gap);
   }
 }

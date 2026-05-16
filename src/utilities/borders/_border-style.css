@@ -1,5 +1,5 @@
 .border {
-  border: var(--border-width) var(--border-style) var(--border-color) !important;
+  border: var(--border-size) var(--border-style) var(--border-color) !important;
 }
 
 .border-0 {
@@ -7,7 +7,7 @@
 }
 
 .border-top {
-  border-top: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-top: var(--border-size) var(--border-style) var(--border-color) !important;
 }
 
 .border-top-0 {
@@ -15,7 +15,7 @@
 }
 
 .border-end {
-  border-right: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-right: var(--border-size) var(--border-style) var(--border-color) !important;
 }
 
 .border-end-0 {
@@ -23,7 +23,7 @@
 }
 
 .border-bottom {
-  border-bottom: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-bottom: var(--border-size) var(--border-style) var(--border-color) !important;
 }
 
 .border-bottom-0 {
@@ -31,7 +31,7 @@
 }
 
 .border-start {
-  border-left: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-left: var(--border-size) var(--border-style) var(--border-color) !important;
 }
 
 .border-start-0 {

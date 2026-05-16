@@ -1,6 +1,6 @@
 [role="search"],
 [role="group"] {
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     box-shadow: var(--group-shadow, 0 0 0 rgba(0, 0, 0, 0));
     display: inline-flex;
     gap: 0;
@@ -18,7 +18,7 @@
         margin-bottom: 0;
 
         &:not(:first-child) {
-            margin-left: calc(var(--border-width) * -1);
+            margin-left: calc(var(--border-size) * -1);
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
@@ -48,12 +48,12 @@
         /* Constrain details height to just the button, not the dropdown menu */
         height: calc(
             1rem * var(--line-height) + var(--input-spacing-vertical) *
-                2 + var(--border-width) * 2
+                2 + var(--border-size) * 2
         );
         overflow: visible;
 
         &:not(:first-child) {
-            margin-left: calc(var(--border-width) * -1);
+            margin-left: calc(var(--border-size) * -1);
 
             & > summary {
                 border-top-left-radius: 0;
@@ -107,9 +107,9 @@
             & [type="submit"],
             & [type="button"],
             & [role="button"] {
-                --button-shadow: 0 0 0 var(--border-width)
+                --button-shadow: 0 0 0 var(--border-size)
                     var(--color-primary-border);
-                --button-shadow-hover: 0 0 0 var(--border-width)
+                --button-shadow-hover: 0 0 0 var(--border-size)
                     var(--color-primary-border-hover);
             }
         }

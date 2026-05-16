@@ -9,11 +9,11 @@
 
   &::-webkit-color-swatch {
     border: 0;
-    border-radius: calc(var(--border-radius) * 0.5);
+    border-radius: calc(var(--radius) * 0.5);
   }
 
   &::-moz-color-swatch {
     border: 0;
-    border-radius: calc(var(--border-radius) * 0.5);
+    border-radius: calc(var(--radius) * 0.5);
   }
 }

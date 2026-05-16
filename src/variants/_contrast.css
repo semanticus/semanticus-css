@@ -31,7 +31,7 @@
 
     &:focus,
     &:is([aria-current]:not([aria-current="false"])):focus {
-      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-contrast-focus-ring);
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-contrast-focus-ring);
     }
   }
 }

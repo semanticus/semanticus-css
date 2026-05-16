@@ -1,8 +1,8 @@
 [type=file] {
   --color-text: var(--color-muted-text);
-  margin-left: calc(var(--outline-width) * -1);
+  margin-left: calc(var(--outline-size) * -1);
   padding: calc(var(--input-spacing-vertical) * 0.5) 0;
-  padding-left: var(--outline-width);
+  padding-left: var(--outline-size);
   border: 0;
   border-radius: 0;
   background: none;
@@ -18,6 +18,6 @@
   }
 
   &:focus::file-selector-button {
-    --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--color-secondary-focus-ring);
+    --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-secondary-focus-ring);
   }
 }

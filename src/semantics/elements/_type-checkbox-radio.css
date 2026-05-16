@@ -12,7 +12,7 @@ label:has([type=checkbox], [type=radio]) {
   height: 1.25em;
   margin-top: -0.125em;
   margin-inline-end: 0.5em;
-  border-width: var(--border-width);
+  border-width: var(--border-size);
   vertical-align: middle;
   cursor: pointer;
 
@@ -66,7 +66,7 @@ label:has([type=checkbox], [type=radio]) {
   --color-text: var(--switch-thumb-fill);
   width: 2.25em;
   height: 1.25em;
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-size) solid var(--border-color);
   border-radius: 1.25em;
   background-color: var(--color-background);
   line-height: 1.25em;

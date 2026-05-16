@@ -1,5 +1,5 @@
 .border-w-d {
-  border-width: var(--border-width) !important;
+  border-width: var(--border-size) !important;
 }
 
 .border-w-1 {

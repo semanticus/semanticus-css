@@ -35,9 +35,9 @@
   --h6-size: 1rem;
 
   /* Borders & Effects */
-  --border-radius: 0.25rem;
-  --border-width: 0.0625rem;
-  --outline-width: 0.125rem;
+  --radius: 0.25rem;
+  --border-size: 0.0625rem;
+  --outline-size: 0.125rem;
   --transition: 0.2s ease-in-out;
 
   /* Spacing - shared base unit */
@@ -52,7 +52,7 @@
 
   /* Group Shadows */
   --group-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --group-shadow-focus-button: 0 0 0 var(--outline-width) var(--color-primary-focus-ring);
+  --group-shadow-focus-button: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
   --group-shadow-focus-input: 0 0 0 0.0625rem var(--input-border);
 
   /* Navigation */

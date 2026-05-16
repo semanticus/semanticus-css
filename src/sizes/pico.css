@@ -16,9 +16,9 @@
   --text-underline-offset: 0.1rem;
 
   /* Borders & Effects – global defaults for border-radius, border-width, outline, and transition */
-  --border-radius: 0.25rem;
-  --border-width: 0.0625rem; /* 1px – base border width used by forms, tables, etc. */
-  --outline-width: 0.125rem; /* 2px – focus-ring width */
+  --radius: 0.25rem;
+  --border-size: 0.0625rem; /* 1px – base border width used by forms, tables, etc. */
+  --outline-size: 0.125rem; /* 2px – focus-ring width */
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
@@ -33,7 +33,7 @@
 
   /* Shadows – used by [role="group"] and [role="search"] button/input combos */
   --group-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Default (no shadow) */
-  --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-primary-focus); /* Focus ring when a button inside the group is focused */
+  --group-shadow-focus-with-button: 0 0 0 var(--outline-size) var(--color-primary-focus); /* Focus ring when a button inside the group is focused */
   --group-shadow-focus-with-input: 0 0 0 0.0625rem var(--form-border-color); /* Focus ring when an input inside the group is focused */
 
   /* Navigation – spacing and breadcrumb configuration */
