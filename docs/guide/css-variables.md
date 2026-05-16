@@ -120,12 +120,12 @@ All palettes automatically adapt to light and dark modes based on the `data-them
   --font-size: 97%; /* Base size - responsive: 98%@sm, 99%@md, 100%@lg, 101%@xl, 102%@xxl */
 
   /* Font size scale for headings */
-  --fs-1: 2rem;
-  --fs-2: 1.75rem;
-  --fs-3: 1.5rem;
-  --fs-4: 1.25rem;
-  --fs-5: 1.125rem;
-  --fs-6: 1rem;
+  --h1-size: 2rem;
+  --h2-size: 1.75rem;
+  --h3-size: 1.5rem;
+  --h4-size: 1.25rem;
+  --h5-size: 1.125rem;
+  --h6-size: 1rem;
 }
 ```
 

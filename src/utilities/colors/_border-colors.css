@@ -1,57 +1,57 @@
 .border-primary {
-  --border-color: oklch(from var(--color-primary-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-primary-border);
 }
 
 .border-secondary {
-  --border-color: oklch(from var(--color-secondary-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-secondary-border);
 }
 
 .border-success {
-  --border-color: oklch(from var(--color-success-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-success-border);
 }
 
 .border-info {
-  --border-color: oklch(from var(--color-info-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-info-border);
 }
 
 .border-warning {
-  --border-color: oklch(from var(--color-warning-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-warning-border);
 }
 
 .border-danger {
-  --border-color: oklch(from var(--color-danger-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-danger-border);
 }
 
 .border-contrast {
-  --border-color: oklch(from var(--color-contrast-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-contrast-border);
 }
 
 .border-primary-subtle {
-  --border-color: oklch(from var(--color-primary-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-primary-subtle-border);
 }
 
 .border-secondary-subtle {
-  --border-color: oklch(from var(--color-secondary-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-secondary-subtle-border);
 }
 
 .border-success-subtle {
-  --border-color: oklch(from var(--color-success-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-success-subtle-border);
 }
 
 .border-info-subtle {
-  --border-color: oklch(from var(--color-info-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-info-subtle-border);
 }
 
 .border-warning-subtle {
-  --border-color: oklch(from var(--color-warning-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-warning-subtle-border);
 }
 
 .border-danger-subtle {
-  --border-color: oklch(from var(--color-danger-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-danger-subtle-border);
 }
 
 .border-contrast-subtle {
-  --border-color: oklch(from var(--color-contrast-subtle-border) l c h / var(--border-color-opacity));
+  --color-border: var(--color-contrast-subtle-border);
 }
 
 .border-opacity-10 {

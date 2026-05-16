@@ -115,9 +115,7 @@
 :host {
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
-
-  --border-color: var(--color-muted-border);
-  --border-style: solid;
+  --color-border: var(--color-muted-border);
 
   --a-decoration: underline;
 

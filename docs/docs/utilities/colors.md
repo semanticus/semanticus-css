@@ -24,11 +24,11 @@ const bgSubtleHtml = `<div class="bg-primary-subtle p-3 mb-2">.bg-primary-subtle
 <div class="bg-warning-subtle p-3 mb-2">.bg-warning-subtle</div>
 <div class="bg-danger-subtle p-3 mb-2">.bg-danger-subtle</div>
 `;
-const bgOpacityHtml = `<div class="bg-success p-2 mb-2">Default success background</div>
-<div class="bg-success bg-opacity-75 p-2 mb-2">75% opacity</div>
-<div class="bg-success bg-opacity-50 p-2 mb-2">50% opacity</div>
-<div class="bg-success bg-opacity-25 p-2 mb-2">25% opacity</div>
-<div class="bg-success bg-opacity-10 p-2">10% opacity</div>
+const bgOpacityHtml = `<div class="bg-primary p-2 mb-2">Default primary background</div>
+<div class="bg-primary bg-opacity-75 p-2 mb-2">75% opacity</div>
+<div class="bg-primary bg-opacity-50 p-2 mb-2">50% opacity</div>
+<div class="bg-primary bg-opacity-25 p-2 mb-2">25% opacity</div>
+<div class="bg-primary bg-opacity-10 p-2">10% opacity</div>
 `;
 const bgGradientHtml = `<div class="bg-primary bg-gradient p-3 mb-2">.bg-primary.bg-gradient</div>
 <div class="bg-success bg-gradient p-3 mb-2">.bg-success.bg-gradient</div>
@@ -41,46 +41,43 @@ const textColorsHtml = `<p class="text-primary">.text-primary</p>
 <p class="text-warning">.text-warning</p>
 <p class="text-danger">.text-danger</p>
 <p class="text-contrast">.text-contrast</p>
-<p class="text-body">.text-body</p>
 <p class="text-muted">.text-muted</p>
-<p class="text-body-emphasis">.text-body-emphasis</p>
 <p class="text-reset">.text-reset</p>
 `;
-const textEmphasisHtml = `<p class="text-primary-emphasis">.text-primary-emphasis</p>
-<p class="text-secondary-emphasis">.text-secondary-emphasis</p>
-<p class="text-success-emphasis">.text-success-emphasis</p>
-<p class="text-info-emphasis">.text-info-emphasis</p>
-<p class="text-warning-emphasis">.text-warning-emphasis</p>
-<p class="text-danger-emphasis">.text-danger-emphasis</p>
-`;
-const textOpacityHtml = `<div class="text-primary">Default primary text</div>
+const textOpacityHtml = `<div class="vstack gap-d">
+<div class="text-primary">Default primary text</div>
 <div class="text-primary text-opacity-75">75% opacity primary text</div>
 <div class="text-primary text-opacity-50">50% opacity primary text</div>
 <div class="text-primary text-opacity-25">25% opacity primary text</div>
+<div class="text-primary text-opacity-10">10% opacity primary text</div>
+</div>
 `;
-const linkColorsHtml = `<a href="#" class="link-primary">Primary link</a>
+const linkColorsHtml = `<div class="vstack gap-d">
+<a href="#" class="link-primary">Primary link</a>
 <a href="#" class="link-secondary">Secondary link</a>
 <a href="#" class="link-success">Success link</a>
 <a href="#" class="link-info">Info link</a>
 <a href="#" class="link-warning">Warning link</a>
 <a href="#" class="link-danger">Danger link</a>
 <a href="#" class="link-contrast">Contrast link</a>
-<a href="#" class="link-body-emphasis">Body emphasis link</a>
-`;
+</div>`;
 const linkOpacityHtml = `<a href="#" class="link-opacity-10">10%</a>
 <a href="#" class="link-opacity-25">25%</a>
 <a href="#" class="link-opacity-50">50%</a>
 <a href="#" class="link-opacity-75">75%</a>
 <a href="#" class="link-opacity-100">100%</a>
 `;
-const linkUnderlineHtml = `<a href="#" class="link-underline-primary">Primary underline</a>
+const linkUnderlineHtml = `<div class="vstack gap-d">
+<a href="#" class="link-underline-primary">Primary underline</a>
 <a href="#" class="link-underline-secondary">Secondary underline</a>
 <a href="#" class="link-underline-success">Success underline</a>
 <a href="#" class="link-underline-danger">Danger underline</a>
-`;
-const practicalHtml = `<article class="card text-bg-primary-subtle border border-primary-subtle">
-  <h3>Notification</h3>
-  <p class="mb-0">Your changes have been saved successfully.</p>
+</div>`;
+const practicalHtml = `<article class="card text-bg-primary-subtle border border-primary">
+  <hgroup class="mb-0">
+    <h3>Notification</h3>
+    <p>Your changes have been saved successfully.</p>
+  </hgroup>
 </article>
 `;
 </script>
@@ -125,9 +122,6 @@ Colorize text with `.text-*` utilities.
 
 <HtmlPreviewer :code="textColorsHtml" />
 
-### Emphasis Colors
-
-<HtmlPreviewer :code="textEmphasisHtml" />
 
 ### Text Opacity
 
