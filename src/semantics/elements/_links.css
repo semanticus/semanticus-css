@@ -9,7 +9,7 @@
   padding: 0;
   background-color: var(--color-background);
   color: var(--color-text);
-  text-decoration: var(--text-decoration);
+  text-decoration: var(--a-decoration);
   text-decoration-color: var(--underline);
   text-underline-offset: 0.125em;
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
@@ -24,7 +24,7 @@
   &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
     --color-text: var(--color-primary-text-hover);
     --underline: var(--color-primary-underline-hover);
-    --text-decoration: underline;
+    --a-decoration: underline;
   }
 
   &:focus-visible {

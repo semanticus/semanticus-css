@@ -122,8 +122,8 @@ details:has(> summary[aria-haspopup="menu"]) {
   & > :where(summary:not([role])) {
     display: flex;
     align-items: center;
-    height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
-    padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+    height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-width) * 2);
+    padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
     border: var(--border-width) solid var(--input-border);
     border-radius: var(--border-radius);
     background-color: var(--input-fill);
@@ -186,21 +186,21 @@ details:has(> summary[aria-haspopup="menu"]) {
   & > summary + ul[role="menu"] li {
     width: 100%;
     margin-bottom: 0;
-    padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
+    padding: calc(var(--input-spacing-vertical) * 0.5) var(--input-spacing-horizontal);
     list-style: none;
 
     &:first-of-type {
-      margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
+      margin-top: calc(var(--input-spacing-vertical) * 0.5);
     }
 
     &:last-of-type {
-      margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
+      margin-bottom: calc(var(--input-spacing-vertical) * 0.5);
     }
 
     & a {
       display: block;
-      margin: calc(var(--form-element-spacing-vertical) * -0.5) calc(var(--form-element-spacing-horizontal) * -1);
-      padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
+      margin: calc(var(--input-spacing-vertical) * -0.5) calc(var(--input-spacing-horizontal) * -1);
+      padding: calc(var(--input-spacing-vertical) * 0.5) var(--input-spacing-horizontal);
       overflow: hidden;
       border-radius: 0;
       color: var(--menu-text);
@@ -264,7 +264,7 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex;
     align-items: center;
     height: auto;
-    padding: calc(var(--nav-link-spacing) - var(--border-width) * 2) var(--nav-link-spacing);
+    padding: calc(var(--nav-link-gap) - var(--border-width) * 2) var(--nav-link-gap);
   }
 
   & > :where(summary:not([role]):focus-visible) {
@@ -281,6 +281,6 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     align-items: center;
     width: auto;
     height: auto;
-    padding: calc(var(--nav-link-spacing) - var(--border-width) * 2) var(--nav-link-spacing);
+    padding: calc(var(--nav-link-gap) - var(--border-width) * 2) var(--nav-link-gap);
   }
 }

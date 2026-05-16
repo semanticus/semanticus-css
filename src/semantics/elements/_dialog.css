@@ -70,7 +70,7 @@ dialog {
     border-bottom-left-radius: var(--border-radius);
     display: flex;
     justify-content: end;
-    gap: calc(var(--nav-link-spacing) * 1.5);
+    gap: calc(var(--nav-link-gap) * 1.5);
   }
 
   /* Close button styling */

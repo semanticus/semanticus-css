@@ -22,5 +22,5 @@ h5 { --color-text: var(--h5-text); }
 h6 { --color-text: var(--h6-text); }
 
 :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul, hr) ~ :is(h1, h2, h3, h4, h5, h6) {
-  margin-top: var(--typography-spacing-top);
+  margin-top: var(--heading-gap-top);
 }

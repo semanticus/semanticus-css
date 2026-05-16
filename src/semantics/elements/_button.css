@@ -22,7 +22,7 @@ button,
   --border-color: var(--color-primary-border);
   --color-text: var(--color-primary-on-fill);
   --shadow: var(--button-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
@@ -115,13 +115,13 @@ aside {
 
 nav {
   :where(button, [role=button], [type=button], input:not([type=checkbox], [type=radio], [type=range], [type=file]), select) {
-    --form-element-spacing-vertical: calc(var(--nav-link-spacing) - var(--border-width) * 2);
-    --form-element-spacing-horizontal: var(--nav-link-spacing);
+    --input-spacing-vertical: calc(var(--nav-link-gap) - var(--border-width) * 2);
+    --input-spacing-horizontal: var(--nav-link-gap);
 
     height: auto;
     margin-right: inherit;
     margin-bottom: 0;
     margin-left: inherit;
-    padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+    padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
   }
 }

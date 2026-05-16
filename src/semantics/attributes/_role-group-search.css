@@ -47,7 +47,7 @@
         margin-bottom: 0;
         /* Constrain details height to just the button, not the dropdown menu */
         height: calc(
-            1rem * var(--line-height) + var(--form-element-spacing-vertical) *
+            1rem * var(--line-height) + var(--input-spacing-vertical) *
                 2 + var(--border-width) * 2
         );
         overflow: visible;
@@ -92,7 +92,7 @@
             [type="button"]:focus,
             [role="button"]:focus
         ) {
-            --group-shadow: var(--group-shadow-focus-with-button);
+            --group-shadow: var(--group-shadow-focus-button);
 
             & input:not([type="checkbox"], [type="radio"]),
             & select {
@@ -101,7 +101,7 @@
         }
 
         &:has(input:not([type="submit"], [type="button"]):focus, select:focus) {
-            --group-shadow: var(--group-shadow-focus-with-input);
+            --group-shadow: var(--group-shadow-focus-input);
 
             & button,
             & [type="submit"],
