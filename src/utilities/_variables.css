@@ -8,6 +8,8 @@
   /* Text & background colors */
   --color-text-opacity: 100%;
   --background-color-opacity: 100%;
+  --link-opacity: 100%;
+  --link-underline-opacity: 100%;
 
   /* Borders & radii */
   --border-radius-pill: 50rem;

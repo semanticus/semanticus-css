@@ -1,24 +1,25 @@
 <script setup>
 const bgColorsHtml = `<div class="text-bg-primary p-3 mb-2">.text-bg-primary</div>
 <div class="text-bg-secondary p-3 mb-2">.text-bg-secondary</div>
+<div class="text-bg-contrast p-3 mb-2">.text-bg-contrast</div>
 <div class="text-bg-success p-3 mb-2">.text-bg-success</div>
 <div class="text-bg-info p-3 mb-2">.text-bg-info</div>
 <div class="text-bg-warning p-3 mb-2">.text-bg-warning</div>
 <div class="text-bg-danger p-3 mb-2">.text-bg-danger</div>
-<div class="text-bg-contrast p-3 mb-2">.text-bg-contrast</div>
 `;
 const bgOnlyHtml = `<div class="bg-primary p-3 mb-2">.bg-primary</div>
 <div class="bg-secondary p-3 mb-2">.bg-secondary</div>
+<div class="bg-contrast p-3 mb-2">.bg-contrast</div>
 <div class="bg-success p-3 mb-2">.bg-success</div>
 <div class="bg-info p-3 mb-2">.bg-info</div>
 <div class="bg-warning p-3 mb-2">.bg-warning</div>
 <div class="bg-danger p-3 mb-2">.bg-danger</div>
-<div class="bg-contrast p-3 mb-2">.bg-contrast</div>
 <div class="bg-body p-3 mb-2 border">.bg-body</div>
 <div class="bg-transparent p-3 mb-2 border">.bg-transparent</div>
 `;
 const bgSubtleHtml = `<div class="bg-primary-subtle p-3 mb-2">.bg-primary-subtle</div>
 <div class="bg-secondary-subtle p-3 mb-2">.bg-secondary-subtle</div>
+<div class="bg-contrast-subtle p-3 mb-2">.bg-contrast-subtle</div>
 <div class="bg-success-subtle p-3 mb-2">.bg-success-subtle</div>
 <div class="bg-info-subtle p-3 mb-2">.bg-info-subtle</div>
 <div class="bg-warning-subtle p-3 mb-2">.bg-warning-subtle</div>
@@ -30,17 +31,21 @@ const bgOpacityHtml = `<div class="bg-primary p-2 mb-2">Default primary backgrou
 <div class="bg-primary bg-opacity-25 p-2 mb-2">25% opacity</div>
 <div class="bg-primary bg-opacity-10 p-2">10% opacity</div>
 `;
-const bgGradientHtml = `<div class="bg-primary bg-gradient p-3 mb-2">.bg-primary.bg-gradient</div>
-<div class="bg-success bg-gradient p-3 mb-2">.bg-success.bg-gradient</div>
-<div class="bg-danger bg-gradient p-3 mb-2">.bg-danger.bg-gradient</div>
+const bgGradientHtml = `<div class="text-bg-primary bg-gradient p-3 mb-2">.bg-primary.bg-gradient</div>
+<div class="text-bg-secondary bg-gradient p-3 mb-2">.bg-secondary.bg-gradient</div>
+<div class="text-bg-contrast bg-gradient p-3 mb-2">.bg-contrast.bg-gradient</div>
+<div class="text-bg-success bg-gradient p-3 mb-2">.bg-success.bg-gradient</div>
+<div class="text-bg-info bg-gradient p-3 mb-2">.bg-info.bg-gradient</div>
+<div class="text-bg-warning bg-gradient p-3 mb-2">.bg-warning.bg-gradient</div>
+<div class="text-bg-danger bg-gradient p-3 mb-2">.bg-danger.bg-gradient</div>
 `;
 const textColorsHtml = `<p class="text-primary">.text-primary</p>
 <p class="text-secondary">.text-secondary</p>
+<p class="text-contrast">.text-contrast</p>
 <p class="text-success">.text-success</p>
 <p class="text-info">.text-info</p>
 <p class="text-warning">.text-warning</p>
 <p class="text-danger">.text-danger</p>
-<p class="text-contrast">.text-contrast</p>
 <p class="text-muted">.text-muted</p>
 <p class="text-reset">.text-reset</p>
 `;
@@ -55,23 +60,26 @@ const textOpacityHtml = `<div class="vstack gap-d">
 const linkColorsHtml = `<div class="vstack gap-d">
 <a href="#" class="link-primary">Primary link</a>
 <a href="#" class="link-secondary">Secondary link</a>
+<a href="#" class="link-contrast">Contrast link</a>
 <a href="#" class="link-success">Success link</a>
 <a href="#" class="link-info">Info link</a>
 <a href="#" class="link-warning">Warning link</a>
 <a href="#" class="link-danger">Danger link</a>
-<a href="#" class="link-contrast">Contrast link</a>
 </div>`;
-const linkOpacityHtml = `<a href="#" class="link-opacity-10">10%</a>
-<a href="#" class="link-opacity-25">25%</a>
-<a href="#" class="link-opacity-50">50%</a>
-<a href="#" class="link-opacity-75">75%</a>
-<a href="#" class="link-opacity-100">100%</a>
-`;
+const linkOpacityHtml = `<div class="vstack gap-d">
+  <a href="#" class="link-contrast link-opacity-10">Primary link 10%</a>
+  <a href="#" class="link-contrast link-opacity-25">Primary link 25%</a>
+  <a href="#" class="link-contrast link-opacity-50">Primary link 50%</a>
+  <a href="#" class="link-contrast link-opacity-75">Primary link 75%</a>
+  <a href="#" class="link-contrast link-opacity-100">Primary link 100%</a>
+</div>`;
 const linkUnderlineHtml = `<div class="vstack gap-d">
-<a href="#" class="link-underline-primary">Primary underline</a>
-<a href="#" class="link-underline-secondary">Secondary underline</a>
-<a href="#" class="link-underline-success">Success underline</a>
-<a href="#" class="link-underline-danger">Danger underline</a>
+<a href="#" class="link-contrast link-opacity-25 link-underline-primary">Primary underline</a>
+<a href="#" class="link-contrast link-opacity-25 link-underline-secondary">Secondary underline</a>
+<a href="#" class="link-contrast link-opacity-25 link-underline-success">Success underline</a>
+<a href="#" class="link-contrast link-opacity-25 link-underline-info">Info underline</a>
+<a href="#" class="link-contrast link-opacity-25 link-underline-warning">Warning underline</a>
+<a href="#" class="link-contrast link-opacity-25 link-underline-danger">Danger underline</a>
 </div>`;
 const practicalHtml = `<article class="card text-bg-primary-subtle border border-primary">
   <hgroup class="mb-0">
