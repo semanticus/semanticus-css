@@ -1,0 +1,38 @@
+:where(a:not([role="button"])),
+[role="link"] {
+  &.success {
+    --color-text: var(--color-success-text);
+    --underline: var(--color-success-underline);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: var(--color-success-text-hover);
+      --underline: var(--color-success-underline-hover);
+    }
+  }
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+  &.success {
+    --color-background: var(--color-success-fill);
+    --border-color: var(--color-success-border);
+    --color-text: var(--color-success-on-fill);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-success-fill-hover);
+      --border-color: var(--color-success-border-hover);
+      --color-text: var(--color-success-on-fill);
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-success-focus-ring);
+    }
+  }
+}
+
+:is(.card, .pane, .panel).success {
+  --color-text: var(--color-success-on-fill);
+  --card-fill: var(--color-success-fill);
+  --card-border: var(--color-success-border);
+  --card-section-fill: color-mix(in srgb, var(--color-success-fill) 90%, black);
+}

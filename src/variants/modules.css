@@ -1,4 +1,9 @@
 @import "./_contrast.css";
+@import "./_danger.css";
+@import "./_info.css";
+@import "./_primary.css";
 @import "./_secondary.css";
+@import "./_success.css";
+@import "./_warning.css";
 /* Needs to be imported after other variants to override colors */
 @import "./_ghost.css";

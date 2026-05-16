@@ -1,0 +1,38 @@
+:where(a:not([role="button"])),
+[role="link"] {
+  &.warning {
+    --color-text: var(--color-warning-text);
+    --underline: var(--color-warning-underline);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: var(--color-warning-text-hover);
+      --underline: var(--color-warning-underline-hover);
+    }
+  }
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+  &.warning {
+    --color-background: var(--color-warning-fill);
+    --border-color: var(--color-warning-border);
+    --color-text: var(--color-warning-on-fill);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-warning-fill-hover);
+      --border-color: var(--color-warning-border-hover);
+      --color-text: var(--color-warning-on-fill);
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-warning-focus-ring);
+    }
+  }
+}
+
+:is(.card, .pane, .panel).warning {
+  --color-text: var(--color-warning-on-fill);
+  --card-fill: var(--color-warning-fill);
+  --card-border: var(--color-warning-border);
+  --card-section-fill: color-mix(in srgb, var(--color-warning-fill) 90%, black);
+}

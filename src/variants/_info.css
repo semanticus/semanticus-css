@@ -1,0 +1,38 @@
+:where(a:not([role="button"])),
+[role="link"] {
+  &.info {
+    --color-text: var(--color-info-text);
+    --underline: var(--color-info-underline);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: var(--color-info-text-hover);
+      --underline: var(--color-info-underline-hover);
+    }
+  }
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+  &.info {
+    --color-background: var(--color-info-fill);
+    --border-color: var(--color-info-border);
+    --color-text: var(--color-info-on-fill);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-info-fill-hover);
+      --border-color: var(--color-info-border-hover);
+      --color-text: var(--color-info-on-fill);
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-info-focus-ring);
+    }
+  }
+}
+
+:is(.card, .pane, .panel).info {
+  --color-text: var(--color-info-on-fill);
+  --card-fill: var(--color-info-fill);
+  --card-border: var(--color-info-border);
+  --card-section-fill: color-mix(in srgb, var(--color-info-fill) 90%, black);
+}

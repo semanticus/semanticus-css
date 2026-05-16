@@ -1,9 +1,3 @@
-/**
- * Secondary variant
- * Used on links, buttons, and form elements
- */
-
-/* Links */
 :where(a:not([role="button"])),
 [role="link"] {
   &.secondary {

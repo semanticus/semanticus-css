@@ -1,0 +1,38 @@
+:where(a:not([role="button"])),
+[role="link"] {
+  &.primary {
+    --color-text: var(--color-primary-text);
+    --underline: var(--color-primary-underline);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: var(--color-primary-text-hover);
+      --underline: var(--color-primary-underline-hover);
+    }
+  }
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+  &.primary {
+    --color-background: var(--color-primary-fill);
+    --border-color: var(--color-primary-border);
+    --color-text: var(--color-primary-on-fill);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-primary-fill-hover);
+      --border-color: var(--color-primary-border-hover);
+      --color-text: var(--color-primary-on-fill);
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
+    }
+  }
+}
+
+:is(.card, .pane, .panel).primary {
+  --color-text: var(--color-primary-on-fill);
+  --card-fill: var(--color-primary-fill);
+  --card-border: var(--color-primary-border);
+  --card-section-fill: color-mix(in srgb, var(--color-primary-fill) 90%, black);
+}
