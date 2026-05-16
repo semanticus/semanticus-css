@@ -16,21 +16,21 @@
 
   /* Borders & radii */
   --border-style: solid;
-  --border-radius-default: var(--border-radius);
-  --border-radius-sm: var(--border-radius-default);
-  --border-radius-lg: calc(var(--border-radius-default) * 2);
-  --border-radius-xl: calc(var(--border-radius-default) * 4);
-  --border-radius-xxl: calc(var(--border-radius-default) * 8);
+  --border-color: var(--color-border-muted);
+  --border-color-opacity: 1;
   --border-radius-pill: 50rem;
+  --border-radius-1: calc(var(--border-radius) * 0.66);
+  --border-radius-2: var(--border-radius);
+  --border-radius-3: calc(var(--border-radius) * 1.33);
+  --border-radius-4: calc(var(--border-radius) * 2.66);
+  --border-radius-5: calc(var(--border-radius) * 5.33);
 
   /* Border-width scale */
-  --border-width-default: var(--border-width);
-  --border-width-0: 0;
-  --border-width-1: var(--border-width-default);
-  --border-width-2: calc(var(--border-width-default) * 2);
-  --border-width-3: calc(var(--border-width-default) * 3);
-  --border-width-4: calc(var(--border-width-default) * 4);
-  --border-width-5: calc(var(--border-width-default) * 5);
+  --border-width-1: var(--border-width);
+  --border-width-2: calc(var(--border-width) * 2);
+  --border-width-3: calc(var(--border-width) * 3);
+  --border-width-4: calc(var(--border-width) * 4);
+  --border-width-5: calc(var(--border-width) * 5);
 
   /* Spacing scale */
   --spacer-default: var(--spacing);
@@ -48,7 +48,6 @@
   /* Auto-switching mappings (resolved at computed-value time via Semanticus CSS) */
   --emphasis-color: rgb(var(--color-contrast-rgb));
   --secondary-color: var(--color-text-muted);
-  --border-color: var(--color-border-muted);
   --focus-ring-color: var(--color-primary-focus);
 
   --max-z-index: 1050;

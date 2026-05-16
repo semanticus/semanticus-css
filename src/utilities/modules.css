@@ -13,13 +13,13 @@
 @import './_variables.css';
 
 /* borders */
+@import './borders/_border-colors.css';
+@import './borders/_border-radius.css';
 @import './borders/_border-style.css';
 @import './borders/_border-width.css';
-@import './borders/_border-radius.css';
 
 /* colors */
 @import './colors/_background-colors.css';
-@import './colors/_border-colors.css';
 @import './colors/_text-colors.css';
 
 /* display */

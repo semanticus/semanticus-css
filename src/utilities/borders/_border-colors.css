@@ -1,0 +1,75 @@
+.border-primary {
+  --border-color: rgba(var(--color-primary-rgb), var(--border-color-opacity));
+}
+
+.border-secondary {
+  --border-color: rgba(var(--color-secondary-rgb), var(--border-color-opacity));
+}
+
+.border-success {
+  --border-color: rgba(var(--color-success-rgb), var(--border-color-opacity));
+}
+
+.border-info {
+  --border-color: rgba(var(--color-info-rgb), var(--border-color-opacity));
+}
+
+.border-warning {
+  --border-color: rgba(var(--color-warning-rgb), var(--border-color-opacity));
+}
+
+.border-danger {
+  --border-color: rgba(var(--color-danger-rgb), var(--border-color-opacity));
+}
+
+.border-contrast {
+  --border-color: rgba(var(--color-contrast-rgb), var(--border-color-opacity));
+}
+
+.border-primary-subtle {
+  --border-color: var(--color-primary-border-subtle);
+}
+
+.border-secondary-subtle {
+  --border-color: var(--color-secondary-border-subtle);
+}
+
+.border-success-subtle {
+  --border-color: var(--color-success-border-subtle);
+}
+
+.border-info-subtle {
+  --border-color: var(--color-info-border-subtle);
+}
+
+.border-warning-subtle {
+  --border-color: var(--color-warning-border-subtle);
+}
+
+.border-danger-subtle {
+  --border-color: var(--color-danger-border-subtle);
+}
+
+.border-contrast-subtle {
+  --border-color: var(--color-contrast-border-subtle);
+}
+
+.border-opacity-10 {
+  --border-color-opacity: 0.1;
+}
+
+.border-opacity-25 {
+  --border-color-opacity: 0.25;
+}
+
+.border-opacity-50 {
+  --border-color-opacity: 0.5;
+}
+
+.border-opacity-75 {
+  --border-color-opacity: 0.75;
+}
+
+.border-opacity-100 {
+  --border-color-opacity: 1;
+}
