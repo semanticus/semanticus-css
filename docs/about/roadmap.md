@@ -24,12 +24,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Added the `.ghost` variant, replacing the `.outline` variant |
 | ✅ | Added the `.pane` and `.panel` variants, based off the `.card` class |
 | ✅ | Extended the reach of `.secondary` and `.contrast` variants, to `.pane`, `.panel`, and `.card` variants |
-| ⌛ | Add `.primary` variant based of **Bootstrap** colors |
-| ⌛ | Add `.success` variant based of **Bootstrap** colors |
-| ⌛ | Add `.warning` variant based of **Bootstrap** colors |
-| ⌛ | Add `.danger` variant based of **Bootstrap** colors |
-| ⌛ | Add `.info` variant based of **Bootstrap** colors |
-| ⌛ | Add `.badge` variant |
+| ✅ | `.primary` variant |
+| ✅ | `.success` variant |
+| ✅ | `.warning` variant |
+| ✅ | `.danger` variant |
+| ✅ | `.info` variant |
+| ⌛ | `.subtle` variant |
+| ⌛ | `.badge` variant |
 
 ## Interactive Patterns
 
@@ -88,8 +89,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Modal interaction |
 | ✅ | Accordion interaction |
 | ✅ | Dropdown interaction |
+| ✅ | `.primary` variant combinations |
 | ✅ | `.secondary` variant combinations |
 | ✅ | `.contrast` variant combinations |
+| ✅ | `.success` variant combinations |
+| ✅ | `.info` variant combinations |
+| ✅ | `.warning` variant combinations |
+| ✅ | `.danger` variant combinations |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Alert interaction |
 | ⌛ | Prompt interaction |
