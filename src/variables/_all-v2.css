@@ -1,5 +1,5 @@
 @import '../palettes/azure.css';
 @import './_breakpoints.css';
-@import './_theme.css';
-@import './_layout.css';
-@import './_elements.css';
+@import './_theme-v2.css';
+@import './_layout-v2.css';
+@import './_elements-v2.css';

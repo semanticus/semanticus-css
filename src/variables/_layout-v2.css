@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Layout & Typography Variables
+   ==========================================================================
+
+   Global sizing, spacing, and typography variables. These define the
+   foundational rhythm of the design system.
+
+   Includes:
+   - Font families and typography scale
+   - Spacing units and component padding
+   - Border radius and border widths
+   - Responsive typography adjustments
+   ========================================================================== */
+
+:root,
+:host {
+  /* Font Families */
+  --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--font-family-emoji);
+  --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
+  --font-family: var(--font-family-sans-serif);
+
+  /* Typography - base defaults */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 97%;
+  --text-underline-offset: 0.1rem;
+
+  /* Font Size Scale - semantic heading sizes (h1-h6) */
+  --fs-1: 2rem;
+  --fs-2: 1.75rem;
+  --fs-3: 1.5rem;
+  --fs-4: 1.25rem;
+  --fs-5: 1.125rem;
+  --fs-6: 1rem;
+
+  /* Borders & Effects */
+  --border-radius: 0.25rem;
+  --border-width: 0.0625rem;
+  --outline-width: 0.125rem;
+  --transition: 0.2s ease-in-out;
+
+  /* Spacing - shared base unit */
+  --base-spacing: 0.75rem;
+  --responsive-multiplier: 1;
+  --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+  --typography-spacing-vertical: 1rem;
+  --grid-column-gap: var(--spacing);
+  --grid-row-gap: var(--spacing);
+  --form-element-spacing-vertical: 0.5rem;
+  --form-element-spacing-horizontal: 0.7rem;
+
+  /* Group Shadows */
+  --group-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-primary-focus);
+  --group-shadow-focus-with-input: 0 0 0 0.0625rem var(--form-border-color);
+
+  /* Navigation */
+  --nav-link-spacing: calc(var(--spacing) * 0.5);
+  --nav-breadcrumb-divider: ">";
+
+  /* Sidebar */
+  --sidebar-width: 25%;
+}
+
+/* ==========================================================================
+   Responsive Typography & Layout Adjustments
+   ========================================================================== */
+
+@media (--breakpoint-sm) {
+  :root,
+  :host {
+    --font-size: 98%;
+    --sidebar-width: max(25%, 150px);
+    --responsive-multiplier: 1.1;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
+  }
+}
+
+@media (--breakpoint-md) {
+  :root,
+  :host {
+    --font-size: 99%;
+    --sidebar-width: max(22%, 180px);
+    --responsive-multiplier: 1.2;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
+  }
+}
+
+@media (--breakpoint-lg) {
+  :root,
+  :host {
+    --font-size: 100%;
+    --sidebar-width: max(20%, 200px);
+    --responsive-multiplier: 1.3;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
+  }
+}
+
+@media (--breakpoint-xl) {
+  :root,
+  :host {
+    --font-size: 101%;
+    --sidebar-width: max(18%, 220px);
+    --responsive-multiplier: 1.4;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
+  }
+}
+
+@media (--breakpoint-xxl) {
+  :root,
+  :host {
+    --font-size: 102%;
+    --sidebar-width: clamp(240px, 16%, 300px);
+    --responsive-multiplier: 1.5;
+    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+    --nav-link-spacing: calc(var(--spacing) * 0.5);
+  }
+}
