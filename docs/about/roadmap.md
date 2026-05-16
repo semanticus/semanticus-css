@@ -10,8 +10,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Utility composition system |
 | ✅ | Consolidated Pico CSS and Bootstrap css variables into one unified system |
 | ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
-| ⌛ | CSS variables token organization |
-| ⌛ | Reducing light/dark CSS variables footprint |
+| ✅ | CSS variables token organization |
+| ✅ | Reducing CSS variables footprint with light/dark mode optimization |
 
 ## Variants & Utilities
 
