@@ -244,7 +244,7 @@
   --card-shadow: var(--shadow);
   --card-section-fill: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+    var(--color-slate-800)
   );
 
   /* === Menu / Dropdown tokens === */

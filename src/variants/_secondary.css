@@ -37,10 +37,8 @@
 }
 
 :is(.card, .pane, .panel).secondary {
-  --color-text: var(--color-secondary-text) !important;
-  --card-fill: var(--color-muted-fill);
-}
-
-:is(.panel).secondary {
-  --card-border: var(--color-muted-border);
+  --color-text: var(--color-secondary-on-fill);
+  --card-fill: var(--color-secondary-fill);
+  --card-border: var(--color-secondary-border);
+  --card-section-fill: color-mix(in srgb, var(--color-secondary-fill) 90%, black);
 }
