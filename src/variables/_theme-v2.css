@@ -54,11 +54,15 @@
   --color-zinc-50: #f0f1f3;
 
   /* Semantic utility colors (fixed — not palette-dependent) */
-  --color-red-500: #d93526;
-  --color-jade-450: #029764;
   --color-amber-100: #fddea6;
+  --color-amber-200: #ffbf00;
+  --color-amber-350: #c79400;
   --color-amber-50: #fcefd9;
+  --color-azure-350: #01aaff;
+  --color-azure-550: #0172ad;
   --color-azure-750: #014063;
+  --color-jade-450: #029764;
+  --color-red-500: #d93526;
 }
 
 /* === VARIANTS === */
@@ -104,6 +108,41 @@
   --color-muted-text: light-dark(var(--color-zinc-550), var(--color-zinc-450));
   --color-muted-underline-hover: var(--color-muted-text-hover);
   --color-muted-underline: light-dark(oklch(from var(--color-zinc-550) l c h / 0.5), oklch(from var(--color-zinc-450) l c h / 0.5));
+
+  /* Success colors */
+  --color-success-fill: light-dark(
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-750)),
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-200))
+  );
+  --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-450));
+  --color-success-on-fill: white;
+
+  /* Info colors */
+  --color-info-fill: light-dark(
+    color-mix(in srgb, var(--color-azure-550) 30%, var(--color-zinc-750)),
+    color-mix(in srgb, var(--color-azure-550) 30%, var(--color-zinc-200))
+  );
+  --color-info-text: light-dark(
+    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-750)),
+    color-mix(in srgb, var(--color-azure-550) 15%, var(--color-zinc-200))
+  );
+  --color-info-on-fill: white;
+
+  /* Warning colors */
+  --color-warning-fill: light-dark(
+    color-mix(in srgb, var(--color-amber-100), var(--color-amber-50)),
+    color-mix(in srgb, var(--color-amber-100), var(--color-amber-350))
+  );
+  --color-warning-text: var(--color-amber-350);
+  --color-warning-on-fill: var(--color-zinc-950);
+
+  /* Danger colors */
+  --color-danger-fill: light-dark(
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-750)),
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-200))
+  );
+  --color-danger-text: light-dark(var(--color-red-500), var(--color-red-500));
+  --color-danger-on-fill: white;
 }
 
 /* === GLOBAL SYSTEM TOKENS === */
@@ -277,17 +316,10 @@
   /* Sidebar */
   --sidebar-size: 25%;
 
-  --mark-fill: light-dark(color-mix(in srgb, var(--color-amber-100), var(--color-amber-50)), var(--color-azure-750));
-  --mark-text: light-dark(var(--color-zinc-950), white);
-
-  --ins-text: light-dark(
-    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-200))
-  );
-  --del-text: light-dark(
-    color-mix(in srgb, var(--color-red-500), var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-red-500), var(--color-zinc-200))
-  );
+  --mark-fill: var(--color-warning-fill);
+  --mark-text: var(--color-warning-on-fill);
+  --ins-text: var(--color-success-text);
+  --del-text: var(--color-danger-text);
 
   --blockquote-border: var(--color-muted-border);
   --blockquote-footer-text: var(--color-muted-text);
