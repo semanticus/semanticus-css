@@ -13,7 +13,7 @@
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.ghost {
     --color-background: transparent;
-    --border-color: var(--color-primary-text);
+    --border-color: var(--color-primary-border);
     --color-text: var(--color-primary-text);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -24,7 +24,7 @@
 
     &.secondary {
       --color-background: transparent;
-      --border-color: var(--color-secondary-text);
+      --border-color: var(--color-secondary-border);
       --color-text: var(--color-secondary-text);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -36,7 +36,7 @@
 
     &.contrast {
       --color-background: transparent;
-      --border-color: var(--color-contrast-text);
+      --border-color: var(--color-contrast-border);
       --color-text: var(--color-contrast-text);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -45,13 +45,65 @@
         --color-text: var(--color-contrast-on-fill);
       }
     }
+
+    &.success {
+      --color-background: transparent;
+      --border-color: var(--color-success-border);
+      --color-text: var(--color-success-text);
+
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-background: var(--color-success-fill-hover);
+        --border-color: var(--color-success-border-hover);
+        --color-text: var(--color-success-on-fill);
+      }
+    }
+
+    &.info {
+      --color-background: transparent;
+      --border-color: var(--color-info-border);
+      --color-text: var(--color-info-text);
+
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-background: var(--color-info-fill-hover);
+        --border-color: var(--color-info-border-hover);
+        --color-text: var(--color-info-on-fill);
+      }
+    }
+
+    &.warning {
+      --color-background: transparent;
+      --border-color: var(--color-warning-border);
+      --color-text: var(--color-warning-text);
+
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-background: var(--color-warning-fill-hover);
+        --border-color: var(--color-warning-border-hover);
+        --color-text: var(--color-warning-on-fill);
+
+        details &::after {
+          filter: brightness(0);
+        }
+      }
+    }
+
+    &.danger {
+      --color-background: transparent;
+      --border-color: var(--color-danger-border);
+      --color-text: var(--color-danger-text);
+
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-background: var(--color-danger-fill-hover);
+        --border-color: var(--color-danger-border-hover);
+        --color-text: var(--color-danger-on-fill);
+      }
+    }
   }
 }
 
 /* Reset buttons */
 [type="reset"].ghost {
   --color-background: transparent;
-  --border-color: var(--color-secondary-text);
+  --border-color: var(--color-secondary-border);
   --color-text: var(--color-secondary-text);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {

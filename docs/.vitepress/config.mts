@@ -427,9 +427,15 @@ export default defineConfig({
         {
           text: "Variants",
           items: [
+            { text: ".primary", link: "/docs/variants/primary" },
             { text: ".secondary", link: "/docs/variants/secondary" },
             { text: ".contrast", link: "/docs/variants/contrast" },
+            { text: ".success", link: "/docs/variants/success" },
+            { text: ".info", link: "/docs/variants/info" },
+            { text: ".warning", link: "/docs/variants/warning" },
+            { text: ".danger", link: "/docs/variants/danger" },
             { text: ".ghost", link: "/docs/variants/ghost" },
+            { text: ".subtle", link: "/docs/variants/subtle" },
           ],
         },
         {

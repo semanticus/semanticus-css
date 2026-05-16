@@ -207,6 +207,27 @@
   --color-danger-text: light-dark(var(--color-red-500), var(--color-red-500));
   --color-danger-underline-hover: var(--color-danger-text-hover);
   --color-danger-underline: oklch(from var(--color-red-500) l c h / 0.5);
+
+  --color-primary-subtle-fill: color-mix(in oklch, var(--color-primary-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-primary-subtle-border: color-mix(in oklch, var(--color-primary-border) 10%, light-dark(white, var(--color-slate-900)));
+
+  --color-secondary-subtle-fill: color-mix(in oklch, var(--color-secondary-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-secondary-subtle-border: color-mix(in oklch, var(--color-secondary-border) 10%, light-dark(white, var(--color-slate-900)));
+
+  --color-contrast-subtle-fill: color-mix(in oklch, var(--color-contrast-fill) 80%, light-dark(white, var(--color-slate-900)));
+  --color-contrast-subtle-border: color-mix(in oklch, var(--color-contrast-border) 80%, light-dark(white, var(--color-slate-900)));
+
+  --color-success-subtle-fill: color-mix(in oklch, var(--color-success-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-success-subtle-border: color-mix(in oklch, var(--color-success-border) 10%, light-dark(white, var(--color-slate-900)));
+
+  --color-info-subtle-fill: color-mix(in oklch, var(--color-info-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-info-subtle-border: color-mix(in oklch, var(--color-info-border) 10%, light-dark(white, var(--color-slate-900)));
+
+  --color-warning-subtle-fill: color-mix(in oklch, var(--color-warning-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-warning-subtle-border: color-mix(in oklch, var(--color-warning-border) 30%, light-dark(white, var(--color-slate-900)));
+
+  --color-danger-subtle-fill: color-mix(in oklch, var(--color-danger-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-danger-subtle-border: color-mix(in oklch, var(--color-danger-border) 10%, light-dark(white, var(--color-slate-900)));
 }
 
 /* === GLOBAL SYSTEM TOKENS === */

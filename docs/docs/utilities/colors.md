@@ -1,29 +1,35 @@
 <script setup>
 const bgColorsHtml = `<div class="text-bg-primary p-3 mb-2">.text-bg-primary</div>
+<div class="text-bg-primary-subtle border border-primary-subtle p-3 mb-2">.text-bg-primary-subtle</div>
 <div class="text-bg-secondary p-3 mb-2">.text-bg-secondary</div>
+<div class="text-bg-secondary-subtle p-3 mb-2">.text-bg-secondary-subtle</div>
 <div class="text-bg-contrast p-3 mb-2">.text-bg-contrast</div>
+<div class="text-bg-contrast-subtle p-3 mb-2">.text-bg-contrast-subtle</div>
 <div class="text-bg-success p-3 mb-2">.text-bg-success</div>
+<div class="text-bg-success-subtle p-3 mb-2">.text-bg-success-subtle</div>
 <div class="text-bg-info p-3 mb-2">.text-bg-info</div>
+<div class="text-bg-info-subtle p-3 mb-2">.text-bg-info-subtle</div>
 <div class="text-bg-warning p-3 mb-2">.text-bg-warning</div>
+<div class="text-bg-warning-subtle p-3 mb-2">.text-bg-warning-subtle</div>
 <div class="text-bg-danger p-3 mb-2">.text-bg-danger</div>
+<div class="text-bg-danger-subtle p-3 mb-2">.text-bg-danger-subtle</div>
 `;
 const bgOnlyHtml = `<div class="bg-primary p-3 mb-2">.bg-primary</div>
+<div class="bg-primary-subtle p-3 mb-2">.bg-primary-subtle</div>
 <div class="bg-secondary p-3 mb-2">.bg-secondary</div>
+<div class="bg-secondary-subtle p-3 mb-2">.bg-secondary-subtle</div>
 <div class="bg-contrast p-3 mb-2">.bg-contrast</div>
+<div class="bg-contrast-subtle p-3 mb-2">.bg-contrast-subtle</div>
 <div class="bg-success p-3 mb-2">.bg-success</div>
+<div class="bg-success-subtle p-3 mb-2">.bg-success-subtle</div>
 <div class="bg-info p-3 mb-2">.bg-info</div>
+<div class="bg-info-subtle p-3 mb-2">.bg-info-subtle</div>
 <div class="bg-warning p-3 mb-2">.bg-warning</div>
+<div class="bg-warning-subtle p-3 mb-2">.bg-warning-subtle</div>
 <div class="bg-danger p-3 mb-2">.bg-danger</div>
+<div class="bg-danger-subtle p-3 mb-2">.bg-danger-subtle</div>
 <div class="bg-body p-3 mb-2 border">.bg-body</div>
 <div class="bg-transparent p-3 mb-2 border">.bg-transparent</div>
-`;
-const bgSubtleHtml = `<div class="bg-primary-subtle p-3 mb-2">.bg-primary-subtle</div>
-<div class="bg-secondary-subtle p-3 mb-2">.bg-secondary-subtle</div>
-<div class="bg-contrast-subtle p-3 mb-2">.bg-contrast-subtle</div>
-<div class="bg-success-subtle p-3 mb-2">.bg-success-subtle</div>
-<div class="bg-info-subtle p-3 mb-2">.bg-info-subtle</div>
-<div class="bg-warning-subtle p-3 mb-2">.bg-warning-subtle</div>
-<div class="bg-danger-subtle p-3 mb-2">.bg-danger-subtle</div>
 `;
 const bgOpacityHtml = `<div class="bg-primary p-2 mb-2">Default primary background</div>
 <div class="bg-primary bg-opacity-75 p-2 mb-2">75% opacity</div>
@@ -107,10 +113,6 @@ Use `.text-bg-*` to set both a matching background and text color at once.
 Use `.bg-*` to set just the background color.
 
 <HtmlPreviewer :code="bgOnlyHtml" />
-
-### Subtle Backgrounds
-
-<HtmlPreviewer :code="bgSubtleHtml" />
 
 ### Background Opacity
 

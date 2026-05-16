@@ -7,3 +7,4 @@
 @import "./_warning.css";
 /* Needs to be imported after other variants to override colors */
 @import "./_ghost.css";
+@import "./_subtle.css";

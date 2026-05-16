@@ -30,6 +30,11 @@
   }
 }
 
+/* Accordion chevron override */
+details summary[role="button"].warning::after {
+  filter: brightness(0);
+}
+
 :is(.card, .pane, .panel).warning {
   --color-text: var(--color-warning-on-fill);
   --card-fill: var(--color-warning-fill);

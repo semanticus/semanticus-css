@@ -55,43 +55,43 @@
 }
 
 .bg-primary-subtle {
-  --background-color: oklch(from var(--color-primary-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-primary-subtle-fill);
 
   background-color: var(--background-color) !important;
 }
 
 .bg-secondary-subtle {
-  --background-color: oklch(from var(--color-secondary-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-secondary-subtle-fill);
 
   background-color: var(--background-color) !important;
 }
 
 .bg-success-subtle {
-  --background-color: oklch(from var(--color-success-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-success-subtle-fill);
 
   background-color: var(--background-color) !important;
 }
 
 .bg-info-subtle {
-  --background-color: oklch(from var(--color-info-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-info-subtle-fill);
 
   background-color: var(--background-color) !important;
 }
 
 .bg-warning-subtle {
-  --background-color: oklch(from var(--color-warning-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-warning-subtle-fill);
 
   background-color: var(--background-color) !important;
 }
 
 .bg-danger-subtle {
-  --background-color: oklch(from var(--color-danger-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-danger-subtle-fill);
 
   background-color: var(--background-color) !important;
 }
 
 .bg-contrast-subtle {
-  --background-color: oklch(from var(--color-contrast-fill) l c h / var(--background-color-opacity));
+  --background-color: var(--color-contrast-subtle-fill);
 
   background-color: var(--background-color) !important;
 }

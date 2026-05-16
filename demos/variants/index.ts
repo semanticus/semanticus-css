@@ -7,5 +7,6 @@ export * as PaneDemo from "@demos/variants/pane.demo";
 export * as PanelDemo from "@demos/variants/panel.demo";
 export * as PrimaryDemo from "@demos/variants/primary.demo";
 export * as SecondaryDemo from "@demos/variants/secondary.demo";
+export * as SubtleDemo from "@demos/variants/subtle.demo";
 export * as SuccessDemo from "@demos/variants/success.demo";
 export * as WarningDemo from "@demos/variants/warning.demo";

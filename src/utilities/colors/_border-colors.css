@@ -27,31 +27,31 @@
 }
 
 .border-primary-subtle {
-  --color-border: var(--color-primary-border);
+  --color-border: var(--color-primary-subtle-border);
 }
 
 .border-secondary-subtle {
-  --color-border: var(--color-secondary-border);
+  --color-border: var(--color-secondary-subtle-border);
 }
 
 .border-success-subtle {
-  --color-border: var(--color-success-border);
+  --color-border: var(--color-success-subtle-border);
 }
 
 .border-info-subtle {
-  --color-border: var(--color-info-border);
+  --color-border: var(--color-info-subtle-border);
 }
 
 .border-warning-subtle {
-  --color-border: var(--color-warning-border);
+  --color-border: var(--color-warning-subtle-border);
 }
 
 .border-danger-subtle {
-  --color-border: var(--color-danger-border);
+  --color-border: var(--color-danger-subtle-border);
 }
 
 .border-contrast-subtle {
-  --color-border: var(--color-contrast-border);
+  --color-border: var(--color-contrast-subtle-border);
 }
 
 .border-opacity-10 {

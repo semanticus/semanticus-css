@@ -1,36 +1,49 @@
 <script setup>
 const buttonHtml = `<div role="toolbar">
-  <button class="ghost">Primary Ghost</button>
-  <button class="ghost secondary">Secondary Ghost</button>
-  <button class="ghost contrast">Contrast Ghost</button>
+  <button class="ghost">Primary</button>
+  <button class="ghost secondary">Secondary</button>
+  <button class="ghost contrast">Contrast</button>
+  <button class="ghost success">Success</button>
+  <button class="ghost info">Info</button>
+  <button class="ghost warning">Warning</button>
+  <button class="ghost danger">Danger</button>
 </div>
 `;
 
-const resetHtml = `<form onsubmit="return false;">
-  <input type="text" placeholder="Type something...">
-  <div role="toolbar">
-    <button type="submit">Submit</button>
-    <button type="reset" class="ghost">Reset (Ghost)</button>
-  </div>
-</form>
-`;
-
-const accordionHtml = `<!-- Ghost accordions -->
-<details>
-  <summary role="button" class="ghost">Primary Ghost</summary>
+const accordionHtml = `<details>
+  <summary role="button" class="ghost">Primary</summary>
   <p>Elephants are the largest land animals and highly intelligent with intricate communication systems.</p>
 </details>
 
 <details>
-  <summary role="button" class="ghost secondary">Secondary Ghost</summary>
+  <summary role="button" class="ghost secondary">Secondary</summary>
   <p>Crows are intelligent birds that are known for their problem-solving abilities.</p>
 </details>
 
 <details>
-  <summary role="button" class="ghost contrast">Contrast Ghost</summary>
+  <summary role="button" class="ghost contrast">Contrast</summary>
   <p>Penguins are flightless birds with a tuxedo-like appearance.</p>
 </details>
-`;
+
+<details>
+  <summary role="button" class="ghost success">Success</summary>
+  <p>Penguins are flightless birds with a tuxedo-like appearance.</p>
+</details>
+
+<details>
+  <summary role="button" class="ghost info">Info</summary>
+  <p>Penguins are flightless birds with a tuxedo-like appearance.</p>
+</details>
+
+<details>
+  <summary role="button" class="ghost warning">Warning</summary>
+  <p>Penguins are flightless birds with a tuxedo-like appearance.</p>
+</details>
+
+<details>
+  <summary role="button" class="ghost danger">Danger</summary>
+  <p>Penguins are flightless birds with a tuxedo-like appearance.</p>
+</details>`;
 </script>
 
 # Ghost Variant
@@ -42,12 +55,6 @@ The `.ghost` class creates transparent background buttons with colored text and 
 Apply `.ghost` to `<button>` elements or elements with `[role="button"]`. Ghost buttons can be combined with `.secondary` and `.contrast` for different color variations.
 
 <HtmlPreviewer :code="buttonHtml" />
-
-## Reset Buttons
-
-Ghost style works particularly well for reset buttons, providing a subtle way to clear forms without competing with submit buttons.
-
-<HtmlPreviewer :code="resetHtml" />
 
 ## Accordion
 
