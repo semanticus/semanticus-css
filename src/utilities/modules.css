@@ -13,14 +13,16 @@
 @import './_variables.css';
 
 /* borders */
-@import './borders/_border-colors.css';
 @import './borders/_border-radius.css';
 @import './borders/_border-style.css';
 @import './borders/_border-width.css';
 
 /* colors */
-@import './colors/_background-colors.css';
+@import './colors/_border-colors.css';
+@import './colors/_link-colors.css';
+@import './colors/_text-bg-colors.css';
 @import './colors/_text-colors.css';
+@import './colors/bg-colors.css';
 
 /* display */
 @import './display/_display.css';
@@ -28,6 +30,7 @@
 @import './display/_visibility.css';
 
 /* effects */
+@import './effects/_focus-ring.css';
 @import './effects/_opacity.css';
 @import './effects/_shadows.css';
 @import './effects/_transforms.css';

@@ -240,12 +240,11 @@ The `font-family` prefix is permitted here even though `font-family` is a CSS pr
 
 ## Internal / calculation helper tokens
 
-Tokens prefixed with `--base-` or named `--spacing` / `--responsive-multiplier` are **internal helpers** used only inside `calc()` expressions. They are not part of the public API and do not need to follow the two-pattern convention:
+Tokens prefixed with `--base-` or named `--spacing` are **internal helpers** used only inside `calc()` expressions. They are not part of the public API and do not need to follow the two-pattern convention:
 
 ```css
 --base-spacing           /* base unit for the spacing scale */
---responsive-multiplier  /* multiplier applied at responsive breakpoints */
---spacing                /* computed spacing step derived from base × multiplier */
+--spacing                /* computed spacing step derived from base × responsive multiplier */
 ```
 
 Do not reference these tokens directly in component or utility CSS; derive from `--spacing` via `calc()` only.

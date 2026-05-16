@@ -15,7 +15,6 @@ const bgOnlyHtml = `<div class="bg-primary p-3 mb-2">.bg-primary</div>
 <div class="bg-danger p-3 mb-2">.bg-danger</div>
 <div class="bg-contrast p-3 mb-2">.bg-contrast</div>
 <div class="bg-body p-3 mb-2 border">.bg-body</div>
-<div class="bg-body-secondary p-3 mb-2">.bg-body-secondary</div>
 <div class="bg-transparent p-3 mb-2 border">.bg-transparent</div>
 `;
 const bgSubtleHtml = `<div class="bg-primary-subtle p-3 mb-2">.bg-primary-subtle</div>
@@ -44,7 +43,6 @@ const textColorsHtml = `<p class="text-primary">.text-primary</p>
 <p class="text-contrast">.text-contrast</p>
 <p class="text-body">.text-body</p>
 <p class="text-muted">.text-muted</p>
-<p class="text-body-secondary">.text-body-secondary</p>
 <p class="text-body-emphasis">.text-body-emphasis</p>
 <p class="text-reset">.text-reset</p>
 `;

@@ -10,11 +10,6 @@
    out of the box.
    ========================================================================== */
 
-/* Links */
-a {
-  --a-decoration: underline;
-}
-
 /* Small text */
 small {
   --font-size: 0.875em;

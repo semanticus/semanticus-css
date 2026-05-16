@@ -5,11 +5,13 @@
 }
 
 .icon-link {
+  --underline: var(--color-primary-underline);
+
   display: inline-flex;
   gap: 0.375rem;
   align-items: center;
-  -webkit-text-decoration-color: rgba(var(--color-link-rgb), var(--link-opacity, 0.5));
-  text-decoration-color: rgba(var(--color-link-rgb), var(--link-opacity, 0.5));
+  -webkit-text-decoration-color: var(--underline);
+  text-decoration-color: var(--underline);
   text-underline-offset: 0.25em;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

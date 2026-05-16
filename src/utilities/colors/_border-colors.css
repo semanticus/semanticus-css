@@ -1,0 +1,75 @@
+.border-primary {
+  --border-color: oklch(from var(--color-primary-border) l c h / var(--border-color-opacity));
+}
+
+.border-secondary {
+  --border-color: oklch(from var(--color-secondary-border) l c h / var(--border-color-opacity));
+}
+
+.border-success {
+  --border-color: oklch(from var(--color-success-border) l c h / var(--border-color-opacity));
+}
+
+.border-info {
+  --border-color: oklch(from var(--color-info-border) l c h / var(--border-color-opacity));
+}
+
+.border-warning {
+  --border-color: oklch(from var(--color-warning-border) l c h / var(--border-color-opacity));
+}
+
+.border-danger {
+  --border-color: oklch(from var(--color-danger-border) l c h / var(--border-color-opacity));
+}
+
+.border-contrast {
+  --border-color: oklch(from var(--color-contrast-border) l c h / var(--border-color-opacity));
+}
+
+.border-primary-subtle {
+  --border-color: oklch(from var(--color-primary-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-secondary-subtle {
+  --border-color: oklch(from var(--color-secondary-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-success-subtle {
+  --border-color: oklch(from var(--color-success-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-info-subtle {
+  --border-color: oklch(from var(--color-info-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-warning-subtle {
+  --border-color: oklch(from var(--color-warning-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-danger-subtle {
+  --border-color: oklch(from var(--color-danger-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-contrast-subtle {
+  --border-color: oklch(from var(--color-contrast-subtle-border) l c h / var(--border-color-opacity));
+}
+
+.border-opacity-10 {
+  --border-color-opacity: 10%;
+}
+
+.border-opacity-25 {
+  --border-color-opacity: 25%;
+}
+
+.border-opacity-50 {
+  --border-color-opacity: 50%;
+}
+
+.border-opacity-75 {
+  --border-color-opacity: 75%;
+}
+
+.border-opacity-100 {
+  --border-color-opacity: 100%;
+}
