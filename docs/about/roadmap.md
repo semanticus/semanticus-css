@@ -13,6 +13,14 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | CSS variables token organization |
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
 
+## Components
+
+| Status | Feature |
+| --- | --- |
+| ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
+| ✅ | Removed `<article>` the **card** style |
+| ✅ | `.sidebar` component |
+
 ## Variants & Utilities
 
 | Status | Feature |
@@ -21,16 +29,17 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Replaced **Bootstrap** *light* and *dark* utility classes with **Pico CSS** *contrast* |
 | ✅ | Removed the **card** style from `<article>` onto a variant `.card` class |
 | ✅ | Removed the `.outline` variant to prevent collision with possible future utility classes |
-| ✅ | Added the `.ghost` variant, replacing the `.outline` variant |
-| ✅ | Added the `.pane` and `.panel` variants, based off the `.card` class |
-| ✅ | Extended the reach of `.secondary` and `.contrast` variants, to `.pane`, `.panel`, and `.card` variants |
-| ✅ | `.primary` variant |
-| ✅ | `.success` variant |
-| ✅ | `.warning` variant |
-| ✅ | `.danger` variant |
-| ✅ | `.info` variant |
-| ⌛ | `.subtle` variant |
-| ⌛ | `.badge` variant |
+| ✅ | `.ghost` modifier variant, replacing **Pico CSS**'s `.outline` class |
+| ✅ | `.pane` modifier variant |
+| ✅ | `.panel` modifier variant |
+| ✅ | `.primary` intent variant |
+| ✅ | `.success` intent variant |
+| ✅ | `.warning` intent variant |
+| ✅ | `.danger` intent variant |
+| ✅ | `.info` intent variant |
+| ✅ | `.subtle` modifier variant |
+| ⌛ | `.striped` modifier variant |
+| ⌛ | `.badge` modifier variant |
 
 ## Interactive Patterns
 
