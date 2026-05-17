@@ -19,7 +19,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
-| ✅ | `.sidebar` component |
+| 🚧 | `.sidebar` component |
 
 ## Variants & Utilities
 
@@ -38,8 +38,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.danger` intent variant |
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
-| ⌛ | `.striped` modifier variant |
-| ⌛ | `.badge` modifier variant |
+| 🚧 | `.striped` modifier variant |
 | ⌛ | Extend **intent variants** reach to `<progress>` |
 
 ## Interactive Patterns
@@ -78,7 +77,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Theme Builder to help the developer visualize which CSS variable does what |
 | ✅ | ARIA pattern documentation |
 | ✅ | Exhaustive HTML elements and attributes documentation |
-| 🚧 | Exhaustive Composites documentation |
+| ✅ | Exhaustive Composites documentation |
 | ✅ | Exhaustive variants documentation and their combinations with HTML elements |
 | ✅ | Exhaustive Utility classes documentation |
 | ✅ | Documentation page example |
