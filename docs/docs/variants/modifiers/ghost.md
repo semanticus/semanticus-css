@@ -13,19 +13,19 @@ The `.ghost` class creates transparent background buttons with colored text and 
 
 Apply `.ghost` to `<button>` elements or elements with `[role="button"]`.
 
-<HtmlPreviewer :code="GhostDemo.buttons()" />
+<HtmlPreviewer :code="GhostDemo.buttons()" :codeCollapsed="true" />
 
 ## Accordions
 
 Apply `.ghost` to accordion `<summary>` elements with `role="button"` for a lighter expandable section style.
 
-<HtmlPreviewer :code="GhostDemo.accordions()" />
+<HtmlPreviewer :code="GhostDemo.accordions()" :codeCollapsed="true" />
 
 ## Cards
 
 `.ghost` can also be applied to other elements or components, such as cards, to create a transparent background with colored borders and text.
 
-<HtmlPreviewer :code="GhostDemo.cards()" />
+<HtmlPreviewer :code="GhostDemo.cards()" :codeCollapsed="true" />
 
 <script setup>
 import { GhostDemo } from "@demos/variants/modifiers";

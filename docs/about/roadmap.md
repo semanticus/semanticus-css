@@ -72,6 +72,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Single source of truth demonstration files |
 | ✅ | Simplified the build process by removing the need for Sass |
 | ✅ | Live code previewer and editor |
+| ✅ | Live code previewer collapsedCode option |
 | ✅ | Palette and Size picker |
 | ✅ | Theme Builder to help the developer visualize which CSS variable does what |
 | ✅ | ARIA pattern documentation |
