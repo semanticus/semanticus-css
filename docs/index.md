@@ -72,7 +72,7 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
 
 ### 3. Variants
 
-CSS classes that tweak **Semantic Styling** and **Components** via **CSS variables** - throw in a [variant](/docs/variants/) when you want to add or reduce visual flair.
+CSS classes that tweak the **Semantic Styling** and **Components** - throw in a [variant](/docs/variants/) when you want to add or reduce visual flair.
 
 <HtmlPreviewer :code="GettingStartedDemo.variants()" />
 
