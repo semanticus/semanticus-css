@@ -331,6 +331,7 @@ export default defineConfig({
             { text: "Card", link: "/docs/composites/card" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
+            { text: "Links", link: "/docs/composites/links" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
@@ -401,6 +402,10 @@ export default defineConfig({
                   link: "/docs/semantics/attributes/role-group",
                 },
                 {
+                  text: '[role="link"]',
+                  link: "/docs/semantics/attributes/role-link",
+                },
+                {
                   text: '[role="search"]',
                   link: "/docs/semantics/attributes/role-search",
                 },
@@ -426,7 +431,6 @@ export default defineConfig({
         {
           text: "Variants",
           items: [
-            { text: "Overview", link: "/docs/variants" },
             {
               text: "Intent",
               items: [

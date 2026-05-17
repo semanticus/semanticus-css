@@ -144,7 +144,7 @@ Reset inputs have the secondary style by default.
 
 <script setup>
 import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import * as IntentDemo from "@demos/variants/intent/demo";
+import * as IntentDemo from '@demos/overviews/variants/intent/demo';
 
 import { InputDemo } from "@demos/semantics/elements";
 const miscellaneousTypes = [

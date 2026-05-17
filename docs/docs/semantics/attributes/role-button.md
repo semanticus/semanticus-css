@@ -37,5 +37,5 @@ To convey **intent** and **importance**, buttons can be styled with different va
 <script setup>
 import { RoleButtonDemo } from "@demos/semantics/attributes";
 import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import * as IntentDemo from "@demos/variants/intent/demo";
+import * as IntentDemo from '@demos/overviews/variants/intent/demo';
 </script>

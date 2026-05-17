@@ -32,6 +32,10 @@
   }
 }
 
+[role=link] {
+  cursor: pointer;
+}
+
 a[role=button] {
   display: inline-block;
 }

@@ -1,6 +1,6 @@
 import { renderElement } from "@scripts/utils";
 
-import * as IntentDemo from '@demos/variants/intent/demo';
+import * as IntentDemo from '@demos/overviews/variants/intent/demo';
 import { SubtleDemo } from '@demos/variants/modifiers';
 
 export function buttons(attrs: Record<string, string> = {}) {

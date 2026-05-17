@@ -39,5 +39,5 @@ To convey **intent** and **importance**, cards can be styled with different vari
 <script setup>
 import { CardDemo } from "@demos/components";
 import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import * as IntentDemo from "@demos/variants/intent/demo";
+import * as IntentDemo from '@demos/overviews/variants/intent/demo';
 </script>
