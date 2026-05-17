@@ -12,6 +12,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
 | ✅ | CSS variables token organization |
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
+| ✅ | Stack/layout primitives |
+| ⌛ | Grid system |
 
 ## Components
 
@@ -55,13 +57,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ⌛ | Prompt |
 | ⌛ | Popover |
 | ⌛ | Toast |
-
-## Layout
-
-| Status | Feature |
-| --- | --- |
-| ✅ | Stack/layout primitives |
-| ⌛ | Grid system |
 
 ## Documentation & Tooling
 
