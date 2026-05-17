@@ -10,27 +10,27 @@ export function main(attrs: Record<string, string> = {}) {
   });
 }
 
-export function button(attrs: Record<string, string> = {}) {
+export function button(attrs: Record<string, string> = {}, value: string = "Input Button") {
   return renderElement("input", {
     ...attrs,
     type: "button",
-    value: "Input Button"
+    value: value
   });
 }
 
-export function submit(attrs: Record<string, string> = {}) {
+export function submit(attrs: Record<string, string> = {}, value: string = "Input Submit") {
   return renderElement("input", {
     ...attrs,
     type: "submit",
-    value: "Input Submit"
+    value: value
   });
 }
 
-export function reset(attrs: Record<string, string> = {}) {
+export function reset(attrs: Record<string, string> = {}, value: string = "Input Reset") {
   return renderElement("input", {
     ...attrs,
     type: "reset",
-    value: "Input Reset"
+    value: value
   });
 }
 

@@ -1,8 +1,8 @@
 import { renderComponent } from "./render-component";
 
-export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
+export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Card title') {
   return renderComponent(tagName, 'card', attrs, `<hgroup>
-  <h2>Card title</h2>
+  <h2>${title}</h2>
   <p>Card description</p>
 </hgroup>
 <p>This is a sample Card</p>`);
