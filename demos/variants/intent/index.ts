@@ -1,3 +1,4 @@
+export * as Demo from "./demo";
 export * as ContrastDemo from "./contrast.demo";
 export * as DangerDemo from "./danger.demo";
 export * as InfoDemo from "./info.demo";

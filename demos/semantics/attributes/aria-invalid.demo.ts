@@ -1,3 +1,6 @@
+import * as SelectDemo from "@demos/semantics/elements/select.demo";
+import * as TextareaDemo from "@demos/semantics/elements/textarea.demo";
+
 export function main() {
   return `<input type="text" name="valid" value="Valid" aria-invalid="false" />
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" />
@@ -44,32 +47,7 @@ export function radio() {
 }
 
 export function select() {
-  return `<select aria-invalid="false">
-  <option selected disabled value="">
-    Select your favorite pizza topping...
-  </option>
-  <option>Pepperoni</option>
-  <option>Mushrooms</option>
-  <option>Onions</option>
-  <option>Green Peppers</option>
-  <option>Olives</option>
-</select>
-<small>Great choice!</small>
-
-<select required aria-invalid="true">
-  <option selected disabled value="">
-    Select your favorite pizza topping...
-  </option>
-  <option>Pepperoni</option>
-  <option>Mushrooms</option>
-  <option>Onions</option>
-  <option>Green Peppers</option>
-  <option>Olives</option>
-</select>
-<small>
-  Please select your favorite pizza topping!
-</small>
-`;
+  return SelectDemo.validationStates();
 }
 
 export function switch_() {
@@ -87,35 +65,9 @@ export function switch_() {
 }
 
 export function textarea() {
-  return `<textarea name="valid" aria-invalid="false">
-  Valid
-</textarea>
-
-<textarea name="invalid" aria-invalid="true">
-  Invalid
-</textarea>
-`;
+  return TextareaDemo.validationStates();
 }
 
 export function textareaHelper() {
-  return `<textarea
-  name="valid"
-  aria-invalid="false"
-  aria-describedby="valid-helper"
->
-  Valid
-</textarea>
-<small id="valid-helper">Looks good!</small>
-
-<textarea
-  name="invalid"
-  aria-invalid="true"
-  aria-describedby="invalid-helper"
->
-  Invalid
-</textarea>
-<small id="invalid-helper">
-  Please provide a valid value!
-</small>
-`;
+  return TextareaDemo.validationStatesWithTextHelper();
 }

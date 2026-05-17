@@ -1,13 +1,41 @@
 import { renderElement } from "@scripts/utils";
 
-export function main(attrs: Record<string, string> = {}) {
+export function main(attrs: Record<string, string> = {}, value: string = "") {
   return renderElement("input", {
+    placeholder: "Text",
     ...attrs,
     type: "text",
     name: "text",
-    placeholder: "Text",
-    "aria-label": "Text",
+    value: value,
   });
+}
+
+export function withLabel() {
+  return `<label for="message">Message</label>
+${main({ id: 'message' })}
+`;
+}
+
+export function withHelperText() {
+  return `<label for="name">Name</label>
+${main({ id: 'name', 'aria-describedby': 'name-helper', placeholder: "Your name" })}
+<small id="name-helper">Cannot be empty.</small>
+`;
+}
+
+export function validationStates() {
+  return `${main({ 'aria-invalid': 'false' })}
+
+${main({ 'aria-invalid': 'true' })}`;
+}
+
+export function validationStatesWithTextHelper() {
+  return `${main({ 'aria-invalid': 'false', 'aria-describedby': 'valid-helper' }, 'John Doe')}
+<small id="valid-helper">Looks good!</small>
+
+${main({ 'aria-invalid': 'true', 'aria-describedby': 'invalid-helper', placeholder: "Your name" }, '')}
+<small id="invalid-helper">Cannot be empty.</small>
+`;
 }
 
 export function button(attrs: Record<string, string> = {}, value: string = "Input Button") {
@@ -32,6 +60,23 @@ export function reset(attrs: Record<string, string> = {}, value: string = "Input
     type: "reset",
     value: value
   });
+}
+
+export function buttons(attrs: Record<string, string> = {}) {
+  return `${button(attrs)}
+${submit(attrs)}
+${reset(attrs)}`;
+}
+
+export function loginForm() {
+  return `<form>
+  <label for="email">Email</label>
+  <input type="email" id="email" placeholder="you@example.com">
+  <label for="password">Password</label>
+  <input type="password" id="password" placeholder="Password">
+  ${submit({}, "Sign In")}
+</form>
+`;
 }
 
 export function email(attrs: Record<string, string> = {}) {

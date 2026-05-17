@@ -313,7 +313,7 @@ watch(isDark, () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 1rem;
+  padding: 1rem 1rem;
   cursor: pointer;
   background: var(--vp-c-bg-soft);
   border-top: 1px solid var(--vp-c-divider);

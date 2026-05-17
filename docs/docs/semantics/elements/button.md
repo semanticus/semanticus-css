@@ -2,36 +2,36 @@
 title: button
 ---
 
-<script setup>
-import { ButtonDemo } from "@demos/semantics/elements";
-</script>
-
 # &lt;button&gt;
 
 The `<button>` element is a native interactive control that is keyboard-accessible and focusable by default, requiring no additional ARIA.
 
-Use `type="submit"` for form submission, `type="reset"` to clear a form, without needing JavaScript.
+On how to turn non-button elements into buttons, see [[role="button"]](/docs/semantics/attributes/role-button).
 
 ## Basic Usage
 
 <HtmlPreviewer :code="ButtonDemo.main()" />
 
-For `.secondary`, `.contrast` and `.ghost` styles, see [Button Variants](/docs/variants/).
+## Variants
 
-On how to turn non-button elements into buttons, see [[role="button"]](/docs/semantics/attributes/role-button).
+### Intent Variants
 
-## Input Buttons
+To convey **intent** and **importance**, buttons can be styled with different variants. The default variant is `.primary`, which is used for the most important actions on a page, but there are also:
 
-`type="submit"` and `type="button"` inputs are also displayed as buttons. All form buttons are `width: 100%;` by default, to match with the other form elements.
+<HtmlPreviewer :code="IntentDemo.buttons()" :codeCollapsed="true" />
 
-<HtmlPreviewer :code="ButtonDemo.inputButtons()" />
+### Modifiers
 
-Reset inputs have the secondary style by default.
+`.ghost` creates transparent background buttons with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="ButtonDemo.inputResetButton()" />
+<HtmlPreviewer :code="GhostDemo.buttons()" :codeCollapsed="true" />
 
-## Practical Examples
+`.subtle` creates buttons with a more muted appearance, often used for less prominent actions.
 
-### Login Form
+<HtmlPreviewer :code="SubtleDemo.buttons()" :codeCollapsed="true" />
 
-<HtmlPreviewer :code="ButtonDemo.loginForm()" />
+<script setup>
+import { ButtonDemo } from "@demos/semantics/elements";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import * as IntentDemo from "@demos/variants/intent/demo";
+</script>

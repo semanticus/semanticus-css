@@ -6,15 +6,21 @@ The `.subtle` class creates transparent background buttons with colored text and
 
 ## Buttons
 
-Apply `.subtle` to `<button>` elements or elements with `[role="button"]`.
+Apply `.subtle` to `<button>` elements:
 
 <HtmlPreviewer :code="SubtleDemo.buttons()" :codeCollapsed="true" />
 
-## Accordions
+## Input Buttons
 
-Apply `.subtle` to accordion `<summary>` elements with `role="button"` for a lighter expandable section style.
+Like `<input type="submit">` and `<input type="reset">`:
 
-<HtmlPreviewer :code="SubtleDemo.accordions()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.inputButtons()" :codeCollapsed="true" />
+
+## Role Buttons
+
+Any HTML element with `[role="button"]`:
+
+<HtmlPreviewer :code="SubtleDemo.roleButtonsAndDropdowns()" :codeCollapsed="true" />
 
 ## Cards
 
@@ -23,5 +29,5 @@ Apply `.subtle` to accordion `<summary>` elements with `role="button"` for a lig
 <HtmlPreviewer :code="SubtleDemo.cards()" :codeCollapsed="true" />
 
 <script setup>
-import { SubtleDemo } from "@demos/variants/modifiers";
+import { SubtleDemo } from "@demos/overviews/variants/modifiers";
 </script>

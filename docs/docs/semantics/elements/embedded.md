@@ -8,7 +8,7 @@ import { EmbeddedDemo } from "@demos/semantics/elements";
 
 # &lt;img&gt; / &lt;video&gt; / &lt;audio&gt;
 
-Semanticus makes all embedded media elements responsive by default: `max-width: 100%` and `height: auto`. This ensures images, videos, canvases, iframes, and SVGs never overflow their containers.
+All embedded media elements are responsive by default: `max-width: 100%` and `height: auto`. This ensures **images**, **videos**, **canvases**, **iframes**, and **SVGs** never overflow their containers.
 
 ## Image
 

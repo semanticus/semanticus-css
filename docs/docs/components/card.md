@@ -1,97 +1,43 @@
----
-title: Card
----
-
-<script setup>
-const basicCardHtml = `<article class="card">
-  <h3>Card Title</h3>
-  <p>This is a basic card component. Apply the <code>.card</code> class to any element to create a visually distinct container.</p>
-</article>
-`;
-
-const cardWithHeaderFooterHtml = `<article class="card">
-  <header>
-    <h3>Card with Header</h3>
-  </header>
-  <p>Cards support optional header and footer sections that are visually distinct from the main content.</p>
-  <footer>
-    <button class="secondary">Cancel</button>
-    <button>Confirm</button>
-  </footer>
-</article>
-`;
-
-const cardElementsHtml = `<!-- On article element (recommended for semantic content) -->
-<article class="card">
-  <p>Self-contained composition like a blog post or widget.</p>
-</article>
-
-<!-- On div element (for purely presentational containers) -->
-<div class="card">
-  <p>A generic container with card styling.</p>
-</div>
-
-<!-- On section element (for thematic grouping) -->
-<section class="card">
-  <p>Thematic grouping of content.</p>
-</section>
-`;
-
-const cardInDialogHtml = `<dialog open>
-  <article>
-    <header>
-      <button aria-label="Close" rel="prev"></button>
-      <h3>Modal Title</h3>
-    </header>
-    <p>Modal dialogs use an <code>&lt;article&gt;</code> element for their content container.</p>
-    <footer>
-      <button class="secondary">Cancel</button>
-      <button>Confirm</button>
-    </footer>
-  </article>
-</dialog>
-`;
-</script>
-
 # Card
 
 The `.card` class creates a visually distinct container with background, border-radius, and shadow styling. It can be applied to any block-level element.
 
-## Basic Card
+## Basic Usage
 
-<HtmlPreviewer :code="basicCardHtml" />
+<HtmlPreviewer :code="CardDemo.main()" />
 
 ## Card with Header and Footer
 
 Cards support `<header>` and `<footer>` child elements with distinct background styling.
 
-<HtmlPreviewer :code="cardWithHeaderFooterHtml" />
+<HtmlPreviewer :code="CardDemo.withHeaderAndFooter()" />
 
 ## Using with Different Elements
 
 The `.card` class works on any semantic element. Choose the element that best matches your content's meaning:
 
-<HtmlPreviewer :code="cardElementsHtml" />
+<HtmlPreviewer :code="CardDemo.htmlElements()" />
 
-| Element | When to Use |
-|---------|-------------|
-| `<article>` | Self-contained compositions (blog posts, widgets, forum posts) |
-| `<div>` | Purely presentational containers |
-| `<section>` | Thematic grouping of content |
+## Variants
 
-## Cards in Modals
+### Intent Variants
 
-When building modal dialogs, use an `<article>` element as the content container inside `<dialog>`. The dialog styles will automatically apply card-like styling to the article:
+To convey **intent** and **importance**, cards can be styled with different variants:
 
-<HtmlPreviewer :code="cardInDialogHtml" />
+<HtmlPreviewer :code="IntentDemo.cards()" :codeCollapsed="true" />
 
-## CSS Variables
+### Modifiers
 
-Cards use these CSS variables for theming:
+`.subtle` creates cards with a more muted appearance, often used for less prominent actions.
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `--pane-bg` | `var(--color-background)` | Card background color |
-| `--pane-section-border` | `var(--color-border-muted)` | Border color for header/footer |
-| `--pane-shadow` | `var(--shadow-lg)` | Box shadow |
-| `--pane-section-bg` | `rgb(251, 251.5, 252.25)` | Header/footer background |
+<HtmlPreviewer :code="SubtleDemo.cards()" :codeCollapsed="true" />
+
+`.ghost` creates transparent background cards with colored text and borders, useful for secondary actions where you want minimal visual weight.
+
+<HtmlPreviewer :code="GhostDemo.cards()" :codeCollapsed="true" />
+
+<script setup>
+import { CardDemo } from "@demos/components";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import * as IntentDemo from "@demos/variants/intent/demo";
+</script>

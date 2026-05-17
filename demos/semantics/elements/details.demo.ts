@@ -30,11 +30,9 @@ export function entangledAccordions() {
 </details>`;
 }
 
-export function asButton(attrs: Record<string, string> = {}, slot: string = "Button-style Accordion") {
-  return `<details>
-  ${renderElement("summary", { ...attrs, role: 'button' }, slot)}
-  <p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>
-</details>`;
+export function asButton(attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement("details", {}, `${renderElement("summary", { ...attrs, role: 'button' }, slot || "Button-style Accordion")}
+<p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>`);
 }
 
 export function basicDropdown(attrs: Record<string, string> = {}) {
@@ -86,17 +84,14 @@ export function dropdownWithCheckboxes(attrs: Record<string, string> = {}) {
 </ul>`);
 }
 
-export function dropdownAsButton() {
-  return `<details>
-  <summary role="button" aria-haspopup="menu">Dropdown as a button</summary>
-  <ul role="menu">
-    <li><a role="menuitem" href="#">Solid</a></li>
-    <li><a role="menuitem" href="#">Liquid</a></li>
-    <li><a role="menuitem" href="#">Gas</a></li>
-    <li><a role="menuitem" href="#">Plasma</a></li>
-  </ul>
-</details>
-`;
+export function dropdownAsButton(attrs: Record<string, string> = {}) {
+  return renderElement("details", {}, `${renderElement("summary", { ...attrs, role: 'button', 'aria-haspopup': 'menu' }, "Dropdown as a button")}
+<ul role="menu">
+  <li><a role="menuitem" href="#">Solid</a></li>
+  <li><a role="menuitem" href="#">Liquid</a></li>
+  <li><a role="menuitem" href="#">Gas</a></li>
+  <li><a role="menuitem" href="#">Plasma</a></li>
+</ul>`);
 }
 
 export function dropdownValidationStates() {
@@ -133,9 +128,8 @@ export function dropdownInNav() {
       <details>
         <summary aria-haspopup="menu">Account</summary>
         <ul role="menu" dir="rtl">
-          <li><a role="menuitem" href="#">Profile</a></li>
-          <li><a role="menuitem" href="#">Settings</a></li>
-          <li><a role="menuitem" href="#">Security</a></li>
+          <li><a role="menuitem" href="#">My Profile</a></li>
+          <li><a role="menuitem" href="#">My Settings</a></li>
           <li><a role="menuitem" href="#">Logout</a></li>
         </ul>
       </details>
@@ -146,32 +140,33 @@ export function dropdownInNav() {
 `;
 }
 
-export function faq() {
+export function faqExample() {
   return `<h1>Frequently Asked Questions</h1>
+<br>
+<section>
+  <details>
+    <summary>How do I get started?</summary>
+    <div>
+      <p>Simply include the CSS file in your HTML and start using the classes.</p>
+    </div>
+  </details>
 
-<details>
-  <summary>How do I get started?</summary>
-  <div>
-    <p>Simply include the CSS file in your HTML and start using the classes.</p>
-  </div>
-</details>
+  <hr />
 
-<hr />
+  <details>
+    <summary>Can I customize the colors?</summary>
+    <div>
+      <p>Yes! Override the CSS variables to customize colors and more.</p>
+    </div>
+  </details>
 
-<details>
-  <summary>Can I customize the colors?</summary>
-  <div>
-    <p>Yes! Override the CSS variables to customize colors and more.</p>
-  </div>
-</details>
+  <hr />
 
-<hr />
-
-<details>
-  <summary>Is JavaScript required?</summary>
-  <div>
-    <p>No! Semanticus CSS is pure CSS with zero JavaScript dependencies.</p>
-  </div>
-</details>
-`;
+  <details>
+    <summary>Is JavaScript required?</summary>
+    <div>
+      <p>No! Semanticus CSS is pure CSS with zero JavaScript dependencies.</p>
+    </div>
+  </details>
+</section>`;
 }

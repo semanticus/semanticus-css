@@ -40,6 +40,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.subtle` modifier variant |
 | ⌛ | `.striped` modifier variant |
 | ⌛ | `.badge` modifier variant |
+| ⌛ | Extend **intent variants** reach to `<progress>` |
 
 ## Interactive Patterns
 
@@ -72,13 +73,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Single source of truth demonstration files |
 | ✅ | Simplified the build process by removing the need for Sass |
 | ✅ | Live code previewer and editor |
-| ✅ | Live code previewer collapsedCode option |
+| ✅ | Live code previewer codeCollapsed option |
 | ✅ | Palette and Size picker |
 | ✅ | Theme Builder to help the developer visualize which CSS variable does what |
 | ✅ | ARIA pattern documentation |
-| 🚧 | Exhaustive HTML elements and attributes documentation |
+| ✅ | Exhaustive HTML elements and attributes documentation |
 | 🚧 | Exhaustive Composites documentation |
-| 🚧 | Exhaustive variants documentation and their combinations with HTML elements |
+| ✅ | Exhaustive variants documentation and their combinations with HTML elements |
 | ✅ | Exhaustive Utility classes documentation |
 | ✅ | Documentation page example |
 | ⌛ | Different layouts examples |

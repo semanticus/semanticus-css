@@ -11,15 +11,21 @@ The `.ghost` class creates transparent background buttons with colored text and 
 
 ## Buttons
 
-Apply `.ghost` to `<button>` elements or elements with `[role="button"]`.
+Apply `.ghost` to `<button>` elements:
 
 <HtmlPreviewer :code="GhostDemo.buttons()" :codeCollapsed="true" />
 
-## Accordions
+## Input Buttons
 
-Apply `.ghost` to accordion `<summary>` elements with `role="button"` for a lighter expandable section style.
+Like `<input type="submit">` and `<input type="reset">`:
 
-<HtmlPreviewer :code="GhostDemo.accordions()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.inputButtons()" :codeCollapsed="true" />
+
+## Role Buttons
+
+Any HTML element with `[role="button"]`:
+
+<HtmlPreviewer :code="GhostDemo.roleButtonsAndDropdowns()" :codeCollapsed="true" />
 
 ## Cards
 
@@ -28,5 +34,5 @@ Apply `.ghost` to accordion `<summary>` elements with `role="button"` for a ligh
 <HtmlPreviewer :code="GhostDemo.cards()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo } from "@demos/variants/modifiers";
+import { GhostDemo } from "@demos/overviews/variants/modifiers";
 </script>
