@@ -1,5 +1,2 @@
-@import "./_contained.css";
-@import "./_container.css";
-@import "./_card-panel-pane.css";
+@import "./_card.css";
 @import "./_sidebar.css";
-@import "./_striped.css";

@@ -30,9 +30,9 @@ export function entangledAccordions() {
 </details>`;
 }
 
-export function asButton() {
+export function asButton(attrs: Record<string, string> = {}) {
   return `<details>
-  <summary role="button">Button-style Accordion</summary>
+  ${renderElement("summary", { ...attrs, role: 'button' }, `Button-style Accordion`)}
   <p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>
 </details>`;
 }

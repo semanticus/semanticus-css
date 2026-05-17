@@ -1,12 +1,2 @@
-export * as CardDemo from "@demos/variants/card.demo";
-export * as ContrastDemo from "@demos/variants/contrast.demo";
-export * as DangerDemo from "@demos/variants/danger.demo";
-export * as GhostDemo from "@demos/variants/ghost.demo";
-export * as InfoDemo from "@demos/variants/info.demo";
-export * as PaneDemo from "@demos/variants/pane.demo";
-export * as PanelDemo from "@demos/variants/panel.demo";
-export * as PrimaryDemo from "@demos/variants/primary.demo";
-export * as SecondaryDemo from "@demos/variants/secondary.demo";
-export * as SubtleDemo from "@demos/variants/subtle.demo";
-export * as SuccessDemo from "@demos/variants/success.demo";
-export * as WarningDemo from "@demos/variants/warning.demo";
+export * as Intent from "./intent";
+export * as Modifiers from "./modifiers";

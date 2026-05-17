@@ -420,22 +420,36 @@ export default defineConfig({
           text: "Components",
           items: [
             { text: ".card", link: "/docs/components/card" },
-            { text: ".container", link: "/docs/components/container" },
-            { text: ".striped", link: "/docs/components/striped" },
+            { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
         {
           text: "Variants",
           items: [
-            { text: ".primary", link: "/docs/variants/primary" },
-            { text: ".secondary", link: "/docs/variants/secondary" },
-            { text: ".contrast", link: "/docs/variants/contrast" },
-            { text: ".success", link: "/docs/variants/success" },
-            { text: ".info", link: "/docs/variants/info" },
-            { text: ".warning", link: "/docs/variants/warning" },
-            { text: ".danger", link: "/docs/variants/danger" },
-            { text: ".ghost", link: "/docs/variants/ghost" },
-            { text: ".subtle", link: "/docs/variants/subtle" },
+            { text: "Overview", link: "/docs/variants" },
+            {
+              text: "Intent",
+              items: [
+                { text: ".contrast", link: "/docs/variants/intent/contrast" },
+                { text: ".danger", link: "/docs/variants/intent/danger" },
+                { text: ".info", link: "/docs/variants/intent/info" },
+                { text: ".primary", link: "/docs/variants/intent/primary" },
+                { text: ".secondary", link: "/docs/variants/intent/secondary" },
+                { text: ".success", link: "/docs/variants/intent/success" },
+                { text: ".warning", link: "/docs/variants/intent/warning" },
+              ],
+            },
+            {
+              text: "Modifiers",
+              items: [
+                { text: ".container", link: "/docs/variants/modifiers/container" },
+                { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
+                { text: ".pane", link: "/docs/variants/modifiers/pane" },
+                { text: ".panel", link: "/docs/variants/modifiers/panel" },
+                { text: ".striped", link: "/docs/variants/modifiers/striped" },
+                { text: ".subtle", link: "/docs/variants/modifiers/subtle" },
+              ],
+            },
           ],
         },
         {
