@@ -19,6 +19,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
+| ✅ | `.pane` component |
+| ✅ | `.panel` component |
 | 🚧 | `.sidebar` component |
 
 ## Variants & Utilities
@@ -30,8 +32,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Removed the **card** style from `<article>` onto a variant `.card` class |
 | ✅ | Removed the `.outline` variant to prevent collision with possible future utility classes |
 | ✅ | `.ghost` modifier variant, replacing **Pico CSS**'s `.outline` class |
-| ✅ | `.pane` modifier variant |
-| ✅ | `.panel` modifier variant |
 | ✅ | `.primary` intent variant |
 | ✅ | `.success` intent variant |
 | ✅ | `.warning` intent variant |
