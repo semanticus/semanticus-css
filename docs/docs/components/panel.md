@@ -8,7 +8,7 @@ Similar to `.card`, but without the **shadow**. The `.panel` class creates a con
 
 ## Inline alerts
 
-<HtmlPreviewer :code="PanelDemo.inlineAlerts({ class: 'success' })"/>
+<HtmlPreviewer :code="PanelDemo.inlineAlerts()"/>
 
 <script setup>
 import { PanelDemo } from "@demos/components";

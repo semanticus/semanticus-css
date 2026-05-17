@@ -1,33 +1,39 @@
 .card,
 .pane,
 .panel {
+  --shadow: var(--card-shadow);
+  --color-background: var(--card-fill);
+  --border-color: var(--card-border);
+
   padding-block: var(--spacing);
   padding-inline: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
-  border: var(--border-size) solid var(--card-border);
-  background: var(--card-fill);
-  box-shadow: var(--card-shadow);
+  border: var(--border-size) solid var(--border-color);
+  background: var(--color-background);
+  box-shadow: var(--shadow);
   position: relative;
 
   & > header,
   & > footer {
+    --color-background: var(--card-section-fill);
+
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--card-section-fill);
+    background-color: var(--color-background);
   }
 
   & > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-size) solid var(--card-border);
+    border-bottom: var(--border-size) solid var(--border-color);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
   }
 
   & > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-size) solid var(--card-border);
+    border-top: var(--border-size) solid var(--border-color);
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     display: flex;
@@ -69,9 +75,11 @@
 .pane,
 .panel {
   --card-shadow: none;
+  --shadow: none;
 }
 
 .pane {
   --card-border: transparent;
-  --radius: 0;
+  --border-color: transparent;
+  border-radius: 0;
 }

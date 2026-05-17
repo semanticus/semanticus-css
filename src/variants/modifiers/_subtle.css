@@ -1,3 +1,42 @@
+:is(.card, .pane, .panel, button, [type="submit"], [type="button"], [role="button"]) {
+  &.subtle {
+    &.primary {
+      --color-background: var(--color-primary-subtle-fill);
+      --color-text: var(--color-primary-text);
+    }
+
+    &.secondary {
+      --color-background: var(--color-secondary-subtle-fill);
+      --color-text: var(--color-secondary-text);
+    }
+
+    &.contrast {
+      --color-background: var(--color-contrast-subtle-fill);
+      --color-text: var(--color-contrast-text);
+    }
+
+    &.success {
+      --color-background: var(--color-success-subtle-fill);
+      --color-text: var(--color-success-text);
+    }
+
+    &.info {
+      --color-background: var(--color-info-subtle-fill);
+      --color-text: var(--color-info-text);
+    }
+
+    &.warning {
+      --color-background: var(--color-warning-subtle-fill);
+      --color-text: var(--color-warning-text);
+    }
+
+    &.danger {
+      --color-background: var(--color-danger-subtle-fill);
+      --color-text: var(--color-danger-text);
+    }
+  }
+}
+
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     --color-background: var(--color-primary-subtle-fill);
@@ -9,9 +48,6 @@
     }
 
     &.secondary {
-      --color-background: var(--color-secondary-subtle-fill);
-      --color-text: var(--color-secondary-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-secondary-fill);
         --color-text: var(--color-secondary-on-fill);
@@ -19,9 +55,6 @@
     }
 
     &.contrast {
-      --color-background: var(--color-contrast-subtle-fill);
-      --color-text: var(--color-contrast-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-contrast-fill);
         --color-text: var(--color-contrast-on-fill);
@@ -29,9 +62,6 @@
     }
 
     &.success {
-      --color-background: var(--color-success-subtle-fill);
-      --color-text: var(--color-success-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-success-fill);
         --color-text: var(--color-success-on-fill);
@@ -39,9 +69,6 @@
     }
 
     &.info {
-      --color-background: var(--color-info-subtle-fill);
-      --color-text: var(--color-info-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-info-fill);
         --color-text: var(--color-info-on-fill);
@@ -49,9 +76,6 @@
     }
 
     &.warning {
-      --color-background: var(--color-warning-subtle-fill);
-      --color-text: var(--color-warning-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-warning-fill);
         --color-text: var(--color-warning-on-fill);
@@ -59,9 +83,6 @@
     }
 
     &.danger {
-      --color-background: var(--color-danger-subtle-fill);
-      --color-text: var(--color-danger-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-danger-fill);
         --color-text: var(--color-danger-on-fill);

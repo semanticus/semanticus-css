@@ -8,7 +8,7 @@ Similar to `.card`, but without the **shadow**, **border** and **radius**. The `
 
 ## Hero section
 
-<HtmlPreviewer :code="PaneDemo.heroSection({ class: 'secondary subtle' })"/>
+<HtmlPreviewer :code="PaneDemo.heroSection({ class: 'primary subtle' })"/>
 
 <script setup>
 import { PaneDemo } from "@demos/components";

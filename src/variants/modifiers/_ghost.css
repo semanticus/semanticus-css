@@ -1,13 +1,53 @@
-/**
- * Ghost variant
- * Transparent background with colored text/border
- * Used on buttons and accordion elements
- */
-
 .ghost {
   --color-background: transparent;
 
   background-color: var(--color-background) !important;
+}
+
+:is(.card, .pane, .panel, button, [type="submit"], [type="button"], [role="button"]) {
+  &.ghost {
+    &.primary {
+      --color-background: transparent;
+      --border-color: var(--color-primary-border);
+      --color-text: var(--color-primary-text);
+    }
+
+    &.secondary {
+      --color-background: transparent;
+      --border-color: var(--color-secondary-border);
+      --color-text: var(--color-secondary-text);
+    }
+
+    &.contrast {
+      --color-background: transparent;
+      --border-color: var(--color-contrast-border);
+      --color-text: var(--color-contrast-text);
+    }
+
+    &.success {
+      --color-background: transparent;
+      --border-color: var(--color-success-border);
+      --color-text: var(--color-success-text);
+    }
+
+    &.info {
+      --color-background: transparent;
+      --border-color: var(--color-info-border);
+      --color-text: var(--color-info-text);
+    }
+
+    &.warning {
+      --color-background: transparent;
+      --border-color: var(--color-warning-border);
+      --color-text: var(--color-warning-text);
+    }
+
+    &.danger {
+      --color-background: transparent;
+      --border-color: var(--color-danger-border);
+      --color-text: var(--color-danger-text);
+    }
+  }
 }
 
 :is(button, [type="submit"], [type="button"], [role="button"]) {
@@ -23,10 +63,6 @@
     }
 
     &.secondary {
-      --color-background: transparent;
-      --border-color: var(--color-secondary-border);
-      --color-text: var(--color-secondary-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-secondary-fill-hover);
         --border-color: var(--color-secondary-border-hover);
@@ -35,10 +71,6 @@
     }
 
     &.contrast {
-      --color-background: transparent;
-      --border-color: var(--color-contrast-border);
-      --color-text: var(--color-contrast-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-contrast-fill-hover);
         --border-color: var(--color-contrast-border-hover);
@@ -59,10 +91,6 @@
     }
 
     &.info {
-      --color-background: transparent;
-      --border-color: var(--color-info-border);
-      --color-text: var(--color-info-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-info-fill-hover);
         --border-color: var(--color-info-border-hover);
@@ -71,10 +99,6 @@
     }
 
     &.warning {
-      --color-background: transparent;
-      --border-color: var(--color-warning-border);
-      --color-text: var(--color-warning-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-warning-fill-hover);
         --border-color: var(--color-warning-border-hover);
@@ -87,10 +111,6 @@
     }
 
     &.danger {
-      --color-background: transparent;
-      --border-color: var(--color-danger-border);
-      --color-text: var(--color-danger-text);
-
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-danger-fill-hover);
         --border-color: var(--color-danger-border-hover);

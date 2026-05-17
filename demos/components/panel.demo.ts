@@ -19,9 +19,11 @@ ${renderElement('div', { ...attrs, class: `panel ${_class || ''}`, style: "backg
 export function inlineAlerts() {
   return `${inlineAlert({ class: `success` }, "Your changes have been saved successfully!")}
 
-${inlineAlert({ class: `warning` }, "Your subscription is about to expire.")}
+${inlineAlert({ class: `info` }, "Please be aware of the new updates.")}
 
-${inlineAlert({ class: `danger` }, "An error occurred while processing your request. Please try again later.")}`;
+${inlineAlert({ class: `warning ghost` }, "Your subscription is about to expire.")}
+
+${inlineAlert({ class: `danger ghost` }, "An error occurred while processing your request. Please try again later.")}`;
 }
 
 export function inlineAlert(_attrs: Record<string, string> = {}, slot: string = "") {

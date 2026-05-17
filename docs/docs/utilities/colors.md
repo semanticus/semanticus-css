@@ -63,31 +63,7 @@ const textOpacityHtml = `<div class="vstack gap-d">
 <div class="text-primary text-opacity-10">10% opacity primary text</div>
 </div>
 `;
-const linkColorsHtml = `<div class="vstack gap-d">
-<a href="#" class="link-primary">Primary link</a>
-<a href="#" class="link-secondary">Secondary link</a>
-<a href="#" class="link-contrast">Contrast link</a>
-<a href="#" class="link-success">Success link</a>
-<a href="#" class="link-info">Info link</a>
-<a href="#" class="link-warning">Warning link</a>
-<a href="#" class="link-danger">Danger link</a>
-</div>`;
-const linkOpacityHtml = `<div class="vstack gap-d">
-  <a href="#" class="link-contrast link-opacity-10">Primary link 10%</a>
-  <a href="#" class="link-contrast link-opacity-25">Primary link 25%</a>
-  <a href="#" class="link-contrast link-opacity-50">Primary link 50%</a>
-  <a href="#" class="link-contrast link-opacity-75">Primary link 75%</a>
-  <a href="#" class="link-contrast link-opacity-100">Primary link 100%</a>
-</div>`;
-const linkUnderlineHtml = `<div class="vstack gap-d">
-<a href="#" class="link-contrast link-opacity-25 link-underline-primary">Primary underline</a>
-<a href="#" class="link-contrast link-opacity-25 link-underline-secondary">Secondary underline</a>
-<a href="#" class="link-contrast link-opacity-25 link-underline-success">Success underline</a>
-<a href="#" class="link-contrast link-opacity-25 link-underline-info">Info underline</a>
-<a href="#" class="link-contrast link-opacity-25 link-underline-warning">Warning underline</a>
-<a href="#" class="link-contrast link-opacity-25 link-underline-danger">Danger underline</a>
-</div>`;
-const practicalHtml = `<article class="card text-bg-primary-subtle border border-primary">
+const practicalHtml = `<article class="shadow-lg p-d text-bg-primary-subtle border rounded border-primary">
   <hgroup class="mb-0">
     <h3>Notification</h3>
     <p>Your changes have been saved successfully.</p>
@@ -136,20 +112,6 @@ Colorize text with `.text-*` utilities.
 ### Text Opacity
 
 <HtmlPreviewer :code="textOpacityHtml" />
-
-## Link Colors
-
-Colored links with hover states.
-
-<HtmlPreviewer :code="linkColorsHtml" />
-
-### Link Opacity
-
-<HtmlPreviewer :code="linkOpacityHtml" />
-
-### Link Underline Colors
-
-<HtmlPreviewer :code="linkUnderlineHtml" />
 
 ## Practical Examples
 
