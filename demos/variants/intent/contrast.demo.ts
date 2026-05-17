@@ -3,48 +3,20 @@ import { RoleButtonDemo, RoleLinkDemo } from "@demos/semantics/attributes";
 import { ADemo, ButtonDemo } from "@demos/semantics/elements";
 import { CardDemo } from "@demos/components";
 
-export function links() {
-  return `${basicA()}
+export function links(attrs: Record<string, string> = {}) {
+  return renderElement('nav', {}, `${ADemo.main({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}
 
-<hr>
+${RoleLinkDemo.main("button", { ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}
 
-${basicRoleLink()}`;
+${RoleLinkDemo.main("div", { ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}`);
 }
 
-export function basicA(attrs: Record<string, string> = {}) {
-  return ADemo.main({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') });
-}
+export function buttons(attrs: Record<string, string> = {}) {
+  return renderElement('nav', { role: 'toolbar' }, `${ButtonDemo.main({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}
 
-export function basicRoleLink(attrs: Record<string, string> = {}) {
-  return RoleLinkDemo.main("button", { ...attrs, class: ["contrast", attrs.class || ""].join(' ') });
-}
+${RoleButtonDemo.main("div", { ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}
 
-export function buttons() {
-  return `${basicButton()}
-
-<hr>
-
-${basicRoleButton()}
-
-<hr>
-
-${basicDetails()}`;
-}
-
-export function basicButton(attrs: Record<string, string> = {}) {
-  return ButtonDemo.main({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') });
-}
-
-export function basicRoleButton(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.main("div", { ...attrs, class: ["contrast", attrs.class || ""].join(' ') });
-}
-
-export function basicDetails() {
-  return renderElement("details", {}, `${renderElement("summary", { role: 'button', class: 'contrast' }, 'Accordion')}
-<p>
-  This content is hidden by default and revealed when you click the summary.
-  Accordions are great for organizing content into collapsible sections.
-</p>`);
+${RoleButtonDemo.dropdown({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}`);
 }
 
 export function cards() {

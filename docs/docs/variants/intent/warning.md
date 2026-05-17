@@ -16,7 +16,7 @@ Apply `.warning` to `<button>` elements or elements with `[role="button"]` for a
 
 ## Cards
 
-Apply `.warning` to `<div>` elements with `.card` for a warning action card.
+Apply `.warning` to an element with `.card` for a warning action card.
 
 <HtmlPreviewer :code="WarningDemo.cards()" />
 

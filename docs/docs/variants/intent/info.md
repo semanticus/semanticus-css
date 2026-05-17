@@ -16,7 +16,7 @@ Apply `.info` to `<button>` elements or elements with `[role="button"]` for a in
 
 ## Cards
 
-Apply `.info` to `<div>` elements with `.card` for a info action card.
+Apply `.info` to an element with `.card` for a info action card.
 
 <HtmlPreviewer :code="InfoDemo.cards()" />
 

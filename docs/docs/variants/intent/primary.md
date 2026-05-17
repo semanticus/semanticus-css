@@ -16,7 +16,7 @@ Apply `.primary` to `<button>` elements or elements with `[role="button"]` for a
 
 ## Cards
 
-Apply `.primary` to `<div>` elements with `.card` for a primary action card.
+Apply `.primary` to an element with `.card` for a primary action card.
 
 <HtmlPreviewer :code="PrimaryDemo.cards()" />
 

@@ -16,7 +16,7 @@ Apply `.danger` to `<button>` elements or elements with `[role="button"]` for a 
 
 ## Cards
 
-Apply `.danger` to `<div>` elements with `.card` for a danger action card.
+Apply `.danger` to an element with `.card` for a danger action card.
 
 <HtmlPreviewer :code="DangerDemo.cards()" />
 

@@ -34,6 +34,10 @@
 
 [role=link] {
   cursor: pointer;
+
+  &button {
+    text-align: left;
+  }
 }
 
 a[role=button] {

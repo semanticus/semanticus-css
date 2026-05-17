@@ -16,7 +16,7 @@ Apply `.secondary` to `<button>` elements or elements with `[role="button"]` for
 
 ## Cards
 
-Apply `.secondary` to `<div>` elements with `.card` for a secondary action card.
+Apply `.secondary` to an element with `.card` for a secondary action card.
 
 <HtmlPreviewer :code="SecondaryDemo.cards()" />
 

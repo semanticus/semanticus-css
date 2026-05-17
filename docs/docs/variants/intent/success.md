@@ -16,7 +16,7 @@ Apply `.sucess` to `<button>` elements or elements with `[role="button"]` for a 
 
 ## Cards
 
-Apply `.sucess` to `<div>` elements with `.card` for a sucess action card.
+Apply `.sucess` to an element with `.card` for a sucess action card.
 
 <HtmlPreviewer :code="SuccessDemo.cards()" />
 

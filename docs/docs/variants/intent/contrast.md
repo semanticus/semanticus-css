@@ -16,7 +16,7 @@ Apply `.contrast` to `<button>` elements or elements with `[role="button"]` for 
 
 ## Cards
 
-Apply `.contrast` to `<div>` elements with `.card` for a contrast action card.
+Apply `.contrast` to an element with `.card` for a contrast action card.
 
 <HtmlPreviewer :code="ContrastDemo.cards()" />
 
