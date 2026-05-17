@@ -425,6 +425,8 @@ export default defineConfig({
           text: "Components",
           items: [
             { text: ".card", link: "/docs/components/card" },
+            { text: ".pane", link: "/docs/components/pane" },
+            { text: ".panel", link: "/docs/components/panel" },
             { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
@@ -448,8 +450,6 @@ export default defineConfig({
               items: [
                 { text: ".container", link: "/docs/variants/modifiers/container" },
                 { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
-                { text: ".pane", link: "/docs/variants/modifiers/pane" },
-                { text: ".panel", link: "/docs/variants/modifiers/panel" },
                 { text: ".striped", link: "/docs/variants/modifiers/striped" },
                 { text: ".subtle", link: "/docs/variants/modifiers/subtle" },
               ],

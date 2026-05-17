@@ -8,7 +8,5 @@
 
 @import "./modifiers/_container.css";
 @import "./modifiers/_ghost.css";
-@import "./modifiers/_pane.css";
-@import "./modifiers/_panel.css";
 @import "./modifiers/_striped.css";
 @import "./modifiers/_subtle.css";
