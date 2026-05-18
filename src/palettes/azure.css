@@ -26,7 +26,7 @@
   --color-primary-fill: var(--color-azure-550);
   --color-primary-fill-hover: light-dark(var(--color-azure-600), var(--color-azure-500));
   --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-azure-800) 50%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-azure-650) 50%, white);
   --color-primary-text: light-dark(var(--color-azure-550), var(--color-azure-350));
   --color-primary-text-hover: light-dark(var(--color-azure-650), var(--color-azure-250));
   --color-primary-underline: light-dark(oklch(from var(--color-azure-550) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.5));
