@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { RoleSearchDemo } from "@demos/semantics/attributes";
 
 const meta: Meta = {

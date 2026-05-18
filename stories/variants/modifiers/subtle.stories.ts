@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { SubtleDemo } from "@demos/variants/modifiers";
 
 const meta: Meta = {
