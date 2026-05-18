@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test.use({ viewport: { width: 1440, height: 900 } });
 
-test('/overviews/variants/secondary-demo - visual snapshot', async ({ page }) => {
-  await page.goto('/overviews/variants/intent/secondary-demo');
+test('/overviews/variants/success-demo - visual snapshot', async ({ page }) => {
+  await page.goto('/overviews/variants/intent/success-demo');
   const main = page.locator('body > main');
 
   await expect(main).toBeVisible();
