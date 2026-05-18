@@ -18,7 +18,7 @@ function gzipKB(filePath) {
 
 // ─── 1. Single "~NN KB gzipped" claim in docs/index.md and AGENTS.md ──────────
 
-const fullBundleKB = gzipKB(path.join(repoRoot, 'dist', 'semanticus-full.css'));
+const fullBundleKB = gzipKB(path.join(repoRoot, 'dist', 'semanticus.css'));
 const singleClaimFiles = [
   path.join(repoRoot, 'docs', 'index.md'),
   path.join(repoRoot, 'AGENTS.md'),
@@ -49,10 +49,10 @@ for (const filePath of singleClaimFiles) {
 // ─── 2. Size comparison table rows in README.md ────────────────────────────────
 
 const tableEntries = [
-  { label: 'Semanticus (semantics only)',                  dist: 'semanticus-semantics.css' },
-  { label: 'Semanticus (semantics + components + variants)', dist: 'semanticus.css' },
-  { label: 'Semanticus (utilities only)',                  dist: 'semanticus-utilities.css' },
-  { label: 'Semanticus (full)',                            dist: 'semanticus-full.css' },
+  { label: 'Semanticus (semantics only)',    dist: 'semanticus-semantics.css' },
+  { label: 'Semanticus (no utilities)',      dist: 'semanticus-no-utilities.css' },
+  { label: 'Semanticus (utilities only)',    dist: 'semanticus-utilities.css' },
+  { label: 'Semanticus (full)',              dist: 'semanticus.css' },
 ];
 
 const readmePath = path.join(repoRoot, 'README.md');

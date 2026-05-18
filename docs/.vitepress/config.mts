@@ -21,9 +21,6 @@ function loadTsconfigAliases() {
   });
 }
 
-// Load package version info
-const packageVersion = packageProps.version;
-
 const semanticusDistPath = path.resolve(process.cwd(), "dist");
 const indexHtmlPath = path.resolve(__dirname, "../../index.html");
 

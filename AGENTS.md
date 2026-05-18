@@ -24,8 +24,8 @@ The framework is organized into 6 layers, all in `src/`:
 
 ### Entry Points
 
-- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities) → `semanticus-full.css`
-- `src/no-utilities.css` — standard bundle (variables + normalize + semantics + components + variants) → `semanticus.css`
+- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities) → `semanticus.css`
+- `src/no-utilities.css` — standard bundle (variables + normalize + semantics + components + variants) → `semanticus-no-utilities.css`
 - `src/semantics/index.css` — semantics only → `semanticus-semantics.css`
 - `src/utilities/index.css` — utilities only → `semanticus-utilities.css`
 
@@ -85,8 +85,8 @@ When contributing code or edits, follow the project's motto and core principles:
 
 All generated files land in `dist/`:
 
-- `semanticus.css` — standard bundle (semantics + components + variants, no utilities)
-- `semanticus-full.css` — full bundle (everything including utilities)
+- `semanticus.css` — full bundle (everything including utilities)
+- `semanticus-no-utilities.css` — standard bundle (semantics + components + variants, no utilities)
 - `semanticus-semantics.css` — semantics only
 - `semanticus-utilities.css` — utilities only
 - `semanticus.palette.<name>.css`
