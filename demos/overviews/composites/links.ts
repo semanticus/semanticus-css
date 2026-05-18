@@ -2,12 +2,9 @@ import { renderElement } from "@scripts/utils";
 
 import {
   ADemo,
-  ButtonDemo,
-  DetailsDemo,
 } from '@demos/semantics/elements';
 
 import {
-  RoleButtonDemo,
   RoleLinkDemo,
 } from '@demos/semantics/attributes';
 
