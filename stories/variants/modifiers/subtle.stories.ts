@@ -9,37 +9,25 @@ const meta: Meta = {
 export default meta;
 
 export const ButtonExample: StoryObj = {
-  render: () => SubtleDemo.button(),
+  render: () => SubtleDemo.buttons(),
 };
 
-export const SecondaryButtonExample: StoryObj = {
-  render: () => SubtleDemo.button({ class: "secondary" }),
+export const inputButtons: StoryObj = {
+  render: () => SubtleDemo.inputButtons(),
 };
 
-export const ContrastButtonExample: StoryObj = {
-  render: () => SubtleDemo.button({ class: "contrast" }),
+export const roleButtons: StoryObj = {
+  render: () => SubtleDemo.roleButtons(),
 };
 
-export const ButtonWithoutBorderExample: StoryObj = {
-  render: () => SubtleDemo.button({ class: "border-0" }),
+export const dropdowns: StoryObj = {
+  render: () => SubtleDemo.dropdowns(),
 };
 
-export const SecondaryButtonWithoutBorderExample: StoryObj = {
-  render: () => SubtleDemo.button({ class: "secondary border-0" }),
+export const accordions: StoryObj = {
+  render: () => SubtleDemo.accordions(),
 };
 
-export const ContrastButtonWithoutBorderExample: StoryObj = {
-  render: () => SubtleDemo.button({ class: "contrast border-0" }),
-};
-
-export const PanelExample: StoryObj = {
-  render: () => SubtleDemo.panel(),
-};
-
-export const SecondaryPanelExample: StoryObj = {
-  render: () => SubtleDemo.panel({ class: "secondary" }),
-};
-
-export const ContrastPanelExample: StoryObj = {
-  render: () => SubtleDemo.panel({ class: "contrast" }),
+export const cards: StoryObj = {
+  render: () => SubtleDemo.cards(),
 };
