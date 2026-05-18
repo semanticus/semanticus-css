@@ -152,23 +152,6 @@ For theme-aware shadows, use `light-dark()` inside each layer's color rather tha
 
 ---
 
-## Inline typographic elements
-
-`<mark>`, `<ins>`, `<del>`, `<blockquote>` are typographic HTML elements, not interactive widgets. Treat them as components in the component token pattern — use the element name as the `component` segment:
-
-```css
---mark-fill                   /* <mark> / highlight background */
---mark-text                   /* <mark> / text color */
---ins-text                    /* <ins> / inserted-text color */
---del-text                    /* <del> / deleted-text color */
---h1-text                     /* <h1> / heading text color */
---h6-text                     /* <h6> / heading text color */
-```
-
-Heading tokens (`--h1-text` … `--h6-text`) follow the same pattern: element name + role.
-
----
-
 ## Global size tokens
 
 A small number of tokens represent global geometric defaults — the baseline radius, border thickness, and outline thickness used across all interactive elements. These sit at the top of the component token hierarchy and use a short, role-only name with no component prefix (identical to `--shadow` in the standalone multi-value section):

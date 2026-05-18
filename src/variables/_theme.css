@@ -339,17 +339,8 @@
   --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
 
-  /* Grid */
-  --grid-column-gap: var(--spacing);
-  --grid-row-gap: var(--spacing);
-
   /* Sidebar */
   --sidebar-size: 25%;
-
-  --mark-fill: var(--color-warning-fill);
-  --mark-text: var(--color-warning-on-fill);
-  --ins-text: var(--color-success-text);
-  --del-text: var(--color-danger-text);
 }
 
 /* === ICONS === */

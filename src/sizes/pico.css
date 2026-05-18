@@ -26,8 +26,6 @@
   --responsive-multiplier: 1;
   --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
   --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
-  --grid-column-gap: var(--spacing); /* Column gap in CSS Grid layouts */
-  --grid-row-gap: var(--spacing); /* Row gap in CSS Grid layouts */
   --form-element-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
   --form-element-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 

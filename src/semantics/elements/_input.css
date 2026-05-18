@@ -290,11 +290,11 @@ textarea {
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=false] + small {
-  color: var(--ins-text);
+  color: var(--color-success-text);
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=true] + small {
-  color: var(--del-text);
+  color: var(--color-danger-text);
 }
 
 label > :where(input, select, textarea) {

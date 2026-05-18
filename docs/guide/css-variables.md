@@ -164,8 +164,6 @@ h1, h2, h3, h4, h5, h6 {
   --typography-spacing-vertical: 1rem;
   --input-spacing-vertical: 0.5rem;
   --input-spacing-horizontal: 0.7rem;
-  --grid-column-gap: var(--spacing);
-  --grid-row-gap: var(--spacing);
 }
 ```
 

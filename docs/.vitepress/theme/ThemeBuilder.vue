@@ -218,8 +218,6 @@ const variableGroups = [
       { name: '--base-spacing', label: 'Base Spacing Unit', desc: 'Foundational spacing unit. Scales with each breakpoint to derive --spacing.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
       { name: '--spacing', label: 'Spacing', desc: 'Derived spacing unit used for padding, margins, and gaps. Equals base-spacing scaled per breakpoint.', type: 'text', lightDefault: 'var(--base-spacing)', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
       { name: '--typography-spacing-vertical', label: 'Typography Spacing', desc: 'Vertical margin below typographic elements (paragraphs, lists, etc.).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h2, h3, h4, h5, h6, p, ul, ol, blockquote' },
-      { name: '--grid-column-gap', label: 'Grid Column Gap', desc: 'Column gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
-      { name: '--grid-row-gap', label: 'Grid Row Gap', desc: 'Row gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
       { name: '--input-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
       { name: '--input-spacing-horizontal', label: 'Input Padding (H)', desc: 'Horizontal padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.7rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
     ]
@@ -296,13 +294,6 @@ const variableGroups = [
     label: 'Shadows',
     vars: [
       { name: '--shadow', label: 'Shadow', desc: 'Multi-layer shadow used by dialogs, cards, menus, and elevated elements. Adapts automatically to light and dark mode.', type: 'text', lightDefault: '0.0145rem 0.029rem 0.174rem rgb(129 145 181 / 0.01698), ...', darkDefault: '0.0145rem 0.029rem 0.174rem rgb(7 9 12 / 0.01698), ...', scope: 'theme', selectors: 'button' },
-    ]
-  },
-  {
-    label: 'Mark & Text',
-    vars: [
-      { name: '--mark-fill', label: 'Mark Background', desc: 'Background highlight color for <mark> elements.', type: 'color', lightDefault: '#fde7c0', darkDefault: '#014063', scope: 'theme', selectors: 'mark' },
-      { name: '--mark-text', label: 'Mark Text', desc: 'Text color inside <mark> elements.', type: 'color', lightDefault: '#0f1114', darkDefault: '#ffffff', scope: 'theme', selectors: 'mark' },
     ]
   },
   {

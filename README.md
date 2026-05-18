@@ -222,7 +222,7 @@ Check out this [How to setup the project](docs/about/contributing.md#how-to-setu
 | Bootstrap (utilities only) | 10.9 KB |
 | Semanticus (utilities only) | 9.5 KB |
 | Bootstrap (full) | 30.4 KB |
-| Semanticus (full) | 23.2 KB |
+| Semanticus (full) | 23.1 KB |
 | Bootstrap (full + javascript) | 53.6 KB |
 
 ## License
