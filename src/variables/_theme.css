@@ -201,7 +201,7 @@
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
   --color-text-muted: light-dark(var(--color-zinc-400), var(--color-zinc-450));
-  --color-border: var(--color-muted-border);
+  --color-border: light-dark(var(--color-slate-100), var(--color-slate-800));
 
   --a-decoration: underline;
 
@@ -253,9 +253,6 @@
   --button-shadow: 0 0 0 rgb(0 0 0 / 0);
   --button-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
 
-  /* === Table tokens === */
-  --table-border: var(--color-muted-border);
-
   /* === Code tokens === */
   --code-fill: light-dark(
     color-mix(in srgb, var(--color-slate-50) 75%, white),
@@ -282,10 +279,6 @@
   --input-placeholder-text: var(--color-text-muted);
   --input-border-focus: var(--color-primary-border);
   --input-opacity-disabled: 0.5;
-  --input-border-invalid: var(--color-danger-border);
-  --input-border-invalid-active: var(--color-danger-border-hover);
-  --input-border-valid: var(--color-success-border);
-  --input-border-valid-active: var(--color-success-border-hover);
 
   /* === Switch tokens === */
   --switch-fill: light-dark(var(--color-slate-200), var(--color-slate-750));
@@ -300,14 +293,13 @@
   --range-thumb-fill-active: var(--color-primary-fill);
 
   /* === Details / Accordion tokens === */
-  --details-border: var(--color-muted-border);
   --details-summary-text: var(--color-text);
   --details-summary-text-hover: var(--color-primary-text-hover);
   --details-summary-text-open: var(--color-text-muted);
 
   /* === Card tokens === */
   --dialog-fill: light-dark(var(--color-background), var(--color-slate-900));
-  --dialog-border: light-dark(var(--color-muted-border), var(--color-slate-900));
+  --dialog-border: light-dark(var(--color-border), var(--color-slate-900));
   --dialog-shadow: var(--shadow);
   --dialog-section-fill: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
@@ -358,9 +350,6 @@
   --mark-text: var(--color-warning-on-fill);
   --ins-text: var(--color-success-text);
   --del-text: var(--color-danger-text);
-
-  --blockquote-border: var(--color-muted-border);
-  --blockquote-footer-text: var(--color-text-muted);
 }
 
 /* === ICONS === */

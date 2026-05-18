@@ -13,7 +13,7 @@ table {
 th,
 td {
   padding: calc(var(--spacing) / 2) var(--spacing);
-  border-bottom: var(--border-size) solid var(--table-border);
+  border-bottom: var(--border-size) solid var(--color-border);
   background-color: var(--color-background);
   color: var(--color-text);
   font-weight: var(--font-weight);
@@ -24,7 +24,7 @@ td {
 tfoot {
   & th,
   & td {
-    border-top: var(--border-size) solid var(--table-border);
+    border-top: var(--border-size) solid var(--color-border);
     border-bottom: 0;
   }
 }

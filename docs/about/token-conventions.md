@@ -58,15 +58,11 @@
 --input-fill                  /* input / background fill */
 --input-border                /* input / border color */
 --input-border-focus          /* input / border color / focused */
---input-border-invalid        /* input / border color / invalid state */
---input-border-valid          /* input / border color / valid state */
 --dialog-overlay              /* dialog / backdrop overlay color */
 --nav-fill                    /* nav / background fill */
 --progress-fill               /* progress bar / filled track color */
 --progress-track-fill         /* progress bar / unfilled track (background) */
---table-border                /* table / border color */
 --table-row-fill-striped      /* table / row fill / striped variant */
---details-border              /* details/summary / border color */
 --switch-fill                 /* switch / background fill */
 --switch-fill-checked         /* switch / background fill / checked state */
 --switch-thumb-glow           /* switch / thumb / glow effect */
@@ -165,8 +161,6 @@ For theme-aware shadows, use `light-dark()` inside each layer's color rather tha
 --mark-text                   /* <mark> / text color */
 --ins-text                    /* <ins> / inserted-text color */
 --del-text                    /* <del> / deleted-text color */
---blockquote-border           /* <blockquote> / left accent border */
---blockquote-footer-text      /* <blockquote> footer (<footer>, <cite>) / text color */
 --h1-text                     /* <h1> / heading text color */
 --h6-text                     /* <h6> / heading text color */
 ```

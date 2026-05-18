@@ -148,13 +148,13 @@ details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & > :where(summary:not([role])[aria-invalid=false]) {
-    --input-border: var(--input-border-valid);
-    --input-border-focus: var(--input-border-valid);
+    --input-border: var(--color-success-fill);
+    --input-border-focus: var(--color-success-fill-hover);
   }
 
   & > :where(summary:not([role])[aria-invalid=true]) {
-    --input-border: var(--input-border-invalid);
-    --input-border-focus: var(--input-border-invalid);
+    --input-border: var(--color-danger-fill);
+    --input-border-focus: var(--color-danger-fill-hover);
   }
 
   & > :where(summary + ul[role="menu"]) {

@@ -216,13 +216,13 @@ Check out this [How to setup the project](docs/about/contributing.md#how-to-setu
 | Bundle | Gzip |
 | --- | --- |
 | Pico (classless / semantics only) | 10.1 KB |
-| Semanticus (semantics only) | 11.7 KB |
+| Semanticus (semantics only) | 11.6 KB |
 | Pico (semantics + classes) | 11.4 KB |
 | Semanticus (semantics + components + variants) | 14.0 KB |
 | Bootstrap (utilities only) | 10.9 KB |
 | Semanticus (utilities only) | 9.5 KB |
 | Bootstrap (full) | 30.4 KB |
-| Semanticus (full) | 23.3 KB |
+| Semanticus (full) | 23.2 KB |
 | Bootstrap (full + javascript) | 53.6 KB |
 
 ## License

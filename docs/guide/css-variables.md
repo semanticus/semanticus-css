@@ -62,7 +62,7 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
 
   /* Background / surface */
   --color-background: light-dark(white, #0e1118);
-  --color-muted-border: light-dark(#dfe3eb, #202632);
+  --color-border: light-dark(#dfe3eb, #202632);
 
   /* Text selection (defined by the active palette) */
   --color-selection: light-dark(oklch(from #029ae8 l c h / 0.25), oklch(from #01aaff l c h / 0.1875));
@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 ```css
 :root {
   --dialog-fill: light-dark(white, #181c25);
-  --dialog-border: light-dark(var(--color-muted-border), #181c25);
+  --dialog-border: light-dark(var(--color-border), #181c25);
   --dialog-section-fill: light-dark(#fbfcfc, #2a3140);
   --dialog-shadow: var(--shadow);
   --dialog-overlay: light-dark(oklch(from #e8eaed l c h / 0.75), oklch(from #07090c l c h / 0.75));
@@ -220,8 +220,6 @@ h1, h2, h3, h4, h5, h6 {
   --input-placeholder-text: var(--color-text-muted);
   --input-border-focus: var(--color-primary-border);
   --input-opacity-disabled: 0.5;
-  --input-border-invalid: var(--color-danger-border);
-  --input-border-valid: var(--color-success-border);
 }
 ```
 
@@ -253,15 +251,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-### Tables
-
-```css
-:root {
-  --table-border: var(--color-muted-border);
-  --table-row-fill-striped: oklch(from #6f7887 l c h / 0.0375);
-}
-```
-
 ### Code
 
 ```css
@@ -277,7 +266,6 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --details-border: var(--color-muted-border);
   --details-summary-text: var(--color-text);
   --details-summary-text-hover: var(--color-primary-text-hover);
   --details-summary-text-open: var(--color-text-muted);

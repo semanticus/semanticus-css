@@ -236,7 +236,7 @@ const variableGroups = [
       { name: '--color-background', label: 'Background', desc: 'Main page background color.', type: 'color', lightDefault: '#ffffff', darkDefault: '#13171f', scope: 'theme', selectors: 'body, th, td' },
       { name: '--color-text', label: 'Text Color', desc: 'Default body text color.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'body, p, li, label, th, td, blockquote' },
       { name: '--color-text-muted', label: 'Muted Text', desc: 'Subdued text for captions, hints, and secondary information.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'small, figcaption' },
-      { name: '--color-muted-border', label: 'Muted Border', desc: 'Subtle border color for horizontal rules.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'hr' },
+      { name: '--color-border', label: 'Default Border', desc: 'Subtle default border color.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'hr' },
     ]
   },
   {
@@ -313,8 +313,6 @@ const variableGroups = [
       { name: '--input-text', label: 'Input Text', desc: 'Text color inside form fields.', type: 'color', lightDefault: '#23262c', darkDefault: '#e0e3e7', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
       { name: '--input-fill-active', label: 'Input Focus BG', desc: 'Background color when a form field is focused.', type: 'color', lightDefault: '#ffffff', darkDefault: '#1a1f28', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
       { name: '--input-opacity-disabled', label: 'Disabled Opacity', desc: 'Opacity applied to disabled form elements (0–1).', type: 'range', lightDefault: '0.5', darkDefault: '0.5', scope: 'theme', selectors: 'input:disabled, select:disabled, textarea:disabled' },
-      { name: '--input-border-invalid', label: 'Invalid Border', desc: 'Border color for invalid form fields (idle state).', type: 'color', lightDefault: '#c52f21', darkDefault: '#f38f79', scope: 'theme', selectors: '[aria-invalid="true"]' },
-      { name: '--input-border-valid', label: 'Valid Border', desc: 'Border color for valid form fields (idle state).', type: 'color', lightDefault: '#2b7a4c', darkDefault: '#6ed59d', scope: 'theme', selectors: '[aria-invalid="false"]' },
     ]
   },
   {
@@ -334,7 +332,6 @@ const variableGroups = [
   {
     label: 'Tables',
     vars: [
-      { name: '--table-border', label: 'Table Border', desc: 'Border color for table cells and dividers.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'th, td' },
       { name: '--table-row-fill-striped', label: 'Stripe Background', desc: 'Background for alternating (striped) table rows.', type: 'text', lightDefault: 'oklch(from #6f7887 l c h / 0.0375)', darkDefault: 'oklch(from #6f7887 l c h / 0.0375)', scope: 'theme', selectors: 'table.striped tbody tr:nth-child(odd)' },
     ]
   },
@@ -356,7 +353,6 @@ const variableGroups = [
   {
     label: 'Accordion',
     vars: [
-      { name: '--details-border', label: 'Border', desc: 'Border color of accordion (details) components.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'details' },
       { name: '--details-summary-text', label: 'Closed Summary', desc: 'Text color of <summary> when accordion is closed.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:not([open]) summary' },
       { name: '--details-summary-text-open', label: 'Open Summary', desc: 'Text color of <summary> when accordion is open.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'details[open] summary' },
     ]

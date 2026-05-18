@@ -205,23 +205,23 @@ label[aria-disabled=true] input[disabled] {
 }
 
 :is(input, select, textarea)[aria-invalid=false] {
-  --border-color: var(--input-border-valid);
+  --border-color: var(--color-success-fill);
 }
 :is(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
-  --border-color: var(--input-border-valid-active);
+  --border-color: var(--color-success-fill-hover);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=false]:is(:active, :focus), select[aria-invalid=false]:is(:active, :focus), textarea[aria-invalid=false]:is(:active, :focus) {
-  --shadow: 0 0 0 var(--outline-size) var(--input-border-valid);
+  --shadow: 0 0 0 var(--outline-size) var(--color-success-fill);
 }
 
 :is(input, select, textarea)[aria-invalid=true] {
-  --border-color: var(--input-border-invalid);
+  --border-color: var(--color-danger-fill);
 }
 :is(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
-  --border-color: var(--input-border-invalid-active);
+  --border-color: var(--color-danger-fill-hover);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=true]:is(:active, :focus), select[aria-invalid=true]:is(:active, :focus), textarea[aria-invalid=true]:is(:active, :focus) {
-  --shadow: 0 0 0 var(--outline-size) var(--input-border-invalid);
+  --shadow: 0 0 0 var(--outline-size) var(--color-danger-fill);
 }
 
 :where([dir=rtl] :is(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false])) {
