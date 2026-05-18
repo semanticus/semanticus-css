@@ -23,10 +23,10 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-pink-400) l c h / 0.25), oklch(from var(--color-pink-350) l c h / 0.1875));
 
-  --color-primary-fill: light-dark(var(--color-pink-500), var(--color-pink-500));
+  --color-primary-fill: var(--color-pink-500);
   --color-primary-fill-hover: light-dark(var(--color-pink-550), var(--color-pink-450));
   --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-pink-750) 40%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-pink-750) 50%, white);
   --color-primary-text: light-dark(var(--color-pink-550), var(--color-pink-350));
   --color-primary-text-hover: light-dark(var(--color-pink-650), var(--color-pink-250));
   --color-primary-underline: light-dark(oklch(from var(--color-pink-550) l c h / 0.5), oklch(from var(--color-pink-350) l c h / 0.5));

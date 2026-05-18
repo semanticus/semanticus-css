@@ -23,10 +23,10 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-lime-400) l c h / 0.25), oklch(from var(--color-lime-350) l c h / 0.1875));
 
-  --color-primary-fill: light-dark(var(--color-lime-200), var(--color-lime-200));
+  --color-primary-fill: var(--color-lime-200);
   --color-primary-fill-hover: light-dark(var(--color-lime-250), var(--color-lime-150));
   --color-primary-on-fill: black;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-lime-450) 40%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-lime-450) 50%, white);
   --color-primary-text: light-dark(var(--color-lime-550), var(--color-lime-350));
   --color-primary-text-hover: light-dark(var(--color-lime-650), var(--color-lime-250));
   --color-primary-underline: light-dark(oklch(from var(--color-lime-550) l c h / 0.5), oklch(from var(--color-lime-350) l c h / 0.5));

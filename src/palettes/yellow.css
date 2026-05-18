@@ -23,10 +23,10 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-yellow-400) l c h / 0.25), oklch(from var(--color-yellow-350) l c h / 0.1875));
 
-  --color-primary-fill: light-dark(var(--color-yellow-100), var(--color-yellow-100));
+  --color-primary-fill: var(--color-yellow-100);
   --color-primary-fill-hover: light-dark(var(--color-yellow-150), color-mix(in oklch, var(--color-yellow-100), var(--color-yellow-50)));
   --color-primary-on-fill: black;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-yellow-350) 40%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-yellow-350) 50%, white);
   --color-primary-text: light-dark(var(--color-yellow-550), var(--color-yellow-350));
   --color-primary-text-hover: light-dark(var(--color-yellow-650), var(--color-yellow-250));
   --color-primary-underline: light-dark(oklch(from var(--color-yellow-550) l c h / 0.5), oklch(from var(--color-yellow-350) l c h / 0.5));

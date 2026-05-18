@@ -83,7 +83,7 @@
   --color-secondary-fill: light-dark(var(--color-slate-600), var(--color-slate-600));
   --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
   --color-secondary-on-fill: white;
-  --color-secondary-on-fill-muted: color-mix(in srgb, var(--color-slate-750) 40%, white);
+  --color-secondary-on-fill-muted: color-mix(in srgb, var(--color-slate-750) 50%, white);
   --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
   --color-secondary-text-hover: light-dark(var(--color-slate-650), var(--color-zinc-250));
   --color-secondary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));
@@ -118,7 +118,7 @@
   --color-success-on-fill-muted: color-mix(in srgb, light-dark(
     color-mix(in srgb, var(--color-jade-700), var(--color-zinc-700)),
     color-mix(in srgb, var(--color-jade-700), var(--color-zinc-300))
-  ) 40%, white);
+  ) 50%, white);
   --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-450));
   --color-success-text-hover: light-dark(
     color-mix(in srgb, var(--color-jade-450), black 20%),
@@ -146,7 +146,7 @@
   --color-info-on-fill-muted: color-mix(in srgb, light-dark(
     color-mix(in srgb, var(--color-azure-700), var(--color-zinc-700)),
     color-mix(in srgb, var(--color-azure-700), var(--color-zinc-300))
-  ) 40%, white);
+  ) 50%, white);
   --color-info-text: light-dark(var(--color-azure-450), var(--color-azure-450));
   --color-info-text-hover: light-dark(
     color-mix(in srgb, var(--color-azure-450), black 20%),
@@ -168,7 +168,7 @@
     color-mix(in srgb, var(--color-amber-250) 65%, var(--color-zinc-300))
   );
   --color-warning-on-fill: white;
-  --color-warning-on-fill-muted: color-mix(in srgb, color-mix(in srgb, var(--color-amber-500), var(--color-zinc-300)) 40%, white);
+  --color-warning-on-fill-muted: color-mix(in srgb, color-mix(in srgb, var(--color-amber-500), var(--color-zinc-300)) 50%, white);
   --color-warning-text: light-dark(var(--color-amber-250), var(--color-amber-250));
   --color-warning-text-hover: light-dark(
     color-mix(in srgb, var(--color-amber-250), black 20%),
@@ -196,7 +196,7 @@
   --color-danger-on-fill-muted: color-mix(in srgb, light-dark(
     color-mix(in srgb, var(--color-red-700), var(--color-zinc-700)),
     color-mix(in srgb, var(--color-red-700), var(--color-zinc-300))
-  ) 40%, white);
+  ) 50%, white);
   --color-danger-text: light-dark(var(--color-red-450), var(--color-red-450));
   --color-danger-text-hover: light-dark(
     color-mix(in srgb, var(--color-red-450), black 20%),
