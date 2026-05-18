@@ -22,7 +22,7 @@ label:has([type=checkbox], [type=radio]) {
 
   &:checked, &:checked:active, &:checked:focus {
     --color-background: var(--color-primary-fill);
-    --border-color: var(--color-primary-border);
+    --border-color: var(--color-primary-fill);
     background-image: var(--icon-checkbox);
     background-position: center;
     background-size: 0.75em auto;
@@ -43,7 +43,7 @@ label:has([type=checkbox], [type=radio]) {
 [type=checkbox] {
   &:indeterminate {
     --color-background: var(--color-primary-fill);
-    --border-color: var(--color-primary-border);
+    --border-color: var(--color-primary-fill);
     background-image: var(--icon-minus);
     background-position: center;
     background-size: 0.75em auto;

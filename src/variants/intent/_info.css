@@ -7,7 +7,7 @@
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-info-text-hover);
-      --underline: var(--color-info-underline-hover);
+      --underline: var(--color-info-text-hover);
     }
   }
 }
@@ -15,12 +15,12 @@
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.info {
     --color-background: var(--color-info-fill);
-    --border-color: var(--color-info-border);
+    --border-color: var(--color-info-fill);
     --color-text: var(--color-info-on-fill);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: var(--color-info-fill-hover);
-      --border-color: var(--color-info-border-hover);
+      --border-color: var(--color-info-fill-hover);
       --color-text: var(--color-info-on-fill);
     }
 
@@ -35,6 +35,6 @@
   --color-text: var(--color-info-on-fill);
   --color-text-muted: var(--color-info-on-fill-muted);
   --dialog-fill: var(--color-info-fill);
-  --dialog-border: var(--color-info-border);
+  --dialog-border: var(--color-info-fill);
   --dialog-section-fill: color-mix(in srgb, var(--color-info-fill) 90%, black);
 }

@@ -23,7 +23,7 @@
 
   &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
     --color-text: var(--color-primary-text-hover);
-    --underline: var(--color-primary-underline-hover);
+    --underline: var(--color-primary-text-hover);
     --a-decoration: underline;
   }
 

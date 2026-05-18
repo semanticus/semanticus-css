@@ -80,11 +80,6 @@
 /* === VARIANTS === */
 :root,
 :host {
-  /* Primary color aliases */
-  --color-primary-border-hover: var(--color-primary-fill-hover);
-  --color-primary-border: var(--color-primary-fill);
-  --color-primary-underline-hover: var(--color-primary-text-hover);
-
   /* Secondary colors */
   --color-secondary-fill: var(--color-slate-600);
   --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
@@ -94,9 +89,6 @@
   --color-secondary-text-hover: light-dark(var(--color-slate-650), var(--color-zinc-250));
   --color-secondary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));
   --color-secondary-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-350) l c h / 0.25));
-  --color-secondary-border: var(--color-secondary-fill);
-  --color-secondary-border-hover: var(--color-secondary-fill-hover);
-  --color-secondary-underline-hover: var(--color-secondary-text-hover);
 
   /* Contrast colors */
   --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
@@ -107,9 +99,6 @@
   --color-contrast-text-hover: light-dark(black, white);
   --color-contrast-underline: light-dark(oklch(from var(--color-slate-900) l c h / 0.5), oklch(from var(--color-slate-100) l c h / 0.5));
   --color-contrast-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-150) l c h / 0.25));
-  --color-contrast-border: var(--color-contrast-fill);
-  --color-contrast-border-hover: var(--color-contrast-fill-hover);
-  --color-contrast-underline-hover: var(--color-contrast-text-hover);
 
   /* Success colors */
   --color-success-fill: light-dark(
@@ -135,9 +124,6 @@
     color-mix(in srgb, var(--color-jade-450) 75%, var(--color-zinc-350)),
     color-mix(in srgb, var(--color-jade-450) 75%, var(--color-slate-600))
   );
-  --color-success-border: var(--color-success-fill);
-  --color-success-border-hover: var(--color-success-fill-hover);
-  --color-success-underline-hover: var(--color-success-text-hover);
 
   /* Info colors */
   --color-info-fill: light-dark(
@@ -163,9 +149,6 @@
     color-mix(in srgb, var(--color-azure-450) 75%, var(--color-zinc-350)),
     color-mix(in srgb, var(--color-azure-450) 75%, var(--color-slate-600))
   );
-  --color-info-border: var(--color-info-fill);
-  --color-info-border-hover: var(--color-info-fill-hover);
-  --color-info-underline-hover: var(--color-info-text-hover);
 
   /* Warning colors */
   --color-warning-fill: color-mix(in srgb, var(--color-amber-250), var(--color-zinc-300));
@@ -185,9 +168,6 @@
     color-mix(in srgb, var(--color-amber-250) 75%, var(--color-zinc-350)),
     color-mix(in srgb, var(--color-amber-250) 75%, var(--color-slate-600))
   );
-  --color-warning-border: var(--color-warning-fill);
-  --color-warning-border-hover: var(--color-warning-fill-hover);
-  --color-warning-underline-hover: var(--color-warning-text-hover);
 
   /* Danger colors */
   --color-danger-fill: light-dark(
@@ -213,9 +193,6 @@
     color-mix(in srgb, var(--color-red-450) 75%, var(--color-zinc-350)),
     color-mix(in srgb, var(--color-red-450) 75%, var(--color-slate-600))
   );
-  --color-danger-border: var(--color-danger-fill);
-  --color-danger-border-hover: var(--color-danger-fill-hover);
-  --color-danger-underline-hover: var(--color-danger-text-hover);
 }
 
 /* === GLOBAL SYSTEM TOKENS === */

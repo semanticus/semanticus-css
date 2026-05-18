@@ -7,7 +7,7 @@
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-contrast-text-hover);
-      --underline: var(--color-contrast-underline-hover);
+      --underline: var(--color-contrast-text-hover);
     }
   }
 }
@@ -15,12 +15,12 @@
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.contrast {
     --color-background: var(--color-contrast-fill);
-    --border-color: var(--color-contrast-border);
+    --border-color: var(--color-contrast-fill);
     --color-text: var(--color-contrast-on-fill);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: var(--color-contrast-fill-hover);
-      --border-color: var(--color-contrast-border-hover);
+      --border-color: var(--color-contrast-fill-hover);
       --color-text: var(--color-contrast-on-fill);
     }
 

@@ -7,7 +7,7 @@
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-secondary-text-hover);
-      --underline: var(--color-secondary-underline-hover);
+      --underline: var(--color-secondary-text-hover);
     }
   }
 }
@@ -15,12 +15,12 @@
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.secondary {
     --color-background: var(--color-secondary-fill);
-    --border-color: var(--color-secondary-border);
+    --border-color: var(--color-secondary-fill);
     --color-text: var(--color-secondary-on-fill);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: var(--color-secondary-fill-hover);
-      --border-color: var(--color-secondary-border-hover);
+      --border-color: var(--color-secondary-fill-hover);
       --color-text: var(--color-secondary-on-fill);
     }
 
@@ -35,6 +35,6 @@
   --color-text: var(--color-secondary-on-fill);
   --color-text-muted: var(--color-secondary-on-fill-muted);
   --dialog-fill: var(--color-secondary-fill);
-  --dialog-border: var(--color-secondary-border);
+  --dialog-border: var(--color-secondary-fill);
   --dialog-section-fill: color-mix(in srgb, var(--color-secondary-fill) 90%, black);
 }

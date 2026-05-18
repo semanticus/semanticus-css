@@ -19,7 +19,7 @@ button,
 [type=file]::file-selector-button,
 [role=button] {
   --color-background: var(--color-primary-fill);
-  --border-color: var(--color-primary-border);
+  --border-color: var(--color-primary-fill);
   --color-text: var(--color-primary-on-fill);
   --shadow: var(--button-shadow, 0 0 0 rgba(0, 0, 0, 0));
   padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
@@ -50,7 +50,7 @@ button:is([aria-current]:not([aria-current=false])), button:is(:hover, :active, 
 [role=button]:is([aria-current]:not([aria-current=false])),
 [role=button]:is(:hover, :active, :focus) {
   --color-background: var(--color-primary-fill-hover);
-  --border-color: var(--color-primary-border-hover);
+  --border-color: var(--color-primary-fill-hover);
   --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0));
   --color-text: var(--color-primary-on-fill);
 }
@@ -78,7 +78,7 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 [type=file]::file-selector-button,
 [aria-label="Close"] {
   --color-background: var(--color-secondary-fill);
-  --border-color: var(--color-secondary-border);
+  --border-color: var(--color-secondary-fill);
   --color-text: var(--color-secondary-on-fill);
   cursor: pointer;
 }
@@ -87,7 +87,7 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 [type=file]::file-selector-button:is(:hover, :active, :focus),
 [aria-label="Close"]:is(:hover, :active, :focus) {
   --color-background: var(--color-secondary-fill-hover);
-  --border-color: var(--color-secondary-border-hover);
+  --border-color: var(--color-secondary-fill-hover);
   --color-text: var(--color-secondary-on-fill);
 }
 

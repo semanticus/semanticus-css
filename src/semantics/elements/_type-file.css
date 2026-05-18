@@ -14,7 +14,7 @@
 
   &:is(:hover, :active, :focus)::file-selector-button {
     --color-background: var(--color-secondary-fill-hover);
-    --border-color: var(--color-secondary-border-hover);
+    --border-color: var(--color-secondary-fill-hover);
   }
 
   &:focus::file-selector-button {
