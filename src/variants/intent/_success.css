@@ -32,7 +32,7 @@
 
 :is(.card, .pane, .panel).success {
   --color-text: var(--color-success-on-fill);
-  --card-fill: var(--color-success-fill);
-  --card-border: var(--color-success-border);
-  --card-section-fill: color-mix(in srgb, var(--color-success-fill) 90%, black);
+  --dialog-fill: var(--color-success-fill);
+  --dialog-border: var(--color-success-border);
+  --dialog-section-fill: color-mix(in srgb, var(--color-success-fill) 90%, black);
 }

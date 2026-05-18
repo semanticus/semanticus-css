@@ -33,9 +33,9 @@
 :is(.card, .pane, .panel).contrast {
   --color-text: var(--color-contrast-on-fill);
 
-  --card-fill: light-dark(var(--color-slate-900), white);
-  --card-border: light-dark(var(--color-slate-900), color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)));
-  --card-section-fill: light-dark(
+  --dialog-fill: light-dark(var(--color-slate-900), white);
+  --dialog-border: light-dark(var(--color-slate-900), color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)));
+  --dialog-section-fill: light-dark(
     var(--color-slate-800),
     color-mix(in srgb, var(--color-slate-50) 25%, white)
   );

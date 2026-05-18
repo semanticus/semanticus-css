@@ -32,7 +32,7 @@
 
 :is(.card, .pane, .panel).info {
   --color-text: var(--color-info-on-fill);
-  --card-fill: var(--color-info-fill);
-  --card-border: var(--color-info-border);
-  --card-section-fill: color-mix(in srgb, var(--color-info-fill) 90%, black);
+  --dialog-fill: var(--color-info-fill);
+  --dialog-border: var(--color-info-border);
+  --dialog-section-fill: color-mix(in srgb, var(--color-info-fill) 90%, black);
 }

@@ -17,8 +17,8 @@ dialog {
   overflow: auto;
   padding: var(--spacing);
   border-radius: var(--radius);
-  background: var(--card-fill);
-  box-shadow: var(--card-shadow);
+  background: var(--dialog-fill);
+  box-shadow: var(--dialog-shadow);
   border: 0;
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
@@ -51,13 +51,13 @@ dialog {
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--card-section-fill);
+    background-color: var(--dialog-section-fill);
   }
 
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-size) solid var(--card-border);
+    border-bottom: var(--border-size) solid var(--dialog-border);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
   }
@@ -65,7 +65,7 @@ dialog {
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-size) solid var(--card-border);
+    border-top: var(--border-size) solid var(--dialog-border);
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     display: flex;

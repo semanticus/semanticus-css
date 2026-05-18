@@ -32,7 +32,7 @@
 
 :is(.card, .pane, .panel).primary {
   --color-text: var(--color-primary-on-fill);
-  --card-fill: var(--color-primary-fill);
-  --card-border: var(--color-primary-border);
-  --card-section-fill: color-mix(in srgb, var(--color-primary-fill) 90%, black);
+  --dialog-fill: var(--color-primary-fill);
+  --dialog-border: var(--color-primary-border);
+  --dialog-section-fill: color-mix(in srgb, var(--color-primary-fill) 90%, black);
 }

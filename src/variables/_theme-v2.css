@@ -353,10 +353,10 @@
   --details-summary-text-open: var(--color-muted-text);
 
   /* === Card tokens === */
-  --card-fill: light-dark(var(--color-background), var(--color-slate-900));
-  --card-border: light-dark(var(--color-muted-border), var(--color-slate-900));
-  --card-shadow: var(--shadow);
-  --card-section-fill: light-dark(
+  --dialog-fill: light-dark(var(--color-background), var(--color-slate-900));
+  --dialog-border: light-dark(var(--color-muted-border), var(--color-slate-900));
+  --dialog-shadow: var(--shadow);
+  --dialog-section-fill: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     var(--color-slate-800)
   );

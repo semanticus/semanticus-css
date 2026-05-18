@@ -32,7 +32,7 @@
 
 :is(.card, .pane, .panel).danger {
   --color-text: var(--color-danger-on-fill);
-  --card-fill: var(--color-danger-fill);
-  --card-border: var(--color-danger-border);
-  --card-section-fill: color-mix(in srgb, var(--color-danger-fill) 90%, black);
+  --dialog-fill: var(--color-danger-fill);
+  --dialog-border: var(--color-danger-border);
+  --dialog-section-fill: color-mix(in srgb, var(--color-danger-fill) 90%, black);
 }

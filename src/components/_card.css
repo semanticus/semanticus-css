@@ -1,9 +1,9 @@
 .card,
 .pane,
 .panel {
-  --shadow: var(--card-shadow);
-  --color-background: var(--card-fill);
-  --border-color: var(--card-border);
+  --shadow: var(--dialog-shadow);
+  --color-background: var(--dialog-fill);
+  --border-color: var(--dialog-border);
 
   padding-block: var(--spacing);
   padding-inline: var(--spacing);
@@ -16,7 +16,7 @@
 
   & > header,
   & > footer {
-    --color-background: var(--card-section-fill);
+    --color-background: var(--dialog-section-fill);
 
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
@@ -74,12 +74,12 @@
 
 .pane,
 .panel {
-  --card-shadow: none;
+  --dialog-shadow: none;
   --shadow: none;
 }
 
 .pane {
-  --card-border: transparent;
+  --dialog-border: transparent;
   --border-color: transparent;
   border-radius: 0;
 }
