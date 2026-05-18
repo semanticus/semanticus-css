@@ -1,3 +1,8 @@
+:root,
+:host {
+  --table-row-fill-striped: oklch(from var(--color-zinc-500) l c h / 0.0375);
+}
+
 table.striped tbody tr:nth-child(odd) {
   & th,
   & td {

@@ -1,3 +1,71 @@
+:root,
+:host {
+  /* Primary subtle colors */
+  --color-primary-subtle-fill: color-mix(in oklch, var(--color-primary-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-primary-subtle-fill-hover: var(--color-primary-fill);
+  --color-primary-subtle-border: var(--color-primary-subtle-fill);
+  --color-primary-subtle-border-hover: var(--color-primary-subtle-fill-hover);
+  --color-primary-subtle-on-fill: light-dark(var(--color-zinc-850), var(--color-slate-100));
+  --color-primary-subtle-on-fill-muted: color-mix(in srgb, var(--color-azure-800) 50%, white);
+
+  /* Secondary subtle colors */
+  --color-secondary-subtle-fill: color-mix(in oklch, var(--color-secondary-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-secondary-subtle-fill-hover: var(--color-secondary-fill);
+  --color-secondary-subtle-border: var(--color-secondary-subtle-fill);
+  --color-secondary-subtle-border-hover: var(--color-secondary-subtle-fill-hover);
+  --color-secondary-subtle-on-fill: light-dark(var(--color-zinc-850), var(--color-slate-100));
+  --color-secondary-subtle-on-fill-muted: color-mix(in srgb, var(--color-slate-750) 50%, white);
+
+  /* Contrast subtle colors */
+  --color-contrast-subtle-fill: color-mix(in oklch, var(--color-contrast-fill) 80%, light-dark(white, var(--color-slate-900)));
+  --color-contrast-subtle-fill-hover: var(--color-contrast-fill);
+  --color-contrast-subtle-border: var(--color-contrast-subtle-fill);
+  --color-contrast-subtle-border-hover: var(--color-contrast-subtle-fill-hover);
+  --color-contrast-subtle-on-fill: light-dark(var(--color-slate-100), var(--color-zinc-850));
+  --color-contrast-subtle-on-fill-muted: light-dark(var(--color-slate-250), var(--color-slate-600));
+
+  /* Success subtle colors */
+  --color-success-subtle-fill: color-mix(in oklch, var(--color-success-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-success-subtle-fill-hover: var(--color-success-fill);
+  --color-success-subtle-border: var(--color-success-subtle-fill);
+  --color-success-subtle-border-hover: var(--color-success-subtle-fill-hover);
+  --color-success-subtle-on-fill: light-dark(var(--color-zinc-850), var(--color-slate-100));
+  --color-success-subtle-on-fill-muted: color-mix(in srgb, light-dark(
+    color-mix(in srgb, var(--color-jade-700), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-jade-700), var(--color-zinc-300))
+  ) 50%, white);
+
+  /* Info subtle colors */
+  --color-info-subtle-fill: color-mix(in oklch, var(--color-info-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-info-subtle-fill-hover: var(--color-info-fill);
+  --color-info-subtle-border: var(--color-info-subtle-fill);
+  --color-info-subtle-border-hover: var(--color-info-subtle-fill-hover);
+  --color-info-subtle-on-fill: light-dark(var(--color-zinc-850), var(--color-slate-100));
+  --color-info-subtle-on-fill-muted: color-mix(in srgb, light-dark(
+    color-mix(in srgb, var(--color-azure-700), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-azure-700), var(--color-zinc-300))
+  ) 50%, white);
+
+  /* Warning subtle colors */
+  --color-warning-subtle-fill: color-mix(in oklch, var(--color-warning-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-warning-subtle-fill-hover: var(--color-warning-fill);
+  --color-warning-subtle-border: var(--color-warning-subtle-fill);
+  --color-warning-subtle-border-hover: var(--color-warning-subtle-fill-hover);
+  --color-warning-subtle-on-fill: light-dark(var(--color-zinc-850), var(--color-slate-100));
+  --color-warning-subtle-on-fill-muted: color-mix(in srgb, var(--color-amber-500) 50%, white);
+
+  /* Danger subtle colors */
+  --color-danger-subtle-fill: color-mix(in oklch, var(--color-danger-fill) 30%, light-dark(white, var(--color-slate-900)));
+  --color-danger-subtle-fill-hover: var(--color-danger-fill);
+  --color-danger-subtle-border: var(--color-danger-subtle-fill);
+  --color-danger-subtle-border-hover: var(--color-danger-subtle-fill-hover);
+  --color-danger-subtle-on-fill: light-dark(var(--color-zinc-850), var(--color-slate-100));
+  --color-danger-subtle-on-fill-muted: color-mix(in srgb, light-dark(
+    color-mix(in srgb, var(--color-red-700), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-red-700), var(--color-zinc-300))
+  ) 50%, white);
+}
+
 :is(.card, .pane, .panel, button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     &.primary {
