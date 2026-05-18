@@ -6,8 +6,8 @@ After importing any of semanticus-css's css files, you can further customize it 
 
 ```css
 :root {
-  --color-primary-bg: #0172ad;
-  --color-primary-hover-bg: #015887;
+  --color-primary-fill: #0172ad;
+  --color-primary-fill-hover: #02659a;
   --spacing: 1rem;
 }
 ```
@@ -16,70 +16,58 @@ To help you create your own custom styles, check out the [Theme Builder](/guide/
 
 ## Color Variables List
 
+Colors use the `light-dark()` CSS function so a single declaration covers both themes automatically.
+
 ```css
 :root {
-  /* Primary colors */
-  --color-primary-bg: #0172ad;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(var(--color-primary-rgb), 0.5);
-  --color-primary-hover: #015887;
-  --color-primary-hover-bg: #02659a;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(2, 154, 232, 0.5);
-  --color-primary-inverse: #fff;
+  /* Primary colors (defined by the active palette) */
+  --color-primary-fill: #0172ad;
+  --color-primary-fill-hover: light-dark(#02659a, #017fc0);
+  --color-primary-on-fill: white;
+  --color-primary-text: light-dark(#0172ad, #01aaff);
+  --color-primary-text-hover: light-dark(#015887, #79c0ff);
+  --color-primary-underline: light-dark(oklch(from #0172ad l c h / 0.5), oklch(from #01aaff l c h / 0.5));
+  --color-primary-underline-hover: var(--color-primary-text-hover);
+  --color-primary-border: var(--color-primary-fill);
+  --color-primary-border-hover: var(--color-primary-fill-hover);
+  --color-primary-focus-ring: light-dark(oklch(from #029ae8 l c h / 0.5), oklch(from #01aaff l c h / 0.375));
 
   /* Secondary colors */
-  --color-secondary-bg: #525f7a;
-  --color-secondary-border: var(--color-secondary-bg);
-  --color-secondary-underline: rgba(var(--color-secondary-rgb), 0.5);
-  --color-secondary-hover: #48536b;
-  --color-secondary-hover-bg: #48536b;
-  --color-secondary-hover-border: var(--color-secondary-hover-bg);
-  --color-secondary-hover-underline: var(--color-secondary-hover);
-  --color-secondary-focus: rgba(var(--color-secondary-rgb), 0.25);
-  --color-secondary-inverse: #fff;
+  --color-secondary-fill: #525f7a;
+  --color-secondary-fill-hover: light-dark(#48536b, #5d6b89);
+  --color-secondary-on-fill: white;
+  --color-secondary-text: light-dark(#5d6b89, #969eaf);
+  --color-secondary-text-hover: light-dark(#48536b, #b3b9c5);
+  --color-secondary-underline: light-dark(oklch(from #5d6b89 l c h / 0.5), oklch(from #969eaf l c h / 0.5));
+  --color-secondary-underline-hover: var(--color-secondary-text-hover);
+  --color-secondary-border: var(--color-secondary-fill);
+  --color-secondary-border-hover: var(--color-secondary-fill-hover);
+  --color-secondary-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #909ebe l c h / 0.25));
 
   /* Contrast colors */
-  --color-contrast-bg: #181c25;
-  --color-contrast-border: var(--color-contrast-bg);
-  --color-contrast-underline: rgba(var(--color-contrast-rgb), 0.5);
-  --color-contrast-hover: #000;
-  --color-contrast-hover-bg: #000;
-  --color-contrast-hover-border: var(--color-contrast-hover-bg);
-  --color-contrast-hover-underline: var(--color-contrast-hover);
-  --color-contrast-focus: rgba(93, 107, 137, 0.25);
-  --color-contrast-inverse: #fff;
+  --color-contrast-fill: light-dark(#181c25, #eff1f4);
+  --color-contrast-fill-hover: light-dark(black, white);
+  --color-contrast-on-fill: light-dark(white, black);
+  --color-contrast-text: light-dark(#181c25, #dfe3eb);
+  --color-contrast-text-hover: light-dark(black, white);
+  --color-contrast-underline: light-dark(oklch(from #181c25 l c h / 0.5), oklch(from #dfe3eb l c h / 0.5));
+  --color-contrast-underline-hover: var(--color-contrast-text-hover);
+  --color-contrast-border: var(--color-contrast-fill);
+  --color-contrast-border-hover: var(--color-contrast-fill-hover);
+  --color-contrast-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #cfd5e2 l c h / 0.25));
 
   /* Text colors */
-  --color-text: rgb(var(--color-text-rgb));
-  --color-text-muted: color-mix(in srgb, rgb(var(--color-text-rgb)), rgb(128, 128, 128) 70%);
-  --color-text-selection: rgba(2, 154, 232, 0.25);
+  --color-text: light-dark(#373c44, #c2c7d0);
+  --color-text-muted: light-dark(#8891a4, #7b8495);
 
-  /* Background colors */
-  --color-background: #fff;
-  --color-border-muted: rgb(231, 234, 239.5);
+  /* Background / surface */
+  --color-background: light-dark(white, #0e1118);
+  --color-muted-border: light-dark(#dfe3eb, #202632);
+
+  /* Text selection (defined by the active palette) */
+  --color-selection: light-dark(oklch(from #029ae8 l c h / 0.25), oklch(from #01aaff l c h / 0.1875));
 }
 ```
-
-## RGB Channel Variables
-
-For opacity manipulation, RGB channel variables are defined separately:
-
-```css
-:root {
-  --color-primary-rgb: 1, 114, 173;
-  --color-secondary-rgb: 93, 107, 137;
-  --color-contrast-rgb: 24, 28, 37;
-  --color-success-rgb: 43, 122, 76;
-  --color-info-rgb: 4, 120, 120;
-  --color-warning-rgb: 255, 191, 0;
-  --color-danger-rgb: 197, 47, 33;
-  --color-text-rgb: 55, 60, 68;
-}
-```
-
-These enable using colors with custom opacity: `rgba(var(--color-primary-rgb), 0.5)`.
 
 ## Palette Variables
 
@@ -87,18 +75,19 @@ Each palette defines these CSS custom properties:
 
 | Variable | Description |
 |----------|-------------|
-| `--color-primary-bg` | Primary background color (buttons, links) |
-| `--color-primary-border` | Primary border color |
-| `--color-primary-underline` | Primary underline color |
-| `--color-primary-hover` | Primary text color on hover |
-| `--color-primary-hover-bg` | Primary background on hover |
-| `--color-primary-hover-border` | Primary border on hover |
-| `--color-primary-hover-underline` | Primary underline on hover |
-| `--color-primary-focus` | Primary focus ring color |
-| `--color-primary-inverse` | Text color on primary backgrounds |
-| `--color-text-selection` | Text selection highlight color |
+| `--color-primary-fill` | Fill color for primary buttons and active controls |
+| `--color-primary-fill-hover` | Fill color on hover |
+| `--color-primary-on-fill` | Text color on top of primary fill |
+| `--color-primary-text` | Primary text / link color |
+| `--color-primary-text-hover` | Primary text / link color on hover |
+| `--color-primary-underline` | Primary underline color for links |
+| `--color-primary-underline-hover` | Primary underline color on hover |
+| `--color-primary-border` | Primary border color (aliases fill) |
+| `--color-primary-border-hover` | Primary border color on hover |
+| `--color-primary-focus-ring` | Primary focus ring color |
+| `--color-selection` | Text selection highlight color |
 
-All palettes automatically adapt to light and dark modes based on the `data-theme` attribute or user's system preferences.
+All palettes automatically adapt to light and dark modes via the `light-dark()` CSS function.
 
 ## Typography Customization
 
@@ -171,23 +160,23 @@ h1, h2, h3, h4, h5, h6 {
 ```css
 :root {
   --base-spacing: 0.75rem;
-  --responsive-multiplier: 1;
-  --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+  --spacing: var(--base-spacing); /* scales with each breakpoint */
   --typography-spacing-vertical: 1rem;
-  --form-element-spacing-vertical: 0.5rem;
-  --form-element-spacing-horizontal: 0.7rem;
+  --input-spacing-vertical: 0.5rem;
+  --input-spacing-horizontal: 0.7rem;
   --grid-column-gap: var(--spacing);
   --grid-row-gap: var(--spacing);
 }
 ```
 
-## Border Radius
+## Borders & Effects
 
 ```css
 :root {
-  --border-radius: 0.25rem;
-  --border-width: 0.0625rem;
-  --outline-width: 0.125rem;
+  --radius: 0.25rem;
+  --border-size: 0.0625rem;
+  --outline-size: 0.125rem;
+  --transition: 0.2s ease-in-out;
 }
 ```
 
@@ -195,45 +184,44 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --shadow-sm: 0 0.0625rem 0.125rem rgba(129, 145, 181, 0.1);
-  --shadow-md: 0.0625rem 0.125rem 0.5rem rgba(129, 145, 181, 0.15);
-  --shadow-lg: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698),
-               0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024),
-               0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03),
-               0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036),
-               0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302),
-               0.5rem 1rem 6rem rgba(129, 145, 181, 0.06),
-               0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+  --shadow:
+    0.0145rem 0.029rem 0.174rem light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
+    0.0335rem 0.067rem 0.402rem light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)),
+    0.0625rem 0.125rem 0.75rem  light-dark(rgb(129 145 181 / 0.03),   rgb(7 9 12 / 0.03)),
+    0.1125rem 0.225rem 1.35rem  light-dark(rgb(129 145 181 / 0.036),  rgb(7 9 12 / 0.036)),
+    0.2085rem 0.417rem 2.502rem light-dark(rgb(129 145 181 / 0.04302),rgb(7 9 12 / 0.04302)),
+    0.5rem    1rem     6rem     light-dark(rgb(129 145 181 / 0.06),   rgb(7 9 12 / 0.06)),
+    0 0 0 0.0625rem             light-dark(rgb(129 145 181 / 0.015),  rgb(7 9 12 / 0.015));
 }
 ```
 
 ## Component Variables
 
-### Pane, Panel and Card
+### Dialog, Pane, Panel and Card
 
 ```css
 :root {
-  --pane-bg: var(--color-background);
-  --pane-section-border: var(--color-border-muted);
-  --pane-shadow: var(--shadow-lg);
-  --pane-section-bg: rgb(251, 251.5, 252.25);
+  --dialog-fill: light-dark(white, #181c25);
+  --dialog-border: light-dark(var(--color-muted-border), #181c25);
+  --dialog-section-fill: light-dark(#fbfcfc, #2a3140);
+  --dialog-shadow: var(--shadow);
+  --dialog-overlay: light-dark(oklch(from #e8eaed l c h / 0.75), oklch(from #07090c l c h / 0.75));
 }
 ```
 
-### Forms
+### Forms & Inputs
 
 ```css
 :root {
-  --form-bg: rgb(251, 251.5, 252.25);
-  --form-border-color: #cfd5e2;
-  --form-text-color: #23262c;
-  --form-placeholder-color: var(--color-text-muted);
-  --form-focus: var(--color-primary-border);
-  --form-active-bg: #fff;
-  --form-active-border: var(--color-primary-border);
-  --form-disabled-opacity: 0.5;
-  --form-invalid-border: rgb(var(--color-danger-rgb));
-  --form-valid-border: rgb(var(--color-success-rgb));
+  --input-fill: light-dark(#fbfcfc, #1c212c);
+  --input-fill-active: light-dark(white, #1a1f28);
+  --input-border: light-dark(#cfd5e2, #2a3140);
+  --input-text: light-dark(#23262c, #e0e3e7);
+  --input-placeholder-text: var(--color-text-muted);
+  --input-border-focus: var(--color-primary-border);
+  --input-opacity-disabled: 0.5;
+  --input-border-invalid: var(--color-danger-border);
+  --input-border-valid: var(--color-success-border);
 }
 ```
 
@@ -241,8 +229,8 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --button-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --button-shadow-hover: 0 0 0 rgba(0, 0, 0, 0);
+  --button-shadow: 0 0 0 rgb(0 0 0 / 0);
+  --button-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
 }
 ```
 
@@ -250,17 +238,79 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --nav-link-spacing: calc(var(--spacing) * 0.5);
+  --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
 }
 ```
 
-### Dialog and Popover Backdrop Overlay
+### Switch
 
 ```css
 :root {
-  --backdrop-overlay-bg: rgba(232, 234, 237, 0.75);
-  --backdrop-overlay-filter: blur(0.375rem);
+  --switch-fill: light-dark(#bfc7d9, #333c4e);
+  --switch-fill-checked: var(--color-primary-fill);
+  --switch-thumb-fill: white;
+}
+```
+
+### Tables
+
+```css
+:root {
+  --table-border: var(--color-muted-border);
+  --table-row-fill-striped: oklch(from #6f7887 l c h / 0.0375);
+}
+```
+
+### Code
+
+```css
+:root {
+  --code-fill: light-dark(#f3f5f7, #1a1f28);
+  --code-text: light-dark(#646b79, #8891a4);
+  --kbd-fill: var(--color-text);
+  --kbd-text: var(--color-background);
+}
+```
+
+### Accordion (Details)
+
+```css
+:root {
+  --details-border: var(--color-muted-border);
+  --details-summary-text: var(--color-text);
+  --details-summary-text-hover: var(--color-primary-text-hover);
+  --details-summary-text-open: var(--color-text-muted);
+}
+```
+
+### Menus & Dropdowns
+
+```css
+:root {
+  --menu-fill: light-dark(white, #181c25);
+  --menu-border: light-dark(#eff1f4, #202632);
+  --menu-shadow: var(--shadow);
+  --menu-text: var(--color-text);
+  --menu-fill-hover: light-dark(#eff1f4, #202632);
+}
+```
+
+### Progress
+
+```css
+:root {
+  --progress-track-fill: light-dark(#dfe3eb, #202632);
+  --progress-fill: var(--color-primary-fill);
+}
+```
+
+### Tooltip
+
+```css
+:root {
+  --tooltip-fill: var(--color-contrast-fill);
+  --tooltip-text: var(--color-contrast-on-fill);
 }
 ```
 
@@ -271,11 +321,8 @@ CSS variables are organized into separate files for maintainability:
 | File | Contents |
 |------|----------|
 | `_breakpoints.css` | Responsive breakpoint custom media queries |
-| `_layout.css` | Typography, spacing, and sizing |
-| `_colors.css` | Color palette, RGB values, light/dark themes |
-| `_components.css` | Component-specific variables |
-| `_icons.css` | Base UI icons and theme-specific validation icons |
-| `_elements.css` | Element-scoped variable overrides |
+| `_theme.css` | Colors, typography, spacing, effects, component tokens, and icons |
+| `_elements.css` | Element-scoped variable overrides (headings, forms, etc.) |
 
 ## Complete Example
 
@@ -286,24 +333,17 @@ Here is a complete customization file:
 @import "semanticus-css";
 
 :root {
-  /* Primary brand color */
-  --color-primary-bg: #6366f1;
-  --color-primary-hover: #4f46e5;
-  --color-primary-hover-bg: #4f46e5;
-  --color-primary-focus: rgba(99, 102, 241, 0.5);
+  /* Primary brand color (via palette override) */
+  --color-primary-fill: #6366f1;
+  --color-primary-fill-hover: light-dark(#4f46e5, #818cf8);
+  --color-primary-focus-ring: light-dark(oklch(from #6366f1 l c h / 0.5), oklch(from #818cf8 l c h / 0.375));
 
   /* Typography */
   --font-family-sans-serif: "Inter", system-ui, sans-serif;
   --line-height: 1.7;
 
   /* Borders */
-  --border-radius: 0.5rem;
-}
-
-[data-theme="dark"] {
-  --color-primary-bg: #6366f1;
-  --color-primary-hover: #818cf8;
-  --color-primary-hover-bg: #4f46e5;
+  --radius: 0.5rem;
 }
 ```
 
