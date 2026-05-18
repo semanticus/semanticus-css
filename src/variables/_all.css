@@ -1,22 +1,4 @@
-/* ==========================================================================
-   Semanticus CSS Variables
-   ==========================================================================
-
-   This file imports all CSS custom properties used throughout the framework.
-   The import order matches the original _all.css to ensure proper cascade:
-
-   1. _breakpoints.css  - Responsive breakpoint custom media queries
-   2. _layout.css       - --transparent, typography, spacing, sizing
-   3. _colors.css       - Color palette, light/dark theme colors
-   4. _components.css   - Component-specific variables (buttons, forms, etc.)
-   5. _icons.css        - SVG icon data-URIs
-   6. _elements.css     - Element-scoped variable overrides
-
-   ========================================================================== */
-
+@import '../palettes/azure.css';
 @import './_breakpoints.css';
-@import './_layout.css';
-@import './_colors.css';
-@import './_components.css';
-@import './_icons.css';
+@import './_theme.css';
 @import './_elements.css';
