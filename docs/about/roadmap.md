@@ -8,11 +8,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | Removed `--pico` prefix from all CSS variables |
 | ✅ | Utility composition system |
-| ✅ | Consolidated Pico CSS and Bootstrap css variables into one unified system |
+| ✅ | Consolidated **Pico CSS** and **Bootstrap** css variables into one unified system |
 | ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
 | ✅ | CSS variables token organization |
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
 | ✅ | Stack/layout primitives |
+| ✅ | **intent** colors based on **Bootstrap** `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `contrast` (replacing `light` and `dark`) |
 | ⌛ | Grid system |
 
 ## Components
