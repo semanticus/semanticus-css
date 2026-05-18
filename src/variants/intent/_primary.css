@@ -3,11 +3,9 @@
   &.primary {
     --color-text: var(--color-primary-text);
     --color-text-muted: var(--color-primary-on-fill-muted);
-    --underline: var(--color-primary-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-primary-text-hover);
-      --underline: var(--color-primary-text-hover);
     }
   }
 }

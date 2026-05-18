@@ -29,7 +29,6 @@
   --color-primary-text: light-dark(var(--color-cyan-550), var(--color-cyan-350));
   --color-primary-text-hover: light-dark(var(--color-cyan-650), var(--color-cyan-250));
   --color-primary-on-fill-muted: color-mix(in srgb, var(--color-cyan-650) 50%, white);
-  --color-primary-underline: light-dark(oklch(from var(--color-cyan-550) l c h / 0.5), oklch(from var(--color-cyan-350) l c h / 0.5));
   --color-primary-focus-ring: light-dark(oklch(from var(--color-cyan-400) l c h / 0.5), oklch(from var(--color-cyan-350) l c h / 0.375));
 
   /* Component tokens */

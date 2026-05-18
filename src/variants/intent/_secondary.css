@@ -3,11 +3,9 @@
   &.secondary {
     --color-text: var(--color-secondary-text);
     --color-text-muted: var(--color-secondary-on-fill-muted);
-    --underline: var(--color-secondary-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-secondary-text-hover);
-      --underline: var(--color-secondary-text-hover);
     }
   }
 }

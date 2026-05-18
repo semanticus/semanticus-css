@@ -3,11 +3,9 @@
   &.success {
     --color-text: var(--color-success-text);
     --color-text-muted: var(--color-success-on-fill-muted);
-    --underline: var(--color-success-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-success-text-hover);
-      --underline: var(--color-success-text-hover);
     }
   }
 }

@@ -29,7 +29,6 @@
   --color-primary-on-fill-muted: color-mix(in srgb, var(--color-indigo-700) 50%, white);
   --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
   --color-primary-text-hover: light-dark(var(--color-indigo-650), var(--color-indigo-250));
-  --color-primary-underline: light-dark(oklch(from var(--color-indigo-550) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.5));
   --color-primary-focus-ring: light-dark(oklch(from var(--color-indigo-400) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.375));
 
   /* Component tokens */

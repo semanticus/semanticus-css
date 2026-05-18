@@ -26,8 +26,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   --color-primary-on-fill: white;
   --color-primary-text: light-dark(#0172ad, #01aaff);
   --color-primary-text-hover: light-dark(#015887, #79c0ff);
-  --color-primary-underline: light-dark(oklch(from #0172ad l c h / 0.5), oklch(from #01aaff l c h / 0.5));
-  --color-primary-underline-hover: var(--color-primary-text-hover);
   --color-primary-border: var(--color-primary-fill);
   --color-primary-border-hover: var(--color-primary-fill-hover);
   --color-primary-focus-ring: light-dark(oklch(from #029ae8 l c h / 0.5), oklch(from #01aaff l c h / 0.375));
@@ -38,8 +36,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   --color-secondary-on-fill: white;
   --color-secondary-text: light-dark(#5d6b89, #969eaf);
   --color-secondary-text-hover: light-dark(#48536b, #b3b9c5);
-  --color-secondary-underline: light-dark(oklch(from #5d6b89 l c h / 0.5), oklch(from #969eaf l c h / 0.5));
-  --color-secondary-underline-hover: var(--color-secondary-text-hover);
   --color-secondary-border: var(--color-secondary-fill);
   --color-secondary-border-hover: var(--color-secondary-fill-hover);
   --color-secondary-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #909ebe l c h / 0.25));
@@ -50,8 +46,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   --color-contrast-on-fill: light-dark(white, black);
   --color-contrast-text: light-dark(#181c25, #dfe3eb);
   --color-contrast-text-hover: light-dark(black, white);
-  --color-contrast-underline: light-dark(oklch(from #181c25 l c h / 0.5), oklch(from #dfe3eb l c h / 0.5));
-  --color-contrast-underline-hover: var(--color-contrast-text-hover);
   --color-contrast-border: var(--color-contrast-fill);
   --color-contrast-border-hover: var(--color-contrast-fill-hover);
   --color-contrast-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #cfd5e2 l c h / 0.25));
@@ -80,8 +74,6 @@ Each palette defines these CSS custom properties:
 | `--color-primary-on-fill` | Text color on top of primary fill |
 | `--color-primary-text` | Primary text / link color |
 | `--color-primary-text-hover` | Primary text / link color on hover |
-| `--color-primary-underline` | Primary underline color for links |
-| `--color-primary-underline-hover` | Primary underline color on hover |
 | `--color-primary-border` | Primary border color (aliases fill) |
 | `--color-primary-border-hover` | Primary border color on hover |
 | `--color-primary-focus-ring` | Primary focus ring color |

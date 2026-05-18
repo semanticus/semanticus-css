@@ -3,11 +3,9 @@
   &.warning {
     --color-text: var(--color-warning-text);
     --color-text-muted: var(--color-warning-on-fill-muted);
-    --underline: var(--color-warning-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-warning-text-hover);
-      --underline: var(--color-warning-text-hover);
     }
   }
 }

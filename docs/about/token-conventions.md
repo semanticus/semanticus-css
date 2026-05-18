@@ -20,7 +20,6 @@
 ```css
 --color-primary-text          /* color / primary / text foreground */
 --color-primary-fill          /* color / primary / background fill */
---color-primary-underline     /* color / primary / link underline decoration */
 --color-primary-on-fill       /* color / primary / text rendered on top of the fill */
 --color-primary-focus-ring    /* color / primary / focus ring indicator */
 --color-primary-text-hover    /* color / primary / text foreground / hover state */

@@ -3,11 +3,9 @@
   &.contrast {
     --color-text: var(--color-contrast-text);
     --color-text-muted: var(--color-contrast-on-fill-muted);
-    --underline: var(--color-contrast-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-contrast-text-hover);
-      --underline: var(--color-contrast-text-hover);
     }
   }
 }

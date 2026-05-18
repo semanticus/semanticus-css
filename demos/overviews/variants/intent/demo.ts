@@ -93,6 +93,7 @@ export function anchors(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
   return renderElement('ul', {}, `<li>${ADemo.main(attrs)}</li>
+<li>${ADemo.active(attrs)}</li>
 <li>${ADemo.main({ ...attrs, class: `secondary ${_class || ''}` })}</li>
 <li>${ADemo.main({ ...attrs, class: `contrast ${_class || ''}` })}</li>
 <li>${ADemo.main({ ...attrs, class: `success ${_class || ''}` })}</li>
@@ -105,6 +106,7 @@ export function roleLinks(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
   return renderElement('ul', {}, `${RoleLinkDemo.main('li', attrs)}
+${RoleLinkDemo.active('li', attrs)}
 ${RoleLinkDemo.main('li', { ...attrs, class: `secondary ${_class || ''}` })}
 ${RoleLinkDemo.main('li', { ...attrs, class: `contrast ${_class || ''}` })}
 ${RoleLinkDemo.main('li', { ...attrs, class: `success ${_class || ''}` })}\

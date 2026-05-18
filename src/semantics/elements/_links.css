@@ -4,27 +4,26 @@
   --border-color: transparent;
   --color-text: var(--color-primary-text);
   --shadow: transparent;
-  --underline: var(--color-primary-underline);
   outline: none;
   padding: 0;
   background-color: var(--color-background);
   color: var(--color-text);
   text-decoration: var(--a-decoration);
-  text-decoration-color: var(--underline);
+  text-decoration-color: oklch(from var(--color-text) l c h / 0.3);
   text-underline-offset: 0.125em;
-  transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition), text-decoration-color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
 
   &:is(:hover, :active, :focus) {
     --color-background: transparent;
     --border-color: transparent;
-    --color-text: var(--color-primary-text);
+    --color-text: var(--color-primary-text-hover);
     --shadow: transparent;
+    text-decoration-color: oklch(from var(--color-text) l c h / 0.85);
   }
 
-  &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-    --color-text: var(--color-primary-text-hover);
-    --underline: var(--color-primary-text-hover);
-    --a-decoration: underline;
+  &[aria-current="page"] {
+    font-weight: 500;
+    text-decoration-color: oklch(from var(--color-text) l c h / 0.6);
   }
 
   &:focus-visible {
@@ -56,7 +55,7 @@ aside {
 nav {
   a:not([role=button]), [role=link] {
     &:not(:hover) {
-      text-decoration: none;
+      --a-decoration: none;
     }
   }
 }

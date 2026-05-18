@@ -3,11 +3,9 @@
   &.info {
     --color-text: var(--color-info-text);
     --color-text-muted: var(--color-info-on-fill-muted);
-    --underline: var(--color-info-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-info-text-hover);
-      --underline: var(--color-info-text-hover);
     }
   }
 }

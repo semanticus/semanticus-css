@@ -3,11 +3,9 @@
   &.danger {
     --color-text: var(--color-danger-text);
     --color-text-muted: var(--color-danger-on-fill-muted);
-    --underline: var(--color-danger-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: var(--color-danger-text-hover);
-      --underline: var(--color-danger-text-hover);
     }
   }
 }
