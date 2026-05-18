@@ -2,7 +2,7 @@
   /* --color-zinc-950: #0f1114; */
   /* --color-zinc-900: #191c20; */
   /* --color-zinc-850: #23262c; */
-  --color-zinc-800: #2d3138;
+  /* --color-zinc-800: #2d3138; */
   /* --color-zinc-750: #373c44; */
   /* --color-zinc-700: #424751; */
   --color-zinc-650: #4d535e;
@@ -26,7 +26,7 @@
   --color-primary-fill: var(--color-zinc-550);
   --color-primary-fill-hover: light-dark(var(--color-zinc-600), var(--color-zinc-500));
   --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-zinc-800) 50%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-zinc-650) 50%, white);
   --color-primary-text: light-dark(var(--color-zinc-550), var(--color-zinc-350));
   --color-primary-text-hover: light-dark(var(--color-zinc-650), var(--color-zinc-250));
   --color-primary-underline: light-dark(oklch(from var(--color-zinc-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));

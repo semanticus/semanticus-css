@@ -9,10 +9,10 @@
   /* --color-sand-600: #615e55; */
   --color-sand-550: #6e6a60;
   /* --color-sand-500: #7b776b; */
-  --color-sand-450: #888377;
+  /* --color-sand-450: #888377; */
   --color-sand-400: #959082;
   --color-sand-350: #a39e8f;
-  /* --color-sand-300: #b0ab9b; */
+  --color-sand-300: #b0ab9b;
   --color-sand-250: #beb8a7;
   --color-sand-200: #ccc6b4;
   --color-sand-150: #dad4c2;
@@ -26,7 +26,7 @@
   --color-primary-fill: var(--color-sand-200);
   --color-primary-fill-hover: light-dark(var(--color-sand-250), var(--color-sand-150));
   --color-primary-on-fill: black;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-sand-450) 50%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-sand-300) 50%, white);
   --color-primary-text: light-dark(var(--color-sand-550), var(--color-sand-350));
   --color-primary-text-hover: light-dark(var(--color-sand-650), var(--color-sand-250));
   --color-primary-underline: light-dark(oklch(from var(--color-sand-550) l c h / 0.5), oklch(from var(--color-sand-350) l c h / 0.5));

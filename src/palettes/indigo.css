@@ -1,10 +1,10 @@
 :root {
   /* --color-indigo-950: #110b31; */
   /* --color-indigo-900: #181546; */
-  --color-indigo-850: #1f1e5e;
+  /* --color-indigo-850: #1f1e5e; */
   /* --color-indigo-800: #272678; */
   /* --color-indigo-750: #2f2f92; */
-  /* --color-indigo-700: #3838ab; */
+  --color-indigo-700: #3838ab;
   --color-indigo-650: #4040bf;
   --color-indigo-600: #524ed2;
   --color-indigo-550: #655cd6;
@@ -26,7 +26,7 @@
   --color-primary-fill: var(--color-indigo-600);
   --color-primary-fill-hover: light-dark(var(--color-indigo-650), var(--color-indigo-550));
   --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-indigo-850) 50%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-indigo-700) 50%, white);
   --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
   --color-primary-text-hover: light-dark(var(--color-indigo-650), var(--color-indigo-250));
   --color-primary-underline: light-dark(oklch(from var(--color-indigo-550) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.5));

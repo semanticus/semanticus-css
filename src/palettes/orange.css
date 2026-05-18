@@ -3,10 +3,10 @@
   /* --color-orange-900: #2d1509; */
   /* --color-orange-850: #411a0a; */
   /* --color-orange-800: #561e0a; */
-  --color-orange-750: #6b220a;
+  /* --color-orange-750: #6b220a; */
   /* --color-orange-700: #7f270b; */
   --color-orange-650: #942d0d;
-  /* --color-orange-600: #a83410; */
+  --color-orange-600: #a83410;
   --color-orange-550: #bd3c13;
   --color-orange-500: #d24317;
   --color-orange-450: #e74b1a;
@@ -26,7 +26,7 @@
   --color-primary-fill: var(--color-orange-500);
   --color-primary-fill-hover: light-dark(var(--color-orange-550), var(--color-orange-450));
   --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-orange-750) 50%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-orange-600) 50%, white);
   --color-primary-text: light-dark(var(--color-orange-550), var(--color-orange-350));
   --color-primary-text-hover: light-dark(var(--color-orange-650), var(--color-orange-250));
   --color-primary-underline: light-dark(oklch(from var(--color-orange-550) l c h / 0.5), oklch(from var(--color-orange-350) l c h / 0.5));

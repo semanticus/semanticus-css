@@ -1,10 +1,10 @@
 :root {
   /* --color-slate-950: #0e1118; */
   /* --color-slate-900: #181c25; */
-  --color-slate-850: #202632;
+  /* --color-slate-850: #202632; */
   /* --color-slate-800: #2a3140; */
   /* --color-slate-750: #333c4e; */
-  /* --color-slate-700: #3d475c; */
+  --color-slate-700: #3d475c;
   --color-slate-650: #48536b;
   --color-slate-600: #525f7a;
   --color-slate-550: #5d6b89;
@@ -26,7 +26,7 @@
   --color-primary-fill: var(--color-slate-600);
   --color-primary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
   --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-slate-850) 50%, white);
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-slate-700) 50%, white);
   --color-primary-text: light-dark(var(--color-slate-550), var(--color-slate-350));
   --color-primary-text-hover: light-dark(var(--color-slate-650), var(--color-slate-250));
   --color-primary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-slate-350) l c h / 0.5));
