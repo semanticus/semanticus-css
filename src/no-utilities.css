@@ -1,0 +1,27 @@
+/*!
+ * Semanticus CSS v0.9.0 (https://semanticus.design/)
+ *
+ * A ARIA-centric, semantic HTML — enhanced by components and variants (no utilities)
+ *
+ * Original works:
+ * - Pico CSS: Copyright (c) 2019-2024 Pico CSS - https://picocss.com
+ * - Bootstrap Utilities: Copyright (c) 2011-2026 The Bootstrap Authors - https://getbootstrap.com
+ *
+ * Modifications: Copyright (c) 2026 Joao Goncalves
+ * Licensed under MIT (https://github.com/semanticus/semanticus-css/blob/main/LICENSE)
+ */
+
+/* Global variables */
+@import './variables/_all.css';
+
+/* Normalize */
+@import './_normalize.css';
+
+/* Semantics */
+@import './semantics/modules.css';
+
+/* Components */
+@import './components/modules.css';
+
+/* Variants */
+@import './variants/modules.css';

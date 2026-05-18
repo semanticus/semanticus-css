@@ -211,6 +211,19 @@ It does however provide documentation and examples on how to implement common UI
 
 Check out this [How to setup the project](docs/about/contributing.md#how-to-setup-the-project) inside the contributing guide.
 
+## Size comparison
+
+| Bundle | Gzip |
+| --- | --- |
+| Pico (classless / semantics only) | 10.1 KB |
+| Semanticus (semantics only) | 11.9 KB |
+| Pico (semantics + classes) | 11.4 KB |
+| Semanticus (semantics + components + variants) | 14.3 KB |
+| Bootstrap (utilities only) | 10.9 KB |
+| Semanticus (utilities only) | 13.6 KB |
+| Bootstrap (full) | 30.4 KB |
+| Semanticus (full) | 23.6 KB |
+
 ## License
 
 Semanticus CSS is licensed under the [MIT License](LICENSE).
