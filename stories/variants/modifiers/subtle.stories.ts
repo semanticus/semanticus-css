@@ -12,22 +12,22 @@ export const ButtonExample: StoryObj = {
   render: () => SubtleDemo.buttons(),
 };
 
-export const inputButtons: StoryObj = {
+export const InputButtons: StoryObj = {
   render: () => SubtleDemo.inputButtons(),
 };
 
-export const roleButtons: StoryObj = {
+export const RoleButtons: StoryObj = {
   render: () => SubtleDemo.roleButtons(),
 };
 
-export const dropdowns: StoryObj = {
+export const Dropdowns: StoryObj = {
   render: () => SubtleDemo.dropdowns(),
 };
 
-export const accordions: StoryObj = {
+export const Accordions: StoryObj = {
   render: () => SubtleDemo.accordions(),
 };
 
-export const cards: StoryObj = {
+export const Cards: StoryObj = {
   render: () => SubtleDemo.cards(),
 };

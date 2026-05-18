@@ -12,22 +12,22 @@ export const ButtonExample: StoryObj = {
   render: () => GhostDemo.buttons(),
 };
 
-export const inputButtons: StoryObj = {
+export const InputButtons: StoryObj = {
   render: () => GhostDemo.inputButtons(),
 };
 
-export const roleButtons: StoryObj = {
+export const RoleButtons: StoryObj = {
   render: () => GhostDemo.roleButtons(),
 };
 
-export const dropdowns: StoryObj = {
+export const Dropdowns: StoryObj = {
   render: () => GhostDemo.dropdowns(),
 };
 
-export const accordions: StoryObj = {
+export const Accordions: StoryObj = {
   render: () => GhostDemo.accordions(),
 };
 
-export const cards: StoryObj = {
+export const Cards: StoryObj = {
   render: () => GhostDemo.cards(),
 };

@@ -33,11 +33,11 @@ const borderWidthHtml = `<span class="border border-0 p-3 d-inline-block me-2 mb
 <span class="border border-w-4 p-3 d-inline-block me-2 mb-4">4</span>
 <span class="border border-w-5 p-3 d-inline-block me-2 mb-2">5</span>
 `;
-const borderOpacityHtml = `<div class="border border-primary p-2 mb-2">Default success border</div>
-<div class="border border-primary border-opacity-75 p-2 mb-2">75% opacity success border</div>
-<div class="border border-primary border-opacity-50 p-2 mb-2">50% opacity success border</div>
-<div class="border border-primary border-opacity-25 p-2 mb-2">25% opacity success border</div>
-<div class="border border-primary border-opacity-10 p-2">10% opacity success border</div>
+const borderOpacityHtml = `<div class="border border-primary p-2 mb-2">Default primary border</div>
+<div class="border border-primary border-opacity-75 p-2 mb-2">75% opacity primary border</div>
+<div class="border border-primary border-opacity-50 p-2 mb-2">50% opacity primary border</div>
+<div class="border border-primary border-opacity-25 p-2 mb-2">25% opacity primary border</div>
+<div class="border border-primary border-opacity-10 p-2">10% opacity primary border</div>
 `;
 const borderRadiusHtml = `<span class="border rounded p-3 d-inline-block me-2 mb-2">rounded</span>
 <span class="border rounded-top p-3 d-inline-block me-2 mb-2">top</span>

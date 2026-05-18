@@ -1,11 +1,13 @@
-export function renderAttributes(attrs: Record<string, string>): string {
-  const attributes = { ...attrs || {} };
+export function renderAttributes(
+  attrs?: Record<string, string | undefined | null>,
+): string {
+  const attributes = { ...(attrs || {}) };
 
-  if (attributes.class) {
+  if (typeof attributes.class === "string") {
     attributes.class = attributes.class.split(" ").filter(Boolean).join(" ");
   }
 
-  let renderedAttrs = Object.entries(attributes)
+  const renderedAttrs = Object.entries(attributes)
     .map(([key, val]) => ((val ?? "") !== "" ? `${key}="${val}"` : undefined))
     .filter((attribute) => attribute !== undefined)
     .join(" ");
