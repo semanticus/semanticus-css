@@ -13,6 +13,6 @@ blockquote {
 
   & footer {
     margin-top: calc(var(--typography-spacing-vertical) * 0.5);
-    color: var(--color-muted-text);
+    color: var(--color-text-muted);
   }
 }

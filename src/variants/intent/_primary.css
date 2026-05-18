@@ -2,6 +2,7 @@
 [role="link"] {
   &.primary {
     --color-text: var(--color-primary-text);
+    --color-text-muted: var(--color-primary-on-fill-muted);
     --underline: var(--color-primary-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -32,6 +33,7 @@
 
 :is(.card, .pane, .panel).primary {
   --color-text: var(--color-primary-on-fill);
+  --color-text-muted: var(--color-primary-on-fill-muted);
   --dialog-fill: var(--color-primary-fill);
   --dialog-border: var(--color-primary-border);
   --dialog-section-fill: color-mix(in srgb, var(--color-primary-fill) 90%, black);

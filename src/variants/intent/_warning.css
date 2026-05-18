@@ -2,6 +2,7 @@
 [role="link"] {
   &.warning {
     --color-text: var(--color-warning-text);
+    --color-text-muted: var(--color-warning-on-fill-muted);
     --underline: var(--color-warning-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -37,6 +38,7 @@ details summary[role="button"].warning::after {
 
 :is(.card, .pane, .panel).warning {
   --color-text: var(--color-warning-on-fill);
+  --color-text-muted: var(--color-warning-on-fill-muted);
   --dialog-fill: var(--color-warning-fill);
   --dialog-border: var(--color-warning-border);
   --dialog-section-fill: color-mix(in srgb, var(--color-warning-fill) 90%, black);

@@ -2,6 +2,7 @@
 [role="link"] {
   &.success {
     --color-text: var(--color-success-text);
+    --color-text-muted: var(--color-success-on-fill-muted);
     --underline: var(--color-success-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -32,6 +33,7 @@
 
 :is(.card, .pane, .panel).success {
   --color-text: var(--color-success-on-fill);
+  --color-text-muted: var(--color-success-on-fill-muted);
   --dialog-fill: var(--color-success-fill);
   --dialog-border: var(--color-success-border);
   --dialog-section-fill: color-mix(in srgb, var(--color-success-fill) 90%, black);

@@ -286,7 +286,7 @@ textarea {
   width: 100%;
   margin-top: calc(var(--spacing) * -0.75);
   margin-bottom: var(--spacing);
-  color: var(--color-muted-text);
+  color: var(--color-text-muted);
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=false] + small {

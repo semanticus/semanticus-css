@@ -2,7 +2,7 @@
   /* --color-azure-950: #04121d; */
   /* --color-azure-900: #061e2f; */
   /* --color-azure-850: #052940; */
-  /* --color-azure-800: #033452; */
+  --color-azure-800: #033452;
   /* --color-azure-750: #014063; */
   /* --color-azure-700: #014c75; */
   --color-azure-650: #015887;
@@ -12,7 +12,7 @@
   /* --color-azure-450: #018cd4; */
   --color-azure-400: #029ae8;
   --color-azure-350: #01aaff;
-  /* --color-azure-300: #51b4ff; */
+  --color-azure-300: #51b4ff;
   --color-azure-250: #79c0ff;
   /* --color-azure-200: #9bccfd; */
   /* --color-azure-150: #b7d9fc; */
@@ -23,13 +23,14 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-azure-400) l c h / 0.25), oklch(from var(--color-azure-350) l c h / 0.1875));
 
-  --color-primary-text: light-dark(var(--color-azure-550), var(--color-azure-350));
   --color-primary-fill: light-dark(var(--color-azure-550), var(--color-azure-550));
-  --color-primary-underline: light-dark(oklch(from var(--color-azure-550) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.5));
-  --color-primary-text-hover: light-dark(var(--color-azure-650), var(--color-azure-250));
   --color-primary-fill-hover: light-dark(var(--color-azure-600), var(--color-azure-500));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-azure-400) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.375));
   --color-primary-on-fill: white;
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-azure-800) 50%, white);
+  --color-primary-text: light-dark(var(--color-azure-550), var(--color-azure-350));
+  --color-primary-text-hover: light-dark(var(--color-azure-650), var(--color-azure-250));
+  --color-primary-underline: light-dark(oklch(from var(--color-azure-550) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.5));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-azure-400) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.375));
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0.5rem oklch(0% 0 0 / 0.25));

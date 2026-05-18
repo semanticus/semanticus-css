@@ -33,6 +33,7 @@
   --color-slate-600: #525f7a;
   --color-slate-550: #5d6b89;
   --color-slate-350: #909ebe;
+  --color-slate-300: #a0acc7;
   --color-slate-200: #bfc7d9;
   --color-slate-150: #cfd5e2;
   --color-slate-100: #dfe3eb;
@@ -42,26 +43,36 @@
   --color-zinc-950: #0f1114;
   --color-zinc-850: #23262c;
   --color-zinc-750: #373c44;
+  --color-zinc-700: #424751;
   --color-zinc-650: #4d535e;
   --color-zinc-550: #646b79;
   --color-zinc-500: #6f7887;
   --color-zinc-450: #7b8495;
   --color-zinc-400: #8891a4;
   --color-zinc-350: #969eaf;
+  --color-zinc-300: #a4acba;
   --color-zinc-250: #b3b9c5;
   --color-zinc-200: #c2c7d0;
   --color-zinc-100: #e0e3e7;
   --color-zinc-50: #f0f1f3;
 
   /* Semantic utility colors (fixed — not palette-dependent) */
-  --color-amber-100: #fddea6;
-  --color-amber-200: #ffbf00;
+  --color-amber-550: #876400;
   --color-amber-350: #c79400;
+  --color-amber-200: #ffbf00;
+  --color-amber-100: #fddea6;
   --color-amber-50: #fcefd9;
-  --color-azure-350: #01aaff;
-  --color-azure-550: #0172ad;
+
+  --color-azure-800: #033452;
   --color-azure-750: #014063;
+  --color-azure-550: #0172ad;
+  --color-azure-350: #01aaff;
+
+  --color-jade-700: #015234;
   --color-jade-450: #029764;
+  --color-jade-250: #00cc88;
+
+  --color-red-800: #5c160d;
   --color-red-500: #d93526;
 }
 
@@ -77,6 +88,7 @@
   --color-secondary-fill: light-dark(var(--color-slate-600), var(--color-slate-600));
   --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
   --color-secondary-on-fill: white;
+  --color-secondary-on-fill-muted: color-mix(in srgb, var(--color-slate-750) 50%, white);
   --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
   --color-secondary-text-hover: light-dark(var(--color-slate-650), var(--color-zinc-250));
   --color-secondary-underline: light-dark(oklch(from var(--color-slate-550) l c h / 0.5), oklch(from var(--color-zinc-350) l c h / 0.5));
@@ -89,6 +101,7 @@
   --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
   --color-contrast-fill-hover: light-dark(black, white);
   --color-contrast-on-fill: light-dark(white, black);
+  --color-contrast-on-fill-muted: light-dark(var(--color-slate-750), var(--color-slate-300));
   --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
   --color-contrast-text-hover: light-dark(black, white);
   --color-contrast-underline: light-dark(oklch(from var(--color-slate-900) l c h / 0.5), oklch(from var(--color-slate-100) l c h / 0.5));
@@ -97,33 +110,25 @@
   --color-contrast-border-hover: var(--color-contrast-fill-hover);
   --color-contrast-underline-hover: var(--color-contrast-text-hover);
 
-  /* Muted colors */
-  --color-muted-fill: light-dark(color-mix(in srgb, var(--color-slate-50) 50%, white), var(--color-slate-850));
-  --color-muted-fill-hover: light-dark(var(--color-slate-50), var(--color-slate-800));
-  --color-muted-on-fill: light-dark(var(--color-zinc-750), var(--color-zinc-200));
-  --color-muted-text: light-dark(var(--color-zinc-550), var(--color-zinc-450));
-  --color-muted-text-hover: light-dark(var(--color-zinc-650), var(--color-zinc-350));
-  --color-muted-underline: light-dark(oklch(from var(--color-zinc-550) l c h / 0.5), oklch(from var(--color-zinc-450) l c h / 0.5));
-  --color-muted-focus-ring: light-dark(oklch(from var(--color-zinc-500) l c h / 0.25), oklch(from var(--color-zinc-450) l c h / 0.25));
-  --color-muted-border: var(--color-muted-fill);
-  --color-muted-border-hover: var(--color-muted-fill-hover);
-  --color-muted-underline-hover: var(--color-muted-text-hover);
-
   /* Success colors */
   --color-success-fill: light-dark(
-    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-200))
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-300))
   );
   --color-success-fill-hover: light-dark(
-    color-mix(in srgb, var(--color-jade-450) 65%, var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-jade-450) 65%, var(--color-zinc-200))
+    color-mix(in srgb, var(--color-jade-450) 65%, var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-jade-450) 65%, var(--color-zinc-300))
   );
   --color-success-on-fill: white;
+  --color-success-on-fill-muted: color-mix(in srgb, light-dark(
+    color-mix(in srgb, var(--color-jade-700), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-jade-700), var(--color-zinc-300))
+  ) 50%, white);
   --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-450));
   --color-success-text-hover: light-dark(
     color-mix(in srgb, var(--color-jade-450), black 20%),
     color-mix(in srgb, var(--color-jade-450), white 20%)
-    );
+  );
   --color-success-underline: oklch(from var(--color-jade-450) l c h / 0.5);
   --color-success-focus-ring: light-dark(
     color-mix(in srgb, var(--color-jade-450) 75%, var(--color-zinc-350)),
@@ -134,18 +139,22 @@
   --color-success-underline-hover: var(--color-success-text-hover);
 
   /* Info colors */
-  --color-info-fill-hover: light-dark(
-    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-200))
-  );
   --color-info-fill: light-dark(
-    color-mix(in srgb, var(--color-azure-550) 30%, var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-azure-550) 30%, var(--color-zinc-200))
+    color-mix(in srgb, var(--color-azure-550) 30%, var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-azure-550) 30%, var(--color-zinc-300))
+  );
+  --color-info-fill-hover: light-dark(
+    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-300))
   );
   --color-info-on-fill: white;
+  --color-info-on-fill-muted: color-mix(in srgb, light-dark(
+    color-mix(in srgb, var(--color-azure-800) 30%, var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-azure-800) 30%, var(--color-zinc-300))
+  ) 50%, white);
   --color-info-text: light-dark(
-    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-azure-550) 15%, var(--color-zinc-200))
+    color-mix(in srgb, var(--color-azure-550) 45%, var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-azure-550) 15%, var(--color-zinc-300))
   );
   --color-info-text-hover: light-dark(var(--color-azure-750), var(--color-azure-350));
   --color-info-underline: light-dark(oklch(from var(--color-azure-550) l c h / 0.5), oklch(from var(--color-azure-350) l c h / 0.5));
@@ -163,7 +172,11 @@
     color-mix(in srgb, var(--color-amber-100) 65%, var(--color-amber-50)),
     color-mix(in srgb, var(--color-amber-100) 65%, var(--color-amber-350))
   );
-  --color-warning-on-fill: var(--color-zinc-950);
+  --color-warning-on-fill: light-dark(var(--color-zinc-650), white);
+  --color-warning-on-fill-muted: light-dark(
+    color-mix(in srgb, var(--color-amber-350), var(--color-amber-50)),
+    color-mix(in srgb, var(--color-amber-350), var(--color-amber-350))
+  );
   --color-warning-text: var(--color-amber-350);
   --color-warning-text-hover: light-dark(var(--color-amber-550), var(--color-amber-200));
   --color-warning-underline: oklch(from var(--color-amber-350) l c h / 0.5);
@@ -174,14 +187,18 @@
 
   /* Danger colors */
   --color-danger-fill: light-dark(
-    color-mix(in srgb, var(--color-red-500), var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-red-500), var(--color-zinc-200))
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-red-500), var(--color-zinc-300))
   );
   --color-danger-fill-hover: light-dark(
-    color-mix(in srgb, var(--color-red-500) 65%, var(--color-zinc-750)),
-    color-mix(in srgb, var(--color-red-500) 65%, var(--color-zinc-200))
+    color-mix(in srgb, var(--color-red-500) 65%, var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-red-500) 65%, var(--color-zinc-300))
   );
   --color-danger-on-fill: white;
+  --color-danger-on-fill-muted: color-mix(in srgb, light-dark(
+    color-mix(in srgb, var(--color-red-800), var(--color-zinc-700)),
+    color-mix(in srgb, var(--color-red-800), var(--color-zinc-300))
+  ) 50%, white);
   --color-danger-text: light-dark(var(--color-red-500), var(--color-red-500));
   --color-danger-text-hover: light-dark(
     color-mix(in srgb, var(--color-red-500), black 20%),
@@ -196,12 +213,12 @@
   --color-danger-border-hover: var(--color-danger-fill-hover);
   --color-danger-underline-hover: var(--color-danger-text-hover);
 
-  --color-primary-subtle-fill: color-mix(in oklch, var(--color-primary-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-primary-subtle-fill: color-mix(in oklch, var(--color-primary-fill) 30%, light-dark(white, var(--color-slate-900)));
   --color-primary-subtle-fill-hover: var(--color-primary-fill);
   --color-primary-subtle-border: var(--color-primary-subtle-fill);
   --color-primary-subtle-border-hover: var(--color-primary-subtle-fill-hover);
 
-  --color-secondary-subtle-fill: color-mix(in oklch, var(--color-secondary-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-secondary-subtle-fill: color-mix(in oklch, var(--color-secondary-fill) 30%, light-dark(white, var(--color-slate-900)));
   --color-secondary-subtle-fill-hover: var(--color-secondary-fill);
   --color-secondary-subtle-border: var(--color-secondary-subtle-fill);
   --color-secondary-subtle-border-hover: var(--color-secondary-subtle-fill-hover);
@@ -211,12 +228,12 @@
   --color-contrast-subtle-border: var(--color-contrast-subtle-fill);
   --color-contrast-subtle-border-hover: var(--color-contrast-subtle-fill-hover);
 
-  --color-success-subtle-fill: color-mix(in oklch, var(--color-success-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-success-subtle-fill: color-mix(in oklch, var(--color-success-fill) 30%, light-dark(white, var(--color-slate-900)));
   --color-success-subtle-fill-hover: var(--color-success-fill);
   --color-success-subtle-border: var(--color-success-subtle-fill);
   --color-success-subtle-border-hover: var(--color-success-subtle-fill-hover);
 
-  --color-info-subtle-fill: color-mix(in oklch, var(--color-info-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-info-subtle-fill: color-mix(in oklch, var(--color-info-fill) 30%, light-dark(white, var(--color-slate-900)));
   --color-info-subtle-fill-hover: var(--color-info-fill);
   --color-info-subtle-border: var(--color-info-subtle-fill);
   --color-info-subtle-border-hover: var(--color-info-subtle-fill-hover);
@@ -226,7 +243,7 @@
   --color-warning-subtle-border: var(--color-warning-subtle-fill);
   --color-warning-subtle-border-hover: var(--color-warning-subtle-fill-hover);
 
-  --color-danger-subtle-fill: color-mix(in oklch, var(--color-danger-fill) 10%, light-dark(white, var(--color-slate-900)));
+  --color-danger-subtle-fill: color-mix(in oklch, var(--color-danger-fill) 30%, light-dark(white, var(--color-slate-900)));
   --color-danger-subtle-fill-hover: var(--color-danger-fill);
   --color-danger-subtle-border: var(--color-danger-subtle-fill);
   --color-danger-subtle-border-hover: var(--color-danger-subtle-fill-hover);
@@ -237,6 +254,7 @@
 :host {
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
+  --color-text-muted: light-dark(var(--color-zinc-400), var(--color-zinc-450));
   --color-border: var(--color-muted-border);
 
   --a-decoration: underline;
@@ -316,7 +334,7 @@
   );
   --input-border: light-dark(var(--color-slate-150), var(--color-slate-800));
   --input-text: light-dark(var(--color-zinc-850), var(--color-zinc-100));
-  --input-placeholder-text: var(--color-muted-text);
+  --input-placeholder-text: var(--color-text-muted);
   --input-border-focus: var(--color-primary-border);
   --input-opacity-disabled: 0.5;
   --input-border-invalid: light-dark(
@@ -352,7 +370,7 @@
   --details-border: var(--color-muted-border);
   --details-summary-text: var(--color-text);
   --details-summary-text-hover: var(--color-primary-text-hover);
-  --details-summary-text-open: var(--color-muted-text);
+  --details-summary-text-open: var(--color-text-muted);
 
   /* === Card tokens === */
   --dialog-fill: light-dark(var(--color-background), var(--color-slate-900));
@@ -409,7 +427,7 @@
   --del-text: var(--color-danger-text);
 
   --blockquote-border: var(--color-muted-border);
-  --blockquote-footer-text: var(--color-muted-text);
+  --blockquote-footer-text: var(--color-text-muted);
 }
 
 /* === ICONS === */

@@ -2,6 +2,7 @@
 [role="link"] {
   &.secondary {
     --color-text: var(--color-secondary-text);
+    --color-text-muted: var(--color-secondary-on-fill-muted);
     --underline: var(--color-secondary-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -32,6 +33,7 @@
 
 :is(.card, .pane, .panel).secondary {
   --color-text: var(--color-secondary-on-fill);
+  --color-text-muted: var(--color-secondary-on-fill-muted);
   --dialog-fill: var(--color-secondary-fill);
   --dialog-border: var(--color-secondary-border);
   --dialog-section-fill: color-mix(in srgb, var(--color-secondary-fill) 90%, black);

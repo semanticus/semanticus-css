@@ -10,42 +10,49 @@
       --color-background: transparent;
       --border-color: var(--color-primary-border);
       --color-text: var(--color-primary-text);
+      --color-text-muted: var(--color-primary-on-fill-muted);
     }
 
     &.secondary {
       --color-background: transparent;
       --border-color: var(--color-secondary-border);
       --color-text: var(--color-secondary-text);
+      --color-text-muted: var(--color-secondaron-fill-text-muted);
     }
 
     &.contrast {
       --color-background: transparent;
       --border-color: var(--color-contrast-border);
       --color-text: var(--color-contrast-text);
+      --color-text-muted: var(--color-contraston-fill-muted);
     }
 
     &.success {
       --color-background: transparent;
       --border-color: var(--color-success-border);
       --color-text: var(--color-success-text);
+      --color-text-muted: var(--color-success-on-fill-muted);
     }
 
     &.info {
       --color-background: transparent;
       --border-color: var(--color-info-border);
       --color-text: var(--color-info-text);
+      --color-text-muted: var(--color-info-texon-fill-muted);
     }
 
     &.warning {
       --color-background: transparent;
       --border-color: var(--color-warning-border);
       --color-text: var(--color-warning-text);
+      --color-text-muted: var(--color-warning-on-fill-muted);
     }
 
     &.danger {
       --color-background: transparent;
       --border-color: var(--color-danger-border);
       --color-text: var(--color-danger-text);
+      --color-text-muted: var(--color-danger-on-fill-muted);
     }
   }
 }
@@ -55,11 +62,13 @@
     --color-background: transparent;
     --border-color: var(--color-primary-border);
     --color-text: var(--color-primary-text);
+    --color-text-muted: var(--color-primary-on-fill-muted);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: var(--color-primary-fill-hover);
       --border-color: var(--color-primary-border-hover);
       --color-text: var(--color-primary-on-fill);
+      --color-text-muted: var(--color-primary-on-fill-muted);
     }
 
     &.secondary {
@@ -67,6 +76,7 @@
         --color-background: var(--color-secondary-fill-hover);
         --border-color: var(--color-secondary-border-hover);
         --color-text: var(--color-secondary-on-fill);
+        --color-text-muted: var(--color-secondaron-fill-text-muted);
       }
     }
 
@@ -75,6 +85,7 @@
         --color-background: var(--color-contrast-fill-hover);
         --border-color: var(--color-contrast-border-hover);
         --color-text: var(--color-contrast-on-fill);
+        --color-text-muted: var(--color-contraston-fill-muted);
       }
     }
 
@@ -82,11 +93,13 @@
       --color-background: transparent;
       --border-color: var(--color-success-border);
       --color-text: var(--color-success-text);
+      --color-text-muted: var(--color-success-on-fill-muted);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: var(--color-success-fill-hover);
         --border-color: var(--color-success-border-hover);
         --color-text: var(--color-success-on-fill);
+        --color-text-muted: var(--color-success-on-fill-muted);
       }
     }
 
@@ -95,6 +108,7 @@
         --color-background: var(--color-info-fill-hover);
         --border-color: var(--color-info-border-hover);
         --color-text: var(--color-info-on-fill);
+        --color-text-muted: var(--color-info-texon-fill-muted);
       }
     }
 
@@ -103,6 +117,7 @@
         --color-background: var(--color-warning-fill-hover);
         --border-color: var(--color-warning-border-hover);
         --color-text: var(--color-warning-on-fill);
+        --color-text-muted: var(--color-warning-on-fill-muted);
 
         details &::after {
           filter: brightness(0);
@@ -115,6 +130,7 @@
         --color-background: var(--color-danger-fill-hover);
         --border-color: var(--color-danger-border-hover);
         --color-text: var(--color-danger-on-fill);
+        --color-text-muted: var(--color-danger-on-fill-muted);
       }
     }
   }
@@ -125,11 +141,13 @@
   --color-background: transparent;
   --border-color: var(--color-secondary-border);
   --color-text: var(--color-secondary-text);
+  --color-text-muted: var(--color-secondaron-fill-text-muted);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --color-background: var(--color-secondary-fill-hover);
     --border-color: var(--color-secondary-border-hover);
     --color-text: var(--color-secondary-on-fill);
+    --color-text-muted: var(--color-secondaron-fill-text-muted);
   }
 }
 

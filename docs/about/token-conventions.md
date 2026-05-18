@@ -25,10 +25,9 @@
 --color-primary-focus-ring    /* color / primary / focus ring indicator */
 --color-primary-text-hover    /* color / primary / text foreground / hover state */
 --color-primary-fill-hover    /* color / primary / background fill / hover state */
---color-muted-text            /* color / muted / text — a neutral variant, not primary/secondary/contrast */
---color-muted-border          /* color / muted / border — subtle dividers */
 --color-selection             /* color / (no variant) / global text selection highlight */
 --color-text                  /* color / (no variant) / page body text */
+--color-text-muted            /* color / (no variant) / page body text / muted state */
 --color-background            /* color / (no variant) / page background fill */
 ```
 

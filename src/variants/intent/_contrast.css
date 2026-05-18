@@ -2,6 +2,7 @@
 [role="link"] {
   &.contrast {
     --color-text: var(--color-contrast-text);
+    --color-text-muted: var(--color-contrast-on-fill-muted);
     --underline: var(--color-contrast-underline);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
@@ -32,6 +33,7 @@
 
 :is(.card, .pane, .panel).contrast {
   --color-text: var(--color-contrast-on-fill);
+  --color-text-muted: var(--color-contrast-on-fill-muted);
 
   --dialog-fill: light-dark(var(--color-slate-900), white);
   --dialog-border: light-dark(var(--color-slate-900), color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)));
