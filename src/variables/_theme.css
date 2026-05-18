@@ -77,6 +77,8 @@
 
 /* === VARIANTS === */
 :root, :host {
+  --color-fill-shade: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+
   /* Secondary colors */
   --color-secondary-fill: var(--color-slate-600);
   --color-secondary-fill-hover: light-dark(var(--color-slate-650), var(--color-slate-550));
@@ -96,19 +98,10 @@
   --color-contrast-focus-ring: light-dark(oklch(from var(--color-slate-550) l c h / 0.25), oklch(from var(--color-slate-150) l c h / 0.25));
 
   /* Success colors */
-  --color-success-fill: light-dark(
-    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-jade-450), var(--color-zinc-300))
-  );
-  --color-success-fill-hover: light-dark(
-    color-mix(in srgb, var(--color-jade-450) 65%, var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-jade-450) 65%, var(--color-zinc-300))
-  );
+  --color-success-fill: color-mix(in srgb, var(--color-jade-450), var(--color-fill-shade));
+  --color-success-fill-hover: color-mix(in srgb, var(--color-jade-450) 65%, var(--color-fill-shade));
   --color-success-on-fill: white;
-  --color-success-on-fill-muted: color-mix(in srgb, light-dark(
-    color-mix(in srgb, var(--color-jade-550), var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-jade-550), var(--color-zinc-300))
-  ) 50%, white);
+  --color-success-on-fill-muted: color-mix(in srgb, color-mix(in srgb, var(--color-jade-550), var(--color-fill-shade)) 50%, white);
   --color-success-text: var(--color-jade-450);
   --color-success-text-hover: light-dark(
     color-mix(in srgb, var(--color-jade-450), black 20%),
@@ -120,19 +113,10 @@
   );
 
   /* Info colors */
-  --color-info-fill: light-dark(
-    color-mix(in srgb, var(--color-azure-450), var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-azure-450), var(--color-zinc-300))
-  );
-  --color-info-fill-hover: light-dark(
-    color-mix(in srgb, var(--color-azure-450) 65%, var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-azure-450) 65%, var(--color-zinc-300))
-  );
+  --color-info-fill: color-mix(in srgb, var(--color-azure-450), var(--color-fill-shade));
+  --color-info-fill-hover: color-mix(in srgb, var(--color-azure-450) 65%, var(--color-fill-shade));
   --color-info-on-fill: white;
-  --color-info-on-fill-muted: color-mix(in srgb, light-dark(
-    color-mix(in srgb, var(--color-azure-550), var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-azure-550), var(--color-zinc-300))
-  ) 50%, white);
+  --color-info-on-fill-muted: color-mix(in srgb, color-mix(in srgb, var(--color-azure-550), var(--color-fill-shade)) 50%, white);
   --color-info-text: var(--color-azure-450);
   --color-info-text-hover: light-dark(
     color-mix(in srgb, var(--color-azure-450), black 20%),
@@ -162,19 +146,10 @@
   );
 
   /* Danger colors */
-  --color-danger-fill: light-dark(
-    color-mix(in srgb, var(--color-red-450), var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-red-450), var(--color-zinc-300))
-  );
-  --color-danger-fill-hover: light-dark(
-    color-mix(in srgb, var(--color-red-450) 65%, var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-red-450) 65%, var(--color-zinc-300))
-  );
+  --color-danger-fill: color-mix(in srgb, var(--color-red-450), var(--color-fill-shade));
+  --color-danger-fill-hover: color-mix(in srgb, var(--color-red-450) 65%, var(--color-fill-shade));
   --color-danger-on-fill: white;
-  --color-danger-on-fill-muted: color-mix(in srgb, light-dark(
-    color-mix(in srgb, var(--color-red-550), var(--color-zinc-700)),
-    color-mix(in srgb, var(--color-red-550), var(--color-zinc-300))
-  ) 50%, white);
+  --color-danger-on-fill-muted: color-mix(in srgb, color-mix(in srgb, var(--color-red-550), var(--color-fill-shade)) 50%, white);
   --color-danger-text: var(--color-red-450);
   --color-danger-text-hover: light-dark(
     color-mix(in srgb, var(--color-red-450), black 20%),
