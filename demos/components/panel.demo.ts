@@ -30,5 +30,5 @@ export function inlineAlert(_attrs: Record<string, string> = {}, slot: string = 
   const { class: _class, ...attrs } = _attrs;
 
   return renderElement('section', { ...attrs, class: `panel ${_class || ''}` }, `<p>${slot}</p>
-<button aria-label="Close" rel="prev" onclick="this.parentElement.remove()"></button>`);
+<button aria-label="Close" rel="prev"></button>`);
 }
