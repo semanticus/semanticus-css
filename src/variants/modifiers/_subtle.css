@@ -2,37 +2,37 @@
   &.subtle {
     &.primary {
       --color-background: var(--color-primary-subtle-fill);
-      --color-text: var(--color-primary-text);
+      --border-color: var(--color-primary-subtle-border);
     }
 
     &.secondary {
       --color-background: var(--color-secondary-subtle-fill);
-      --color-text: var(--color-secondary-text);
+      --border-color: var(--color-secondary-subtle-border);
     }
 
     &.contrast {
       --color-background: var(--color-contrast-subtle-fill);
-      --color-text: var(--color-contrast-text);
+      --border-color: var(--color-contrast-subtle-border);
     }
 
     &.success {
       --color-background: var(--color-success-subtle-fill);
-      --color-text: var(--color-success-text);
+      --border-color: var(--color-success-subtle-border);
     }
 
     &.info {
       --color-background: var(--color-info-subtle-fill);
-      --color-text: var(--color-info-text);
+      --border-color: var(--color-info-subtle-border);
     }
 
     &.warning {
       --color-background: var(--color-warning-subtle-fill);
-      --color-text: var(--color-warning-text);
+      --border-color: var(--color-warning-subtle-border);
     }
 
     &.danger {
       --color-background: var(--color-danger-subtle-fill);
-      --color-text: var(--color-danger-text);
+      --border-color: var(--color-danger-subtle-border);
     }
   }
 }
@@ -40,52 +40,52 @@
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     --color-background: var(--color-primary-subtle-fill);
-    --color-text: var(--color-primary-text);
+    --border-color: var(--color-primary-subtle-border);
 
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: var(--color-primary-fill);
-      --color-text: var(--color-primary-on-fill);
+    &:is(.primary, [aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: var(--color-primary-subtle-fill-hover);
+      --border-color: var(--color-primary-subtle-border-hover);
     }
 
     &.secondary {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-secondary-fill);
-        --color-text: var(--color-secondary-on-fill);
+        --color-background: var(--color-secondary-subtle-fill-hover);
+      --border-color: var(--color-secondary-subtle-border-hover);
       }
     }
 
     &.contrast {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-contrast-fill);
-        --color-text: var(--color-contrast-on-fill);
+        --color-background: var(--color-contrast-subtle-fill-hover);
+        --border-color: var(--color-contrast-subtle-border-hover);
       }
     }
 
     &.success {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-success-fill);
-        --color-text: var(--color-success-on-fill);
+        --color-background: var(--color-success-subtle-fill-hover);
+        --border-color: var(--color-success-subtle-border-hover);
       }
     }
 
     &.info {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-info-fill);
-        --color-text: var(--color-info-on-fill);
+        --color-background: var(--color-info-subtle-fill-hover);
+        --border-color: var(--color-info-subtle-border-hover);
       }
     }
 
     &.warning {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-warning-fill);
-        --color-text: var(--color-warning-on-fill);
+        --color-background: var(--color-warning-subtle-fill-hover);
+        --border-color: var(--color-warning-subtle-border-hover);
       }
     }
 
     &.danger {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-background: var(--color-danger-fill);
-        --color-text: var(--color-danger-on-fill);
+        --color-background: var(--color-danger-subtle-fill-hover);
+        --border-color: var(--color-danger-subtle-border-hover);
       }
     }
   }
@@ -93,11 +93,11 @@
 
 /* Reset buttons */
 [type="reset"].subtle {
-  --color-background: var(--color-secondary-subtle-fill);
-  --color-text: var(--color-secondary-text);
+  --color-background: var(--color-danger-subtle-fill);
+  --border-color: var(--color-danger-subtle-border);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --color-background: var(--color-secondary-fill);
-    --color-text: var(--color-secondary-on-fill);
+    --color-background: var(--color-secondary-subtle-fill-hover);
+    --border-color: var(--color-secondary-subtle-border-hover);
   }
 }
