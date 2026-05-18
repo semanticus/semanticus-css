@@ -1,36 +1,43 @@
 :is(.card, .pane, .panel, button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     &.primary {
+      --color-text: var(--color-primary-subtle-on-fill);
       --color-background: var(--color-primary-subtle-fill);
       --border-color: var(--color-primary-subtle-border);
     }
 
     &.secondary {
+      --color-text: var(--color-secondary-subtle-on-fill);
       --color-background: var(--color-secondary-subtle-fill);
       --border-color: var(--color-secondary-subtle-border);
     }
 
     &.contrast {
+      --color-text: var(--color-contrast-subtle-on-fill);
       --color-background: var(--color-contrast-subtle-fill);
       --border-color: var(--color-contrast-subtle-border);
     }
 
     &.success {
+      --color-text: var(--color-success-subtle-on-fill);
       --color-background: var(--color-success-subtle-fill);
       --border-color: var(--color-success-subtle-border);
     }
 
     &.info {
+      --color-text: var(--color-info-subtle-on-fill);
       --color-background: var(--color-info-subtle-fill);
       --border-color: var(--color-info-subtle-border);
     }
 
     &.warning {
+      --color-text: var(--color-warning-subtle-on-fill);
       --color-background: var(--color-warning-subtle-fill);
       --border-color: var(--color-warning-subtle-border);
     }
 
     &.danger {
+      --color-text: var(--color-danger-subtle-on-fill);
       --color-background: var(--color-danger-subtle-fill);
       --border-color: var(--color-danger-subtle-border);
     }
@@ -39,6 +46,7 @@
 
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
+    --color-text: var(--color-primary-subtle-on-fill);
     --color-background: var(--color-primary-subtle-fill);
     --border-color: var(--color-primary-subtle-border);
 

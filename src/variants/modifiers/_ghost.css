@@ -17,14 +17,14 @@
       --color-background: transparent;
       --border-color: var(--color-secondary-border);
       --color-text: var(--color-secondary-text);
-      --color-text-muted: var(--color-secondaron-fill-text-muted);
+      --color-text-muted: var(--color-secondary-on-fill-muted);
     }
 
     &.contrast {
       --color-background: transparent;
       --border-color: var(--color-contrast-border);
       --color-text: var(--color-contrast-text);
-      --color-text-muted: var(--color-contraston-fill-muted);
+      --color-text-muted: var(--color-contrast-on-fill-muted);
     }
 
     &.success {
@@ -38,7 +38,7 @@
       --color-background: transparent;
       --border-color: var(--color-info-border);
       --color-text: var(--color-info-text);
-      --color-text-muted: var(--color-info-texon-fill-muted);
+      --color-text-muted: var(--color-info-on-fill-muted);
     }
 
     &.warning {
@@ -76,7 +76,7 @@
         --color-background: var(--color-secondary-fill-hover);
         --border-color: var(--color-secondary-border-hover);
         --color-text: var(--color-secondary-on-fill);
-        --color-text-muted: var(--color-secondaron-fill-text-muted);
+        --color-text-muted: var(--color-secondary-on-fill-muted);
       }
     }
 
@@ -85,7 +85,7 @@
         --color-background: var(--color-contrast-fill-hover);
         --border-color: var(--color-contrast-border-hover);
         --color-text: var(--color-contrast-on-fill);
-        --color-text-muted: var(--color-contraston-fill-muted);
+        --color-text-muted: var(--color-contrast-on-fill-muted);
       }
     }
 
@@ -108,7 +108,7 @@
         --color-background: var(--color-info-fill-hover);
         --border-color: var(--color-info-border-hover);
         --color-text: var(--color-info-on-fill);
-        --color-text-muted: var(--color-info-texon-fill-muted);
+        --color-text-muted: var(--color-info-on-fill-muted);
       }
     }
 
@@ -141,13 +141,13 @@
   --color-background: transparent;
   --border-color: var(--color-secondary-border);
   --color-text: var(--color-secondary-text);
-  --color-text-muted: var(--color-secondaron-fill-text-muted);
+  --color-text-muted: var(--color-secondary-on-fill-muted);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --color-background: var(--color-secondary-fill-hover);
     --border-color: var(--color-secondary-border-hover);
     --color-text: var(--color-secondary-on-fill);
-    --color-text-muted: var(--color-secondaron-fill-text-muted);
+    --color-text-muted: var(--color-secondary-on-fill-muted);
   }
 }
 

@@ -63,7 +63,18 @@ const textOpacityHtml = `<div class="vstack gap-d">
 <div class="text-primary text-opacity-10">10% opacity primary text</div>
 </div>
 `;
-const practicalHtml = `<article class="shadow-lg p-d text-bg-primary-subtle border rounded border-primary">
+const typographyExample = `<section class="text-primary">
+  <hgroup>
+    <h1>Hello World</h1>
+    <h2>Subheading</h2>
+  </hgroup>
+
+  <section>
+    <p>This is a simple example of typography utilities.</p>
+    <p class="text-muted">This is muted like the subheading.</p>
+  </section>
+</section>`;
+const alertExample = `<article class="shadow-lg p-d text-bg-primary-subtle border rounded border-primary">
   <hgroup class="mb-0">
     <h3>Notification</h3>
     <p>Your changes have been saved successfully.</p>
@@ -113,8 +124,12 @@ Colorize text with `.text-*` utilities.
 
 <HtmlPreviewer :code="textOpacityHtml" />
 
-## Practical Examples
+## Examples
+
+## Typography
+
+<HtmlPreviewer :code="typographyExample" />
 
 ### Alert-like Component
 
-<HtmlPreviewer :code="practicalHtml" />
+<HtmlPreviewer :code="alertExample" />
