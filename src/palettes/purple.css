@@ -1,7 +1,7 @@
 :root {
   /* --color-purple-950: #1e0820; */
   /* --color-purple-900: #2d0f33; */
-  /* --color-purple-850: #3d1545; */
+  --color-purple-850: #3d1545;
   /* --color-purple-800: #4d1a57; */
   /* --color-purple-750: #5e206b; */
   /* --color-purple-700: #6f277d; */
@@ -23,13 +23,14 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-purple-400) l c h / 0.25), oklch(from var(--color-purple-350) l c h / 0.1875));
 
-  --color-primary-text: light-dark(var(--color-purple-550), var(--color-purple-350));
   --color-primary-fill: light-dark(var(--color-purple-600), var(--color-purple-600));
-  --color-primary-underline: light-dark(oklch(from var(--color-purple-550) l c h / 0.5), oklch(from var(--color-purple-350) l c h / 0.5));
-  --color-primary-text-hover: light-dark(var(--color-purple-650), var(--color-purple-250));
   --color-primary-fill-hover: light-dark(var(--color-purple-650), var(--color-purple-550));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-purple-400) l c h / 0.5), oklch(from var(--color-purple-350) l c h / 0.375));
   --color-primary-on-fill: white;
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-purple-850) 40%, white);
+  --color-primary-text: light-dark(var(--color-purple-550), var(--color-purple-350));
+  --color-primary-text-hover: light-dark(var(--color-purple-650), var(--color-purple-250));
+  --color-primary-underline: light-dark(oklch(from var(--color-purple-550) l c h / 0.5), oklch(from var(--color-purple-350) l c h / 0.5));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-purple-400) l c h / 0.5), oklch(from var(--color-purple-350) l c h / 0.375));
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));

@@ -23,13 +23,14 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-pumpkin-400) l c h / 0.25), oklch(from var(--color-pumpkin-350) l c h / 0.1875));
 
-  --color-primary-text: light-dark(var(--color-pumpkin-550), var(--color-pumpkin-350));
   --color-primary-fill: light-dark(var(--color-pumpkin-300), var(--color-pumpkin-300));
-  --color-primary-underline: light-dark(oklch(from var(--color-pumpkin-550) l c h / 0.5), oklch(from var(--color-pumpkin-350) l c h / 0.5));
-  --color-primary-text-hover: light-dark(var(--color-pumpkin-650), var(--color-pumpkin-250));
   --color-primary-fill-hover: light-dark(var(--color-pumpkin-350), var(--color-pumpkin-250));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-pumpkin-400) l c h / 0.5), oklch(from var(--color-pumpkin-350) l c h / 0.375));
   --color-primary-on-fill: black;
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-pumpkin-550) 40%, white);
+  --color-primary-text: light-dark(var(--color-pumpkin-550), var(--color-pumpkin-350));
+  --color-primary-text-hover: light-dark(var(--color-pumpkin-650), var(--color-pumpkin-250));
+  --color-primary-underline: light-dark(oklch(from var(--color-pumpkin-550) l c h / 0.5), oklch(from var(--color-pumpkin-350) l c h / 0.5));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-pumpkin-400) l c h / 0.5), oklch(from var(--color-pumpkin-350) l c h / 0.375));
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0 / 0.25), 0 0 0.5rem oklch(0% 0 0 / 0.25));

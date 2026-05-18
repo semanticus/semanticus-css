@@ -9,7 +9,7 @@
   /* --color-sand-600: #615e55; */
   --color-sand-550: #6e6a60;
   /* --color-sand-500: #7b776b; */
-  /* --color-sand-450: #888377; */
+  --color-sand-450: #888377;
   --color-sand-400: #959082;
   --color-sand-350: #a39e8f;
   /* --color-sand-300: #b0ab9b; */
@@ -23,13 +23,14 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-sand-400) l c h / 0.25), oklch(from var(--color-sand-350) l c h / 0.1875));
 
-  --color-primary-text: light-dark(var(--color-sand-550), var(--color-sand-350));
   --color-primary-fill: light-dark(var(--color-sand-200), var(--color-sand-200));
-  --color-primary-underline: light-dark(oklch(from var(--color-sand-550) l c h / 0.5), oklch(from var(--color-sand-350) l c h / 0.5));
-  --color-primary-text-hover: light-dark(var(--color-sand-650), var(--color-sand-250));
   --color-primary-fill-hover: light-dark(var(--color-sand-250), var(--color-sand-150));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-sand-400) l c h / 0.5), oklch(from var(--color-sand-350) l c h / 0.375));
   --color-primary-on-fill: black;
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-sand-450) 40%, white);
+  --color-primary-text: light-dark(var(--color-sand-550), var(--color-sand-350));
+  --color-primary-text-hover: light-dark(var(--color-sand-650), var(--color-sand-250));
+  --color-primary-underline: light-dark(oklch(from var(--color-sand-550) l c h / 0.5), oklch(from var(--color-sand-350) l c h / 0.5));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-sand-400) l c h / 0.5), oklch(from var(--color-sand-350) l c h / 0.375));
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0 / 0.25), 0 0 0.5rem oklch(0% 0 0 / 0.25));

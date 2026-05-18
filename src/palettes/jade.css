@@ -2,7 +2,7 @@
   /* --color-jade-950: #04140c; */
   /* --color-jade-900: #052014; */
   /* --color-jade-850: #042c1b; */
-  /* --color-jade-800: #033823; */
+  --color-jade-800: #033823;
   /* --color-jade-750: #00452b; */
   /* --color-jade-700: #015234; */
   --color-jade-650: #005f3d;
@@ -23,13 +23,14 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-jade-400) l c h / 0.25), oklch(from var(--color-jade-350) l c h / 0.1875));
 
-  --color-primary-text: light-dark(var(--color-jade-550), var(--color-jade-350));
   --color-primary-fill: light-dark(var(--color-jade-550), var(--color-jade-550));
-  --color-primary-underline: light-dark(oklch(from var(--color-jade-550) l c h / 0.5), oklch(from var(--color-jade-350) l c h / 0.5));
-  --color-primary-text-hover: light-dark(var(--color-jade-650), var(--color-jade-250));
   --color-primary-fill-hover: light-dark(var(--color-jade-600), var(--color-jade-500));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-jade-400) l c h / 0.5), oklch(from var(--color-jade-350) l c h / 0.375));
   --color-primary-on-fill: white;
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-jade-800) 40%, white);
+  --color-primary-text: light-dark(var(--color-jade-550), var(--color-jade-350));
+  --color-primary-text-hover: light-dark(var(--color-jade-650), var(--color-jade-250));
+  --color-primary-underline: light-dark(oklch(from var(--color-jade-550) l c h / 0.5), oklch(from var(--color-jade-350) l c h / 0.5));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-jade-400) l c h / 0.5), oklch(from var(--color-jade-350) l c h / 0.375));
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));

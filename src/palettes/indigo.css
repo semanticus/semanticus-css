@@ -1,7 +1,7 @@
 :root {
   /* --color-indigo-950: #110b31; */
   /* --color-indigo-900: #181546; */
-  /* --color-indigo-850: #1f1e5e; */
+  --color-indigo-850: #1f1e5e;
   /* --color-indigo-800: #272678; */
   /* --color-indigo-750: #2f2f92; */
   /* --color-indigo-700: #3838ab; */
@@ -23,13 +23,14 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-indigo-400) l c h / 0.25), oklch(from var(--color-indigo-350) l c h / 0.1875));
 
-  --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
   --color-primary-fill: light-dark(var(--color-indigo-600), var(--color-indigo-600));
-  --color-primary-underline: light-dark(oklch(from var(--color-indigo-550) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.5));
-  --color-primary-text-hover: light-dark(var(--color-indigo-650), var(--color-indigo-250));
   --color-primary-fill-hover: light-dark(var(--color-indigo-650), var(--color-indigo-550));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-indigo-400) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.375));
   --color-primary-on-fill: white;
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-indigo-850) 40%, white);
+  --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
+  --color-primary-text-hover: light-dark(var(--color-indigo-650), var(--color-indigo-250));
+  --color-primary-underline: light-dark(oklch(from var(--color-indigo-550) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.5));
+  --color-primary-focus-ring: light-dark(oklch(from var(--color-indigo-400) l c h / 0.5), oklch(from var(--color-indigo-350) l c h / 0.375));
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));
