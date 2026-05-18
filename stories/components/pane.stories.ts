@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 import { PaneDemo } from "@demos/components";
 
 const meta: Meta = {
-  title: "Variants/Modifiers/Pane",
+  title: "Components/Modifiers/Pane",
   parameters: {},
 };
 
