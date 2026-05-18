@@ -5,15 +5,15 @@
   /* --color-blue-800: #0f2d70; */
   /* --color-blue-750: #0f3888; */
   /* --color-blue-700: #1343a0; */
-  --color-blue-650: #184eb8;
-  --color-blue-600: #1d59d0;
+  /* --color-blue-650: #184eb8; */
+  /* --color-blue-600: #1d59d0; */
   --color-blue-550: #2060df;
-  --color-blue-500: #3c71f7;
+  /* --color-blue-500: #3c71f7; */
   /* --color-blue-450: #5c7ef8; */
   --color-blue-400: #748bf8;
   --color-blue-350: #8999f9;
   /* --color-blue-300: #9ca7fa; */
-  --color-blue-250: #aeb5fb;
+  /* --color-blue-250: #aeb5fb; */
   /* --color-blue-200: #bfc3fa; */
   /* --color-blue-150: #d0d2fa; */
   /* --color-blue-100: #e0e1fa; */
@@ -23,13 +23,9 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-blue-400) l c h / 0.25), oklch(from var(--color-blue-350) l c h / 0.1875));
 
-  --color-primary-fill: var(--color-blue-550);
-  --color-primary-fill-hover: light-dark(var(--color-blue-600), var(--color-blue-500));
-  --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-blue-650) 50%, white);
   --color-primary-text: light-dark(var(--color-blue-550), var(--color-blue-350));
-  --color-primary-text-hover: light-dark(var(--color-blue-650), var(--color-blue-250));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-blue-400) l c h / 0.5), oklch(from var(--color-blue-350) l c h / 0.375));
+  --color-primary-fill: var(--color-blue-550);
+  --color-primary-on-fill: white;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));

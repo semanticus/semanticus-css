@@ -46,7 +46,7 @@
   }
 
   /* Close button styling */
-  [rel=prev] {
+  [rel="prev"] {
     margin: 0;
     padding: 0;
     position: absolute;
@@ -81,5 +81,6 @@
 .pane {
   --dialog-border: transparent;
   --border-color: transparent;
+
   border-radius: 0;
 }

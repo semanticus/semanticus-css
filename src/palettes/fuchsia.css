@@ -5,15 +5,15 @@
   /* --color-fuchsia-800: #5c0d41; */
   /* --color-fuchsia-750: #700e4f; */
   /* --color-fuchsia-700: #84135e; */
-  --color-fuchsia-650: #98176d;
-  --color-fuchsia-600: #ac1c7c;
+  /* --color-fuchsia-650: #98176d; */
+  /* --color-fuchsia-600: #ac1c7c; */
   --color-fuchsia-550: #c1208b;
-  --color-fuchsia-500: #d9269d;
+  /* --color-fuchsia-500: #d9269d; */
   /* --color-fuchsia-450: #ed2aac; */
   --color-fuchsia-400: #f748b7;
   --color-fuchsia-350: #f869bf;
   /* --color-fuchsia-300: #f983c7; */
-  --color-fuchsia-250: #fa9acf;
+  /* --color-fuchsia-250: #fa9acf; */
   /* --color-fuchsia-200: #f9b1d8; */
   /* --color-fuchsia-150: #f9c6e1; */
   /* --color-fuchsia-100: #f9daea; */
@@ -23,13 +23,9 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-fuchsia-400) l c h / 0.25), oklch(from var(--color-fuchsia-350) l c h / 0.1875));
 
-  --color-primary-fill: var(--color-fuchsia-550);
-  --color-primary-fill-hover: light-dark(var(--color-fuchsia-600), var(--color-fuchsia-500));
-  --color-primary-on-fill: white;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-fuchsia-650) 50%, white);
   --color-primary-text: light-dark(var(--color-fuchsia-550), var(--color-fuchsia-350));
-  --color-primary-text-hover: light-dark(var(--color-fuchsia-650), var(--color-fuchsia-250));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-fuchsia-400) l c h / 0.5), oklch(from var(--color-fuchsia-350) l c h / 0.375));
+  --color-primary-fill: var(--color-fuchsia-550);
+  --color-primary-on-fill: white;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));

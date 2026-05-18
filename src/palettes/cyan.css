@@ -5,15 +5,15 @@
   /* --color-cyan-800: #043737; */
   /* --color-cyan-750: #014343; */
   /* --color-cyan-700: #015050; */
-  --color-cyan-650: #025d5d;
-  --color-cyan-600: #046a6a;
+  /* --color-cyan-650: #025d5d; */
+  /* --color-cyan-600: #046a6a; */
   --color-cyan-550: #047878;
-  --color-cyan-500: #058686;
+  /* --color-cyan-500: #058686; */
   /* --color-cyan-450: #059494; */
   --color-cyan-400: #05a2a2;
   --color-cyan-350: #0ab1b1;
   /* --color-cyan-300: #0ac2c2; */
-  --color-cyan-250: #0ccece;
+  /* --color-cyan-250: #0ccece; */
   /* --color-cyan-200: #25dddd; */
   /* --color-cyan-150: #3deceb; */
   /* --color-cyan-100: #58faf9; */
@@ -23,13 +23,9 @@
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-cyan-400) l c h / 0.25), oklch(from var(--color-cyan-350) l c h / 0.1875));
 
-  --color-primary-fill: var(--color-cyan-550);
-  --color-primary-fill-hover: light-dark(var(--color-cyan-600), var(--color-cyan-500));
-  --color-primary-on-fill: white;
   --color-primary-text: light-dark(var(--color-cyan-550), var(--color-cyan-350));
-  --color-primary-text-hover: light-dark(var(--color-cyan-650), var(--color-cyan-250));
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-cyan-650) 50%, white);
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-cyan-400) l c h / 0.5), oklch(from var(--color-cyan-350) l c h / 0.375));
+  --color-primary-fill: var(--color-cyan-550);
+  --color-primary-on-fill: white;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0 / 0), 0 0 0 oklch(0% 0 0 / 0));

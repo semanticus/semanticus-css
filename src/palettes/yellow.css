@@ -5,7 +5,7 @@
   /* --color-yellow-800: #363100; */
   /* --color-yellow-750: #423c00; */
   /* --color-yellow-700: #4e4700; */
-  --color-yellow-650: #5b5300;
+  /* --color-yellow-650: #5b5300; */
   /* --color-yellow-600: #685f00; */
   --color-yellow-550: #756b00;
   /* --color-yellow-500: #827800; */
@@ -13,23 +13,19 @@
   --color-yellow-400: #9e9200;
   --color-yellow-350: #ad9f00;
   /* --color-yellow-300: #bbac00; */
-  --color-yellow-250: #caba01;
-  --color-yellow-200: #d9c800;
-  --color-yellow-150: #e8d600;
-  --color-yellow-100: #f2df0d;
-  --color-yellow-50: #fdf1b4;
+  /* --color-yellow-250: #caba01; */
+  /* --color-yellow-200: #d9c800; */
+  /* --color-yellow-150: #e8d600; */
+  /* --color-yellow-100: #f2df0d; */
+  /* --color-yellow-50: #fdf1b4; */
   /* --color-yellow: var(--color-yellow-550); */
 
   /* System tokens */
   --color-selection: light-dark(oklch(from var(--color-yellow-400) l c h / 0.25), oklch(from var(--color-yellow-350) l c h / 0.1875));
 
-  --color-primary-fill: var(--color-yellow-100);
-  --color-primary-fill-hover: light-dark(var(--color-yellow-150), color-mix(in oklch, var(--color-yellow-100), var(--color-yellow-50)));
-  --color-primary-on-fill: black;
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-yellow-200) 50%, white);
   --color-primary-text: light-dark(var(--color-yellow-550), var(--color-yellow-350));
-  --color-primary-text-hover: light-dark(var(--color-yellow-650), var(--color-yellow-250));
-  --color-primary-focus-ring: light-dark(oklch(from var(--color-yellow-400) l c h / 0.5), oklch(from var(--color-yellow-350) l c h / 0.375));
+  --color-primary-fill: var(--color-yellow-550);
+  --color-primary-on-fill: white;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0 / 0.25), 0 0 0.5rem oklch(0% 0 0 / 0.25));

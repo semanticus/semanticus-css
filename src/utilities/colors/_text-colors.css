@@ -1,5 +1,6 @@
 .text-reset {
   --color-text-opacity: 100%;
+
   color: inherit !important;
 }
 
