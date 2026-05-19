@@ -8,9 +8,7 @@
 
 Or any other full-fledged CSS framework, for that matter.
 
-**Semanticus CSS** is not a complete UI component framework. It intentionally keeps itself lean and avoids shipping exhaustive pre-built components or JavaScript-driven interactions.
-
-Its appeal, however, is not simply its **small size**. The real value lies in its **semantic-first** and **accessibility-focused** styling approach, which helps developers build beautiful and accessible interfaces without having to go off on a tangent to study the complexities of **ARIA** patterns and accessibility implementation details.
+**Semanticus CSS**'s appeal, is not simply its smaller form factor. The real value lies in its **semantic-first** and **accessibility-focused** styling approach, which helps developers build beautiful and accessible interfaces without having to go off on a tangent to study the complexities of **ARIA** patterns and accessibility implementation details.
 
 ## Why not just use Pico CSS?
 
@@ -18,7 +16,7 @@ Sadly **Pico CSS** has not been actively maintained for a while, and it lacks a 
 
 Besides the convenience and added flexibility of utility classes, **Semanticus CSS** aims to uphold **Pico CSS**'s accessibility principles as part of the design.
 
-For instance, it kepts the following accessibility features:
+For instance, it kept the following accessibility features:
 
 - A **loading** region can be expressed with `aria-busy="true"`
 - **Validation** can be expressed with `aria-invalid`
