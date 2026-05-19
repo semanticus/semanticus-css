@@ -14,7 +14,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
 | ✅ | Stack/layout primitives |
 | ✅ | **intent** colors based on **Bootstrap** `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `contrast` (replacing `light` and `dark`) |
-| ⌛ | Grid system |
+| ✅ | Refactor **Dropdown**, using the `ARIA: menu pattern` |
+| ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
+| ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ⌛ | `role="alert"` |
 
 ## Components
@@ -45,6 +47,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
 | 🚧 | `.striped` modifier variant |
+| ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
 | ⌛ | Extend **intent variants**'s reach to `<progress>` |
 
 ## Interactive Patterns
@@ -81,6 +84,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Exhaustive variants documentation and their combinations with HTML elements |
 | ✅ | Exhaustive Utility classes documentation |
 | ✅ | Documentation page example |
+| ✅ | Grid system documentation |
 | ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
 | ⌛ | Login page example |
@@ -107,6 +111,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
 | ⌛ | `.sidebar` popover interaction |
+| 🚧 | Different Grid combinations |
 | ⌛ | Tab interaction |
 | ⌛ | Carousel interaction |
 | ⌛ | Floating Alert interaction |
