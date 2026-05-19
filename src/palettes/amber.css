@@ -11,11 +11,11 @@
   --color-amber-550: #876400;
   /* --color-amber-500: #977000; */
   /* --color-amber-450: #a77c00; */
-  --color-amber-400: #b78800;
+  /* --color-amber-400: #b78800; */
   --color-amber-350: #c79400;
   /* --color-amber-300: #d8a100; */
   /* --color-amber-250: #e8ae01; */
-  /* --color-amber-200: #ffbf00; */
+  --color-amber-200: #ffbf00;
   /* --color-amber-150: #fecc63; */
   /* --color-amber-100: #fddea6; */
   /* --color-amber-50: #fcefd9; */
@@ -23,8 +23,8 @@
 
   /* System tokens */
   --color-primary-text: light-dark(var(--color-amber-550), var(--color-amber-350));
-  --color-primary-fill: var(--color-amber-550);
-  --color-primary-on-fill: white;
+  --color-primary-fill: var(--color-amber-200);
+  --color-primary-on-fill: black;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));

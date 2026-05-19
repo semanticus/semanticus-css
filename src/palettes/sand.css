@@ -11,11 +11,11 @@
   --color-sand-550: #6e6a60;
   /* --color-sand-500: #7b776b; */
   /* --color-sand-450: #888377; */
-  --color-sand-400: #959082;
+  /* --color-sand-400: #959082; */
   --color-sand-350: #a39e8f;
   /* --color-sand-300: #b0ab9b; */
   /* --color-sand-250: #beb8a7; */
-  /* --color-sand-200: #ccc6b4; */
+  --color-sand-200: #ccc6b4;
   /* --color-sand-150: #dad4c2; */
   /* --color-sand-100: #e8e2d2; */
   /* --color-sand-50: #f2f0ec; */
@@ -23,8 +23,8 @@
 
   /* System tokens */
   --color-primary-text: light-dark(var(--color-sand-550), var(--color-sand-350));
-  --color-primary-fill: var(--color-sand-550);
-  --color-primary-on-fill: white;
+  --color-primary-fill: var(--color-sand-200);
+  --color-primary-on-fill: black;
 
   /* Component tokens */
   --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));

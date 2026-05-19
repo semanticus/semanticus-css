@@ -9,9 +9,9 @@
   /* --color-pink-650: #9d1945; */
   /* --color-pink-600: #b21e4f; */
   --color-pink-550: #c72259;
-  /* --color-pink-500: #d92662; */
+  --color-pink-500: #d92662;
   /* --color-pink-450: #f42c6f; */
-  --color-pink-400: #f6547e;
+  /* --color-pink-400: #f6547e; */
   --color-pink-350: #f7708e;
   /* --color-pink-300: #f8889e; */
   /* --color-pink-250: #f99eae; */
@@ -23,7 +23,7 @@
 
   /* System tokens */
   --color-primary-text: light-dark(var(--color-pink-550), var(--color-pink-350));
-  --color-primary-fill: var(--color-pink-550);
+  --color-primary-fill: var(--color-pink-500);
   --color-primary-on-fill: white;
 
   /* Component tokens */

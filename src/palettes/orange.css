@@ -9,9 +9,9 @@
   /* --color-orange-650: #942d0d; */
   /* --color-orange-600: #a83410; */
   --color-orange-550: #bd3c13;
-  /* --color-orange-500: #d24317; */
+  --color-orange-500: #d24317;
   /* --color-orange-450: #e74b1a; */
-  --color-orange-400: #f45d2c;
+  /* --color-orange-400: #f45d2c; */
   --color-orange-350: #f56b3d;
   /* --color-orange-300: #f68e68; */
   /* --color-orange-250: #f8a283; */
@@ -23,7 +23,7 @@
 
   /* System tokens */
   --color-primary-text: light-dark(var(--color-orange-550), var(--color-orange-350));
-  --color-primary-fill: var(--color-orange-550);
+  --color-primary-fill: var(--color-orange-500);
   --color-primary-on-fill: white;
 
   /* Component tokens */

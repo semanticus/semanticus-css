@@ -7,11 +7,11 @@
   /* --color-indigo-750: #2f2f92; */
   /* --color-indigo-700: #3838ab; */
   /* --color-indigo-650: #4040bf; */
-  /* --color-indigo-600: #524ed2; */
+  --color-indigo-600: #524ed2;
   --color-indigo-550: #655cd6;
   /* --color-indigo-500: #7569da; */
   /* --color-indigo-450: #8577dd; */
-  --color-indigo-400: #9486e1;
+  /* --color-indigo-400: #9486e1; */
   --color-indigo-350: #a294e5;
   /* --color-indigo-300: #b0a3e8; */
   /* --color-indigo-250: #bdb2ec; */
@@ -23,7 +23,7 @@
 
   /* System tokens */
   --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
-  --color-primary-fill: var(--color-indigo-550);
+  --color-primary-fill: var(--color-indigo-600);
   --color-primary-on-fill: white;
 
   /* Component tokens */
