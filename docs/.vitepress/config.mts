@@ -462,6 +462,7 @@ export default defineConfig({
             { text: "Display", link: "/docs/utilities/display" },
             { text: "Effects", link: "/docs/utilities/effects" },
             { text: "Flexbox", link: "/docs/utilities/flexbox" },
+            { text: "Grid", link: "/docs/utilities/grid" },
             { text: "Layout", link: "/docs/utilities/layout" },
             { text: "Positioning", link: "/docs/utilities/positioning" },
             { text: "Sizing", link: "/docs/utilities/sizing" },

@@ -2,6 +2,9 @@
 :host {
   --max-z-index: 1050;
 
+  /* Grid */
+  --grid-gutter: var(--spacing);
+
   /* Gradient */
   --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
