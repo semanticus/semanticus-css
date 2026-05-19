@@ -220,9 +220,9 @@ Check out this [How to setup the project](docs/about/contributing.md#how-to-setu
 | Pico (semantics + classes) | 11.5 KB |
 | Semanticus (semantics + components + variants) | 13.3 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
-| Semanticus (utilities + grid) | 9.4 KB |
+| Semanticus (utilities + grid) | 10.1 KB |
 | Bootstrap (full) | 30.4 KB |
-| Semanticus (full) | 22.3 KB |
+| Semanticus (full) | 23.0 KB |
 | Bootstrap (full + javascript) | 53.8 KB |
 
 ## License
