@@ -5,13 +5,8 @@
   /* Gradient */
   --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
-  /* Text & background colors */
-  --color-text-opacity: 100%;
-  --background-color-opacity: 100%;
-
   /* Borders & radii */
   --border-radius-pill: 50rem;
-  --border-color-opacity: 100%;
   --border-radius-1: var(--radius);
   --border-radius-2: calc(var(--radius) * 2);
   --border-radius-3: calc(var(--radius) * 4);

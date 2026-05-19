@@ -48,93 +48,15 @@
   --color-zinc-100: #e0e3e7;
   --color-zinc-50: #f0f1f3;
 
-  /* intent colors (fixed — not palette-dependent) */
-  --color-jade-450: #029764;
-  --color-jade-250: #00cc88;
-
-  --color-azure-450: #018cd4;
-  --color-azure-250: #79c0ff;
-
-  --color-amber-350: #c79400;
-  --color-amber-250: #e8ae01;
-
-  --color-red-450: #ee402e;
-  --color-red-250: #f5a390;
-
-  /* === VARIANTS === */
-
-  --shade-hover: light-dark(var(--color-zinc-700), var(--color-zinc-300));
-  --shade-hover-inverted: light-dark(var(--color-zinc-300), var(--color-slate-700));
-  --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
-  --muted-shade: light-dark(white, black);
-
-  --color-primary-text-hover: color-mix(in srgb, var(--color-primary-text) 70%, var(--shade-hover));
-  --color-primary-fill-hover: color-mix(in srgb, var(--color-primary-fill) 70%, var(--shade-hover));
-  --color-primary-focus-ring: color-mix(in srgb, var(--color-primary-text) 70%, var(--shade-hover-inverted));
-  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-primary-text-hover) 50%, var(--muted-shade));
-
-  /* Secondary colors */
-  --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
-  --color-secondary-fill: var(--color-slate-550);
-  --color-secondary-on-fill: white;
-  --color-secondary-text-hover: color-mix(in srgb, var(--color-secondary-text) 70%, var(--shade-hover));
-  --color-secondary-fill-hover: color-mix(in srgb, var(--color-secondary-fill) 70%, var(--shade-hover));
-  --color-secondary-focus-ring: color-mix(in srgb, var(--color-secondary-text) 70%, var(--shade-hover-inverted));
-  --color-secondary-on-fill-muted: color-mix(in srgb, var(--color-secondary-text-hover) 50%, var(--muted-shade));
-
-  /* Contrast colors */
-  --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
-  --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
-  --color-contrast-on-fill: light-dark(white, black);
-  --color-contrast-text-hover: color-mix(in srgb, var(--color-contrast-text) 70%, var(--shade-hover));
-  --color-contrast-fill-hover: color-mix(in srgb, var(--color-contrast-fill) 70%, var(--shade-hover));
-  --color-contrast-focus-ring: color-mix(in srgb, var(--color-contrast-text) 70%, var(--shade-hover-inverted));
-  --color-contrast-on-fill-muted: color-mix(in srgb, var(--color-contrast-text-hover) 50%, var(--muted-shade));
-
-  /* Success colors */
-  --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-250));
-  --color-success-fill: var(--color-jade-450);
-  --color-success-on-fill: white;
-  --color-success-text-hover: color-mix(in srgb, var(--color-success-text) 70%, var(--shade-hover));
-  --color-success-fill-hover: color-mix(in srgb, var(--color-success-fill) 70%, var(--shade-hover));
-  --color-success-focus-ring: color-mix(in srgb, var(--color-success-text) 70%, var(--shade-hover-inverted));
-  --color-success-on-fill-muted: color-mix(in srgb, var(--color-success-text-hover) 50%, var(--muted-shade));
-
-  /* Info colors */
-  --color-info-text: light-dark(var(--color-azure-450), var(--color-azure-250));
-  --color-info-fill: var(--color-azure-450);
-  --color-info-on-fill: white;
-  --color-info-text-hover: color-mix(in srgb, var(--color-info-text) 70%, var(--shade-hover));
-  --color-info-fill-hover: color-mix(in srgb, var(--color-info-fill) 70%, var(--shade-hover));
-  --color-info-focus-ring: color-mix(in srgb, var(--color-info-text) 70%, var(--shade-hover-inverted));
-  --color-info-on-fill-muted: color-mix(in srgb, var(--color-info-text-hover) 50%, var(--muted-shade));
-
-  /* Warning colors */
-  --color-warning-text: light-dark(var(--color-amber-350), var(--color-amber-250));
-  --color-warning-fill: var(--color-amber-350);
-  --color-warning-on-fill: white;
-  --color-warning-text-hover: color-mix(in srgb, var(--color-warning-text) 70%, var(--shade-hover));
-  --color-warning-fill-hover: color-mix(in srgb, var(--color-warning-fill) 70%, var(--shade-hover));
-  --color-warning-focus-ring: color-mix(in srgb, var(--color-warning-text) 70%, var(--shade-hover-inverted));
-  --color-warning-on-fill-muted: color-mix(in srgb, var(--color-warning-text-hover) 50%, var(--muted-shade));
-
-  /* Danger colors */
-  --color-danger-text: light-dark(var(--color-red-450), var(--color-red-250));
-  --color-danger-fill: var(--color-red-450);
-  --color-danger-on-fill: white;
-  --color-danger-text-hover: color-mix(in srgb, var(--color-danger-text) 70%, var(--shade-hover));
-  --color-danger-fill-hover: color-mix(in srgb, var(--color-danger-fill) 70%, var(--shade-hover));
-  --color-danger-focus-ring: color-mix(in srgb, var(--color-danger-text) 70%, var(--shade-hover-inverted));
-  --color-danger-on-fill-muted: color-mix(in srgb, var(--color-danger-text-hover) 50%, var(--muted-shade));
-
   /* === GLOBAL SYSTEM TOKENS === */
 
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
   --color-text-muted: light-dark(var(--color-zinc-400), var(--color-zinc-450));
   --color-border: light-dark(var(--color-slate-100), var(--color-slate-800));
-
-  --a-decoration: underline;
+  --color-text-opacity: 100%;
+  --background-color-opacity: 100%;
+  --border-color-opacity: 100%;
 
   /* Spacing - shared base unit */
   --base-spacing: 0.75rem;
@@ -168,7 +90,84 @@
     0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
     0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
 
+  /* Intent Colors */
+
+  --shade-hover: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+  --shade-hover-inverted: light-dark(var(--color-zinc-300), var(--color-slate-700));
+  --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
+  --muted-shade: light-dark(white, black);
+
+  /* Primary colors - rest of the variables are defined by the palette that gets imported by the _all.css file */
+  --color-primary-text-hover: color-mix(in srgb, var(--color-primary-text) 70%, var(--shade-hover));
+  --color-primary-fill-hover: color-mix(in srgb, var(--color-primary-fill) 70%, var(--shade-hover));
+  --color-primary-focus-ring: color-mix(in srgb, var(--color-primary-text) 70%, var(--shade-hover-inverted));
+  --color-primary-on-fill-muted: color-mix(in srgb, var(--color-primary-text-hover) 50%, var(--muted-shade));
+
+  /* Secondary colors */
+  --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
+  --color-secondary-fill: var(--color-slate-550);
+  --color-secondary-on-fill: white;
+  --color-secondary-text-hover: color-mix(in srgb, var(--color-secondary-text) 70%, var(--shade-hover));
+  --color-secondary-fill-hover: color-mix(in srgb, var(--color-secondary-fill) 70%, var(--shade-hover));
+  --color-secondary-focus-ring: color-mix(in srgb, var(--color-secondary-text) 70%, var(--shade-hover-inverted));
+  --color-secondary-on-fill-muted: color-mix(in srgb, var(--color-secondary-text-hover) 50%, var(--muted-shade));
+
+  /* Contrast colors */
+  --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
+  --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
+  --color-contrast-on-fill: light-dark(white, black);
+  --color-contrast-text-hover: color-mix(in srgb, var(--color-contrast-text) 70%, var(--shade-hover));
+  --color-contrast-fill-hover: color-mix(in srgb, var(--color-contrast-fill) 70%, var(--shade-hover));
+  --color-contrast-focus-ring: color-mix(in srgb, var(--color-contrast-text) 70%, var(--shade-hover-inverted));
+  --color-contrast-on-fill-muted: color-mix(in srgb, var(--color-contrast-text-hover) 50%, var(--muted-shade));
+
+  /* Success colors */
+  --color-jade-450: #029764;
+  --color-jade-250: #00cc88;
+  --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-250));
+  --color-success-fill: var(--color-jade-450);
+  --color-success-on-fill: white;
+  --color-success-text-hover: color-mix(in srgb, var(--color-success-text) 70%, var(--shade-hover));
+  --color-success-fill-hover: color-mix(in srgb, var(--color-success-fill) 70%, var(--shade-hover));
+  --color-success-focus-ring: color-mix(in srgb, var(--color-success-text) 70%, var(--shade-hover-inverted));
+  --color-success-on-fill-muted: color-mix(in srgb, var(--color-success-text-hover) 50%, var(--muted-shade));
+
+  /* Info colors */
+  --color-azure-450: #018cd4;
+  --color-azure-250: #79c0ff;
+  --color-info-text: light-dark(var(--color-azure-450), var(--color-azure-250));
+  --color-info-fill: var(--color-azure-450);
+  --color-info-on-fill: white;
+  --color-info-text-hover: color-mix(in srgb, var(--color-info-text) 70%, var(--shade-hover));
+  --color-info-fill-hover: color-mix(in srgb, var(--color-info-fill) 70%, var(--shade-hover));
+  --color-info-focus-ring: color-mix(in srgb, var(--color-info-text) 70%, var(--shade-hover-inverted));
+  --color-info-on-fill-muted: color-mix(in srgb, var(--color-info-text-hover) 50%, var(--muted-shade));
+
+  /* Warning colors */
+  --color-amber-350: #c79400;
+  --color-amber-250: #e8ae01;
+  --color-warning-text: light-dark(var(--color-amber-350), var(--color-amber-250));
+  --color-warning-fill: var(--color-amber-350);
+  --color-warning-on-fill: white;
+  --color-warning-text-hover: color-mix(in srgb, var(--color-warning-text) 70%, var(--shade-hover));
+  --color-warning-fill-hover: color-mix(in srgb, var(--color-warning-fill) 70%, var(--shade-hover));
+  --color-warning-focus-ring: color-mix(in srgb, var(--color-warning-text) 70%, var(--shade-hover-inverted));
+  --color-warning-on-fill-muted: color-mix(in srgb, var(--color-warning-text-hover) 50%, var(--muted-shade));
+
+  /* Danger colors */
+  --color-red-450: #ee402e;
+  --color-red-250: #f5a390;
+  --color-danger-text: light-dark(var(--color-red-450), var(--color-red-250));
+  --color-danger-fill: var(--color-red-450);
+  --color-danger-on-fill: white;
+  --color-danger-text-hover: color-mix(in srgb, var(--color-danger-text) 70%, var(--shade-hover));
+  --color-danger-fill-hover: color-mix(in srgb, var(--color-danger-fill) 70%, var(--shade-hover));
+  --color-danger-focus-ring: color-mix(in srgb, var(--color-danger-text) 70%, var(--shade-hover-inverted));
+  --color-danger-on-fill-muted: color-mix(in srgb, var(--color-danger-text-hover) 50%, var(--muted-shade));
+
   /* === COMPONENT TOKENS === */
+
+  --a-decoration: underline;
 
   /* === Typography tokens === */
   --h1-size: 2rem;

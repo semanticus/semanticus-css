@@ -59,10 +59,10 @@
     }
 
     &.success {
-      --color-text: var(--color-success-subtle-on-fill);
-      --color-text-muted: var(--color-success-subtle-on-fill-muted);
-      --color-background: var(--color-success-subtle-fill);
-      --border-color: var(--color-success-subtle-fill);
+      --color-text: oklch(from var(--color-success-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text-muted: oklch(from var(--color-success-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+      --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--background-color-opacity));
+      --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.info {
@@ -118,9 +118,9 @@
 
     &.success {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: var(--color-success-on-fill);
-        --color-background: var(--color-success-fill);
-        --border-color: var(--color-success-fill);
+        --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
+        --color-background: oklch(from var(--color-success-fill) l c h / var(--background-color-opacity));
+        --border-color: oklch(from var(--color-success-fill) l c h / var(--border-color-opacity));
       }
     }
 
