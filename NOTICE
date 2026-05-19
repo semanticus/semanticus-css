@@ -6,25 +6,24 @@ Copyright (c) 2026 Joao Goncalves
 This project incorporates concepts and code adapted from
 the following MIT-licensed projects:
 
---------------------------------------------------------------------------------
-
-Pico CSS
-Adapted from Pico CSS (https://picocss.com)
+Pico CSS v2.1.1
+The codebase in `src/semantics` is adapted from Pico CSS (https://picocss.com)
 Original work: Copyright (c) 2019-2024 Pico CSS
 Licensed under MIT (https://github.com/picocss/pico/blob/main/LICENSE)
 
-Bootstrap
-Adapted from Bootstrap v5.3.8 utilities (https://getbootstrap.com/)
+Bootstrap v5.3.8
+The codebase in `src/utilities` is adapted from Bootstrap utilities (https://getbootstrap.com/)
 Original work: Copyright (c) 2011-2026 The Bootstrap Authors
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 
-modern-normalize
-/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
-The CSS reset in `src/_normalize.css` is adapted from modern-normalize v3.0.1.
+modern-normalize v3.0.1
+The CSS reset in `src/_normalize.css` is from https://github.com/sindresorhus/modern-normalize
+Copyright (c) Sindre Sorhus
+Copyright (c) Jonathan Neal
+Copyright (c) Nicolas Gallagher
+Licensed under MIT (https://github.com/sindresorhus/modern-normalize/blob/main/license)
 
 --------------------------------------------------------------------------------
-
-The projects listed above are licensed under the MIT License:
 
 MIT License
 
