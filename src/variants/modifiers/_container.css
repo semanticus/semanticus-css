@@ -1,17 +1,14 @@
 .container,
 .container-fluid {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
+  margin-inline: auto;
+  padding-inline: var(--spacing);
 }
 
 .container {
   @media (--breakpoint-sm) {
     max-width: 510px;
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: calc(var(--spacing) / 2);
   }
 
   @media (--breakpoint-md) {
