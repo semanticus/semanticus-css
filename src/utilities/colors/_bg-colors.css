@@ -54,48 +54,6 @@
   background-color: var(--color-background) !important;
 }
 
-.bg-primary-subtle {
-  --color-background: var(--color-primary-subtle-fill);
-
-  background-color: var(--color-background) !important;
-}
-
-.bg-secondary-subtle {
-  --color-background: var(--color-secondary-subtle-fill);
-
-  background-color: var(--color-background) !important;
-}
-
-.bg-success-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-
-  background-color: var(--color-background) !important;
-}
-
-.bg-info-subtle {
-  --color-background: var(--color-info-subtle-fill);
-
-  background-color: var(--color-background) !important;
-}
-
-.bg-warning-subtle {
-  --color-background: var(--color-warning-subtle-fill);
-
-  background-color: var(--color-background) !important;
-}
-
-.bg-danger-subtle {
-  --color-background: var(--color-danger-subtle-fill);
-
-  background-color: var(--color-background) !important;
-}
-
-.bg-contrast-subtle {
-  --color-background: var(--color-contrast-subtle-fill);
-
-  background-color: var(--color-background) !important;
-}
-
 .bg-opacity-10 {
   --color-background-opacity: 10%;
 }

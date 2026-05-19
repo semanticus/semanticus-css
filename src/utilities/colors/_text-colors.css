@@ -4,6 +4,16 @@
   color: inherit !important;
 }
 
+.text-body {
+  color: oklch(from var(--color-text) l c h / var(--color-text-opacity)) !important;
+}
+
+.text-muted {
+  --color-text: oklch(from var(--color-text-muted) l c h / var(--color-text-opacity));
+
+  color: var(--color-text) !important;
+}
+
 .text-primary {
   --color-text: oklch(from var(--color-primary-text) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-primary-on-fill-muted) l c h / var(--color-text-opacity));
@@ -14,6 +24,13 @@
 .text-secondary {
   --color-text: oklch(from var(--color-secondary-text) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-secondary-on-fill-muted) l c h / var(--color-text-opacity));
+
+  color: var(--color-text) !important;
+}
+
+.text-contrast {
+  --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
 }
@@ -42,23 +59,6 @@
 .text-danger {
   --color-text: oklch(from var(--color-danger-text) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-danger-on-fill-muted) l c h / var(--color-text-opacity));
-
-  color: var(--color-text) !important;
-}
-
-.text-contrast {
-  --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
-
-  color: var(--color-text) !important;
-}
-
-.text-body {
-  color: oklch(from var(--color-text) l c h / var(--color-text-opacity)) !important;
-}
-
-.text-muted {
-  --color-text: oklch(from var(--color-text-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
 }

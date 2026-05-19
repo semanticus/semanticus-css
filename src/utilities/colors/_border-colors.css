@@ -26,34 +26,6 @@
   --color-border: var(--color-contrast-fill);
 }
 
-.border-primary-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-primary-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-secondary-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-secondary-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-contrast-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-contrast-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-success-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-info-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-info-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-warning-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-warning-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-danger-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-danger-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
 .border-opacity-10 {
   --border-color-opacity: 10%;
 }
