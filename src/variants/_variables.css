@@ -1,4 +1,6 @@
 :root, :host {
+  --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
+
   /* Primary subtle colors */
   --color-primary-subtle-fill: color-mix(in srgb, var(--color-primary-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
 

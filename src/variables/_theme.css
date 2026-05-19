@@ -51,10 +51,6 @@
 
   /* === GLOBAL SYSTEM TOKENS === */
 
-  --shade-hover: light-dark(var(--color-zinc-700), var(--color-zinc-300));
-  --shade-hover-inverted: light-dark(var(--color-zinc-300), var(--color-slate-700));
-  --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
-
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
   --color-background-opacity: 100%;
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
@@ -97,26 +93,30 @@
 
   /* Intent Colors */
 
+  /* helpers to add/remove shade to hover states */
+  --color-hover-effect: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+  --color-focus-effect: light-dark(var(--color-zinc-300), var(--color-slate-700));
+
   /* Primary colors - rest of the variables are defined by the palette that gets imported by the _all.css file */
-  --color-primary-text-hover: color-mix(in srgb, var(--color-primary-text) 70%, var(--shade-hover));
-  --color-primary-fill-hover: color-mix(in srgb, var(--color-primary-fill) 70%, var(--shade-hover));
-  --color-primary-focus-ring: color-mix(in srgb, var(--color-primary-text) 70%, var(--shade-hover-inverted));
+  --color-primary-text-hover: color-mix(in srgb, var(--color-primary-text) 70%, var(--color-hover-effect));
+  --color-primary-fill-hover: color-mix(in srgb, var(--color-primary-fill) 70%, var(--color-hover-effect));
+  --color-primary-focus-ring: color-mix(in srgb, var(--color-primary-text) 70%, var(--color-focus-effect));
 
   /* Secondary colors */
   --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
   --color-secondary-fill: var(--color-slate-550);
   --color-secondary-on-fill: white;
-  --color-secondary-text-hover: color-mix(in srgb, var(--color-secondary-text) 70%, var(--shade-hover));
-  --color-secondary-fill-hover: color-mix(in srgb, var(--color-secondary-fill) 70%, var(--shade-hover));
-  --color-secondary-focus-ring: color-mix(in srgb, var(--color-secondary-text) 70%, var(--shade-hover-inverted));
+  --color-secondary-text-hover: color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-hover-effect));
+  --color-secondary-fill-hover: color-mix(in srgb, var(--color-secondary-fill) 70%, var(--color-hover-effect));
+  --color-secondary-focus-ring: color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-focus-effect));
 
   /* Contrast colors */
   --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
   --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
   --color-contrast-on-fill: light-dark(white, var(--color-zinc-900));
-  --color-contrast-text-hover: color-mix(in srgb, var(--color-contrast-text) 70%, var(--shade-hover));
-  --color-contrast-fill-hover: color-mix(in srgb, var(--color-contrast-fill) 70%, var(--shade-hover));
-  --color-contrast-focus-ring: color-mix(in srgb, var(--color-contrast-text) 70%, var(--shade-hover-inverted));
+  --color-contrast-text-hover: color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-hover-effect));
+  --color-contrast-fill-hover: color-mix(in srgb, var(--color-contrast-fill) 70%, var(--color-hover-effect));
+  --color-contrast-focus-ring: color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-focus-effect));
 
   /* Success colors */
   --color-jade-450: #029764;
@@ -124,9 +124,9 @@
   --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-250));
   --color-success-fill: var(--color-jade-450);
   --color-success-on-fill: white;
-  --color-success-text-hover: color-mix(in srgb, var(--color-success-text) 70%, var(--shade-hover));
-  --color-success-fill-hover: color-mix(in srgb, var(--color-success-fill) 70%, var(--shade-hover));
-  --color-success-focus-ring: color-mix(in srgb, var(--color-success-text) 70%, var(--shade-hover-inverted));
+  --color-success-text-hover: color-mix(in srgb, var(--color-success-text) 70%, var(--color-hover-effect));
+  --color-success-fill-hover: color-mix(in srgb, var(--color-success-fill) 70%, var(--color-hover-effect));
+  --color-success-focus-ring: color-mix(in srgb, var(--color-success-text) 70%, var(--color-focus-effect));
 
   /* Info colors */
   --color-azure-450: #018cd4;
@@ -134,9 +134,9 @@
   --color-info-text: light-dark(var(--color-azure-450), var(--color-azure-250));
   --color-info-fill: var(--color-azure-450);
   --color-info-on-fill: white;
-  --color-info-text-hover: color-mix(in srgb, var(--color-info-text) 70%, var(--shade-hover));
-  --color-info-fill-hover: color-mix(in srgb, var(--color-info-fill) 70%, var(--shade-hover));
-  --color-info-focus-ring: color-mix(in srgb, var(--color-info-text) 70%, var(--shade-hover-inverted));
+  --color-info-text-hover: color-mix(in srgb, var(--color-info-text) 70%, var(--color-hover-effect));
+  --color-info-fill-hover: color-mix(in srgb, var(--color-info-fill) 70%, var(--color-hover-effect));
+  --color-info-focus-ring: color-mix(in srgb, var(--color-info-text) 70%, var(--color-focus-effect));
 
   /* Warning colors */
   --color-amber-350: #c79400;
@@ -144,9 +144,9 @@
   --color-warning-text: light-dark(var(--color-amber-350), var(--color-amber-250));
   --color-warning-fill: var(--color-amber-350);
   --color-warning-on-fill: white;
-  --color-warning-text-hover: color-mix(in srgb, var(--color-warning-text) 70%, var(--shade-hover));
-  --color-warning-fill-hover: color-mix(in srgb, var(--color-warning-fill) 70%, var(--shade-hover));
-  --color-warning-focus-ring: color-mix(in srgb, var(--color-warning-text) 70%, var(--shade-hover-inverted));
+  --color-warning-text-hover: color-mix(in srgb, var(--color-warning-text) 70%, var(--color-hover-effect));
+  --color-warning-fill-hover: color-mix(in srgb, var(--color-warning-fill) 70%, var(--color-hover-effect));
+  --color-warning-focus-ring: color-mix(in srgb, var(--color-warning-text) 70%, var(--color-focus-effect));
 
   /* Danger colors */
   --color-red-450: #ee402e;
@@ -154,9 +154,9 @@
   --color-danger-text: light-dark(var(--color-red-450), var(--color-red-250));
   --color-danger-fill: var(--color-red-450);
   --color-danger-on-fill: white;
-  --color-danger-text-hover: color-mix(in srgb, var(--color-danger-text) 70%, var(--shade-hover));
-  --color-danger-fill-hover: color-mix(in srgb, var(--color-danger-fill) 70%, var(--shade-hover));
-  --color-danger-focus-ring: color-mix(in srgb, var(--color-danger-text) 70%, var(--shade-hover-inverted));
+  --color-danger-text-hover: color-mix(in srgb, var(--color-danger-text) 70%, var(--color-hover-effect));
+  --color-danger-fill-hover: color-mix(in srgb, var(--color-danger-fill) 70%, var(--color-hover-effect));
+  --color-danger-focus-ring: color-mix(in srgb, var(--color-danger-text) 70%, var(--color-focus-effect));
 
   /* === COMPONENT TOKENS === */
 
