@@ -12,9 +12,6 @@
 /* Global variables */
 @import './variables/_all.css';
 
-/* Normalize */
-@import './_normalize.css';
-
 /* Semantics */
 @import './semantics/modules.css';
 

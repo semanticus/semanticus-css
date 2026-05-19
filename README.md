@@ -216,13 +216,13 @@ Check out this [How to setup the project](docs/about/contributing.md#how-to-setu
 | Bundle | Gzip |
 | --- | --- |
 | Pico (semantics only) | 10.2 KB |
-| Semanticus (semantics only) | 11.3 KB |
+| Semanticus (semantics only) | 11.0 KB |
 | Pico (semantics + classes) | 11.5 KB |
-| Semanticus (semantics + components + variants) | 13.3 KB |
+| Semanticus (semantics + components + variants) | 13.1 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
 | Semanticus (utilities + grid) | 10.1 KB |
 | Bootstrap (full) | 30.4 KB |
-| Semanticus (full) | 23.0 KB |
+| Semanticus (full) | 22.8 KB |
 | Bootstrap (full + javascript) | 53.8 KB |
 
 ## License
@@ -246,4 +246,4 @@ Very few frameworks have managed to keep so faithful to the semantic motto as Pi
 For providing a broad, practical utility system and a well-documented Utility API.
 Bootstrap's utility architecture strongly influenced the utility layer in this project.
 
-#### To the maintainers and contributors of these projects: THANK YOU 🙏
+#### To the maintainers and contributors of these projects: A big THANK YOU

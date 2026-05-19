@@ -16,7 +16,6 @@ The framework is organized into 6 layers, all in `src/`:
 | Layer | Path | Purpose |
 |-------|------|---------|
 | Variables | `src/variables/_all.css` | Global CSS custom properties (colors, spacing, typography, theming) |
-| Normalize | `src/_normalize.css` | CSS reset / normalize |
 | Semantics | `src/semantics/` | Styles for raw HTML elements + ARIA roles (buttons, inputs, nav, dialog, typography, etc.) |
 | Components | `src/components/` | Component-specific styles (`.card`, `.modal`, `.accordion`, etc.) |
 | Variants | `src/variants/` | Tweaks existing element styles via CSS variables only (`.secondary`, `.contrast`, etc.) |

@@ -12,8 +12,5 @@
 /* Variables */
 @import '../variables/_all.css';
 
-/* Normalize */
-@import '../_normalize.css';
-
 /* Semantic Components */
 @import "./modules.css";

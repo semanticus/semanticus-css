@@ -1,5 +1,6 @@
 table {
   border-collapse: collapse;
+  border-color: currentcolor; /* modern-normalize */
   border-spacing: 0;
   color: var(--color-text);
   font-style: normal;
