@@ -51,9 +51,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   /* Background / surface */
   --color-background: light-dark(white, #0e1118);
   --color-border: light-dark(#dfe3eb, #202632);
-
-  /* Text selection (defined by the active palette) */
-  --color-selection: light-dark(oklch(from #029ae8 l c h / 0.25), oklch(from #01aaff l c h / 0.1875));
 }
 ```
 
@@ -69,7 +66,6 @@ Each palette defines these CSS custom properties:
 | `--color-primary-text` | Primary text / link color |
 | `--color-primary-text-hover` | Primary text / link color on hover |
 | `--color-primary-focus-ring` | Primary focus ring color |
-| `--color-selection` | Text selection highlight color |
 
 All palettes automatically adapt to light and dark modes via the `light-dark()` CSS function.
 

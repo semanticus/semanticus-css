@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-azure-950: #04121d; */
   /* --color-azure-900: #061e2f; */
   /* --color-azure-850: #052940; */
@@ -21,8 +22,6 @@
   /* --color-azure: var(--color-azure-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-azure-400) l c h / 0.25), oklch(from var(--color-azure-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-azure-550), var(--color-azure-350));
   --color-primary-fill: var(--color-azure-550);
   --color-primary-on-fill: white;

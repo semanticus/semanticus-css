@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-pumpkin-950: #180f04; */
   /* --color-pumpkin-900: #271805; */
   /* --color-pumpkin-850: #372004; */
@@ -21,8 +22,6 @@
   /* --color-pumpkin: var(--color-pumpkin-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-pumpkin-400) l c h / 0.25), oklch(from var(--color-pumpkin-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-pumpkin-550), var(--color-pumpkin-350));
   --color-primary-fill: var(--color-pumpkin-550);
   --color-primary-on-fill: white;

@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-pink-950: #25060c; */
   /* --color-pink-900: #380916; */
   /* --color-pink-850: #4b0c1f; */
@@ -21,8 +22,6 @@
   /* --color-pink: var(--color-pink-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-pink-400) l c h / 0.25), oklch(from var(--color-pink-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-pink-550), var(--color-pink-350));
   --color-primary-fill: var(--color-pink-550);
   --color-primary-on-fill: white;

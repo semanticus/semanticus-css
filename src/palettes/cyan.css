@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-cyan-950: #041413; */
   /* --color-cyan-900: #051f1f; */
   /* --color-cyan-850: #052b2b; */
@@ -21,8 +22,6 @@
   /* --color-cyan: var(--color-cyan-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-cyan-400) l c h / 0.25), oklch(from var(--color-cyan-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-cyan-550), var(--color-cyan-350));
   --color-primary-fill: var(--color-cyan-550);
   --color-primary-on-fill: white;

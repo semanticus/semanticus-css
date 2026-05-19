@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-purple-950: #1e0820; */
   /* --color-purple-900: #2d0f33; */
   /* --color-purple-850: #3d1545; */
@@ -21,8 +22,6 @@
   /* --color-purple: var(--color-purple-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-purple-400) l c h / 0.25), oklch(from var(--color-purple-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-purple-550), var(--color-purple-350));
   --color-primary-fill: var(--color-purple-550);
   --color-primary-on-fill: white;

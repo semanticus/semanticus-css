@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-green-950: #0b1305; */
   /* --color-green-900: #131f07; */
   /* --color-green-850: #152b07; */
@@ -21,8 +22,6 @@
   /* --color-green: var(--color-green-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-green-400) l c h / 0.25), oklch(from var(--color-green-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-green-550), var(--color-green-350));
   --color-primary-fill: var(--color-green-550);
   --color-primary-on-fill: white;

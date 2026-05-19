@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-indigo-950: #110b31; */
   /* --color-indigo-900: #181546; */
   /* --color-indigo-850: #1f1e5e; */
@@ -21,8 +22,6 @@
   /* --color-indigo: var(--color-indigo-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-indigo-400) l c h / 0.25), oklch(from var(--color-indigo-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
   --color-primary-fill: var(--color-indigo-550);
   --color-primary-on-fill: white;
