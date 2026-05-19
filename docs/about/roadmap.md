@@ -15,6 +15,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Stack/layout primitives |
 | ✅ | **intent** colors based on **Bootstrap** `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `contrast` (replacing `light` and `dark`) |
 | ⌛ | Grid system |
+| ⌛ | `role="alert"` |
 
 ## Components
 
@@ -25,6 +26,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.pane` component |
 | ✅ | `.panel` component |
 | 🚧 | `.sidebar` component |
+| ⌛ | `.carousel` component |
+| ⌛ | `.badge` component |
 
 ## Variants & Utilities
 
@@ -42,7 +45,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
 | 🚧 | `.striped` modifier variant |
-| ⌛ | Extend **intent variants** reach to `<progress>` |
+| ⌛ | Extend **intent variants**'s reach to `<progress>` |
 
 ## Interactive Patterns
 
@@ -53,11 +56,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Dropdown menu primitives |
 | 🚧 | Anchor Positioning tooltips |
 | ⌛ | Tab |
-| ⌛ | Alert |
-| ⌛ | Confirm |
-| ⌛ | Prompt |
+| ⌛ | Carousel |
+| ⌛ | Floating Alert |
+| ⌛ | Alert Dialog |
+| ⌛ | Confirm Dialog |
+| ⌛ | Prompt Dialog |
 | ⌛ | Popover |
-| ⌛ | Toast |
 
 ## Documentation & Tooling
 
@@ -103,8 +107,10 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
 | ⌛ | `.sidebar` popover interaction |
-| ⌛ | Alert interaction |
-| ⌛ | Prompt interaction |
-| ⌛ | Confirm interaction |
+| ⌛ | Tab interaction |
+| ⌛ | Carousel interaction |
+| ⌛ | Floating Alert interaction |
+| ⌛ | Alert Dialog interaction |
+| ⌛ | Confirm Dialog interaction |
+| ⌛ | Prompt Dialog interaction |
 | ⌛ | Popover interaction |
-| ⌛ | Tabs interaction |

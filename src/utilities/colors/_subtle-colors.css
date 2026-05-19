@@ -1,134 +1,127 @@
-.bg-primary-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-primary-subtle,
+.text-bg-primary-subtle {
+  --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
 }
 
-.bg-secondary-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-secondary-subtle,
+.text-bg-secondary-subtle {
+  --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
 }
 
-.bg-success-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-contrast-subtle,
+.text-bg-contrast-subtle {
+  --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
 }
 
-.bg-info-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-info-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-success-subtle,
+.text-bg-success-subtle {
+  --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
 }
 
-.bg-warning-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-info-subtle,
+.text-bg-info-subtle {
+  --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
 }
 
-.bg-danger-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-warning-subtle,
+.text-bg-warning-subtle {
+  --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
 }
 
-.bg-contrast-subtle {
-  --color-background: color-mix(in srgb, oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+.bg-danger-subtle,
+.text-bg-danger-subtle {
+  --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--color-background) !important;
-}
-
-.border-primary-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-primary-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-secondary-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-secondary-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-contrast-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-contrast-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-success-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-info-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-info-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-warning-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-warning-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-}
-
-.border-danger-subtle {
-  --color-border: color-mix(in srgb, oklch(from var(--color-danger-fill) l c h / var(--border-color-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
 }
 
 .text-bg-primary-subtle {
   --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-primary-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-primary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
 }
 
 .text-bg-secondary-subtle {
   --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-secondary-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-secondary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
 }
 
 .text-bg-contrast-subtle {
   --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-contrast-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-contrast-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
 }
 
 .text-bg-success-subtle {
   --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-success-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-success-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
 }
 
 .text-bg-info-subtle {
   --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-info-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-info-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-info-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
 }
 
 .text-bg-warning-subtle {
   --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-warning-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-warning-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
 }
 
 .text-bg-danger-subtle {
   --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
-  --color-background: color-mix(in srgb, oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-text-muted: oklch(from color-mix(in srgb, var(--color-danger-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-danger-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--color-background) !important;
+}
+
+.border-primary-subtle {
+  --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--border-color-opacity));
+}
+
+.border-secondary-subtle {
+  --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--border-color-opacity));
+}
+
+.border-contrast-subtle {
+  --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--border-color-opacity));
+}
+
+.border-success-subtle {
+  --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--border-color-opacity));
+}
+
+.border-info-subtle {
+  --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--border-color-opacity));
+}
+
+.border-warning-subtle {
+  --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--border-color-opacity));
+}
+
+.border-danger-subtle {
+  --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--border-color-opacity));
 }
 
 .subtle-opacity-10 {

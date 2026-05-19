@@ -1,3 +1,5 @@
+@import "./_variables.css";
+
 @import "./intent/_contrast.css";
 @import "./intent/_danger.css";
 @import "./intent/_info.css";

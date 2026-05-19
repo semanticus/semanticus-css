@@ -1,35 +1,3 @@
-:root, :host {
-  /* Primary subtle colors */
-  --color-primary-subtle-fill: color-mix(in srgb, var(--color-primary-fill), var(--subtle-shade) 60%);
-  --color-primary-subtle-on-fill: white;
-  --color-primary-subtle-on-fill-muted: color-mix(in srgb, var(--color-primary-text-hover), var(--muted-shade) 75%);
-
-  /* Secondary subtle colors */
-  --color-secondary-subtle-fill: color-mix(in srgb, var(--color-secondary-fill), var(--subtle-shade) 60%);
-  --color-secondary-subtle-on-fill: white;
-  --color-secondary-subtle-on-fill-muted: color-mix(in srgb, var(--color-secondary-text-hover), var(--muted-shade) 75%);
-
-  /* Contrast subtle colors */
-  --color-contrast-subtle-fill: color-mix(in srgb, var(--color-contrast-fill), var(--subtle-shade) 60%);
-  --color-contrast-subtle-on-fill: white;
-  --color-contrast-subtle-on-fill-muted: color-mix(in srgb, var(--color-contrast-text-hover), var(--muted-shade) 75%);
-
-  /* Info subtle colors */
-  --color-info-subtle-fill: color-mix(in srgb, var(--color-info-fill), var(--subtle-shade) 60%);
-  --color-info-subtle-on-fill: white;
-  --color-info-subtle-on-fill-muted: color-mix(in srgb, var(--color-info-text-hover), var(--muted-shade) 75%);
-
-  /* Warning subtle colors */
-  --color-warning-subtle-fill: color-mix(in srgb, var(--color-warning-fill), var(--subtle-shade) 60%);
-  --color-warning-subtle-on-fill: white;
-  --color-warning-subtle-on-fill-muted: color-mix(in srgb, var(--color-warning-text-hover), var(--muted-shade) 75%);
-
-  /* Danger subtle colors */
-  --color-danger-subtle-fill: color-mix(in srgb, var(--color-danger-fill), var(--subtle-shade) 60%);
-  --color-danger-subtle-on-fill: white;
-  --color-danger-subtle-on-fill-muted: color-mix(in srgb, var(--color-danger-text-hover), var(--muted-shade) 75%);
-}
-
 .subtle {
   --subtle-opacity: 60%;
 }
@@ -58,7 +26,10 @@
     }
 
     &.success {
-      --color-text-muted: oklch(from color-mix(in srgb, var(--color-success-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-success-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text-muted: oklch(from var(--color-success-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+      --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
+      --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.info {
@@ -87,9 +58,9 @@
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     --color-text: oklch(from var(--color-primary-subtle-on-fill) l c h / var(--color-text-opacity));
-    --color-text-muted: oklch(from var(--color-primary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
     --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
     --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--border-color-opacity));
+    --color-text-muted: oklch(from var(--color-primary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
     &:is(.primary, [aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
@@ -107,6 +78,7 @@
 
     &.contrast {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
         --border-color: oklch(from var(--color-contrast-fill) l c h / var(--border-color-opacity));
       }
@@ -149,9 +121,9 @@
 /* Reset buttons */
 [type="reset"].subtle {
   --color-text: var(--color-secondary-subtle-on-fill);
-  --color-text-muted: var(--color-secondary-subtle-on-fill-muted);
   --color-background: var(--color-secondary-subtle-fill);
   --border-color: var(--color-secondary-subtle-fill);
+  --color-text-muted: var(--color-secondary-subtle-on-fill-muted);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --color-text: var(--color-secondary-on-fill);

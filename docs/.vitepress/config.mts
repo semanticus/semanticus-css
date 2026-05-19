@@ -343,7 +343,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "Semantic Styling",
+          text: "Semantic Styling API",
           items: [
             {
               text: "Elements",
@@ -420,7 +420,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "Components",
+          text: "Components API",
           items: [
             { text: ".card", link: "/docs/components/card" },
             { text: ".pane", link: "/docs/components/pane" },
@@ -429,7 +429,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "Variants",
+          text: "Variants API",
           items: [
             {
               text: "Intent",
@@ -455,7 +455,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "Utilities",
+          text: "Utilities API",
           items: [
             { text: "Borders", link: "/docs/utilities/borders" },
             { text: "Colors", link: "/docs/utilities/colors" },
