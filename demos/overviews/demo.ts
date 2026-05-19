@@ -503,9 +503,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
 }
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<header>
-  <h1 class="title">Semantics Demo</h1>
-</header>
+  return renderElement("main", { class: 'container', ...attrs }, `<br>
 
 ${buttons()}
 
