@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T05:35:38.609Z",
+  "generatedAt": "2026-05-19T10:55:08.666Z",
   "pico": {
     "version": "2.1.1"
   },
@@ -8,7 +8,7 @@
   },
   "entries": [
     {
-      "label": "Pico (classless / semantics only)",
+      "label": "Pico (semantics only)",
       "gzipKB": "10.2"
     },
     {
@@ -20,8 +20,8 @@
       "gzipKB": "11.5"
     },
     {
-      "label": "Semanticus (no utilities)",
-      "gzipKB": "13.4"
+      "label": "Semanticus (semantics + components + variants)",
+      "gzipKB": "13.3"
     },
     {
       "label": "Bootstrap (utilities only)",
@@ -32,7 +32,7 @@
       "gzipKB": "16.3"
     },
     {
-      "label": "Semanticus (utilities only)",
+      "label": "Semanticus (utilities + grid)",
       "gzipKB": "9.4"
     },
     {
@@ -41,7 +41,7 @@
     },
     {
       "label": "Semanticus (full)",
-      "gzipKB": "22.4"
+      "gzipKB": "22.3"
     },
     {
       "label": "Bootstrap (full + javascript)",
