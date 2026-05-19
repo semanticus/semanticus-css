@@ -35,6 +35,9 @@
 @import './effects/_shadows.css';
 @import './effects/_transforms.css';
 
+/* grid */
+@import './_grid.css';
+
 /* layout */
 @import './layout/_flexbox.css';
 @import './layout/_ratio.css';
