@@ -103,6 +103,7 @@
     "docs:dev": "npm run build && vitepress dev docs",
     "docs:build": "npm run build && vitepress build docs",
     "docs:preview": "npm run build && vitepress preview docs",
-    "docs:update-size-claims": "npm run build && node scripts/generate-comparison-table.js && node scripts/update-size-claims.js"
+    "docs:generate-comparison-table": "node scripts/generate-comparison-table.js",
+    "docs:update-size-claims": "npm run build && npm run docs:generate-comparison-table && node scripts/update-size-claims.js"
   }
 }
