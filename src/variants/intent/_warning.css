@@ -1,25 +1,25 @@
 :where(a:not([role="button"])),
 [role="link"] {
   &.warning {
-    --color-text: var(--color-warning-text);
-    --color-text-muted: var(--color-warning-on-fill-muted);
+    --color-text: oklch(from var(--color-warning-text) l c h / var(--color-text-opacity));
+    --color-text-muted: oklch(from var(--color-warning-on-fill-muted) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-text: var(--color-warning-text-hover);
+      --color-text: oklch(from var(--color-warning-text-hover) l c h / var(--color-text-opacity));
     }
   }
 }
 
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.warning {
-    --color-background: var(--color-warning-fill);
-    --border-color: var(--color-warning-fill);
-    --color-text: var(--color-warning-on-fill);
+    --color-background: oklch(from var(--color-warning-fill) l c h / var(--background-color-opacity));
+    --border-color: oklch(from var(--color-warning-fill) l c h / var(--border-color-opacity));
+    --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: var(--color-warning-fill-hover);
-      --border-color: var(--color-warning-fill-hover);
-      --color-text: var(--color-warning-on-fill);
+      --color-background: oklch(from var(--color-warning-fill-hover) l c h / var(--background-color-opacity));
+      --border-color: oklch(from var(--color-warning-fill-hover) l c h / var(--border-color-opacity));
+      --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
     }
 
     &:focus,
@@ -35,9 +35,9 @@ details summary[role="button"].warning::after {
 }
 
 :is(.card, .pane, .panel).warning {
-  --color-text: var(--color-warning-on-fill);
-  --color-text-muted: var(--color-warning-on-fill-muted);
-  --dialog-fill: var(--color-warning-fill);
-  --dialog-border: var(--color-warning-fill);
+  --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-warning-on-fill-muted) l c h / var(--color-text-opacity));
+  --dialog-fill: oklch(from var(--color-warning-fill) l c h / var(--background-color-opacity));
+  --dialog-border: oklch(from var(--color-warning-fill) l c h / var(--background-color-opacity));
   --dialog-section-fill: color-mix(in srgb, var(--color-warning-fill) 90%, black);
 }

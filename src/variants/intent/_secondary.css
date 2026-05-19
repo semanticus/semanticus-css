@@ -1,25 +1,25 @@
 :where(a:not([role="button"])),
 [role="link"] {
   &.secondary {
-    --color-text: var(--color-secondary-text);
-    --color-text-muted: var(--color-secondary-on-fill-muted);
+    --color-text: oklch(from var(--color-secondary-text) l c h / var(--color-text-opacity));
+    --color-text-muted: oklch(from var(--color-secondary-on-fill-muted) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-text: var(--color-secondary-text-hover);
+      --color-text: oklch(from var(--color-secondary-text-hover) l c h / var(--color-text-opacity));
     }
   }
 }
 
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.secondary {
-    --color-background: var(--color-secondary-fill);
-    --border-color: var(--color-secondary-fill);
-    --color-text: var(--color-secondary-on-fill);
+    --color-background: oklch(from var(--color-secondary-fill) l c h / var(--background-color-opacity));
+    --border-color: oklch(from var(--color-secondary-fill) l c h / var(--border-color-opacity));
+    --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: var(--color-secondary-fill-hover);
-      --border-color: var(--color-secondary-fill-hover);
-      --color-text: var(--color-secondary-on-fill);
+      --color-background: oklch(from var(--color-secondary-fill-hover) l c h / var(--background-color-opacity));
+      --border-color: oklch(from var(--color-secondary-fill-hover) l c h / var(--border-color-opacity));
+      --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
     }
 
     &:focus,
@@ -30,9 +30,9 @@
 }
 
 :is(.card, .pane, .panel).secondary {
-  --color-text: var(--color-secondary-on-fill);
-  --color-text-muted: var(--color-secondary-on-fill-muted);
-  --dialog-fill: var(--color-secondary-fill);
-  --dialog-border: var(--color-secondary-fill);
+  --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-secondary-on-fill-muted) l c h / var(--color-text-opacity));
+  --dialog-fill: oklch(from var(--color-secondary-fill) l c h / var(--background-color-opacity));
+  --dialog-border: oklch(from var(--color-secondary-fill) l c h / var(--background-color-opacity));
   --dialog-section-fill: color-mix(in srgb, var(--color-secondary-fill) 90%, black);
 }

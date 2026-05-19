@@ -1,25 +1,25 @@
 :where(a:not([role="button"])),
 [role="link"] {
   &.contrast {
-    --color-text: var(--color-contrast-text);
-    --color-text-muted: var(--color-contrast-on-fill-muted);
+    --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
+    --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-text: var(--color-contrast-text-hover);
+      --color-text: oklch(from var(--color-contrast-text-hover) l c h / var(--color-text-opacity));
     }
   }
 }
 
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.contrast {
-    --color-background: var(--color-contrast-fill);
-    --border-color: var(--color-contrast-fill);
-    --color-text: var(--color-contrast-on-fill);
+    --color-background: oklch(from var(--color-contrast-fill) l c h / var(--background-color-opacity));
+    --border-color: oklch(from var(--color-contrast-fill) l c h / var(--border-color-opacity));
+    --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: var(--color-contrast-fill-hover);
-      --border-color: var(--color-contrast-fill-hover);
-      --color-text: var(--color-contrast-on-fill);
+      --color-background: oklch(from var(--color-contrast-fill-hover) l c h / var(--background-color-opacity));
+      --border-color: oklch(from var(--color-contrast-fill-hover) l c h / var(--border-color-opacity));
+      --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
     }
 
     &:focus,
@@ -30,13 +30,9 @@
 }
 
 :is(.card, .pane, .panel).contrast {
-  --color-text: var(--color-contrast-on-fill);
-  --color-text-muted: var(--color-contrast-on-fill-muted);
-
-  --dialog-fill: light-dark(var(--color-slate-900), white);
-  --dialog-border: light-dark(var(--color-slate-900), color-mix(in srgb, var(--color-slate-100), var(--color-slate-50)));
-  --dialog-section-fill: light-dark(
-    var(--color-slate-800),
-    color-mix(in srgb, var(--color-slate-50) 25%, white)
-  );
+  --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
+  --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
+  --dialog-fill: oklch(from var(--color-contrast-fill) l c h / var(--background-color-opacity));
+  --dialog-border: oklch(from var(--color-contrast-fill) l c h / var(--background-color-opacity));
+  --dialog-section-fill: color-mix(in srgb, var(--color-contrast-fill) 90%, black);
 }
