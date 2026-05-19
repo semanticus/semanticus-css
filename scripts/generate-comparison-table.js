@@ -67,16 +67,16 @@ for (const { url, dest } of downloads) {
 console.log('\nMeasuring bundle sizes...');
 
 const entries = [
-  { label: 'Pico (classless / semantics only)',  files: [path.join(picoDir, 'pico.classless.min.css')] },
-  { label: 'Semanticus (semantics only)',         files: [dist('semanticus-semantics.css')] },
-  { label: 'Pico (semantics + classes)',          files: [path.join(picoDir, 'pico.min.css')] },
-  { label: 'Semanticus (no utilities)',           files: [dist('semanticus-no-utilities.css')] },
-  { label: 'Bootstrap (utilities only)',          files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
-  { label: 'Bootstrap (utilities + grid)',        files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
-  { label: 'Semanticus (utilities only)',         files: [dist('semanticus-utilities.css')] },
-  { label: 'Bootstrap (full)',                    files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
-  { label: 'Semanticus (full)',                   files: [dist('semanticus.css')] },
-  { label: 'Bootstrap (full + javascript)',       files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
+  { label: 'Pico (semantics only)', files: [path.join(picoDir, 'pico.classless.min.css')] },
+  { label: 'Semanticus (semantics only)', files: [dist('semanticus-semantics.css')] },
+  { label: 'Pico (semantics + classes)', files: [path.join(picoDir, 'pico.min.css')] },
+  { label: 'Semanticus (semantics + components + variants)', files: [dist('semanticus-no-utilities.css')] },
+  { label: 'Bootstrap (utilities only)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
+  { label: 'Bootstrap (utilities + grid)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
+  { label: 'Semanticus (utilities + grid)', files: [dist('semanticus-utilities.css')] },
+  { label: 'Bootstrap (full)', files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
+  { label: 'Semanticus (full)', files: [dist('semanticus.css')] },
+  { label: 'Bootstrap (full + javascript)', files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
 ];
 
 const results = entries.map(({ label, files }) => {
