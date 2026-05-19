@@ -29,11 +29,6 @@
   }
 }
 
-/* Accordion chevron override */
-details summary[role="button"].warning::after {
-  filter: brightness(0);
-}
-
 :is(.card, .pane, .panel).warning {
   --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
