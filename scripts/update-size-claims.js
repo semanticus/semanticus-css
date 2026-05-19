@@ -7,10 +7,10 @@ const repoRoot = path.join(__dirname, '..');
 
 // ─── Load size comparison data ────────────────────────────────────────────────
 
-const dataPath = path.join(repoRoot, 'docs', 'size-comparison.json');
+const dataPath = path.join(repoRoot, 'docs', 'comparison-table.json');
 if (!fs.existsSync(dataPath)) {
-  console.error('docs/size-comparison.json not found.');
-  console.error('Run npm run build:size-comparison first.');
+  console.error('docs/comparison-table.json not found.');
+  console.error('Run npm run docs:generate-comparison-table first.');
   process.exit(1);
 }
 
@@ -21,7 +21,7 @@ const byLabel = Object.fromEntries(entries.map(e => [e.label, e.gzipKB]));
 
 const fullBundleKB = byLabel['Semanticus (full)'];
 if (!fullBundleKB) {
-  console.error('"Semanticus (full)" entry missing from size-comparison.json.');
+  console.error('"Semanticus (full)" entry missing from comparison-table.json.');
   process.exit(1);
 }
 

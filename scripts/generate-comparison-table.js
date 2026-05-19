@@ -6,7 +6,7 @@ const zlib = require('zlib');
 const { execSync } = require('child_process');
 
 const repoRoot = path.join(__dirname, '..');
-const tmpDir   = path.join(repoRoot, '.tmp');
+const tmpDir   = path.join(repoRoot, 'tmp');
 
 // ─── External dependency versions ─────────────────────────────────────────────
 
@@ -85,7 +85,7 @@ const results = entries.map(({ label, files }) => {
   return { label, gzipKB: gzipKBValue };
 });
 
-// ─── 3. Write docs/size-comparison.json ──────────────────────────────────────
+// ─── 3. Write docs/comparison-table.json ──────────────────────────────────────
 
 const output = {
   generatedAt: new Date().toISOString(),
@@ -94,6 +94,6 @@ const output = {
   entries: results,
 };
 
-const outPath = path.join(repoRoot, 'docs', 'size-comparison.json');
+const outPath = path.join(repoRoot, 'docs', 'comparison-table.json');
 fs.writeFileSync(outPath, JSON.stringify(output, null, 2) + '\n');
 console.log(`\nWrote ${path.relative(repoRoot, outPath)}`);

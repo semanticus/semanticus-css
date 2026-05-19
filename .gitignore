@@ -162,7 +162,6 @@ target/
 vendor/
 coverage/
 tmp/
-.tmp/
 
 # Playwright
 /test-results/
