@@ -8,49 +8,49 @@
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
     }
 
     &.secondary {
       --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-border-opacity));
     }
 
     &.contrast {
       --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-border-opacity));
     }
 
     &.success {
       --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--color-border-opacity));
     }
 
     &.info {
       --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--color-border-opacity));
     }
 
     &.warning {
       --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-border-opacity));
     }
 
     &.danger {
       --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-border-opacity));
     }
   }
 }
@@ -59,20 +59,20 @@
   &.subtle {
     --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
     --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
-    --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--border-color-opacity));
+    --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
     --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
     &:is(.primary, [aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
       --color-background: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-primary-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-primary-fill) l c h / var(--color-border-opacity));
     }
 
     &.secondary {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-secondary-fill) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-secondary-fill) l c h / var(--color-border-opacity));
       }
     }
 
@@ -80,7 +80,7 @@
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-contrast-fill) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-contrast-fill) l c h / var(--color-border-opacity));
       }
     }
 
@@ -88,7 +88,7 @@
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-success-fill) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-success-fill) l c h / var(--color-border-opacity));
       }
     }
 
@@ -96,7 +96,7 @@
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-info-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-info-fill) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-info-fill) l c h / var(--color-border-opacity));
       }
     }
 
@@ -104,7 +104,7 @@
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-warning-fill) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-warning-fill) l c h / var(--color-border-opacity));
       }
     }
 
@@ -112,7 +112,7 @@
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
         --color-background: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-danger-fill) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-danger-fill) l c h / var(--color-border-opacity));
       }
     }
   }

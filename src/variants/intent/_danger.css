@@ -13,12 +13,12 @@
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.danger {
     --color-background: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
-    --border-color: oklch(from var(--color-danger-fill) l c h / var(--border-color-opacity));
+    --border-color: oklch(from var(--color-danger-fill) l c h / var(--color-border-opacity));
     --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: oklch(from var(--color-danger-fill-hover) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-danger-fill-hover) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-danger-fill-hover) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
     }
 

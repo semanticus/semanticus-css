@@ -8,49 +8,49 @@
   &.ghost {
     &.primary {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-primary-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-primary-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-primary-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
 
     &.secondary {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-secondary-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-secondary-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-secondary-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
 
     &.contrast {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-contrast-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-contrast-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
 
     &.success {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-success-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-success-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-success-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
 
     &.info {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-info-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-info-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-info-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
 
     &.warning {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-warning-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-warning-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-warning-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
 
     &.danger {
       --color-background: transparent;
-      --border-color: oklch(from var(--color-danger-fill) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-danger-fill) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-danger-text) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
@@ -60,13 +60,13 @@
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.ghost {
     --color-background: transparent;
-    --border-color: oklch(from var(--color-primary-fill) l c h / var(--border-color-opacity));
+    --border-color: oklch(from var(--color-primary-fill) l c h / var(--color-border-opacity));
     --color-text: oklch(from var(--color-primary-text) l c h / var(--color-text-opacity));
     --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: oklch(from var(--color-primary-fill-hover) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-primary-fill-hover) l c h / var(--border-color-opacity));
+      --border-color: oklch(from var(--color-primary-fill-hover) l c h / var(--color-border-opacity));
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
     }
@@ -74,7 +74,7 @@
     &.secondary {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: oklch(from var(--color-secondary-fill-hover) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-secondary-fill-hover) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-secondary-fill-hover) l c h / var(--color-border-opacity));
         --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
         --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       }
@@ -83,7 +83,7 @@
     &.contrast {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: oklch(from var(--color-contrast-fill-hover) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-contrast-fill-hover) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-contrast-fill-hover) l c h / var(--color-border-opacity));
         --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
         --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       }
@@ -92,7 +92,7 @@
     &.success {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: oklch(from var(--color-success-fill-hover) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-success-fill-hover) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-success-fill-hover) l c h / var(--color-border-opacity));
         --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
         --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       }
@@ -101,7 +101,7 @@
     &.info {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: oklch(from var(--color-info-fill-hover) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-info-fill-hover) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-info-fill-hover) l c h / var(--color-border-opacity));
         --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
         --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       }
@@ -110,7 +110,7 @@
     &.warning {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: oklch(from var(--color-warning-fill-hover) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-warning-fill-hover) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-warning-fill-hover) l c h / var(--color-border-opacity));
         --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
         --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
@@ -123,7 +123,7 @@
     &.danger {
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         --color-background: oklch(from var(--color-danger-fill-hover) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-danger-fill-hover) l c h / var(--border-color-opacity));
+        --border-color: oklch(from var(--color-danger-fill-hover) l c h / var(--color-border-opacity));
         --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
         --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       }
@@ -134,13 +134,13 @@
 /* Reset buttons */
 [type="reset"].ghost {
   --color-background: transparent;
-  --border-color: oklch(from var(--color-secondary-fill) l c h / var(--border-color-opacity));
+  --border-color: oklch(from var(--color-secondary-fill) l c h / var(--color-border-opacity));
   --color-text: oklch(from var(--color-secondary-text) l c h / var(--color-text-opacity));
   --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --color-background: oklch(from var(--color-primary-fill-hover) l c h / var(--color-background-opacity));
-    --border-color: oklch(from var(--color-primary-fill-hover) l c h / var(--border-color-opacity));
+    --border-color: oklch(from var(--color-primary-fill-hover) l c h / var(--color-border-opacity));
     --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
     --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
   }

@@ -27,21 +27,21 @@
 }
 
 .border-opacity-10 {
-  --border-color-opacity: 10%;
+  --color-border-opacity: 10%;
 }
 
 .border-opacity-25 {
-  --border-color-opacity: 25%;
+  --color-border-opacity: 25%;
 }
 
 .border-opacity-50 {
-  --border-color-opacity: 50%;
+  --color-border-opacity: 50%;
 }
 
 .border-opacity-75 {
-  --border-color-opacity: 75%;
+  --color-border-opacity: 75%;
 }
 
 .border-opacity-100 {
-  --border-color-opacity: 100%;
+  --color-border-opacity: 100%;
 }
