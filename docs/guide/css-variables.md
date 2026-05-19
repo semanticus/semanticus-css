@@ -26,8 +26,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   --color-primary-on-fill: white;
   --color-primary-text: light-dark(#0172ad, #01aaff);
   --color-primary-text-hover: light-dark(#015887, #79c0ff);
-  --color-primary-border: var(--color-primary-fill);
-  --color-primary-border-hover: var(--color-primary-fill-hover);
   --color-primary-focus-ring: light-dark(oklch(from #029ae8 l c h / 0.5), oklch(from #01aaff l c h / 0.375));
 
   /* Secondary colors */
@@ -36,8 +34,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   --color-secondary-on-fill: white;
   --color-secondary-text: light-dark(#5d6b89, #969eaf);
   --color-secondary-text-hover: light-dark(#48536b, #b3b9c5);
-  --color-secondary-border: var(--color-secondary-fill);
-  --color-secondary-border-hover: var(--color-secondary-fill-hover);
   --color-secondary-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #909ebe l c h / 0.25));
 
   /* Contrast colors */
@@ -46,8 +42,6 @@ Colors use the `light-dark()` CSS function so a single declaration covers both t
   --color-contrast-on-fill: light-dark(white, black);
   --color-contrast-text: light-dark(#181c25, #dfe3eb);
   --color-contrast-text-hover: light-dark(black, white);
-  --color-contrast-border: var(--color-contrast-fill);
-  --color-contrast-border-hover: var(--color-contrast-fill-hover);
   --color-contrast-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #cfd5e2 l c h / 0.25));
 
   /* Text colors */
@@ -74,8 +68,6 @@ Each palette defines these CSS custom properties:
 | `--color-primary-on-fill` | Text color on top of primary fill |
 | `--color-primary-text` | Primary text / link color |
 | `--color-primary-text-hover` | Primary text / link color on hover |
-| `--color-primary-border` | Primary border color (aliases fill) |
-| `--color-primary-border-hover` | Primary border color on hover |
 | `--color-primary-focus-ring` | Primary focus ring color |
 | `--color-selection` | Text selection highlight color |
 
@@ -208,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   --input-border: light-dark(#cfd5e2, #2a3140);
   --input-text: light-dark(#23262c, #e0e3e7);
   --input-placeholder-text: var(--color-text-muted);
-  --input-border-focus: var(--color-primary-border);
+  --input-border-focus: var(--color-primary-fill);
   --input-opacity-disabled: 0.5;
 }
 ```

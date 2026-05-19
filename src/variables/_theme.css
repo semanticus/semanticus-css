@@ -198,7 +198,7 @@
   --input-border: light-dark(var(--color-slate-150), var(--color-slate-800));
   --input-text: light-dark(var(--color-zinc-850), var(--color-zinc-100));
   --input-placeholder-text: var(--color-text-muted);
-  --input-border-focus: var(--color-primary-border);
+  --input-border-focus: var(--color-primary-fill);
   --input-opacity-disabled: 0.5;
 
   /* === Switch tokens === */

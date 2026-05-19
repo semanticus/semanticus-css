@@ -241,10 +241,8 @@ const variableGroups = [
     label: 'Primary Colors',
     vars: [
       { name: '--color-primary-fill', label: 'Primary Fill', desc: 'Fill color for primary buttons, checked checkboxes, and checked radios.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=checkbox]:not([role=switch]), [type=radio]' },
-      { name: '--color-primary-border', label: 'Primary Border', desc: 'Border color for primary elements (aliases fill).', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
       { name: '--color-primary-text-hover', label: 'Primary Hover', desc: 'Text/border color on hover for primary links and ghost (outline) primary buttons.', type: 'color', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast)' },
       { name: '--color-primary-fill-hover', label: 'Primary Hover Fill', desc: 'Fill on hover for primary filled buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
-      { name: '--color-primary-border-hover', label: 'Primary Hover Border', desc: 'Border color on hover for primary buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
       { name: '--color-primary-focus-ring', label: 'Primary Focus Ring', desc: 'Semi-transparent focus ring color for primary buttons, links, and accordion summaries.', type: 'color', lightDefault: 'oklch(from #029ae8 l c h / 0.5)', darkDefault: 'oklch(from #01aaff l c h / 0.375)', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast), a:not([role=button]):not(.secondary):not(.contrast), details summary' },
       { name: '--color-primary-on-fill', label: 'Primary On Fill', desc: 'Text color on top of primary fill (e.g., white text on colored button).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=radio]' },
     ]
@@ -253,10 +251,8 @@ const variableGroups = [
     label: 'Secondary Colors',
     vars: [
       { name: '--color-secondary-fill', label: 'Secondary Fill', desc: 'Fill for secondary buttons and file inputs.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-border', label: 'Secondary Border', desc: 'Border color for secondary elements.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
       { name: '--color-secondary-text-hover', label: 'Secondary Hover', desc: 'Text/border color on hover for secondary links and ghost (outline) secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary, button.ghost.secondary' },
       { name: '--color-secondary-fill-hover', label: 'Secondary Hover Fill', desc: 'Fill on hover for secondary filled buttons and file inputs.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-border-hover', label: 'Secondary Hover Border', desc: 'Border color on hover for secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
       { name: '--color-secondary-focus-ring', label: 'Secondary Focus Ring', desc: 'Focus ring color for secondary buttons and file inputs.', type: 'color', lightDefault: 'oklch(from #5d6b89 l c h / 0.25)', darkDefault: 'oklch(from #909ebe l c h / 0.25)', scope: 'theme', selectors: 'button.secondary, [type=file]' },
       { name: '--color-secondary-on-fill', label: 'Secondary On Fill', desc: 'Text on top of secondary fill.', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.secondary:not(.ghost)' },
     ]
@@ -265,10 +261,8 @@ const variableGroups = [
     label: 'Contrast Colors',
     vars: [
       { name: '--color-contrast-fill', label: 'Contrast Fill', desc: 'Fill for contrast buttons.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-border', label: 'Contrast Border', desc: 'Border color for contrast elements.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
       { name: '--color-contrast-text-hover', label: 'Contrast Hover', desc: 'Text/border color on hover for contrast links and ghost (outline) contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast, button.ghost.contrast' },
       { name: '--color-contrast-fill-hover', label: 'Contrast Hover Fill', desc: 'Fill on hover for contrast filled buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-border-hover', label: 'Contrast Hover Border', desc: 'Border color on hover for contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
       { name: '--color-contrast-focus-ring', label: 'Contrast Focus Ring', desc: 'Focus ring color for contrast buttons.', type: 'color', lightDefault: 'oklch(from #5d6b89 l c h / 0.25)', darkDefault: 'oklch(from #cfd5e2 l c h / 0.25)', scope: 'theme', selectors: 'button.contrast' },
       { name: '--color-contrast-on-fill', label: 'Contrast On Fill', desc: 'Text on top of contrast fill.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
     ]
