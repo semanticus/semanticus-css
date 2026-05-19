@@ -2,73 +2,50 @@
 title: details
 ---
 
-<script setup>
-import { DetailsDemo } from "@demos/semantics/elements";
-</script>
-
 # &lt;details&gt;
 
-The `<details>` element creates a native disclosure widget — a collapsible section that users can open and close without JavaScript. Its `<summary>` child acts as the visible label and toggle control.
+The `<details>` element creates a native disclosure widget aka **accordion** — a collapsible section that users can open and close without JavaScript. Its `<summary>` child acts as the visible label and toggle control.
 
-Use the `open` attribute to expand it by default.
+`<details>` is also used as a building block for **dropdowns**, which are described in the [Dropdown section](/docs/composites/dropdown) below.
+
 ## Basic Usage
 
 <HtmlPreviewer :code="DetailsDemo.main()" />
-
-For style variants, see [Details Variants](/docs/variants/).
 
 ## Entangled accordions
 
 Set the same `name` attribute on multiple `<details>` elements to create an exclusive accordion where only one can be open at a time.
 
+Use the `open` attribute to expand it by default.
+
 <HtmlPreviewer :code="DetailsDemo.entangledAccordions()" />
-
-## Dropdown
-
-Dropdowns are built with `<details>` containing a `<summary aria-haspopup="menu">` and a `<ul role="menu">` as direct children and links inside should use `role="menuitem"`.
-
-Unless they are in a `<nav>`, dropdowns are `width: 100%;` by default.
-
-### Basic Dropdown
-
-For style consistency with the form elements, dropdowns are styled like a select by default.
-
-<HtmlPreviewer :code="DetailsDemo.basicDropdown()" />
-
-### Dropdowns with Checkboxes and Radios
-
-Dropdowns can be used as custom selects with `<input type="radio">` or `<input type="checkbox">`.
-
-#### Radio Buttons
-
-<HtmlPreviewer :code="DetailsDemo.dropdownWithRadios()" />
-
-#### Checkboxes
-
-<HtmlPreviewer :code="DetailsDemo.dropdownWithCheckboxes()" />
-
-### Variants
-
-#### Different alignment (showcased with &lt;nav&gt;)
-
-Use `<ul dir="rtl">` to change the alignment of the dropdown menu.
-
-When using dropdowns inside a `<nav>`, they are automatically styled to fit the navigation layout.
-
-<HtmlPreviewer :code="DetailsDemo.dropdownInNav()" />
-
-#### Dropdown as Button
-
-`<summary role="button">` transforms the dropdown into a button.
-
-<HtmlPreviewer :code="DetailsDemo.dropdownAsButton()" />
-
-#### Validation States
-
-Just like any form elements, validation states are provided with `aria-invalid`.
-
-<HtmlPreviewer :code="DetailsDemo.dropdownValidationStates()" />
 
 ## FAQ Page Example
 
-<HtmlPreviewer :code="DetailsDemo.faq()" />
+<HtmlPreviewer :code="DetailsDemo.faqExample()" />
+
+## As a Button
+
+<HtmlPreviewer :code="DetailsDemo.asButton()" />
+
+### Intent Variants
+
+To convey **intent** and **importance**, accordions can be styled with different variants:
+
+<HtmlPreviewer :code="IntentDemo.accordions()" :codeCollapsed="true" />
+
+### Modifiers
+
+`.ghost` creates transparent background accordions with colored text and borders, useful for secondary actions where you want minimal visual weight.
+
+<HtmlPreviewer :code="GhostDemo.accordions()" :codeCollapsed="true" />
+
+`.subtle` creates accordions with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.accordions()" :codeCollapsed="true" />
+
+<script setup>
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import * as IntentDemo from '@demos/overviews/variants/intent/demo';
+import { DetailsDemo } from "@demos/semantics/elements";
+</script>

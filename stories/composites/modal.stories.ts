@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { ModalDemo } from "@demos/composites";
 
 const meta: Meta = {

@@ -41,7 +41,3 @@ Helper texts defined with `<small>` below the form element inherit the validatio
 ## Textarea
 
 <HtmlPreviewer :code="AriaInvalidDemo.textarea()" />
-
-Helper texts defined with `<small>` below the textarea inherit the validation state color.
-
-<HtmlPreviewer :code="AriaInvalidDemo.textareaHelper()" />

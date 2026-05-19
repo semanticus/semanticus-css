@@ -1,9 +1,9 @@
 nav {
   --typography-spacing-vertical: 0;
-  --typography-headings-top: 0;
+  --heading-gap-top: 0;
 
   display: flex;
-  gap: calc(var(--nav-link-spacing) * 1.5);
+  gap: calc(var(--nav-link-gap) * 1.5);
   align-items: center;
   justify-content: space-between;
   overflow: visible;
@@ -18,13 +18,13 @@ nav {
 
     & ul li {
       &:not(:first-child) {
-        margin-inline-start: calc(var(--nav-link-spacing) * 2);
+        margin-inline-start: calc(var(--nav-link-gap) * 2);
       }
 
       &:not(:last-child)::after {
         display: inline-block;
         position: absolute;
-        width: calc(var(--nav-link-spacing) * 3);
+        width: calc(var(--nav-link-gap) * 3);
         content: var(--nav-breadcrumb-divider);
         color: var(--color-text-muted);
         text-align: center;
@@ -44,7 +44,7 @@ nav {
   ul, ol {
     align-items: center;
     display: flex;
-    gap: calc(var(--nav-link-spacing) * 1.5);
+    gap: calc(var(--nav-link-gap) * 1.5);
     list-style: none;
     margin-bottom: 0 !important;
     padding: 0;

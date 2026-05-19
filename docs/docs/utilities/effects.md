@@ -11,14 +11,17 @@ const shadowsHtml = `<div class="shadow-none p-3 mb-4 rounded">No shadow</div>
 <div class="shadow-lg p-3 mb-4 rounded">Large shadow</div>
 `;
 const focusRingHtml = `<a href="#" class="d-inline-block p-2 me-2 focus-ring focus-ring-primary" tabindex="0">Primary</a>
+<a href="#" class="d-inline-block p-2 me-2 focus-ring focus-ring-secondary" tabindex="0">Secondary</a>
+<a href="#" class="d-inline-block p-2 me-2 focus-ring focus-ring-contrast" tabindex="0">Contrast</a>
 <a href="#" class="d-inline-block p-2 me-2 focus-ring focus-ring-success" tabindex="0">Success</a>
 <a href="#" class="d-inline-block p-2 me-2 focus-ring focus-ring-danger" tabindex="0">Danger</a>
 <a href="#" class="d-inline-block p-2 focus-ring focus-ring-info" tabindex="0">Info</a>
 `;
 const translateHtml = `<div class="position-relative border" style="width:200px;height:200px">
-  <div class="position-absolute top-0 start-0 bg-primary p-2 rounded" style="width:40px;height:40px"></div>
-  <div class="position-absolute top-50 start-50 translate-middle bg-danger p-2 rounded" style="width:40px;height:40px"></div>
-  <div class="position-absolute top-50 start-50 translate-middle-x bg-success p-2 rounded" style="width:40px;height:40px"></div>
+  <div class="position-absolute top-0 start-0 bg-secondary p-2 rounded" style="width:40px;height:40px"></div>
+  <div class="position-absolute top-50 start-50 translate-middle bg-primary p-2 rounded" style="width:40px;height:40px"></div>
+  <div class="position-absolute top-50 start-50 translate-middle-x bg-contrast p-2 rounded" style="width:40px;height:40px"></div>
+  <div class="position-absolute top-50 start-50 translate-middle-y bg-contrast p-2 rounded" style="width:40px;height:40px"></div>
 </div>
 `;
 const practicalHtml = `<article class="card shadow rounded p-0" style="overflow:hidden">

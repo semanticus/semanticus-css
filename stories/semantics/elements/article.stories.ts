@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { ArticleDemo } from "@demos/semantics/elements";
 
 const meta: Meta = {
@@ -11,23 +11,3 @@ export const BasicUsage: StoryObj = {
   args: { html: ArticleDemo.main() },
   render: (args) => args.html,
 };
-
-export const BasicCard: StoryObj = {
-  args: { html: ArticleDemo.card() },
-  render: (args) => args.html,
-};
-
-export const CardWithHeader: StoryObj = {
-  args: { html: ArticleDemo.cardWithHeader() },
-  render: (args) => args.html,
-};
-
-export const CardWithFooter: StoryObj = {
-  args: { html: ArticleDemo.cardWithFooter() },
-  render: (args) => args.html,
-};
-
-export const CompleteCard: StoryObj = {
-  args: { html: ArticleDemo.completeCard() },
-  render: (args) => args.html,
-}

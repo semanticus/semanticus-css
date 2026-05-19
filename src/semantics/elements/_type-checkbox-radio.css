@@ -12,7 +12,7 @@ label:has([type=checkbox], [type=radio]) {
   height: 1.25em;
   margin-top: -0.125em;
   margin-inline-end: 0.5em;
-  border-width: var(--border-width);
+  border-width: var(--border-size);
   vertical-align: middle;
   cursor: pointer;
 
@@ -21,8 +21,8 @@ label:has([type=checkbox], [type=radio]) {
   }
 
   &:checked, &:checked:active, &:checked:focus {
-    --color-background: var(--color-primary-bg);
-    --border-color: var(--color-primary-border);
+    --color-background: var(--color-primary-fill);
+    --border-color: var(--color-primary-fill);
     background-image: var(--icon-checkbox);
     background-position: center;
     background-size: 0.75em auto;
@@ -42,8 +42,8 @@ label:has([type=checkbox], [type=radio]) {
 
 [type=checkbox] {
   &:indeterminate {
-    --color-background: var(--color-primary-bg);
-    --border-color: var(--color-primary-border);
+    --color-background: var(--color-primary-fill);
+    --border-color: var(--color-primary-fill);
     background-image: var(--icon-minus);
     background-position: center;
     background-size: 0.75em auto;
@@ -55,24 +55,24 @@ label:has([type=checkbox], [type=radio]) {
   border-radius: 50%;
 
   &:checked, &:checked:active, &:checked:focus {
-    --color-background: var(--color-primary-inverse);
+    --color-background: var(--color-primary-on-fill);
     border-width: 0.35em;
     background-image: none;
   }
 }
 
 [type=checkbox][role=switch] {
-  --color-background: var(--switch-bg);
-  --color-text: var(--switch-thumb-color);
+  --color-background: var(--switch-fill);
+  --color-text: var(--switch-thumb-fill);
   width: 2.25em;
   height: 1.25em;
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-size) solid var(--border-color);
   border-radius: 1.25em;
   background-color: var(--color-background);
   line-height: 1.25em;
 
   &:not([aria-invalid]) {
-    --border-color: var(--switch-bg);
+    --border-color: var(--switch-fill);
   }
 
   &:before {
@@ -81,19 +81,19 @@ label:has([type=checkbox], [type=radio]) {
     height: 100%;
     border-radius: 50%;
     background-color: var(--color-text);
-    box-shadow: var(--switch-thumb-shadow);
+    box-shadow: var(--switch-thumb-glow);
     content: "";
     transition: margin 0.1s ease-in-out;
   }
 
   &:focus {
-    --color-background: var(--switch-bg);
-    --border-color: var(--switch-bg);
+    --color-background: var(--switch-fill);
+    --border-color: var(--switch-fill);
   }
 
   &:checked {
-    --color-background: var(--switch-checked-bg);
-    --border-color: var(--switch-checked-bg);
+    --color-background: var(--switch-fill-checked);
+    --border-color: var(--switch-fill-checked);
     background-image: none;
 
     &::before {
@@ -110,13 +110,13 @@ label:has([type=checkbox], [type=radio]) {
 [type=checkbox][role=switch][aria-invalid=false]:checked,
 [type=checkbox][role=switch][aria-invalid=false]:checked:active,
 [type=checkbox][role=switch][aria-invalid=false]:checked:focus {
-  --color-background: var(--form-valid-border);
+  --color-background: var(--color-success-fill);
 }
 [type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
 [type=checkbox][role=switch]:checked[aria-invalid=true],
 [type=checkbox][role=switch]:checked:active[aria-invalid=true],
 [type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
-  --color-background: var(--form-invalid-border);
+  --color-background: var(--color-danger-fill);
 }
 
 [type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
@@ -126,7 +126,7 @@ label:has([type=checkbox], [type=radio]) {
 [type=checkbox][role=switch][aria-invalid=false]:checked,
 [type=checkbox][role=switch][aria-invalid=false]:checked:active,
 [type=checkbox][role=switch][aria-invalid=false]:checked:focus {
-  --border-color: var(--form-valid-border);
+  --border-color: var(--color-success-fill);
 }
 [type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
 [type=radio]:checked[aria-invalid=true],
@@ -135,5 +135,5 @@ label:has([type=checkbox], [type=radio]) {
 [type=checkbox][role=switch]:checked[aria-invalid=true],
 [type=checkbox][role=switch]:checked:active[aria-invalid=true],
 [type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
-  --border-color: var(--form-invalid-border);
+  --border-color: var(--color-danger-fill);
 }

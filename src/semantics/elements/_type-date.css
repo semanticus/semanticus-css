@@ -28,7 +28,7 @@
   [type=month],
   [type=time],
   [type=week] {
-    padding-right: var(--form-element-spacing-horizontal);
+    padding-right: var(--input-spacing-horizontal);
     background-image: none;
   }
 }

@@ -1,56 +1,32 @@
-/*
-  Semanticus CSS Palette: Indigo
-  Overrides primary color variables for the indigo palette
-*/
+:root {
+  /* --color-indigo-950: #110b31; */
+  /* --color-indigo-900: #181546; */
+  /* --color-indigo-850: #1f1e5e; */
+  /* --color-indigo-800: #272678; */
+  /* --color-indigo-750: #2f2f92; */
+  /* --color-indigo-700: #3838ab; */
+  /* --color-indigo-650: #4040bf; */
+  /* --color-indigo-600: #524ed2; */
+  --color-indigo-550: #655cd6;
+  /* --color-indigo-500: #7569da; */
+  /* --color-indigo-450: #8577dd; */
+  --color-indigo-400: #9486e1;
+  --color-indigo-350: #a294e5;
+  /* --color-indigo-300: #b0a3e8; */
+  /* --color-indigo-250: #bdb2ec; */
+  /* --color-indigo-200: #cac1ee; */
+  /* --color-indigo-150: #d8d0f1; */
+  /* --color-indigo-100: #e5e0f4; */
+  /* --color-indigo-50: #f2f0f9; */
+  /* --color-indigo: var(--color-indigo-550); */
 
-/* Light theme - Indigo */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(148, 134, 225, 0.25);
-  --color-primary-rgb: 82, 78, 210;
-  --color-primary-bg: #524ed2;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(82, 78, 210, 0.5);
-  --color-primary-hover: #4040bf;
-  --color-primary-hover-bg: #4040bf;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(148, 134, 225, 0.5);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-indigo-400) l c h / 0.25), oklch(from var(--color-indigo-350) l c h / 0.1875));
 
-/* Dark theme - Indigo */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(176, 163, 232, 0.1875);
-    --color-primary-rgb: 176, 163, 232;
-    --color-primary-bg: #524ed2;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(176, 163, 232, 0.5);
-    --color-primary-hover: #cac1ee;
-    --color-primary-hover-bg: #655cd6;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(176, 163, 232, 0.375);
-    --color-primary-inverse: #fff;
-    --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
+  --color-primary-text: light-dark(var(--color-indigo-550), var(--color-indigo-350));
+  --color-primary-fill: var(--color-indigo-550);
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(176, 163, 232, 0.1875);
-  --color-primary-rgb: 176, 163, 232;
-  --color-primary-bg: #524ed2;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(176, 163, 232, 0.5);
-  --color-primary-hover: #cac1ee;
-  --color-primary-hover-bg: #655cd6;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(176, 163, 232, 0.375);
-  --color-primary-inverse: #fff;
-  --switch-thumb-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
 }

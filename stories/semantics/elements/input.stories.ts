@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { InputDemo } from "@demos/semantics/elements";
 
 const meta: Meta = {
@@ -119,5 +119,15 @@ export const rangeWithStep: StoryObj = {
 
 export const switchBasicUsage: StoryObj = {
   args: { html: InputDemo.switchBasic() },
+  render: (args) => args.html,
+};
+
+export const Buttons: StoryObj = {
+  args: { html: InputDemo.buttons() },
+  render: (args) => args.html,
+};
+
+export const loginForm: StoryObj = {
+  args: { html: InputDemo.loginForm() },
   render: (args) => args.html,
 };

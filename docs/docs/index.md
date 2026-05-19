@@ -15,7 +15,7 @@ The docs are organized into five sections:
 
 - **Layer 3 - Variants**
 
-  CSS classes that tweak the pre-built styles via **CSS variables**.
+  CSS classes that tweak the **Semantic Styling** and **Components**
 
 - **Layer 4 - Utilities**
 

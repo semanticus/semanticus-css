@@ -17,7 +17,7 @@ export function withIconButton(tagName: string = "div", attrs: Record<string, st
 }
 
 export function filterSearch(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "search" }, `<select aria-label="Category">
+  return renderElement(tagName, { ...attrs, role: "search" }, `<select class="w-auto" aria-label="Category">
   <option>All Categories</option>
   <option>Products</option>
   <option>Services</option>

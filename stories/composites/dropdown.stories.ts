@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/html";
-import { DropdownDemo } from "@demos/composites";
+import type { Meta, StoryObj } from "@storybook/html-vite";
+import { DetailsDemo } from "@demos/semantics/elements";
 
 const meta: Meta = {
   title: "Composites/Dropdown",
@@ -9,5 +9,25 @@ const meta: Meta = {
 export default meta;
 
 export const BasicDropdown: StoryObj = {
-  render: () => DropdownDemo.basicDropdown(),
+  render: () => DetailsDemo.basicDropdown(),
+};
+
+export const dropdownWithRadios: StoryObj = {
+  render: () => DetailsDemo.dropdownWithRadios(),
+};
+
+export const dropdownWithCheckboxes: StoryObj = {
+  render: () => DetailsDemo.dropdownWithCheckboxes(),
+};
+
+export const dropdownInNav: StoryObj = {
+  render: () => DetailsDemo.dropdownInNav(),
+};
+
+export const dropdownAsButton: StoryObj = {
+  render: () => DetailsDemo.dropdownAsButton(),
+};
+
+export const dropdownValidationStates: StoryObj = {
+  render: () => DetailsDemo.dropdownValidationStates(),
 };

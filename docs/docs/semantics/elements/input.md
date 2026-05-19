@@ -2,32 +2,9 @@
 title: input
 ---
 
-<script setup>
-import { InputDemo } from "@demos/semantics/elements";
-const basicUsage = [
-  InputDemo.main(),
-  InputDemo.email(),
-  InputDemo.number(),
-  InputDemo.password(),
-  InputDemo.telephone(),
-  InputDemo.url(),
-].join('\n');
-const dateUsage = [
-  InputDemo.date(),
-  InputDemo.datetime(),
-  InputDemo.datetime(),
-  InputDemo.month(),
-  InputDemo.time(),
-].join('\n');
-</script>
-
 # &lt;input&gt;
 
 The `<input>` element accepts user data in many formats defined by its `type` attribute — text, email, password, date, color, and more.
-
-Always pair inputs with a `<label>` or `aria-label` so screen readers can identify the field.
-
-For associating labels with inputs see [&lt;label&gt;](/docs/semantics/elements/label).
 
 For validation states see [[aria-invalid]](/docs/semantics/attributes/aria-invalid).
 
@@ -35,7 +12,35 @@ For helper text below inputs see [&lt;small&gt;](/docs/semantics/elements/small)
 
 ## Basic Usage
 
-<HtmlPreviewer :code="basicUsage" />
+<HtmlPreviewer :code="InputDemo.main()" />
+
+## With Label
+
+Always pair inputs with a `<label>` or `aria-label` so screen readers can identify the field.
+
+<HtmlPreviewer :code="InputDemo.withLabel()" />
+
+## With Helper Text
+
+Helper text provides additional context about the input, such as instructions or character limits.
+
+Use `<small>` element associated with a form control via `aria-describedby` to associate the helper text with the input for screen readers.
+
+<HtmlPreviewer :code="InputDemo.withHelperText()" />
+
+## Validation States
+
+Validation states are provided with `aria-invalid`. See more at [[aria-invalid]](/docs/semantics/attributes/aria-invalid)
+
+<HtmlPreviewer :code="InputDemo.validationStatesWithTextHelper()" />
+
+::: info
+The `<small>` element automatically inherits the validation state colors.
+:::
+
+## Miscellaneous Input Types
+
+<HtmlPreviewer :code="miscellaneousTypes" />
 
 ## Date Inputs
 
@@ -117,3 +122,43 @@ The native `<input type="checkbox">` styled as a switch, using the `role="switch
 
 <HtmlPreviewer :code="InputDemo.switchBasic()" />
 
+## Input Buttons
+
+`type="submit"`, `type="button"` and `type="reset"` inputs are also displayed as buttons - use them to clear or submit forms without JavaScript.
+
+All form buttons are `width: 100%;` by default, to match with the other form elements.
+
+Reset inputs have the secondary style by default.
+
+<HtmlPreviewer :code="InputDemo.buttons()" />
+
+### Variants
+
+`.ghost` creates transparent background buttons with colored text and borders, useful for secondary actions where you want minimal visual weight.
+
+<HtmlPreviewer :code="GhostDemo.inputButtons()" :codeCollapsed="true" />
+
+`.subtle` creates buttons with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.inputButtons()" :codeCollapsed="true" />
+
+<script setup>
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import * as IntentDemo from '@demos/overviews/variants/intent/demo';
+
+import { InputDemo } from "@demos/semantics/elements";
+const miscellaneousTypes = [
+  InputDemo.email(),
+  InputDemo.number(),
+  InputDemo.password(),
+  InputDemo.telephone(),
+  InputDemo.url(),
+].join('\n');
+const dateUsage = [
+  InputDemo.date(),
+  InputDemo.datetime(),
+  InputDemo.datetime(),
+  InputDemo.month(),
+  InputDemo.time(),
+].join('\n');
+</script>

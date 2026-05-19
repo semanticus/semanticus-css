@@ -1,0 +1,38 @@
+:where(a:not([role="button"])),
+[role="link"] {
+  &.danger {
+    --color-text: oklch(from var(--color-danger-text) l c h / var(--color-text-opacity));
+    --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: oklch(from var(--color-danger-text-hover) l c h / var(--color-text-opacity));
+    }
+  }
+}
+
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+  &.danger {
+    --color-background: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
+    --border-color: oklch(from var(--color-danger-fill) l c h / var(--color-border-opacity));
+    --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: oklch(from var(--color-danger-fill-hover) l c h / var(--color-background-opacity));
+      --border-color: oklch(from var(--color-danger-fill-hover) l c h / var(--color-border-opacity));
+      --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-danger-focus-ring);
+    }
+  }
+}
+
+:is(.card, .pane, .panel).danger {
+  --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --dialog-fill: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
+  --dialog-border: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
+  --dialog-section-fill: color-mix(in srgb, var(--color-danger-fill) 90%, black);
+}

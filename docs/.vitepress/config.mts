@@ -21,9 +21,6 @@ function loadTsconfigAliases() {
   });
 }
 
-// Load package version info
-const packageVersion = packageProps.version;
-
 const semanticusDistPath = path.resolve(process.cwd(), "dist");
 const indexHtmlPath = path.resolve(__dirname, "../../index.html");
 
@@ -328,9 +325,11 @@ export default defineConfig({
         {
           text: "Composites",
           items: [
+            { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Card", link: "/docs/composites/card" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
+            { text: "Links", link: "/docs/composites/links" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
@@ -344,7 +343,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "Semantic Styling",
+          text: "Semantic Styling API",
           items: [
             {
               text: "Elements",
@@ -401,6 +400,10 @@ export default defineConfig({
                   link: "/docs/semantics/attributes/role-group",
                 },
                 {
+                  text: '[role="link"]',
+                  link: "/docs/semantics/attributes/role-link",
+                },
+                {
                   text: '[role="search"]',
                   link: "/docs/semantics/attributes/role-search",
                 },
@@ -417,23 +420,42 @@ export default defineConfig({
           ],
         },
         {
-          text: "Components",
+          text: "Components API",
           items: [
             { text: ".card", link: "/docs/components/card" },
-            { text: ".container", link: "/docs/components/container" },
-            { text: ".striped", link: "/docs/components/striped" },
+            { text: ".pane", link: "/docs/components/pane" },
+            { text: ".panel", link: "/docs/components/panel" },
+            { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
         {
-          text: "Variants",
+          text: "Variants API",
           items: [
-            { text: ".secondary", link: "/docs/variants/secondary" },
-            { text: ".contrast", link: "/docs/variants/contrast" },
-            { text: ".ghost", link: "/docs/variants/ghost" },
+            {
+              text: "Intent",
+              items: [
+                { text: ".contrast", link: "/docs/variants/intent/contrast" },
+                { text: ".danger", link: "/docs/variants/intent/danger" },
+                { text: ".info", link: "/docs/variants/intent/info" },
+                { text: ".primary", link: "/docs/variants/intent/primary" },
+                { text: ".secondary", link: "/docs/variants/intent/secondary" },
+                { text: ".success", link: "/docs/variants/intent/success" },
+                { text: ".warning", link: "/docs/variants/intent/warning" },
+              ],
+            },
+            {
+              text: "Modifiers",
+              items: [
+                { text: ".container", link: "/docs/variants/modifiers/container" },
+                { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
+                { text: ".striped", link: "/docs/variants/modifiers/striped" },
+                { text: ".subtle", link: "/docs/variants/modifiers/subtle" },
+              ],
+            },
           ],
         },
         {
-          text: "Utilities",
+          text: "Utilities API",
           items: [
             { text: "Borders", link: "/docs/utilities/borders" },
             { text: "Colors", link: "/docs/utilities/colors" },

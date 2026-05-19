@@ -1,0 +1,16 @@
+/*!
+ * Semanticus CSS Utilities Bundle v0.9.0 (https://semanticus.design/)
+ *
+ * Atomic utility classes (spacing, colors, flexbox, grid, display, positioning, typography, effects, borders, sizing)
+ *
+ * Adapted from Bootstrap Utilities (https://getbootstrap.com)
+ * Original work: Copyright (c) 2011-2026 The Bootstrap Authors
+ * Modifications: Copyright (c) 2026 Joao Goncalves
+ * Licensed under MIT (https://github.com/semanticus/semanticus-css/blob/main/LICENSE)
+ */
+
+/* Variables */
+@import '../variables/_breakpoints.css';
+
+/* Utilities */
+@import './modules.css';

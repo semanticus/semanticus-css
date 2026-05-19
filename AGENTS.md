@@ -4,7 +4,7 @@ Quick reference for AI agents working on this codebase.
 
 ## What This Is
 
-**Semanticus CSS** is a lightweight, semantic CSS framework (~23 KB gzipped) that combines:
+**Semanticus CSS** is a lightweight, semantic CSS framework (~22 KB gzipped) that combines:
 - **Semantic-first** HTML element styling (PicoCSS-inspired)
 - **Atomic utility classes** (Bootstrap Utilities-inspired)
 - Zero JavaScript dependency
@@ -24,11 +24,10 @@ The framework is organized into 6 layers, all in `src/`:
 
 ### Entry Points
 
-- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities)
-- `src/semantics/index.css` — semantics only
-- `src/components/index.css` — components only
-- `src/variants/index.css` — variants only
-- `src/utilities/index.css` — utilities only
+- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities) → `semanticus.css`
+- `src/no-utilities.css` — standard bundle (variables + normalize + semantics + components + variants) → `semanticus-no-utilities.css`
+- `src/semantics/index.css` — semantics only → `semanticus-semantics.css`
+- `src/utilities/index.css` — utilities only → `semanticus-utilities.css`
 
 ### Palettes & Sizes
 
@@ -48,12 +47,13 @@ The framework is organized into 6 layers, all in `src/`:
 ```bash
 npm start              # Build + Storybook
 npm test               # Playwright visual regression
-npm run build          # Build all bundles + palettes + sizes
+npm run build          # Build all bundles + palettes + sizes (CI-safe, no network calls)
 npm run build:css      # Build minified CSS bundles
 npm run demo:server    # Run demo server used for visual regression testing
 npm run docs:dev       # Dev server for docs
 npm run lint           # Lint all CSS
-npm run test:update-snapshots    # Update visual regression snapshots
+npm run test:update-snapshots          # Update visual regression snapshots
+npm run docs:update-size-claims        # Download Pico/Bootstrap, compute gzip sizes, update docs + README
 ```
 
 ## Conventions
@@ -86,14 +86,29 @@ When contributing code or edits, follow the project's motto and core principles:
 
 All generated files land in `dist/`:
 
-- `semanticus.css`
-- `semanticus-semantics.css`
+- `semanticus.css` — full bundle (everything including utilities)
+- `semanticus-no-utilities.css` — standard bundle (semantics + components + variants, no utilities)
+- `semanticus-semantics.css` — semantics only
+- `semanticus-utilities.css` — utilities only
 - `semanticus.palette.<name>.css`
 - `semanticus.size.<name>.css`
 
 ## Browser Support
 
 Modern browsers only (last 2 versions, Firefox ESR, no dead browsers). Configured in `.browserslistrc`.
+
+The following modern CSS features are already in active use in the source — they are **not** browser support additions:
+- `color-mix(in srgb, ...)` — used throughout for hover/focus/subtle color derivation
+- `oklch()` with relative color syntax (`oklch(from <color> l c h / alpha)`) — used for border and background opacity variants
+- `light-dark()` — used for automatic light/dark theme color switching
+- `:has()`, `:is()`, `:where()` — used extensively in semantic selectors
+- CSS nesting (`&`) — used throughout all source files
+
+Features **not** currently used (and therefore still considered browser-support additions):
+- `@layer` — cascade layering
+- `@container` — container queries
+- `@scope` — scoped styles
+- `@function` — CSS custom functions (Chrome 139+ only, no Firefox/Safari support as of 2026)
 
 ## Adding a New Feature
 
@@ -126,7 +141,7 @@ This project follows [SemVer](https://semver.org/). When making changes, conside
 - ❌ Remove or rename CSS variables (e.g., `--color-h1`, `--spacing-lg`)
 - ❌ Remove or rename CSS classes (e.g., `.text-primary`, `.bg-secondary`)
 - ❌ Change the visual output of existing classes significantly
-- ❌ Change browser support requirements (e.g., adding `color-mix()`, `@layer`)
+- ❌ Change browser support requirements (e.g., adding `@layer`, `@container`, `@scope`)
 - ❌ Reorganize file structure that affects imports
 
 **Non-breaking (PATCH OK):**

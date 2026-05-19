@@ -1,6 +1,6 @@
 [role="toolbar"] {
-  grid-column-gap: var(--grid-column-gap);
-  grid-row-gap: var(--grid-row-gap);
+  grid-column-gap: var(--spacing);
+  grid-row-gap: var(--spacing);
   display: grid;
   grid-template-columns: 1fr;
 

@@ -13,13 +13,15 @@
 @import './_variables.css';
 
 /* borders */
+@import './borders/_border-radius.css';
 @import './borders/_border-style.css';
 @import './borders/_border-width.css';
-@import './borders/_border-radius.css';
 
 /* colors */
-@import './colors/_background-colors.css';
+@import './colors/_bg-colors.css';
 @import './colors/_border-colors.css';
+@import './colors/_subtle-colors.css';
+@import './colors/_text-bg-colors.css';
 @import './colors/_text-colors.css';
 
 /* display */
@@ -28,13 +30,14 @@
 @import './display/_visibility.css';
 
 /* effects */
+@import './effects/_focus-ring.css';
 @import './effects/_opacity.css';
 @import './effects/_shadows.css';
 @import './effects/_transforms.css';
 
 /* layout */
 @import './layout/_flexbox.css';
-@import './layout/_grid.css';
+@import './layout/_ratio.css';
 @import './layout/_misc.css';
 
 /* media */

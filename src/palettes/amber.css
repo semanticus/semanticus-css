@@ -1,56 +1,32 @@
-/*
-  Semanticus CSS Palette: Amber
-  Overrides primary color variables for the amber palette
-*/
+:root {
+  /* --color-amber-950: #161003; */
+  /* --color-amber-900: #231a03; */
+  /* --color-amber-850: #312302; */
+  /* --color-amber-800: #3f2d00; */
+  /* --color-amber-750: #4d3700; */
+  /* --color-amber-700: #5b4200; */
+  /* --color-amber-650: #694d00; */
+  /* --color-amber-600: #785800; */
+  --color-amber-550: #876400;
+  /* --color-amber-500: #977000; */
+  /* --color-amber-450: #a77c00; */
+  --color-amber-400: #b78800;
+  --color-amber-350: #c79400;
+  /* --color-amber-300: #d8a100; */
+  /* --color-amber-250: #e8ae01; */
+  /* --color-amber-200: #ffbf00; */
+  /* --color-amber-150: #fecc63; */
+  /* --color-amber-100: #fddea6; */
+  /* --color-amber-50: #fcefd9; */
+  /* --color-amber: var(--color-amber-550); */
 
-/* Light theme - Amber */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(183, 136, 0, 0.25);
-  --color-primary-rgb: 135, 100, 0;
-  --color-primary-bg: #ffbf00;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(135, 100, 0, 0.5);
-  --color-primary-hover: #694d00;
-  --color-primary-hover-bg: #e8ae01;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(183, 136, 0, 0.5);
-  --color-primary-inverse: #000;
-  --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-amber-400) l c h / 0.25), oklch(from var(--color-amber-350) l c h / 0.1875));
 
-/* Dark theme - Amber */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(199, 148, 0, 0.1875);
-    --color-primary-rgb: 199, 148, 0;
-    --color-primary-bg: #ffbf00;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(199, 148, 0, 0.5);
-    --color-primary-hover: #e8ae01;
-    --color-primary-hover-bg: #fecc63;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(199, 148, 0, 0.375);
-    --color-primary-inverse: #000;
-    --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  }
-}
+  --color-primary-text: light-dark(var(--color-amber-550), var(--color-amber-350));
+  --color-primary-fill: var(--color-amber-550);
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(199, 148, 0, 0.1875);
-  --color-primary-rgb: 199, 148, 0;
-  --color-primary-bg: #ffbf00;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(199, 148, 0, 0.5);
-  --color-primary-hover: #e8ae01;
-  --color-primary-hover-bg: #fecc63;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(199, 148, 0, 0.375);
-  --color-primary-inverse: #000;
-  --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));
 }

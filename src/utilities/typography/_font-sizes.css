@@ -1,23 +1,23 @@
 .fs-1 {
-  font-size: var(--fs-1) !important;
+  font-size: var(--h1-size) !important;
 }
 
 .fs-2 {
-  font-size: var(--fs-2) !important;
+  font-size: var(--h2-size) !important;
 }
 
 .fs-3 {
-  font-size: var(--fs-3) !important;
+  font-size: var(--h3-size) !important;
 }
 
 .fs-4 {
-  font-size: var(--fs-4) !important;
+  font-size: var(--h4-size) !important;
 }
 
 .fs-5 {
-  font-size: var(--fs-5) !important;
+  font-size: var(--h5-size) !important;
 }
 
 .fs-6 {
-  font-size: var(--fs-6) !important;
+  font-size: var(--h6-size) !important;
 }

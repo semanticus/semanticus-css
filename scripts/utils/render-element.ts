@@ -1,3 +1,5 @@
+import { renderAttributes } from "./render-attributes";
+
 function sanitizeNewLines(str: string): string {
   return `\n${str.replace(/^\n*(.*)\n*$/, "$1")}\n`;
 }
@@ -13,16 +15,7 @@ export function renderElement(
 ): string {
   const content = slot.length > 0 ? sanitizeNewLines(ident(slot, 2)) : slot;
 
-  const attributes = { ...attrs || {} };
-
-  if (attributes.class) {
-    attributes.class = attributes.class.split(" ").filter(Boolean).join(" ");
-  }
-
-  let renderedAttrs = Object.entries(attributes)
-    .map(([key, val]) => ((val ?? "") !== "" ? `${key}="${val}"` : undefined))
-    .filter((attribute) => attribute !== undefined)
-    .join(" ");
+  let renderedAttrs = renderAttributes(attrs);
 
   if ((renderedAttrs ?? "") !== "") renderedAttrs = ` ${renderedAttrs}`;
 

@@ -83,6 +83,10 @@ const props = defineProps({
   editable: {
     type: Boolean,
     default: true
+  },
+  codeCollapsed: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -90,6 +94,7 @@ const iframeRef = ref(null);
 const iframeHeight = ref(props.minHeight);
 const code = ref(props.code);
 const uid = `html-previewer-${Math.random().toString(36).substr(2, 9)}`;
+const codeExpanded = ref(false);
 const highlightedCode = hljs.highlight(props.code || '', { language: 'html' }).value;
 
 const iframeContent = computed(() => {
@@ -232,7 +237,28 @@ watch(isDark, () => {
       <span class="lang">live preview</span>
     </div>
 
-    <div class="language-html">
+    <!-- Collapsed overlay — centered toggle button -->
+    <div v-if="codeCollapsed && !codeExpanded" class="code-collapsed-overlay" @click="codeExpanded = true">
+      <div class="expand-code-btn">
+        <svg class="icon-eye" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <span>See code</span>
+      </div>
+    </div>
+
+    <!-- Code section (hidden when collapsed) -->
+    <div v-show="!codeCollapsed || codeExpanded" class="language-html">
+      <button v-if="codeCollapsed" class="collapse-code-btn" @click.stop="codeExpanded = false">
+        <svg class="icon-eye-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+          <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+          <line x1="1" y1="1" x2="23" y2="23"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <span>Hide code</span>
+      </button>
       <button title="Copy Code" class="copy"></button>
       <span class="lang">{{ editable ? 'editable html' : 'html' }}</span>
       <pre><code class="language-html" v-html="highlightedCode" :contenteditable="editable" @input="updateContent"></code></pre>
@@ -280,5 +306,61 @@ watch(isDark, () => {
   border-radius: 0 !important;
   outline: none;
   cursor: text;
+}
+
+/* Collapsed code overlay — full-width clickable area */
+.code-collapsed-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  background: var(--vp-c-bg-soft);
+  border-top: 1px solid var(--vp-c-divider);
+  transition: background 0.2s;
+}
+
+.code-collapsed-overlay:hover {
+  background: var(--vp-c-bg-mute, var(--vp-c-bg-soft));
+}
+
+.expand-code-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.code-collapsed-overlay:hover .expand-code-btn {
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-text-2);
+}
+
+/* Collapse button shown at top of code section when expanded from collapsed */
+.collapse-code-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  font-size: 0.8125rem;
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s;
+}
+
+.collapse-code-btn:hover {
+  background: var(--vp-c-bg-mute, var(--vp-c-bg-soft));
+  color: var(--vp-c-text-1);
 }
 </style>

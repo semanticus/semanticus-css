@@ -10,11 +10,6 @@
    out of the box.
    ========================================================================== */
 
-/* Links */
-a {
-  --text-decoration: underline;
-}
-
 /* Small text */
 small {
   --font-size: 0.875em;
@@ -34,39 +29,39 @@ h6 {
 }
 
 h1 {
-  --font-size: var(--fs-1);
+  --font-size: var(--h1-size);
   --line-height: 1.125;
-  --typography-headings-top: 3rem;
+  --heading-gap-top: 3rem;
 }
 
 h2 {
-  --font-size: var(--fs-2);
+  --font-size: var(--h2-size);
   --line-height: 1.15;
-  --typography-headings-top: 2.625rem;
+  --heading-gap-top: 2.625rem;
 }
 
 h3 {
-  --font-size: var(--fs-3);
+  --font-size: var(--h3-size);
   --line-height: 1.175;
-  --typography-headings-top: 2.25rem;
+  --heading-gap-top: 2.25rem;
 }
 
 h4 {
-  --font-size: var(--fs-4);
+  --font-size: var(--h4-size);
   --line-height: 1.2;
-  --typography-headings-top: 1.874rem;
+  --heading-gap-top: 1.874rem;
 }
 
 h5 {
-  --font-size: var(--fs-5);
+  --font-size: var(--h5-size);
   --line-height: 1.225;
-  --typography-headings-top: 1.6875rem;
+  --heading-gap-top: 1.6875rem;
 }
 
 h6 {
-  --font-size: var(--fs-6);
+  --font-size: var(--h6-size);
   --line-height: 1.25;
-  --typography-headings-top: 1.5rem;
+  --heading-gap-top: 1.5rem;
 }
 
 /* ==========================================================================
@@ -78,7 +73,7 @@ thead td,
 tfoot th,
 tfoot td {
   --font-weight: 600;
-  --border-width: 0.1875rem;
+  --border-size: 0.1875rem;
 }
 
 /* ==========================================================================
@@ -110,28 +105,28 @@ input:not(
     [type="file"]
   ),
 :where(select, textarea) {
-  --outline-width: 0.0625rem;
+  --outline-size: 0.0625rem;
 }
 
 /* Search inputs are pill-shaped */
 [type="search"] {
-  --border-radius: 5rem;
+  --radius: 5rem;
 }
 
 /* Checkboxes & radios use a slightly thicker border */
 [type="checkbox"],
 [type="radio"] {
-  --border-width: 0.125rem;
+  --border-size: 0.125rem;
 }
 
 /* Toggle switches get an even thicker border */
 [type="checkbox"][role="switch"] {
-  --border-width: 0.1875rem;
+  --border-size: 0.1875rem;
 }
 
 /* Search role wrappers are pill-shaped */
 [role="search"] {
-  --border-radius: 5rem;
+  --radius: 5rem;
 }
 
 /* ==========================================================================
@@ -151,7 +146,7 @@ input:not(
     [type="button"].secondary:focus,
     [role="button"].secondary:focus
   ) {
-  --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-secondary-focus);
+  --group-shadow-focus-button: 0 0 0 var(--outline-size) var(--color-secondary-focus-ring);
 }
 
 /* Contrast button focus in groups */
@@ -167,7 +162,7 @@ input:not(
     [type="button"].contrast:focus,
     [role="button"].contrast:focus
   ) {
-  --group-shadow-focus-with-button: 0 0 0 var(--outline-width) var(--color-contrast-focus);
+  --group-shadow-focus-button: 0 0 0 var(--outline-size) var(--color-contrast-focus-ring);
 }
 
 /* Buttons inside search/group combos get wider horizontal padding */
@@ -179,7 +174,7 @@ input:not(
 [role="group"] [type="submit"],
 [role="group"] [type="button"],
 [role="group"] [role="button"] {
-  --form-element-spacing-horizontal: 1rem;
+  --input-spacing-horizontal: 1rem;
 }
 
 /* ==========================================================================
@@ -190,5 +185,11 @@ input:not(
 [type="checkbox"],
 [type="radio"],
 [type="range"] {
-  accent-color: rgb(var(--color-primary-rgb));
+  accent-color: var(--color-primary-fill);
+}
+
+/* Text selection color */
+
+::selection {
+  background-color: var(--color-selection);
 }

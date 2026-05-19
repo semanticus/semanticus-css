@@ -27,18 +27,17 @@ const borderSubtleHtml = `<span class="border border-primary-subtle p-3 d-inline
 <span class="border border-danger-subtle p-3 d-inline-block me-2 mb-2">danger subtle</span>
 `;
 const borderWidthHtml = `<span class="border border-0 p-3 d-inline-block me-2 mb-2">0</span>
-<span class="border border-d p-3 d-inline-block me-2 mb-2">d</span>
-<span class="border border-1 p-3 d-inline-block me-2 mb-2">1</span>
-<span class="border border-2 p-3 d-inline-block me-2 mb-2">2</span>
-<span class="border border-3 p-3 d-inline-block me-2 mb-2">3</span>
-<span class="border border-4 p-3 d-inline-block me-2 mb-4">4</span>
-<span class="border border-5 p-3 d-inline-block me-2 mb-2">5</span>
+<span class="border border-w-1 p-3 d-inline-block me-2 mb-2">1</span>
+<span class="border border-w-2 p-3 d-inline-block me-2 mb-2">2</span>
+<span class="border border-w-3 p-3 d-inline-block me-2 mb-2">3</span>
+<span class="border border-w-4 p-3 d-inline-block me-2 mb-4">4</span>
+<span class="border border-w-5 p-3 d-inline-block me-2 mb-2">5</span>
 `;
-const borderOpacityHtml = `<div class="border border-success p-2 mb-2">Default success border</div>
-<div class="border border-success border-opacity-75 p-2 mb-2">75% opacity success border</div>
-<div class="border border-success border-opacity-50 p-2 mb-2">50% opacity success border</div>
-<div class="border border-success border-opacity-25 p-2 mb-2">25% opacity success border</div>
-<div class="border border-success border-opacity-10 p-2">10% opacity success border</div>
+const borderOpacityHtml = `<div class="border border-primary p-2 mb-2">Default primary border</div>
+<div class="border border-primary border-opacity-75 p-2 mb-2">75% opacity primary border</div>
+<div class="border border-primary border-opacity-50 p-2 mb-2">50% opacity primary border</div>
+<div class="border border-primary border-opacity-25 p-2 mb-2">25% opacity primary border</div>
+<div class="border border-primary border-opacity-10 p-2">10% opacity primary border</div>
 `;
 const borderRadiusHtml = `<span class="border rounded p-3 d-inline-block me-2 mb-2">rounded</span>
 <span class="border rounded-top p-3 d-inline-block me-2 mb-2">top</span>
@@ -56,8 +55,8 @@ const borderRadiusSizesHtml = `<span class="border rounded-0 p-3 d-inline-block 
 <span class="border rounded-circle p-3 d-inline-block me-2 mb-2">circle</span>
 <span class="border rounded-pill px-4 py-3 d-inline-block me-2 mb-2">pill</span>
 `;
-const practicalHtml = `<input type="email" class="border-success" placeholder="Valid email" aria-invalid="false" />
-<div class="p-3 bg-info-subtle border border-info rounded">
+const practicalHtml = `<input type="email" class="border border-primary" placeholder="Text input" />
+<div class="p-d border border-primary rounded">
   Informational message with matching border color.
 </div>
 `;
@@ -91,7 +90,7 @@ Change the border color using semantic color utilities.
 
 ## Width
 
-Border width utilities range from `0` (no border) to `5` (thickest). Use `d` for the default border width (matches `--border-width`).
+Control border width with `.border-w-*` utilities, ranging from `0` (no border) to `5` (thickest).
 
 <HtmlPreviewer :code="borderWidthHtml" />
 

@@ -4,9 +4,9 @@ kbd,
 samp {
   font-size: 0.875em;
   font-family: var(--font-family);
-  border-radius: var(--border-radius);
-  background: var(--code-bg);
-  color: var(--code-color);
+  border-radius: var(--radius);
+  background: var(--code-fill);
+  color: var(--code-text);
   font-weight: var(--font-weight);
   line-height: initial;
 }
@@ -44,7 +44,7 @@ pre {
 }
 
 kbd {
-  background-color: var(--kbd-bg);
-  color: var(--kbd-color);
+  background-color: var(--kbd-fill);
+  color: var(--kbd-text);
   vertical-align: baseline;
 }

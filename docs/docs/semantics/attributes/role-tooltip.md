@@ -1,8 +1,8 @@
-<script setup>
-import { RoleTooltipDemo } from "@demos/semantics/attributes";
-</script>
+---
+title: 'role="tooltip"'
+---
 
-# Tooltip
+# [role="tooltip"]
 
 Enable tooltips everywhere, without JavaScript.
 
@@ -17,3 +17,7 @@ Pair a trigger element with `aria-describedby` pointing to another element with 
 The tooltip is displayed on top by default but you can change it with the `data-placement` attribute on the tooltip element.
 
 <HtmlPreviewer :code="RoleTooltipDemo.placement()" />
+
+<script setup>
+import { RoleTooltipDemo } from "@demos/semantics/attributes";
+</script>

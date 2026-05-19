@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/html";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 import { ButtonDemo } from "@demos/semantics/elements";
 
 const meta: Meta = {
@@ -9,20 +9,5 @@ export default meta;
 
 export const BasicUsage: StoryObj = {
   args: { html: ButtonDemo.main() },
-  render: (args) => args.html,
-};
-
-export const inputButtons: StoryObj = {
-  args: { html: ButtonDemo.inputButtons() },
-  render: (args) => args.html,
-};
-
-export const inputResetButton: StoryObj = {
-  args: { html: ButtonDemo.inputResetButton() },
-  render: (args) => args.html,
-};
-
-export const loginForm: StoryObj = {
-  args: { html: ButtonDemo.loginForm() },
   render: (args) => args.html,
 };

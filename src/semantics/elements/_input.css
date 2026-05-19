@@ -76,7 +76,7 @@ textarea {
 }
 
 input:not([type=checkbox], [type=radio], [type=range]) {
-  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
+  height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
 }
 
 fieldset {
@@ -109,21 +109,21 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 select,
 textarea {
   appearance: none;
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
 }
 
 input,
 select,
 textarea {
-  --color-background: var(--form-bg);
-  --border-color: var(--form-border-color);
-  --color-text: var(--form-text-color);
-  --shadow-lg: none;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  --color-background: var(--input-fill);
+  --border-color: var(--input-border);
+  --color-text: var(--input-text);
+  --shadow: none;
+  border: var(--border-size) solid var(--border-color);
+  border-radius: var(--radius);
   outline: none;
   background-color: var(--color-background);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
   color: var(--color-text);
   font-weight: var(--font-weight);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
@@ -136,12 +136,12 @@ input:not([type=submit],
 [type=radio],
 [readonly]):is(:active, :focus),
 :where(select, textarea):not([readonly]):is(:active, :focus) {
-  --color-background: var(--form-active-bg);
+  --color-background: var(--input-fill-active);
 }
 
 input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
 :where(select, textarea):not([readonly]):is(:active, :focus) {
-  --border-color: var(--form-active-border);
+  --border-color: var(--input-border-focus);
 }
 
 input:not([type=submit],
@@ -151,7 +151,7 @@ input:not([type=submit],
 [type=file],
 [readonly]):focus,
 :where(select, textarea):not([readonly]):focus {
-  --shadow-lg: 0 0 0 var(--outline-width) var(--form-focus);
+  --shadow: 0 0 0 var(--outline-size) var(--input-border-focus);
 }
 
 input:not([type=submit], [type=button], [type=reset])[disabled],
@@ -159,7 +159,7 @@ select[disabled],
 textarea[disabled],
 label[aria-disabled=true],
 :where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
-  opacity: var(--form-disabled-opacity);
+  opacity: var(--input-opacity-disabled);
   pointer-events: none;
 }
 
@@ -175,10 +175,10 @@ label[aria-disabled=true] input[disabled] {
  [type=time],
  [type=week],
  [type=range])[aria-invalid]) {
-  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-  padding-left: var(--form-element-spacing-horizontal);
-  padding-inline-start: var(--form-element-spacing-horizontal);
-  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-right: calc(var(--input-spacing-horizontal) + 1.5rem);
+  padding-left: var(--input-spacing-horizontal);
+  padding-inline-start: var(--input-spacing-horizontal);
+  padding-inline-end: calc(var(--input-spacing-horizontal) + 1.5rem);
   background-position: center right 0.75rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
@@ -205,23 +205,23 @@ label[aria-disabled=true] input[disabled] {
 }
 
 :is(input, select, textarea)[aria-invalid=false] {
-  --border-color: var(--form-valid-border);
+  --border-color: var(--color-success-fill);
 }
 :is(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
-  --border-color: var(--form-valid-active-border);
+  --border-color: var(--color-success-fill-hover);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=false]:is(:active, :focus), select[aria-invalid=false]:is(:active, :focus), textarea[aria-invalid=false]:is(:active, :focus) {
-  --shadow-lg: 0 0 0 var(--outline-width) var(--form-valid-focus);
+  --shadow: 0 0 0 var(--outline-size) var(--color-success-fill);
 }
 
 :is(input, select, textarea)[aria-invalid=true] {
-  --border-color: var(--form-invalid-border);
+  --border-color: var(--color-danger-fill);
 }
 :is(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
-  --border-color: var(--form-invalid-active-border);
+  --border-color: var(--color-danger-fill-hover);
 }
 input:not([type=checkbox], [type=radio])[aria-invalid=true]:is(:active, :focus), select[aria-invalid=true]:is(:active, :focus), textarea[aria-invalid=true]:is(:active, :focus) {
-  --shadow-lg: 0 0 0 var(--outline-width) var(--form-invalid-focus);
+  --shadow: 0 0 0 var(--outline-size) var(--color-danger-fill);
 }
 
 :where([dir=rtl] :is(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false])) {
@@ -233,7 +233,7 @@ input::-webkit-input-placeholder,
 textarea::placeholder,
 textarea::-webkit-input-placeholder,
 select:invalid {
-  color: var(--form-placeholder-color);
+  color: var(--input-placeholder-text);
   opacity: 1;
 }
 
@@ -250,10 +250,10 @@ select {
   }
 
   &:not([multiple], [size]) {
-    padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-    padding-left: var(--form-element-spacing-horizontal);
-    padding-inline-start: var(--form-element-spacing-horizontal);
-    padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+    padding-right: calc(var(--input-spacing-horizontal) + 1.5rem);
+    padding-left: var(--input-spacing-horizontal);
+    padding-inline-start: var(--input-spacing-horizontal);
+    padding-inline-end: calc(var(--input-spacing-horizontal) + 1.5rem);
     background-image: var(--icon-chevron);
     background-position: center right 0.75rem;
     background-size: 1rem auto;
@@ -261,8 +261,8 @@ select {
   }
 
   &[multiple] option:checked {
-    background: var(--form-selected-bg);
-    color: var(--form-text-color);
+    background: var(--input-fill-selected);
+    color: var(--input-text);
   }
 }
 
@@ -276,7 +276,7 @@ textarea {
 }
 
 :where(textarea[aria-invalid]) {
-  --icon-height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
+  --icon-height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
   background-position: top right 0.75rem;
   background-size: 1rem var(--icon-height);
 }
@@ -290,11 +290,11 @@ textarea {
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=false] + small {
-  color: rgb(var(--color-success-rgb));
+  color: var(--color-success-text);
 }
 
 :where(input, select, textarea, fieldset)[aria-invalid=true] + small {
-  color: rgb(var(--color-danger-rgb));
+  color: var(--color-danger-text);
 }
 
 label > :where(input, select, textarea) {

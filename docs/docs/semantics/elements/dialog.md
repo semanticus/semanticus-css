@@ -10,7 +10,7 @@ import { DialogDemo } from "@demos/semantics/elements";
 
 The `<dialog>` element represents a modal or non-modal dialog.
 
-See more about using `<dialog>` as a modal in the [Modal composite documentation](/docs/composites/modal).
+See more about using `<dialog>` as a **modal** in the [Modal composite documentation](/docs/composites/modal).
 
 ## Basic Usage
 

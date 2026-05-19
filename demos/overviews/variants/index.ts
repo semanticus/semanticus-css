@@ -1,2 +1,2 @@
-export * as ContrastDemo from "./contrast.demo";
-export * as SecondaryDemo from "./secondary.demo";
+export * as Intent from "./intent";
+export * as Modifiers from "./modifiers";

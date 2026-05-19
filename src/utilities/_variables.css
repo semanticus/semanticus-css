@@ -1,44 +1,35 @@
 :root,
 :host {
+  --max-z-index: 1050;
+
   /* Gradient */
   --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
   /* Borders & radii */
-  --border-style: solid;
-  --border-radius-default: var(--border-radius);
-  --border-radius-sm: var(--border-radius-default);
-  --border-radius-lg: calc(var(--border-radius-default) * 2);
-  --border-radius-xl: calc(var(--border-radius-default) * 4);
-  --border-radius-xxl: calc(var(--border-radius-default) * 8);
   --border-radius-pill: 50rem;
+  --border-radius-1: var(--radius);
+  --border-radius-2: calc(var(--radius) * 2);
+  --border-radius-3: calc(var(--radius) * 4);
+  --border-radius-4: calc(var(--radius) * 6);
+  --border-radius-5: calc(var(--radius) * 8);
 
   /* Border-width scale */
-  --border-width-default: var(--border-width);
-  --border-width-0: 0;
-  --border-width-1: var(--border-width-default);
-  --border-width-2: calc(var(--border-width-default) * 2);
-  --border-width-3: calc(var(--border-width-default) * 3);
-  --border-width-4: calc(var(--border-width-default) * 4);
-  --border-width-5: calc(var(--border-width-default) * 5);
+  --border-style: solid;
+  --border-width-1: var(--border-size);
+  --border-width-2: calc(var(--border-size) * 2);
+  --border-width-3: calc(var(--border-size) * 3);
+  --border-width-4: calc(var(--border-size) * 4);
+  --border-width-5: calc(var(--border-size) * 5);
 
   /* Spacing scale */
-  --spacer-default: var(--spacing);
-  --spacer-0: 0;
-  --spacer-1: calc(var(--spacer-default) * 0.25);
-  --spacer-2: calc(var(--spacer-default) * 0.5);
-  --spacer-3: var(--spacer-default);
-  --spacer-4: calc(var(--spacer-default) * 1.5);
-  --spacer-5: calc(var(--spacer-default) * 3);
+  --spacing-1: calc(var(--spacing) * 0.25);
+  --spacing-2: calc(var(--spacing) * 0.5);
+  --spacing-3: var(--spacing);
+  --spacing-4: calc(var(--spacing) * 1.5);
+  --spacing-5: calc(var(--spacing) * 3);
 
-  /* Focus ring */
-  --focus-ring-width: var(--outline-width);
-  --focus-ring-opacity: 0.25;
-
-  /* Auto-switching mappings (resolved at computed-value time via Semanticus CSS) */
-  --emphasis-color: rgb(var(--color-contrast-rgb));
-  --secondary-color: var(--color-text-muted);
-  --border-color: var(--color-border-muted);
-  --focus-ring-color: var(--color-primary-focus);
-
-  --max-z-index: 1050;
+  /* Shadows */
+  --shadow-sm: light-dark(0 0.0625rem 0.125rem rgba(129, 145, 181, 0.1), 0 0.0625rem 0.125rem rgba(7, 8.5, 12, 0.1));
+  --shadow-md: light-dark(0.0625rem 0.125rem 0.5rem rgba(129, 145, 181, 0.15), 0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15));
+  --shadow-lg: light-dark(0.125rem 0.25rem 1rem rgba(129, 145, 181, 0.2), 0.125rem 0.25rem 1rem rgba(7, 8.5, 12, 0.2));
 }

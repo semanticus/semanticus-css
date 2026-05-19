@@ -182,12 +182,12 @@ const groupIcons = {
   'Switch': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="20" height="8" rx="4"/><circle cx="8" cy="12" r="3"/></svg>',
   'Tables': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M9 5v14"/></svg>',
   'Code': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-  'Cards': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg>',
+  'Dialog, Pane & Card': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg>',
   'Accordion': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16"/><path d="M4 16h16"/><path d="M8 12l4-4 4 4"/></svg>',
   'Dropdown': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 11l4 4 4-4"/></svg>',
   'Progress': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="10" width="20" height="4" rx="2"/><path d="M4 12h8"/></svg>',
   'Tooltip': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="M12 18v4"/><path d="M4 10h16"/><path d="M8 14l4 4 4-4"/></svg>',
-  'Modal': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6"/><path d="M9 13h6"/></svg>',
+  'Dialog Overlay': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6"/><path d="M9 13h6"/></svg>',
   'Blockquote': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M3 12h12"/><path d="M3 18h9"/></svg>',
 }
 
@@ -206,29 +206,26 @@ const variableGroups = [
   {
     label: 'Borders & Effects',
     vars: [
-      { name: '--border-radius', label: 'Border Radius', desc: 'Global border radius for buttons, inputs, cards, etc.', type: 'text', lightDefault: '0.25rem', scope: 'root', selectors: 'button, input:not([type=checkbox]):not([type=radio]):not([type=range]), select, article, details, code, kbd, pre, progress' },
-      { name: '--border-width', label: 'Border Width', desc: 'Base border width used by forms, tables, and other bordered elements.', type: 'text', lightDefault: '0.0625rem', scope: 'root', selectors: 'input:not([type=range]):not([type=file]), select, button, th, td' },
-      { name: '--outline-width', label: 'Outline Width', desc: 'Width of the focus ring shown around focused interactive elements.', type: 'text', lightDefault: '0.125rem', scope: 'root', selectors: 'button, input, select, a:not([role=button])' },
+      { name: '--radius', label: 'Border Radius', desc: 'Global border radius for buttons, inputs, cards, etc.', type: 'text', lightDefault: '0.25rem', scope: 'root', selectors: 'button, input:not([type=checkbox]):not([type=radio]):not([type=range]), select, article, details, code, kbd, pre, progress' },
+      { name: '--border-size', label: 'Border Width', desc: 'Base border width used by forms, tables, and other bordered elements.', type: 'text', lightDefault: '0.0625rem', scope: 'root', selectors: 'input:not([type=range]):not([type=file]), select, button, th, td' },
+      { name: '--outline-size', label: 'Outline Width', desc: 'Width of the focus ring shown around focused interactive elements.', type: 'text', lightDefault: '0.125rem', scope: 'root', selectors: 'button, input, select, a:not([role=button])' },
       { name: '--transition', label: 'Transition', desc: 'Default CSS transition timing for interactive state changes (hover, focus).', type: 'text', lightDefault: '0.2s ease-in-out', scope: 'root', selectors: 'button, a, input, select, details summary, progress' },
     ]
   },
   {
     label: 'Spacing',
     vars: [
-      { name: '--base-spacing', label: 'Base Spacing Unit', desc: 'Foundational spacing unit. Combined with --responsive-multiplier to derive --spacing.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
-      { name: '--responsive-multiplier', label: 'Responsive Multiplier', desc: 'Scales --spacing responsively at each breakpoint (1 at mobile, up to 1.5 at xxl).', type: 'text', lightDefault: '1', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
-      { name: '--spacing', label: 'Spacing', desc: 'Derived spacing unit used for padding, margins, and gaps. Equals base-spacing × responsive-multiplier.', type: 'text', lightDefault: 'calc(var(--base-spacing) * var(--responsive-multiplier))', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
+      { name: '--base-spacing', label: 'Base Spacing Unit', desc: 'Foundational spacing unit. Scales with each breakpoint to derive --spacing.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
+      { name: '--spacing', label: 'Spacing', desc: 'Derived spacing unit used for padding, margins, and gaps. Equals base-spacing scaled per breakpoint.', type: 'text', lightDefault: 'var(--base-spacing)', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
       { name: '--typography-spacing-vertical', label: 'Typography Spacing', desc: 'Vertical margin below typographic elements (paragraphs, lists, etc.).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h2, h3, h4, h5, h6, p, ul, ol, blockquote' },
-      { name: '--grid-column-gap', label: 'Grid Column Gap', desc: 'Column gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
-      { name: '--grid-row-gap', label: 'Grid Row Gap', desc: 'Row gap in CSS Grid layouts.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.grid' },
-      { name: '--form-element-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
-      { name: '--form-element-spacing-horizontal', label: 'Input Padding (H)', desc: 'Horizontal padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.7rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
+      { name: '--input-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
+      { name: '--input-spacing-horizontal', label: 'Input Padding (H)', desc: 'Horizontal padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.7rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
     ]
   },
   {
     label: 'Navigation',
     vars: [
-      { name: '--nav-link-spacing', label: 'Nav Link Spacing', desc: 'Padding inside nav links. Derived from --spacing.', type: 'text', lightDefault: 'calc(var(--spacing) * 0.5)', scope: 'root', selectors: 'nav li a' },
+      { name: '--nav-link-gap', label: 'Nav Link Spacing', desc: 'Padding inside nav links. Derived from --spacing.', type: 'text', lightDefault: 'calc(var(--spacing) * 0.5)', scope: 'root', selectors: 'nav li a' },
     ]
   },
   {
@@ -237,87 +234,64 @@ const variableGroups = [
       { name: '--color-background', label: 'Background', desc: 'Main page background color.', type: 'color', lightDefault: '#ffffff', darkDefault: '#13171f', scope: 'theme', selectors: 'body, th, td' },
       { name: '--color-text', label: 'Text Color', desc: 'Default body text color.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'body, p, li, label, th, td, blockquote' },
       { name: '--color-text-muted', label: 'Muted Text', desc: 'Subdued text for captions, hints, and secondary information.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'small, figcaption' },
-      { name: '--color-border-muted', label: 'Muted Border', desc: 'Subtle border color for horizontal rules.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#202632', scope: 'theme', selectors: 'hr' },
+      { name: '--color-border', label: 'Default Border', desc: 'Subtle default border color.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'hr' },
     ]
   },
   {
     label: 'Primary Colors',
     vars: [
-      { name: '--color-primary-bg', label: 'Primary BG', desc: 'Background fill for primary buttons, checked checkboxes, and checked radios.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=checkbox]:not([role=switch]), [type=radio]' },
-      { name: '--color-primary-border', label: 'Primary Border', desc: 'Border color for primary elements.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
-      { name: '--color-primary-underline', label: 'Primary Underline', desc: 'Underline color for primary links.', type: 'text', lightDefault: 'rgba(1, 114, 173, 0.5)', darkDefault: 'rgba(1, 170, 255, 0.5)', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast)' },
-      { name: '--color-primary-hover', label: 'Primary Hover', desc: 'Text/border color on hover for primary links and ghost (outline) primary buttons.', type: 'color', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast)' },
-      { name: '--color-primary-hover-bg', label: 'Primary Hover BG', desc: 'Background on hover for primary filled buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
-      { name: '--color-primary-hover-border', label: 'Primary Hover Border', desc: 'Border color on hover for primary buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
-      { name: '--color-primary-hover-underline', label: 'Primary Hover Underline', desc: 'Underline color on hover for primary links.', type: 'text', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast)' },
-      { name: '--color-primary-focus', label: 'Primary Focus', desc: 'Semi-transparent focus ring color for primary buttons, links, and accordion summaries.', type: 'color', lightDefault: 'rgba(2, 154, 232, 0.5)', darkDefault: 'rgba(1, 170, 255, 0.375)', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast), a:not([role=button]):not(.secondary):not(.contrast), details summary' },
-      { name: '--color-primary-inverse', label: 'Primary Inverse', desc: 'Text color on top of primary background (e.g., white text on colored button).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=radio]' },
+      { name: '--color-primary-fill', label: 'Primary Fill', desc: 'Fill color for primary buttons, checked checkboxes, and checked radios.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=checkbox]:not([role=switch]), [type=radio]' },
+      { name: '--color-primary-text-hover', label: 'Primary Hover', desc: 'Text/border color on hover for primary links and ghost (outline) primary buttons.', type: 'color', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast)' },
+      { name: '--color-primary-fill-hover', label: 'Primary Hover Fill', desc: 'Fill on hover for primary filled buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
+      { name: '--color-primary-focus-ring', label: 'Primary Focus Ring', desc: 'Semi-transparent focus ring color for primary buttons, links, and accordion summaries.', type: 'color', lightDefault: 'oklch(from #029ae8 l c h / 0.5)', darkDefault: 'oklch(from #01aaff l c h / 0.375)', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast), a:not([role=button]):not(.secondary):not(.contrast), details summary' },
+      { name: '--color-primary-on-fill', label: 'Primary On Fill', desc: 'Text color on top of primary fill (e.g., white text on colored button).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=radio]' },
     ]
   },
   {
     label: 'Secondary Colors',
     vars: [
-      { name: '--color-secondary-bg', label: 'Secondary BG', desc: 'Background fill for secondary buttons and file inputs.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-border', label: 'Secondary Border', desc: 'Border color for secondary elements.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-underline', label: 'Secondary Underline', desc: 'Underline color for secondary links.', type: 'text', lightDefault: 'rgba(93, 107, 137, 0.5)', darkDefault: 'rgba(150, 158, 175, 0.5)', scope: 'theme', selectors: 'a.secondary' },
-      { name: '--color-secondary-hover', label: 'Secondary Hover', desc: 'Text/border color on hover for secondary links and ghost (outline) secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary, button.ghost.secondary' },
-      { name: '--color-secondary-hover-bg', label: 'Secondary Hover BG', desc: 'Background on hover for secondary filled buttons and file inputs.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-hover-border', label: 'Secondary Hover Border', desc: 'Border color on hover for secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-hover-underline', label: 'Secondary Hover Underline', desc: 'Underline color on hover for secondary links.', type: 'text', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary' },
-      { name: '--color-secondary-focus', label: 'Secondary Focus', desc: 'Focus ring color for secondary buttons and file inputs.', type: 'color', lightDefault: 'rgba(93, 107, 137, 0.25)', darkDefault: 'rgba(144, 158, 190, 0.25)', scope: 'theme', selectors: 'button.secondary, [type=file]' },
-      { name: '--color-secondary-inverse', label: 'Secondary Inverse', desc: 'Text on top of secondary background.', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.secondary:not(.ghost)' },
+      { name: '--color-secondary-fill', label: 'Secondary Fill', desc: 'Fill for secondary buttons and file inputs.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
+      { name: '--color-secondary-text-hover', label: 'Secondary Hover', desc: 'Text/border color on hover for secondary links and ghost (outline) secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary, button.ghost.secondary' },
+      { name: '--color-secondary-fill-hover', label: 'Secondary Hover Fill', desc: 'Fill on hover for secondary filled buttons and file inputs.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
+      { name: '--color-secondary-focus-ring', label: 'Secondary Focus Ring', desc: 'Focus ring color for secondary buttons and file inputs.', type: 'color', lightDefault: 'oklch(from #5d6b89 l c h / 0.25)', darkDefault: 'oklch(from #909ebe l c h / 0.25)', scope: 'theme', selectors: 'button.secondary, [type=file]' },
+      { name: '--color-secondary-on-fill', label: 'Secondary On Fill', desc: 'Text on top of secondary fill.', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.secondary:not(.ghost)' },
     ]
   },
   {
     label: 'Contrast Colors',
     vars: [
-      { name: '--color-contrast-bg', label: 'Contrast BG', desc: 'Background fill for contrast buttons.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-border', label: 'Contrast Border', desc: 'Border color for contrast elements.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-underline', label: 'Contrast Underline', desc: 'Underline color for contrast links.', type: 'text', lightDefault: 'rgba(24, 28, 37, 0.5)', darkDefault: 'rgba(248, 249, 250, 0.5)', scope: 'theme', selectors: 'a.contrast' },
-      { name: '--color-contrast-hover', label: 'Contrast Hover', desc: 'Text/border color on hover for contrast links and ghost (outline) contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast, button.ghost.contrast' },
-      { name: '--color-contrast-hover-bg', label: 'Contrast Hover BG', desc: 'Background on hover for contrast filled buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-hover-border', label: 'Contrast Hover Border', desc: 'Border color on hover for contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-hover-underline', label: 'Contrast Hover Underline', desc: 'Underline color on hover for contrast links.', type: 'text', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast' },
-      { name: '--color-contrast-focus', label: 'Contrast Focus', desc: 'Focus ring color for contrast buttons.', type: 'color', lightDefault: 'rgba(93, 107, 137, 0.25)', darkDefault: 'rgba(207, 213, 226, 0.25)', scope: 'theme', selectors: 'button.contrast' },
-      { name: '--color-contrast-inverse', label: 'Contrast Inverse', desc: 'Text on top of contrast background.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-fill', label: 'Contrast Fill', desc: 'Fill for contrast buttons.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-text-hover', label: 'Contrast Hover', desc: 'Text/border color on hover for contrast links and ghost (outline) contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast, button.ghost.contrast' },
+      { name: '--color-contrast-fill-hover', label: 'Contrast Hover Fill', desc: 'Fill on hover for contrast filled buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
+      { name: '--color-contrast-focus-ring', label: 'Contrast Focus Ring', desc: 'Focus ring color for contrast buttons.', type: 'color', lightDefault: 'oklch(from #5d6b89 l c h / 0.25)', darkDefault: 'oklch(from #cfd5e2 l c h / 0.25)', scope: 'theme', selectors: 'button.contrast' },
+      { name: '--color-contrast-on-fill', label: 'Contrast On Fill', desc: 'Text on top of contrast fill.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
     ]
   },
   {
     label: 'Headings',
     vars: [
-      { name: '--color-heading-base', label: 'Heading Base Color', desc: 'Base color for all headings. Lighter/darker variants are calculated via color-mix.', type: 'color', lightDefault: '#2d3138', darkDefault: '#f0f1f3', scope: 'theme', selectors: 'h1, h2, h3, h4, h5, h6' },
-      { name: '--fs-1', label: 'H1 Font Size', desc: 'Font size for <h1> headings.', type: 'text', lightDefault: '2rem', scope: 'root', selectors: 'h1' },
-      { name: '--fs-2', label: 'H2 Font Size', desc: 'Font size for <h2> headings.', type: 'text', lightDefault: '1.75rem', scope: 'root', selectors: 'h2' },
-      { name: '--fs-3', label: 'H3 Font Size', desc: 'Font size for <h3> headings.', type: 'text', lightDefault: '1.5rem', scope: 'root', selectors: 'h3' },
-      { name: '--fs-4', label: 'H4 Font Size', desc: 'Font size for <h4> headings.', type: 'text', lightDefault: '1.25rem', scope: 'root', selectors: 'h4' },
-      { name: '--fs-5', label: 'H5 Font Size', desc: 'Font size for <h5> headings.', type: 'text', lightDefault: '1.125rem', scope: 'root', selectors: 'h5' },
-      { name: '--fs-6', label: 'H6 Font Size', desc: 'Font size for <h6> headings.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h6' },
+      { name: '--h1-size', label: 'H1 Font Size', desc: 'Font size for <h1> headings.', type: 'text', lightDefault: '2rem', scope: 'root', selectors: 'h1' },
+      { name: '--h2-size', label: 'H2 Font Size', desc: 'Font size for <h2> headings.', type: 'text', lightDefault: '1.75rem', scope: 'root', selectors: 'h2' },
+      { name: '--h3-size', label: 'H3 Font Size', desc: 'Font size for <h3> headings.', type: 'text', lightDefault: '1.5rem', scope: 'root', selectors: 'h3' },
+      { name: '--h4-size', label: 'H4 Font Size', desc: 'Font size for <h4> headings.', type: 'text', lightDefault: '1.25rem', scope: 'root', selectors: 'h4' },
+      { name: '--h5-size', label: 'H5 Font Size', desc: 'Font size for <h5> headings.', type: 'text', lightDefault: '1.125rem', scope: 'root', selectors: 'h5' },
+      { name: '--h6-size', label: 'H6 Font Size', desc: 'Font size for <h6> headings.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h6' },
     ]
   },
   {
     label: 'Shadows',
     vars: [
-      { name: '--shadow-sm', label: 'Shadow Small', desc: 'Subtle lift shadow for buttons and small UI elements.', type: 'text', lightDefault: '0 0.0625rem 0.125rem rgba(129, 145, 181, 0.1)', darkDefault: '0 0.0625rem 0.125rem rgba(7, 8.5, 12, 0.1)', scope: 'theme', selectors: 'button' },
-      { name: '--shadow-md', label: 'Shadow Medium', desc: 'Medium elevation shadow for dropdowns.', type: 'text', lightDefault: '0.0625rem 0.125rem 0.5rem rgba(129, 145, 181, 0.15)', darkDefault: '0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15)', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-    ]
-  },
-  {
-    label: 'Mark & Text',
-    vars: [
-      { name: '--color-mark-bg', label: 'Mark Background', desc: 'Background highlight color for <mark> elements.', type: 'color', lightDefault: '#fde7c0', darkDefault: '#014063', scope: 'theme', selectors: 'mark' },
-      { name: '--color-mark-text', label: 'Mark Text', desc: 'Text color inside <mark> elements.', type: 'color', lightDefault: '#0f1114', darkDefault: '#ffffff', scope: 'theme', selectors: 'mark' },
+      { name: '--shadow', label: 'Shadow', desc: 'Multi-layer shadow used by dialogs, cards, menus, and elevated elements. Adapts automatically to light and dark mode.', type: 'text', lightDefault: '0.0145rem 0.029rem 0.174rem rgb(129 145 181 / 0.01698), ...', darkDefault: '0.0145rem 0.029rem 0.174rem rgb(7 9 12 / 0.01698), ...', scope: 'theme', selectors: 'button' },
     ]
   },
   {
     label: 'Forms',
     vars: [
-      { name: '--form-bg', label: 'Input Background', desc: 'Default background for form inputs and selects.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1c212c', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--form-border-color', label: 'Input Border', desc: 'Border color for form inputs in their resting state.', type: 'color', lightDefault: '#cfd5e2', darkDefault: '#2a3140', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--form-text-color', label: 'Input Text', desc: 'Text color inside form fields.', type: 'color', lightDefault: '#23262c', darkDefault: '#e0e3e7', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--form-active-bg', label: 'Input Focus BG', desc: 'Background color when a form field is focused.', type: 'color', lightDefault: '#ffffff', darkDefault: '#1a1f28', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--form-disabled-opacity', label: 'Disabled Opacity', desc: 'Opacity applied to disabled form elements (0–1).', type: 'range', lightDefault: '0.5', darkDefault: '0.5', scope: 'theme', selectors: 'input:disabled, select:disabled, textarea:disabled' },
-      { name: '--form-invalid-border', label: 'Invalid Border', desc: 'Border color for invalid form fields (idle state).', type: 'color', lightDefault: '#c52f21', darkDefault: '#f38f79', scope: 'theme', selectors: '[aria-invalid="true"]' },
-      { name: '--form-valid-border', label: 'Valid Border', desc: 'Border color for valid form fields (idle state).', type: 'color', lightDefault: '#2b7a4c', darkDefault: '#6ed59d', scope: 'theme', selectors: '[aria-invalid="false"]' },
+      { name: '--input-fill', label: 'Input Background', desc: 'Default background for form inputs and selects.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1c212c', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
+      { name: '--input-border', label: 'Input Border', desc: 'Border color for form inputs in their resting state.', type: 'color', lightDefault: '#cfd5e2', darkDefault: '#2a3140', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
+      { name: '--input-text', label: 'Input Text', desc: 'Text color inside form fields.', type: 'color', lightDefault: '#23262c', darkDefault: '#e0e3e7', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
+      { name: '--input-fill-active', label: 'Input Focus BG', desc: 'Background color when a form field is focused.', type: 'color', lightDefault: '#ffffff', darkDefault: '#1a1f28', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
+      { name: '--input-opacity-disabled', label: 'Disabled Opacity', desc: 'Opacity applied to disabled form elements (0–1).', type: 'range', lightDefault: '0.5', darkDefault: '0.5', scope: 'theme', selectors: 'input:disabled, select:disabled, textarea:disabled' },
     ]
   },
   {
@@ -330,68 +304,65 @@ const variableGroups = [
   {
     label: 'Switch',
     vars: [
-      { name: '--switch-bg', label: 'Track Background', desc: 'Background of the toggle switch track when unchecked.', type: 'color', lightDefault: '#bfc7d9', darkDefault: '#333c4e', scope: 'theme', selectors: '[type=checkbox][role=switch]' },
-      { name: '--switch-thumb-color', label: 'Thumb Color', desc: 'Color of the toggle switch thumb (knob).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: '[type=checkbox][role=switch]' },
+      { name: '--switch-fill', label: 'Track Background', desc: 'Background of the toggle switch track when unchecked.', type: 'color', lightDefault: '#bfc7d9', darkDefault: '#333c4e', scope: 'theme', selectors: '[type=checkbox][role=switch]' },
+      { name: '--switch-thumb-fill', label: 'Thumb Color', desc: 'Color of the toggle switch thumb (knob).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: '[type=checkbox][role=switch]' },
     ]
   },
   {
     label: 'Tables',
     vars: [
-      { name: '--table-border-color', label: 'Table Border', desc: 'Border color for table cells and dividers.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#202632', scope: 'theme', selectors: 'th, td' },
-      { name: '--table-row-stripe-bg', label: 'Stripe Background', desc: 'Background for alternating (striped) table rows.', type: 'text', lightDefault: 'rgba(111, 120, 135, 0.0375)', darkDefault: 'rgba(111, 120, 135, 0.0375)', scope: 'theme', selectors: 'table.striped tbody tr:nth-child(odd)' },
+      { name: '--table-row-fill-striped', label: 'Stripe Background', desc: 'Background for alternating (striped) table rows.', type: 'text', lightDefault: 'oklch(from #6f7887 l c h / 0.0375)', darkDefault: 'oklch(from #6f7887 l c h / 0.0375)', scope: 'theme', selectors: 'table.striped tbody tr:nth-child(odd)' },
     ]
   },
   {
     label: 'Code',
     vars: [
-      { name: '--code-bg', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
-      { name: '--code-color', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
+      { name: '--code-fill', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
+      { name: '--code-text', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
     ]
   },
   {
-    label: 'Pane, Panel & Card',
+    label: 'Dialog, Pane & Card',
     vars: [
-      { name: '--pane-bg', label: 'Background', desc: 'Background color of panel, panel and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
-      { name: '--pane-section-border', label: 'Section Border', desc: 'Border color of header/footer sections.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
-      { name: '--pane-section-bg', label: 'Section Background', desc: 'Background for header/footer sections.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
+      { name: '--dialog-fill', label: 'Background', desc: 'Background color of pane, panel and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
+      { name: '--dialog-border', label: 'Section Border', desc: 'Border color of header/footer sections.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
+      { name: '--dialog-section-fill', label: 'Section Background', desc: 'Background for header/footer sections.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
     ]
   },
   {
     label: 'Accordion',
     vars: [
-      { name: '--accordion-border', label: 'Border', desc: 'Border color of accordion (details) components.', type: 'color', lightDefault: '#e7eaf0', darkDefault: '#202632', scope: 'theme', selectors: 'details' },
-      { name: '--accordion-closed-summary', label: 'Closed Summary', desc: 'Text color of <summary> when accordion is closed.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:not([open]) summary' },
-      { name: '--accordion-open-summary', label: 'Open Summary', desc: 'Text color of <summary> when accordion is open.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'details[open] summary' },
+      { name: '--details-summary-text', label: 'Closed Summary', desc: 'Text color of <summary> when accordion is closed.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:not([open]) summary' },
+      { name: '--details-summary-text-open', label: 'Open Summary', desc: 'Text color of <summary> when accordion is open.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'details[open] summary' },
     ]
   },
   {
     label: 'Menus & Dropdowns',
     vars: [
-      { name: '--menu-bg', label: 'Menus & Dropdowns BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-fill', label: 'Menus & Dropdowns BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
       { name: '--menu-border', label: 'Menus & Dropdowns Border', desc: 'Border color of dropdown menus.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
       { name: '--menu-text', label: 'Menus & Dropdowns Text', desc: 'Text color inside dropdown menus.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--menu-hover-bg', label: 'Menus & Dropdowns Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
+      { name: '--menu-fill-hover', label: 'Menus & Dropdowns Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
     ]
   },
   {
     label: 'Progress',
     vars: [
-      { name: '--progress-bg', label: 'Track BG', desc: 'Background of the progress bar track (empty portion).', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'progress' },
+      { name: '--progress-track-fill', label: 'Track BG', desc: 'Background of the progress bar track (empty portion).', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'progress' },
       { name: '--progress-fill', label: 'Fill Color', desc: 'Color of the filled portion of progress bars.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'progress' },
     ]
   },
   {
     label: 'Tooltip',
     vars: [
-      { name: '--tooltip-bg', label: 'Tooltip BG', desc: 'Background of tooltips shown on [role-tooltip] elements.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: '[role-tooltip]' },
+      { name: '--tooltip-fill', label: 'Tooltip BG', desc: 'Background of tooltips shown on [role=tooltip] elements.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: '[role=tooltip]' },
       { name: '--tooltip-text', label: 'Tooltip Text', desc: 'Text color inside tooltips.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: '[role-tooltip]' },
     ]
   },
   {
-    label: 'Backdrop Overlay',
+    label: 'Dialog Overlay',
     vars: [
-      { name: '--backdrop-overlay-bg', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals.', type: 'text', lightDefault: 'rgba(232, 234, 237, 0.75)', darkDefault: 'rgba(7.5, 8.5, 10, 0.75)', scope: 'theme', selectors: 'dialog' },
-      { name: '--backdrop-overlay-filter', label: 'Overlay Blur', desc: 'Blur filter applied behind the modal overlay.', type: 'text', lightDefault: 'blur(0.375rem)', scope: 'root', selectors: 'dialog' },
+      { name: '--dialog-overlay', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals. Adapts to light/dark mode automatically.', type: 'text', lightDefault: 'oklch(from #e8eaed l c h / 0.75)', darkDefault: 'oklch(from #07090c l c h / 0.75)', scope: 'theme', selectors: 'dialog' },
     ]
   },
 ]
@@ -892,7 +863,7 @@ function getPreviewStyle(v) {
   if (v.name === '--line-height') {
     styles.lineHeight = value
   }
-  if (v.name === '--border-radius') {
+  if (v.name === '--radius') {
     styles.borderRadius = value
   }
   if (v.name === '--spacing') {

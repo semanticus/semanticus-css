@@ -1,56 +1,32 @@
-/*
-  Semanticus CSS Palette: Sand
-  Overrides primary color variables for the sand palette
-*/
+:root {
+  /* --color-sand-950: #111110; */
+  /* --color-sand-900: #1c1b19; */
+  /* --color-sand-850: #272622; */
+  /* --color-sand-800: #32302b; */
+  /* --color-sand-750: #3d3b35; */
+  /* --color-sand-700: #49463f; */
+  /* --color-sand-650: #55524a; */
+  /* --color-sand-600: #615e55; */
+  --color-sand-550: #6e6a60;
+  /* --color-sand-500: #7b776b; */
+  /* --color-sand-450: #888377; */
+  --color-sand-400: #959082;
+  --color-sand-350: #a39e8f;
+  /* --color-sand-300: #b0ab9b; */
+  /* --color-sand-250: #beb8a7; */
+  /* --color-sand-200: #ccc6b4; */
+  /* --color-sand-150: #dad4c2; */
+  /* --color-sand-100: #e8e2d2; */
+  /* --color-sand-50: #f2f0ec; */
+  /* --color-sand: var(--color-sand-550); */
 
-/* Light theme - Sand */
-[data-theme="light"],
-:root:not([data-theme="dark"]),
-:host(:not([data-theme="dark"])) {
-  --color-text-selection: rgba(181, 157, 119, 0.25);
-  --color-primary-rgb: 107, 87, 51;
-  --color-primary-bg: #e6d5b8;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(107, 87, 51, 0.5);
-  --color-primary-hover: #544229;
-  --color-primary-hover-bg: #ebdcc3;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(181, 157, 119, 0.5);
-  --color-primary-inverse: #000;
-  --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-}
+  /* System tokens */
+  --color-selection: light-dark(oklch(from var(--color-sand-400) l c h / 0.25), oklch(from var(--color-sand-350) l c h / 0.1875));
 
-/* Dark theme - Sand */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]),
-  :host(:not([data-theme])) {
-    --color-text-selection: rgba(201, 178, 140, 0.1875);
-    --color-primary-rgb: 201, 178, 140;
-    --color-primary-bg: #e6d5b8;
-    --color-primary-border: var(--color-primary-bg);
-    --color-primary-underline: rgba(201, 178, 140, 0.5);
-    --color-primary-hover: #dcc6a5;
-    --color-primary-hover-bg: #ebdcc3;
-    --color-primary-hover-border: var(--color-primary-hover-bg);
-    --color-primary-hover-underline: var(--color-primary-hover);
-    --color-primary-focus: rgba(201, 178, 140, 0.375);
-    --color-primary-inverse: #000;
-    --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  }
-}
+  --color-primary-text: light-dark(var(--color-sand-550), var(--color-sand-350));
+  --color-primary-fill: var(--color-sand-550);
+  --color-primary-on-fill: white;
 
-[data-theme="dark"] {
-  --color-text-selection: rgba(201, 178, 140, 0.1875);
-  --color-primary-rgb: 201, 178, 140;
-  --color-primary-bg: #e6d5b8;
-  --color-primary-border: var(--color-primary-bg);
-  --color-primary-underline: rgba(201, 178, 140, 0.5);
-  --color-primary-hover: #dcc6a5;
-  --color-primary-hover-bg: #ebdcc3;
-  --color-primary-hover-border: var(--color-primary-hover-bg);
-  --color-primary-hover-underline: var(--color-primary-hover);
-  --color-primary-focus: rgba(201, 178, 140, 0.375);
-  --color-primary-inverse: #000;
-  --switch-thumb-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));
 }

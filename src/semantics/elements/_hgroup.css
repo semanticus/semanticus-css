@@ -6,7 +6,7 @@ hgroup {
     margin-bottom: 0;
 
     &:not(:first-child):last-child {
-      color: color-mix(in srgb, var(--color-text), rgb(128, 128, 128) 70%);
+      color: var(--color-text-muted);
       --font-weight: unset;
       font-size: 1rem;
     }

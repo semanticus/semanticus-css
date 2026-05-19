@@ -108,7 +108,7 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
 
 ### 3. Variants
 
-CSS classes that tweak **Semantic Styling** and **Components** via **CSS variables** - throw in a [variant](https://semanticus.design/docs/variants/) when you want to add or reduce visual flair.
+CSS classes that tweak the **Semantic Styling** and **Components** - throw in a [variant](https://semanticus.design/docs/variants/) when you want to add or reduce visual flair.
 
 ```html
 <article class="card secondary">
@@ -210,6 +210,21 @@ It does however provide documentation and examples on how to implement common UI
 ## Development
 
 Check out this [How to setup the project](docs/about/contributing.md#how-to-setup-the-project) inside the contributing guide.
+
+## Size comparison
+
+| Bundle | Gzip |
+| --- | --- |
+| Pico (classless / semantics only) | 10.2 KB |
+| Semanticus (semantics only) | 11.3 KB |
+| Pico (semantics + classes) | 11.5 KB |
+| Semanticus (no utilities) | 13.4 KB |
+| Bootstrap (utilities only) | 10.9 KB |
+| Bootstrap (utilities + grid) | 16.3 KB |
+| Semanticus (utilities only) | 9.4 KB |
+| Bootstrap (full) | 30.4 KB |
+| Semanticus (full) | 22.4 KB |
+| Bootstrap (full + javascript) | 53.8 KB |
 
 ## License
 

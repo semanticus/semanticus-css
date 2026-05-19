@@ -1,69 +1,47 @@
 .border-primary {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-primary-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-primary-fill);
 }
 
 .border-secondary {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-secondary-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-secondary-fill);
 }
 
 .border-success {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-success-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-success-fill);
 }
 
 .border-info {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-info-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-info-fill);
 }
 
 .border-warning {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-warning-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-warning-fill);
 }
 
 .border-danger {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-danger-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-danger-fill);
 }
 
 .border-contrast {
-  --border-opacity: 1;
-
-  border-color: rgba(var(--color-contrast-rgb), var(--border-opacity)) !important;
+  --color-border: var(--color-contrast-fill);
 }
 
-.border-primary-subtle {
-  border-color: var(--color-primary-border-subtle) !important;
+.border-opacity-10 {
+  --color-border-opacity: 10%;
 }
 
-.border-secondary-subtle {
-  border-color: var(--color-secondary-border-subtle) !important;
+.border-opacity-25 {
+  --color-border-opacity: 25%;
 }
 
-.border-success-subtle {
-  border-color: var(--color-success-border-subtle) !important;
+.border-opacity-50 {
+  --color-border-opacity: 50%;
 }
 
-.border-info-subtle {
-  border-color: var(--color-info-border-subtle) !important;
+.border-opacity-75 {
+  --color-border-opacity: 75%;
 }
 
-.border-warning-subtle {
-  border-color: var(--color-warning-border-subtle) !important;
-}
-
-.border-danger-subtle {
-  border-color: var(--color-danger-border-subtle) !important;
-}
-
-.border-contrast-subtle {
-  border-color: var(--color-contrast-border-subtle) !important;
+.border-opacity-100 {
+  --color-border-opacity: 100%;
 }

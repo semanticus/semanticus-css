@@ -8,10 +8,26 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | Removed `--pico` prefix from all CSS variables |
 | ✅ | Utility composition system |
-| ✅ | Consolidated Pico CSS and Bootstrap css variables into one unified system |
+| ✅ | Consolidated **Pico CSS** and **Bootstrap** css variables into one unified system |
 | ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
-| ⌛ | CSS variables token organization |
-| ⌛ | Reducing light/dark CSS variables footprint |
+| ✅ | CSS variables token organization |
+| ✅ | Reducing CSS variables footprint with light/dark mode optimization |
+| ✅ | Stack/layout primitives |
+| ✅ | **intent** colors based on **Bootstrap** `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `contrast` (replacing `light` and `dark`) |
+| ⌛ | Grid system |
+| ⌛ | `role="alert"` |
+
+## Components
+
+| Status | Feature |
+| --- | --- |
+| ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
+| ✅ | Removed `<article>` the **card** style |
+| ✅ | `.pane` component |
+| ✅ | `.panel` component |
+| 🚧 | `.sidebar` component |
+| ⌛ | `.carousel` component |
+| ⌛ | `.badge` component |
 
 ## Variants & Utilities
 
@@ -21,15 +37,15 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Replaced **Bootstrap** *light* and *dark* utility classes with **Pico CSS** *contrast* |
 | ✅ | Removed the **card** style from `<article>` onto a variant `.card` class |
 | ✅ | Removed the `.outline` variant to prevent collision with possible future utility classes |
-| ✅ | Added the `.ghost` variant, replacing the `.outline` variant |
-| ✅ | Added the `.pane` and `.panel` variants, based off the `.card` class |
-| ✅ | Extended the reach of `.secondary` and `.contrast` variants, to `.pane`, `.panel`, and `.card` variants |
-| ⌛ | Add `.primary` variant based of **Bootstrap** colors |
-| ⌛ | Add `.success` variant based of **Bootstrap** colors |
-| ⌛ | Add `.warning` variant based of **Bootstrap** colors |
-| ⌛ | Add `.danger` variant based of **Bootstrap** colors |
-| ⌛ | Add `.info` variant based of **Bootstrap** colors |
-| ⌛ | Add `.badge` variant |
+| ✅ | `.ghost` modifier variant, replacing **Pico CSS**'s `.outline` class |
+| ✅ | `.primary` intent variant |
+| ✅ | `.success` intent variant |
+| ✅ | `.warning` intent variant |
+| ✅ | `.danger` intent variant |
+| ✅ | `.info` intent variant |
+| ✅ | `.subtle` modifier variant |
+| 🚧 | `.striped` modifier variant |
+| ⌛ | Extend **intent variants**'s reach to `<progress>` |
 
 ## Interactive Patterns
 
@@ -40,18 +56,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Dropdown menu primitives |
 | 🚧 | Anchor Positioning tooltips |
 | ⌛ | Tab |
-| ⌛ | Alert |
-| ⌛ | Confirm |
-| ⌛ | Prompt |
+| ⌛ | Carousel |
+| ⌛ | Floating Alert |
+| ⌛ | Alert Dialog |
+| ⌛ | Confirm Dialog |
+| ⌛ | Prompt Dialog |
 | ⌛ | Popover |
-| ⌛ | Toast |
-
-## Layout
-
-| Status | Feature |
-| --- | --- |
-| ✅ | Stack/layout primitives |
-| ⌛ | Grid system |
 
 ## Documentation & Tooling
 
@@ -62,12 +72,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Single source of truth demonstration files |
 | ✅ | Simplified the build process by removing the need for Sass |
 | ✅ | Live code previewer and editor |
+| ✅ | Live code previewer codeCollapsed option |
 | ✅ | Palette and Size picker |
 | ✅ | Theme Builder to help the developer visualize which CSS variable does what |
 | ✅ | ARIA pattern documentation |
-| 🚧 | Exhaustive HTML elements and attributes documentation |
-| 🚧 | Exhaustive Composites documentation |
-| 🚧 | Exhaustive variants documentation and their combinations with HTML elements |
+| ✅ | Exhaustive HTML elements and attributes documentation |
+| ✅ | Exhaustive Composites documentation |
+| ✅ | Exhaustive variants documentation and their combinations with HTML elements |
 | ✅ | Exhaustive Utility classes documentation |
 | ✅ | Documentation page example |
 | ⌛ | Different layouts examples |
@@ -88,11 +99,18 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Modal interaction |
 | ✅ | Accordion interaction |
 | ✅ | Dropdown interaction |
+| ✅ | `.primary` variant combinations |
 | ✅ | `.secondary` variant combinations |
 | ✅ | `.contrast` variant combinations |
+| ✅ | `.success` variant combinations |
+| ✅ | `.info` variant combinations |
+| ✅ | `.warning` variant combinations |
+| ✅ | `.danger` variant combinations |
 | ⌛ | `.sidebar` popover interaction |
-| ⌛ | Alert interaction |
-| ⌛ | Prompt interaction |
-| ⌛ | Confirm interaction |
+| ⌛ | Tab interaction |
+| ⌛ | Carousel interaction |
+| ⌛ | Floating Alert interaction |
+| ⌛ | Alert Dialog interaction |
+| ⌛ | Confirm Dialog interaction |
+| ⌛ | Prompt Dialog interaction |
 | ⌛ | Popover interaction |
-| ⌛ | Tabs interaction |

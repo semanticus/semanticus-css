@@ -1,5 +1,5 @@
 aside {
-  width: var(--sidebar-width) !important;
+  width: var(--sidebar-size) !important;
   padding: var(--spacing) !important;
 
   :where(ol, ul, li) {

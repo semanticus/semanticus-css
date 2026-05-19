@@ -1,0 +1,33 @@
+.focus-ring:focus {
+  outline: 0;
+  box-shadow: var(--focus-ring-x, 0) var(--focus-ring-y, 0) var(--focus-ring-blur, 0) var(--outline-size) var(--focus-ring-color);
+}
+
+.focus-ring,
+.focus-ring-primary {
+  --focus-ring-color: var(--color-primary-focus-ring);
+}
+
+.focus-ring-secondary {
+  --focus-ring-color: var(--color-secondary-focus-ring);
+}
+
+.focus-ring-success {
+  --focus-ring-color: var(--color-success-focus-ring);
+}
+
+.focus-ring-info {
+  --focus-ring-color: var(--color-info-focus-ring);
+}
+
+.focus-ring-warning {
+  --focus-ring-color: var(--color-warning-focus-ring);
+}
+
+.focus-ring-danger {
+  --focus-ring-color: var(--color-danger-focus-ring);
+}
+
+.focus-ring-contrast {
+  --focus-ring-color: var(--color-contrast-focus-ring);
+}

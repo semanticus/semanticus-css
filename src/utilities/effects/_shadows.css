@@ -1,8 +1,3 @@
-.focus-ring:focus {
-  outline: 0;
-  box-shadow: var(--focus-ring-x, 0) var(--focus-ring-y, 0) var(--focus-ring-blur, 0) var(--focus-ring-width) var(--focus-ring-color);
-}
-
 .shadow {
   box-shadow: var(--shadow-md) !important;
 }
@@ -17,32 +12,4 @@
 
 .shadow-none {
   box-shadow: none !important;
-}
-
-.focus-ring-primary {
-  --focus-ring-color: rgba(var(--color-primary-rgb), var(--focus-ring-opacity));
-}
-
-.focus-ring-secondary {
-  --focus-ring-color: rgba(var(--color-secondary-rgb), var(--focus-ring-opacity));
-}
-
-.focus-ring-success {
-  --focus-ring-color: rgba(var(--color-success-rgb), var(--focus-ring-opacity));
-}
-
-.focus-ring-info {
-  --focus-ring-color: rgba(var(--color-info-rgb), var(--focus-ring-opacity));
-}
-
-.focus-ring-warning {
-  --focus-ring-color: rgba(var(--color-warning-rgb), var(--focus-ring-opacity));
-}
-
-.focus-ring-danger {
-  --focus-ring-color: rgba(var(--color-danger-rgb), var(--focus-ring-opacity));
-}
-
-.focus-ring-contrast {
-  --focus-ring-color: rgba(var(--color-contrast-rgb), var(--focus-ring-opacity));
 }

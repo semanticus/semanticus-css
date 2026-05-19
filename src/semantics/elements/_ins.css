@@ -1,4 +1,4 @@
 ins {
-  color: rgb(var(--color-success-rgb));
+  color: var(--color-success-text);
   text-decoration: none;
 }

@@ -12,30 +12,10 @@ The `<article>` element represents a self-contained composition — such as a bl
 
 It carries semantic meaning that distinguishes it from a generic `<div>`.
 
+Add `.card` for visual styling (background, shadow, border-radius), see more at [Card section](/docs/composites/card).
+
 ## Basic Usage
 
 By default, the `<article>` element has no visual styling.
 
 <HtmlPreviewer :code="ArticleDemo.main()" />
-
-## Card
-
-<HtmlPreviewer :code="ArticleDemo.card()" />
-
-## Card with Header
-
-<HtmlPreviewer :code="ArticleDemo.cardWithHeader()" />
-
-## Card with Footer
-
-<HtmlPreviewer :code="ArticleDemo.cardWithFooter()" />
-
-## Complete Card
-
-<HtmlPreviewer :code="ArticleDemo.completeCard()" />
-
-## Semantic vs Visual
-
-- Use `<article>` for semantic structure (self-contained content)
-- Add `.card` for visual styling (background, shadow, border-radius)
-- This separation allows you to use `<article>` without card styling when appropriate
