@@ -12,12 +12,12 @@
 
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.primary {
-    --color-background: oklch(from var(--color-primary-fill) l c h / var(--background-color-opacity));
+    --color-background: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
     --border-color: oklch(from var(--color-primary-fill) l c h / var(--border-color-opacity));
     --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-background: oklch(from var(--color-primary-fill-hover) l c h / var(--background-color-opacity));
+      --color-background: oklch(from var(--color-primary-fill-hover) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-primary-fill-hover) l c h / var(--border-color-opacity));
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
     }
@@ -32,7 +32,7 @@
 :is(.card, .pane, .panel).primary {
   --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-primary-on-fill-muted) l c h / var(--color-text-opacity));
-  --dialog-fill: oklch(from var(--color-primary-fill) l c h / var(--background-color-opacity));
-  --dialog-border: oklch(from var(--color-primary-fill) l c h / var(--background-color-opacity));
+  --dialog-fill: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
+  --dialog-border: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
   --dialog-section-fill: color-mix(in srgb, var(--color-primary-fill) 90%, black);
 }

@@ -1,0 +1,19 @@
+.subtle-opacity-10 {
+  --subtle-opacity: 10%;
+}
+
+.subtle-opacity-25 {
+  --subtle-opacity: 25%;
+}
+
+.subtle-opacity-50 {
+  --subtle-opacity: 50%;
+}
+
+.subtle-opacity-75 {
+  --subtle-opacity: 75%;
+}
+
+.subtle-opacity-100 {
+  --subtle-opacity: 100%;
+}

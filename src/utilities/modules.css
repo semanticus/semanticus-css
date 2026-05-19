@@ -18,10 +18,11 @@
 @import './borders/_border-width.css';
 
 /* colors */
+@import './colors/_bg-colors.css';
 @import './colors/_border-colors.css';
+@import './colors/_subtle-colors.css';
 @import './colors/_text-bg-colors.css';
 @import './colors/_text-colors.css';
-@import './colors/_bg-colors.css';
 
 /* display */
 @import './display/_display.css';

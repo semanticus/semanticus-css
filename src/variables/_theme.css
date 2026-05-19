@@ -51,11 +51,11 @@
   /* === GLOBAL SYSTEM TOKENS === */
 
   --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
+  --color-background-opacity: 100%;
   --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
+  --color-text-opacity: 100%;
   --color-text-muted: light-dark(var(--color-zinc-400), var(--color-zinc-450));
   --color-border: light-dark(var(--color-slate-100), var(--color-slate-800));
-  --color-text-opacity: 100%;
-  --background-color-opacity: 100%;
   --border-color-opacity: 100%;
 
   /* Spacing - shared base unit */

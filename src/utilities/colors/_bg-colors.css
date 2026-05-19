@@ -7,49 +7,49 @@
 }
 
 .bg-body {
-  --background-color: oklch(from var(--color-background) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-background) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-primary {
-  --background-color: oklch(from var(--color-primary-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-secondary {
-  --background-color: oklch(from var(--color-secondary-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-success {
-  --background-color: oklch(from var(--color-success-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-info {
-  --background-color: oklch(from var(--color-info-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-info-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-warning {
-  --background-color: oklch(from var(--color-warning-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-danger {
-  --background-color: oklch(from var(--color-danger-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
 
 .bg-contrast {
-  --background-color: oklch(from var(--color-contrast-fill) l c h / var(--background-color-opacity));
+  --background-color: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
 
   background-color: var(--background-color) !important;
 }
@@ -67,7 +67,7 @@
 }
 
 .bg-success-subtle {
-  --background-color: var(--color-success-subtle-fill);
+  --background-color: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
 
   background-color: var(--background-color) !important;
 }
@@ -97,21 +97,21 @@
 }
 
 .bg-opacity-10 {
-  --background-color-opacity: 10%;
+  --color-background-opacity: 10%;
 }
 
 .bg-opacity-25 {
-  --background-color-opacity: 25%;
+  --color-background-opacity: 25%;
 }
 
 .bg-opacity-50 {
-  --background-color-opacity: 50%;
+  --color-background-opacity: 50%;
 }
 
 .bg-opacity-75 {
-  --background-color-opacity: 75%;
+  --color-background-opacity: 75%;
 }
 
 .bg-opacity-100 {
-  --background-color-opacity: 100%;
+  --color-background-opacity: 100%;
 }
