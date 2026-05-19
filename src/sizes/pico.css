@@ -23,22 +23,21 @@
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
   --base-spacing: 1rem;
-  --responsive-multiplier: 1;
-  --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
+  --spacing: var(--base-spacing);
   --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
-  --form-element-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
-  --form-element-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
+  --input-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
+  --input-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
   /* Shadows – used by [role="group"] and [role="search"] button/input combos */
   --group-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Default (no shadow) */
-  --group-shadow-focus-with-button: 0 0 0 var(--outline-size) var(--color-primary-focus); /* Focus ring when a button inside the group is focused */
-  --group-shadow-focus-with-input: 0 0 0 0.0625rem var(--form-border-color); /* Focus ring when an input inside the group is focused */
+  --group-shadow-focus-button: 0 0 0 var(--outline-size) var(--color-primary-focus-ring); /* Focus ring when a button inside the group is focused */
+  --group-shadow-focus-input: 0 0 0 0.0625rem var(--input-border); /* Focus ring when an input inside the group is focused */
 
   /* Navigation – spacing and breadcrumb configuration */
-  --nav-link-spacing: calc(var(--spacing) * 0.5); /* padding inside nav links */
+  --nav-link-gap: calc(var(--spacing) * 0.5); /* padding inside nav links */
   --nav-breadcrumb-divider: ">"; /* Character displayed between breadcrumb items */
 
-  --sidebar-width: 25%; /* Sidebar width */
+  --sidebar-size: 25%; /* Sidebar width */
 }
 
 /* Responsive Font Sizes – progressively increase root font-size at wider viewports */
@@ -46,10 +45,8 @@
   :root,
   :host {
     --font-size: 106.25%;
-    --sidebar-width: max(25%, 150px);
-    --responsive-multiplier: 1.25;
-    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
-    --nav-link-spacing: calc(var(--spacing) * 0.5);
+    --sidebar-size: max(25%, 150px);
+    --spacing: calc(var(--base-spacing) * 1.25);
   }
 }
 
@@ -57,10 +54,8 @@
   :root,
   :host {
     --font-size: 112.5%;
-    --sidebar-width: max(22%, 180px);
-    --responsive-multiplier: 1.5;
-    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
-    --nav-link-spacing: calc(var(--spacing) * 0.5);
+    --sidebar-size: max(22%, 180px);
+    --spacing: calc(var(--base-spacing) * 1.5);
   }
 }
 
@@ -68,10 +63,8 @@
   :root,
   :host {
     --font-size: 118.75%;
-    --sidebar-width: max(20%, 200px);
-    --responsive-multiplier: 1.75;
-    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
-    --nav-link-spacing: calc(var(--spacing) * 0.5);
+    --sidebar-size: max(20%, 200px);
+    --spacing: calc(var(--base-spacing) * 1.75);
   }
 }
 
@@ -79,10 +72,8 @@
   :root,
   :host {
     --font-size: 125%;
-    --sidebar-width: max(18%, 220px);
-    --responsive-multiplier: 2;
-    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
-    --nav-link-spacing: calc(var(--spacing) * 0.5);
+    --sidebar-size: max(18%, 220px);
+    --spacing: calc(var(--base-spacing) * 2);
   }
 }
 
@@ -90,9 +81,7 @@
   :root,
   :host {
     --font-size: 131.25%;
-    --sidebar-width: clamp(240px, 16%, 300px);
-    --responsive-multiplier: 2.25;
-    --spacing: calc(var(--base-spacing) * var(--responsive-multiplier));
-    --nav-link-spacing: calc(var(--spacing) * 0.5);
+    --sidebar-size: clamp(240px, 16%, 300px);
+    --spacing: calc(var(--base-spacing) * 2.25);
   }
 }
