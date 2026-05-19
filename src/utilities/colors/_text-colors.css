@@ -9,7 +9,7 @@
 }
 
 .text-muted {
-  --color-text: oklch(from var(--color-text-muted) l c h / var(--color-text-opacity));
+  --color-text: var(--color-text-muted);
 
   color: var(--color-text) !important;
 }

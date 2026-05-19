@@ -1,29 +1,22 @@
 :root, :host {
   /* Primary subtle colors */
   --color-primary-subtle-fill: color-mix(in srgb, var(--color-primary-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-primary-subtle-on-fill: white;
 
   /* Secondary subtle colors */
   --color-secondary-subtle-fill: color-mix(in srgb, var(--color-secondary-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-secondary-subtle-on-fill: white;
 
   /* Contrast subtle colors */
   --color-contrast-subtle-fill: color-mix(in srgb, var(--color-contrast-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-contrast-subtle-on-fill: white;
 
   /* Success subtle colors */
   --color-success-subtle-fill: color-mix(in srgb, var(--color-success-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-success-subtle-on-fill: white;
 
   /* Info subtle colors */
   --color-info-subtle-fill: color-mix(in srgb, var(--color-info-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-info-subtle-on-fill: white;
 
   /* Warning subtle colors */
   --color-warning-subtle-fill: color-mix(in srgb, var(--color-warning-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-warning-subtle-on-fill: white;
 
   /* Danger subtle colors */
   --color-danger-subtle-fill: color-mix(in srgb, var(--color-danger-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
-  --color-danger-subtle-on-fill: white;
 }

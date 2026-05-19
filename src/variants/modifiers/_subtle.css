@@ -5,49 +5,49 @@
 :is(.card, .pane, .panel, button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     &.primary {
-      --color-text: oklch(from var(--color-primary-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.secondary {
-      --color-text: oklch(from var(--color-secondary-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.contrast {
-      --color-text: oklch(from var(--color-contrast-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.success {
-      --color-text: oklch(from var(--color-success-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.info {
-      --color-text: oklch(from var(--color-info-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.warning {
-      --color-text: oklch(from var(--color-warning-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--border-color-opacity));
     }
 
     &.danger {
-      --color-text: oklch(from var(--color-danger-subtle-on-fill) l c h / var(--color-text-opacity));
+      --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
       --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
       --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--border-color-opacity));
@@ -57,7 +57,7 @@
 
 :is(button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
-    --color-text: oklch(from var(--color-primary-subtle-on-fill) l c h / var(--color-text-opacity));
+    --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
     --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
     --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--border-color-opacity));
     --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
@@ -120,7 +120,7 @@
 
 /* Reset buttons */
 [type="reset"].subtle {
-  --color-text: var(--color-secondary-subtle-on-fill);
+  --color-text: var(--color-secondary-on-fill);
   --color-background: var(--color-secondary-subtle-fill);
   --border-color: var(--color-secondary-subtle-fill);
   --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
