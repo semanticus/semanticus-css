@@ -1,125 +1,125 @@
 .text-bg-primary {
-  --background-color: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-primary-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-secondary {
-  --background-color: oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-secondary-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-contrast {
-  --background-color: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-success {
-  --background-color: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-success-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-info {
-  --background-color: oklch(from var(--color-info-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-info-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-info-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-warning {
-  --background-color: oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-warning-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-danger {
-  --background-color: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-danger-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-primary-subtle {
-  --background-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-primary-subtle-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-primary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-secondary-subtle {
-  --background-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-secondary-subtle-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-secondary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-contrast-subtle {
-  --background-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-contrast-subtle-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-contrast-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-success-subtle {
   --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-  --background-color: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --color-background: color-mix(in srgb, oklch(from var(--color-success-fill) l c h / var(--color-background-opacity)), var(--subtle-shade) var(--subtle-opacity, 60%));
   --color-text-muted: oklch(from color-mix(in srgb, var(--color-success-text-hover), var(--muted-shade) 75%) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-info-subtle {
-  --background-color: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-info-subtle-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-info-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-warning-subtle {
-  --background-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-warning-subtle-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-warning-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
 
 .text-bg-danger-subtle {
-  --background-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
+  --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
   --color-text: oklch(from var(--color-danger-subtle-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: oklch(from var(--color-danger-subtle-on-fill-muted) l c h / var(--color-text-opacity));
 
   color: var(--color-text) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--color-background) !important;
 }
