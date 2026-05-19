@@ -2,7 +2,7 @@
 [role="link"] {
   &.contrast {
     --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
-    --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
+    --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: oklch(from var(--color-contrast-text-hover) l c h / var(--color-text-opacity));
@@ -31,7 +31,7 @@
 
 :is(.card, .pane, .panel).contrast {
   --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-contrast-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
   --dialog-fill: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
   --dialog-border: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
   --dialog-section-fill: color-mix(in srgb, var(--color-contrast-fill) 90%, black);

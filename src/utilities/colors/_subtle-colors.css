@@ -49,49 +49,49 @@
 
 .text-bg-primary-subtle {
   --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-primary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
 
 .text-bg-secondary-subtle {
   --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-secondary-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
 
 .text-bg-contrast-subtle {
   --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-contrast-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
 
 .text-bg-success-subtle {
   --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-success-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
 
 .text-bg-info-subtle {
   --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-info-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
 
 .text-bg-warning-subtle {
   --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-warning-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
 
 .text-bg-danger-subtle {
   --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: oklch(from var(--color-danger-subtle-on-fill-muted) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
   color: var(--color-text) !important;
 }
