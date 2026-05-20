@@ -3,7 +3,7 @@ title: Validation States
 ---
 
 <script setup>
-import { ValidationStatesDemo } from "@demos/composites";
+import { AriaInvalidDemo } from "@demos/semantics/attributes";
 </script>
 
 # Validation States
@@ -15,20 +15,11 @@ Use the `aria-invalid` attribute to indicate validation state:
 - `aria-invalid="true"` — Indicates the field has failed validation
 - `aria-invalid="false"` — Indicates the field has passed validation
 
-Pair with `aria-describedby` to link helper text that explains the validation result:
-
-```html
-<input
-  type="email"
-  aria-invalid="true"
-  aria-describedby="email-error"
-/>
-<small id="email-error">Please enter a valid email address.</small>
-```
-
 ## Form Validation Example
 
-<HtmlPreviewer :code="ValidationStatesDemo.formValidation()" />
+Pair with `aria-describedby` to link helper text that explains the validation result:
+
+<HtmlPreviewer :code="AriaInvalidDemo.formValidation()" />
 
 ::: info
 The `<small>` element associated with a form control via `aria-describedby` automatically inherits the validation state colors.

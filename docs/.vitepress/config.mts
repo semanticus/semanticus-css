@@ -425,7 +425,7 @@ export default defineConfig({
             { text: ".card", link: "/docs/components/card" },
             { text: ".pane", link: "/docs/components/pane" },
             { text: ".panel", link: "/docs/components/panel" },
-            { text: ".sidebar", link: "/docs/components/sidebar" },
+            // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
         {

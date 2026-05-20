@@ -1,36 +1,38 @@
----
-title: Loading
----
-
-<script setup>
-import { LoadingDemo } from "@demos/composites";
-</script>
-
 # Loading
 
 Loading indicators are implemented using the [ARIA: aria-busy attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy), which consists of an element with `aria-busy="true"` to signal assistive technologies that an element is being updated and its contents are not yet ready.
 
 Or with the `<progress>` element for operations with measurable progress.
 
-## Loading Card
+See [progress](/docs/semantics/elements/progress) for more details and examples.
 
-Use `aria-busy="true"` on containers like cards to indicate content is loading:
+## Loading indicator
 
-<HtmlPreviewer :code="LoadingDemo.loadingCard()" />
+<HtmlPreviewer :code="AriaBusyDemo.main()" />
+
+## Progress indicator
+
+<HtmlPreviewer :code="ProgressDemo.card()" />
 
 ## Loading Button
 
-For buttons, combine `aria-busy="true"` with the `disabled` attribute:
+<HtmlPreviewer :code="AriaBusyDemo.button()" />
 
-<HtmlPreviewer :code="LoadingDemo.loadingButton()" />
+## Loading Card
 
-## Loading with Progress
+<HtmlPreviewer :code="AriaBusyDemo.card()" />
 
-For operations with measurable progress, use the `<progress>` element to show completion percentage:
+## Loading Form
 
-<HtmlPreviewer :code="LoadingDemo.loadingWithProgress()" />
+<HtmlPreviewer :code="AriaBusyDemo.form()" />
 
-## Related
+## Best Practices
 
-- [[aria-busy]](/docs/semantics/attributes/aria-busy) - ARIA attribute for indicating loading state
-- [[progress]](/docs/semantics/elements/progress) - HTML element for displaying progress of an operation
+1. **Show progress** - If duration is known
+2. **Keep users informed** - Don't leave them guessing
+3. **Provide alternatives** - Allow cancellation
+4. **Accessibility** - Use `aria-busy` appropriately
+
+<script setup>
+import { AriaBusyDemo, ProgressDemo } from "@demos/semantics";
+</script>

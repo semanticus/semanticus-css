@@ -4,7 +4,6 @@ import { TypographyDemo } from '@demos/semantics';
 import { IntentDemo } from '@demos/overviews';
 import { CardDemo } from "@demos/components";
 import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { ModalDemo } from '@demos/composites';
 import {
   ADemo,
   InputDemo,
@@ -14,6 +13,7 @@ import {
   FieldsetDemo,
   ProgressDemo,
   TableDemo,
+  DialogDemo,
   FigureDemo,
   NavDemo,
   HgroupDemo,
@@ -301,7 +301,7 @@ function dialogs() {
     <p>Click the button below to open a modal dialog</p>
   </hgroup>
 
-  ${ModalDemo.withHeaderAndFooter()}
+  ${DialogDemo.showModalWithHeaderAndFooter()}
 </section>`;
 }
 

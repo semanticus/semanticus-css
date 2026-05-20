@@ -2,10 +2,6 @@
 title: nav
 ---
 
-<script setup>
-import { NavDemo } from "@demos/semantics/elements";
-</script>
-
 # &lt;nav&gt;
 
 The `<nav>` element is a landmark that identifies a region of navigation links.
@@ -35,3 +31,19 @@ Breadcrumb navigation allows users to keep track of their location within the we
 Navs get stacked vertically when inside a `<aside>`.
 
 <HtmlPreviewer :code="NavDemo.verticalInAside()" />
+
+## Button-Based Pagination
+
+The simplest pagination pattern uses buttons within a group:
+
+<HtmlPreviewer :code="NavDemo.buttonBasedPagination()" />
+
+## Link-Based Pagination
+
+For server-side rendering or distinct page URLs, use anchor elements with `role="button"`:
+
+<HtmlPreviewer :code="NavDemo.linkBasedPagination()" />
+
+<script setup>
+import { NavDemo } from "@demos/semantics/elements";
+</script>

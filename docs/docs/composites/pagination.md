@@ -1,11 +1,3 @@
----
-title: Pagination
----
-
-<script setup>
-import { PaginationDemo } from "@demos/composites";
-</script>
-
 # Pagination
 
 Pagination is a navigation pattern that allows users to move between pages of content.
@@ -19,13 +11,13 @@ Pagination is a navigation pattern that allows users to move between pages of co
 
 The simplest pagination pattern uses buttons within a group:
 
-<HtmlPreviewer :code="PaginationDemo.basicPagination()" />
+<HtmlPreviewer :code="NavDemo.buttonBasedPagination()" />
 
 ## Link-Based Pagination
 
 For server-side rendering or distinct page URLs, use anchor elements with `role="button"`:
 
-<HtmlPreviewer :code="PaginationDemo.linkBasedPagination()" />
+<HtmlPreviewer :code="NavDemo.linkBasedPagination()" />
 
 ## Accessibility Considerations
 
@@ -42,3 +34,7 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 - [&lt;nav&gt;](/docs/semantics/elements/nav) - Navigation element semantics
 - [disabled](/docs/semantics/attributes/disabled) - Disabled state semantics
 - [role="group"](/docs/semantics/attributes/role-group) - For grouping related controls
+
+<script setup>
+import { NavDemo } from "@demos/semantics";
+</script>
