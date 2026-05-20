@@ -1,9 +1,9 @@
-# Grid
+# Grid System
 
 Responsive, 12-column grid system built with CSS Flexbox. Available in the full bundle (`semanticus.css`) and the utilities-only bundle (`semanticus-utilities.css`).
 
 <script setup>
-import { GridDemo } from '@demos';
+import { GridDemo } from '@demos/utilities';
 </script>
 
 ## How it works
