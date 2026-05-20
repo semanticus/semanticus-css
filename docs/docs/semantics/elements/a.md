@@ -12,9 +12,9 @@ The `aria-current="page"` attribute tells assistive technologies which link repr
 
 To convey **intent** and **importance**, links can be styled with different variants. The default variant is `.primary`, which is used for the most important actions on a page, but there are also:
 
-<HtmlPreviewer :code="IntentDemo.links()" :codeCollapsed="true" />
+<HtmlPreviewer :code="IntentDemo.anchorsAndRoleLinks()" :codeCollapsed="true" />
 
 <script setup>
 import { ADemo } from "@demos/semantics/elements";
-import * as IntentDemo from '@demos/overviews/variants/intent/demo';
+import { IntentDemo } from '@demos/overviews/variants';
 </script>

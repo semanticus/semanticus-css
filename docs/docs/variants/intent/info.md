@@ -20,6 +20,17 @@ Apply `.info` to an element with `.card` for a info action card.
 
 <HtmlPreviewer :code="InfoDemo.cards()" />
 
+## Modifiers
+
+`.info` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the info effect.
+
+<HtmlPreviewer :code="GhostDemo.main({ class: 'info' })" :codeCollapsed="true" />
+
+`.info` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.main({ class: 'info' })" :codeCollapsed="true" />
+
 <script setup>
-import { InfoDemo } from "@demos/variants/intent";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import { InfoDemo } from "@demos/overviews/variants/intent";
 </script>

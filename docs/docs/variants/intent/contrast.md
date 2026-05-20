@@ -18,8 +18,19 @@ Apply `.contrast` to `<button>` elements or elements with `[role="button"]` for 
 
 Apply `.contrast` to an element with `.card` for a contrast action card.
 
-<HtmlPreviewer :code="ContrastDemo.cards()" />
+<HtmlPreviewer :code="ContrastDemo.cards()" :codeCollapsed="true" />
+
+## Modifiers
+
+`.contrast` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the contrast effect.
+
+<HtmlPreviewer :code="GhostDemo.main({ class: 'contrast' })" :codeCollapsed="true" />
+
+`.contrast` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.main({ class: 'contrast' })" :codeCollapsed="true" />
 
 <script setup>
-import { ContrastDemo } from "@demos/variants/intent";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import { ContrastDemo } from "@demos/overviews/variants/intent";
 </script>

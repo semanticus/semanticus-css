@@ -143,8 +143,8 @@ Reset inputs have the secondary style by default.
 <HtmlPreviewer :code="SubtleDemo.inputButtons()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import * as IntentDemo from '@demos/overviews/variants/intent/demo';
+import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
+import { IntentDemo } from '@demos/overviews/variants';
 
 import { InputDemo } from "@demos/semantics/elements";
 const miscellaneousTypes = [

@@ -20,6 +20,17 @@ Apply `.secondary` to an element with `.card` for a secondary action card.
 
 <HtmlPreviewer :code="SecondaryDemo.cards()" />
 
+## Modifiers
+
+`.secondary` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the secondary effect.
+
+<HtmlPreviewer :code="GhostDemo.main({ class: 'secondary' })" :codeCollapsed="true" />
+
+`.secondary` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.main({ class: 'secondary' })" :codeCollapsed="true" />
+
 <script setup>
-import { SecondaryDemo } from "@demos/variants/intent";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import { SecondaryDemo } from "@demos/overviews/variants/intent";
 </script>

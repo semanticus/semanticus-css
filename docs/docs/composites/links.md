@@ -22,5 +22,5 @@ To convey **intent** and **importance**, links can be styled with different vari
 
 <script setup>
 import { LinksDemo } from "@demos/composites";
-import * as IntentDemo from '@demos/overviews/variants/intent/demo';
+import { IntentDemo } from '@demos/overviews/variants';
 </script>

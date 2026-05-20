@@ -20,6 +20,17 @@ Apply `.warning` to an element with `.card` for a warning action card.
 
 <HtmlPreviewer :code="WarningDemo.cards()" />
 
+## Modifiers
+
+`.warning` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the warning effect.
+
+<HtmlPreviewer :code="GhostDemo.main({ class: 'warning' })" :codeCollapsed="true" />
+
+`.warning` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.main({ class: 'warning' })" :codeCollapsed="true" />
+
 <script setup>
-import { WarningDemo } from "@demos/variants/intent";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import { WarningDemo } from "@demos/overviews/variants/intent";
 </script>

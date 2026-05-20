@@ -20,6 +20,17 @@ Apply `.primary` to an element with `.card` for a primary action card.
 
 <HtmlPreviewer :code="PrimaryDemo.cards()" />
 
+## Modifiers
+
+`.primary` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the primary effect.
+
+<HtmlPreviewer :code="GhostDemo.main({ class: 'primary' })" :codeCollapsed="true" />
+
+`.primary` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.main({ class: 'primary' })" :codeCollapsed="true" />
+
 <script setup>
-import { PrimaryDemo } from "@demos/variants/intent";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import { PrimaryDemo } from "@demos/overviews/variants/intent";
 </script>

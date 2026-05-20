@@ -20,6 +20,17 @@ Apply `.danger` to an element with `.card` for a danger action card.
 
 <HtmlPreviewer :code="DangerDemo.cards()" />
 
+## Modifiers
+
+`.danger` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the danger effect.
+
+<HtmlPreviewer :code="GhostDemo.main({ class: 'danger' })" :codeCollapsed="true" />
+
+`.danger` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="SubtleDemo.main({ class: 'danger' })" :codeCollapsed="true" />
+
 <script setup>
-import { DangerDemo } from "@demos/variants/intent";
+import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
+import { DangerDemo } from "@demos/overviews/variants/intent";
 </script>
