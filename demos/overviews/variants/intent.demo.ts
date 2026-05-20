@@ -105,23 +105,23 @@ ${roleLinks(attrs)}`;
 export function anchors(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('nav', {}, `${renderElement('ul', {}, `<li>${ADemo.main(attrs, 'Primary')}</li>
-<li>${ADemo.main({ ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}</li>
-<li>${ADemo.main({ ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}</li>
-<li>${ADemo.main({ ...attrs, class: `success ${_class || ''}` }, 'Success')}</li>
-<li>${ADemo.main({ ...attrs, class: `info ${_class || ''}` }, 'Info')}</li>
-<li>${ADemo.main({ ...attrs, class: `warning ${_class || ''}` }, 'Warning')}</li>
-<li>${ADemo.main({ ...attrs, class: `danger ${_class || ''}` }, 'Danger')}</li>`)}`);
+  return renderElement('section', { role: 'toolbar' }, `${ADemo.main(attrs, 'Primary')}
+${ADemo.main({ ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}
+${ADemo.main({ ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}
+${ADemo.main({ ...attrs, class: `success ${_class || ''}` }, 'Success')}
+${ADemo.main({ ...attrs, class: `info ${_class || ''}` }, 'Info')}
+${ADemo.main({ ...attrs, class: `warning ${_class || ''}` }, 'Warning')}
+${ADemo.main({ ...attrs, class: `danger ${_class || ''}` }, 'Danger')}`);
 }
 
 export function roleLinks(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('nav', {}, `${renderElement('ul', {}, `${RoleLinkDemo.main('li', attrs, 'Primary')}
-${RoleLinkDemo.main('li', { ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}
-${RoleLinkDemo.main('li', { ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}
-${RoleLinkDemo.main('li', { ...attrs, class: `success ${_class || ''}` }, 'Success')}
-${RoleLinkDemo.main('li', { ...attrs, class: `info ${_class || ''}` }, 'Info')}
-${RoleLinkDemo.main('li', { ...attrs, class: `warning ${_class || ''}` }, 'Warning')}
-${RoleLinkDemo.main('li', { ...attrs, class: `danger ${_class || ''}` }, 'Danger')}`)}`);
+    return renderElement('section', { role: 'toolbar' }, `${RoleLinkDemo.main('div', attrs, 'Primary')}
+${RoleLinkDemo.main('div', { ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}
+${RoleLinkDemo.main('div', { ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}
+${RoleLinkDemo.main('div', { ...attrs, class: `success ${_class || ''}` }, 'Success')}
+${RoleLinkDemo.main('div', { ...attrs, class: `info ${_class || ''}` }, 'Info')}
+${RoleLinkDemo.main('div', { ...attrs, class: `warning ${_class || ''}` }, 'Warning')}
+${RoleLinkDemo.main('div', { ...attrs, class: `danger ${_class || ''}` }, 'Danger')}`);
 }

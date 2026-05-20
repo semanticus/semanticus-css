@@ -1,11 +1,12 @@
 import { renderElement } from "@scripts/utils";
 
 import { TypographyDemo } from '@demos/semantics';
-import { IntentDemo } from '@demos/overviews/variants';
+import { IntentDemo } from '@demos/overviews';
 import { CardDemo } from "@demos/components";
 import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
 import { ModalDemo } from '@demos/composites';
 import {
+  ADemo,
   InputDemo,
   DetailsDemo,
   SelectDemo,
@@ -25,23 +26,36 @@ import {
   RoleGroupDemo,
   RoleSearchDemo,
   RoleTooltipDemo,
+  RoleLinkDemo,
 } from '@demos/semantics/attributes';
 
 export function buttons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
-  ${IntentDemo.buttons()}
-</section>`;
+  <section role="toolbar">
+    <button>Primary</button>
+    <button class="secondary">Secondary</button>
+    <button class="contrast">Contrast</button>
+    <button disabled>Disabled</button>
+    <button class="secondary" disabled>Disabled</button>
+    <button class="contrast" disabled>Disabled</button>
+  </section>
+`;
 }
 
 export function links() {
   return `<section id="links">
   <h2>Links</h2>
 
-  <nav>
-    ${IntentDemo.anchors()}
-  </nav>
+  <section role="toolbar">
+    ${ADemo.main()}
+    ${RoleLinkDemo.main('button')}
+    ${RoleLinkDemo.main('div')}
+    ${ADemo.active()}
+    ${RoleLinkDemo.active('button')}
+    ${RoleLinkDemo.active('div')}
+  </section>
 </section>`;
 }
 
