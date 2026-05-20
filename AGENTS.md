@@ -62,7 +62,7 @@ npm run docs:update-size-claims        # Download Pico/Bootstrap, compute gzip s
 - **Semantic Selectors**: Target raw elements (`button`, `input`, `nav`) and ARIA roles (`[role=button]`, `[role=tooltip]`).
 - **Utility Classes**: Bootstrap-style naming, always use `!important`.
   - Spacing: `.m-1`, `.mx-2`, `.p-3`, `.gap-4`
-  - Layout: `.flex`, `.justify-between`, `.grid`, `.col-6`
+  - Layout: `.flex`, `.justify-between`
   - Colors: `.text-gray`, `.bg-primary`, `.border-red`
   - Effects: `.shadow-2`, `.opacity-50`
   - Sizing: `.w-100`, `.h-auto`

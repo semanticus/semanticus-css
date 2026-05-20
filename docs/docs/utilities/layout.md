@@ -32,13 +32,6 @@ const objectFitHtml = `<div class="d-flex gap-3 flex-wrap">
   </div>
 </div>
 `;
-const gridHtml = `<div class="grid gap-3">
-  <div class="p-3 bg-primary-subtle border rounded">Auto-fit column 1</div>
-  <div class="p-3 bg-primary-subtle border rounded">Auto-fit column 2</div>
-  <div class="p-3 bg-primary-subtle border rounded">Auto-fit column 3</div>
-  <div class="p-3 bg-primary-subtle border rounded">Auto-fit column 4</div>
-</div>
-`;
 const ratioHtml = `<div class="d-flex gap-3 flex-wrap">
   <div class="w-25">
     <p><code>.ratio-1x1</code></p>
@@ -101,12 +94,6 @@ Grid, aspect ratios, object-fit, and miscellaneous layout helpers.
 Control how replaced elements (images, videos) are resized to fit their container. Responsive variants available: `.object-fit-{breakpoint}-{value}`.
 
 <HtmlPreviewer :code="objectFitHtml" />
-
-## Grid
-
-The `.grid` utility creates a responsive grid container with auto-fit columns.
-
-<HtmlPreviewer :code="gridHtml" />
 
 ## Aspect Ratios
 
