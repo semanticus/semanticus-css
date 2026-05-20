@@ -1,4 +1,4 @@
-import "../dist/semanticus.css";
+import "../src/index.css";
 
 import type { Preview } from "@storybook/html-vite";
 

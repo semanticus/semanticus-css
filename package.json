@@ -81,6 +81,7 @@
   },
   "scripts": {
     "start": "npm run build && npm run docs:dev",
+    "dev": "npm run storybook",
     "lint": "stylelint \"src/**/*.css\"",
     "lint:fix": "stylelint \"src/**/*.css\" --fix",
     "check": "npm run lint && npm run build",
