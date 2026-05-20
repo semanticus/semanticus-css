@@ -39,7 +39,9 @@ export function links() {
   return `<section id="links">
   <h2>Links</h2>
 
-  ${IntentDemo.anchors()}
+  <nav>
+    ${IntentDemo.anchors()}
+  </nav>
 </section>`;
 }
 

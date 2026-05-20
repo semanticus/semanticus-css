@@ -1,20 +1,19 @@
 import { ContrastDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
+import { AnchorDemo, RoleLinkDemo } from '@demos/overviews';
 
 export function links(attrs: Record<string, string> = {}) {
-  return renderElement('nav', {}, `${ContrastDemo.anchor({ ...attrs, class: ["Contrast", attrs.class || ""].join(' ') })}
-
-${ContrastDemo.roleLink("button", { ...attrs, class: ["Contrast", attrs.class || ""].join(' ') })}
-
-${ContrastDemo.roleLink("div", { ...attrs, class: ["Contrast", attrs.class || ""].join(' ') })}`);
+  return `${AnchorDemo.main({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}
+<hr>
+${RoleLinkDemo.main({ ...attrs, class: ["contrast", attrs.class || ""].join(' ') })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${ContrastDemo.button({ ...attrs, class: ["Contrast", attrs.class || ""].join(' ') })}
+  return renderElement('nav', { role: 'toolbar' }, `${ContrastDemo.button(attrs)}
 
-${ContrastDemo.roleButton("div", { ...attrs, class: ["Contrast", attrs.class || ""].join(' ') })}
+${ContrastDemo.roleButton("div", attrs)}
 
-${ContrastDemo.dropdown({ ...attrs, class: ["Contrast", attrs.class || ""].join(' ') })}`);
+${ContrastDemo.dropdown(attrs)}`);
 }
 
 export function cards() {
@@ -26,9 +25,9 @@ ${cardWithHeaderAndFooter()}`;
 }
 
 export function basicCard(attrs: Record<string, string> = {}) {
-  return ContrastDemo.card("div", { ...attrs, class: ["Contrast", attrs.class || ""].join(' ') });
+  return ContrastDemo.card("div", attrs);
 }
 
 export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return ContrastDemo.cardWithHeaderAndFooter("div", { ...attrs, class: ["Contrast", attrs.class || ""].join(' ') });
+  return ContrastDemo.cardWithHeaderAndFooter("div", attrs);
 }

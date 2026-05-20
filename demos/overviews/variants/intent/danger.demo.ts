@@ -1,20 +1,19 @@
 import { DangerDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
+import { AnchorDemo, RoleLinkDemo } from '@demos/overviews';
 
 export function links(attrs: Record<string, string> = {}) {
-  return renderElement('nav', {}, `${DangerDemo.anchor({ ...attrs, class: ["Danger", attrs.class || ""].join(' ') })}
-
-${DangerDemo.roleLink("button", { ...attrs, class: ["Danger", attrs.class || ""].join(' ') })}
-
-${DangerDemo.roleLink("div", { ...attrs, class: ["Danger", attrs.class || ""].join(' ') })}`);
+  return `${AnchorDemo.main({ ...attrs, class: ["danger", attrs.class || ""].join(' ') })}
+<hr>
+${RoleLinkDemo.main({ ...attrs, class: ["danger", attrs.class || ""].join(' ') })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${DangerDemo.button({ ...attrs, class: ["Danger", attrs.class || ""].join(' ') })}
+  return renderElement('nav', { role: 'toolbar' }, `${DangerDemo.button(attrs)}
 
-${DangerDemo.roleButton("div", { ...attrs, class: ["Danger", attrs.class || ""].join(' ') })}
+${DangerDemo.roleButton("div", attrs)}
 
-${DangerDemo.dropdown({ ...attrs, class: ["Danger", attrs.class || ""].join(' ') })}`);
+${DangerDemo.dropdown(attrs)}`);
 }
 
 export function cards() {
@@ -26,9 +25,9 @@ ${cardWithHeaderAndFooter()}`;
 }
 
 export function basicCard(attrs: Record<string, string> = {}) {
-  return DangerDemo.card("div", { ...attrs, class: ["Danger", attrs.class || ""].join(' ') });
+  return DangerDemo.card("div", attrs);
 }
 
 export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return DangerDemo.cardWithHeaderAndFooter("div", { ...attrs, class: ["Danger", attrs.class || ""].join(' ') });
+  return DangerDemo.cardWithHeaderAndFooter("div", attrs);
 }

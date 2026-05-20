@@ -1,2 +1,2 @@
-export * as DetailsDemo from "./details.demo";
-export * as DialogDemo from "./dialog.demo";
+export * from "./attributes";
+export * from "./elements";

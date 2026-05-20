@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { LinksDemo } from "@demos/composites";
-import { IntentDemo } from '@demos/overviews/variants';
+import { RoleLinkDemo, IntentDemo } from '@demos/overviews';
 
 const meta: Meta = {
   title: "Semantics/Attributes/[role=link]",
@@ -10,7 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: LinksDemo.roleLinks() },
+  args: { html: RoleLinkDemo.main() },
   render: (args) => args.html,
 };
 

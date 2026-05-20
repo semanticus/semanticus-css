@@ -1,20 +1,19 @@
 import { PrimaryDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
+import { AnchorDemo, RoleLinkDemo } from '@demos/overviews';
 
 export function links(attrs: Record<string, string> = {}) {
-  return renderElement('nav', {}, `${PrimaryDemo.anchor({ ...attrs, class: ["Primary", attrs.class || ""].join(' ') })}
-
-${PrimaryDemo.roleLink("button", { ...attrs, class: ["Primary", attrs.class || ""].join(' ') })}
-
-${PrimaryDemo.roleLink("div", { ...attrs, class: ["Primary", attrs.class || ""].join(' ') })}`);
+  return `${AnchorDemo.main({ ...attrs, class: ["primary", attrs.class || ""].join(' ') })}
+<hr>
+${RoleLinkDemo.main({ ...attrs, class: ["primary", attrs.class || ""].join(' ') })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${PrimaryDemo.button({ ...attrs, class: ["Primary", attrs.class || ""].join(' ') })}
+  return renderElement('nav', { role: 'toolbar' }, `${PrimaryDemo.button(attrs)}
 
-${PrimaryDemo.roleButton("div", { ...attrs, class: ["Primary", attrs.class || ""].join(' ') })}
+${PrimaryDemo.roleButton("div", attrs)}
 
-${PrimaryDemo.dropdown({ ...attrs, class: ["Primary", attrs.class || ""].join(' ') })}`);
+${PrimaryDemo.dropdown(attrs)}`);
 }
 
 export function cards() {
@@ -26,9 +25,9 @@ ${cardWithHeaderAndFooter()}`;
 }
 
 export function basicCard(attrs: Record<string, string> = {}) {
-  return PrimaryDemo.card("div", { ...attrs, class: ["Primary", attrs.class || ""].join(' ') });
+  return PrimaryDemo.card("div", attrs);
 }
 
 export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return PrimaryDemo.cardWithHeaderAndFooter("div", { ...attrs, class: ["Primary", attrs.class || ""].join(' ') });
+  return PrimaryDemo.cardWithHeaderAndFooter("div", attrs);
 }

@@ -1,20 +1,19 @@
 import { WarningDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
+import { AnchorDemo, RoleLinkDemo } from '@demos/overviews';
 
 export function links(attrs: Record<string, string> = {}) {
-  return renderElement('nav', {}, `${WarningDemo.anchor({ ...attrs, class: ["Warning", attrs.class || ""].join(' ') })}
-
-${WarningDemo.roleLink("button", { ...attrs, class: ["Warning", attrs.class || ""].join(' ') })}
-
-${WarningDemo.roleLink("div", { ...attrs, class: ["Warning", attrs.class || ""].join(' ') })}`);
+  return `${AnchorDemo.main({ ...attrs, class: ["warning", attrs.class || ""].join(' ') })}
+<hr>
+${RoleLinkDemo.main({ ...attrs, class: ["warning", attrs.class || ""].join(' ') })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${WarningDemo.button({ ...attrs, class: ["Warning", attrs.class || ""].join(' ') })}
+  return renderElement('nav', { role: 'toolbar' }, `${WarningDemo.button(attrs)}
 
-${WarningDemo.roleButton("div", { ...attrs, class: ["Warning", attrs.class || ""].join(' ') })}
+${WarningDemo.roleButton("div", attrs)}
 
-${WarningDemo.dropdown({ ...attrs, class: ["Warning", attrs.class || ""].join(' ') })}`);
+${WarningDemo.dropdown(attrs)}`);
 }
 
 export function cards() {
@@ -26,9 +25,9 @@ ${cardWithHeaderAndFooter()}`;
 }
 
 export function basicCard(attrs: Record<string, string> = {}) {
-  return WarningDemo.card("div", { ...attrs, class: ["Warning", attrs.class || ""].join(' ') });
+  return WarningDemo.card("div", attrs);
 }
 
 export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return WarningDemo.cardWithHeaderAndFooter("div", { ...attrs, class: ["Warning", attrs.class || ""].join(' ') });
+  return WarningDemo.cardWithHeaderAndFooter("div", attrs);
 }

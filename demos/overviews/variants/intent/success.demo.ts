@@ -1,20 +1,19 @@
 import { SuccessDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
+import { AnchorDemo, RoleLinkDemo } from '@demos/overviews';
 
 export function links(attrs: Record<string, string> = {}) {
-  return renderElement('nav', {}, `${SuccessDemo.anchor({ ...attrs, class: ["success", attrs.class || ""].join(' ') })}
-
-${SuccessDemo.roleLink("button", { ...attrs, class: ["success", attrs.class || ""].join(' ') })}
-
-${SuccessDemo.roleLink("div", { ...attrs, class: ["success", attrs.class || ""].join(' ') })}`);
+  return `${AnchorDemo.main({ ...attrs, class: ["success", attrs.class || ""].join(' ') })}
+<hr>
+${RoleLinkDemo.main({ ...attrs, class: ["success", attrs.class || ""].join(' ') })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${SuccessDemo.button({ ...attrs, class: ["success", attrs.class || ""].join(' ') })}
+  return renderElement('nav', { role: 'toolbar' }, `${SuccessDemo.button(attrs)}
 
-${SuccessDemo.roleButton("div", { ...attrs, class: ["success", attrs.class || ""].join(' ') })}
+${SuccessDemo.roleButton("div", attrs)}
 
-${SuccessDemo.dropdown({ ...attrs, class: ["success", attrs.class || ""].join(' ') })}`);
+${SuccessDemo.dropdown(attrs)}`);
 }
 
 export function cards() {
@@ -26,9 +25,9 @@ ${cardWithHeaderAndFooter()}`;
 }
 
 export function basicCard(attrs: Record<string, string> = {}) {
-  return SuccessDemo.card("div", { ...attrs, class: ["success", attrs.class || ""].join(' ') });
+  return SuccessDemo.card("div", attrs);
 }
 
 export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return SuccessDemo.cardWithHeaderAndFooter("div", { ...attrs, class: ["success", attrs.class || ""].join(' ') });
+  return SuccessDemo.cardWithHeaderAndFooter("div", attrs);
 }

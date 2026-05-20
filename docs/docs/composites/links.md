@@ -6,13 +6,13 @@ Links are implemented using the `<a>` element and whenever you need to stylize a
 
 The `aria-current="page"` attribute tells assistive technologies which link represents the current page.
 
-<HtmlPreviewer :code="LinksDemo.main()" />
+<HtmlPreviewer :code="AnchorDemo.main()" />
 
 ## Elements rendered as a link
 
 Simply add `role="link"` to any element to make it behave like a link, including being keyboard-accessible and focusable by default.
 
-<HtmlPreviewer :code="LinksDemo.roleLinks()" />
+<HtmlPreviewer :code="RoleLinkDemo.main()" />
 
 ## Intent Variants
 
@@ -21,6 +21,5 @@ To convey **intent** and **importance**, links can be styled with different vari
 <HtmlPreviewer :code="IntentDemo.anchorsAndRoleLinks()" />
 
 <script setup>
-import { LinksDemo } from "@demos/composites";
-import { IntentDemo } from '@demos/overviews/variants';
+import { AnchorDemo, RoleLinkDemo, IntentDemo } from '@demos/overviews';
 </script>
