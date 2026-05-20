@@ -224,8 +224,9 @@
   --dialog-shadow: var(--shadow);
   --dialog-section-fill: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
-    var(--color-slate-800)
+    color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
+  --dialog-section-border: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%);
   --dialog-overlay: light-dark(
     oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
     oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)

@@ -131,6 +131,7 @@ const server = http.createServer(async (req, res) => {
         const html = await runDemo(demoParts.join('/'), fnName);
         const stylePaths = ['/dist/semanticus.css'];
         const paletteName = url.searchParams.get('palette') ?? undefined;
+        const themeName = url.searchParams.get('theme') ?? undefined;
 
         if (paletteName) {
           stylePaths.push(`/dist/semanticus.palette.${paletteName}.css`);
@@ -138,7 +139,7 @@ const server = http.createServer(async (req, res) => {
 
         if (html) {
           res.writeHead(200, { 'Content-Type': 'text/html' });
-          res.end(renderHtmlTemplate(html, { local: true, stylePaths }), 'utf-8');
+          res.end(renderHtmlTemplate(html, { local: true, stylePaths, theme: themeName }), 'utf-8');
           return;
         }
       }

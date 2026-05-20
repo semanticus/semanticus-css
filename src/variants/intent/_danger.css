@@ -34,5 +34,5 @@
   --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
   --dialog-fill: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
   --dialog-border: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
-  --dialog-section-fill: color-mix(in srgb, var(--color-danger-fill) 90%, black);
+  --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
 }
