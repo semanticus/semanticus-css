@@ -16,5 +16,5 @@ To convey **intent** and **importance**, links can be styled with different vari
 
 <script setup>
 import { ADemo } from "@demos/semantics/elements";
-import { IntentDemo } from '@demos/overviews/variants';
+import { IntentDemo } from '@demos/variants';
 </script>

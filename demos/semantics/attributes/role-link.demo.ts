@@ -6,6 +6,16 @@ export function main(tagName: string = "button", attrs: Record<string, string> =
   return `<${tagName} ${renderAttributes(attributes)}>${slot || `${tagName[0].toUpperCase() + tagName.slice(1)} Link`}</${tagName}>`;
 }
 
+export function overview(attrs: Record<string, string> = {}) {
+  return `${main('button', attrs)}
+<hr>
+${active('button', attrs)}
+<hr>
+${main('div', attrs)}
+<hr>
+${active('div', attrs)}`;
+}
+
 export function active(tagName: string = "button", attrs: Record<string, string> = {}, slot: string = undefined) {
   const attributes = { role: "link", "aria-current": "page", ...attrs };
 

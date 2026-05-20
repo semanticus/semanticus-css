@@ -46,6 +46,6 @@ To convey **intent** and **importance**, accordions can be styled with different
 
 <script setup>
 import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/overviews/variants';
+import { IntentDemo } from '@demos/variants';
 import { DetailsDemo } from "@demos/semantics/elements";
 </script>

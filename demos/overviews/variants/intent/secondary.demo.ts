@@ -1,11 +1,11 @@
 import { SecondaryDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
-import { AnchorDemo, RoleLinkDemo } from '@demos/overviews';
+import { ADemo, RoleLinkDemo } from '@demos/semantics';
 
 export function links(attrs: Record<string, string> = {}) {
-  return `${AnchorDemo.main({ ...attrs, class: ["secondary", attrs.class || ""].join(' ') })}
+  return `${ADemo.overview({ ...attrs, class: ["secondary", attrs.class || ""].join(' ') })}
 <hr>
-${RoleLinkDemo.main({ ...attrs, class: ["secondary", attrs.class || ""].join(' ') })}`;
+${RoleLinkDemo.overview({ ...attrs, class: ["secondary", attrs.class || ""].join(' ') })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {

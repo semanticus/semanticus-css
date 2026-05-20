@@ -1,9 +1,8 @@
 import { renderElement } from "@scripts/utils";
 
-import { TypographyDemo } from '@demos/semantics';
-import { IntentDemo } from '@demos/overviews';
+import { IntentDemo } from '@demos/variants';
 import { CardDemo } from "@demos/components";
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
+import { GhostDemo, SubtleDemo } from "@demos/overviews";
 import {
   ADemo,
   InputDemo,
@@ -18,16 +17,14 @@ import {
   NavDemo,
   HgroupDemo,
   ListsDemo,
-} from '@demos/semantics/elements';
-
-import {
   AriaBusyDemo,
   DisabledDemo,
   RoleGroupDemo,
   RoleSearchDemo,
   RoleTooltipDemo,
   RoleLinkDemo,
-} from '@demos/semantics/attributes';
+  TypographyDemo,
+} from '@demos/semantics';
 
 export function buttons() {
   return `<section id="buttons">
@@ -238,7 +235,7 @@ function loadingStates() {
       ${AriaBusyDemo.main("article", {}, "")}
     </section>
     <section>
-      ${AriaBusyDemo.loadingButton({})}
+      ${AriaBusyDemo.button({})}
     </section>
     <section>
       ${AriaBusyDemo.inline()}

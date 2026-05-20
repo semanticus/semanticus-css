@@ -10,7 +10,7 @@ This is useful when a non-link element (e.g. `<button>`, `<div>`) needs to behav
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleLinkDemo.main()" />
+<HtmlPreviewer :code="RoleLinkDemo.overview()" />
 
 ## Intent Variants
 
@@ -19,5 +19,6 @@ To convey **intent** and **importance**, links can be styled with different vari
 <HtmlPreviewer :code="IntentDemo.roleLinks()" />
 
 <script setup>
-import { RoleLinkDemo, IntentDemo } from '@demos/overviews';
+import { RoleLinkDemo } from '@demos/semantics';
+import { IntentDemo } from '@demos/variants';
 </script>

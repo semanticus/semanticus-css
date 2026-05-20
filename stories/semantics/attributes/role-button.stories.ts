@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { RoleButtonDemo } from "@demos/semantics/attributes";
 import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/overviews/variants';
+import { IntentDemo } from '@demos/variants';
 
 const meta: Meta = {
   title: "Semantics/Attributes/[role=button]",

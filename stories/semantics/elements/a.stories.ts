@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { ADemo } from "@demos/semantics/elements";
-import { IntentDemo } from '@demos/overviews/variants';
+import { IntentDemo } from '@demos/variants';
 
 const meta: Meta = {
   title: "Semantics/Elements/<a>",
