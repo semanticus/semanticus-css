@@ -22,7 +22,22 @@ export const withOptgroup: StoryObj = {
   render: (args) => args.html,
 };
 
-export const dropdown: StoryObj = {
-  args: { html: SelectDemo.dropdown() },
+export const withLabel: StoryObj = {
+  args: { html: SelectDemo.withLabel() },
+  render: (args) => args.html,
+};
+
+export const withHelperText: StoryObj = {
+  args: { html: SelectDemo.withHelperText() },
+  render: (args) => args.html,
+};
+
+export const validationStates: StoryObj = {
+  args: { html: SelectDemo.validationStates() },
+  render: (args) => args.html,
+};
+
+export const validationStatesWithTextHelper: StoryObj = {
+  args: { html: SelectDemo.validationStatesWithTextHelper() },
   render: (args) => args.html,
 };

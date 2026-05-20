@@ -42,7 +42,7 @@ export const dropdownInNav: StoryObj = {
   render: (args) => args.html,
 };
 
-export const faq: StoryObj = {
-  args: { html: DetailsDemo.faq() },
+export const faqExample: StoryObj = {
+  args: { html: DetailsDemo.faqExample() },
   render: (args) => args.html,
 };
