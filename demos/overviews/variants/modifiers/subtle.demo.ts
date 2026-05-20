@@ -33,13 +33,13 @@ ${dropdowns(attrs)}`);
 export function roleButtons(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return `${SubtleDemo.roleButton('section', { ...attrs, class: `${_class || ''}` }, '&lt;section&gt; as button')}
-${SubtleDemo.roleButton('section', { ...attrs, class: `secondary ${_class || ''}` }, '&lt;section&gt; as button')}
-${SubtleDemo.roleButton('section', { ...attrs, class: `contrast ${_class || ''}` }, '&lt;section&gt; as button')}
-${SubtleDemo.roleButton('section', { ...attrs, class: `success ${_class || ''}` }, '&lt;section&gt; as button')}
-${SubtleDemo.roleButton('section', { ...attrs, class: `info ${_class || ''}` }, '&lt;section&gt; as button')}
-${SubtleDemo.roleButton('section', { ...attrs, class: `warning ${_class || ''}` }, '&lt;section&gt; as button')}
-${SubtleDemo.roleButton('section', { ...attrs, class: `danger ${_class || ''}` }, '&lt;section&gt; as button')}`;
+  return `${SubtleDemo.roleButton('section', { ...attrs, class: `${_class || ''}` })}
+${SubtleDemo.roleButton('section', { ...attrs, class: `secondary ${_class || ''}` })}
+${SubtleDemo.roleButton('section', { ...attrs, class: `contrast ${_class || ''}` })}
+${SubtleDemo.roleButton('section', { ...attrs, class: `success ${_class || ''}` })}
+${SubtleDemo.roleButton('section', { ...attrs, class: `info ${_class || ''}` })}
+${SubtleDemo.roleButton('section', { ...attrs, class: `warning ${_class || ''}` })}
+${SubtleDemo.roleButton('section', { ...attrs, class: `danger ${_class || ''}` })}`;
 }
 
 export function dropdowns(_attrs: Record<string, string> = {}) {
@@ -69,12 +69,23 @@ ${SubtleDemo.accordion({ ...attrs, class: `danger ${_class || ''}` })}`;
 export function cards(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('section', {}, `${SubtleDemo.card('div', { ...attrs, class: `${_class || ''}` })}
-${SubtleDemo.card('div', { ...attrs, class: `primary ${_class || ''}` })}
+  return renderElement('section', {}, `${SubtleDemo.card('div', { ...attrs, class: `primary ${_class || ''}` })}
 ${SubtleDemo.card('div', { ...attrs, class: `secondary ${_class || ''}` })}
 ${SubtleDemo.card('div', { ...attrs, class: `contrast ${_class || ''}` })}
 ${SubtleDemo.card('div', { ...attrs, class: `success ${_class || ''}` })}
 ${SubtleDemo.card('div', { ...attrs, class: `info ${_class || ''}` })}
 ${SubtleDemo.card('div', { ...attrs, class: `warning ${_class || ''}` })}
 ${SubtleDemo.card('div', { ...attrs, class: `danger ${_class || ''}` })}`);
+}
+
+export function cardsWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
+  const { class: _class, ...attrs } = _attrs;
+
+  return renderElement('section', {}, `${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `primary ${_class || ''}` })}
+${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `secondary ${_class || ''}` })}
+${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `contrast ${_class || ''}` })}
+${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `success ${_class || ''}` })}
+${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `info ${_class || ''}` })}
+${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `warning ${_class || ''}` })}
+${SubtleDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `danger ${_class || ''}` })}`);
 }

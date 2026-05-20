@@ -71,8 +71,7 @@ ${RoleButtonDemo.accordion({ ...attrs, class: `danger ${_class || ''}` })}`;
 export function cards(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('section', {}, `${CardDemo.main('div', attrs)}
-${CardDemo.main('div', { ...attrs, class: `primary ${_class || ''}` })}
+  return renderElement('section', {}, `${CardDemo.main('div', { ...attrs, class: `primary ${_class || ''}` })}
 ${CardDemo.main('div', { ...attrs, class: `secondary ${_class || ''}` })}
 ${CardDemo.main('div', { ...attrs, class: `contrast ${_class || ''}` })}
 ${CardDemo.main('div', { ...attrs, class: `success ${_class || ''}` })}
@@ -81,36 +80,48 @@ ${CardDemo.main('div', { ...attrs, class: `warning ${_class || ''}` })}
 ${CardDemo.main('div', { ...attrs, class: `danger ${_class || ''}` })}`);
 }
 
+export function cardsWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
+  const { class: _class, ...attrs } = _attrs;
+
+  return renderElement('section', {}, `${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `primary ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `secondary ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `contrast ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `success ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `info ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `warning ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `danger ${_class || ''}` })}`);
+}
+
 export function anchorsAndRoleLinks(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('section', { role: 'toolbar' }, `${anchors(attrs)}
+  return `${renderElement('nav', {}, `${anchors(attrs)}`)}
 
-${roleLinks(attrs)}`);
+<hr>
+
+${renderElement('nav', {}, roleLinks(attrs))}`;
 }
 
 export function anchors(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('ul', {}, `<li>${ADemo.main(attrs)}</li>
-<li>${ADemo.active(attrs)}</li>
-<li>${ADemo.main({ ...attrs, class: `secondary ${_class || ''}` })}</li>
-<li>${ADemo.main({ ...attrs, class: `contrast ${_class || ''}` })}</li>
-<li>${ADemo.main({ ...attrs, class: `success ${_class || ''}` })}</li>
-<li>${ADemo.main({ ...attrs, class: `info ${_class || ''}` })}</li>
-<li>${ADemo.main({ ...attrs, class: `warning ${_class || ''}` })}</li>
-<li>${ADemo.main({ ...attrs, class: `danger ${_class || ''}` })}</li>`);
+  return renderElement('ul', {}, `<li>${ADemo.main(attrs, 'Primary')}</li>
+<li>${ADemo.main({ ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}</li>
+<li>${ADemo.main({ ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}</li>
+<li>${ADemo.main({ ...attrs, class: `success ${_class || ''}` }, 'Success')}</li>
+<li>${ADemo.main({ ...attrs, class: `info ${_class || ''}` }, 'Info')}</li>
+<li>${ADemo.main({ ...attrs, class: `warning ${_class || ''}` }, 'Warning')}</li>
+<li>${ADemo.main({ ...attrs, class: `danger ${_class || ''}` }, 'Danger')}</li>`);
 }
 
 export function roleLinks(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('ul', {}, `${RoleLinkDemo.main('li', attrs)}
-${RoleLinkDemo.active('li', attrs)}
-${RoleLinkDemo.main('li', { ...attrs, class: `secondary ${_class || ''}` })}
-${RoleLinkDemo.main('li', { ...attrs, class: `contrast ${_class || ''}` })}
-${RoleLinkDemo.main('li', { ...attrs, class: `success ${_class || ''}` })}\
-${RoleLinkDemo.main('li', { ...attrs, class: `info ${_class || ''}` })}
-${RoleLinkDemo.main('li', { ...attrs, class: `warning ${_class || ''}` })}
-${RoleLinkDemo.main('li', { ...attrs, class: `danger ${_class || ''}` })}`);
+  return renderElement('ul', {}, `${RoleLinkDemo.main('li', attrs, 'Primary')}
+${RoleLinkDemo.main('li', { ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}
+${RoleLinkDemo.main('li', { ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}
+${RoleLinkDemo.main('li', { ...attrs, class: `success ${_class || ''}` }, 'Success')}
+${RoleLinkDemo.main('li', { ...attrs, class: `info ${_class || ''}` }, 'Info')}
+${RoleLinkDemo.main('li', { ...attrs, class: `warning ${_class || ''}` }, 'Warning')}
+${RoleLinkDemo.main('li', { ...attrs, class: `danger ${_class || ''}` }, 'Danger')}`);
 }

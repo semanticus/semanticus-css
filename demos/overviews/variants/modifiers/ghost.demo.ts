@@ -33,13 +33,13 @@ ${dropdowns(attrs)}`);
 export function roleButtons(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return `${GhostDemo.roleButton('section', { ...attrs, class: `${_class || ''}` }, '&lt;section&gt; as button')}
-${GhostDemo.roleButton('section', { ...attrs, class: `secondary ${_class || ''}` }, '&lt;section&gt; as button')}
-${GhostDemo.roleButton('section', { ...attrs, class: `contrast ${_class || ''}` }, '&lt;section&gt; as button')}
-${GhostDemo.roleButton('section', { ...attrs, class: `success ${_class || ''}` }, '&lt;section&gt; as button')}
-${GhostDemo.roleButton('section', { ...attrs, class: `info ${_class || ''}` }, '&lt;section&gt; as button')}
-${GhostDemo.roleButton('section', { ...attrs, class: `warning ${_class || ''}` }, '&lt;section&gt; as button')}
-${GhostDemo.roleButton('section', { ...attrs, class: `danger ${_class || ''}` }, '&lt;section&gt; as button')}`;
+  return `${GhostDemo.roleButton('section', { ...attrs, class: `${_class || ''}` })}
+${GhostDemo.roleButton('section', { ...attrs, class: `secondary ${_class || ''}` })}
+${GhostDemo.roleButton('section', { ...attrs, class: `contrast ${_class || ''}` })}
+${GhostDemo.roleButton('section', { ...attrs, class: `success ${_class || ''}` })}
+${GhostDemo.roleButton('section', { ...attrs, class: `info ${_class || ''}` })}
+${GhostDemo.roleButton('section', { ...attrs, class: `warning ${_class || ''}` })}
+${GhostDemo.roleButton('section', { ...attrs, class: `danger ${_class || ''}` })}`;
 }
 
 export function dropdowns(_attrs: Record<string, string> = {}) {
@@ -69,12 +69,23 @@ ${GhostDemo.accordion({ ...attrs, class: `danger ${_class || ''}` })}`;
 export function cards(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return renderElement('section', {}, `${GhostDemo.card('div', { ...attrs, class: `${_class || ''}` })}
-${GhostDemo.card('div', { ...attrs, class: `primary ${_class || ''}` })}
+  return renderElement('section', {}, `${GhostDemo.card('div', { ...attrs, class: `primary ${_class || ''}` })}
 ${GhostDemo.card('div', { ...attrs, class: `secondary ${_class || ''}` })}
 ${GhostDemo.card('div', { ...attrs, class: `contrast ${_class || ''}` })}
 ${GhostDemo.card('div', { ...attrs, class: `success ${_class || ''}` })}
 ${GhostDemo.card('div', { ...attrs, class: `info ${_class || ''}` })}
 ${GhostDemo.card('div', { ...attrs, class: `warning ${_class || ''}` })}
 ${GhostDemo.card('div', { ...attrs, class: `danger ${_class || ''}` })}`);
+}
+
+export function cardsWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
+  const { class: _class, ...attrs } = _attrs;
+
+  return renderElement('section', {}, `${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `primary ${_class || ''}` })}
+${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `secondary ${_class || ''}` })}
+${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `contrast ${_class || ''}` })}
+${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `success ${_class || ''}` })}
+${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `info ${_class || ''}` })}
+${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `warning ${_class || ''}` })}
+${GhostDemo.cardWithHeaderAndFooter('div', { ...attrs, class: `danger ${_class || ''}` })}`);
 }

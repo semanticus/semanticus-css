@@ -1,9 +1,10 @@
 import { renderElement } from "@scripts/utils";
 
-import * as TypographyDemo from '@demos/semantics/typography.demo';
-
+import { TypographyDemo } from '@demos/semantics';
+import { IntentDemo } from '@demos/overviews/variants';
+import { CardDemo } from "@demos/components";
+import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
 import { ModalDemo } from '@demos/composites';
-
 import {
   InputDemo,
   DetailsDemo,
@@ -30,26 +31,18 @@ export function buttons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
-  <section role="toolbar">
-    <button>Primary</button>
-    <button class="secondary">Secondary</button>
-    <button class="contrast">Contrast</button>
-    <button disabled>Disabled</button>
-  </section>
-`;
+  ${IntentDemo.buttons()}
+</section>`;
 }
 
 export function links() {
   return `<section id="links">
   <h2>Links</h2>
 
-  <section role="toolbar">
-    <a href="#" onclick="event.preventDefault()">Primary</a>
-    <a href="#" aria-current="page" onclick="event.preventDefault()">Active</a>
-    <a href="#" class="secondary" onclick="event.preventDefault()">Secondary</a>
-    <a href="#" class="contrast" onclick="event.preventDefault()">Contrast</a>
-  </section>
-`;
+  <nav>
+    ${IntentDemo.anchors()}
+  </nav>
+</section>`;
 }
 
 export function inputButtons() {
@@ -216,29 +209,9 @@ function cards() {
   return `<section id="cards">
   <h2>Cards</h2>
 
-  <article id="article" class="card">
-    <h2>Basic Card</h2>
-    <p>
-      This is a basic card component using the article element with the .card class. Cards provide a contained
-      space for content with consistent padding and styling.
-    </p>
-  </article>
+  ${CardDemo.main()}
 
-  <!-- Card with header & footer -->
-  <article id="article-header-footer" class="card">
-    <header>
-      <h2>Card with Header and Footer</h2>
-    </header>
-
-    <p>
-      Cards support optional <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> sections.
-      These use a distinct background and border to visually separate them from the card body.
-    </p>
-    <footer>
-      <a href="#!" role="button" aria-label="Close">Cancel</a>
-      <a href="#!" role="button">Save</a>
-    </footer>
-  </article>
+  ${CardDemo.withHeaderAndFooter()}
 </section>`;
 }
 
@@ -283,7 +256,26 @@ function accordions() {
 
   <section>
     <h4>Button Style (role="button")</h4>
+
     ${DetailsDemo.asButton()}
+  </section>
+</section>`;
+}
+
+function dropdowns() {
+  return `<section id="dropdowns">
+  <h2>Dropdowns</h2>
+
+  <section>
+    ${DetailsDemo.basicDropdown()}
+  </section>
+
+  <br>
+
+  <section>
+    <h4>Button Style (role="button")</h4>
+
+    ${DetailsDemo.dropdownAsButton()}
   </section>
 </section>`;
 }
@@ -440,69 +432,60 @@ function address() {
 
 export function customizerExample(attrs: Record<string, string> = {}) {
   return renderElement("main", { class: 'container', ...attrs }, `<br>
-  ${buttons()}
+${buttons()}
 
-  <hr>
-  <br>
+<hr>
+<br>
 
-  ${links()}
+${links()}
 
-  <hr>
-  <br>
+<hr>
+<br>
 
-  <section id="input-elements">
-    <h2>Input Elements</h2>
+<section id="input-elements">
+  <h2>Input Elements</h2>
 
-    <fieldset role="toolbar">
-      <label>
-        Text Input
-        <input type="text" name="text" placeholder="Text" aria-label="Text" />
-      </label>
+  <fieldset role="toolbar">
+    <label>
+      Text Input
+      <input type="text" name="text" placeholder="Text" aria-label="Text" />
+    </label>
 
-      <label>
-        Select
-        ${SelectDemo.main()}
-      </label>
-    </fieldset>
+    <label>
+      Select
+      ${SelectDemo.main()}
+    </label>
+  </fieldset>
 
-    <fieldset>
-      <label class="w-100">
-        Dropdown group
-        ${RoleGroupDemo.dropdownWithButton()}
-      </label>
-    </fieldset>
+  <fieldset>
+    <label class="w-100">
+      Dropdown group
+      ${RoleGroupDemo.dropdownWithButton()}
+    </label>
+  </fieldset>
 
-    <fieldset role="toolbar">
-      ${InputDemo.checkboxBasic()}
+  <fieldset role="toolbar">
+    ${InputDemo.checkboxBasic()}
 
-      ${InputDemo.radioBasic()}
+    ${InputDemo.radioBasic()}
 
-      ${InputDemo.switchBasic()}
-    </fieldset>
-  </section>
+    ${InputDemo.switchBasic()}
+  </fieldset>
+</section>
 
-  <hr>
-  <br>
+<hr>
+<br>
 
-  <section id="cards">
-    <h2>Cards</h2>
+<section id="cards">
+  <h2>Cards</h2>
 
-    <article class="card">
-      <hgroup>
-        <h2>Card title</h2>
-        <p>description</p>
-      </hgroup>
-      <p>This is a sample card component styled with the <!-- PALETTE_NAME --> palette. It demonstrates the palette's card background, border, and text colors.</p>
-      <footer>
-        <button aria-label="Close">Cancel</button>
-        <button>Save</button>
-      </footer>
-    </article>
-  </section>
-`);
+  ${CardDemo.main()}
+
+  ${CardDemo.withHeaderAndFooter()}
+</section>`);
 }
 
-export function themeBuilderExample(attrs: Record<string, string> = {}, slot: string = '') {
+export function fullBundle(attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement("main", { class: 'container', ...attrs }, `<br>
 
 ${buttons()}
@@ -541,6 +524,11 @@ ${tooltips()}
 <br>
 
 ${accordions()}
+
+<hr>
+<br>
+
+${dropdowns()}
 
 <hr>
 <br>
@@ -594,18 +582,110 @@ ${codeBlocks()}
 <hr>
 <br>
 
-${address()}
-
-${slot}`);
+${address()}`);
 }
 
-export function main(attrs: Record<string, string> = {}) {
-  return themeBuilderExample(attrs, `<hr>
+function typographySection(cssClass: string) {
+  return `<section class="${cssClass}">
+  <section>
+    ${TypographyDemo.headings('Heading')}
+  </section>
+
+  <hgroup>
+    <h2>HGroup</h2>
+    <p>last child gets muted text</p>
+  </hgroup>
+
+  <p>The paragraph element is the most basic block of text content.</p>
+  <p class="text-muted">Text explicitly marked as muted.</p>
+</section>`;
+}
+
+export function fullBundleColorsButtons() {
+  return `<section id="buttons">
+  <h2>Buttons</h2>
+
+  ${IntentDemo.buttons()}
+  ${SubtleDemo.buttons()}
+  ${GhostDemo.buttons()}
+</section>`;
+}
+
+function fullBundleColorsTypography() {
+  return `<section id="typography">
+  <h2>Typography</h2>
+
+  <section role="toolbar">
+    ${typographySection('text-primary')}
+    ${typographySection('text-secondary')}
+    ${typographySection('text-contrast')}
+    ${typographySection('text-success')}
+    ${typographySection('text-info')}
+    ${typographySection('text-warning')}
+    ${typographySection('text-danger')}
+  </section>
+</section>`;
+}
+
+function fullBundleColorsDropdowns() {
+  return `<section id="dropdowns">
+  <h2>Dropdowns (role="button")</h2>
+
+  <section role="toolbar">
+    <section>
+      ${IntentDemo.dropdowns()}
+    </section>
+
+    <section>
+      ${SubtleDemo.dropdowns()}
+    </section>
+
+    <section>
+      ${GhostDemo.dropdowns()}
+    </section>
+  </section>
+</section>`;
+}
+
+function fullBundleColorsCards() {
+  return `<section id="cards">
+  <h2>Cards</h2>
+
+  <section class="mb-0" role="toolbar">
+    ${CardDemo.withHeaderAndFooter()}
+    ${CardDemo.withHeaderAndFooter('div', { class: 'subtle' })}
+    ${CardDemo.withHeaderAndFooter('div', { class: 'ghost' })}
+  </section>
+
+  <section role="toolbar">
+    ${IntentDemo.cardsWithHeaderAndFooter()}
+    ${SubtleDemo.cardsWithHeaderAndFooter()}
+    ${GhostDemo.cardsWithHeaderAndFooter()}
+  </section>
+</section>`;
+}
+
+export function fullBundleColors(attrs: Record<string, string> = {}) {
+  return renderElement("main", { class: 'container', ...attrs }, `<br>
+${fullBundleColorsTypography()}
+
+<hr>
 <br>
 
-<section id="variantes">
-  <h2>Variants</h2>
+${fullBundleColorsButtons()}
 
-  WIP
-</section>`);
+<hr>
+<br>
+
+${links()}
+
+<hr>
+<br>
+
+${fullBundleColorsDropdowns()}
+
+<hr>
+<br>
+
+${fullBundleColorsCards()}`);
 }

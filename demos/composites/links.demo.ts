@@ -4,11 +4,17 @@ import { RoleLinkDemo } from '@demos/semantics/attributes';
 import { ADemo } from '@demos/semantics/elements';
 
 export function main() {
-  return renderElement('nav', {}, `${ADemo.main()}
-${ADemo.active()}`);
+  return `${ADemo.main()}
+<hr>
+${ADemo.active()}`;
 }
 
 export function roleLinks() {
-  return renderElement('nav', {}, `${RoleLinkDemo.main('button')}
-${RoleLinkDemo.main('div')}`);
+  return `${RoleLinkDemo.main('button')}
+<hr>
+${RoleLinkDemo.active('button')}
+<hr>
+${RoleLinkDemo.main('div')}
+<hr>
+${RoleLinkDemo.active('div')}`;
 }

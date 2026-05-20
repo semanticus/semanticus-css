@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { SubtleDemo } from "@demos/variants/modifiers";
+import { SubtleDemo } from "@demos/overviews/variants/modifiers";
 
 const meta: Meta = {
   title: "Variants/Modifiers/Subtle",
@@ -29,5 +29,5 @@ export const Accordions: StoryObj = {
 };
 
 export const Cards: StoryObj = {
-  render: () => SubtleDemo.cards(),
+  render: () => SubtleDemo.cardsWithHeaderAndFooter(),
 };

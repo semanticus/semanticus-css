@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { GhostDemo } from "@demos/variants/modifiers";
+import { GhostDemo } from "@demos/overviews/variants/modifiers";
 
 const meta: Meta = {
   title: "Variants/Modifiers/Ghost",
@@ -29,5 +29,5 @@ export const Accordions: StoryObj = {
 };
 
 export const Cards: StoryObj = {
-  render: () => GhostDemo.cards(),
+  render: () => GhostDemo.cardsWithHeaderAndFooter(),
 };

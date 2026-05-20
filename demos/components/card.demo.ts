@@ -3,9 +3,9 @@ import { renderComponent } from "./render-component";
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Card title') {
   return renderComponent(tagName, 'card', attrs, `<hgroup>
   <h2>${title}</h2>
-  <p>Card description</p>
+  <p>This is the subtitle</p>
 </hgroup>
-<p>This is a sample Card</p>`);
+<p>This is the main content of the card.</p>`);
 }
 
 export function withHeader(tagName: string = "div", attrs: Record<string, string> = {}) {
