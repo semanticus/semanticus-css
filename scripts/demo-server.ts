@@ -55,7 +55,7 @@ const aliasPlugin: esbuild.Plugin = {
 /**
  * Bundles the demo entry file with esbuild (all imports inlined),
  * executes the bundle in a fresh vm context, and returns the result
- * of calling its exported `main()` function.
+ * of calling its exported function named `fnName`.
  */
 async function runDemo(demoRelPath: string, fnName: string): Promise<string | null> {
   const base = path.join(projectRoot, 'demos', demoRelPath);
@@ -106,8 +106,15 @@ const server = http.createServer(async (req, res) => {
   parts.shift(); // remove leading empty string from split
 
   if (parts[0] === 'dist') {
-    // Serve static files from dist/
-    const filePath = path.join(projectRoot, reqUrl);
+    // Serve static files from dist/ — resolve and guard against path traversal.
+    const distRoot = path.join(projectRoot, 'dist');
+    const relPath = reqUrl.replace(/^\/*/, '');
+    const filePath = path.resolve(projectRoot, relPath);
+    if (!filePath.startsWith(distRoot + path.sep) && filePath !== distRoot) {
+      res.writeHead(403, { 'Content-Type': 'text/html' });
+      res.end('<h1>403 Forbidden</h1>');
+      return;
+    }
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
     fs.readFile(filePath, (err, content) => {
@@ -130,8 +137,12 @@ const server = http.createServer(async (req, res) => {
       if (fnName) {
         const html = await runDemo(demoParts.join('/'), fnName);
         const stylePaths = ['/dist/semanticus.css'];
-        const paletteName = url.searchParams.get('palette') ?? undefined;
-        const themeName = url.searchParams.get('theme') ?? undefined;
+        const VALID_PALETTES = new Set(['amber','azure','blue','cyan','fuchsia','green','grey','indigo','jade','lime','orange','pink','pumpkin','purple','red','sand','slate','violet','yellow','zinc']);
+        const VALID_THEMES = new Set(['light', 'dark']);
+        const rawPalette = url.searchParams.get('palette');
+        const rawTheme = url.searchParams.get('theme');
+        const paletteName = rawPalette && VALID_PALETTES.has(rawPalette) ? rawPalette : undefined;
+        const themeName = rawTheme && VALID_THEMES.has(rawTheme) ? rawTheme : undefined;
 
         if (paletteName) {
           stylePaths.push(`/dist/semanticus.palette.${paletteName}.css`);
