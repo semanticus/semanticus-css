@@ -21,7 +21,7 @@ const palettes = [
   'slate',
   'violet',
   'yellow',
-  'zink',
+  'zinc',
 ];
 const themes = ['light', 'dark'];
 
