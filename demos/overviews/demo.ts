@@ -438,7 +438,7 @@ function address() {
 </section>`;
 }
 
-export function simpleExample(attrs: Record<string, string> = {}) {
+export function customizerExample(attrs: Record<string, string> = {}) {
   return renderElement("main", { class: 'container', ...attrs }, `<br>
   ${buttons()}
 
@@ -502,7 +502,7 @@ export function simpleExample(attrs: Record<string, string> = {}) {
 `);
 }
 
-export function main(attrs: Record<string, string> = {}) {
+export function themeBuilderExample(attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement("main", { class: 'container', ...attrs }, `<br>
 
 ${buttons()}
@@ -594,5 +594,18 @@ ${codeBlocks()}
 <hr>
 <br>
 
-${address()}`);
+${address()}
+
+${slot}`);
+}
+
+export function main(attrs: Record<string, string> = {}) {
+  return themeBuilderExample(attrs, `<hr>
+<br>
+
+<section id="variantes">
+  <h2>Variants</h2>
+
+  WIP
+</section>`);
 }

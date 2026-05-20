@@ -8,8 +8,8 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
   maxDiffPixelRatio: 0.02
 };
 
-test('/overviews/semantics/dialog-demo - visual snapshot', async ({ page }) => {
-  await page.goto('/overviews/semantics/dialog-demo');
+test('/overviews/semantics/dialog.demo/main - visual snapshot', async ({ page }) => {
+  await page.goto('/overviews/semantics/dialog.demo/main');
   const button = page.locator('body > main > button');
   const dialog = page.locator('dialog');
 

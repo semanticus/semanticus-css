@@ -24,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${Demo.simpleExample({ class: 'container-fluid' })}
+  ${Demo.customizerExample({ class: 'container-fluid' })}
 </body>`;
 }
 

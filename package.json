@@ -80,7 +80,7 @@
     "vitepress": "^2.0.0-alpha.17"
   },
   "scripts": {
-    "start": "npm run build && npm run storybook",
+    "start": "npm run build && npm run docs:dev",
     "lint": "stylelint \"src/**/*.css\"",
     "lint:fix": "stylelint \"src/**/*.css\" --fix",
     "check": "npm run lint && npm run build",
@@ -100,7 +100,7 @@
     "build:utilities": "lightningcss --bundle --minify --browserslist src/utilities/index.css -o dist/semanticus-utilities.css --custom-media",
     "build:palettes": "node scripts/build-palettes.js",
     "build:sizes": "node scripts/build-sizes.js",
-    "docs:dev": "npm run build && vitepress dev docs",
+    "docs:dev": "vitepress dev docs",
     "docs:build": "npm run build && vitepress build docs",
     "docs:preview": "npm run build && vitepress preview docs",
     "docs:generate-comparison-table": "node scripts/generate-comparison-table.js",

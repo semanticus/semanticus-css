@@ -8,8 +8,8 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
   maxDiffPixelRatio: 0.02
 };
 
-test('/overviews/semantics/details-demo - visual snapshot', async ({ page }) => {
-  await page.goto('/overviews/semantics/details-demo');
+test('/overviews/semantics/details.demo/main - visual snapshot', async ({ page }) => {
+  await page.goto('/overviews/semantics/details.demo/main');
 
   // dropdown interaction
 

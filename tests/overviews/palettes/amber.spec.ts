@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ viewport: { width: 1440, height: 900 } });
+test.use({ viewport: { width: 1024, height: 900 } });
 
-test('/overviews/variants/contrast.demo/main - visual snapshot', async ({ page }) => {
-  await page.goto('/overviews/variants/intent/contrast.demo/main');
+test('/overviews/demo/main?palette=amber - visual snapshot', async ({ page }) => {
+  await page.goto('/overviews/demo/main?palette=amber');
   const main = page.locator('body > main');
 
   await expect(main).toBeVisible();
