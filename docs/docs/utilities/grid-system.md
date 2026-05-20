@@ -12,7 +12,8 @@ The grid uses three building blocks:
 
 - **`.row`** — a flex container that wraps columns and applies negative horizontal margins to compensate for column gutters.
 - **`[class*="col-"]` / `.col`** — flex children that define the column width. All columns are full-width by default (mobile-first) and sized by breakpoint modifiers.
-- **`--grid-gutter`** — a CSS custom property (defaults to `--spacing`) that controls the horizontal gap between columns.
+- **`--grid-gutter-x`** — a CSS custom property (defaults to `--spacing`) that controls the horizontal gap between columns.
+- **`--grid-gutter-y`** — a CSS custom property (defaults to `0`) that controls the vertical gap between wrapped rows of columns.
 
 Columns in a row should sum to **12** or fewer. Columns that overflow wrap to the next line automatically.
 
@@ -23,7 +24,8 @@ Columns in a row should sum to **12** or fewer. Columns that overflow wrap to th
 | **Class prefix** | `.col-` | `.col-sm-` | `.col-md-` | `.col-lg-` |
 | **Auto-width** | `.col` | `.col-sm` | `.col-md` | `.col-lg` |
 | **# of columns** | 12 | 12 | 12 | 12 |
-| **Gutter** | `--grid-gutter` (= `--spacing`) | ← same | ← same | ← same |
+| **H. Gutter** | `--grid-gutter-x` (= `--spacing`) | ← same | ← same | ← same |
+| **V. Gutter** | `--grid-gutter-y` (= `0`) | ← same | ← same | ← same |
 | **Nestable** | Yes | Yes | Yes | Yes |
 | **Offsets** | `.col-offset-*` | `.col-offset-sm-*` | `.col-offset-md-*` | `.col-offset-lg-*` |
 
@@ -81,17 +83,28 @@ Use flexbox alignment utilities directly on `.row` to align all columns vertical
 
 <HtmlPreviewer :code="GridDemo.alignment()" />
 
-## Custom gutter
+## Gutter classes
 
-Override `--grid-gutter` with an inline style on any `.row` to change the spacing for that row. Set it to `0` to remove gutters entirely.
+Use `.g-*`, `.gx-*`, and `.gy-*` classes on a `.row` to control gutters via the spacing scale (`0`–`5`). These classes set `--grid-gutter-x` (horizontal) and/or `--grid-gutter-y` (vertical) on the row.
 
-<HtmlPreviewer :code="GridDemo.customGutter()" />
+| Class | Axis | Effect |
+|---|---|---|
+| `.g-{0–5}` | Both | Sets horizontal **and** vertical gutter |
+| `.gx-{0–5}` | Horizontal | Sets column padding / row negative margin |
+| `.gy-{0–5}` | Vertical | Sets `row-gap` between wrapped rows |
 
-```css
-/* Remove gutter */
-.row { --grid-gutter: 0; }
+All three families have responsive variants: `.g-sm-*`, `.g-md-*`, `.g-lg-*` (and likewise for `.gx-*` / `.gy-*`).
 
-/* Wider gutter */
-.row { --grid-gutter: 2rem; }
-```
+The scale maps to the project spacing scale:
+
+| Step | Value |
+|---|---|
+| `0` | `0` |
+| `1` | `--spacing-1` (× 0.25) |
+| `2` | `--spacing-2` (× 0.5) |
+| `3` | `--spacing-3` (× 1, default horizontal gutter) |
+| `4` | `--spacing-4` (× 1.5) |
+| `5` | `--spacing-5` (× 3) |
+
+<HtmlPreviewer :code="GridDemo.gutterClasses()" />
 

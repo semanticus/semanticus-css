@@ -3,7 +3,8 @@
   --max-z-index: 1050;
 
   /* Grid */
-  --grid-gutter: var(--spacing);
+  --grid-gutter-x: var(--spacing);
+  --grid-gutter-y: 0;
 
   /* Gradient */
   --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));

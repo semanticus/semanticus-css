@@ -3,7 +3,7 @@
    -----------------------------------------------------------------------
    Implemented with CSS Flexbox and logical properties.
    Mobile-first: all columns default to full width; size modifiers
-   override at their breakpoint. Gutter controlled via --grid-gutter.
+   override at their breakpoint. Gutter controlled via --grid-gutter-x.
 
    Breakpoints (inherit from src/variables/_breakpoints.css):
      (default) — all widths (no media query)
@@ -23,7 +23,8 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-inline: calc(var(--grid-gutter) / -2);
+  margin-inline: calc(var(--grid-gutter-x) / -2);
+  row-gap: var(--grid-gutter-y);
 }
 
 /* --- Column base ------------------------------------------------------ */
@@ -38,7 +39,7 @@
   flex: 0 0 100%;
   max-width: 100%;
   min-width: 0;
-  padding-inline: calc(var(--grid-gutter) / 2);
+  padding-inline: calc(var(--grid-gutter-x) / 2);
 }
 
 /* ======================================================================
@@ -187,4 +188,119 @@
   .col-offset-lg-9  { margin-inline-start: calc( 9 / 12 * 100%); }
   .col-offset-lg-10 { margin-inline-start: calc(10 / 12 * 100%); }
   .col-offset-lg-11 { margin-inline-start: calc(11 / 12 * 100%); }
+}
+
+/* ======================================================================
+   Gutter classes — control --grid-gutter-x (horizontal) and/or
+   --grid-gutter-y (vertical) on a .row.
+
+   .g-*   — both axes
+   .gx-*  — horizontal axis only
+   .gy-*  — vertical axis only
+
+   Scale mirrors the spacing scale (0–5):
+     0 → 0
+     1 → --spacing-1  (× 0.25)
+     2 → --spacing-2  (× 0.5)
+     3 → --spacing-3  (× 1,  default horizontal gutter)
+     4 → --spacing-4  (× 1.5)
+     5 → --spacing-5  (× 3)
+   ====================================================================== */
+
+/* --- Default (all sizes) ---------------------------------------------- */
+
+.g-0  { --grid-gutter-x: 0;                --grid-gutter-y: 0; }
+.g-1  { --grid-gutter-x: var(--spacing-1); --grid-gutter-y: var(--spacing-1); }
+.g-2  { --grid-gutter-x: var(--spacing-2); --grid-gutter-y: var(--spacing-2); }
+.g-3  { --grid-gutter-x: var(--spacing-3); --grid-gutter-y: var(--spacing-3); }
+.g-4  { --grid-gutter-x: var(--spacing-4); --grid-gutter-y: var(--spacing-4); }
+.g-5  { --grid-gutter-x: var(--spacing-5); --grid-gutter-y: var(--spacing-5); }
+
+.gx-0 { --grid-gutter-x: 0; }
+.gx-1 { --grid-gutter-x: var(--spacing-1); }
+.gx-2 { --grid-gutter-x: var(--spacing-2); }
+.gx-3 { --grid-gutter-x: var(--spacing-3); }
+.gx-4 { --grid-gutter-x: var(--spacing-4); }
+.gx-5 { --grid-gutter-x: var(--spacing-5); }
+
+.gy-0 { --grid-gutter-y: 0; }
+.gy-1 { --grid-gutter-y: var(--spacing-1); }
+.gy-2 { --grid-gutter-y: var(--spacing-2); }
+.gy-3 { --grid-gutter-y: var(--spacing-3); }
+.gy-4 { --grid-gutter-y: var(--spacing-4); }
+.gy-5 { --grid-gutter-y: var(--spacing-5); }
+
+/* --- sm — min-width: 576px -------------------------------------------- */
+
+@media (--breakpoint-sm) {
+  .g-sm-0  { --grid-gutter-x: 0;                --grid-gutter-y: 0; }
+  .g-sm-1  { --grid-gutter-x: var(--spacing-1); --grid-gutter-y: var(--spacing-1); }
+  .g-sm-2  { --grid-gutter-x: var(--spacing-2); --grid-gutter-y: var(--spacing-2); }
+  .g-sm-3  { --grid-gutter-x: var(--spacing-3); --grid-gutter-y: var(--spacing-3); }
+  .g-sm-4  { --grid-gutter-x: var(--spacing-4); --grid-gutter-y: var(--spacing-4); }
+  .g-sm-5  { --grid-gutter-x: var(--spacing-5); --grid-gutter-y: var(--spacing-5); }
+
+  .gx-sm-0 { --grid-gutter-x: 0; }
+  .gx-sm-1 { --grid-gutter-x: var(--spacing-1); }
+  .gx-sm-2 { --grid-gutter-x: var(--spacing-2); }
+  .gx-sm-3 { --grid-gutter-x: var(--spacing-3); }
+  .gx-sm-4 { --grid-gutter-x: var(--spacing-4); }
+  .gx-sm-5 { --grid-gutter-x: var(--spacing-5); }
+
+  .gy-sm-0 { --grid-gutter-y: 0; }
+  .gy-sm-1 { --grid-gutter-y: var(--spacing-1); }
+  .gy-sm-2 { --grid-gutter-y: var(--spacing-2); }
+  .gy-sm-3 { --grid-gutter-y: var(--spacing-3); }
+  .gy-sm-4 { --grid-gutter-y: var(--spacing-4); }
+  .gy-sm-5 { --grid-gutter-y: var(--spacing-5); }
+}
+
+/* --- md — min-width: 768px -------------------------------------------- */
+
+@media (--breakpoint-md) {
+  .g-md-0  { --grid-gutter-x: 0;                --grid-gutter-y: 0; }
+  .g-md-1  { --grid-gutter-x: var(--spacing-1); --grid-gutter-y: var(--spacing-1); }
+  .g-md-2  { --grid-gutter-x: var(--spacing-2); --grid-gutter-y: var(--spacing-2); }
+  .g-md-3  { --grid-gutter-x: var(--spacing-3); --grid-gutter-y: var(--spacing-3); }
+  .g-md-4  { --grid-gutter-x: var(--spacing-4); --grid-gutter-y: var(--spacing-4); }
+  .g-md-5  { --grid-gutter-x: var(--spacing-5); --grid-gutter-y: var(--spacing-5); }
+
+  .gx-md-0 { --grid-gutter-x: 0; }
+  .gx-md-1 { --grid-gutter-x: var(--spacing-1); }
+  .gx-md-2 { --grid-gutter-x: var(--spacing-2); }
+  .gx-md-3 { --grid-gutter-x: var(--spacing-3); }
+  .gx-md-4 { --grid-gutter-x: var(--spacing-4); }
+  .gx-md-5 { --grid-gutter-x: var(--spacing-5); }
+
+  .gy-md-0 { --grid-gutter-y: 0; }
+  .gy-md-1 { --grid-gutter-y: var(--spacing-1); }
+  .gy-md-2 { --grid-gutter-y: var(--spacing-2); }
+  .gy-md-3 { --grid-gutter-y: var(--spacing-3); }
+  .gy-md-4 { --grid-gutter-y: var(--spacing-4); }
+  .gy-md-5 { --grid-gutter-y: var(--spacing-5); }
+}
+
+/* --- lg — min-width: 1024px ------------------------------------------- */
+
+@media (--breakpoint-lg) {
+  .g-lg-0  { --grid-gutter-x: 0;                --grid-gutter-y: 0; }
+  .g-lg-1  { --grid-gutter-x: var(--spacing-1); --grid-gutter-y: var(--spacing-1); }
+  .g-lg-2  { --grid-gutter-x: var(--spacing-2); --grid-gutter-y: var(--spacing-2); }
+  .g-lg-3  { --grid-gutter-x: var(--spacing-3); --grid-gutter-y: var(--spacing-3); }
+  .g-lg-4  { --grid-gutter-x: var(--spacing-4); --grid-gutter-y: var(--spacing-4); }
+  .g-lg-5  { --grid-gutter-x: var(--spacing-5); --grid-gutter-y: var(--spacing-5); }
+
+  .gx-lg-0 { --grid-gutter-x: 0; }
+  .gx-lg-1 { --grid-gutter-x: var(--spacing-1); }
+  .gx-lg-2 { --grid-gutter-x: var(--spacing-2); }
+  .gx-lg-3 { --grid-gutter-x: var(--spacing-3); }
+  .gx-lg-4 { --grid-gutter-x: var(--spacing-4); }
+  .gx-lg-5 { --grid-gutter-x: var(--spacing-5); }
+
+  .gy-lg-0 { --grid-gutter-y: 0; }
+  .gy-lg-1 { --grid-gutter-y: var(--spacing-1); }
+  .gy-lg-2 { --grid-gutter-y: var(--spacing-2); }
+  .gy-lg-3 { --grid-gutter-y: var(--spacing-3); }
+  .gy-lg-4 { --grid-gutter-y: var(--spacing-4); }
+  .gy-lg-5 { --grid-gutter-y: var(--spacing-5); }
 }

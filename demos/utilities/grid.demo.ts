@@ -174,24 +174,35 @@ export function alignment() {
 </div>`.trim();
 }
 
-export function customGutter() {
+export function gutterClasses() {
   return `
-<!-- No gutter -->
-<div class="row mb-d" style="--grid-gutter: 0">
-  <div class="col-4">${cell('No gutter')}</div>
-  <div class="col-4">${cell('No gutter')}</div>
-  <div class="col-4">${cell('No gutter')}</div>
+<!-- .g-0: no gutter on either axis -->
+<p class="mb-1"><code>.g-0</code></p>
+<div class="row g-0 mb-d">
+  <div class="col-4">${cell('.col-4')}</div>
+  <div class="col-4">${cell('.col-4')}</div>
+  <div class="col-4">${cell('.col-4')}</div>
 </div>
-<!-- Default gutter -->
-<div class="row mb-d">
-  <div class="col-4">${cell('Default gutter')}</div>
-  <div class="col-4">${cell('Default gutter')}</div>
-  <div class="col-4">${cell('Default gutter')}</div>
+<!-- .gx-5: large horizontal gutter only -->
+<p class="mb-1"><code>.gx-5</code></p>
+<div class="row gx-5 mb-d">
+  <div class="col-4">${cell('.col-4')}</div>
+  <div class="col-4">${cell('.col-4')}</div>
+  <div class="col-4">${cell('.col-4')}</div>
 </div>
-<!-- Large gutter (2rem) -->
-<div class="row" style="--grid-gutter: 2rem">
-  <div class="col-4">${cell('Large gutter')}</div>
-  <div class="col-4">${cell('Large gutter')}</div>
-  <div class="col-4">${cell('Large gutter')}</div>
+<!-- .gy-3: vertical gutter only (columns wrap to show row gap) -->
+<p class="mb-1"><code>.gy-3</code></p>
+<div class="row gy-3 mb-d">
+  <div class="col-8">${cell('.col-8')}</div>
+  <div class="col-8">${cell('.col-8')}</div>
+  <div class="col-8">${cell('.col-8')}</div>
+</div>
+<!-- .g-2.g-lg-4: responsive gutters -->
+<p class="mb-1"><code>.g-2 .g-lg-4</code></p>
+<div class="row g-2 g-lg-4">
+  <div class="col-6">${cell('.col-6')}</div>
+  <div class="col-6">${cell('.col-6')}</div>
+  <div class="col-6">${cell('.col-6')}</div>
+  <div class="col-6">${cell('.col-6')}</div>
 </div>`.trim();
 }
