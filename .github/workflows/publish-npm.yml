@@ -37,6 +37,12 @@ jobs:
               exit 1
             fi
 
+      - name: Lint
+        run: npm run lint
+
+      - name: Publish package
+        run: npm publish --access public --provenance
+
       - name: Prepare target branch
         id: prepare-target-branch
         env:
@@ -61,12 +67,6 @@ jobs:
         env:
           SEMANTICUS_CDN_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
         run: npm run release:sync-versions
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Publish package
-        run: npm publish --access public --provenance
 
       - name: Commit updated version references
         env:
