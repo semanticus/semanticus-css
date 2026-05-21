@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import { useData } from 'vitepress'
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
@@ -25,6 +25,21 @@ function htmlTemplate(style, theme) {
 </head>
 <body>
   ${Demo.customizerExample({ class: 'container-fluid' })}
+
+  <script>
+    function sendHeight() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'customizer-iframe-resize', id: '${uid}', height: height }, '*');
+    }
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    const observer = new MutationObserver(() => {
+      if (window._heightTimeout) clearTimeout(window._heightTimeout);
+      window._heightTimeout = setTimeout(sendHeight, 50);
+    });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+    sendHeight();
+  <\/script>
 </body>`;
 }
 
@@ -169,6 +184,23 @@ const highlightedNpmInstallSnippet = computed(() => {
 const highlightedNpmImportSnippet = computed(() => {
   return hljs.highlight(npmImportSnippet.value, { language: 'javascript' }).value
 })
+
+const iframeHeight = ref(600)
+const uid = `customizer-preview-${Math.random().toString(36).substr(2, 9)}`
+
+function handleMessage(event) {
+  if (event.data?.type === 'customizer-iframe-resize' && event.data.id === uid) {
+    iframeHeight.value = Math.max(event.data.height, 200)
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('message', handleMessage)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('message', handleMessage)
+})
 </script>
 
 <template>
@@ -235,6 +267,7 @@ const highlightedNpmImportSnippet = computed(() => {
               ref="previewFrame"
               :srcdoc="previewHtml"
               class="preview-frame"
+              :style="{ height: iframeHeight + 'px' }"
               sandbox="allow-scripts"
             ></iframe>
             <template #fallback>
@@ -517,7 +550,7 @@ const highlightedNpmImportSnippet = computed(() => {
   width: 100%;
   border: none;
   background: var(--vp-c-bg);
-  height: 100vh;
+  min-height: 200px;
 }
 
 .preview-frame-fallback {
