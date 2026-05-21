@@ -428,6 +428,7 @@ export default defineConfig({
           text: "Components API",
           items: [
             { text: ".card", link: "/docs/components/card" },
+            { text: ".container", link: "/docs/components/container" },
             { text: ".icon-*", link: "/docs/components/icons" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
@@ -450,7 +451,6 @@ export default defineConfig({
             {
               text: "Modifiers",
               items: [
-                { text: ".container", link: "/docs/variants/modifiers/container" },
                 { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
                 { text: ".striped", link: "/docs/variants/modifiers/striped" },
                 { text: ".subtle", link: "/docs/variants/modifiers/subtle" },
