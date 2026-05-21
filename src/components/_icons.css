@@ -21,11 +21,47 @@
     color: var(--color-background);
   }
 
-  &:not([role="link"]) {
+  &:not(a, [role="link"]) {
     color: inherit;
   }
 }
 
+.icon-checkbox {
+  mask-image: var(--icon-checkbox);
+}
+
+.icon-chevron {
+  mask-image: var(--icon-chevron);
+}
+
 .icon-close {
   mask-image: var(--icon-close);
+}
+
+.icon-date {
+  mask-image: var(--icon-date);
+}
+
+.icon-invalid {
+  mask-image: var(--icon-invalid);
+}
+
+.icon-loading {
+  mask-image: var(--icon-loading);
+}
+
+.icon-minus {
+  mask-image: var(--icon-minus);
+}
+
+.icon-search {
+  mask-image: var(--icon-search);
+}
+
+.icon-time {
+  mask-image: var(--icon-time);
+}
+
+.icon-valid {
+  mask-image: var(--icon-valid);
 }

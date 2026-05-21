@@ -4,9 +4,13 @@ Inline decorative icons rendered via CSS `mask-image`. Apply an `.icon-<name>` c
 
 > **Accessibility:** These icons are purely decorative. Always add `aria-hidden="true"` so screen readers skip them. If the icon conveys meaning without adjacent text, use a wrapping element with an appropriate `aria-label` instead.
 
-## .icon-close
+## Overview Usage
 
-<HtmlPreviewer :code="IconsDemo.overviewIconClose()" />
+<HtmlPreviewer :code="IconsDemo.overview()" />
+
+## Available Icons
+
+<HtmlPreviewer :code="IconsDemo.allIcons()" />
 
 <script setup>
 import { IconsDemo } from "@demos/components";

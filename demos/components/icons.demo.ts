@@ -1,23 +1,44 @@
-export function iconClose() {
-  return `<span class="icon-close" aria-hidden="true"></span>`;
+import { renderElement } from "@scripts/utils";
+
+export function main(iconName: string, tagName: string = "span", attrs: Record<string, string> = {}) {
+  const mergedAttrs = { ...attrs, "aria-hidden": "true", class: `icon-${iconName} ${attrs.class || ""}`.trim() };
+
+  return renderElement(tagName, mergedAttrs);
 }
 
-export function overviewIconClose() {
+export function overview() {
   return `<nav>
-  <button class="icon-close" aria-hidden="true"></button>
-  <button role="link" class="icon-close" aria-hidden="true"></button>
-  <h1 class="icon-close" aria-hidden="true"></h1>
-  <span class="icon-close" aria-hidden="true"></span>
-  <small class="icon-close" aria-hidden="true"></small>
+  ${main("close", "h1")}
+  ${main("close", "p")}
+  ${main("close", "small")}
+  ${main("close", "button")}
+  ${main("close", "button", { role: "link" })}
+  ${main("close", "a", { href: "#" })}
 </nav>
 
 <hr>
 
 <nav>
-  <button><span class="icon-close" aria-hidden="true"></span> close</button>
-  <button role="link"><span class="icon-close" aria-hidden="true"></span> close</button>
-  <h1><span class="icon-close" aria-hidden="true"></span> close</h1>
-  <p><span class="icon-close" aria-hidden="true"></span> close</p>
-  <small><span class="icon-close" aria-hidden="true"></span> close</small>
+  <h1>${main("close", "span")} close</h1>
+  <p>${main("close", "span")} close</p>
+  <small>${main("close", "span")} close</small>
+  <button>${main("close", "span")} close</button>
+  <button role="link">${main("close", "span")} close</button>
+  <a href="#">${main("close", "span")} close</a>
+</nav>`;
+}
+
+export function allIcons() {
+  return `<nav>
+  ${main("checkbox")}
+  ${main("chevron")}
+  ${main("close")}
+  ${main("date")}
+  ${main("invalid")}
+  ${main("loading")}
+  ${main("minus")}
+  ${main("search")}
+  ${main("time")}
+  ${main("valid")}
 </nav>`;
 }

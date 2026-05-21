@@ -19,9 +19,9 @@ export function renderElement(
 
   if ((renderedAttrs ?? "") !== "") renderedAttrs = ` ${renderedAttrs}`;
 
-  if (content.length === 0) {
-    return `<${tagName}${renderedAttrs} />`;
-  }
+  // if (content.length === 0) {
+  //   return `<${tagName}${renderedAttrs} />`;
+  // }
 
   return `<${tagName}${renderedAttrs}>${content}</${tagName}>`;
 }
