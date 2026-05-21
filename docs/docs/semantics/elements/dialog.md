@@ -12,7 +12,7 @@ See more about using `<dialog>` as a **modal** in the [Modal composite documenta
 
 ## Basic Usage
 
-> **Note:** If a `<button rel="prev">` is present inside the `<dialog>`, it will be styled as a close icon.
+> **Note:** If a `<button class="close">` is present inside the `<dialog>`, it will be styled as a close icon.
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 200px;&quot;&gt;
 ${DialogDemo.main({ open: true })}

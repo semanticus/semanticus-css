@@ -73,31 +73,7 @@ dialog {
     gap: calc(var(--nav-link-gap) * 1.5);
   }
 
-  /* Close button styling */
-  [rel=prev] {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    top: calc(var(--spacing) * .66);
-    right: var(--spacing);
-    border: none;
-    border-radius: 0;
-    background-image: var(--icon-close);
-    background-position: center;
-    background-size: auto 1rem;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    box-shadow: none;
-    opacity: 0.5;
-    transition: opacity var(--transition);
 
-    &:hover {
-      opacity: 1;
-    }
-  }
 }
 
 @starting-style {

@@ -10,7 +10,7 @@ function alertSection(
     "section",
     { ...rest, class: `alert ${_class || ""}`, role },
     `<p>${slot}</p>
-<button aria-label="Close alert" rel="prev"></button>`
+<button aria-label="Close alert" class="close"></button>`
   );
 }
 
@@ -30,13 +30,13 @@ export function floatingAlerts() {
     "section",
     { class: "alert success", role: "status", "aria-live": "polite" },
     `<p>Changes saved successfully</p>
-<button aria-label="Dismiss notification" rel="prev"></button>`
+<button aria-label="Dismiss notification" class="close"></button>`
   )}
   ${renderElement(
     "section",
     { class: "alert danger", role: "alert" },
     `<p>Connection lost. Reconnecting...</p>
-<button aria-label="Dismiss notification" rel="prev"></button>`
+<button aria-label="Dismiss notification" class="close"></button>`
   )}
 </div>`;
 }
@@ -60,7 +60,7 @@ ${renderElement(
   },
   `<header>
   <h3 id="delete-title">Delete Account?</h3>
-  <button aria-label="Close" rel="prev" commandfor="${deleteDialogId}" command="close"></button>
+  <button aria-label="Close" class="close" commandfor="${deleteDialogId}" command="close"></button>
 </header>
 <p id="delete-desc">This action cannot be undone. All your data will be permanently removed.</p>
 <footer>
@@ -84,7 +84,7 @@ ${renderElement(
   },
   `<header>
   <h3 id="confirm-title">Unsaved Changes</h3>
-  <button aria-label="Close" rel="prev" commandfor="${confirmDialogId}" command="close"></button>
+  <button aria-label="Close" class="close" commandfor="${confirmDialogId}" command="close"></button>
 </header>
 <p id="confirm-desc">You have unsaved changes. Are you sure you want to leave this page?</p>
 <footer>

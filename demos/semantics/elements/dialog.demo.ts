@@ -5,7 +5,7 @@ const defaultId = "dialog-basic";
 function headerAndFooterContent(attrs: Record<string, string>) {
   return `<header>
   <h2 id="modal-title">Confirm Your Membership</h2>
-  <button aria-label="Close" rel="prev" commandfor="${attrs.id || defaultId}" command="close"></button>
+  <button aria-label="Close" class="close" commandfor="${attrs.id || defaultId}" command="close"></button>
 </header>
 
 <div id="modal-description">
@@ -31,7 +31,7 @@ function headerAndFooterContent(attrs: Record<string, string>) {
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
   const mergedAttrs = { id: defaultId, ...attrs, "aria-labelledby": "modal-title", "aria-describedby": "modal-description" };
 
-  return renderElement("dialog", mergedAttrs, slot || `<button aria-label="Close" rel="prev" commandfor="${mergedAttrs.id}" command="close"></button>
+  return renderElement("dialog", mergedAttrs, slot || `<button aria-label="Close" class="close" commandfor="${mergedAttrs.id}" command="close"></button>
 <h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
 
 <div id="modal-description">

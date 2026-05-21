@@ -450,6 +450,7 @@ export default defineConfig({
             {
               text: "Modifiers",
               items: [
+                { text: ".close", link: "/docs/variants/modifiers/close" },
                 { text: ".container", link: "/docs/variants/modifiers/container" },
                 { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
                 { text: ".striped", link: "/docs/variants/modifiers/striped" },
