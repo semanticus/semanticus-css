@@ -1,25 +1,25 @@
-import { CardDemo } from "@demos/components";
 import type { Meta, StoryObj } from "@storybook/html-vite";
+import { CardDemo } from "@demos/components";
 
 const meta: Meta = {
-	title: "Components/Card",
-	parameters: {},
+  title: "Components/Card",
+  parameters: {},
 };
 
 export default meta;
 
 export const BasicUsage: StoryObj = {
-	render: () => CardDemo.main(),
+  render: () => CardDemo.main(),
 };
 
 export const WithHeader: StoryObj = {
-	render: () => CardDemo.withHeader(),
+  render: () => CardDemo.withHeader(),
 };
 
 export const WithFooter: StoryObj = {
-	render: () => CardDemo.withFooter(),
+  render: () => CardDemo.withFooter(),
 };
 
 export const WithHeaderAndFooter: StoryObj = {
-	render: () => CardDemo.withHeaderAndFooter(),
+  render: () => CardDemo.withHeaderAndFooter(),
 };

@@ -1,10 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-	return renderElement(
-		"nav",
-		attrs,
-		`<ul>
+  return renderElement("nav", attrs, `<ul>
   <li><h2>logo</h2></li>
 </ul>
 
@@ -21,12 +18,11 @@ export function main(attrs: Record<string, string> = {}) {
     </details>
   </li>
   <li><button>Log In</button></li>
-</ul>`,
-	);
+</ul>`);
 }
 
 export function buttonBasedPagination() {
-	return `<nav aria-label="Pagination">
+  return `<nav aria-label="Pagination">
   <div role="group">
     <button disabled>Previous</button>
     <button>1</button>
@@ -38,7 +34,7 @@ export function buttonBasedPagination() {
 }
 
 export function linkBasedPagination() {
-	return `<nav aria-label="Pagination">
+  return `<nav aria-label="Pagination">
   <div role="group">
     <a href="#" role="button" disabled>Previous</a>
     <a href="#page-1" role="button">1</a>
@@ -50,7 +46,7 @@ export function linkBasedPagination() {
 }
 
 export function logoTaglineLinks() {
-	return `<nav>
+  return `<nav>
   <h2>logo</h2>
 
   <h3>tagline</h3>
@@ -62,7 +58,7 @@ export function logoTaglineLinks() {
 }
 
 export function searchDropdownAndLinks() {
-	return `<nav>
+  return `<nav>
   <input class="w-auto" type="search" name="search" placeholder="Search" aria-label="Search" />
 
   <ul>
@@ -83,7 +79,7 @@ export function searchDropdownAndLinks() {
 }
 
 export function copyrightAndContactUs() {
-	return `<nav>
+  return `<nav>
   <p>Copyright</p>
 
   <ul>
@@ -93,7 +89,7 @@ export function copyrightAndContactUs() {
 }
 
 export function pagesLinks() {
-	return `<nav>
+  return `<nav>
   <ul>
     <li><a href="#">Overview</a></li>
     <li><a href="#">Layout</a></li>
@@ -102,7 +98,7 @@ export function pagesLinks() {
 }
 
 export function pageLinks() {
-	return `<nav>
+  return `<nav>
   <ul>
     <li><a href="#">Install</a></li>
     <li><a href="#">Usage</a></li>
@@ -111,7 +107,7 @@ export function pageLinks() {
 }
 
 export function verticalInAside() {
-	return `<aside>
+  return `<aside>
   <nav>
     <ul>
       <li><a href="#">Home</a></li>
@@ -124,7 +120,7 @@ export function verticalInAside() {
 }
 
 export function breadcrumbs() {
-	return `<nav aria-label="breadcrumb">
+  return `<nav aria-label="breadcrumb">
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Category</a></li>

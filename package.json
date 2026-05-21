@@ -1,110 +1,110 @@
 {
-	"name": "@semanticus/semanticus-css",
-	"version": "1.0.0",
-	"description": "lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities",
-	"author": "Joao Goncalves",
-	"style": "./dist/semanticus.css",
-	"main": "./dist/semanticus.css",
-	"unpkg": "./dist/semanticus.css",
-	"jsdelivr": "./dist/semanticus.css",
-	"exports": {
-		".": "./dist/semanticus.css",
-		"./no-utilities": "./dist/semanticus-no-utilities.css",
-		"./semantics": "./dist/semanticus-semantics.css",
-		"./utilities": "./dist/semanticus-utilities.css",
-		"./palettes/*": "./dist/semanticus.palette.*.css",
-		"./sizes/*": "./dist/semanticus.size.*.css",
-		"./src/*": "./src/*",
-		"./package.json": "./package.json"
-	},
-	"files": [
-		"dist",
-		"src",
-		"NOTICE",
-		"README.md",
-		"LICENSE"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/semanticus/semanticus-css.git"
-	},
-	"homepage": "https://semanticus.design",
-	"bugs": {
-		"url": "https://github.com/semanticus/semanticus-css/issues"
-	},
-	"keywords": [
-		"css",
-		"css-framework",
-		"utility-first",
-		"picocss",
-		"bootstrap-utilities",
-		"semantic",
-		"semantic-css",
-		"functional-css",
-		"design",
-		"responsive",
-		"performance",
-		"dark-mode",
-		"dark-theme",
-		"lightweight",
-		"minimal",
-		"native-html"
-	],
-	"license": "MIT",
-	"engines": {
-		"node": ">=18"
-	},
-	"packageManager": "npm@11.12.1",
-	"publishConfig": {
-		"access": "public",
-		"provenance": true,
-		"registry": "https://registry.npmjs.org/"
-	},
-	"sideEffects": [
-		"dist/**/*.css",
-		"src/**/*.css"
-	],
-	"devDependencies": {
-		"@biomejs/biome": "2.4.15",
-		"@playwright/test": "^1.59.1",
-		"@storybook/addon-docs": "^10.4.0",
-		"@storybook/html-vite": "^10.4.0",
-		"@types/node": "^25.6.0",
-		"browserslist": "^4.28.2",
-		"highlight.js": "^11.11.1",
-		"lightningcss": "^1.32.0",
-		"lightningcss-cli": "^1.32.0",
-		"storybook": "^10.4.0",
-		"tsx": "^4.21.0",
-		"vitepress": "^2.0.0-alpha.17"
-	},
-	"scripts": {
-		"start": "npm run build && npm run docs:dev",
-		"dev": "npm run storybook",
-		"lint": "npx @biomejs/biome lint",
-		"lint:fix": "npx @biomejs/biome lint --write",
-		"check": "npx @biomejs/biome check",
-		"check:fix": "npx @biomejs/biome check --write",
-		"storybook": "storybook dev -p 6006",
-		"demo:server": "tsx --tsconfig scripts/tsconfig.json scripts/demo-server.ts",
-		"test": "npx playwright test",
-		"test:update-snapshots": "npx playwright test -u",
-		"kill-zombies": "sh -c 'PORT=${PORT:-4000}; pids=$(lsof -t -i :$PORT); if [ -n \"$pids\" ]; then echo \"Killing PIDs: $pids\"; kill -9 $pids; else echo \"No processes listening on port $PORT\"; fi'",
-		"kill-playwright": "sh -c 'pgrep -af playwright | awk \"{print $1}\" | xargs -r kill -9 || true'",
-		"prepublishOnly": "npm run lint && npm run build",
-		"release:sync-versions": "tsx --tsconfig scripts/tsconfig.json scripts/sync-version-references.ts",
-		"build": "npm run build:css && npm run build:palettes && npm run build:sizes",
-		"build:css": "npm run build:full && npm run build:standard && npm run build:semantics && npm run build:utilities",
-		"build:full": "lightningcss --bundle --minify --browserslist src/index.css -o dist/semanticus.css --custom-media",
-		"build:standard": "lightningcss --bundle --minify --browserslist src/no-utilities.css -o dist/semanticus-no-utilities.css --custom-media",
-		"build:semantics": "lightningcss --bundle --minify --browserslist src/semantics/index.css -o dist/semanticus-semantics.css --custom-media",
-		"build:utilities": "lightningcss --bundle --minify --browserslist src/utilities/index.css -o dist/semanticus-utilities.css --custom-media",
-		"build:palettes": "tsx --tsconfig scripts/tsconfig.json scripts/build-palettes.ts",
-		"build:sizes": "tsx --tsconfig scripts/tsconfig.json scripts/build-sizes.ts",
-		"docs:dev": "vitepress dev docs",
-		"docs:build": "npm run build && vitepress build docs",
-		"docs:preview": "npm run docs:build && vitepress preview docs",
-		"docs:generate-comparison-table": "tsx --tsconfig scripts/tsconfig.json scripts/generate-comparison-table.ts",
-		"docs:update-size-claims": "npm run build && npm run docs:generate-comparison-table && tsx --tsconfig scripts/tsconfig.json scripts/update-size-claims.ts"
-	}
+  "name": "@semanticus/semanticus-css",
+  "version": "1.0.0",
+  "description": "lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities",
+  "author": "Joao Goncalves",
+  "style": "./dist/semanticus.css",
+  "main": "./dist/semanticus.css",
+  "unpkg": "./dist/semanticus.css",
+  "jsdelivr": "./dist/semanticus.css",
+  "exports": {
+    ".": "./dist/semanticus.css",
+    "./no-utilities": "./dist/semanticus-no-utilities.css",
+    "./semantics": "./dist/semanticus-semantics.css",
+    "./utilities": "./dist/semanticus-utilities.css",
+    "./palettes/*": "./dist/semanticus.palette.*.css",
+    "./sizes/*": "./dist/semanticus.size.*.css",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "NOTICE",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semanticus/semanticus-css.git"
+  },
+  "homepage": "https://semanticus.design",
+  "bugs": {
+    "url": "https://github.com/semanticus/semanticus-css/issues"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "utility-first",
+    "picocss",
+    "bootstrap-utilities",
+    "semantic",
+    "semantic-css",
+    "functional-css",
+    "design",
+    "responsive",
+    "performance",
+    "dark-mode",
+    "dark-theme",
+    "lightweight",
+    "minimal",
+    "native-html"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.12.1",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": [
+    "dist/**/*.css",
+    "src/**/*.css"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "2.4.15",
+    "@playwright/test": "^1.59.1",
+    "@storybook/addon-docs": "^10.4.0",
+    "@storybook/html-vite": "^10.4.0",
+    "@types/node": "^25.6.0",
+    "browserslist": "^4.28.2",
+    "highlight.js": "^11.11.1",
+    "lightningcss": "^1.32.0",
+    "lightningcss-cli": "^1.32.0",
+    "storybook": "^10.4.0",
+    "tsx": "^4.21.0",
+    "vitepress": "^2.0.0-alpha.17"
+  },
+  "scripts": {
+    "start": "npm run build && npm run docs:dev",
+    "dev": "npm run storybook",
+    "lint": "npx @biomejs/biome lint",
+    "lint:fix": "npx @biomejs/biome lint --write",
+    "check": "npx @biomejs/biome check",
+    "check:fix": "npx @biomejs/biome check --write",
+    "storybook": "storybook dev -p 6006",
+    "demo:server": "tsx --tsconfig scripts/tsconfig.json scripts/demo-server.ts",
+    "test": "npx playwright test",
+    "test:update-snapshots": "npx playwright test -u",
+    "kill-zombies": "sh -c 'PORT=${PORT:-4000}; pids=$(lsof -t -i :$PORT); if [ -n \"$pids\" ]; then echo \"Killing PIDs: $pids\"; kill -9 $pids; else echo \"No processes listening on port $PORT\"; fi'",
+    "kill-playwright": "sh -c 'pgrep -af playwright | awk \"{print $1}\" | xargs -r kill -9 || true'",
+    "prepublishOnly": "npm run lint && npm run build",
+    "release:sync-versions": "tsx --tsconfig scripts/tsconfig.json scripts/sync-version-references.ts",
+    "build": "npm run build:css && npm run build:palettes && npm run build:sizes",
+    "build:css": "npm run build:full && npm run build:standard && npm run build:semantics && npm run build:utilities",
+    "build:full": "lightningcss --bundle --minify --browserslist src/index.css -o dist/semanticus.css --custom-media",
+    "build:standard": "lightningcss --bundle --minify --browserslist src/no-utilities.css -o dist/semanticus-no-utilities.css --custom-media",
+    "build:semantics": "lightningcss --bundle --minify --browserslist src/semantics/index.css -o dist/semanticus-semantics.css --custom-media",
+    "build:utilities": "lightningcss --bundle --minify --browserslist src/utilities/index.css -o dist/semanticus-utilities.css --custom-media",
+    "build:palettes": "tsx --tsconfig scripts/tsconfig.json scripts/build-palettes.ts",
+    "build:sizes": "tsx --tsconfig scripts/tsconfig.json scripts/build-sizes.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "npm run build && vitepress build docs",
+    "docs:preview": "npm run docs:build && vitepress preview docs",
+    "docs:generate-comparison-table": "tsx --tsconfig scripts/tsconfig.json scripts/generate-comparison-table.ts",
+    "docs:update-size-claims": "npm run build && npm run docs:generate-comparison-table && tsx --tsconfig scripts/tsconfig.json scripts/update-size-claims.ts"
+  }
 }

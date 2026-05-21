@@ -1,37 +1,31 @@
 :root,
 :host {
-	/* --color-purple-950: #1e0820; */
-	/* --color-purple-900: #2d0f33; */
-	/* --color-purple-850: #3d1545; */
-	/* --color-purple-800: #4d1a57; */
-	/* --color-purple-750: #5e206b; */
-	/* --color-purple-700: #6f277d; */
-	/* --color-purple-650: #802e90; */
-	--color-purple-600: #9236a4;
-	--color-purple-550: #aa40bf;
-	/* --color-purple-500: #b645cd; */
-	/* --color-purple-450: #c652dc; */
-	/* --color-purple-400: #cd68e0; */
-	--color-purple-350: #d47de4;
-	/* --color-purple-300: #db90e8; */
-	/* --color-purple-250: #e2a3eb; */
-	/* --color-purple-200: #e7b6ee; */
-	/* --color-purple-150: #edc9f1; */
-	/* --color-purple-100: #f2dcf4; */
-	/* --color-purple-50: #f8eef9; */
-	/* --color-purple: var(--color-purple-550); */
+  /* --color-purple-950: #1e0820; */
+  /* --color-purple-900: #2d0f33; */
+  /* --color-purple-850: #3d1545; */
+  /* --color-purple-800: #4d1a57; */
+  /* --color-purple-750: #5e206b; */
+  /* --color-purple-700: #6f277d; */
+  /* --color-purple-650: #802e90; */
+  --color-purple-600: #9236a4;
+  --color-purple-550: #aa40bf;
+  /* --color-purple-500: #b645cd; */
+  /* --color-purple-450: #c652dc; */
+  /* --color-purple-400: #cd68e0; */
+  --color-purple-350: #d47de4;
+  /* --color-purple-300: #db90e8; */
+  /* --color-purple-250: #e2a3eb; */
+  /* --color-purple-200: #e7b6ee; */
+  /* --color-purple-150: #edc9f1; */
+  /* --color-purple-100: #f2dcf4; */
+  /* --color-purple-50: #f8eef9; */
+  /* --color-purple: var(--color-purple-550); */
 
-	/* System tokens */
-	--color-primary-text: light-dark(
-		var(--color-purple-550),
-		var(--color-purple-350)
-	);
-	--color-primary-fill: var(--color-purple-600);
-	--color-primary-on-fill: white;
+  /* System tokens */
+  --color-primary-text: light-dark(var(--color-purple-550), var(--color-purple-350));
+  --color-primary-fill: var(--color-purple-600);
+  --color-primary-on-fill: white;
 
-	/* Component tokens */
-	--switch-thumb-glow: light-dark(
-		0 0 0 oklch(0% 0 0deg / 0),
-		0 0 0 oklch(0% 0 0deg / 0)
-	);
+  /* Component tokens */
+  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
 }

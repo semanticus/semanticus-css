@@ -1,100 +1,87 @@
-[type="range"] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	width: 100%;
-	height: 1.25rem;
-	background: none;
+[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1.25rem;
+  background: none;
 
-	&::-webkit-slider-runnable-track {
-		width: 100%;
-		height: 0.375rem;
-		border-radius: var(--radius);
-		background-color: var(--range-track-border);
-		transition:
-			background-color var(--transition),
-			box-shadow var(--transition);
-	}
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.375rem;
+    border-radius: var(--radius);
+    background-color: var(--range-track-border);
+    transition: background-color var(--transition), box-shadow var(--transition);
+  }
 
-	&::-moz-range-track {
-		width: 100%;
-		height: 0.375rem;
-		border-radius: var(--radius);
-		background-color: var(--range-track-border);
-		transition:
-			background-color var(--transition),
-			box-shadow var(--transition);
-	}
+  &::-moz-range-track {
+    width: 100%;
+    height: 0.375rem;
+    border-radius: var(--radius);
+    background-color: var(--range-track-border);
+    transition: background-color var(--transition), box-shadow var(--transition);
+  }
 
-	&::-ms-track {
-		width: 100%;
-		height: 0.375rem;
-		border-radius: var(--radius);
-		background-color: var(--range-track-border);
-		transition:
-			background-color var(--transition),
-			box-shadow var(--transition);
-	}
+  &::-ms-track {
+    width: 100%;
+    height: 0.375rem;
+    border-radius: var(--radius);
+    background-color: var(--range-track-border);
+    transition: background-color var(--transition), box-shadow var(--transition);
+  }
 
-	&::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		width: 1.25rem;
-		height: 1.25rem;
-		margin-top: -0.4375rem;
-		border: 2px solid var(--range-thumb-border);
-		border-radius: 50%;
-		background-color: var(--range-thumb-fill);
-		cursor: pointer;
-		transition:
-			background-color var(--transition),
-			transform var(--transition);
-	}
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -0.4375rem;
+    border: 2px solid var(--range-thumb-border);
+    border-radius: 50%;
+    background-color: var(--range-thumb-fill);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+  }
 
-	&::-moz-range-thumb {
-		-webkit-appearance: none;
-		width: 1.25rem;
-		height: 1.25rem;
-		margin-top: -0.4375rem;
-		border: 2px solid var(--range-thumb-border);
-		border-radius: 50%;
-		background-color: var(--range-thumb-fill);
-		cursor: pointer;
-		transition:
-			background-color var(--transition),
-			transform var(--transition);
-	}
+  &::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -0.4375rem;
+    border: 2px solid var(--range-thumb-border);
+    border-radius: 50%;
+    background-color: var(--range-thumb-fill);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+  }
 
-	&::-ms-thumb {
-		-webkit-appearance: none;
-		width: 1.25rem;
-		height: 1.25rem;
-		margin-top: -0.4375rem;
-		border: 2px solid var(--range-thumb-border);
-		border-radius: 50%;
-		background-color: var(--range-thumb-fill);
-		cursor: pointer;
-		transition:
-			background-color var(--transition),
-			transform var(--transition);
-	}
+  &::-ms-thumb {
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -0.4375rem;
+    border: 2px solid var(--range-thumb-border);
+    border-radius: 50%;
+    background-color: var(--range-thumb-fill);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+  }
 
-	&:active,
-	&:focus-within {
-		--range-track-border: var(--range-track-border-active);
-		--range-thumb-fill: var(--range-thumb-fill-active);
-	}
+  &:active, &:focus-within {
+    --range-track-border: var(--range-track-border-active);
+    --range-thumb-fill: var(--range-thumb-fill-active);
+  }
 
-	&:active {
-		&::-webkit-slider-thumb {
-			transform: scale(1.25);
-		}
+  &:active {
+    &::-webkit-slider-thumb {
+      transform: scale(1.25);
+    }
 
-		&::-moz-range-thumb {
-			transform: scale(1.25);
-		}
+    &::-moz-range-thumb {
+      transform: scale(1.25);
+    }
 
-		&::-ms-thumb {
-			transform: scale(1.25);
-		}
-	}
+    &::-ms-thumb {
+      transform: scale(1.25);
+    }
+  }
 }

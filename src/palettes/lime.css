@@ -1,37 +1,31 @@
 :root,
 :host {
-	/* --color-lime-950: #101203; */
-	/* --color-lime-900: #191d03; */
-	/* --color-lime-850: #202902; */
-	/* --color-lime-800: #273500; */
-	/* --color-lime-750: #304100; */
-	/* --color-lime-700: #394d00; */
-	/* --color-lime-650: #435a00; */
-	/* --color-lime-600: #4d6600; */
-	--color-lime-550: #577400;
-	/* --color-lime-500: #628100; */
-	/* --color-lime-450: #6c8f00; */
-	/* --color-lime-400: #779c00; */
-	--color-lime-350: #82ab00;
-	/* --color-lime-300: #8eb901; */
-	/* --color-lime-250: #99c801; */
-	--color-lime-200: #a5d601;
-	/* --color-lime-150: #b2e51a; */
-	/* --color-lime-100: #c1f335; */
-	/* --color-lime-50: #defc85; */
-	/* --color-lime: var(--color-lime-550); */
+  /* --color-lime-950: #101203; */
+  /* --color-lime-900: #191d03; */
+  /* --color-lime-850: #202902; */
+  /* --color-lime-800: #273500; */
+  /* --color-lime-750: #304100; */
+  /* --color-lime-700: #394d00; */
+  /* --color-lime-650: #435a00; */
+  /* --color-lime-600: #4d6600; */
+  --color-lime-550: #577400;
+  /* --color-lime-500: #628100; */
+  /* --color-lime-450: #6c8f00; */
+  /* --color-lime-400: #779c00; */
+  --color-lime-350: #82ab00;
+  /* --color-lime-300: #8eb901; */
+  /* --color-lime-250: #99c801; */
+  --color-lime-200: #a5d601;
+  /* --color-lime-150: #b2e51a; */
+  /* --color-lime-100: #c1f335; */
+  /* --color-lime-50: #defc85; */
+  /* --color-lime: var(--color-lime-550); */
 
-	/* System tokens */
-	--color-primary-text: light-dark(
-		var(--color-lime-550),
-		var(--color-lime-350)
-	);
-	--color-primary-fill: var(--color-lime-200);
-	--color-primary-on-fill: black;
+  /* System tokens */
+  --color-primary-text: light-dark(var(--color-lime-550), var(--color-lime-350));
+  --color-primary-fill: var(--color-lime-200);
+  --color-primary-on-fill: black;
 
-	/* System tokens */
-	--switch-thumb-glow: light-dark(
-		0 0 0.5rem oklch(0% 0 0deg / 0.25),
-		0 0 0.5rem oklch(0% 0 0deg / 0.25)
-	);
+  /* System tokens */
+  --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));
 }

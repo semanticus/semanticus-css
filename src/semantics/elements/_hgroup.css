@@ -1,14 +1,14 @@
 hgroup {
-	margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-spacing-vertical);
 
-	& > * {
-		margin-top: 0;
-		margin-bottom: 0;
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
 
-		&:not(:first-child):last-child {
-			color: var(--color-text-muted);
-			--font-weight: unset;
-			font-size: 1rem;
-		}
-	}
+    &:not(:first-child):last-child {
+      color: var(--color-text-muted);
+      --font-weight: unset;
+      font-size: 1rem;
+    }
+  }
 }

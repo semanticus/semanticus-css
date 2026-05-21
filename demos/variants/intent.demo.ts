@@ -1,116 +1,101 @@
-import { CardDemo } from "@demos/components";
-import { RoleButtonDemo, RoleLinkDemo } from "@demos/semantics/attributes";
-import { ADemo, ButtonDemo, InputDemo } from "@demos/semantics/elements";
 import { renderElement } from "@scripts/utils";
 
-export function buttons(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+import { CardDemo } from '@demos/components';
+import { ADemo, ButtonDemo, InputDemo } from '@demos/semantics/elements';
+import { RoleLinkDemo, RoleButtonDemo } from '@demos/semantics/attributes';
 
-	return renderElement(
-		"section",
-		{ role: "toolbar" },
-		`${ButtonDemo.main(attrs)}
-${ButtonDemo.main({ ...attrs, class: `secondary ${_class || ""}` })}
-${ButtonDemo.main({ ...attrs, class: `contrast ${_class || ""}` })}
-${ButtonDemo.main({ ...attrs, class: `success ${_class || ""}` })}
-${ButtonDemo.main({ ...attrs, class: `info ${_class || ""}` })}
-${ButtonDemo.main({ ...attrs, class: `warning ${_class || ""}` })}
-${ButtonDemo.main({ ...attrs, class: `danger ${_class || ""}` })}`,
-	);
+export function buttons(_attrs: Record<string, string> = {}) {
+  const { class: _class, ...attrs } = _attrs;
+
+  return renderElement('section', { role: 'toolbar' }, `${ButtonDemo.main(attrs)}
+${ButtonDemo.main({ ...attrs, class: `secondary ${_class || ''}` })}
+${ButtonDemo.main({ ...attrs, class: `contrast ${_class || ''}` })}
+${ButtonDemo.main({ ...attrs, class: `success ${_class || ''}` })}
+${ButtonDemo.main({ ...attrs, class: `info ${_class || ''}` })}
+${ButtonDemo.main({ ...attrs, class: `warning ${_class || ''}` })}
+${ButtonDemo.main({ ...attrs, class: `danger ${_class || ''}` })}`);
 }
 
 export function inputButtons(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return renderElement("section", {}, InputDemo.buttons(attrs));
+  return renderElement('section', {}, InputDemo.buttons(attrs));
 }
 
 export function roleButtonsAndDropdowns(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return renderElement(
-		"section",
-		{},
-		`${roleButtons(attrs)}
+  return renderElement('section', {}, `${roleButtons(attrs)}
 
 <hr>
 
-${dropdowns(attrs)}`,
-	);
+${dropdowns(attrs)}`);
 }
 
 export function roleButtons(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return `${RoleButtonDemo.main("section", attrs, "&lt;section&gt; as button")}
-${RoleButtonDemo.main("section", { ...attrs, class: `secondary ${_class || ""}` }, "&lt;section&gt; as button")}
-${RoleButtonDemo.main("section", { ...attrs, class: `contrast ${_class || ""}` }, "&lt;section&gt; as button")}
-${RoleButtonDemo.main("section", { ...attrs, class: `success ${_class || ""}` }, "&lt;section&gt; as button")}
-${RoleButtonDemo.main("section", { ...attrs, class: `info ${_class || ""}` }, "&lt;section&gt; as button")}
-${RoleButtonDemo.main("section", { ...attrs, class: `warning ${_class || ""}` }, "&lt;section&gt; as button")}
-${RoleButtonDemo.main("section", { ...attrs, class: `danger ${_class || ""}` }, "&lt;section&gt; as button")}`;
+  return `${RoleButtonDemo.main('section', attrs, '&lt;section&gt; as button')}
+${RoleButtonDemo.main('section', { ...attrs, class: `secondary ${_class || ''}` }, '&lt;section&gt; as button')}
+${RoleButtonDemo.main('section', { ...attrs, class: `contrast ${_class || ''}` }, '&lt;section&gt; as button')}
+${RoleButtonDemo.main('section', { ...attrs, class: `success ${_class || ''}` }, '&lt;section&gt; as button')}
+${RoleButtonDemo.main('section', { ...attrs, class: `info ${_class || ''}` }, '&lt;section&gt; as button')}
+${RoleButtonDemo.main('section', { ...attrs, class: `warning ${_class || ''}` }, '&lt;section&gt; as button')}
+${RoleButtonDemo.main('section', { ...attrs, class: `danger ${_class || ''}` }, '&lt;section&gt; as button')}`;
 }
 
 export function dropdowns(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return `${RoleButtonDemo.dropdown(attrs)}
-${RoleButtonDemo.dropdown({ ...attrs, class: `secondary ${_class || ""}` })}
-${RoleButtonDemo.dropdown({ ...attrs, class: `contrast ${_class || ""}` })}
-${RoleButtonDemo.dropdown({ ...attrs, class: `success ${_class || ""}` })}
-${RoleButtonDemo.dropdown({ ...attrs, class: `info ${_class || ""}` })}
-${RoleButtonDemo.dropdown({ ...attrs, class: `warning ${_class || ""}` })}
-${RoleButtonDemo.dropdown({ ...attrs, class: `danger ${_class || ""}` })}`;
+  return `${RoleButtonDemo.dropdown(attrs)}
+${RoleButtonDemo.dropdown({ ...attrs, class: `secondary ${_class || ''}` })}
+${RoleButtonDemo.dropdown({ ...attrs, class: `contrast ${_class || ''}` })}
+${RoleButtonDemo.dropdown({ ...attrs, class: `success ${_class || ''}` })}
+${RoleButtonDemo.dropdown({ ...attrs, class: `info ${_class || ''}` })}
+${RoleButtonDemo.dropdown({ ...attrs, class: `warning ${_class || ''}` })}
+${RoleButtonDemo.dropdown({ ...attrs, class: `danger ${_class || ''}` })}`;
 }
 
 export function accordions(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return `${RoleButtonDemo.accordion(attrs)}
-${RoleButtonDemo.accordion({ ...attrs, class: `secondary ${_class || ""}` })}
-${RoleButtonDemo.accordion({ ...attrs, class: `contrast ${_class || ""}` })}
-${RoleButtonDemo.accordion({ ...attrs, class: `success ${_class || ""}` })}
-${RoleButtonDemo.accordion({ ...attrs, class: `info ${_class || ""}` })}
-${RoleButtonDemo.accordion({ ...attrs, class: `warning ${_class || ""}` })}
-${RoleButtonDemo.accordion({ ...attrs, class: `danger ${_class || ""}` })}`;
+  return `${RoleButtonDemo.accordion(attrs)}
+${RoleButtonDemo.accordion({ ...attrs, class: `secondary ${_class || ''}` })}
+${RoleButtonDemo.accordion({ ...attrs, class: `contrast ${_class || ''}` })}
+${RoleButtonDemo.accordion({ ...attrs, class: `success ${_class || ''}` })}
+${RoleButtonDemo.accordion({ ...attrs, class: `info ${_class || ''}` })}
+${RoleButtonDemo.accordion({ ...attrs, class: `warning ${_class || ''}` })}
+${RoleButtonDemo.accordion({ ...attrs, class: `danger ${_class || ''}` })}`;
 }
 
 export function cards(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return renderElement(
-		"section",
-		{},
-		`${CardDemo.main("div", { ...attrs, class: `primary ${_class || ""}` })}
-${CardDemo.main("div", { ...attrs, class: `secondary ${_class || ""}` })}
-${CardDemo.main("div", { ...attrs, class: `contrast ${_class || ""}` })}
-${CardDemo.main("div", { ...attrs, class: `success ${_class || ""}` })}
-${CardDemo.main("div", { ...attrs, class: `info ${_class || ""}` })}
-${CardDemo.main("div", { ...attrs, class: `warning ${_class || ""}` })}
-${CardDemo.main("div", { ...attrs, class: `danger ${_class || ""}` })}`,
-	);
+  return renderElement('section', {}, `${CardDemo.main('div', { ...attrs, class: `primary ${_class || ''}` })}
+${CardDemo.main('div', { ...attrs, class: `secondary ${_class || ''}` })}
+${CardDemo.main('div', { ...attrs, class: `contrast ${_class || ''}` })}
+${CardDemo.main('div', { ...attrs, class: `success ${_class || ''}` })}
+${CardDemo.main('div', { ...attrs, class: `info ${_class || ''}` })}
+${CardDemo.main('div', { ...attrs, class: `warning ${_class || ''}` })}
+${CardDemo.main('div', { ...attrs, class: `danger ${_class || ''}` })}`);
 }
 
 export function cardsWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return renderElement(
-		"section",
-		{},
-		`${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `primary ${_class || ""}` })}
-${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `secondary ${_class || ""}` })}
-${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `contrast ${_class || ""}` })}
-${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `success ${_class || ""}` })}
-${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `info ${_class || ""}` })}
-${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `warning ${_class || ""}` })}
-${CardDemo.withHeaderAndFooter("div", { ...attrs, class: `danger ${_class || ""}` })}`,
-	);
+  return renderElement('section', {}, `${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `primary ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `secondary ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `contrast ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `success ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `info ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `warning ${_class || ''}` })}
+${CardDemo.withHeaderAndFooter('div', { ...attrs, class: `danger ${_class || ''}` })}`);
 }
 
 export function anchorsAndRoleLinks(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return `${anchors(attrs)}
+  return `${anchors(attrs)}
 
 <hr>
 
@@ -118,33 +103,25 @@ ${roleLinks(attrs)}`;
 }
 
 export function anchors(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return renderElement(
-		"section",
-		{ role: "toolbar" },
-		`${ADemo.main(attrs, "Primary")}
-${ADemo.main({ ...attrs, class: `secondary ${_class || ""}` }, "Secondary")}
-${ADemo.main({ ...attrs, class: `contrast ${_class || ""}` }, "Contrast")}
-${ADemo.main({ ...attrs, class: `success ${_class || ""}` }, "Success")}
-${ADemo.main({ ...attrs, class: `info ${_class || ""}` }, "Info")}
-${ADemo.main({ ...attrs, class: `warning ${_class || ""}` }, "Warning")}
-${ADemo.main({ ...attrs, class: `danger ${_class || ""}` }, "Danger")}`,
-	);
+  return renderElement('section', { role: 'toolbar' }, `${ADemo.main(attrs, 'Primary')}
+${ADemo.main({ ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}
+${ADemo.main({ ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}
+${ADemo.main({ ...attrs, class: `success ${_class || ''}` }, 'Success')}
+${ADemo.main({ ...attrs, class: `info ${_class || ''}` }, 'Info')}
+${ADemo.main({ ...attrs, class: `warning ${_class || ''}` }, 'Warning')}
+${ADemo.main({ ...attrs, class: `danger ${_class || ''}` }, 'Danger')}`);
 }
 
 export function roleLinks(_attrs: Record<string, string> = {}) {
-	const { class: _class, ...attrs } = _attrs;
+  const { class: _class, ...attrs } = _attrs;
 
-	return renderElement(
-		"section",
-		{ role: "toolbar" },
-		`${RoleLinkDemo.main("div", attrs, "Primary")}
-${RoleLinkDemo.main("div", { ...attrs, class: `secondary ${_class || ""}` }, "Secondary")}
-${RoleLinkDemo.main("div", { ...attrs, class: `contrast ${_class || ""}` }, "Contrast")}
-${RoleLinkDemo.main("div", { ...attrs, class: `success ${_class || ""}` }, "Success")}
-${RoleLinkDemo.main("div", { ...attrs, class: `info ${_class || ""}` }, "Info")}
-${RoleLinkDemo.main("div", { ...attrs, class: `warning ${_class || ""}` }, "Warning")}
-${RoleLinkDemo.main("div", { ...attrs, class: `danger ${_class || ""}` }, "Danger")}`,
-	);
+    return renderElement('section', { role: 'toolbar' }, `${RoleLinkDemo.main('div', attrs, 'Primary')}
+${RoleLinkDemo.main('div', { ...attrs, class: `secondary ${_class || ''}` }, 'Secondary')}
+${RoleLinkDemo.main('div', { ...attrs, class: `contrast ${_class || ''}` }, 'Contrast')}
+${RoleLinkDemo.main('div', { ...attrs, class: `success ${_class || ''}` }, 'Success')}
+${RoleLinkDemo.main('div', { ...attrs, class: `info ${_class || ''}` }, 'Info')}
+${RoleLinkDemo.main('div', { ...attrs, class: `warning ${_class || ''}` }, 'Warning')}
+${RoleLinkDemo.main('div', { ...attrs, class: `danger ${_class || ''}` }, 'Danger')}`);
 }

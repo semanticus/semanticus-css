@@ -1,12 +1,12 @@
 export function main() {
-	return `<p>This content is visible</p>
+  return `<p>This content is visible</p>
 <p hidden>This content is hidden</p>
 <p>This content is also visible</p>
 `;
 }
 
 export function toggle() {
-	return `<div>
+  return `<div>
   <button onclick="document.getElementById('toggle-content').toggleAttribute('hidden')">
     Toggle Content
   </button>

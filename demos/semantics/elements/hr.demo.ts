@@ -1,13 +1,9 @@
 import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-	return renderElement(
-		"article",
-		attrs,
-		`<h3>Section One</h3>
+  return renderElement("article", attrs, `<h3>Section One</h3>
   <p>Content for the first section.</p>
   <hr />
   <h3>Section Two</h3>
-  <p>Content for the second section, visually separated by the horizontal rule.</p>`,
-	);
+  <p>Content for the second section, visually separated by the horizontal rule.</p>`);
 }

@@ -1,33 +1,33 @@
-import { GhostDemo } from "@demos/overviews/variants/modifiers";
 import type { Meta, StoryObj } from "@storybook/html-vite";
+import { GhostDemo } from "@demos/overviews/variants/modifiers";
 
 const meta: Meta = {
-	title: "Variants/Modifiers/Ghost",
-	parameters: {},
+  title: "Variants/Modifiers/Ghost",
+  parameters: {},
 };
 
 export default meta;
 
 export const ButtonExample: StoryObj = {
-	render: () => GhostDemo.buttons(),
+  render: () => GhostDemo.buttons(),
 };
 
 export const InputButtons: StoryObj = {
-	render: () => GhostDemo.inputButtons(),
+  render: () => GhostDemo.inputButtons(),
 };
 
 export const RoleButtons: StoryObj = {
-	render: () => GhostDemo.roleButtons(),
+  render: () => GhostDemo.roleButtons(),
 };
 
 export const Dropdowns: StoryObj = {
-	render: () => GhostDemo.dropdowns(),
+  render: () => GhostDemo.dropdowns(),
 };
 
 export const Accordions: StoryObj = {
-	render: () => GhostDemo.accordions(),
+  render: () => GhostDemo.accordions(),
 };
 
 export const Cards: StoryObj = {
-	render: () => GhostDemo.cardsWithHeaderAndFooter(),
+  render: () => GhostDemo.cardsWithHeaderAndFooter(),
 };

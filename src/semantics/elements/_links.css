@@ -1,68 +1,61 @@
-:where(a:not([role="button"])),
-[role="link"] {
-	--color-background: transparent;
-	--border-color: transparent;
-	--color-text: var(--color-primary-text);
-	--shadow: transparent;
-	outline: none;
-	padding: 0;
-	background-color: var(--color-background);
-	color: var(--color-text);
-	text-decoration: var(--a-decoration);
-	text-decoration-color: oklch(from var(--color-text) l c h / 0.3);
-	text-underline-offset: 0.125em;
-	transition:
-		background-color var(--transition),
-		color var(--transition),
-		text-decoration-color var(--transition),
-		text-decoration var(--transition),
-		box-shadow var(--transition);
+:where(a:not([role=button])),
+[role=link] {
+  --color-background: transparent;
+  --border-color: transparent;
+  --color-text: var(--color-primary-text);
+  --shadow: transparent;
+  outline: none;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  text-decoration: var(--a-decoration);
+  text-decoration-color: oklch(from var(--color-text) l c h / 0.3);
+  text-underline-offset: 0.125em;
+  transition: background-color var(--transition), color var(--transition), text-decoration-color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
 
-	&:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-		--color-background: transparent;
-		--border-color: transparent;
-		--color-text: var(--color-primary-text-hover);
-		--shadow: transparent;
-		text-decoration-color: oklch(from var(--color-text) l c h / 0.85);
-	}
+  &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+    --color-background: transparent;
+    --border-color: transparent;
+    --color-text: var(--color-primary-text-hover);
+    --shadow: transparent;
+    text-decoration-color: oklch(from var(--color-text) l c h / 0.85);
+  }
 
-	&:is([aria-current]:not([aria-current="false"])) {
-		font-weight: 500;
-		text-decoration-color: oklch(from var(--color-text) l c h / 0.6);
-	}
+  &:is([aria-current]:not([aria-current=false])) {
+    font-weight: 500;
+    text-decoration-color: oklch(from var(--color-text) l c h / 0.6);
+  }
 
-	&:focus-visible {
-		box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
-	}
+  &:focus-visible {
+    box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
+  }
 }
 
-[role="link"] {
-	cursor: pointer;
+[role=link] {
+  cursor: pointer;
 
-	&button {
-		display: inline-flex;
-	}
+  &button {
+    display: inline-flex;
+  }
 }
 
-a[role="button"] {
-	display: inline-block;
+a[role=button] {
+  display: inline-block;
 }
 
 aside {
-	nav {
-		a:not([role="button"]),
-		[role="link"] {
-			display: block !important;
-			width: 100%;
-		}
-	}
+  nav {
+    a:not([role=button]), [role=link] {
+      display: block !important;
+      width: 100%;
+    }
+  }
 }
 
 nav {
-	a:not([role="button"]),
-	[role="link"] {
-		&:not(:hover) {
-			--a-decoration: none;
-		}
-	}
+  a:not([role=button]), [role=link] {
+    &:not(:hover) {
+      --a-decoration: none;
+    }
+  }
 }

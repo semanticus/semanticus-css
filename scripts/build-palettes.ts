@@ -10,60 +10,52 @@
  *   <link rel="stylesheet" href="semanticus.palette.blue.css">
  */
 
-import fs from "fs";
-import { transform } from "lightningcss";
-import path from "path";
-import { variations } from "./utils";
+import fs from 'fs';
+import path from 'path';
+import { transform } from 'lightningcss';
+import { variations } from './utils';
 
-const palettes = variations.palettes
-	.map((p) => p.name)
-	.filter((n) => n !== "default");
-const srcDir = path.join(__dirname, "..", "src", "palettes");
-const distDir = path.join(__dirname, "..", "dist");
+const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default');
+const srcDir = path.join(__dirname, '..', 'src', 'palettes');
+const distDir = path.join(__dirname, '..', 'dist');
 
 // Ensure dist directory exists
 if (!fs.existsSync(distDir)) {
-	fs.mkdirSync(distDir, { recursive: true });
+  fs.mkdirSync(distDir, { recursive: true });
 }
 
-console.log("Building Semanticus CSS palettes...\n");
+console.log('Building Semanticus CSS palettes...\n');
 
 let successCount = 0;
 
 for (const palette of palettes) {
-	const srcFile = path.join(srcDir, `${palette}.css`);
-	const distFile = path.join(distDir, `semanticus.palette.${palette}.css`);
+  const srcFile = path.join(srcDir, `${palette}.css`);
+  const distFile = path.join(distDir, `semanticus.palette.${palette}.css`);
 
-	try {
-		// Read source file
-		let content = fs.readFileSync(srcFile, "utf8");
+  try {
+    // Read source file
+    let content = fs.readFileSync(srcFile, 'utf8');
 
-		// Remove the base variables import since palettes are now overlays
-		// The @import '../_base.css'; line should be removed
-		content = content.replace(
-			/\/\* Import base variables \*\/\s*@import '\.\.\/_(base|semantics|index)\.css';\s*/g,
-			"",
-		);
+    // Remove the base variables import since palettes are now overlays
+    // The @import '../_base.css'; line should be removed
+    content = content.replace(/\/\* Import base variables \*\/\s*@import '\.\.\/_(base|semantics|index)\.css';\s*/g, '');
 
-		// Minify with LightningCSS
-		const result = transform({
-			filename: `${palette}.css`,
-			code: Buffer.from(content),
-			minify: true,
-		});
+    // Minify with LightningCSS
+    const result = transform({
+      filename: `${palette}.css`,
+      code: Buffer.from(content),
+      minify: true,
+    });
 
-		// Write minified content to dist
-		fs.writeFileSync(distFile, result.code.toString());
+    // Write minified content to dist
+    fs.writeFileSync(distFile, result.code.toString());
 
-		console.log(`  ✓ ${distFile}`);
-		successCount++;
-	} catch (error) {
-		console.error(
-			`  ✗ Failed to build palette ${palette}:`,
-			(error as Error).message,
-		);
-		process.exit(1);
-	}
+    console.log(`  ✓ ${distFile}`);
+    successCount++;
+  } catch (error) {
+    console.error(`  ✗ Failed to build palette ${palette}:`, (error as Error).message);
+    process.exit(1);
+  }
 }
 
 console.log(`\n✓ ${successCount} color variants built successfully!`);

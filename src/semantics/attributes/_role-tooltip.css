@@ -1,135 +1,135 @@
 :has(> [role="tooltip"]) {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
 }
 
-:not(a, button, input, [role="button"])[aria-describedby] {
-	border-bottom: 1px dotted;
-	text-decoration: none;
-	cursor: help;
+:not(a, button, input, [role=button])[aria-describedby] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+  cursor: help;
 }
 
 [role="tooltip"] {
-	display: block;
-	z-index: var(--max-z-index);
-	position: absolute;
-	bottom: 100%;
-	left: 50%;
-	padding: 0.25rem 0.5rem;
-	transform: translate(-50%, -0.25rem);
-	border-radius: var(--radius);
-	background: var(--tooltip-fill);
-	color: var(--tooltip-text);
-	font-style: normal;
-	font-weight: var(--font-weight);
-	font-size: 0.875rem;
-	text-decoration: none;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	opacity: 0;
-	pointer-events: none;
+  display: block;
+  z-index: var(--max-z-index);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  padding: 0.25rem 0.5rem;
+  transform: translate(-50%, -0.25rem);
+  border-radius: var(--radius);
+  background: var(--tooltip-fill);
+  color: var(--tooltip-text);
+  font-style: normal;
+  font-weight: var(--font-weight);
+  font-size: 0.875rem;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
 
-	&::after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		transform: translate(-50%, 0);
-		border-top: 0.3rem solid var(--tooltip-fill);
-		border-right: 0.3rem solid transparent;
-		border-left: 0.3rem solid transparent;
-	}
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-top: 0.3rem solid var(--tooltip-fill);
+    border-right: 0.3rem solid transparent;
+    border-left: 0.3rem solid transparent;
+  }
 
-	&[data-placement="bottom"] {
-		top: 100%;
-		bottom: auto;
-		transform: translate(-50%, 0.25rem);
+  &[data-placement="bottom"] {
+    top: 100%;
+    bottom: auto;
+    transform: translate(-50%, 0.25rem);
 
-		&::after {
-			top: auto;
-			bottom: 100%;
-			transform: translate(-50%, 0);
-			border-top: none;
-			border-bottom: 0.3rem solid var(--tooltip-fill);
-		}
-	}
+    &::after {
+      top: auto;
+      bottom: 100%;
+      transform: translate(-50%, 0);
+      border-top: none;
+      border-bottom: 0.3rem solid var(--tooltip-fill);
+    }
+  }
 
-	&[data-placement="left"] {
-		top: 50%;
-		right: 100%;
-		bottom: auto;
-		left: auto;
-		transform: translate(-0.25rem, -50%);
+  &[data-placement="left"] {
+    top: 50%;
+    right: 100%;
+    bottom: auto;
+    left: auto;
+    transform: translate(-0.25rem, -50%);
 
-		&::after {
-			top: 50%;
-			left: 100%;
-			transform: translate(0, -50%);
-			border-top: 0.3rem solid transparent;
-			border-bottom: 0.3rem solid transparent;
-			border-left: 0.3rem solid var(--tooltip-fill);
-			border-right: none;
-		}
-	}
+    &::after {
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+      border-top: 0.3rem solid transparent;
+      border-bottom: 0.3rem solid transparent;
+      border-left: 0.3rem solid var(--tooltip-fill);
+      border-right: none;
+    }
+  }
 
-	&[data-placement="right"] {
-		top: 50%;
-		left: 100%;
-		bottom: auto;
-		transform: translate(0.25rem, -50%);
+  &[data-placement="right"] {
+    top: 50%;
+    left: 100%;
+    bottom: auto;
+    transform: translate(0.25rem, -50%);
 
-		&::after {
-			top: 50%;
-			right: 100%;
-			left: auto;
-			transform: translate(0, -50%);
-			border-top: 0.3rem solid transparent;
-			border-bottom: 0.3rem solid transparent;
-			border-right: 0.3rem solid var(--tooltip-fill);
-			border-left: none;
-		}
-	}
+    &::after {
+      top: 50%;
+      right: 100%;
+      left: auto;
+      transform: translate(0, -50%);
+      border-top: 0.3rem solid transparent;
+      border-bottom: 0.3rem solid transparent;
+      border-right: 0.3rem solid var(--tooltip-fill);
+      border-left: none;
+    }
+  }
 }
 
 [aria-describedby]:hover + [role="tooltip"],
 [aria-describedby]:focus + [role="tooltip"] {
-	opacity: 1;
+  opacity: 1;
 }
 
 @media (hover: hover) and (pointer: fine) {
-	[role="tooltip"] {
-		--tooltip-slide-to: translate(-50%, -0.25rem);
-		transform: translate(-50%, 0.75rem);
-		animation-duration: 0.2s;
-		animation-fill-mode: forwards;
+  [role="tooltip"] {
+    --tooltip-slide-to: translate(-50%, -0.25rem);
+    transform: translate(-50%, 0.75rem);
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
 
-		&[data-placement="bottom"] {
-			--tooltip-slide-to: translate(-50%, 0.25rem);
-			transform: translate(-50%, -0.75rem);
-		}
+    &[data-placement="bottom"] {
+      --tooltip-slide-to: translate(-50%, 0.25rem);
+      transform: translate(-50%, -0.75rem);
+    }
 
-		&[data-placement="left"] {
-			--tooltip-slide-to: translate(-0.25rem, -50%);
-			transform: translate(0.75rem, -50%);
-		}
+    &[data-placement="left"] {
+      --tooltip-slide-to: translate(-0.25rem, -50%);
+      transform: translate(0.75rem, -50%);
+    }
 
-		&[data-placement="right"] {
-			--tooltip-slide-to: translate(0.25rem, -50%);
-			transform: translate(-0.75rem, -50%);
-		}
-	}
+    &[data-placement="right"] {
+      --tooltip-slide-to: translate(0.25rem, -50%);
+      transform: translate(-0.75rem, -50%);
+    }
+  }
 
-	[aria-describedby]:hover + [role="tooltip"],
-	[aria-describedby]:focus + [role="tooltip"] {
-		animation-name: tooltip-slide;
-	}
+  [aria-describedby]:hover + [role="tooltip"],
+  [aria-describedby]:focus + [role="tooltip"] {
+    animation-name: tooltip-slide;
+  }
 }
 
 @keyframes tooltip-slide {
-	to {
-		transform: var(--tooltip-slide-to);
-		opacity: 1;
-	}
+  to {
+    transform: var(--tooltip-slide-to);
+    opacity: 1;
+  }
 }

@@ -1,9 +1,9 @@
 <script setup>
-import hljs from "highlight.js/lib/core";
-import html from "highlight.js/lib/languages/xml";
-import { useData } from "vitepress";
-import { computed, onMounted, onUnmounted, ref, watch } from "vue";
-import semanticusStyles from "../../../dist/semanticus.css?raw";
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
+import semanticusStyles from '../../../dist/semanticus.css?raw';
+import hljs from 'highlight.js/lib/core'
+import html from 'highlight.js/lib/languages/xml'
+import { useData } from 'vitepress'
 
 // isDark is a reactive Ref<boolean>
 const { isDark } = useData();
@@ -53,41 +53,41 @@ const githubDarkStyles = `
 
 // Inject highlight.js styles into document head
 function injectHighlightStyles() {
-	if (typeof document === "undefined") return;
+  if (typeof document === 'undefined') return;
 
-	let styleEl = document.getElementById("html-previewer-hljs-styles");
-	if (!styleEl) {
-		styleEl = document.createElement("style");
-		styleEl.id = "html-previewer-hljs-styles";
-		document.head.appendChild(styleEl);
-	}
-	styleEl.textContent = isDark.value ? githubDarkStyles : githubLightStyles;
+  let styleEl = document.getElementById('html-previewer-hljs-styles');
+  if (!styleEl) {
+    styleEl = document.createElement('style');
+    styleEl.id = 'html-previewer-hljs-styles';
+    document.head.appendChild(styleEl);
+  }
+  styleEl.textContent = isDark.value ? githubDarkStyles : githubLightStyles;
 }
 
 // Register HTML language
-hljs.registerLanguage("html", html);
+hljs.registerLanguage('html', html)
 
 const props = defineProps({
-	code: {
-		type: String,
-		required: true,
-	},
-	minHeight: {
-		type: Number,
-		default: 100,
-	},
-	autoResize: {
-		type: Boolean,
-		default: true,
-	},
-	editable: {
-		type: Boolean,
-		default: true,
-	},
-	codeCollapsed: {
-		type: Boolean,
-		default: false,
-	},
+  code: {
+    type: String,
+    required: true
+  },
+  minHeight: {
+    type: Number,
+    default: 100
+  },
+  autoResize: {
+    type: Boolean,
+    default: true
+  },
+  editable: {
+    type: Boolean,
+    default: true
+  },
+  codeCollapsed: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const iframeRef = ref(null);
@@ -95,14 +95,12 @@ const iframeHeight = ref(props.minHeight);
 const code = ref(props.code);
 const uid = `html-previewer-${Math.random().toString(36).substr(2, 9)}`;
 const codeExpanded = ref(false);
-const highlightedCode = hljs.highlight(props.code || "", {
-	language: "html",
-}).value;
+const highlightedCode = hljs.highlight(props.code || '', { language: 'html' }).value;
 
 const iframeContent = computed(() => {
-	return `
+  return `
 <!DOCTYPE html>
-<html lang="en" data-theme="${isDark.value ? "dark" : "light"}">
+<html lang="en" data-theme="${isDark.value ? 'dark' : 'light'}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -180,48 +178,40 @@ const iframeContent = computed(() => {
 
     // Send initial height immediately and at intervals
     sendHeightMultipleTimes();
-  </script>
+  <\/script>
 </body>
 </html>
 `;
 });
 
 function updateContent(event) {
-	code.value = event.target.innerText;
+  code.value = event.target.innerText;
 }
 
 // Handle messages from the iframe (for auto-resize)
 function handleMessage(event) {
-	if (
-		event.data &&
-		event.data.type === "html-previewer-resize" &&
-		event.data.id === uid &&
-		props.autoResize
-	) {
-		iframeHeight.value = Math.max(event.data.height, props.minHeight);
-	}
+  if (event.data && event.data.type === 'html-previewer-resize' && event.data.id === uid && props.autoResize) {
+    iframeHeight.value = Math.max(event.data.height, props.minHeight);
+  }
 }
 
 onMounted(() => {
-	window.addEventListener("message", handleMessage);
-	// Inject highlight.js styles
-	injectHighlightStyles();
-	// Request initial height after a short delay to ensure iframe is ready
-	setTimeout(() => {
-		if (iframeRef.value?.contentWindow) {
-			iframeRef.value.contentWindow.postMessage(
-				{ type: "html-previewer-request-height", id: uid },
-				"*",
-			);
-		}
-	}, 100);
+  window.addEventListener('message', handleMessage);
+  // Inject highlight.js styles
+  injectHighlightStyles();
+  // Request initial height after a short delay to ensure iframe is ready
+  setTimeout(() => {
+    if (iframeRef.value?.contentWindow) {
+      iframeRef.value.contentWindow.postMessage({ type: 'html-previewer-request-height', id: uid }, '*');
+    }
+  }, 100);
 });
 
-onUnmounted(() => window.removeEventListener("message", handleMessage));
+onUnmounted(() => window.removeEventListener('message', handleMessage));
 
 // Watch for theme changes and update highlight.js styles
 watch(isDark, () => {
-	injectHighlightStyles();
+  injectHighlightStyles();
 });
 </script>
 

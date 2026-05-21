@@ -1,7 +1,7 @@
-import * as ADemo from "@demos/semantics/elements/a.demo";
+import * as ADemo from '@demos/semantics/elements/a.demo';
 
 export function headings(title: string = "Heading Level ") {
-	return `<h1>${title}1</h1>
+  return `<h1>${title}1</h1>
 <h2>${title}2</h2>
 <h3>${title}3</h3>
 <h4>${title}4</h4>
@@ -10,13 +10,13 @@ export function headings(title: string = "Heading Level ") {
 }
 
 export function paragraphs() {
-	return `<p>The paragraph element is the most basic block of text content.</p>
+  return `<p>The paragraph element is the most basic block of text content.</p>
 <p>A second paragraph follows, automatically spaced below the first.</p>
 <p>The last paragraph in a container has its margin trimmed, avoiding extra whitespace at the bottom.</p>`;
 }
 
 export function codeBlock() {
-	return `<pre><code>function greet(name) {
+  return `<pre><code>function greet(name) {
   return \`Hello, \${name}!\`;
 }
 
@@ -24,7 +24,7 @@ console.log(greet("World"));</code></pre>`;
 }
 
 export function address() {
-	return `<address>
+  return `<address>
   <strong>Acme Corp</strong><br>
   123 Main Street<br>
   Springfield, IL 62701<br>
@@ -33,14 +33,14 @@ export function address() {
 }
 
 export function blockquote() {
-	return `<blockquote>"Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+  return `<blockquote>"Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
 <footer>
   <cite>- Phasellus eget lacinia</cite>
 </footer></blockquote>`;
 }
 
 export function inlineElements() {
-	return `<div role="toolbar">
+  return `<div role="toolbar">
   <p>${ADemo.main()}</p>
   <p>${ADemo.active()}</p>
   <p><code>Code</code></p>
@@ -71,21 +71,21 @@ export function inlineElements() {
 }
 
 export function strongAndBold() {
-	return `<p>This is <strong>critically important</strong> information.</p>
+  return `<p>This is <strong>critically important</strong> information.</p>
 
 <p>The <b>bold element</b> is visually identical to strong but carries no semantic importance.</p>`;
 }
 
 export function inlineEm() {
-	return `<p>This is <em>emphasized</em> text. The <em>element</em> indicates content of stress emphasis.</p>`;
+  return `<p>This is <em>emphasized</em> text. The <em>element</em> indicates content of stress emphasis.</p>`;
 }
 
 export function inlineItalic() {
-	return `<p>The <i>italic element</i> is visually identical to em but carries no semantic importance — use it for stylistic offset without implying emphasis.</p>`;
+  return `<p>The <i>italic element</i> is visually identical to em but carries no semantic importance — use it for stylistic offset without implying emphasis.</p>`;
 }
 
 export function subAndSup() {
-	return `<p>Water is H<sub>2</sub>O. Carbon dioxide is CO<sub>2</sub>.</p>
+  return `<p>Water is H<sub>2</sub>O. Carbon dioxide is CO<sub>2</sub>.</p>
 
 <p>Einstein's famous equation: E = mc<sup>2</sup>.</p>
 
@@ -95,27 +95,27 @@ export function subAndSup() {
 }
 
 export function delAndIns() {
-	return `<p>The original price was <del>$99.00</del> <ins>$49.00</ins>.</p>`;
+  return `<p>The original price was <del>$99.00</del> <ins>$49.00</ins>.</p>`;
 }
 
 export function keyboard() {
-	return `<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy, or <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.</p>`;
+  return `<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy, or <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.</p>`;
 }
 
 export function sample() {
-	return `<p>The program outputs: <samp>Hello, World!</samp></p>`;
+  return `<p>The program outputs: <samp>Hello, World!</samp></p>`;
 }
 
 export function abbr() {
-	return `<p>The <abbr title="HyperText Markup Language">HTML</abbr> standard defines the structure of web pages. Use <abbr title="Cascading Style Sheets">CSS</abbr> for styling and <abbr title="JavaScript">JS</abbr> for interactivity.</p>`;
+  return `<p>The <abbr title="HyperText Markup Language">HTML</abbr> standard defines the structure of web pages. Use <abbr title="Cascading Style Sheets">CSS</abbr> for styling and <abbr title="JavaScript">JS</abbr> for interactivity.</p>`;
 }
 
 export function mark() {
-	return `<p>Search results for <strong>"semantic HTML"</strong>: Use <mark>semantic HTML</mark> elements to convey meaning to both browsers and assistive technologies. <mark>Semantic HTML</mark> improves accessibility and SEO.</p>`;
+  return `<p>Search results for <strong>"semantic HTML"</strong>: Use <mark>semantic HTML</mark> elements to convey meaning to both browsers and assistive technologies. <mark>Semantic HTML</mark> improves accessibility and SEO.</p>`;
 }
 
 export function small() {
-	return `<input
+  return `<input
   type="email"
   name="email"
   placeholder="Email"

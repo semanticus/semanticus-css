@@ -1,30 +1,30 @@
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { ButtonDemo } from "@demos/semantics/elements";
-import { IntentDemo } from "@demos/variants";
 import type { Meta, StoryObj } from "@storybook/html-vite";
+import { ButtonDemo } from "@demos/semantics/elements";
+import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
+import { IntentDemo } from '@demos/variants';
 
 const meta: Meta = {
-	title: "Semantics/Elements/<button>",
+  title: "Semantics/Elements/<button>",
 };
 
 export default meta;
 
 export const BasicUsage: StoryObj = {
-	args: { html: ButtonDemo.main() },
-	render: (args) => args.html,
+  args: { html: ButtonDemo.main() },
+  render: (args) => args.html,
 };
 
 export const intentVariants: StoryObj = {
-	args: { html: IntentDemo.buttons() },
-	render: (args) => args.html,
+  args: { html: IntentDemo.buttons() },
+  render: (args) => args.html,
 };
 
 export const subtleModifier: StoryObj = {
-	args: { html: SubtleDemo.buttons() },
-	render: (args) => args.html,
+  args: { html: SubtleDemo.buttons() },
+  render: (args) => args.html,
 };
 
 export const ghostModifier: StoryObj = {
-	args: { html: GhostDemo.buttons() },
-	render: (args) => args.html,
+  args: { html: GhostDemo.buttons() },
+  render: (args) => args.html,
 };

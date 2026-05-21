@@ -1,84 +1,84 @@
 .card,
 .pane,
 .panel {
-	--shadow: var(--dialog-shadow);
-	--color-background: var(--dialog-fill);
-	--border-color: var(--dialog-border);
+  --shadow: var(--dialog-shadow);
+  --color-background: var(--dialog-fill);
+  --border-color: var(--dialog-border);
 
-	padding-block: var(--spacing);
-	padding-inline: var(--spacing);
-	margin-bottom: var(--spacing);
-	border-radius: var(--radius);
-	border: var(--border-size) solid var(--border-color);
-	background: var(--color-background);
-	box-shadow: var(--shadow);
-	position: relative;
+  padding-block: var(--spacing);
+  padding-inline: var(--spacing);
+  margin-bottom: var(--spacing);
+  border-radius: var(--radius);
+  border: var(--border-size) solid var(--border-color);
+  background: var(--color-background);
+  box-shadow: var(--shadow);
+  position: relative;
 
-	> header,
-	> footer {
-		width: auto;
-		margin-inline: calc(var(--spacing) * -1);
-		padding-inline: var(--spacing);
-		background-color: var(--dialog-section-fill);
-	}
+  > header,
+  > footer {
+    width: auto;
+    margin-inline: calc(var(--spacing) * -1);
+    padding-inline: var(--spacing);
+    background-color: var(--dialog-section-fill);
+  }
 
-	> header {
-		margin-top: calc(var(--spacing) * -1);
-		border-bottom: var(--border-size) solid var(--dialog-section-border);
-		border-top-right-radius: var(--radius);
-		border-top-left-radius: var(--radius);
-	}
+  > header {
+    margin-top: calc(var(--spacing) * -1);
+    border-bottom: var(--border-size) solid var(--dialog-section-border);
+    border-top-right-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+  }
 
-	> footer {
-		margin-bottom: calc(var(--spacing) * -1);
-		border-top: var(--border-size) solid var(--dialog-section-border);
-		border-bottom-right-radius: var(--radius);
-		border-bottom-left-radius: var(--radius);
-		display: flex;
-		justify-content: end;
-		gap: calc(var(--nav-link-gap) * 1.5);
-	}
+  > footer {
+    margin-bottom: calc(var(--spacing) * -1);
+    border-top: var(--border-size) solid var(--dialog-section-border);
+    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    display: flex;
+    justify-content: end;
+    gap: calc(var(--nav-link-gap) * 1.5);
+  }
 
-	> :last-child:is(hgroup) {
-		margin-bottom: 0;
-	}
+  > :last-child:is(hgroup) {
+    margin-bottom: 0;
+  }
 
-	/* Close button styling */
-	[rel="prev"] {
-		margin: 0;
-		padding: 0;
-		position: absolute;
-		display: block;
-		width: 1rem;
-		height: 1rem;
-		top: var(--spacing);
-		right: var(--spacing);
-		border: none;
-		border-radius: 0;
-		background-image: var(--icon-close);
-		background-position: center;
-		background-size: auto 1rem;
-		background-repeat: no-repeat;
-		background-color: transparent;
-		box-shadow: none;
-		opacity: 0.5;
-		transition: opacity var(--transition);
+  /* Close button styling */
+  [rel="prev"] {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    top: var(--spacing);
+    right: var(--spacing);
+    border: none;
+    border-radius: 0;
+    background-image: var(--icon-close);
+    background-position: center;
+    background-size: auto 1rem;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 0.5;
+    transition: opacity var(--transition);
 
-		&:hover {
-			opacity: 1;
-		}
-	}
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .pane,
 .panel {
-	--dialog-shadow: none;
-	--shadow: none;
+  --dialog-shadow: none;
+  --shadow: none;
 }
 
 .pane {
-	--dialog-border: transparent;
-	--border-color: transparent;
+  --dialog-border: transparent;
+  --border-color: transparent;
 
-	border-radius: 0;
+  border-radius: 0;
 }

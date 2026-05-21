@@ -1,10 +1,10 @@
 footer {
-	width: 100%;
-	padding-block: var(--spacing);
-	margin-top: var(--spacing);
+  width: 100%;
+  padding-block: var(--spacing);
+  margin-top: var(--spacing);
 
-	& > * {
-		margin-top: 0 !important;
-		margin-bottom: 0 !important;
-	}
+  & > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 }

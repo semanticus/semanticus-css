@@ -10,59 +10,59 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-@import "./_variables.css";
+@import './_variables.css';
 
 /* borders */
-@import "./borders/_border-radius.css";
-@import "./borders/_border-style.css";
-@import "./borders/_border-width.css";
+@import './borders/_border-radius.css';
+@import './borders/_border-style.css';
+@import './borders/_border-width.css';
 
 /* colors */
-@import "./colors/_bg-colors.css";
-@import "./colors/_border-colors.css";
-@import "./colors/_subtle-colors.css";
-@import "./colors/_text-bg-colors.css";
-@import "./colors/_text-colors.css";
+@import './colors/_bg-colors.css';
+@import './colors/_border-colors.css';
+@import './colors/_subtle-colors.css';
+@import './colors/_text-bg-colors.css';
+@import './colors/_text-colors.css';
 
 /* display */
-@import "./display/_display.css";
-@import "./display/_overflow.css";
-@import "./display/_visibility.css";
+@import './display/_display.css';
+@import './display/_overflow.css';
+@import './display/_visibility.css';
 
 /* effects */
-@import "./effects/_focus-ring.css";
-@import "./effects/_opacity.css";
-@import "./effects/_shadows.css";
-@import "./effects/_transforms.css";
+@import './effects/_focus-ring.css';
+@import './effects/_opacity.css';
+@import './effects/_shadows.css';
+@import './effects/_transforms.css';
 
 /* grid */
-@import "./_grid.css";
+@import './_grid.css';
 
 /* layout */
-@import "./layout/_flexbox.css";
-@import "./layout/_ratio.css";
-@import "./layout/_misc.css";
+@import './layout/_flexbox.css';
+@import './layout/_ratio.css';
+@import './layout/_misc.css';
 
 /* media */
-@import "./media/_object-fit.css";
+@import './media/_object-fit.css';
 
 /* positioning */
-@import "./positioning/_floats.css";
-@import "./positioning/_inset.css";
-@import "./positioning/_position.css";
-@import "./positioning/_z-index.css";
+@import './positioning/_floats.css';
+@import './positioning/_inset.css';
+@import './positioning/_position.css';
+@import './positioning/_z-index.css';
 
 /* sizing */
-@import "./sizing/_height.css";
-@import "./sizing/_width.css";
+@import './sizing/_height.css';
+@import './sizing/_width.css';
 
 /* spacing */
-@import "./spacing/_gap.css";
-@import "./spacing/_margin.css";
-@import "./spacing/_padding.css";
+@import './spacing/_gap.css';
+@import './spacing/_margin.css';
+@import './spacing/_padding.css';
 
 /* typography */
-@import "./typography/_font-family.css";
-@import "./typography/_font-sizes.css";
-@import "./typography/_font-weight.css";
-@import "./typography/_text-alignment.css";
+@import './typography/_font-family.css';
+@import './typography/_font-sizes.css';
+@import './typography/_font-weight.css';
+@import './typography/_text-alignment.css';

@@ -1,18 +1,18 @@
-import { HiddenDemo } from "@demos/semantics/attributes";
 import type { Meta, StoryObj } from "@storybook/html-vite";
+import { HiddenDemo } from "@demos/semantics/attributes";
 
 const meta: Meta = {
-	title: "Semantics/Attributes/[hidden]",
+  title: "Semantics/Attributes/[hidden]",
 };
 
 export default meta;
 
 export const BasicUsage: StoryObj = {
-	args: { html: HiddenDemo.main() },
-	render: (args) => args.html,
+  args: { html: HiddenDemo.main() },
+  render: (args) => args.html,
 };
 
 export const toggle: StoryObj = {
-	args: { html: HiddenDemo.toggle() },
-	render: (args) => args.html,
+  args: { html: HiddenDemo.toggle() },
+  render: (args) => args.html,
 };

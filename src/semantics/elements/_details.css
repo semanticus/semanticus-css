@@ -1,310 +1,290 @@
 summary {
-	display: list-item; /* modern-normalize */
+  display: list-item; /* modern-normalize */
 }
 
 details {
-	display: block;
-	margin-bottom: var(--spacing);
+  display: block;
+  margin-bottom: var(--spacing);
 
-	& summary {
-		line-height: 1rem;
-		list-style-type: none;
-		cursor: pointer;
-		transition: color var(--transition);
+  & summary {
+    line-height: 1rem;
+    list-style-type: none;
+    cursor: pointer;
+    transition: color var(--transition);
 
-		&:not([role]) {
-			color: var(--details-summary-text);
-		}
+    &:not([role]) {
+      color: var(--details-summary-text);
+    }
 
-		&::-webkit-details-marker {
-			display: none;
-		}
+    &::-webkit-details-marker {
+      display: none;
+    }
 
-		&::marker {
-			display: none;
-		}
+    &::marker {
+      display: none;
+    }
 
-		&::-moz-list-bullet {
-			list-style-type: none;
-		}
+    &::-moz-list-bullet {
+      list-style-type: none;
+    }
 
-		&::after {
-			display: block;
-			width: 1rem;
-			height: 1rem;
-			margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
-			float: right;
-			transform: rotate(-90deg);
-			background-image: var(--icon-chevron);
-			background-position: right center;
-			background-size: 1rem auto;
-			background-repeat: no-repeat;
-			content: "";
-			transition: transform var(--transition);
-		}
+    &::after {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
+      float: right;
+      transform: rotate(-90deg);
+      background-image: var(--icon-chevron);
+      background-position: right center;
+      background-size: 1rem auto;
+      background-repeat: no-repeat;
+      content: "";
+      transition: transform var(--transition);
+    }
 
-		&:focus {
-			outline: none;
+    &:focus {
+      outline: none;
 
-			&:not([role]) {
-				color: var(--details-summary-text-hover);
-			}
-		}
+      &:not([role]) {
+        color: var(--details-summary-text-hover);
+      }
+    }
 
-		&:focus-visible:not([role]) {
-			outline: var(--outline-size) solid var(--color-primary-focus-ring);
-			outline-offset: calc(var(--spacing, 1rem) * 0.5);
-			color: var(--color-primary-text);
-		}
+    &:focus-visible:not([role]) {
+      outline: var(--outline-size) solid var(--color-primary-focus-ring);
+      outline-offset: calc(var(--spacing, 1rem) * 0.5);
+      color: var(--color-primary-text);
+    }
 
-		&[role="button"] {
-			width: 100%;
-			text-align: left;
+    &[role=button] {
+      width: 100%;
+      text-align: left;
 
-			&:focus-visible {
-				outline: var(--outline-size) solid var(--color-primary-focus-ring);
-				outline-offset: calc(var(--spacing, 1rem) * 0.5);
-			}
+      &:focus-visible {
+        outline: var(--outline-size) solid var(--color-primary-focus-ring);
+        outline-offset: calc(var(--spacing, 1rem) * 0.5);
+      }
 
-			&::after {
-				height: calc(1rem * var(--line-height, 1.5));
-				filter: brightness(0) invert(1);
-			}
-		}
-	}
+      &::after {
+        height: calc(1rem * var(--line-height, 1.5));
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
 
-	&[open] > summary {
-		margin-bottom: var(--spacing);
+  &[open] > summary {
+    margin-bottom: var(--spacing);
 
-		&:not([role]):not(:focus) {
-			color: var(--details-summary-text-open);
-		}
+    &:not([role]):not(:focus) {
+        color: var(--details-summary-text-open);
+    }
 
-		&::after {
-			transform: rotate(0);
-		}
-	}
+    &::after {
+      transform: rotate(0);
+    }
+  }
 }
 
-[dir="rtl"] details summary {
-	text-align: right;
+[dir=rtl] details summary {
+  text-align: right;
 
-	&::after {
-		float: left;
-		background-position: left center;
-	}
+  &::after {
+    float: left;
+    background-position: left center;
+  }
 }
 
 /**
  * Dropdown (details with summary[aria-haspopup="menu"])
  */
 details:has(> summary[aria-haspopup="menu"]) {
-	position: relative;
-	border-bottom: none;
+  position: relative;
+  border-bottom: none;
 
-	& > summary::after,
-	& > button::after,
-	& > a::after {
-		display: block;
-		width: 1rem;
-		height: calc(1rem * var(--line-height, 1.5));
-		margin-inline-start: 0.25rem;
-		margin-left: auto;
-		float: right;
-		transform: rotate(0deg) translateX(0.2rem);
-		background-image: var(--icon-chevron);
-		background-position: right center;
-		background-size: 1rem auto;
-		background-repeat: no-repeat;
-		content: "";
-	}
+  & > summary::after,
+  & > button::after,
+  & > a::after {
+    display: block;
+    width: 1rem;
+    height: calc(1rem * var(--line-height, 1.5));
+    margin-inline-start: 0.25rem;
+    margin-left: auto;
+    float: right;
+    transform: rotate(0deg) translateX(0.2rem);
+    background-image: var(--icon-chevron);
+    background-position: right center;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+    content: "";
+  }
 
-	& summary:not([role="button"]) {
-		--outline-size: 0.0625rem;
-	}
+  & summary:not([role="button"]) {
+    --outline-size: 0.0625rem;
+  }
 
-	& > :where(summary:not([role])) {
-		display: flex;
-		align-items: center;
-		height: calc(
-			1rem *
-			var(--line-height) +
-			var(--input-spacing-vertical) *
-			2 +
-			var(--border-size) *
-			2
-		);
-		padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
-		border: var(--border-size) solid var(--input-border);
-		border-radius: var(--radius);
-		background-color: var(--input-fill);
-		color: var(--input-placeholder-text);
-		line-height: inherit;
-		cursor: pointer;
-		user-select: none;
-		transition:
-			background-color var(--transition),
-			border-color var(--transition),
-			color var(--transition),
-			box-shadow var(--transition);
-	}
+  & > :where(summary:not([role])) {
+    display: flex;
+    align-items: center;
+    height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
+    padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
+    border: var(--border-size) solid var(--input-border);
+    border-radius: var(--radius);
+    background-color: var(--input-fill);
+    color: var(--input-placeholder-text);
+    line-height: inherit;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+  }
 
-	& > :where(summary:not([role]):active, summary:not([role]):focus) {
-		border-color: var(--input-border-focus);
-		background-color: var(--input-fill-active);
-	}
+  & > :where(summary:not([role]):active, summary:not([role]):focus) {
+    border-color: var(--input-border-focus);
+    background-color: var(--input-fill-active);
+  }
 
-	& > :where(summary:not([role]):focus) {
-		box-shadow: 0 0 0 var(--outline-size) var(--input-border-focus);
-	}
+  & > :where(summary:not([role]):focus) {
+    box-shadow: 0 0 0 var(--outline-size) var(--input-border-focus);
+  }
 
-	& > :where(summary:not([role]):focus-visible) {
-		outline: none;
-	}
+  & > :where(summary:not([role]):focus-visible) {
+    outline: none;
+  }
 
-	& > :where(summary:not([role])[aria-invalid="false"]) {
-		--input-border: var(--color-success-fill);
-		--input-border-focus: var(--color-success-fill-hover);
-	}
+  & > :where(summary:not([role])[aria-invalid=false]) {
+    --input-border: var(--color-success-fill);
+    --input-border-focus: var(--color-success-fill-hover);
+  }
 
-	& > :where(summary:not([role])[aria-invalid="true"]) {
-		--input-border: var(--color-danger-fill);
-		--input-border-focus: var(--color-danger-fill-hover);
-	}
+  & > :where(summary:not([role])[aria-invalid=true]) {
+    --input-border: var(--color-danger-fill);
+    --input-border-focus: var(--color-danger-fill-hover);
+  }
 
-	& > :where(summary + ul[role="menu"]) {
-		display: flex;
-		z-index: var(--max-z-index);
-		position: absolute;
-		left: 0;
-		flex-direction: column;
-		width: 100%;
-		min-width: fit-content;
-		margin: 0;
-		margin-top: var(--outline-size);
-		padding: 0;
-		border: var(--border-size) solid var(--menu-border);
-		border-radius: var(--radius);
-		background-color: var(--menu-fill);
-		box-shadow: var(--menu-shadow);
-		color: var(--menu-text);
-		white-space: nowrap;
-		opacity: 0;
-		transition:
-			opacity var(--transition),
-			transform 0s ease-in-out 1s;
-	}
+  & > :where(summary + ul[role="menu"]) {
+    display: flex;
+    z-index: var(--max-z-index);
+    position: absolute;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    min-width: fit-content;
+    margin: 0;
+    margin-top: var(--outline-size);
+    padding: 0;
+    border: var(--border-size) solid var(--menu-border);
+    border-radius: var(--radius);
+    background-color: var(--menu-fill);
+    box-shadow: var(--menu-shadow);
+    color: var(--menu-text);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity var(--transition), transform 0s ease-in-out 1s;
+  }
 
-	& > :where(summary + ul[role="menu"][dir="rtl"]) {
-		right: 0;
-		left: auto;
-	}
+  & > :where(summary + ul[role="menu"][dir=rtl]) {
+    right: 0;
+    left: auto;
+  }
 
-	& > summary + ul[role="menu"] li {
-		width: 100%;
-		margin-bottom: 0;
-		padding: calc(var(--input-spacing-vertical) * 0.5)
-			var(--input-spacing-horizontal);
-		list-style: none;
+  & > summary + ul[role="menu"] li {
+    width: 100%;
+    margin-bottom: 0;
+    padding: calc(var(--input-spacing-vertical) * 0.5) var(--input-spacing-horizontal);
+    list-style: none;
 
-		&:first-of-type {
-			margin-top: calc(var(--input-spacing-vertical) * 0.5);
-		}
+    &:first-of-type {
+      margin-top: calc(var(--input-spacing-vertical) * 0.5);
+    }
 
-		&:last-of-type {
-			margin-bottom: calc(var(--input-spacing-vertical) * 0.5);
-		}
+    &:last-of-type {
+      margin-bottom: calc(var(--input-spacing-vertical) * 0.5);
+    }
 
-		& a {
-			display: block;
-			margin: calc(var(--input-spacing-vertical) * -0.5)
-				calc(var(--input-spacing-horizontal) * -1);
-			padding: calc(var(--input-spacing-vertical) * 0.5)
-				var(--input-spacing-horizontal);
-			overflow: hidden;
-			border-radius: 0;
-			color: var(--menu-text);
-			text-decoration: none;
-			text-overflow: ellipsis;
+    & a {
+      display: block;
+      margin: calc(var(--input-spacing-vertical) * -0.5) calc(var(--input-spacing-horizontal) * -1);
+      padding: calc(var(--input-spacing-vertical) * 0.5) var(--input-spacing-horizontal);
+      overflow: hidden;
+      border-radius: 0;
+      color: var(--menu-text);
+      text-decoration: none;
+      text-overflow: ellipsis;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:focus-visible,
-			&[aria-current]:not([aria-current="false"]) {
-				background-color: var(--menu-fill-hover);
-			}
-		}
+      &:hover,
+      &:focus,
+      &:active,
+      &:focus-visible,
+      &[aria-current]:not([aria-current=false]) {
+        background-color: var(--menu-fill-hover);
+      }
+    }
 
-		& label {
-			width: 100%;
-		}
+    & label {
+      width: 100%;
+    }
 
-		&:has(label):hover {
-			background-color: var(--menu-fill-hover);
-		}
-	}
+    &:has(label):hover {
+      background-color: var(--menu-fill-hover);
+    }
+  }
 
-	&[open] > summary {
-		margin-bottom: 0;
-	}
+  &[open] > summary {
+    margin-bottom: 0;
+  }
 
-	&[open] > summary + ul[role="menu"] {
-		transform: scaleY(1);
-		opacity: 1;
-		transition:
-			opacity var(--transition),
-			transform 0s ease-in-out 0s;
-	}
+  &[open] > summary + ul[role="menu"] {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: opacity var(--transition), transform 0s ease-in-out 0s;
+  }
 
-	&[open] > summary::before {
-		display: block;
-		z-index: 1;
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		inset: 0;
-		background: none;
-		content: "";
-		cursor: default;
-	}
+  &[open] > summary::before {
+    display: block;
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    background: none;
+    content: "";
+    cursor: default;
+  }
 }
 
 label > details:has(> summary[aria-haspopup="menu"]) {
-	margin-top: calc(var(--spacing) * 0.25);
+  margin-top: calc(var(--spacing) * 0.25);
 }
 
 nav details:has(> summary[aria-haspopup="menu"]) {
-	margin-bottom: 0;
-	display: inline;
+  margin-bottom: 0;
+  display: inline;
 
-	& > summary::after {
-		transform: rotate(0deg) translateX(0rem);
-	}
+  & > summary::after {
+    transform: rotate(0deg) translateX(0rem);
+  }
 
-	& > :where(summary:not([role])) {
-		display: flex;
-		align-items: center;
-		height: auto;
-		padding: calc(var(--nav-link-gap) - var(--border-size) * 2)
-			var(--nav-link-gap);
-	}
+  & > :where(summary:not([role])) {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: calc(var(--nav-link-gap) - var(--border-size) * 2) var(--nav-link-gap);
+  }
 
-	& > :where(summary:not([role]):focus-visible) {
-		box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
-	}
+  & > :where(summary:not([role]):focus-visible) {
+    box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
+  }
 
-	& summary:focus-visible {
-		--outline-size: 0.125rem;
-	}
+  & summary:focus-visible {
+    --outline-size: 0.125rem;
+  }
 
-	/* Styles for dropdowns with role="button" inside nav */
-	& > summary[role="button"] {
-		display: flex;
-		align-items: center;
-		width: auto;
-		height: auto;
-		padding: calc(var(--nav-link-gap) - var(--border-size) * 2)
-			var(--nav-link-gap);
-	}
+  /* Styles for dropdowns with role="button" inside nav */
+  & > summary[role="button"] {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: calc(var(--nav-link-gap) - var(--border-size) * 2) var(--nav-link-gap);
+  }
 }

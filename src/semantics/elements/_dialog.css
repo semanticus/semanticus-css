@@ -1,117 +1,113 @@
 /* Prevent body scroll and interaction when modal is open */
 body:has(dialog[open]) {
-	overflow: hidden;
-	pointer-events: none;
-	touch-action: none;
+  overflow: hidden;
+  pointer-events: none;
+  touch-action: none;
 
-	& dialog[open],
-	& dialog:target {
-		pointer-events: auto;
-		touch-action: auto;
-	}
+  & dialog[open],
+  & dialog:target {
+    pointer-events: auto;
+    touch-action: auto;
+  }
 }
 
 dialog {
-	max-height: calc(100vh - var(--spacing) * 2);
-	margin: auto;
-	overflow: auto;
-	padding: var(--spacing);
-	border-radius: var(--radius);
-	background: var(--dialog-fill);
-	box-shadow: var(--dialog-shadow);
-	border: 0;
+  max-height: calc(100vh - var(--spacing) * 2);
+  margin: auto;
+  overflow: auto;
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  background: var(--dialog-fill);
+  box-shadow: var(--dialog-shadow);
+  border: 0;
 
-	/* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
-	/* Gracefully degrades to instant appearance in unsupported browsers */
-	transition:
-		opacity 0.2s ease-in-out,
-		transform 0.2s ease-in-out;
+  /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
+  /* Gracefully degrades to instant appearance in unsupported browsers */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 
-	@media (--breakpoint-sm) {
-		max-width: 510px;
-	}
+  @media (--breakpoint-sm) {
+    max-width: 510px;
+  }
 
-	@media (--breakpoint-md) {
-		max-width: 700px;
-	}
+  @media (--breakpoint-md) {
+    max-width: 700px;
+  }
 
-	/* Hidden state */
-	&:not([open]),
-	&[open="false"] {
-		display: none;
-	}
+  /* Hidden state */
+  &:not([open]),
+  &[open=false] {
+    display: none;
+  }
 
-	/* Backdrop overlay */
-	&::backdrop {
-		backdrop-filter: blur(0.375rem);
-		background-color: var(--dialog-overlay);
-		transition:
-			backdrop-filter 0.2s ease-in-out,
-			background-color 0.2s ease-in-out;
-	}
+  /* Backdrop overlay */
+  &::backdrop {
+    backdrop-filter: blur(0.375rem);
+    background-color: var(--dialog-overlay);
+    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
 
-	> header,
-	> footer {
-		width: auto;
-		margin-inline: calc(var(--spacing) * -1);
-		padding-inline: var(--spacing);
-		background-color: var(--dialog-section-fill);
-	}
+  > header,
+  > footer {
+    width: auto;
+    margin-inline: calc(var(--spacing) * -1);
+    padding-inline: var(--spacing);
+    background-color: var(--dialog-section-fill);
+  }
 
-	/* Header styling */
-	> header {
-		margin-top: calc(var(--spacing) * -1);
-		border-bottom: var(--border-size) solid var(--dialog-section-border);
-		border-top-right-radius: var(--radius);
-		border-top-left-radius: var(--radius);
-	}
+  /* Header styling */
+  > header {
+    margin-top: calc(var(--spacing) * -1);
+    border-bottom: var(--border-size) solid var(--dialog-section-border);
+    border-top-right-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+  }
 
-	/* Footer styling */
-	> footer {
-		margin-bottom: calc(var(--spacing) * -1);
-		border-top: var(--border-size) solid var(--dialog-section-border);
-		border-bottom-right-radius: var(--radius);
-		border-bottom-left-radius: var(--radius);
-		display: flex;
-		justify-content: end;
-		gap: calc(var(--nav-link-gap) * 1.5);
-	}
+  /* Footer styling */
+  > footer {
+    margin-bottom: calc(var(--spacing) * -1);
+    border-top: var(--border-size) solid var(--dialog-section-border);
+    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    display: flex;
+    justify-content: end;
+    gap: calc(var(--nav-link-gap) * 1.5);
+  }
 
-	/* Close button styling */
-	[rel="prev"] {
-		margin: 0;
-		padding: 0;
-		position: absolute;
-		display: block;
-		width: 1rem;
-		height: 1rem;
-		top: calc(var(--spacing) * 0.66);
-		right: var(--spacing);
-		border: none;
-		border-radius: 0;
-		background-image: var(--icon-close);
-		background-position: center;
-		background-size: auto 1rem;
-		background-repeat: no-repeat;
-		background-color: transparent;
-		box-shadow: none;
-		opacity: 0.5;
-		transition: opacity var(--transition);
+  /* Close button styling */
+  [rel=prev] {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    top: calc(var(--spacing) * .66);
+    right: var(--spacing);
+    border: none;
+    border-radius: 0;
+    background-image: var(--icon-close);
+    background-position: center;
+    background-size: auto 1rem;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 0.5;
+    transition: opacity var(--transition);
 
-		&:hover {
-			opacity: 1;
-		}
-	}
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 @starting-style {
-	dialog[open] {
-		opacity: 0;
-		transform: translateY(-20px);
-	}
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 
-	dialog[open]::backdrop {
-		backdrop-filter: none;
-		background-color: transparent;
-	}
+  dialog[open]::backdrop {
+    backdrop-filter: none;
+    background-color: transparent;
+  }
 }

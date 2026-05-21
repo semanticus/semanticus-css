@@ -1,5 +1,5 @@
 export function main() {
-	return `<p>
+  return `<p>
   Tooltip on a <span>
     <a href="#" aria-describedby="tip-link">link</a>
     <span id="tip-link" role="tooltip" data-placement="right">Tooltip</span>
@@ -21,7 +21,7 @@ export function main() {
 }
 
 export function placement() {
-	return `<section role="toolbar">
+  return `<section role="toolbar">
   <span><button aria-describedby="tip-top">Top</button><span id="tip-top" role="tooltip">Top</span></span>
   <span><button aria-describedby="tip-right">Right</button><span id="tip-right" role="tooltip" data-placement="right">Right</span></span>
   <span><button aria-describedby="tip-bottom">Bottom</button><span id="tip-bottom" role="tooltip" data-placement="bottom">Bottom</span></span>

@@ -10,16 +10,16 @@
  */
 
 /* Global variables */
-@import "./variables/_all.css";
+@import './variables/_all.css';
 
 /* Semantics */
-@import "./semantics/modules.css";
+@import './semantics/modules.css';
 
 /* Components */
-@import "./components/modules.css";
+@import './components/modules.css';
 
 /* Variants */
-@import "./variants/modules.css";
+@import './variants/modules.css';
 
 /* Utilities */
-@import "./utilities/modules.css";
+@import './utilities/modules.css';

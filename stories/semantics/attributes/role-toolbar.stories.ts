@@ -1,14 +1,14 @@
-import { RoleToolbarDemo } from "@demos/semantics/attributes";
 import type { Meta, StoryObj } from "@storybook/html-vite";
+import { RoleToolbarDemo } from "@demos/semantics/attributes";
 
 const meta: Meta = {
-	title: "Semantics/Attributes/[role=toolbar]",
-	parameters: {},
+  title: "Semantics/Attributes/[role=toolbar]",
+  parameters: {},
 };
 
 export default meta;
 
 export const BasicUsage: StoryObj = {
-	args: { html: RoleToolbarDemo.main() },
-	render: (args) => args.html,
+  args: { html: RoleToolbarDemo.main() },
+  render: (args) => args.html,
 };

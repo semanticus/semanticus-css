@@ -1,10 +1,10 @@
 aside {
-	width: var(--sidebar-size) !important;
-	padding: var(--spacing) !important;
+  width: var(--sidebar-size) !important;
+  padding: var(--spacing) !important;
 
-	:where(ol, ul, li) {
-		align-items: stretch !important;
-		display: flex;
-		flex-direction: column;
-	}
+  :where(ol, ul, li) {
+    align-items: stretch !important;
+    display: flex;
+    flex-direction: column;
+  }
 }

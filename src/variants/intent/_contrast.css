@@ -1,91 +1,46 @@
 :where(a:not([role="button"])),
 [role="link"] {
-	&.contrast {
-		--color-text: oklch(
-			from var(--color-contrast-text) l c h /
-			var(--color-text-opacity)
-		);
-		--color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  &.contrast {
+    --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
+    --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
-		&:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-			--color-text: oklch(
-				from var(--color-contrast-text-hover) l c h /
-				var(--color-text-opacity)
-			);
-		}
-	}
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-text: oklch(from var(--color-contrast-text-hover) l c h / var(--color-text-opacity));
+    }
+  }
 }
 
-:is(button, [type="submit"], [type="button"], [role="button"]):not(
-	[role="link"]
-) {
-	&.contrast {
-		--color-background: oklch(
-			from var(--color-contrast-fill) l c h /
-			var(--color-background-opacity)
-		);
-		--border-color: oklch(
-			from var(--color-contrast-fill) l c h /
-			var(--color-border-opacity)
-		);
-		--color-text: oklch(
-			from var(--color-contrast-on-fill) l c h /
-			var(--color-text-opacity)
-		);
+:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+  &.contrast {
+    --color-background: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
+    --border-color: oklch(from var(--color-contrast-fill) l c h / var(--color-border-opacity));
+    --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
 
-		&:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-			--color-background: oklch(
-				from var(--color-contrast-fill-hover) l c h /
-				var(--color-background-opacity)
-			);
-			--border-color: oklch(
-				from var(--color-contrast-fill-hover) l c h /
-				var(--color-border-opacity)
-			);
-			--color-text: oklch(
-				from var(--color-contrast-on-fill) l c h /
-				var(--color-text-opacity)
-			);
-		}
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --color-background: oklch(from var(--color-contrast-fill-hover) l c h / var(--color-background-opacity));
+      --border-color: oklch(from var(--color-contrast-fill-hover) l c h / var(--color-border-opacity));
+      --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
+    }
 
-		&:focus,
-		&:is([aria-current]:not([aria-current="false"])):focus {
-			--shadow:
-				var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-				0 0 0 var(--outline-size) var(--color-contrast-focus-ring);
-		}
-	}
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-contrast-focus-ring);
+    }
+  }
 }
 
 :is(.card, .pane, .panel).contrast {
-	--color-text: oklch(
-		from var(--color-contrast-on-fill) l c h /
-		var(--color-text-opacity)
-	);
-	--color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-	--dialog-fill: oklch(
-		from var(--color-contrast-fill) l c h /
-		var(--color-background-opacity)
-	);
-	--dialog-border: oklch(
-		from var(--color-contrast-fill) l c h /
-		var(--color-background-opacity)
-	);
-	--dialog-section-fill: color-mix(
-		in srgb,
-		light-dark(var(--color-slate-50), var(--color-slate-900)),
-		transparent 90%
-	);
-	--dialog-section-border: color-mix(
-		in srgb,
-		light-dark(var(--color-slate-50), black),
-		transparent 95%
-	);
+  --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --dialog-fill: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
+  --dialog-border: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
+  --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-50), var(--color-slate-900)), transparent 90%);
+  --dialog-section-border: color-mix(in srgb, light-dark(var(--color-slate-50), black), transparent 95%);
 }
 
 /* Accordion chevron override */
 details summary[role="button"].contrast::after {
-	@container style(--theme: dark) {
-		filter: brightness(0);
-	}
+  @container style(--theme: dark) {
+    filter:  brightness(0);
+  }
 }
