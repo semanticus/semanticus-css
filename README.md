@@ -221,9 +221,8 @@ Check out this [How to setup the project](docs/about/contributing.md#how-to-setu
 | Semanticus (semantics + components + variants) | 13.1 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
 | Semanticus (utilities + grid) | 10.5 KB |
-| Bootstrap (full) | 30.4 KB |
-| Semanticus (full) | 23.2 KB |
-| Bootstrap (full + javascript) | 53.8 KB |
+| Bootstrap (full bundle) | 53.8 KB |
+| Semanticus (full bundle) | 23.2 KB |
 
 ## License
 

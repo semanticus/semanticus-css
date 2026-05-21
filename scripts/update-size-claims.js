@@ -15,13 +15,12 @@ if (!fs.existsSync(dataPath)) {
 }
 
 const { entries } = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-const byLabel = Object.fromEntries(entries.map(e => [e.label, e.gzipKB]));
 
 // ─── 1. Single "~NN KB gzipped" claim in docs/index.md and AGENTS.md ─────────
 
-const fullBundleKB = byLabel['Semanticus (full)'];
+const fullBundleKB = entries.semanticusFullBundle.gzipKB;
 if (!fullBundleKB) {
-  console.error('"Semanticus (full)" entry missing from comparison-table.json.');
+  console.error('"Semanticus (full bundle)" entry missing from comparison-table.json.');
   process.exit(1);
 }
 
@@ -59,7 +58,7 @@ let readme = fs.readFileSync(readmePath, 'utf8');
 let readmeChanged = false;
 
 console.log('\nUpdating README.md size table...');
-for (const { label, gzipKB } of entries) {
+Object.entries(entries).forEach(([key, { label, gzipKB }]) => {
   const rowPattern = new RegExp(
     `(\\|\\s*${label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\|\\s*)[\\d.]+ KB(\\s*\\|)`,
     'g'
@@ -72,7 +71,7 @@ for (const { label, gzipKB } of entries) {
   } else {
     console.log(`  no change "${label}" (${gzipKB} KB)`);
   }
-}
+});
 
 if (readmeChanged) {
   fs.writeFileSync(readmePath, readme);

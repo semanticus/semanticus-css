@@ -10,6 +10,15 @@ Or any other full-fledged CSS framework, for that matter.
 
 **Semanticus CSS**'s appeal, is not simply its smaller form factor. The real value lies in its **semantic-first** and **accessibility-focused** styling approach, which helps developers build beautiful and accessible interfaces without having to go off on a tangent to study the complexities of **ARIA** patterns and accessibility implementation details.
 
+### Size Comparison
+
+| Bundle | Gzip |
+| --- | --- |
+| {{bootstrapUtilitiesAndGrid.label}} | {{bootstrapUtilitiesAndGrid.gzipKB}} KB |
+| {{semanticusUtilitiesAndGrid.label}} | {{semanticusUtilitiesAndGrid.gzipKB}} KB |
+| {{bootstrapFullBundle.label}} | {{bootstrapFullBundle.gzipKB}} KB |
+| {{semanticusFullBundle.label}} | {{semanticusFullBundle.gzipKB}} KB |
+
 ## Why not just use Pico CSS?
 
 Sadly **Pico CSS** has not been actively maintained for a while, and it lacks a clear roadmap for future development.
@@ -28,3 +37,17 @@ And updated existing ones using the latest web platform features and patterns, e
 - **Dropdowns** use the [ARIA: menu pattern](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
 - **Modals** use the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API)
 - **Sidebars** use the [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+
+### Size Comparison
+
+| Bundle | Gzip |
+| --- | --- |
+| {{picoSemantics.label}} | {{picoSemantics.gzipKB}} KB |
+| {{semanticusSemantics.label}} | {{semanticusSemantics.gzipKB}} KB |
+| {{picoFullBundle.label}} | {{picoFullBundle.gzipKB}} KB |
+| {{semanticusNoUtilities.label}} | {{semanticusNoUtilities.gzipKB}} KB |
+
+<script setup>
+  import comparisonTable from "../comparison-table.json";
+  const { picoSemantics, picoFullBundle, semanticusSemantics, semanticusNoUtilities, semanticusUtilitiesAndGrid, semanticusFullBundle, bootstrapUtilitiesAndGrid, bootstrapFullBundle } = comparisonTable.entries;
+</script>

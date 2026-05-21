@@ -66,23 +66,25 @@ for (const { url, dest } of downloads) {
 
 console.log('\nMeasuring bundle sizes...');
 
-const entries = [
-  { label: 'Pico (semantics only)', files: [path.join(picoDir, 'pico.classless.min.css')] },
-  { label: 'Semanticus (semantics only)', files: [dist('semanticus-semantics.css')] },
-  { label: 'Pico (semantics + classes)', files: [path.join(picoDir, 'pico.min.css')] },
-  { label: 'Semanticus (semantics + components + variants)', files: [dist('semanticus-no-utilities.css')] },
-  { label: 'Bootstrap (utilities only)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
-  { label: 'Bootstrap (utilities + grid)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
-  { label: 'Semanticus (utilities + grid)', files: [dist('semanticus-utilities.css')] },
-  { label: 'Bootstrap (full)', files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
-  { label: 'Semanticus (full)', files: [dist('semanticus.css')] },
-  { label: 'Bootstrap (full + javascript)', files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
-];
+const entries = {
+  picoSemantics: { label: 'Pico (semantics only)', files: [path.join(picoDir, 'pico.classless.min.css')] },
+  semanticusSemantics: { label: 'Semanticus (semantics only)', files: [dist('semanticus-semantics.css')] },
+  picoFullBundle: { label: 'Pico (semantics + classes)', files: [path.join(picoDir, 'pico.min.css')] },
+  semanticusNoUtilities: { label: 'Semanticus (semantics + components + variants)', files: [dist('semanticus-no-utilities.css')] },
+  bootstrapUtilities: { label: 'Bootstrap (utilities only)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
+  bootstrapUtilitiesAndGrid: { label: 'Bootstrap (utilities + grid)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
+  semanticusUtilitiesAndGrid: { label: 'Semanticus (utilities + grid)', files: [dist('semanticus-utilities.css')] },
+  bootstrapCssBundle: { label: 'Bootstrap (CSS bundle only)', files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
+  bootstrapFullBundle: { label: 'Bootstrap (full bundle)', files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
+  semanticusFullBundle: { label: 'Semanticus (full bundle)', files: [dist('semanticus.css')] },
+};
 
-const results = entries.map(({ label, files }) => {
+const results = {};
+
+Object.entries(entries).forEach(([key, { label, files }]) => {
   const gzipKBValue = gzipKB(...files);
   console.log(`  ${gzipKBValue.padStart(5)} KB  ${label}`);
-  return { label, gzipKB: gzipKBValue };
+  results[key] = { label, gzipKB: gzipKBValue };
 });
 
 // ─── 3. Write docs/comparison-table.json ──────────────────────────────────────
