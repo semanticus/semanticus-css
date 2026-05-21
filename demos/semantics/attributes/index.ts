@@ -1,4 +1,5 @@
 export * as AriaBusyDemo from "./aria-busy.demo";
+export * as AriaDisabledDemo from "./aria-disabled.demo";
 export * as AriaInvalidDemo from "./aria-invalid.demo";
 export * as DisabledDemo from "./disabled.demo";
 export * as HiddenDemo from "./hidden.demo";

@@ -24,7 +24,7 @@ export function main(attrs: Record<string, string> = {}) {
 export function buttonBasedPagination() {
   return `<nav aria-label="Pagination">
   <div role="group">
-    <button disabled>Previous</button>
+    <button aria-disabled="true">Previous</button>
     <button>1</button>
     <button aria-current="page">2</button>
     <button>3</button>
@@ -36,7 +36,7 @@ export function buttonBasedPagination() {
 export function linkBasedPagination() {
   return `<nav aria-label="Pagination">
   <div role="group">
-    <a href="#" role="button" disabled>Previous</a>
+    <a role="button" aria-disabled="true" tabindex="0">Previous</a>
     <a href="#page-1" role="button">1</a>
     <a href="#page-2" role="button" aria-current="page">2</a>
     <a href="#page-3" role="button">3</a>

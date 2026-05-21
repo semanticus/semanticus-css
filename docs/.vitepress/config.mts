@@ -383,6 +383,10 @@ export default defineConfig({
                   link: "/docs/semantics/attributes/aria-busy",
                 },
                 {
+                  text: "[aria-disabled]",
+                  link: "/docs/semantics/attributes/aria-disabled",
+                },
+                {
                   text: "[aria-invalid]",
                   link: "/docs/semantics/attributes/aria-invalid",
                 },

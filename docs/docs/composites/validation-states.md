@@ -19,11 +19,9 @@ Use the `aria-invalid` attribute to indicate validation state:
 
 Pair with `aria-describedby` to link helper text that explains the validation result:
 
-<HtmlPreviewer :code="AriaInvalidDemo.formValidation()" />
+> **Note:** The `<small>` element associated with a form control via `aria-describedby` automatically inherits the validation state colors.
 
-::: info
-The `<small>` element associated with a form control via `aria-describedby` automatically inherits the validation state colors.
-:::
+<HtmlPreviewer :code="AriaInvalidDemo.formValidation()" />
 
 ## Best Practices
 
