@@ -8,12 +8,12 @@ import { AriaDisabledDemo } from "@demos/semantics/attributes";
 
 # [aria-disabled="true"]
 
-The `aria-disabled="true"` attribute communicates to assistive technologies that an element is disabled without removing it from the focus order.
+The `aria-disabled="true"` attribute communicates to assistive technologies that an element is disabled, but it does not change whether the element is focusable or in the tab order.
 
-Unlike the native `disabled` attribute, `aria-disabled` keeps the element focusable so screen readers can still discover and announce it as disabled. Use it when you want to preserve keyboard navigability while visually and interactively disabling an element — for example, in **wizards** or **pagination** where a step isn't available yet but should be announced.
+Unlike the native `disabled` attribute, `aria-disabled` does not disable the element in the browser. If the element is already focusable — or you keep it focusable with `tabindex` — it can still be reached so screen readers can discover and announce it as disabled. Use it when you want to preserve keyboard navigability while visually and interactively disabling an element — for example, in **wizards** or **pagination** where a step isn't available yet but should be announced.
 
 > **Note:** `aria-disabled` does not prevent keyboard activation (Enter/Space). You must handle that with JavaScript.
-> It also does not remove the element from the tab order, for that you can add `tabindex="-1"` as well.
+> It also does not remove an element from the tab order; if you need that behavior, manage focusability separately, for example with `tabindex="-1"` where appropriate.
 
 ## Basic Usage
 
