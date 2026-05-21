@@ -1,7 +1,7 @@
-#!/usr/bin/env node
+#!/usr/bin/env tsx
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
 const repoRoot = path.join(__dirname, '..');
 
@@ -14,18 +14,27 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-const { entries } = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+interface BundleResult {
+  label: string;
+  gzipKB: string;
+}
+
+interface ComparisonTable {
+  entries: Record<string, BundleResult>;
+}
+
+const { entries }: ComparisonTable = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
 // ─── 1. Single "~NN KB gzipped" claim in docs/index.md and AGENTS.md ─────────
 
-const fullBundleKB = entries.semanticusFullBundle.gzipKB;
+const fullBundleKB = entries.semanticusFullBundle?.gzipKB;
 if (!fullBundleKB) {
   console.error('"Semanticus (full bundle)" entry missing from comparison-table.json.');
   process.exit(1);
 }
 
 const singleClaimPattern = /~\d+\s*KB gzipped/g;
-const singleClaimReplacement = `~${Math.round(fullBundleKB)} KB gzipped`;
+const singleClaimReplacement = `~${Math.round(parseFloat(fullBundleKB))} KB gzipped`;
 const singleClaimFiles = [
   path.join(repoRoot, 'docs', 'index.md'),
   path.join(repoRoot, 'AGENTS.md'),
@@ -35,7 +44,7 @@ console.log(`Full bundle: ${singleClaimReplacement} (${fullBundleKB} KB)`);
 
 for (const filePath of singleClaimFiles) {
   const content = fs.readFileSync(filePath, 'utf8');
-  const matches = content.match(singleClaimPattern) || [];
+  const matches = content.match(singleClaimPattern) ?? [];
 
   if (matches.length !== 1) {
     console.error(`Expected exactly one size claim in ${path.relative(repoRoot, filePath)}, found ${matches.length}.`);
@@ -58,7 +67,7 @@ let readme = fs.readFileSync(readmePath, 'utf8');
 let readmeChanged = false;
 
 console.log('\nUpdating README.md size table...');
-Object.entries(entries).forEach(([key, { label, gzipKB }]) => {
+for (const [, { label, gzipKB }] of Object.entries(entries)) {
   const rowPattern = new RegExp(
     `(\\|\\s*${label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\|\\s*)[\\d.]+ KB(\\s*\\|)`,
     'g'
@@ -71,7 +80,7 @@ Object.entries(entries).forEach(([key, { label, gzipKB }]) => {
   } else {
     console.log(`  no change "${label}" (${gzipKB} KB)`);
   }
-});
+}
 
 if (readmeChanged) {
   fs.writeFileSync(readmePath, readme);

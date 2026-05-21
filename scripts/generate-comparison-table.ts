@@ -1,9 +1,9 @@
-#!/usr/bin/env node
+#!/usr/bin/env tsx
 
-const fs = require('fs');
-const path = require('path');
-const zlib = require('zlib');
-const { execSync } = require('child_process');
+import * as fs from 'fs';
+import * as path from 'path';
+import * as zlib from 'zlib';
+import { execSync } from 'child_process';
 
 const repoRoot = path.join(__dirname, '..');
 const tmpDir   = path.join(repoRoot, 'tmp');
@@ -30,7 +30,7 @@ const downloads = [
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function ensureFile(url, dest) {
+function ensureFile(url: string, dest: string): void {
   if (fs.existsSync(dest)) {
     console.log(`  cached   ${path.relative(repoRoot, dest)}`);
     return;
@@ -41,7 +41,7 @@ function ensureFile(url, dest) {
 }
 
 /** Accepts one or more file paths; concatenates their contents then gzips. */
-function gzipKB(...filePaths) {
+function gzipKB(...filePaths: string[]): string {
   const chunks = filePaths.map(p => {
     if (!fs.existsSync(p)) {
       console.error(`File not found: ${p}`);
@@ -53,7 +53,7 @@ function gzipKB(...filePaths) {
   return (bytes / 1024).toFixed(1);
 }
 
-function dist(name) { return path.join(repoRoot, 'dist', name); }
+function dist(name: string): string { return path.join(repoRoot, 'dist', name); }
 
 // ─── 1. Download external reference files ────────────────────────────────────
 
@@ -66,26 +66,36 @@ for (const { url, dest } of downloads) {
 
 console.log('\nMeasuring bundle sizes...');
 
-const entries = {
-  picoSemantics: { label: 'Pico (semantics only)', files: [path.join(picoDir, 'pico.classless.min.css')] },
-  semanticusSemantics: { label: 'Semanticus (semantics only)', files: [dist('semanticus-semantics.css')] },
-  picoFullBundle: { label: 'Pico (semantics + classes)', files: [path.join(picoDir, 'pico.min.css')] },
-  semanticusNoUtilities: { label: 'Semanticus (semantics + components + variants)', files: [dist('semanticus-no-utilities.css')] },
-  bootstrapUtilities: { label: 'Bootstrap (utilities only)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
-  bootstrapUtilitiesAndGrid: { label: 'Bootstrap (utilities + grid)', files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
-  semanticusUtilitiesAndGrid: { label: 'Semanticus (utilities + grid)', files: [dist('semanticus-utilities.css')] },
-  bootstrapCssBundle: { label: 'Bootstrap (CSS bundle only)', files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
-  bootstrapFullBundle: { label: 'Bootstrap (full bundle)', files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
-  semanticusFullBundle: { label: 'Semanticus (full bundle)', files: [dist('semanticus.css')] },
+interface BundleEntry {
+  label: string;
+  files: string[];
+}
+
+interface BundleResult {
+  label: string;
+  gzipKB: string;
+}
+
+const entries: Record<string, BundleEntry> = {
+  picoSemantics:             { label: 'Pico (semantics only)',                            files: [path.join(picoDir, 'pico.classless.min.css')] },
+  semanticusSemantics:       { label: 'Semanticus (semantics only)',                      files: [dist('semanticus-semantics.css')] },
+  picoFullBundle:            { label: 'Pico (semantics + classes)',                       files: [path.join(picoDir, 'pico.min.css')] },
+  semanticusNoUtilities:     { label: 'Semanticus (semantics + components + variants)',   files: [dist('semanticus-no-utilities.css')] },
+  bootstrapUtilities:        { label: 'Bootstrap (utilities only)',                       files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
+  bootstrapUtilitiesAndGrid: { label: 'Bootstrap (utilities + grid)',                     files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
+  semanticusUtilitiesAndGrid:{ label: 'Semanticus (utilities + grid)',                    files: [dist('semanticus-utilities.css')] },
+  bootstrapCssBundle:        { label: 'Bootstrap (CSS bundle only)',                      files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
+  bootstrapFullBundle:       { label: 'Bootstrap (full bundle)',                          files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
+  semanticusFullBundle:      { label: 'Semanticus (full bundle)',                         files: [dist('semanticus.css')] },
 };
 
-const results = {};
+const results: Record<string, BundleResult> = {};
 
-Object.entries(entries).forEach(([key, { label, files }]) => {
+for (const [key, { label, files }] of Object.entries(entries)) {
   const gzipKBValue = gzipKB(...files);
   console.log(`  ${gzipKBValue.padStart(5)} KB  ${label}`);
   results[key] = { label, gzipKB: gzipKBValue };
-});
+}
 
 // ─── 3. Write docs/comparison-table.json ──────────────────────────────────────
 
@@ -98,4 +108,3 @@ const output = {
 
 const outPath = path.join(repoRoot, 'docs', 'comparison-table.json');
 fs.writeFileSync(outPath, JSON.stringify(output, null, 2) + '\n');
-console.log(`\nWrote ${path.relative(repoRoot, outPath)}`);
