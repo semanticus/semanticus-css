@@ -17,8 +17,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactor **Dropdown**, using the `ARIA: menu pattern` |
 | ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
-| ⌛ | `role="alert"` |
-| ⌛ | `aria-disabled="true"` |
+| 🚧 | `role="alert"` |
+| ✅ | `aria-disabled="true"` |
 
 ## Components
 
@@ -61,11 +61,10 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | 🚧 | Anchor Positioning tooltips |
 | ⌛ | Tab |
 | ⌛ | Carousel |
-| ⌛ | Floating Alert |
-| ⌛ | Alert Dialog |
+| 🚧 | Floating Alert |
+| 🚧 | Alert Dialog |
 | ⌛ | Confirm Dialog |
 | ⌛ | Prompt Dialog |
-| ⌛ | Popover |
 
 ## Documentation & Tooling
 
@@ -113,7 +112,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
 | ⌛ | `.sidebar` popover interaction |
-| 🚧 | Different Grid combinations |
+| ⌛ | Different Grid combinations |
 | ⌛ | Tab interaction |
 | ⌛ | Carousel interaction |
 | ⌛ | Floating Alert interaction |
