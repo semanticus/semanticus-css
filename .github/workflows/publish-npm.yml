@@ -28,6 +28,7 @@ jobs:
         run: npm ci
 
       - name: Verify release tag matches package version
+        id: verify-tag
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
@@ -36,6 +37,13 @@ jobs:
               echo "Release tag '$RELEASE_TAG' does not match package version '$PACKAGE_VERSION'." >&2
               exit 1
             fi
+            CLEAN_VERSION="${RELEASE_TAG#v}"
+            echo "package_version=$CLEAN_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Update versioned references
+        env:
+          SEMANTICUS_CDN_VERSION: ${{ steps.verify-tag.outputs.package_version }}
+        run: npm run release:sync-versions
 
       - name: Lint
         run: npm run lint
@@ -47,7 +55,6 @@ jobs:
         id: prepare-target-branch
         env:
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-          PACKAGE_VERSION: ${{ github.event.release.tag_name }}
           TARGET_COMMITISH: ${{ github.event.release.target_commitish }}
         run: |
             TARGET_BRANCH="$TARGET_COMMITISH"
@@ -55,22 +62,14 @@ jobs:
               TARGET_BRANCH="$DEFAULT_BRANCH"
             fi
 
-            CLEAN_VERSION="${PACKAGE_VERSION#v}"
-
             git fetch origin "$TARGET_BRANCH"
             git switch --create "$TARGET_BRANCH" --track "origin/$TARGET_BRANCH"
 
             echo "target_branch=$TARGET_BRANCH" >> "$GITHUB_OUTPUT"
-            echo "package_version=$CLEAN_VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: Update versioned references
-        env:
-          SEMANTICUS_CDN_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
-        run: npm run release:sync-versions
 
       - name: Commit updated version references
         env:
-          PACKAGE_VERSION: ${{ steps.prepare-target-branch.outputs.package_version }}
+          PACKAGE_VERSION: ${{ steps.verify-tag.outputs.package_version }}
           TARGET_BRANCH: ${{ steps.prepare-target-branch.outputs.target_branch }}
         run: |
             if git diff --quiet; then
