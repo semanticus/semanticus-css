@@ -9,6 +9,7 @@
   mask-size: contain;
   mask-repeat: no-repeat;
   vertical-align: -.199em;
+  align-self: center;
 }
 
 .icon-close {
