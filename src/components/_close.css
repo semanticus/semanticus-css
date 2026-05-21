@@ -1,4 +1,9 @@
+:has(> .close) {
+  position: relative;
+}
+
 .close {
+  color: inherit;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -9,17 +14,17 @@
   right: var(--spacing);
   border: none;
   border-radius: 0;
-  background-image: var(--icon-close);
-  background-position: center;
-  background-size: auto 1rem;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  background-color: currentColor;
+  background-image: none;
   box-shadow: none;
+  mask-image: var(--icon-close);
+  mask-position: center;
+  mask-size: auto 1rem;
+  mask-repeat: no-repeat;
   opacity: 0.5;
   transition: opacity var(--transition);
 
   &:hover {
-    background-color: transparent;
     opacity: 1;
   }
 }
