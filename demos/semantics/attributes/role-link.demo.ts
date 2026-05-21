@@ -1,9 +1,23 @@
-import { renderElement } from "@scripts/utils";
+import { renderAttributes } from "@scripts/utils";
 
-export function main(tagName: string = "button", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "link" }, `${tagName} as link`);
+export function main(tagName: string = "button", attrs: Record<string, string> = {}, slot: string = undefined) {
+  const attributes = { role: "link", ...attrs };
+
+  return `<${tagName} ${renderAttributes(attributes)}>${slot || `${tagName[0].toUpperCase() + tagName.slice(1)} Link`}</${tagName}>`;
 }
 
-export function active(tagName: string = "button", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, "aria-current": "page", role: "link" }, `${tagName} as an active link`);
+export function overview(attrs: Record<string, string> = {}) {
+  return `${main('button', attrs)}
+<hr>
+${active('button', attrs)}
+<hr>
+${main('div', attrs)}
+<hr>
+${active('div', attrs)}`;
+}
+
+export function active(tagName: string = "button", attrs: Record<string, string> = {}, slot: string = undefined) {
+  const attributes = { role: "link", "aria-current": "page", ...attrs };
+
+  return `<${tagName} ${renderAttributes(attributes)}>${slot || `Active ${tagName}`}</${tagName}>`;
 }

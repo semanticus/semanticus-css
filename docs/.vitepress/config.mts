@@ -425,7 +425,7 @@ export default defineConfig({
             { text: ".card", link: "/docs/components/card" },
             { text: ".pane", link: "/docs/components/pane" },
             { text: ".panel", link: "/docs/components/panel" },
-            { text: ".sidebar", link: "/docs/components/sidebar" },
+            // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
         {
@@ -462,7 +462,7 @@ export default defineConfig({
             { text: "Display", link: "/docs/utilities/display" },
             { text: "Effects", link: "/docs/utilities/effects" },
             { text: "Flexbox", link: "/docs/utilities/flexbox" },
-            { text: "Grid", link: "/docs/utilities/grid" },
+            { text: "Grid System", link: "/docs/utilities/grid-system" },
             { text: "Layout", link: "/docs/utilities/layout" },
             { text: "Positioning", link: "/docs/utilities/positioning" },
             { text: "Sizing", link: "/docs/utilities/sizing" },

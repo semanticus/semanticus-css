@@ -1,3 +1,3 @@
-export * as Composites from "@demos/overviews/composites";
-export * as Variants from "@demos/overviews/variants";
-export * as Semantics from "@demos/overviews/semantics";
+export * as Demo from "./demo";
+export * from "@demos/overviews/composites";
+export * from "@demos/overviews/variants";

@@ -17,6 +17,11 @@ export const indeterminate: StoryObj = {
   render: (args) => args.html,
 };
 
+export const card: StoryObj = {
+  args: { html: ProgressDemo.card() },
+  render: (args) => args.html,
+};
+
 export const withLabel: StoryObj = {
   args: { html: ProgressDemo.withLabel() },
   render: (args) => args.html,

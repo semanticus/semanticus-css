@@ -13,12 +13,17 @@ export const BasicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
-export const loadingButton: StoryObj = {
-  args: { html: AriaBusyDemo.loadingButton() },
+export const button: StoryObj = {
+  args: { html: AriaBusyDemo.button() },
   render: (args) => args.html,
 };
 
-export const loadingForm: StoryObj = {
-  args: { html: AriaBusyDemo.loadingForm() },
+export const card: StoryObj = {
+  args: { html: AriaBusyDemo.card() },
+  render: (args) => args.html,
+};
+
+export const form: StoryObj = {
+  args: { html: AriaBusyDemo.form() },
   render: (args) => args.html,
 };

@@ -61,7 +61,7 @@ To convey **intent** and **importance**, dropdowns can be styled with different 
 <HtmlPreviewer :code="SubtleDemo.dropdowns()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import * as IntentDemo from '@demos/overviews/variants/intent/demo';
+import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
+import { IntentDemo } from '@demos/variants';
 import { DetailsDemo } from "@demos/semantics/elements";
 </script>

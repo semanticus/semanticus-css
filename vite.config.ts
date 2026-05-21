@@ -21,4 +21,12 @@ export default defineConfig({
   resolve: {
     alias: loadTsconfigAliases(),
   },
+  css: {
+    transformer: 'lightningcss',
+    lightningcss: {
+      drafts: {
+        customMedia: true,
+      },
+    },
+  },
 });

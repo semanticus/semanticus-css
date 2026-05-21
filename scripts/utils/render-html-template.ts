@@ -5,11 +5,13 @@ export function renderHtmlTemplate(
   slot: string,
   options: {
     stylePaths?: string[],
-    local?: boolean
+    local?: boolean,
+    theme?: string
   } = {}
 ): string {
   const stylePaths = options.stylePaths ?? ['/dist/semanticus.css'];
   const local = options.local ?? false;
+  const theme = options.theme === 'light' || options.theme === 'dark' ? options.theme : undefined;
 
   let scripts = "";
 
@@ -18,7 +20,7 @@ export function renderHtmlTemplate(
   });
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en"${theme ? ` data-theme="${theme}"` : ''}>
 ${renderElement("head", {}, `<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">

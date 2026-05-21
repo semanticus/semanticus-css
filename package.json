@@ -80,7 +80,8 @@
     "vitepress": "^2.0.0-alpha.17"
   },
   "scripts": {
-    "start": "npm run build && npm run storybook",
+    "start": "npm run build && npm run docs:dev",
+    "dev": "npm run storybook",
     "lint": "stylelint \"src/**/*.css\"",
     "lint:fix": "stylelint \"src/**/*.css\" --fix",
     "check": "npm run lint && npm run build",
@@ -98,12 +99,12 @@
     "build:standard": "lightningcss --bundle --minify --browserslist src/no-utilities.css -o dist/semanticus-no-utilities.css --custom-media",
     "build:semantics": "lightningcss --bundle --minify --browserslist src/semantics/index.css -o dist/semanticus-semantics.css --custom-media",
     "build:utilities": "lightningcss --bundle --minify --browserslist src/utilities/index.css -o dist/semanticus-utilities.css --custom-media",
-    "build:palettes": "node scripts/build-palettes.js",
-    "build:sizes": "node scripts/build-sizes.js",
-    "docs:dev": "npm run build && vitepress dev docs",
+    "build:palettes": "tsx --tsconfig scripts/tsconfig.json scripts/build-palettes.ts",
+    "build:sizes": "tsx --tsconfig scripts/tsconfig.json scripts/build-sizes.ts",
+    "docs:dev": "vitepress dev docs",
     "docs:build": "npm run build && vitepress build docs",
-    "docs:preview": "npm run build && vitepress preview docs",
-    "docs:generate-comparison-table": "node scripts/generate-comparison-table.js",
-    "docs:update-size-claims": "npm run build && npm run docs:generate-comparison-table && node scripts/update-size-claims.js"
+    "docs:preview": "npm run docs:build && vitepress preview docs",
+    "docs:generate-comparison-table": "tsx --tsconfig scripts/tsconfig.json scripts/generate-comparison-table.ts",
+    "docs:update-size-claims": "npm run build && npm run docs:generate-comparison-table && tsx --tsconfig scripts/tsconfig.json scripts/update-size-claims.ts"
   }
 }

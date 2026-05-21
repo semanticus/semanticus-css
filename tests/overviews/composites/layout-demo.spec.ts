@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.use({ viewport: { width: 1440, height: 900 } });
 
 test('/overviews/composites/layout-demo - visual snapshot', async ({ page }) => {
-  await page.goto('/overviews/composites/layout-demo');
+  await page.goto('/overviews/composites/layout.demo/main');
   const main = page.locator('body > main');
 
   await expect(main).toBeVisible();

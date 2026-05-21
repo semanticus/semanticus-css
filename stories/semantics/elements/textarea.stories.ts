@@ -12,12 +12,27 @@ export const BasicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
+export const withRows: StoryObj = {
+  args: { html: TextareaDemo.withRows() },
+  render: (args) => args.html,
+};
+
 export const withLabel: StoryObj = {
   args: { html: TextareaDemo.withLabel() },
   render: (args) => args.html,
 };
 
-export const withRows: StoryObj = {
-  args: { html: TextareaDemo.withRows() },
+export const withHelperText: StoryObj = {
+  args: { html: TextareaDemo.withHelperText() },
+  render: (args) => args.html,
+};
+
+export const validationStates: StoryObj = {
+  args: { html: TextareaDemo.validationStates() },
+  render: (args) => args.html,
+};
+
+export const validationStatesWithTextHelper: StoryObj = {
+  args: { html: TextareaDemo.validationStatesWithTextHelper() },
   render: (args) => args.html,
 };

@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-fuchsia-950: #230518; */
   /* --color-fuchsia-900: #360925; */
   /* --color-fuchsia-850: #480b33; */
@@ -10,7 +11,7 @@
   --color-fuchsia-550: #c1208b;
   /* --color-fuchsia-500: #d9269d; */
   /* --color-fuchsia-450: #ed2aac; */
-  --color-fuchsia-400: #f748b7;
+  /* --color-fuchsia-400: #f748b7; */
   --color-fuchsia-350: #f869bf;
   /* --color-fuchsia-300: #f983c7; */
   /* --color-fuchsia-250: #fa9acf; */
@@ -21,8 +22,6 @@
   /* --color-fuchsia: var(--color-fuchsia-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-fuchsia-400) l c h / 0.25), oklch(from var(--color-fuchsia-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-fuchsia-550), var(--color-fuchsia-350));
   --color-primary-fill: var(--color-fuchsia-550);
   --color-primary-on-fill: white;

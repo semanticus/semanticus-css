@@ -1,3 +1,3 @@
 small {
-  font-size: 80%; /* modern-normalize */
+  font-size: var(--font-size);
 }

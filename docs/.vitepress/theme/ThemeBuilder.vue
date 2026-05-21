@@ -1,12 +1,12 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useData } from 'vitepress'
-import { Semantics } from '@demos/overviews';
+import { Demo } from '@demos/overviews';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
 import githubDark from 'highlight.js/styles/github-dark.css?raw'
-import { cdnBaseUrl } from '@scripts/utils';
+import { cdnBaseUrl, variations } from '@scripts/utils';
 
 // isDark is a reactive Ref<boolean>
 const { isDark, site } = useData();
@@ -39,7 +39,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Default</span>
       <div id="default-content">
-        ${Semantics.Demo.main({ id: 'default-main' })}
+        ${Demo.fullBundle({ id: 'default-main' })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">
@@ -387,35 +387,11 @@ const isResizing = ref(false)
 const showExportModal = ref(false)
 const exportMode = ref('inline') // 'file' or 'inline'
 
-// Available color palettes
-const palettes = [
-  { name: 'azure', label: 'Azure', color: '#0172ad' },
-  { name: 'amber', label: 'Amber', color: '#b4610b' },
-  { name: 'blue', label: 'Blue', color: '#045fcb' },
-  { name: 'cyan', label: 'Cyan', color: '#027c7b' },
-  { name: 'fuchsia', label: 'Fuchsia', color: '#b810a8' },
-  { name: 'green', label: 'Green', color: '#168b45' },
-  { name: 'grey', label: 'Grey', color: '#595e66' },
-  { name: 'indigo', label: 'Indigo', color: '#5149a8' },
-  { name: 'jade', label: 'Jade', color: '#168b45' },
-  { name: 'lime', label: 'Lime', color: '#5e7d12' },
-  { name: 'orange', label: 'Orange', color: '#c1520f' },
-  { name: 'pink', label: 'Pink', color: '#be2c6c' },
-  { name: 'pumpkin', label: 'Pumpkin', color: '#b84610' },
-  { name: 'purple', label: 'Purple', color: '#822db9' },
-  { name: 'red', label: 'Red', color: '#b71d2e' },
-  { name: 'sand', label: 'Sand', color: '#857255' },
-  { name: 'slate', label: 'Slate', color: '#48586f' },
-  { name: 'violet', label: 'Violet', color: '#6f46a8' },
-  { name: 'yellow', label: 'Yellow', color: '#9b7a06' },
-  { name: 'zinc', label: 'Zinc', color: '#52525b' },
-]
+// Available color palettes (derived from variations)
+const palettes = variations.palettes.map((p) => ({ name: p.name, label: p.label, color: p.color || '#0172ad' }))
 
-// Available size variants
-const sizes = [
-  { name: 'default', label: 'Default', description: 'Standard sizing for all elements' },
-  { name: 'pico', label: 'PicoCSS', description: 'PicoCSS original values' },
-]
+// Available size variants (derived from variations)
+const sizes = variations.sizes.map((s) => ({ name: s.name, label: s.label, description: s.description || '' }))
 
 // Initialize all groups as expanded
 variableGroups.forEach(g => {

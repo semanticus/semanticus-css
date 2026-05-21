@@ -12,7 +12,7 @@
 
 /* Small text */
 small {
-  --font-size: 0.875em;
+  --font-size: 80%; /* modern-normalize */
 }
 
 /* ==========================================================================
@@ -191,5 +191,5 @@ input:not(
 /* Text selection color */
 
 ::selection {
-  background-color: var(--color-selection);
+  background-color: color-mix(in srgb, var(--color-primary-fill), white 75%);
 }

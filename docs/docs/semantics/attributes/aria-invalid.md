@@ -18,9 +18,11 @@ Pair it with a helper message via `aria-describedby` to explain the error.
 
 <HtmlPreviewer :code="AriaInvalidDemo.main()" />
 
+## Form Validation Example
+
 Helper texts defined with `<small>` below the form element inherit the validation state color.
 
-<HtmlPreviewer :code="AriaInvalidDemo.inputHelper()" />
+<HtmlPreviewer :code="AriaInvalidDemo.formValidation()" />
 
 ## Checkbox
 

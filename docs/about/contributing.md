@@ -70,12 +70,18 @@ npm install
 
 ## Development
 
+Make sure to build the project before running the development servers:
+
+```bash
+npm run build
+```
+
 - Scenario 1: Changes to the `*.css` files in the `src` directory
 
 Launch **storybook** at `http://localhost:6006` by running:
 
 ```bash
-npm start
+npm run storybook
 ```
 
 - Scenario 2: Changes to the `*.md` files in the `docs/` directory

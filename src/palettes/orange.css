@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   /* --color-orange-950: #1b0d06; */
   /* --color-orange-900: #2d1509; */
   /* --color-orange-850: #411a0a; */
@@ -8,9 +9,9 @@
   /* --color-orange-650: #942d0d; */
   /* --color-orange-600: #a83410; */
   --color-orange-550: #bd3c13;
-  /* --color-orange-500: #d24317; */
+  --color-orange-500: #d24317;
   /* --color-orange-450: #e74b1a; */
-  --color-orange-400: #f45d2c;
+  /* --color-orange-400: #f45d2c; */
   --color-orange-350: #f56b3d;
   /* --color-orange-300: #f68e68; */
   /* --color-orange-250: #f8a283; */
@@ -21,10 +22,8 @@
   /* --color-orange: var(--color-orange-550); */
 
   /* System tokens */
-  --color-selection: light-dark(oklch(from var(--color-orange-400) l c h / 0.25), oklch(from var(--color-orange-350) l c h / 0.1875));
-
   --color-primary-text: light-dark(var(--color-orange-550), var(--color-orange-350));
-  --color-primary-fill: var(--color-orange-550);
+  --color-primary-fill: var(--color-orange-500);
   --color-primary-on-fill: white;
 
   /* Component tokens */
