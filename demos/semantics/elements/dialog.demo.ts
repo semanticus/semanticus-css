@@ -71,3 +71,32 @@ export function showModalWithHeaderAndFooter(attrs: Record<string, string> = {})
 
 ${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 }
+
+export function dialogAlert(attrs: Record<string, string> = {}, slot: string = "") {
+  const mergedAttrs = { id: "dialog-alert", ...attrs, role: "alertdialog" };
+
+  return main(mergedAttrs, slot || dialogAlertContent(mergedAttrs));
+}
+
+export function showDialogAlert(attrs: Record<string, string> = {}) {
+  const mergedAttrs = { id: "dialog-alert", ...attrs };
+
+  return `<button command="show-modal" commandfor="${mergedAttrs.id}" class="contrast">Show Dialog Alert</button>
+
+${dialogAlert(mergedAttrs)}`;
+}
+
+function dialogAlertContent(attrs: Record<string, string>) {
+  return `<header>
+  <h2 id="modal-title">Are you sure?</h2>
+</header>
+
+<div id="modal-description">
+  <p>Are you sure you want to proceed with this action?</p>
+</div>
+
+<footer>
+  <button class="secondary" commandfor="${attrs.id}" command="close">No</button>
+  <button commandfor="${attrs.id}" command="close">Yes</button>
+</footer>`;
+}
