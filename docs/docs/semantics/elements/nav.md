@@ -37,6 +37,7 @@ Navs get stacked vertically when inside a `<aside>`.
 The simplest pagination pattern uses buttons within a group:
 
 > **Note:** When a step isn't available yet but should be announced, use `aria-disabled="true"` instead of the native `disabled` attribute to keep the element focusable and discoverable by assistive technology users.
+> Remember that `aria-disabled` does not block activation on its own, so you must also prevent activation/navigation in code (for example, in a JavaScript handler).
 > In case you want to remove it from the tab order as well, add `tabindex="-1"`.
 
 <HtmlPreviewer :code="NavDemo.buttonBasedPagination()" />
