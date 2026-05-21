@@ -327,6 +327,7 @@ export default defineConfig({
           items: [
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Card", link: "/docs/composites/card" },
+            { text: "Close Button", link: "/docs/composites/close-button" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
@@ -427,7 +428,6 @@ export default defineConfig({
           text: "Components API",
           items: [
             { text: ".card", link: "/docs/components/card" },
-            { text: ".close", link: "/docs/components/close" },
             { text: ".icon-*", link: "/docs/components/icons" },
             { text: ".pane", link: "/docs/components/pane" },
             { text: ".panel", link: "/docs/components/panel" },

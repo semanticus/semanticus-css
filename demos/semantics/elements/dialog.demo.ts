@@ -1,40 +1,12 @@
 import { renderElement } from "@scripts/utils";
+import { ButtonDemo } from "@demos/semantics";
 
 const defaultId = "dialog-basic";
 
-function headerAndFooterContent(attrs: Record<string, string>) {
-  return `<header>
-  <h2 id="modal-title">Confirm Your Membership</h2>
-  <button aria-label="Close" class="close" commandfor="${attrs.id || defaultId}" command="close"></button>
-</header>
+function thankYouContent() {
+  return `<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
 
-<div id="modal-description">
-  <p>
-    Thank you for signing up for a membership!
-    Please review the membership details below:
-  </p>
-
-  <ul>
-    <li>Membership: Individual</li>
-    <li>Price: $10</li>
-  </ul>
-</div>
-
-<footer>
-  <button class="secondary" commandfor="${attrs.id || defaultId}" command="close">
-    Cancel
-  </button>
-  <button commandfor="${attrs.id || defaultId}" command="close">Confirm</button>
-</footer>`;
-}
-
-export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  const mergedAttrs = { id: defaultId, ...attrs, "aria-labelledby": "modal-title", "aria-describedby": "modal-description" };
-
-  return renderElement("dialog", mergedAttrs, slot || `<button aria-label="Close" class="close" commandfor="${mergedAttrs.id}" command="close"></button>
-<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
-
-<div id="modal-description">
+<article id="modal-description">
   <p>
     We're excited to have you join us for our
     upcoming event. Please arrive at the museum
@@ -45,7 +17,38 @@ export function main(attrs: Record<string, string> = {}, slot: string = "") {
     <li>Date: Saturday, April 15</li>
     <li>Time: 10:00am - 12:00pm</li>
   </ul>
-</div>`);
+</article>`;
+}
+
+function thankYouWithCloseButtonContent(attrs: Record<string, string>) {
+  return `${renderElement("nav", {}, `<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
+
+${closeButton(attrs.id)}`)}
+
+<br>
+
+<article id="modal-description">
+  <p>
+    We're excited to have you join us for our
+    upcoming event.
+  </p>
+</article>`;
+}
+
+function closeButton(commandFor: string) {
+  return ButtonDemo.closeButton({ commandfor: commandFor, command: "close" });;
+}
+
+export function main(attrs: Record<string, string> = {}, slot: string = "") {
+  const mergedAttrs = { id: defaultId, ...attrs, "aria-labelledby": "modal-title", "aria-describedby": "modal-description" };
+
+  return renderElement("dialog", mergedAttrs, slot || thankYouContent());
+}
+
+export function withCloseButton(attrs: Record<string, string> = {}) {
+  const mergedAttrs = { id: "dialog-close-button", ...attrs };
+
+  return renderElement("dialog", mergedAttrs, thankYouWithCloseButtonContent(mergedAttrs));
 }
 
 export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
@@ -53,13 +56,17 @@ export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
 }
 
 export function modal(attrs: Record<string, string> = {}, slot: string = "") {
-  return main(attrs, slot);
+  const mergedAttrs = { id: "dialog-modal", ...attrs };
+
+  return main(mergedAttrs, slot || thankYouWithCloseButtonContent(attrs));
 }
 
 export function showModal(attrs: Record<string, string> = {}) {
-  return `<button command="show-modal" commandfor="${defaultId}" class="contrast">Show Modal</button>
+  const mergedAttrs = { id: "dialog-modal", ...attrs };
 
-${modal(attrs)}`;
+  return `<button command="show-modal" commandfor="${mergedAttrs.id}" class="contrast">Show Modal</button>
+
+${modal(mergedAttrs)}`;
 }
 
 export function modalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
@@ -70,6 +77,32 @@ export function showModalWithHeaderAndFooter(attrs: Record<string, string> = {})
     return `<button command="show-modal" commandfor="dialog-header-footer" class="contrast">Show Modal</button>
 
 ${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
+}
+
+function headerAndFooterContent(attrs: Record<string, string>) {
+  return `<header>
+  <h2 id="modal-title">Confirm Your Membership</h2>
+  ${closeButton(attrs.id || defaultId)}
+</header>
+
+<article id="modal-description">
+  <p>
+    Thank you for signing up for a membership!
+    Please review the membership details below:
+  </p>
+
+  <ul>
+    <li>Membership: Individual</li>
+    <li>Price: $10</li>
+  </ul>
+</article>
+
+<footer>
+  <button class="secondary" commandfor="${attrs.id || defaultId}" command="close">
+    Cancel
+  </button>
+  <button commandfor="${attrs.id || defaultId}" command="close">Confirm</button>
+</footer>`;
 }
 
 export function dialogAlert(attrs: Record<string, string> = {}, slot: string = "") {

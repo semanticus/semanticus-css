@@ -75,8 +75,7 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 }
 
 [type=reset],
-[type=file]::file-selector-button,
-[aria-label="Close"] {
+[type=file]::file-selector-button {
   --color-background: var(--color-secondary-fill);
   --border-color: var(--color-secondary-fill);
   --color-text: var(--color-secondary-on-fill);
@@ -84,15 +83,13 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 }
 
 [type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[type=file]::file-selector-button:is(:hover, :active, :focus),
-[aria-label="Close"]:is(:hover, :active, :focus) {
+[type=file]::file-selector-button:is(:hover, :active, :focus) {
   --color-background: var(--color-secondary-fill-hover);
   --border-color: var(--color-secondary-fill-hover);
   --color-text: var(--color-secondary-on-fill);
 }
 
 [type=reset]:focus,
-[aria-label="Close"]:focus,
 [type=reset]:is([aria-current]:not([aria-current=false])):focus,
 [type=file]::file-selector-button:focus {
   --shadow: var(--button-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-size) var(--color-secondary-focus-ring);

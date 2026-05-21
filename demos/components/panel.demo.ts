@@ -1,5 +1,6 @@
 import { renderElement } from "@scripts/utils";
 import * as CardDemo from "@demos/components/card.demo";
+import { ButtonDemo } from "@demos/semantics";
 
 export function main(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
@@ -30,5 +31,5 @@ export function inlineAlert(_attrs: Record<string, string> = {}, slot: string = 
   const { class: _class, ...attrs } = _attrs;
 
   return renderElement('section', { ...attrs, class: `panel ${_class || ''}` }, `<p>${slot}</p>
-<button aria-label="Close" class="close"></button>`);
+${ButtonDemo.closeButton()}`);
 }

@@ -52,6 +52,9 @@ dialog {
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
     background-color: var(--dialog-section-fill);
+    display: flex;
+    gap: calc(var(--nav-link-gap) * 1.5);
+    align-items: center;
   }
 
   /* Header styling */
@@ -60,6 +63,7 @@ dialog {
     border-bottom: var(--border-size) solid var(--dialog-section-border);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
+    justify-content: space-between;
   }
 
   /* Footer styling */
@@ -68,12 +72,8 @@ dialog {
     border-top: var(--border-size) solid var(--dialog-section-border);
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
-    display: flex;
     justify-content: end;
-    gap: calc(var(--nav-link-gap) * 1.5);
   }
-
-
 }
 
 @starting-style {
