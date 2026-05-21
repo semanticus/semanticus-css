@@ -6,10 +6,22 @@ Alerts can be displayed in various contexts, such as inline within a page or as 
 
 ## Inline alerts
 
-Combining the `.panel` component with **intent** and **modifier** variants can create inline alerts. These alerts are ideal for providing feedback messages within the flow of a page.
+Inline alerts are displayed within the content of a page and are typically used for non-critical messages that do not require immediate user interaction. These alerts are ideal for providing feedback messages within the flow of a page.
 
-<HtmlPreviewer :code="PanelDemo.inlineAlerts()"/>
+<HtmlPreviewer :code="AlertsDemo.inlineAlerts()"/>
+
+## Floating alerts
+
+Also known as toast notifications, floating alerts are designed to appear temporarily and overlay the content of a page. They are typically used for transient messages that do not require immediate user interaction.
+
+<HtmlPreviewer :code="AlertsDemo.floatingAlerts()"/>
+
+## Dialog alerts
+
+Dialog alerts are modal windows that require user interaction before they can be dismissed. They are often used for critical messages or actions that require confirmation from the user.
+
+<HtmlPreviewer :code="AlertsDemo.dialogAlerts()"/>
 
 <script setup>
-import { PanelDemo } from "@demos/components";
+import { AlertsDemo } from "@demos/composites";
 </script>
