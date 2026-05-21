@@ -11,11 +11,16 @@ Pagination is a navigation pattern that allows users to move between pages of co
 
 The simplest pagination pattern uses buttons within a group:
 
+> **Note:** When a step isn't available yet but should be announced, use `aria-disabled="true"` instead of the native `disabled` attribute to keep the element focusable and discoverable by assistive technology users.
+> In case you want to remove it from the tab order as well, add `tabindex="-1"`.
+
 <HtmlPreviewer :code="NavDemo.buttonBasedPagination()" />
 
 ## Link-Based Pagination
 
 For server-side rendering or distinct page URLs, use anchor elements with `role="button"`:
+
+> **Note:** `disabled` is not a valid attribute for `<a>` elements, so in this case you really need to use `aria-disabled="true"` instead.
 
 <HtmlPreviewer :code="NavDemo.linkBasedPagination()" />
 

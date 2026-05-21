@@ -4,12 +4,6 @@ The `.ghost` class creates transparent background buttons with colored text and 
 
 `.ghost` can be combined with **Intent Variants** like `.secondary`, `.success`, etc. for different color variations.
 
-::: info
-Ideally, modifier classes don't have behavior on their own and should only modify the appearance of elements or components when combined with other classes.
-
-So in the case of `.card` for example, applying `.ghost` will not add the hover effect of a button.
-:::
-
 ## Buttons
 
 Apply `.ghost` to `<button>` elements:

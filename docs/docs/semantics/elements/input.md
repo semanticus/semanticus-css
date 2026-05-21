@@ -32,11 +32,9 @@ Use `<small>` element associated with a form control via `aria-describedby` to a
 
 Validation states are provided with `aria-invalid`. See more at [[aria-invalid]](/docs/semantics/attributes/aria-invalid)
 
-<HtmlPreviewer :code="InputDemo.validationStatesWithTextHelper()" />
+> **Note:** The `<small>` element automatically inherits the validation state colors.
 
-::: info
-The `<small>` element automatically inherits the validation state colors.
-:::
+<HtmlPreviewer :code="InputDemo.validationStatesWithTextHelper()" />
 
 ## Miscellaneous Input Types
 
