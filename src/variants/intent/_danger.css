@@ -29,7 +29,7 @@
   }
 }
 
-:is(.card, .pane, .panel).danger {
+:is(.card, .pane, .panel, .alert).danger {
   --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
   --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
   --dialog-fill: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));

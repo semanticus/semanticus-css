@@ -8,17 +8,29 @@ Alerts can be displayed in various contexts, such as inline within a page or as 
 
 Inline alerts are displayed within the content of a page and are typically used for non-critical messages that do not require immediate user interaction. These alerts are ideal for providing feedback messages within the flow of a page.
 
+- Use `role="status"` with `aria-live="polite"` for success and informational messages.
+- Use `role="alert"` for warnings and errors that require the user's attention.
+
 <HtmlPreviewer :code="AlertsDemo.inlineAlerts()"/>
 
 ## Floating alerts
 
 Also known as toast notifications, floating alerts are designed to appear temporarily and overlay the content of a page. They are typically used for transient messages that do not require immediate user interaction.
 
+- Floating alerts should use `role="status"` or `role="alert"` with an `aria-live` region.
+- They should not steal keyboard focus; screen readers will announce them automatically.
+- Wrap multiple toasts in a container with `role="region"` and `aria-label="Notifications"`.
+
 <HtmlPreviewer :code="AlertsDemo.floatingAlerts()"/>
 
 ## Dialog alerts
 
 Dialog alerts are modal windows that require user interaction before they can be dismissed. They are often used for critical messages or actions that require confirmation from the user.
+
+- Use `<dialog role="alertdialog" aria-modal="true">` for critical decisions.
+- Provide `aria-labelledby` pointing to the dialog title and `aria-describedby` pointing to the message text.
+- Ensure the dialog contains at least one focusable element (e.g., action buttons).
+- The user must interact with the dialog to dismiss it; do not close on backdrop click.
 
 <HtmlPreviewer :code="AlertsDemo.dialogAlerts()"/>
 
