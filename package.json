@@ -65,7 +65,6 @@
     "src/**/*.css"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.4.15",
     "@playwright/test": "^1.59.1",
     "@storybook/addon-docs": "^10.4.0",
     "@storybook/html-vite": "^10.4.0",
@@ -75,16 +74,17 @@
     "lightningcss": "^1.32.0",
     "lightningcss-cli": "^1.32.0",
     "storybook": "^10.4.0",
+    "stylelint": "^17.7.0",
+    "stylelint-config-standard": "^40.0.0",
     "tsx": "^4.21.0",
     "vitepress": "^2.0.0-alpha.17"
   },
   "scripts": {
     "start": "npm run build && npm run docs:dev",
     "dev": "npm run storybook",
-    "lint": "npx @biomejs/biome lint",
-    "lint:fix": "npx @biomejs/biome lint --write",
-    "check": "npx @biomejs/biome check",
-    "check:fix": "npx @biomejs/biome check --write",
+    "lint": "stylelint \"src/**/*.css\"",
+    "lint:fix": "stylelint \"src/**/*.css\" --fix",
+    "check": "npm run lint && npm run build",
     "storybook": "storybook dev -p 6006",
     "demo:server": "tsx --tsconfig scripts/tsconfig.json scripts/demo-server.ts",
     "test": "npx playwright test",

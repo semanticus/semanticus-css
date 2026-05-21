@@ -37,7 +37,7 @@ The framework is organized into 6 layers, all in `src/`:
 ## Build System
 
 - **Bundler**: [LightningCSS](https://lightningcss.dev/) (bundles, minifies, handles custom media queries)
-- **Linting**: @biomejs/biome (`npm run lint` / `npm run lint:fix`)
+- **Linting**: stylelint (`npm run lint` / `npm run lint:fix`)
 - **Visual Regression**: playwright (`npm test` / `npm run test:update-snapshots`)
 - **Docs**: VitePress in `docs/`
 
@@ -163,7 +163,7 @@ This project follows [SemVer](https://semver.org/). When making changes, conside
 - Node >= 18
 - npm >= 11
 - No runtime JS dependencies
-- Dev deps: LightningCSS, @biomejs/biome, VitePress, Playwright, Storybook
+- Dev deps: LightningCSS, stylelint, VitePress, Playwright, Storybook
 
 ## License
 
