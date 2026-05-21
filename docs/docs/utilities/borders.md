@@ -27,11 +27,11 @@ const borderSubtleHtml = `<span class="border border-primary-subtle p-3 d-inline
 <span class="border border-danger-subtle p-3 d-inline-block me-2 mb-2">danger subtle</span>
 `;
 const borderWidthHtml = `<span class="border border-0 p-3 d-inline-block me-2 mb-2">0</span>
-<span class="border border-w-1 p-3 d-inline-block me-2 mb-2">1</span>
-<span class="border border-w-2 p-3 d-inline-block me-2 mb-2">2</span>
-<span class="border border-w-3 p-3 d-inline-block me-2 mb-2">3</span>
-<span class="border border-w-4 p-3 d-inline-block me-2 mb-4">4</span>
-<span class="border border-w-5 p-3 d-inline-block me-2 mb-2">5</span>
+<span class="border border-1 p-3 d-inline-block me-2 mb-2">1</span>
+<span class="border border-2 p-3 d-inline-block me-2 mb-2">2</span>
+<span class="border border-3 p-3 d-inline-block me-2 mb-2">3</span>
+<span class="border border-4 p-3 d-inline-block me-2 mb-4">4</span>
+<span class="border border-5 p-3 d-inline-block me-2 mb-2">5</span>
 `;
 const borderOpacityHtml = `<div class="border border-primary p-2 mb-2">Default primary border</div>
 <div class="border border-primary border-opacity-75 p-2 mb-2">75% opacity primary border</div>
@@ -90,7 +90,7 @@ Change the border color using semantic color utilities.
 
 ## Width
 
-Control border width with `.border-w-*` utilities, ranging from `0` (no border) to `5` (thickest).
+Control border width with `.border-*` utilities, ranging from `0` (no border) to `5` (thickest).
 
 <HtmlPreviewer :code="borderWidthHtml" />
 
