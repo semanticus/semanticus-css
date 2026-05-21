@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ## Component Variables
 
-### Dialog, Pane, Panel and Card
+### Dialog, Alerts and Card
 
 ```css
 :root {

@@ -182,7 +182,7 @@ const groupIcons = {
   'Switch': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="20" height="8" rx="4"/><circle cx="8" cy="12" r="3"/></svg>',
   'Tables': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M9 5v14"/></svg>',
   'Code': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-  'Dialog, Pane & Card': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg>',
+  'Dialog, Alerts & Card': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg>',
   'Accordion': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16"/><path d="M4 16h16"/><path d="M8 12l4-4 4 4"/></svg>',
   'Dropdown': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 11l4 4 4-4"/></svg>',
   'Progress': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="10" width="20" height="4" rx="2"/><path d="M4 12h8"/></svg>',
@@ -322,9 +322,9 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Dialog, Pane & Card',
+    label: 'Dialog, Alerts & Card',
     vars: [
-      { name: '--dialog-fill', label: 'Background', desc: 'Background color of pane, panel and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
+      { name: '--dialog-fill', label: 'Background', desc: 'Background color of dialog, alerts and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
       { name: '--dialog-border', label: 'Section Border', desc: 'Border color of header/footer sections.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
       { name: '--dialog-section-fill', label: 'Section Background', desc: 'Background for header/footer sections.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
     ]

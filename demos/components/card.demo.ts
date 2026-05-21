@@ -38,20 +38,13 @@ export function withHeaderAndFooter(tagName: string = "div", attrs: Record<strin
 </footer>`);
 }
 
-export function htmlElements() {
-  return `<!-- On article element (recommended for semantic content) -->
-<article class="card">
-  <p>Self-contained composition like a blog post or widget.</p>
-</article>
-
-<!-- On div element (for purely presentational containers) -->
-<div class="card">
-  <p>A generic container with card styling.</p>
-</div>
-
-<!-- On section element (for thematic grouping) -->
-<section class="card">
-  <p>Thematic grouping of content.</p>
+export function modifiersAndUtilities() {
+  return `<section class="card primary subtle text-center rounded-0 shadow-none">
+  <hgroup>
+    <h1>Welcome to our website</h1>
+    <p>Discover our amazing products and services that can help you achieve your goals.</p>
+  </hgroup>
+  <button>Get Started</button>
 </section>
 `;
 }

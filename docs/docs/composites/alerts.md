@@ -11,7 +11,7 @@ Inline alerts are displayed within the content of a page and are typically used 
 - Use `role="status"` with `aria-live="polite"` for success and informational messages.
 - Use `role="alert"` for warnings and errors that require the user's attention.
 
-<HtmlPreviewer :code="AlertsDemo.inlineAlerts()"/>
+<HtmlPreviewer :code="RoleStatusAlertDemo.inlineAlerts()"/>
 
 ## Floating alerts
 
@@ -21,7 +21,7 @@ Also known as toast notifications, floating alerts are designed to appear tempor
 - They should not steal keyboard focus; screen readers will announce them automatically.
 - Wrap multiple toasts in a container with `role="region"` and `aria-label="Notifications"`.
 
-<HtmlPreviewer :code="AlertsDemo.floatingAlerts()"/>
+<HtmlPreviewer :code="RoleStatusAlertDemo.floatingAlerts()"/>
 
 ## Dialog alerts
 
@@ -41,6 +41,5 @@ ${DialogDemo.showDialogAlert()}
 > **Remark:** When it comes these type of dialogs that interrupt the user’s workflow, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="alertdialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` so you only need to change the role to `alertdialog`.
 
 <script setup>
-import { AlertsDemo } from "@demos/composites";
-import { DialogDemo } from "@demos/semantics";
+import { RoleStatusAlertDemo, DialogDemo } from "@demos/semantics";
 </script>

@@ -429,8 +429,6 @@ export default defineConfig({
           items: [
             { text: ".card", link: "/docs/components/card" },
             { text: ".icon-*", link: "/docs/components/icons" },
-            { text: ".pane", link: "/docs/components/pane" },
-            { text: ".panel", link: "/docs/components/panel" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
