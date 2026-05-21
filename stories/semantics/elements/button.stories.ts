@@ -19,12 +19,12 @@ export const intentVariants: StoryObj = {
   render: (args) => args.html,
 };
 
-export const subtleModifer: StoryObj = {
+export const subtleModifier: StoryObj = {
   args: { html: SubtleDemo.buttons() },
   render: (args) => args.html,
 };
 
-export const ghostModifer: StoryObj = {
+export const ghostModifier: StoryObj = {
   args: { html: GhostDemo.buttons() },
   render: (args) => args.html,
 };
