@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T14:45:44.269Z",
+  "generatedAt": "2026-05-21T15:20:42.505Z",
   "pico": {
     "version": "2.1.1"
   },
@@ -21,7 +21,7 @@
     },
     "semanticusNoUtilities": {
       "label": "Semanticus (semantics + components + variants)",
-      "gzipKB": "13.4"
+      "gzipKB": "13.3"
     },
     "bootstrapUtilities": {
       "label": "Bootstrap (utilities only)",

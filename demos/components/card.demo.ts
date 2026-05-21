@@ -48,3 +48,21 @@ export function modifiersAndUtilities() {
 </section>
 `;
 }
+
+export function htmlElements() {
+  return `<!-- On article element (recommended for semantic content) -->
+<article class="card">
+  <p>Self-contained composition like a blog post or widget.</p>
+</article>
+
+<!-- On div element (for purely presentational containers) -->
+<div class="card">
+  <p>A generic container with card styling.</p>
+</div>
+
+<!-- On section element (for thematic grouping) -->
+<section class="card">
+  <p>Thematic grouping of content.</p>
+</section>
+`;
+}
