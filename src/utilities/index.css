@@ -10,7 +10,7 @@
  */
 
 /* Variables */
-@import '../variables/_breakpoints.css';
+@import "../variables/_breakpoints.css";
 
 /* Utilities */
-@import './modules.css';
+@import "./modules.css";

@@ -1,8 +1,8 @@
-import * as InputDemo from '@demos/semantics/elements/input.demo';
-import * as RoleGroupDemo from '@demos/semantics/attributes/role-group.demo';
+import * as RoleGroupDemo from "@demos/semantics/attributes/role-group.demo";
+import * as InputDemo from "@demos/semantics/elements/input.demo";
 
 export function main() {
-  return `<fieldset>
+	return `<fieldset>
   <label>Email</label>
   ${InputDemo.email({ "aria-describedby": "email-helper" })}
   <small id="email-helper">
@@ -13,7 +13,7 @@ export function main() {
 }
 
 export function insideForm() {
-  return `<form>
+	return `<form>
   <fieldset>
     <label>
       First name
@@ -30,7 +30,7 @@ export function insideForm() {
 }
 
 export function disabled() {
-  return `<fieldset disabled>
+	return `<fieldset disabled>
   <legend>Disabled fieldset</legend>
   <label>
     Username
@@ -46,7 +46,7 @@ export function disabled() {
 }
 
 export function section() {
-  return `<fieldset>
+	return `<fieldset>
   <legend>Personal Information</legend>
   <label>
     First name
@@ -65,5 +65,5 @@ export function section() {
 }
 
 export function withGroup() {
-  return RoleGroupDemo.inputWithButton("fieldset");
+	return RoleGroupDemo.inputWithButton("fieldset");
 }

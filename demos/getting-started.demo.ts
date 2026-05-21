@@ -1,5 +1,5 @@
 export function semanticStyling() {
-  return `<article>
+	return `<article>
   <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
@@ -10,7 +10,7 @@ export function semanticStyling() {
 }
 
 export function components() {
-  return `<article class="card">
+	return `<article class="card">
   <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
@@ -21,7 +21,7 @@ export function components() {
 }
 
 export function variants() {
-  return `<article class="card secondary">
+	return `<article class="card secondary">
   <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
@@ -32,7 +32,7 @@ export function variants() {
 }
 
 export function utilities() {
-  return `<article class="card secondary text-center w-75 mx-auto">
+	return `<article class="card secondary text-center w-75 mx-auto">
   <hgroup class="p-3">
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>

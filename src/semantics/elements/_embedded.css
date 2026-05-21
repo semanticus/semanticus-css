@@ -1,38 +1,38 @@
 :where(audio, canvas, iframe, img, svg, video) {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 audio,
 video {
-  display: inline-block;
+	display: inline-block;
 }
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+	display: none;
+	height: 0;
 }
 
 :where(iframe) {
-  border-style: none;
+	border-style: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  border-style: none;
+	max-width: 100%;
+	height: auto;
+	border-style: none;
 }
 
 :where(svg:not([fill])) {
-  fill: currentColor;
+	fill: currentColor;
 }
 
 svg {
-  &:not(:root),
-  &:not(:host) {
-    overflow: hidden;
-  }
+	&:not(:root),
+	&:not(:host) {
+		overflow: hidden;
+	}
 }
 
 canvas {
-  display: inline-block;
+	display: inline-block;
 }

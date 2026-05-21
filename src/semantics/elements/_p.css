@@ -1,11 +1,11 @@
 p {
-  color: var(--color-text);
-  font-style: normal;
-  font-weight: var(--font-weight);
-  margin-bottom: var(--typography-spacing-vertical);
-  margin-top: 0;
+	color: var(--color-text);
+	font-style: normal;
+	font-weight: var(--font-weight);
+	margin-bottom: var(--typography-spacing-vertical);
+	margin-top: 0;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+	&:last-of-type {
+		margin-bottom: 0;
+	}
 }

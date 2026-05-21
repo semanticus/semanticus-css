@@ -1,51 +1,51 @@
 {
-  "generatedAt": "2026-05-21T02:29:53.210Z",
-  "pico": {
-    "version": "2.1.1"
-  },
-  "bootstrap": {
-    "version": "5.3.8"
-  },
-  "entries": {
-    "picoSemantics": {
-      "label": "Pico (semantics only)",
-      "gzipKB": "10.2"
-    },
-    "semanticusSemantics": {
-      "label": "Semanticus (semantics only)",
-      "gzipKB": "11.1"
-    },
-    "picoFullBundle": {
-      "label": "Pico (semantics + classes)",
-      "gzipKB": "11.5"
-    },
-    "semanticusNoUtilities": {
-      "label": "Semanticus (semantics + components + variants)",
-      "gzipKB": "13.1"
-    },
-    "bootstrapUtilities": {
-      "label": "Bootstrap (utilities only)",
-      "gzipKB": "10.9"
-    },
-    "bootstrapUtilitiesAndGrid": {
-      "label": "Bootstrap (utilities + grid)",
-      "gzipKB": "16.3"
-    },
-    "semanticusUtilitiesAndGrid": {
-      "label": "Semanticus (utilities + grid)",
-      "gzipKB": "10.5"
-    },
-    "bootstrapCssBundle": {
-      "label": "Bootstrap (CSS bundle only)",
-      "gzipKB": "30.4"
-    },
-    "bootstrapFullBundle": {
-      "label": "Bootstrap (full bundle)",
-      "gzipKB": "53.8"
-    },
-    "semanticusFullBundle": {
-      "label": "Semanticus (full bundle)",
-      "gzipKB": "23.2"
-    }
-  }
+	"generatedAt": "2026-05-21T02:29:53.210Z",
+	"pico": {
+		"version": "2.1.1"
+	},
+	"bootstrap": {
+		"version": "5.3.8"
+	},
+	"entries": {
+		"picoSemantics": {
+			"label": "Pico (semantics only)",
+			"gzipKB": "10.2"
+		},
+		"semanticusSemantics": {
+			"label": "Semanticus (semantics only)",
+			"gzipKB": "11.1"
+		},
+		"picoFullBundle": {
+			"label": "Pico (semantics + classes)",
+			"gzipKB": "11.5"
+		},
+		"semanticusNoUtilities": {
+			"label": "Semanticus (semantics + components + variants)",
+			"gzipKB": "13.1"
+		},
+		"bootstrapUtilities": {
+			"label": "Bootstrap (utilities only)",
+			"gzipKB": "10.9"
+		},
+		"bootstrapUtilitiesAndGrid": {
+			"label": "Bootstrap (utilities + grid)",
+			"gzipKB": "16.3"
+		},
+		"semanticusUtilitiesAndGrid": {
+			"label": "Semanticus (utilities + grid)",
+			"gzipKB": "10.5"
+		},
+		"bootstrapCssBundle": {
+			"label": "Bootstrap (CSS bundle only)",
+			"gzipKB": "30.4"
+		},
+		"bootstrapFullBundle": {
+			"label": "Bootstrap (full bundle)",
+			"gzipKB": "53.8"
+		},
+		"semanticusFullBundle": {
+			"label": "Semanticus (full bundle)",
+			"gzipKB": "23.2"
+		}
+	}
 }

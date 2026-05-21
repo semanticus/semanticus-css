@@ -1,31 +1,37 @@
 :root,
 :host {
-  /* --color-green-950: #0b1305; */
-  /* --color-green-900: #131f07; */
-  /* --color-green-850: #152b07; */
-  /* --color-green-800: #173806; */
-  /* --color-green-750: #1a4405; */
-  /* --color-green-700: #205107; */
-  /* --color-green-650: #265e09; */
-  /* --color-green-600: #2c6c0c; */
-  --color-green-550: #33790f;
-  /* --color-green-500: #398712; */
-  /* --color-green-450: #409614; */
-  /* --color-green-400: #47a417; */
-  --color-green-350: #4eb31b;
-  /* --color-green-300: #55c21e; */
-  /* --color-green-250: #5dd121; */
-  /* --color-green-200: #62d926; */
-  /* --color-green-150: #77ef3d; */
-  /* --color-green-100: #95fb62; */
-  /* --color-green-50: #d7fbc1; */
-  /* --color-green: var(--color-green-550); */
+	/* --color-green-950: #0b1305; */
+	/* --color-green-900: #131f07; */
+	/* --color-green-850: #152b07; */
+	/* --color-green-800: #173806; */
+	/* --color-green-750: #1a4405; */
+	/* --color-green-700: #205107; */
+	/* --color-green-650: #265e09; */
+	/* --color-green-600: #2c6c0c; */
+	--color-green-550: #33790f;
+	/* --color-green-500: #398712; */
+	/* --color-green-450: #409614; */
+	/* --color-green-400: #47a417; */
+	--color-green-350: #4eb31b;
+	/* --color-green-300: #55c21e; */
+	/* --color-green-250: #5dd121; */
+	/* --color-green-200: #62d926; */
+	/* --color-green-150: #77ef3d; */
+	/* --color-green-100: #95fb62; */
+	/* --color-green-50: #d7fbc1; */
+	/* --color-green: var(--color-green-550); */
 
-  /* System tokens */
-  --color-primary-text: light-dark(var(--color-green-550), var(--color-green-350));
-  --color-primary-fill: var(--color-green-550);
-  --color-primary-on-fill: white;
+	/* System tokens */
+	--color-primary-text: light-dark(
+		var(--color-green-550),
+		var(--color-green-350)
+	);
+	--color-primary-fill: var(--color-green-550);
+	--color-primary-on-fill: white;
 
-  /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
+	/* Component tokens */
+	--switch-thumb-glow: light-dark(
+		0 0 0 oklch(0% 0 0deg / 0),
+		0 0 0 oklch(0% 0 0deg / 0)
+	);
 }

@@ -1,33 +1,33 @@
 <script setup>
-import { ref, computed } from 'vue'
-import hljs from 'highlight.js/lib/core'
-import html from 'highlight.js/lib/languages/xml'
-import bash from 'highlight.js/lib/languages/bash'
-import javascript from 'highlight.js/lib/languages/javascript'
-import { cdnBaseUrl, npmRegistryTarballUrl } from '@scripts/utils';
+import { cdnBaseUrl, npmRegistryTarballUrl } from "@scripts/utils";
+import hljs from "highlight.js/lib/core";
+import bash from "highlight.js/lib/languages/bash";
+import javascript from "highlight.js/lib/languages/javascript";
+import html from "highlight.js/lib/languages/xml";
+import { computed, ref } from "vue";
 
-hljs.registerLanguage('html', html)
-hljs.registerLanguage('bash', bash)
-hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage("html", html);
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("javascript", javascript);
 
-const installMode = ref('cdn')
-const copiedFeedback = ref(null)
+const installMode = ref("cdn");
+const copiedFeedback = ref(null);
 
 const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 
 <!-- customize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
-<link rel="stylesheet" href="/css/semanticus.size.pico.css">`
+<link rel="stylesheet" href="/css/semanticus.size.pico.css">`;
 
 const cdnSnippet = computed(() => {
-  return `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">
+	return `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">
 
 <!-- customize it with a palette or size variation if needed -->
 <link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.blue.css`)}">
-<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.pico.css`)}">`
-})
+<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.pico.css`)}">`;
+});
 
-const npmInstallSnippet = 'npm install semanticus-css'
+const npmInstallSnippet = "npm install semanticus-css";
 
 const npmImportSnippet = `import 'semanticus-css';
 
@@ -36,34 +36,34 @@ import 'semanticus-css/semantics';
 
 // Or add a palette / size on top
 import 'semanticus-css/palettes/blue';
-import 'semanticus-css/sizes/pico';`
+import 'semanticus-css/sizes/pico';`;
 
 const tarballUrl = npmRegistryTarballUrl();
 
 const highlightedManualSnippet = computed(() => {
-  return hljs.highlight(manualSnippet, { language: 'html' }).value
-})
+	return hljs.highlight(manualSnippet, { language: "html" }).value;
+});
 
 const highlightedCdnSnippet = computed(() => {
-  return hljs.highlight(cdnSnippet.value, { language: 'html' }).value
-})
+	return hljs.highlight(cdnSnippet.value, { language: "html" }).value;
+});
 
 const highlightedNpmInstallSnippet = computed(() => {
-  return hljs.highlight(npmInstallSnippet, { language: 'bash' }).value
-})
+	return hljs.highlight(npmInstallSnippet, { language: "bash" }).value;
+});
 
 const highlightedNpmImportSnippet = computed(() => {
-  return hljs.highlight(npmImportSnippet, { language: 'javascript' }).value
-})
+	return hljs.highlight(npmImportSnippet, { language: "javascript" }).value;
+});
 
 async function copyToClipboard(text, type) {
-  try {
-    await navigator.clipboard.writeText(text)
-    copiedFeedback.value = type
-    setTimeout(() => copiedFeedback.value = null, 2000)
-  } catch (err) {
-    console.error('Failed to copy:', err)
-  }
+	try {
+		await navigator.clipboard.writeText(text);
+		copiedFeedback.value = type;
+		setTimeout(() => (copiedFeedback.value = null), 2000);
+	} catch (err) {
+		console.error("Failed to copy:", err);
+	}
 }
 </script>
 

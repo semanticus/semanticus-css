@@ -1,23 +1,27 @@
+import { ADemo, RoleLinkDemo } from "@demos/semantics";
 import { WarningDemo } from "@demos/variants/intent";
 import { renderElement } from "@scripts/utils";
-import { ADemo, RoleLinkDemo } from '@demos/semantics';
 
 export function links(attrs: Record<string, string> = {}) {
-  return `${ADemo.overview({ ...attrs, class: ["warning", attrs.class || ""].join(' ') })}
+	return `${ADemo.overview({ ...attrs, class: ["warning", attrs.class || ""].join(" ") })}
 <hr>
-${RoleLinkDemo.overview({ ...attrs, class: ["warning", attrs.class || ""].join(' ') })}`;
+${RoleLinkDemo.overview({ ...attrs, class: ["warning", attrs.class || ""].join(" ") })}`;
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${WarningDemo.button(attrs)}
+	return renderElement(
+		"nav",
+		{ role: "toolbar" },
+		`${WarningDemo.button(attrs)}
 
 ${WarningDemo.roleButton("div", attrs)}
 
-${WarningDemo.dropdown(attrs)}`);
+${WarningDemo.dropdown(attrs)}`,
+	);
 }
 
 export function cards() {
-  return `${basicCard()}
+	return `${basicCard()}
 
 <hr>
 
@@ -25,9 +29,9 @@ ${cardWithHeaderAndFooter()}`;
 }
 
 export function basicCard(attrs: Record<string, string> = {}) {
-  return WarningDemo.card("div", attrs);
+	return WarningDemo.card("div", attrs);
 }
 
 export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return WarningDemo.cardWithHeaderAndFooter("div", attrs);
+	return WarningDemo.cardWithHeaderAndFooter("div", attrs);
 }

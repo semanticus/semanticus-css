@@ -1,139 +1,151 @@
-label:has([type=checkbox], [type=radio]) {
-  width: fit-content;
-  cursor: pointer;
+label:has([type="checkbox"], [type="radio"]) {
+	width: fit-content;
+	cursor: pointer;
 }
 
-[type=checkbox],
-[type=radio] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 1.25em;
-  height: 1.25em;
-  margin-top: -0.125em;
-  margin-inline-end: 0.5em;
-  border-width: var(--border-size);
-  vertical-align: middle;
-  cursor: pointer;
+[type="checkbox"],
+[type="radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 1.25em;
+	height: 1.25em;
+	margin-top: -0.125em;
+	margin-inline-end: 0.5em;
+	border-width: var(--border-size);
+	vertical-align: middle;
+	cursor: pointer;
 
-  &::-ms-check {
-    display: none;
-  }
+	&::-ms-check {
+		display: none;
+	}
 
-  &:checked, &:checked:active, &:checked:focus {
-    --color-background: var(--color-primary-fill);
-    --border-color: var(--color-primary-fill);
-    background-image: var(--icon-checkbox);
-    background-position: center;
-    background-size: 0.75em auto;
-    background-repeat: no-repeat;
-  }
+	&:checked,
+	&:checked:active,
+	&:checked:focus {
+		--color-background: var(--color-primary-fill);
+		--border-color: var(--color-primary-fill);
+		background-image: var(--icon-checkbox);
+		background-position: center;
+		background-size: 0.75em auto;
+		background-repeat: no-repeat;
+	}
 
-  & ~ label {
-    display: inline-block;
-    margin-bottom: 0;
-    cursor: pointer;
+	& ~ label {
+		display: inline-block;
+		margin-bottom: 0;
+		cursor: pointer;
 
-    &:not(:last-of-type) {
-      margin-inline-end: 1em;
-    }
-  }
+		&:not(:last-of-type) {
+			margin-inline-end: 1em;
+		}
+	}
 }
 
-[type=checkbox] {
-  &:indeterminate {
-    --color-background: var(--color-primary-fill);
-    --border-color: var(--color-primary-fill);
-    background-image: var(--icon-minus);
-    background-position: center;
-    background-size: 0.75em auto;
-    background-repeat: no-repeat;
-  }
+[type="checkbox"] {
+	&:indeterminate {
+		--color-background: var(--color-primary-fill);
+		--border-color: var(--color-primary-fill);
+		background-image: var(--icon-minus);
+		background-position: center;
+		background-size: 0.75em auto;
+		background-repeat: no-repeat;
+	}
 }
 
-[type=radio] {
-  border-radius: 50%;
+[type="radio"] {
+	border-radius: 50%;
 
-  &:checked, &:checked:active, &:checked:focus {
-    --color-background: var(--color-primary-on-fill);
-    border-width: 0.35em;
-    background-image: none;
-  }
+	&:checked,
+	&:checked:active,
+	&:checked:focus {
+		--color-background: var(--color-primary-on-fill);
+		border-width: 0.35em;
+		background-image: none;
+	}
 }
 
-[type=checkbox][role=switch] {
-  --color-background: var(--switch-fill);
-  --color-text: var(--switch-thumb-fill);
-  width: 2.25em;
-  height: 1.25em;
-  border: var(--border-size) solid var(--border-color);
-  border-radius: 1.25em;
-  background-color: var(--color-background);
-  line-height: 1.25em;
+[type="checkbox"][role="switch"] {
+	--color-background: var(--switch-fill);
+	--color-text: var(--switch-thumb-fill);
+	width: 2.25em;
+	height: 1.25em;
+	border: var(--border-size) solid var(--border-color);
+	border-radius: 1.25em;
+	background-color: var(--color-background);
+	line-height: 1.25em;
 
-  &:not([aria-invalid]) {
-    --border-color: var(--switch-fill);
-  }
+	&:not([aria-invalid]) {
+		--border-color: var(--switch-fill);
+	}
 
-  &:before {
-    display: block;
-    aspect-ratio: 1;
-    height: 100%;
-    border-radius: 50%;
-    background-color: var(--color-text);
-    box-shadow: var(--switch-thumb-glow);
-    content: "";
-    transition: margin 0.1s ease-in-out;
-  }
+	&:before {
+		display: block;
+		aspect-ratio: 1;
+		height: 100%;
+		border-radius: 50%;
+		background-color: var(--color-text);
+		box-shadow: var(--switch-thumb-glow);
+		content: "";
+		transition: margin 0.1s ease-in-out;
+	}
 
-  &:focus {
-    --color-background: var(--switch-fill);
-    --border-color: var(--switch-fill);
-  }
+	&:focus {
+		--color-background: var(--switch-fill);
+		--border-color: var(--switch-fill);
+	}
 
-  &:checked {
-    --color-background: var(--switch-fill-checked);
-    --border-color: var(--switch-fill-checked);
-    background-image: none;
+	&:checked {
+		--color-background: var(--switch-fill-checked);
+		--border-color: var(--switch-fill-checked);
+		background-image: none;
 
-    &::before {
-      margin-inline-start: calc(2.25em - 1.25em);
-    }
-  }
+		&::before {
+			margin-inline-start: calc(2.25em - 1.25em);
+		}
+	}
 
-  &[disabled] {
-    --color-background: var(--border-color);
-  }
+	&[disabled] {
+		--color-background: var(--border-color);
+	}
 }
 
-[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
-[type=checkbox][role=switch][aria-invalid=false]:checked,
-[type=checkbox][role=switch][aria-invalid=false]:checked:active,
-[type=checkbox][role=switch][aria-invalid=false]:checked:focus {
-  --color-background: var(--color-success-fill);
+[type="checkbox"][aria-invalid="false"]:checked,
+[type="checkbox"][aria-invalid="false"]:checked:active,
+[type="checkbox"][aria-invalid="false"]:checked:focus,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:active,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:focus {
+	--color-background: var(--color-success-fill);
 }
-[type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
-[type=checkbox][role=switch]:checked[aria-invalid=true],
-[type=checkbox][role=switch]:checked:active[aria-invalid=true],
-[type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
-  --color-background: var(--color-danger-fill);
+[type="checkbox"]:checked[aria-invalid="true"],
+[type="checkbox"]:checked:active[aria-invalid="true"],
+[type="checkbox"]:checked:focus[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:active[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:focus[aria-invalid="true"] {
+	--color-background: var(--color-danger-fill);
 }
 
-[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
-[type=radio][aria-invalid=false]:checked,
-[type=radio][aria-invalid=false]:checked:active,
-[type=radio][aria-invalid=false]:checked:focus,
-[type=checkbox][role=switch][aria-invalid=false]:checked,
-[type=checkbox][role=switch][aria-invalid=false]:checked:active,
-[type=checkbox][role=switch][aria-invalid=false]:checked:focus {
-  --border-color: var(--color-success-fill);
+[type="checkbox"][aria-invalid="false"]:checked,
+[type="checkbox"][aria-invalid="false"]:checked:active,
+[type="checkbox"][aria-invalid="false"]:checked:focus,
+[type="radio"][aria-invalid="false"]:checked,
+[type="radio"][aria-invalid="false"]:checked:active,
+[type="radio"][aria-invalid="false"]:checked:focus,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:active,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:focus {
+	--border-color: var(--color-success-fill);
 }
-[type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
-[type=radio]:checked[aria-invalid=true],
-[type=radio]:checked:active[aria-invalid=true],
-[type=radio]:checked:focus[aria-invalid=true],
-[type=checkbox][role=switch]:checked[aria-invalid=true],
-[type=checkbox][role=switch]:checked:active[aria-invalid=true],
-[type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
-  --border-color: var(--color-danger-fill);
+[type="checkbox"]:checked[aria-invalid="true"],
+[type="checkbox"]:checked:active[aria-invalid="true"],
+[type="checkbox"]:checked:focus[aria-invalid="true"],
+[type="radio"]:checked[aria-invalid="true"],
+[type="radio"]:checked:active[aria-invalid="true"],
+[type="radio"]:checked:focus[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:active[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:focus[aria-invalid="true"] {
+	--border-color: var(--color-danger-fill);
 }

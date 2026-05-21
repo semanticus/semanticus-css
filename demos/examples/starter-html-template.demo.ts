@@ -1,7 +1,16 @@
 import { renderElement } from "@scripts/utils";
 
-export function main(tagName: string = "body", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, class: ["vstack", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header class="container">
+export function main(
+	tagName: string = "body",
+	attrs: Record<string, string> = {},
+) {
+	return renderElement(
+		tagName,
+		{
+			...attrs,
+			class: ["vstack", ...(attrs.class ? [attrs.class] : [])].join(" "),
+		},
+		`<header class="container">
   <nav>
     <h3><a href="#">Acme Corp</a></h3>
 
@@ -23,5 +32,6 @@ export function main(tagName: string = "body", attrs: Record<string, string> = {
 
 <footer class="text-center text-bg-secondary-subtle">
   <p>Acme Corp &copy; 2026. All rights reserved.</p>
-</footer>`);
+</footer>`,
+	);
 }

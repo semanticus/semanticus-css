@@ -1,10 +1,10 @@
 header {
-  width: 100%;
-  padding-block: var(--spacing);
-  margin-bottom: var(--spacing);
+	width: 100%;
+	padding-block: var(--spacing);
+	margin-bottom: var(--spacing);
 
-  & > * {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
+	& > * {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
 }

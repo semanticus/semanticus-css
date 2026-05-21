@@ -10,7 +10,7 @@
  */
 
 /* Variables */
-@import '../variables/_all.css';
+@import "../variables/_all.css";
 
 /* Semantic Components */
 @import "./modules.css";

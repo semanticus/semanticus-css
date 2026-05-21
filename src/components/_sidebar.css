@@ -1,49 +1,53 @@
 aside.sidebar {
-  z-index: 1020;
-  position: sticky !important;
-  top: 0;
-  max-height: 100svh;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
+	z-index: 1020;
+	position: sticky !important;
+	top: 0;
+	max-height: 100svh;
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
 
-  /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
-  /* Gracefully degrades to instant appearance in unsupported browsers */
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+	/* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
+	/* Gracefully degrades to instant appearance in unsupported browsers */
+	transition:
+		opacity 0.2s ease-in-out,
+		transform 0.2s ease-in-out;
 
-  &:popover-open {
-    display: flex !important;
-    width: 60% !important;
-    box-shadow: var(--shadow);
-    background-color: var(--color-background) !important;
-    left: 0;
-    right: unset;
+	&:popover-open {
+		display: flex !important;
+		width: 60% !important;
+		box-shadow: var(--shadow);
+		background-color: var(--color-background) !important;
+		left: 0;
+		right: unset;
 
-    &[data-placement="right"] {
-      left: unset;
-      right: 0;
-    }
-  }
+		&[data-placement="right"] {
+			left: unset;
+			right: 0;
+		}
+	}
 
-  &::backdrop {
-    backdrop-filter: blur(0.375rem);
-    background-color: var(--dialog-overlay);
-    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  }
+	&::backdrop {
+		backdrop-filter: blur(0.375rem);
+		background-color: var(--dialog-overlay);
+		transition:
+			backdrop-filter 0.2s ease-in-out,
+			background-color 0.2s ease-in-out;
+	}
 }
 
 @starting-style {
-  aside.sidebar:popover-open {
-    opacity: 0;
-    transform: translateX(-20px);
+	aside.sidebar:popover-open {
+		opacity: 0;
+		transform: translateX(-20px);
 
-    &[data-placement="right"] {
-      transform: translateX(20px);
-    }
-  }
+		&[data-placement="right"] {
+			transform: translateX(20px);
+		}
+	}
 
-  aside.sidebar:popover-open::backdrop {
-    backdrop-filter: none;
-    background-color: transparent;
-  }
+	aside.sidebar:popover-open::backdrop {
+		backdrop-filter: none;
+		background-color: transparent;
+	}
 }

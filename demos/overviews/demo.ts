@@ -1,33 +1,32 @@
-import { renderElement } from "@scripts/utils";
-
-import { IntentDemo } from '@demos/variants';
 import { CardDemo } from "@demos/components";
 import { GhostDemo, SubtleDemo } from "@demos/overviews";
 import {
-  ADemo,
-  InputDemo,
-  DetailsDemo,
-  SelectDemo,
-  TextareaDemo,
-  FieldsetDemo,
-  ProgressDemo,
-  TableDemo,
-  DialogDemo,
-  FigureDemo,
-  NavDemo,
-  HgroupDemo,
-  ListsDemo,
-  AriaBusyDemo,
-  DisabledDemo,
-  RoleGroupDemo,
-  RoleSearchDemo,
-  RoleTooltipDemo,
-  RoleLinkDemo,
-  TypographyDemo,
-} from '@demos/semantics';
+	ADemo,
+	AriaBusyDemo,
+	DetailsDemo,
+	DialogDemo,
+	DisabledDemo,
+	FieldsetDemo,
+	FigureDemo,
+	HgroupDemo,
+	InputDemo,
+	ListsDemo,
+	NavDemo,
+	ProgressDemo,
+	RoleGroupDemo,
+	RoleLinkDemo,
+	RoleSearchDemo,
+	RoleTooltipDemo,
+	SelectDemo,
+	TableDemo,
+	TextareaDemo,
+	TypographyDemo,
+} from "@demos/semantics";
+import { IntentDemo } from "@demos/variants";
+import { renderElement } from "@scripts/utils";
 
 export function buttons() {
-  return `<section id="buttons">
+	return `<section id="buttons">
   <h2>Buttons</h2>
 
   <section role="toolbar">
@@ -42,22 +41,22 @@ export function buttons() {
 }
 
 export function links() {
-  return `<section id="links">
+	return `<section id="links">
   <h2>Links</h2>
 
   <section role="toolbar">
     ${ADemo.main()}
-    ${RoleLinkDemo.main('button')}
-    ${RoleLinkDemo.main('div')}
+    ${RoleLinkDemo.main("button")}
+    ${RoleLinkDemo.main("div")}
     ${ADemo.active()}
-    ${RoleLinkDemo.active('button')}
-    ${RoleLinkDemo.active('div')}
+    ${RoleLinkDemo.active("button")}
+    ${RoleLinkDemo.active("div")}
   </section>
 </section>`;
 }
 
 export function inputButtons() {
-  return `<section id="input-buttons">
+	return `<section id="input-buttons">
   <h4>Input buttons (type="button|submit|reset")</h4>
 
   <section role="toolbar">
@@ -70,7 +69,7 @@ export function inputButtons() {
 }
 
 export function disabledState() {
-  return `<section id="disabled-state">
+	return `<section id="disabled-state">
   <h4>Disabled State</h4>
 
   <section role="toolbar">
@@ -92,7 +91,7 @@ export function disabledState() {
 }
 
 export function validState() {
-  return `<section id="valid-state">
+	return `<section id="valid-state">
   <h4>Valid State (aria-invalid="false")</h4>
 
   <section role="toolbar">
@@ -110,7 +109,7 @@ export function validState() {
 }
 
 export function invalidState() {
-  return `<section id="invalid-state">
+	return `<section id="invalid-state">
   <h4>Invalid State (aria-invalid="true")</h4>
 
   <section role="toolbar">
@@ -128,7 +127,7 @@ export function invalidState() {
 }
 
 export function inputElements() {
-  return `<section id="input-elements">
+	return `<section id="input-elements">
   <h2>Input Elements</h2>
 
   <input type="text" name="text" placeholder="Text" aria-label="Text" />
@@ -185,7 +184,7 @@ export function inputElements() {
 }
 
 function fieldsets() {
-  return `<section id="fieldsets">
+	return `<section id="fieldsets">
   <hgroup>
     <h2>Fieldsets</h2>
     <p>Use fieldsets to group related form elements together.</p>
@@ -217,7 +216,7 @@ function fieldsets() {
 }
 
 function cards() {
-  return `<section id="cards">
+	return `<section id="cards">
   <h2>Cards</h2>
 
   ${CardDemo.main()}
@@ -227,7 +226,7 @@ function cards() {
 }
 
 function loadingStates() {
-  return `<section id="loading-states">
+	return `<section id="loading-states">
   <h2>Loading States (aria-busy="true")</h2>
 
   <section role="toolbar">
@@ -245,7 +244,7 @@ function loadingStates() {
 }
 
 function tooltips() {
-  return `<section id="tooltips">
+	return `<section id="tooltips">
   <hgroup>
     <h2>Tooltips (role="tooltip")</h2>
     <p>Pair a trigger element with <code>aria-describedby</code> and another with <code>[role="tooltip"]</code>.</p>
@@ -256,7 +255,7 @@ function tooltips() {
 }
 
 function accordions() {
-  return `<section id="accordions">
+	return `<section id="accordions">
   <h2>Accordions</h2>
 
   <section>
@@ -274,7 +273,7 @@ function accordions() {
 }
 
 function dropdowns() {
-  return `<section id="dropdowns">
+	return `<section id="dropdowns">
   <h2>Dropdowns</h2>
 
   <section>
@@ -292,7 +291,7 @@ function dropdowns() {
 }
 
 function dialogs() {
-  return `<section id="dialogs">
+	return `<section id="dialogs">
   <hgroup>
     <h2>Modal</h2>
     <p>Click the button below to open a modal dialog</p>
@@ -303,7 +302,7 @@ function dialogs() {
 }
 
 function tables() {
-  return `<section id="tables">
+	return `<section id="tables">
   <h2>Tables</h2>
 
   ${TableDemo.bigExample()}
@@ -311,7 +310,7 @@ function tables() {
 }
 
 function progressBars() {
-  return `<section id="progressBars">
+	return `<section id="progressBars">
   <h2>Progress Bars</h2>
 
   ${ProgressDemo.main({ value: "0" })}
@@ -322,7 +321,7 @@ function progressBars() {
 }
 
 function figures() {
-  return `<section id="figures">
+	return `<section id="figures">
   <h2>Figures</h2>
 
   ${FigureDemo.withoutImage()}
@@ -330,7 +329,7 @@ function figures() {
 }
 
 function navigation() {
-  return `<section id="navigation">
+	return `<section id="navigation">
   <h2>Navigation</h2>
 
   <section>
@@ -354,7 +353,7 @@ function navigation() {
 }
 
 function typography() {
-  return `<section id="typography">
+	return `<section id="typography">
   <h2>Typography</h2>
 
   <section role="toolbar">
@@ -379,7 +378,7 @@ function typography() {
 }
 
 function headingGroup() {
-  return `<section id="headingGroup">
+	return `<section id="headingGroup">
   <header>
     ${HgroupDemo.main()}
   </header>
@@ -387,7 +386,7 @@ function headingGroup() {
 }
 
 function lists() {
-  return `<section id="lists">
+	return `<section id="lists">
   <h2>Lists</h2>
 
   <section>
@@ -412,7 +411,7 @@ function lists() {
 }
 
 function blockquotes() {
-  return `<section id="blockquotes">
+	return `<section id="blockquotes">
   <h2>Blockquote</h2>
 
   <section>
@@ -422,7 +421,7 @@ function blockquotes() {
 }
 
 function codeBlocks() {
-  return `<section id="codeBlocks">
+	return `<section id="codeBlocks">
   <h2>Code Block</h2>
 
   <section>
@@ -432,7 +431,7 @@ function codeBlocks() {
 }
 
 function address() {
-  return `<section id="address">
+	return `<section id="address">
   <h2>Address</h2>
 
   <section>
@@ -442,7 +441,10 @@ function address() {
 }
 
 export function customizerExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+	return renderElement(
+		"main",
+		{ class: "container", ...attrs },
+		`<br>
 ${buttons()}
 
 <hr>
@@ -493,11 +495,18 @@ ${links()}
   ${CardDemo.main()}
 
   ${CardDemo.withHeaderAndFooter()}
-</section>`);
+</section>`,
+	);
 }
 
-export function fullBundle(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+export function fullBundle(
+	attrs: Record<string, string> = {},
+	slot: string = "",
+) {
+	return renderElement(
+		"main",
+		{ class: "container", ...attrs },
+		`<br>
 
 ${buttons()}
 
@@ -593,13 +602,14 @@ ${codeBlocks()}
 <hr>
 <br>
 
-${address()}`);
+${address()}`,
+	);
 }
 
 function typographySection(cssClass: string) {
-  return `<section class="${cssClass}">
+	return `<section class="${cssClass}">
   <section>
-    ${TypographyDemo.headings('Heading')}
+    ${TypographyDemo.headings("Heading")}
   </section>
 
   <hgroup>
@@ -613,7 +623,7 @@ function typographySection(cssClass: string) {
 }
 
 export function fullBundleColorsButtons() {
-  return `<section id="buttons">
+	return `<section id="buttons">
   <h2>Buttons</h2>
 
   ${IntentDemo.buttons()}
@@ -623,23 +633,23 @@ export function fullBundleColorsButtons() {
 }
 
 function fullBundleColorsTypography() {
-  return `<section id="typography">
+	return `<section id="typography">
   <h2>Typography</h2>
 
   <section role="toolbar">
-    ${typographySection('text-primary')}
-    ${typographySection('text-secondary')}
-    ${typographySection('text-contrast')}
-    ${typographySection('text-success')}
-    ${typographySection('text-info')}
-    ${typographySection('text-warning')}
-    ${typographySection('text-danger')}
+    ${typographySection("text-primary")}
+    ${typographySection("text-secondary")}
+    ${typographySection("text-contrast")}
+    ${typographySection("text-success")}
+    ${typographySection("text-info")}
+    ${typographySection("text-warning")}
+    ${typographySection("text-danger")}
   </section>
 </section>`;
 }
 
 function fullBundleColorsDropdowns() {
-  return `<section id="dropdowns">
+	return `<section id="dropdowns">
   <h2>Dropdowns (role="button")</h2>
 
   <section role="toolbar">
@@ -659,13 +669,13 @@ function fullBundleColorsDropdowns() {
 }
 
 function fullBundleColorsCards() {
-  return `<section id="cards">
+	return `<section id="cards">
   <h2>Cards</h2>
 
   <section class="mb-0" role="toolbar">
     ${CardDemo.withHeaderAndFooter()}
-    ${CardDemo.withHeaderAndFooter('div', { class: 'subtle' })}
-    ${CardDemo.withHeaderAndFooter('div', { class: 'ghost' })}
+    ${CardDemo.withHeaderAndFooter("div", { class: "subtle" })}
+    ${CardDemo.withHeaderAndFooter("div", { class: "ghost" })}
   </section>
 
   <section role="toolbar">
@@ -677,7 +687,10 @@ function fullBundleColorsCards() {
 }
 
 export function fullBundleColors(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+	return renderElement(
+		"main",
+		{ class: "container", ...attrs },
+		`<br>
 ${fullBundleColorsTypography()}
 
 <hr>
@@ -698,5 +711,6 @@ ${fullBundleColorsDropdowns()}
 <hr>
 <br>
 
-${fullBundleColorsCards()}`);
+${fullBundleColorsCards()}`,
+	);
 }

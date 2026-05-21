@@ -1,24 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/html-vite";
 import { RoleSearchDemo } from "@demos/semantics/attributes";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Semantics/Attributes/[role=search]",
-  parameters: {},
+	title: "Semantics/Attributes/[role=search]",
+	parameters: {},
 };
 
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleSearchDemo.main() },
-  render: (args) => args.html,
+	args: { html: RoleSearchDemo.main() },
+	render: (args) => args.html,
 };
 
 export const withIconButton: StoryObj = {
-  args: { html: RoleSearchDemo.withIconButton() },
-  render: (args) => args.html,
+	args: { html: RoleSearchDemo.withIconButton() },
+	render: (args) => args.html,
 };
 
 export const filterSearch: StoryObj = {
-  args: { html: RoleSearchDemo.filterSearch() },
-  render: (args) => args.html,
+	args: { html: RoleSearchDemo.filterSearch() },
+	render: (args) => args.html,
 };

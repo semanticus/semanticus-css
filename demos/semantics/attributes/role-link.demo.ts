@@ -1,23 +1,31 @@
 import { renderAttributes } from "@scripts/utils";
 
-export function main(tagName: string = "button", attrs: Record<string, string> = {}, slot: string = undefined) {
-  const attributes = { role: "link", ...attrs };
+export function main(
+	tagName: string = "button",
+	attrs: Record<string, string> = {},
+	slot: string = undefined,
+) {
+	const attributes = { role: "link", ...attrs };
 
-  return `<${tagName} ${renderAttributes(attributes)}>${slot || `${tagName[0].toUpperCase() + tagName.slice(1)} Link`}</${tagName}>`;
+	return `<${tagName} ${renderAttributes(attributes)}>${slot || `${tagName[0].toUpperCase() + tagName.slice(1)} Link`}</${tagName}>`;
 }
 
 export function overview(attrs: Record<string, string> = {}) {
-  return `${main('button', attrs)}
+	return `${main("button", attrs)}
 <hr>
-${active('button', attrs)}
+${active("button", attrs)}
 <hr>
-${main('div', attrs)}
+${main("div", attrs)}
 <hr>
-${active('div', attrs)}`;
+${active("div", attrs)}`;
 }
 
-export function active(tagName: string = "button", attrs: Record<string, string> = {}, slot: string = undefined) {
-  const attributes = { role: "link", "aria-current": "page", ...attrs };
+export function active(
+	tagName: string = "button",
+	attrs: Record<string, string> = {},
+	slot: string = undefined,
+) {
+	const attributes = { role: "link", "aria-current": "page", ...attrs };
 
-  return `<${tagName} ${renderAttributes(attributes)}>${slot || `Active ${tagName}`}</${tagName}>`;
+	return `<${tagName} ${renderAttributes(attributes)}>${slot || `Active ${tagName}`}</${tagName}>`;
 }

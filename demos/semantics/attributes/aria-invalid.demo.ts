@@ -2,13 +2,13 @@ import * as SelectDemo from "@demos/semantics/elements/select.demo";
 import * as TextareaDemo from "@demos/semantics/elements/textarea.demo";
 
 export function main() {
-  return `<input type="text" name="valid" value="Valid" aria-invalid="false" />
+	return `<input type="text" name="valid" value="Valid" aria-invalid="false" />
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" />
 `;
 }
 
 export function formValidation() {
-    return `<form>
+	return `<form>
   <fieldset>
     <label>
       Email address
@@ -41,7 +41,7 @@ export function formValidation() {
 }
 
 export function inputHelper() {
-  return `<input type="text" name="valid" value="Valid" aria-invalid="false" aria-describedby="valid-helper" />
+	return `<input type="text" name="valid" value="Valid" aria-invalid="false" aria-describedby="valid-helper" />
 <small id="valid-helper">Looks good!</small>
 
 <input type="text" name="invalid" value="Invalid" aria-invalid="true" aria-describedby="invalid-helper" />
@@ -52,7 +52,7 @@ export function inputHelper() {
 }
 
 export function checkbox() {
-  return `<label>
+	return `<label>
   <input type="checkbox" name="valid" aria-invalid="false" />
   Valid
 </label>
@@ -65,7 +65,7 @@ export function checkbox() {
 }
 
 export function radio() {
-  return `<fieldset>
+	return `<fieldset>
   <label>
     <input type="radio" name="validation-states" aria-invalid="false" />
     Valid
@@ -80,11 +80,11 @@ export function radio() {
 }
 
 export function select() {
-  return SelectDemo.validationStates();
+	return SelectDemo.validationStates();
 }
 
 export function switch_() {
-  return `<fieldset>
+	return `<fieldset>
   <label>
     <input name="2fa" type="checkbox" role="switch" aria-invalid="false" />
     Enable two-factor authentication
@@ -98,9 +98,9 @@ export function switch_() {
 }
 
 export function textarea() {
-  return TextareaDemo.validationStates();
+	return TextareaDemo.validationStates();
 }
 
 export function textareaHelper() {
-  return TextareaDemo.validationStatesWithTextHelper();
+	return TextareaDemo.validationStatesWithTextHelper();
 }

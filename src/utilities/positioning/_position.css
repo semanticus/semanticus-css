@@ -1,108 +1,108 @@
 .fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
 }
 
 .fixed-bottom {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1030;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1030;
 }
 
 .sticky-top {
-  position: sticky;
-  top: 0;
-  z-index: 1020;
+	position: sticky;
+	top: 0;
+	z-index: 1020;
 }
 
 .sticky-bottom {
-  position: sticky;
-  bottom: 0;
-  z-index: 1020;
+	position: sticky;
+	bottom: 0;
+	z-index: 1020;
 }
 
 @media (--breakpoint-sm) {
-  .sticky-sm-top {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
-  .sticky-sm-bottom {
-    position: sticky;
-    bottom: 0;
-    z-index: 1020;
-  }
+	.sticky-sm-top {
+		position: sticky;
+		top: 0;
+		z-index: 1020;
+	}
+	.sticky-sm-bottom {
+		position: sticky;
+		bottom: 0;
+		z-index: 1020;
+	}
 }
 @media (--breakpoint-md) {
-  .sticky-md-top {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
-  .sticky-md-bottom {
-    position: sticky;
-    bottom: 0;
-    z-index: 1020;
-  }
+	.sticky-md-top {
+		position: sticky;
+		top: 0;
+		z-index: 1020;
+	}
+	.sticky-md-bottom {
+		position: sticky;
+		bottom: 0;
+		z-index: 1020;
+	}
 }
 @media (--breakpoint-lg) {
-  .sticky-lg-top {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
-  .sticky-lg-bottom {
-    position: sticky;
-    bottom: 0;
-    z-index: 1020;
-  }
+	.sticky-lg-top {
+		position: sticky;
+		top: 0;
+		z-index: 1020;
+	}
+	.sticky-lg-bottom {
+		position: sticky;
+		bottom: 0;
+		z-index: 1020;
+	}
 }
 @media (--breakpoint-xl) {
-  .sticky-xl-top {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
-  .sticky-xl-bottom {
-    position: sticky;
-    bottom: 0;
-    z-index: 1020;
-  }
+	.sticky-xl-top {
+		position: sticky;
+		top: 0;
+		z-index: 1020;
+	}
+	.sticky-xl-bottom {
+		position: sticky;
+		bottom: 0;
+		z-index: 1020;
+	}
 }
 @media (--breakpoint-xxl) {
-  .sticky-xxl-top {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-  }
-  .sticky-xxl-bottom {
-    position: sticky;
-    bottom: 0;
-    z-index: 1020;
-  }
+	.sticky-xxl-top {
+		position: sticky;
+		top: 0;
+		z-index: 1020;
+	}
+	.sticky-xxl-bottom {
+		position: sticky;
+		bottom: 0;
+		z-index: 1020;
+	}
 }
 
 .position-static {
-  position: static !important;
+	position: static !important;
 }
 
 .position-relative {
-  position: relative !important;
+	position: relative !important;
 }
 
 .position-absolute {
-  position: absolute !important;
+	position: absolute !important;
 }
 
 .position-fixed {
-  position: fixed !important;
+	position: fixed !important;
 }
 
 .position-sticky {
-  position: sticky !important;
+	position: sticky !important;
 }

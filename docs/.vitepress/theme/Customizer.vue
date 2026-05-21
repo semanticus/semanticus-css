@@ -1,15 +1,15 @@
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue'
-import { useData } from 'vitepress'
-import hljs from 'highlight.js/lib/core'
-import html from 'highlight.js/lib/languages/xml'
-import bash from 'highlight.js/lib/languages/bash'
-import javascript from 'highlight.js/lib/languages/javascript'
-import { Demo } from '@demos/overviews';
-import { cdnBaseUrl, npmRegistryTarballUrl, variations } from '@scripts/utils';
+import { Demo } from "@demos/overviews";
+import { cdnBaseUrl, npmRegistryTarballUrl, variations } from "@scripts/utils";
+import hljs from "highlight.js/lib/core";
+import bash from "highlight.js/lib/languages/bash";
+import javascript from "highlight.js/lib/languages/javascript";
+import html from "highlight.js/lib/languages/xml";
+import { useData } from "vitepress";
+import { computed, onMounted, ref, watch } from "vue";
 
 function htmlTemplate(style, theme) {
-  return `<!DOCTYPE html>
+	return `<!DOCTYPE html>
 <html lang="en" data-theme="${theme}">
 <head>
   <meta charset="UTF-8">
@@ -24,151 +24,162 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${Demo.customizerExample({ class: 'container-fluid' })}
+  ${Demo.customizerExample({ class: "container-fluid" })}
 </body>`;
 }
 
-hljs.registerLanguage('html', html)
-hljs.registerLanguage('bash', bash)
-hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage("html", html);
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("javascript", javascript);
 
 const { isDark, site } = useData();
 
-const basePath = computed(() => site.value.base || '/');
+const basePath = computed(() => site.value.base || "/");
 
 const palettes = variations.palettes.map((p) => ({
-  name: p.name,
-  label: p.label,
-  color: p.color,
-  description: p.description || ''
-}))
+	name: p.name,
+	label: p.label,
+	color: p.color,
+	description: p.description || "",
+}));
 
-const sizes = variations.sizes.map((s) => ({ name: s.name, label: s.label, description: s.description || '' }))
+const sizes = variations.sizes.map((s) => ({
+	name: s.name,
+	label: s.label,
+	description: s.description || "",
+}));
 
-const currentPalette = ref('azure')
-const currentSize = ref('default')
-const previewFrame = ref(null)
-const showInstallModal = ref(false)
-const showHelpModal = ref(false)
-const installMode = ref('cdn')
-const copiedFeedback = ref(null)
+const currentPalette = ref("azure");
+const currentSize = ref("default");
+const previewFrame = ref(null);
+const showInstallModal = ref(false);
+const showHelpModal = ref(false);
+const installMode = ref("cdn");
+const copiedFeedback = ref(null);
 
 const previewHtml = computed(() => {
-  const paletteName = currentPalette.value
-  const sizeName = currentSize.value
-  const dataTheme = isDark.value ? 'dark' : 'light'
-  const paletteCssPath = paletteName === 'azure' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.palette.${paletteName}.css">`
-  const sizeCssPath = sizeName === 'default' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.size.${sizeName}.css">`
+	const paletteName = currentPalette.value;
+	const sizeName = currentSize.value;
+	const dataTheme = isDark.value ? "dark" : "light";
+	const paletteCssPath =
+		paletteName === "azure"
+			? ""
+			: `<link rel="stylesheet" href="${basePath.value}semanticus.palette.${paletteName}.css">`;
+	const sizeCssPath =
+		sizeName === "default"
+			? ""
+			: `<link rel="stylesheet" href="${basePath.value}semanticus.size.${sizeName}.css">`;
 
-  const style = `
+	const style = `
     @import url('${basePath.value}semanticus.css');
-    ${paletteName !== 'azure' ? `@import url('${basePath.value}semanticus.palette.${paletteName}.css');` : ''}
-    ${sizeName !== 'default' ? `@import url('${basePath.value}semanticus.size.${sizeName}.css');` : ''}
-  `
+    ${paletteName !== "azure" ? `@import url('${basePath.value}semanticus.palette.${paletteName}.css');` : ""}
+    ${sizeName !== "default" ? `@import url('${basePath.value}semanticus.size.${sizeName}.css');` : ""}
+  `;
 
-  return htmlTemplate(style, dataTheme);
-})
+	return htmlTemplate(style, dataTheme);
+});
 
 watch([currentPalette, currentSize, isDark], () => {
-  if (previewFrame.value) {
-    previewFrame.value.srcdoc = previewHtml.value
-  }
-})
+	if (previewFrame.value) {
+		previewFrame.value.srcdoc = previewHtml.value;
+	}
+});
 
 function selectPalette(paletteName) {
-  currentPalette.value = paletteName
+	currentPalette.value = paletteName;
 }
 
 function selectSize(sizeName) {
-  currentSize.value = sizeName
+	currentSize.value = sizeName;
 }
 
 function openInstallModal() {
-  showInstallModal.value = true
+	showInstallModal.value = true;
 }
 
 function closeInstallModal() {
-  showInstallModal.value = false
+	showInstallModal.value = false;
 }
 
 function openHelpModal() {
-  showHelpModal.value = true
+	showHelpModal.value = true;
 }
 
 function closeHelpModal() {
-  showHelpModal.value = false
+	showHelpModal.value = false;
 }
 
 async function copyToClipboard(text, type) {
-  try {
-    await navigator.clipboard.writeText(text)
-    copiedFeedback.value = type
-    setTimeout(() => copiedFeedback.value = null, 2000)
-  } catch (err) {
-    console.error('Failed to copy:', err)
-  }
+	try {
+		await navigator.clipboard.writeText(text);
+		copiedFeedback.value = type;
+		setTimeout(() => (copiedFeedback.value = null), 2000);
+	} catch (err) {
+		console.error("Failed to copy:", err);
+	}
 }
 
 const manualSnippet = computed(() => {
-  const paletteName = currentPalette.value
-  const sizeName = currentSize.value
-  let snippet = '<link rel="stylesheet" href="/css/semanticus.css">'
-  if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="/css/semanticus.palette.${paletteName}.css">`
-  }
-  if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="/css/semanticus.size.${sizeName}.css">`
-  }
-  return snippet
-})
+	const paletteName = currentPalette.value;
+	const sizeName = currentSize.value;
+	let snippet = '<link rel="stylesheet" href="/css/semanticus.css">';
+	if (paletteName !== "azure") {
+		snippet += `\n<link rel="stylesheet" href="/css/semanticus.palette.${paletteName}.css">`;
+	}
+	if (sizeName !== "default") {
+		snippet += `\n<link rel="stylesheet" href="/css/semanticus.size.${sizeName}.css">`;
+	}
+	return snippet;
+});
 
 const cdnSnippet = computed(() => {
-  const paletteName = currentPalette.value
-  const sizeName = currentSize.value
-  let snippet = `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">`
-  if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${paletteName}.css`)}">`
-  }
-  if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${sizeName}.css`)}">`
-  }
-  return snippet
-})
+	const paletteName = currentPalette.value;
+	const sizeName = currentSize.value;
+	let snippet = `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">`;
+	if (paletteName !== "azure") {
+		snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${paletteName}.css`)}">`;
+	}
+	if (sizeName !== "default") {
+		snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${sizeName}.css`)}">`;
+	}
+	return snippet;
+});
 
 const npmInstallSnippet = computed(() => {
-  return 'npm install semanticus-css'
-})
+	return "npm install semanticus-css";
+});
 
 const tarballUrl = npmRegistryTarballUrl();
 
 const npmImportSnippet = computed(() => {
-  const paletteName = currentPalette.value
-  const sizeName = currentSize.value
-  let snippet = "import 'semanticus-css';"
-  if (paletteName !== 'azure') {
-    snippet += `\nimport 'semanticus-css/palettes/${paletteName}';`
-  }
-  if (sizeName !== 'default') {
-    snippet += `\nimport 'semanticus-css/sizes/${sizeName}';`
-  }
-  return snippet
-})
+	const paletteName = currentPalette.value;
+	const sizeName = currentSize.value;
+	let snippet = "import 'semanticus-css';";
+	if (paletteName !== "azure") {
+		snippet += `\nimport 'semanticus-css/palettes/${paletteName}';`;
+	}
+	if (sizeName !== "default") {
+		snippet += `\nimport 'semanticus-css/sizes/${sizeName}';`;
+	}
+	return snippet;
+});
 
 const highlightedManualSnippet = computed(() => {
-  return hljs.highlight(manualSnippet.value, { language: 'html' }).value
-})
+	return hljs.highlight(manualSnippet.value, { language: "html" }).value;
+});
 
 const highlightedCdnSnippet = computed(() => {
-  return hljs.highlight(cdnSnippet.value, { language: 'html' }).value
-})
+	return hljs.highlight(cdnSnippet.value, { language: "html" }).value;
+});
 
 const highlightedNpmInstallSnippet = computed(() => {
-  return hljs.highlight(npmInstallSnippet.value, { language: 'bash' }).value
-})
+	return hljs.highlight(npmInstallSnippet.value, { language: "bash" }).value;
+});
 
 const highlightedNpmImportSnippet = computed(() => {
-  return hljs.highlight(npmImportSnippet.value, { language: 'javascript' }).value
-})
+	return hljs.highlight(npmImportSnippet.value, { language: "javascript" })
+		.value;
+});
 </script>
 
 <template>

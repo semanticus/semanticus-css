@@ -1,20 +1,28 @@
 <script setup>
-import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
-import { useData } from 'vitepress'
-import { Demo } from '@demos/overviews';
-import hljs from 'highlight.js/lib/core'
-import html from 'highlight.js/lib/languages/xml'
-import githubLight from 'highlight.js/styles/github.css?raw'
-import githubDark from 'highlight.js/styles/github-dark.css?raw'
-import { cdnBaseUrl, variations } from '@scripts/utils';
+import { Demo } from "@demos/overviews";
+import { cdnBaseUrl, variations } from "@scripts/utils";
+import hljs from "highlight.js/lib/core";
+import html from "highlight.js/lib/languages/xml";
+import githubLight from "highlight.js/styles/github.css?raw";
+import githubDark from "highlight.js/styles/github-dark.css?raw";
+import { useData } from "vitepress";
+import {
+	computed,
+	nextTick,
+	onMounted,
+	onUnmounted,
+	reactive,
+	ref,
+	watch,
+} from "vue";
 
 // isDark is a reactive Ref<boolean>
 const { isDark, site } = useData();
 
-const basePath = computed(() => site.value.base || '/');
+const basePath = computed(() => site.value.base || "/");
 
 function htmlTemplate(base, theme) {
-  return `<!DOCTYPE html>
+	return `<!DOCTYPE html>
 <html lang="en" data-theme="${theme}">
 <head>
   <meta charset="utf-8">
@@ -39,7 +47,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Default</span>
       <div id="default-content">
-        ${Demo.fullBundle({ id: 'default-main' })}
+        ${Demo.fullBundle({ id: "default-main" })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">
@@ -141,22 +149,22 @@ function htmlTemplate(base, theme) {
         }
       }
     });
-  <\/script>
+  </script>
 </body>
 </html>`;
 }
 
 const cssStyles = computed(() => {
-  return isDark.value ? githubDark : githubLight;
+	return isDark.value ? githubDark : githubLight;
 });
 
 // Register HTML language
-hljs.registerLanguage('html', html)
+hljs.registerLanguage("html", html);
 
 const iframeContent = computed(() => {
-  const theme = isDark.value ? 'dark' : 'light'
-  return htmlTemplate(basePath.value, theme)
-})
+	const theme = isDark.value ? "dark" : "light";
+	return htmlTemplate(basePath.value, theme);
+});
 
 // ── Variable definitions ────────────────────────────────────────────────────
 // Each variable: { name, label, desc, type, lightDefault, darkDefault?, scope, selectors? }
@@ -166,687 +174,1350 @@ const iframeContent = computed(() => {
 
 // Icons for groups
 const groupIcons = {
-  'Typography': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>',
-  'Borders & Effects': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>',
-  'Spacing': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/><path d="M8 8v8"/><path d="M16 8v8"/></svg>',
-  'Navigation': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>',
-  'Core Colors': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/></svg>',
-  'Primary Colors': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
-  'Secondary Colors': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>',
-  'Contrast Colors': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>',
-  'Headings': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M17 12h3"/><path d="M17 18V6"/></svg>',
-  'Shadows': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 18l4-4"/><path d="M20 18l-4-4"/></svg>',
-  'Mark & Text': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>',
-  'Forms': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>',
-  'Buttons': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="8" rx="2"/><path d="M8 12h.01"/></svg>',
-  'Switch': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="20" height="8" rx="4"/><circle cx="8" cy="12" r="3"/></svg>',
-  'Tables': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M9 5v14"/></svg>',
-  'Code': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-  'Dialog, Pane & Card': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg>',
-  'Accordion': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16"/><path d="M4 16h16"/><path d="M8 12l4-4 4 4"/></svg>',
-  'Dropdown': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 11l4 4 4-4"/></svg>',
-  'Progress': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="10" width="20" height="4" rx="2"/><path d="M4 12h8"/></svg>',
-  'Tooltip': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="M12 18v4"/><path d="M4 10h16"/><path d="M8 14l4 4 4-4"/></svg>',
-  'Dialog Overlay': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6"/><path d="M9 13h6"/></svg>',
-  'Blockquote': '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M3 12h12"/><path d="M3 18h9"/></svg>',
-}
+	Typography:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>',
+	"Borders & Effects":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>',
+	Spacing:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/><path d="M8 8v8"/><path d="M16 8v8"/></svg>',
+	Navigation:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>',
+	"Core Colors":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/></svg>',
+	"Primary Colors":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+	"Secondary Colors":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>',
+	"Contrast Colors":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>',
+	Headings:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M17 12h3"/><path d="M17 18V6"/></svg>',
+	Shadows:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 18l4-4"/><path d="M20 18l-4-4"/></svg>',
+	"Mark & Text":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>',
+	Forms:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>',
+	Buttons:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="8" rx="2"/><path d="M8 12h.01"/></svg>',
+	Switch:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="20" height="8" rx="4"/><circle cx="8" cy="12" r="3"/></svg>',
+	Tables:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M9 5v14"/></svg>',
+	Code: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+	"Dialog, Pane & Card":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg>',
+	Accordion:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16"/><path d="M4 16h16"/><path d="M8 12l4-4 4 4"/></svg>',
+	Dropdown:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 11l4 4 4-4"/></svg>',
+	Progress:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="10" width="20" height="4" rx="2"/><path d="M4 12h8"/></svg>',
+	Tooltip:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="M12 18v4"/><path d="M4 10h16"/><path d="M8 14l4 4 4-4"/></svg>',
+	"Dialog Overlay":
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6"/><path d="M9 13h6"/></svg>',
+	Blockquote:
+		'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M3 12h12"/><path d="M3 18h9"/></svg>',
+};
 
 const variableGroups = [
-  {
-    label: 'Typography',
-    vars: [
-      { name: '--font-family', label: 'Font Family', desc: 'Base font family for body text. Applied to the entire page.', type: 'text', lightDefault: 'system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif', scope: 'root', selectors: 'body, p, li, label, h2, h3, h4, h5, h6, button, input, select, th, td, summary, blockquote, small' },
-      { name: '--font-family-monospace', label: 'Monospace Font', desc: 'Font family for code blocks, kbd, and monospaced text.', type: 'text', lightDefault: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace', scope: 'root', selectors: 'code, pre, kbd, samp' },
-      { name: '--font-size', label: 'Base Font Size', desc: 'Root font size as a percentage. Controls the global text scale.', type: 'text', lightDefault: '97%', scope: 'root', selectors: 'body, h2, h3, h4, h5, h6' },
-      { name: '--line-height', label: 'Line Height', desc: 'Default line height for body text. Unitless multiplier.', type: 'text', lightDefault: '1.5', scope: 'root', selectors: 'body, p, h2, h3, h4, h5, h6, input, select, button' },
-      { name: '--font-weight', label: 'Font Weight', desc: 'Default font weight for body text (400 = normal, 700 = bold).', type: 'text', lightDefault: '400', scope: 'root', selectors: 'body, p, h2, h3, h4, h5, h6, label, input, select, button, th, td, code, kbd' },
-      { name: '--text-underline-offset', label: 'Underline Offset', desc: 'Distance between text baseline and underline decoration.', type: 'text', lightDefault: '0.1rem', scope: 'root', selectors: 'a:not([role=button])' },
-    ]
-  },
-  {
-    label: 'Borders & Effects',
-    vars: [
-      { name: '--radius', label: 'Border Radius', desc: 'Global border radius for buttons, inputs, cards, etc.', type: 'text', lightDefault: '0.25rem', scope: 'root', selectors: 'button, input:not([type=checkbox]):not([type=radio]):not([type=range]), select, article, details, code, kbd, pre, progress' },
-      { name: '--border-size', label: 'Border Width', desc: 'Base border width used by forms, tables, and other bordered elements.', type: 'text', lightDefault: '0.0625rem', scope: 'root', selectors: 'input:not([type=range]):not([type=file]), select, button, th, td' },
-      { name: '--outline-size', label: 'Outline Width', desc: 'Width of the focus ring shown around focused interactive elements.', type: 'text', lightDefault: '0.125rem', scope: 'root', selectors: 'button, input, select, a:not([role=button])' },
-      { name: '--transition', label: 'Transition', desc: 'Default CSS transition timing for interactive state changes (hover, focus).', type: 'text', lightDefault: '0.2s ease-in-out', scope: 'root', selectors: 'button, a, input, select, details summary, progress' },
-    ]
-  },
-  {
-    label: 'Spacing',
-    vars: [
-      { name: '--base-spacing', label: 'Base Spacing Unit', desc: 'Foundational spacing unit. Scales with each breakpoint to derive --spacing.', type: 'text', lightDefault: '0.75rem', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
-      { name: '--spacing', label: 'Spacing', desc: 'Derived spacing unit used for padding, margins, and gaps. Equals base-spacing scaled per breakpoint.', type: 'text', lightDefault: 'var(--base-spacing)', scope: 'root', selectors: '.container, section, article, fieldset, th, td, blockquote, pre, details' },
-      { name: '--typography-spacing-vertical', label: 'Typography Spacing', desc: 'Vertical margin below typographic elements (paragraphs, lists, etc.).', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h2, h3, h4, h5, h6, p, ul, ol, blockquote' },
-      { name: '--input-spacing-vertical', label: 'Input Padding (V)', desc: 'Vertical padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.5rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
-      { name: '--input-spacing-horizontal', label: 'Input Padding (H)', desc: 'Horizontal padding inside form inputs, selects, and buttons.', type: 'text', lightDefault: '0.7rem', scope: 'root', selectors: 'input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button' },
-    ]
-  },
-  {
-    label: 'Navigation',
-    vars: [
-      { name: '--nav-link-gap', label: 'Nav Link Spacing', desc: 'Padding inside nav links. Derived from --spacing.', type: 'text', lightDefault: 'calc(var(--spacing) * 0.5)', scope: 'root', selectors: 'nav li a' },
-    ]
-  },
-  {
-    label: 'Core Colors',
-    vars: [
-      { name: '--color-background', label: 'Background', desc: 'Main page background color.', type: 'color', lightDefault: '#ffffff', darkDefault: '#13171f', scope: 'theme', selectors: 'body, th, td' },
-      { name: '--color-text', label: 'Text Color', desc: 'Default body text color.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'body, p, li, label, th, td, blockquote' },
-      { name: '--color-text-muted', label: 'Muted Text', desc: 'Subdued text for captions, hints, and secondary information.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'small, figcaption' },
-      { name: '--color-border', label: 'Default Border', desc: 'Subtle default border color.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'hr' },
-    ]
-  },
-  {
-    label: 'Primary Colors',
-    vars: [
-      { name: '--color-primary-fill', label: 'Primary Fill', desc: 'Fill color for primary buttons, checked checkboxes, and checked radios.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=checkbox]:not([role=switch]), [type=radio]' },
-      { name: '--color-primary-text-hover', label: 'Primary Hover', desc: 'Text/border color on hover for primary links and ghost (outline) primary buttons.', type: 'color', lightDefault: '#015887', darkDefault: '#79c0ff', scope: 'theme', selectors: 'a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast)' },
-      { name: '--color-primary-fill-hover', label: 'Primary Hover Fill', desc: 'Fill on hover for primary filled buttons.', type: 'color', lightDefault: '#02659a', darkDefault: '#017fc0', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit]' },
-      { name: '--color-primary-focus-ring', label: 'Primary Focus Ring', desc: 'Semi-transparent focus ring color for primary buttons, links, and accordion summaries.', type: 'color', lightDefault: 'oklch(from #029ae8 l c h / 0.5)', darkDefault: 'oklch(from #01aaff l c h / 0.375)', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast), a:not([role=button]):not(.secondary):not(.contrast), details summary' },
-      { name: '--color-primary-on-fill', label: 'Primary On Fill', desc: 'Text color on top of primary fill (e.g., white text on colored button).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=radio]' },
-    ]
-  },
-  {
-    label: 'Secondary Colors',
-    vars: [
-      { name: '--color-secondary-fill', label: 'Secondary Fill', desc: 'Fill for secondary buttons and file inputs.', type: 'color', lightDefault: '#525f7a', darkDefault: '#525f7a', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-text-hover', label: 'Secondary Hover', desc: 'Text/border color on hover for secondary links and ghost (outline) secondary buttons.', type: 'color', lightDefault: '#48536b', darkDefault: '#b3b9c5', scope: 'theme', selectors: 'a.secondary, button.ghost.secondary' },
-      { name: '--color-secondary-fill-hover', label: 'Secondary Hover Fill', desc: 'Fill on hover for secondary filled buttons and file inputs.', type: 'color', lightDefault: '#48536b', darkDefault: '#5d6b89', scope: 'theme', selectors: 'button.secondary:not(.ghost), [type=file]' },
-      { name: '--color-secondary-focus-ring', label: 'Secondary Focus Ring', desc: 'Focus ring color for secondary buttons and file inputs.', type: 'color', lightDefault: 'oklch(from #5d6b89 l c h / 0.25)', darkDefault: 'oklch(from #909ebe l c h / 0.25)', scope: 'theme', selectors: 'button.secondary, [type=file]' },
-      { name: '--color-secondary-on-fill', label: 'Secondary On Fill', desc: 'Text on top of secondary fill.', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.secondary:not(.ghost)' },
-    ]
-  },
-  {
-    label: 'Contrast Colors',
-    vars: [
-      { name: '--color-contrast-fill', label: 'Contrast Fill', desc: 'Fill for contrast buttons.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-text-hover', label: 'Contrast Hover', desc: 'Text/border color on hover for contrast links and ghost (outline) contrast buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'a.contrast, button.ghost.contrast' },
-      { name: '--color-contrast-fill-hover', label: 'Contrast Hover Fill', desc: 'Fill on hover for contrast filled buttons.', type: 'color', lightDefault: '#000000', darkDefault: '#ffffff', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-      { name: '--color-contrast-focus-ring', label: 'Contrast Focus Ring', desc: 'Focus ring color for contrast buttons.', type: 'color', lightDefault: 'oklch(from #5d6b89 l c h / 0.25)', darkDefault: 'oklch(from #cfd5e2 l c h / 0.25)', scope: 'theme', selectors: 'button.contrast' },
-      { name: '--color-contrast-on-fill', label: 'Contrast On Fill', desc: 'Text on top of contrast fill.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: 'button.contrast:not(.ghost)' },
-    ]
-  },
-  {
-    label: 'Headings',
-    vars: [
-      { name: '--h1-size', label: 'H1 Font Size', desc: 'Font size for <h1> headings.', type: 'text', lightDefault: '2rem', scope: 'root', selectors: 'h1' },
-      { name: '--h2-size', label: 'H2 Font Size', desc: 'Font size for <h2> headings.', type: 'text', lightDefault: '1.75rem', scope: 'root', selectors: 'h2' },
-      { name: '--h3-size', label: 'H3 Font Size', desc: 'Font size for <h3> headings.', type: 'text', lightDefault: '1.5rem', scope: 'root', selectors: 'h3' },
-      { name: '--h4-size', label: 'H4 Font Size', desc: 'Font size for <h4> headings.', type: 'text', lightDefault: '1.25rem', scope: 'root', selectors: 'h4' },
-      { name: '--h5-size', label: 'H5 Font Size', desc: 'Font size for <h5> headings.', type: 'text', lightDefault: '1.125rem', scope: 'root', selectors: 'h5' },
-      { name: '--h6-size', label: 'H6 Font Size', desc: 'Font size for <h6> headings.', type: 'text', lightDefault: '1rem', scope: 'root', selectors: 'h6' },
-    ]
-  },
-  {
-    label: 'Shadows',
-    vars: [
-      { name: '--shadow', label: 'Shadow', desc: 'Multi-layer shadow used by dialogs, cards, menus, and elevated elements. Adapts automatically to light and dark mode.', type: 'text', lightDefault: '0.0145rem 0.029rem 0.174rem rgb(129 145 181 / 0.01698), ...', darkDefault: '0.0145rem 0.029rem 0.174rem rgb(7 9 12 / 0.01698), ...', scope: 'theme', selectors: 'button' },
-    ]
-  },
-  {
-    label: 'Forms',
-    vars: [
-      { name: '--input-fill', label: 'Input Background', desc: 'Default background for form inputs and selects.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1c212c', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--input-border', label: 'Input Border', desc: 'Border color for form inputs in their resting state.', type: 'color', lightDefault: '#cfd5e2', darkDefault: '#2a3140', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--input-text', label: 'Input Text', desc: 'Text color inside form fields.', type: 'color', lightDefault: '#23262c', darkDefault: '#e0e3e7', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--input-fill-active', label: 'Input Focus BG', desc: 'Background color when a form field is focused.', type: 'color', lightDefault: '#ffffff', darkDefault: '#1a1f28', scope: 'theme', selectors: 'input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select' },
-      { name: '--input-opacity-disabled', label: 'Disabled Opacity', desc: 'Opacity applied to disabled form elements (0–1).', type: 'range', lightDefault: '0.5', darkDefault: '0.5', scope: 'theme', selectors: 'input:disabled, select:disabled, textarea:disabled' },
-    ]
-  },
-  {
-    label: 'Buttons',
-    vars: [
-      { name: '--button-shadow', label: 'Button Shadow', desc: 'Box shadow on buttons in their resting state.', type: 'text', lightDefault: '0 0 0 rgba(0, 0, 0, 0)', darkDefault: '0 0 0 rgba(0, 0, 0, 0)', scope: 'theme', selectors: 'button, [type=submit]' },
-      { name: '--button-shadow-hover', label: 'Button Hover Shadow', desc: 'Box shadow on buttons when hovered.', type: 'text', lightDefault: '0 0 0 rgba(0, 0, 0, 0)', darkDefault: '0 0 0 rgba(0, 0, 0, 0)', scope: 'theme', selectors: 'button, [type=submit]' },
-    ]
-  },
-  {
-    label: 'Switch',
-    vars: [
-      { name: '--switch-fill', label: 'Track Background', desc: 'Background of the toggle switch track when unchecked.', type: 'color', lightDefault: '#bfc7d9', darkDefault: '#333c4e', scope: 'theme', selectors: '[type=checkbox][role=switch]' },
-      { name: '--switch-thumb-fill', label: 'Thumb Color', desc: 'Color of the toggle switch thumb (knob).', type: 'color', lightDefault: '#ffffff', darkDefault: '#ffffff', scope: 'theme', selectors: '[type=checkbox][role=switch]' },
-    ]
-  },
-  {
-    label: 'Tables',
-    vars: [
-      { name: '--table-row-fill-striped', label: 'Stripe Background', desc: 'Background for alternating (striped) table rows.', type: 'text', lightDefault: 'oklch(from #6f7887 l c h / 0.0375)', darkDefault: 'oklch(from #6f7887 l c h / 0.0375)', scope: 'theme', selectors: 'table.striped tbody tr:nth-child(odd)' },
-    ]
-  },
-  {
-    label: 'Code',
-    vars: [
-      { name: '--code-fill', label: 'Code Background', desc: 'Background for inline <code> and <pre> blocks.', type: 'color', lightDefault: '#f3f5f7', darkDefault: '#1a1f28', scope: 'theme', selectors: 'code, pre' },
-      { name: '--code-text', label: 'Code Text', desc: 'Text color inside code blocks.', type: 'color', lightDefault: '#646b79', darkDefault: '#8891a4', scope: 'theme', selectors: 'code, pre' },
-    ]
-  },
-  {
-    label: 'Dialog, Pane & Card',
-    vars: [
-      { name: '--dialog-fill', label: 'Background', desc: 'Background color of pane, panel and card components.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'article' },
-      { name: '--dialog-border', label: 'Section Border', desc: 'Border color of header/footer sections.', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#181c25', scope: 'theme', selectors: 'article > header, article > footer' },
-      { name: '--dialog-section-fill', label: 'Section Background', desc: 'Background for header/footer sections.', type: 'color', lightDefault: '#fbfcfc', darkDefault: '#1a1f28', scope: 'theme', selectors: 'article > header, article > footer' },
-    ]
-  },
-  {
-    label: 'Accordion',
-    vars: [
-      { name: '--details-summary-text', label: 'Closed Summary', desc: 'Text color of <summary> when accordion is closed.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:not([open]) summary' },
-      { name: '--details-summary-text-open', label: 'Open Summary', desc: 'Text color of <summary> when accordion is open.', type: 'color', lightDefault: '#646b79', darkDefault: '#7b8495', scope: 'theme', selectors: 'details[open] summary' },
-    ]
-  },
-  {
-    label: 'Menus & Dropdowns',
-    vars: [
-      { name: '--menu-fill', label: 'Menus & Dropdowns BG', desc: 'Background of flyout dropdown menus.', type: 'color', lightDefault: '#ffffff', darkDefault: '#181c25', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--menu-border', label: 'Menus & Dropdowns Border', desc: 'Border color of dropdown menus.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--menu-text', label: 'Menus & Dropdowns Text', desc: 'Text color inside dropdown menus.', type: 'color', lightDefault: '#373c44', darkDefault: '#c2c7d0', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-      { name: '--menu-fill-hover', label: 'Menus & Dropdowns Hover', desc: 'Background of hovered dropdown items.', type: 'color', lightDefault: '#eff1f4', darkDefault: '#202632', scope: 'theme', selectors: 'details:has(> summary[aria-haspopup="menu"])' },
-    ]
-  },
-  {
-    label: 'Progress',
-    vars: [
-      { name: '--progress-track-fill', label: 'Track BG', desc: 'Background of the progress bar track (empty portion).', type: 'color', lightDefault: '#dfe3eb', darkDefault: '#202632', scope: 'theme', selectors: 'progress' },
-      { name: '--progress-fill', label: 'Fill Color', desc: 'Color of the filled portion of progress bars.', type: 'color', lightDefault: '#0172ad', darkDefault: '#0172ad', scope: 'theme', selectors: 'progress' },
-    ]
-  },
-  {
-    label: 'Tooltip',
-    vars: [
-      { name: '--tooltip-fill', label: 'Tooltip BG', desc: 'Background of tooltips shown on [role=tooltip] elements.', type: 'color', lightDefault: '#181c25', darkDefault: '#eff1f4', scope: 'theme', selectors: '[role=tooltip]' },
-      { name: '--tooltip-text', label: 'Tooltip Text', desc: 'Text color inside tooltips.', type: 'color', lightDefault: '#ffffff', darkDefault: '#000000', scope: 'theme', selectors: '[role-tooltip]' },
-    ]
-  },
-  {
-    label: 'Dialog Overlay',
-    vars: [
-      { name: '--dialog-overlay', label: 'Overlay BG', desc: 'Semi-transparent backdrop behind open modals. Adapts to light/dark mode automatically.', type: 'text', lightDefault: 'oklch(from #e8eaed l c h / 0.75)', darkDefault: 'oklch(from #07090c l c h / 0.75)', scope: 'theme', selectors: 'dialog' },
-    ]
-  },
-]
+	{
+		label: "Typography",
+		vars: [
+			{
+				name: "--font-family",
+				label: "Font Family",
+				desc: "Base font family for body text. Applied to the entire page.",
+				type: "text",
+				lightDefault:
+					'system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif',
+				scope: "root",
+				selectors:
+					"body, p, li, label, h2, h3, h4, h5, h6, button, input, select, th, td, summary, blockquote, small",
+			},
+			{
+				name: "--font-family-monospace",
+				label: "Monospace Font",
+				desc: "Font family for code blocks, kbd, and monospaced text.",
+				type: "text",
+				lightDefault:
+					'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace',
+				scope: "root",
+				selectors: "code, pre, kbd, samp",
+			},
+			{
+				name: "--font-size",
+				label: "Base Font Size",
+				desc: "Root font size as a percentage. Controls the global text scale.",
+				type: "text",
+				lightDefault: "97%",
+				scope: "root",
+				selectors: "body, h2, h3, h4, h5, h6",
+			},
+			{
+				name: "--line-height",
+				label: "Line Height",
+				desc: "Default line height for body text. Unitless multiplier.",
+				type: "text",
+				lightDefault: "1.5",
+				scope: "root",
+				selectors: "body, p, h2, h3, h4, h5, h6, input, select, button",
+			},
+			{
+				name: "--font-weight",
+				label: "Font Weight",
+				desc: "Default font weight for body text (400 = normal, 700 = bold).",
+				type: "text",
+				lightDefault: "400",
+				scope: "root",
+				selectors:
+					"body, p, h2, h3, h4, h5, h6, label, input, select, button, th, td, code, kbd",
+			},
+			{
+				name: "--text-underline-offset",
+				label: "Underline Offset",
+				desc: "Distance between text baseline and underline decoration.",
+				type: "text",
+				lightDefault: "0.1rem",
+				scope: "root",
+				selectors: "a:not([role=button])",
+			},
+		],
+	},
+	{
+		label: "Borders & Effects",
+		vars: [
+			{
+				name: "--radius",
+				label: "Border Radius",
+				desc: "Global border radius for buttons, inputs, cards, etc.",
+				type: "text",
+				lightDefault: "0.25rem",
+				scope: "root",
+				selectors:
+					"button, input:not([type=checkbox]):not([type=radio]):not([type=range]), select, article, details, code, kbd, pre, progress",
+			},
+			{
+				name: "--border-size",
+				label: "Border Width",
+				desc: "Base border width used by forms, tables, and other bordered elements.",
+				type: "text",
+				lightDefault: "0.0625rem",
+				scope: "root",
+				selectors:
+					"input:not([type=range]):not([type=file]), select, button, th, td",
+			},
+			{
+				name: "--outline-size",
+				label: "Outline Width",
+				desc: "Width of the focus ring shown around focused interactive elements.",
+				type: "text",
+				lightDefault: "0.125rem",
+				scope: "root",
+				selectors: "button, input, select, a:not([role=button])",
+			},
+			{
+				name: "--transition",
+				label: "Transition",
+				desc: "Default CSS transition timing for interactive state changes (hover, focus).",
+				type: "text",
+				lightDefault: "0.2s ease-in-out",
+				scope: "root",
+				selectors: "button, a, input, select, details summary, progress",
+			},
+		],
+	},
+	{
+		label: "Spacing",
+		vars: [
+			{
+				name: "--base-spacing",
+				label: "Base Spacing Unit",
+				desc: "Foundational spacing unit. Scales with each breakpoint to derive --spacing.",
+				type: "text",
+				lightDefault: "0.75rem",
+				scope: "root",
+				selectors:
+					".container, section, article, fieldset, th, td, blockquote, pre, details",
+			},
+			{
+				name: "--spacing",
+				label: "Spacing",
+				desc: "Derived spacing unit used for padding, margins, and gaps. Equals base-spacing scaled per breakpoint.",
+				type: "text",
+				lightDefault: "var(--base-spacing)",
+				scope: "root",
+				selectors:
+					".container, section, article, fieldset, th, td, blockquote, pre, details",
+			},
+			{
+				name: "--typography-spacing-vertical",
+				label: "Typography Spacing",
+				desc: "Vertical margin below typographic elements (paragraphs, lists, etc.).",
+				type: "text",
+				lightDefault: "1rem",
+				scope: "root",
+				selectors: "h2, h3, h4, h5, h6, p, ul, ol, blockquote",
+			},
+			{
+				name: "--input-spacing-vertical",
+				label: "Input Padding (V)",
+				desc: "Vertical padding inside form inputs, selects, and buttons.",
+				type: "text",
+				lightDefault: "0.5rem",
+				scope: "root",
+				selectors:
+					"input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button",
+			},
+			{
+				name: "--input-spacing-horizontal",
+				label: "Input Padding (H)",
+				desc: "Horizontal padding inside form inputs, selects, and buttons.",
+				type: "text",
+				lightDefault: "0.7rem",
+				scope: "root",
+				selectors:
+					"input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, button",
+			},
+		],
+	},
+	{
+		label: "Navigation",
+		vars: [
+			{
+				name: "--nav-link-gap",
+				label: "Nav Link Spacing",
+				desc: "Padding inside nav links. Derived from --spacing.",
+				type: "text",
+				lightDefault: "calc(var(--spacing) * 0.5)",
+				scope: "root",
+				selectors: "nav li a",
+			},
+		],
+	},
+	{
+		label: "Core Colors",
+		vars: [
+			{
+				name: "--color-background",
+				label: "Background",
+				desc: "Main page background color.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#13171f",
+				scope: "theme",
+				selectors: "body, th, td",
+			},
+			{
+				name: "--color-text",
+				label: "Text Color",
+				desc: "Default body text color.",
+				type: "color",
+				lightDefault: "#373c44",
+				darkDefault: "#c2c7d0",
+				scope: "theme",
+				selectors: "body, p, li, label, th, td, blockquote",
+			},
+			{
+				name: "--color-text-muted",
+				label: "Muted Text",
+				desc: "Subdued text for captions, hints, and secondary information.",
+				type: "color",
+				lightDefault: "#646b79",
+				darkDefault: "#7b8495",
+				scope: "theme",
+				selectors: "small, figcaption",
+			},
+			{
+				name: "--color-border",
+				label: "Default Border",
+				desc: "Subtle default border color.",
+				type: "color",
+				lightDefault: "#dfe3eb",
+				darkDefault: "#202632",
+				scope: "theme",
+				selectors: "hr",
+			},
+		],
+	},
+	{
+		label: "Primary Colors",
+		vars: [
+			{
+				name: "--color-primary-fill",
+				label: "Primary Fill",
+				desc: "Fill color for primary buttons, checked checkboxes, and checked radios.",
+				type: "color",
+				lightDefault: "#0172ad",
+				darkDefault: "#0172ad",
+				scope: "theme",
+				selectors:
+					"button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=checkbox]:not([role=switch]), [type=radio]",
+			},
+			{
+				name: "--color-primary-text-hover",
+				label: "Primary Hover",
+				desc: "Text/border color on hover for primary links and ghost (outline) primary buttons.",
+				type: "color",
+				lightDefault: "#015887",
+				darkDefault: "#79c0ff",
+				scope: "theme",
+				selectors:
+					"a:not([role=button]):not(.secondary):not(.contrast), button.ghost:not(.secondary):not(.contrast)",
+			},
+			{
+				name: "--color-primary-fill-hover",
+				label: "Primary Hover Fill",
+				desc: "Fill on hover for primary filled buttons.",
+				type: "color",
+				lightDefault: "#02659a",
+				darkDefault: "#017fc0",
+				scope: "theme",
+				selectors:
+					"button:not(.secondary):not(.contrast):not(.ghost), [type=submit]",
+			},
+			{
+				name: "--color-primary-focus-ring",
+				label: "Primary Focus Ring",
+				desc: "Semi-transparent focus ring color for primary buttons, links, and accordion summaries.",
+				type: "color",
+				lightDefault: "oklch(from #029ae8 l c h / 0.5)",
+				darkDefault: "oklch(from #01aaff l c h / 0.375)",
+				scope: "theme",
+				selectors:
+					"button:not(.secondary):not(.contrast), a:not([role=button]):not(.secondary):not(.contrast), details summary",
+			},
+			{
+				name: "--color-primary-on-fill",
+				label: "Primary On Fill",
+				desc: "Text color on top of primary fill (e.g., white text on colored button).",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#ffffff",
+				scope: "theme",
+				selectors:
+					"button:not(.secondary):not(.contrast):not(.ghost), [type=submit], [type=radio]",
+			},
+		],
+	},
+	{
+		label: "Secondary Colors",
+		vars: [
+			{
+				name: "--color-secondary-fill",
+				label: "Secondary Fill",
+				desc: "Fill for secondary buttons and file inputs.",
+				type: "color",
+				lightDefault: "#525f7a",
+				darkDefault: "#525f7a",
+				scope: "theme",
+				selectors: "button.secondary:not(.ghost), [type=file]",
+			},
+			{
+				name: "--color-secondary-text-hover",
+				label: "Secondary Hover",
+				desc: "Text/border color on hover for secondary links and ghost (outline) secondary buttons.",
+				type: "color",
+				lightDefault: "#48536b",
+				darkDefault: "#b3b9c5",
+				scope: "theme",
+				selectors: "a.secondary, button.ghost.secondary",
+			},
+			{
+				name: "--color-secondary-fill-hover",
+				label: "Secondary Hover Fill",
+				desc: "Fill on hover for secondary filled buttons and file inputs.",
+				type: "color",
+				lightDefault: "#48536b",
+				darkDefault: "#5d6b89",
+				scope: "theme",
+				selectors: "button.secondary:not(.ghost), [type=file]",
+			},
+			{
+				name: "--color-secondary-focus-ring",
+				label: "Secondary Focus Ring",
+				desc: "Focus ring color for secondary buttons and file inputs.",
+				type: "color",
+				lightDefault: "oklch(from #5d6b89 l c h / 0.25)",
+				darkDefault: "oklch(from #909ebe l c h / 0.25)",
+				scope: "theme",
+				selectors: "button.secondary, [type=file]",
+			},
+			{
+				name: "--color-secondary-on-fill",
+				label: "Secondary On Fill",
+				desc: "Text on top of secondary fill.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#ffffff",
+				scope: "theme",
+				selectors: "button.secondary:not(.ghost)",
+			},
+		],
+	},
+	{
+		label: "Contrast Colors",
+		vars: [
+			{
+				name: "--color-contrast-fill",
+				label: "Contrast Fill",
+				desc: "Fill for contrast buttons.",
+				type: "color",
+				lightDefault: "#181c25",
+				darkDefault: "#eff1f4",
+				scope: "theme",
+				selectors: "button.contrast:not(.ghost)",
+			},
+			{
+				name: "--color-contrast-text-hover",
+				label: "Contrast Hover",
+				desc: "Text/border color on hover for contrast links and ghost (outline) contrast buttons.",
+				type: "color",
+				lightDefault: "#000000",
+				darkDefault: "#ffffff",
+				scope: "theme",
+				selectors: "a.contrast, button.ghost.contrast",
+			},
+			{
+				name: "--color-contrast-fill-hover",
+				label: "Contrast Hover Fill",
+				desc: "Fill on hover for contrast filled buttons.",
+				type: "color",
+				lightDefault: "#000000",
+				darkDefault: "#ffffff",
+				scope: "theme",
+				selectors: "button.contrast:not(.ghost)",
+			},
+			{
+				name: "--color-contrast-focus-ring",
+				label: "Contrast Focus Ring",
+				desc: "Focus ring color for contrast buttons.",
+				type: "color",
+				lightDefault: "oklch(from #5d6b89 l c h / 0.25)",
+				darkDefault: "oklch(from #cfd5e2 l c h / 0.25)",
+				scope: "theme",
+				selectors: "button.contrast",
+			},
+			{
+				name: "--color-contrast-on-fill",
+				label: "Contrast On Fill",
+				desc: "Text on top of contrast fill.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#000000",
+				scope: "theme",
+				selectors: "button.contrast:not(.ghost)",
+			},
+		],
+	},
+	{
+		label: "Headings",
+		vars: [
+			{
+				name: "--h1-size",
+				label: "H1 Font Size",
+				desc: "Font size for <h1> headings.",
+				type: "text",
+				lightDefault: "2rem",
+				scope: "root",
+				selectors: "h1",
+			},
+			{
+				name: "--h2-size",
+				label: "H2 Font Size",
+				desc: "Font size for <h2> headings.",
+				type: "text",
+				lightDefault: "1.75rem",
+				scope: "root",
+				selectors: "h2",
+			},
+			{
+				name: "--h3-size",
+				label: "H3 Font Size",
+				desc: "Font size for <h3> headings.",
+				type: "text",
+				lightDefault: "1.5rem",
+				scope: "root",
+				selectors: "h3",
+			},
+			{
+				name: "--h4-size",
+				label: "H4 Font Size",
+				desc: "Font size for <h4> headings.",
+				type: "text",
+				lightDefault: "1.25rem",
+				scope: "root",
+				selectors: "h4",
+			},
+			{
+				name: "--h5-size",
+				label: "H5 Font Size",
+				desc: "Font size for <h5> headings.",
+				type: "text",
+				lightDefault: "1.125rem",
+				scope: "root",
+				selectors: "h5",
+			},
+			{
+				name: "--h6-size",
+				label: "H6 Font Size",
+				desc: "Font size for <h6> headings.",
+				type: "text",
+				lightDefault: "1rem",
+				scope: "root",
+				selectors: "h6",
+			},
+		],
+	},
+	{
+		label: "Shadows",
+		vars: [
+			{
+				name: "--shadow",
+				label: "Shadow",
+				desc: "Multi-layer shadow used by dialogs, cards, menus, and elevated elements. Adapts automatically to light and dark mode.",
+				type: "text",
+				lightDefault:
+					"0.0145rem 0.029rem 0.174rem rgb(129 145 181 / 0.01698), ...",
+				darkDefault: "0.0145rem 0.029rem 0.174rem rgb(7 9 12 / 0.01698), ...",
+				scope: "theme",
+				selectors: "button",
+			},
+		],
+	},
+	{
+		label: "Forms",
+		vars: [
+			{
+				name: "--input-fill",
+				label: "Input Background",
+				desc: "Default background for form inputs and selects.",
+				type: "color",
+				lightDefault: "#fbfcfc",
+				darkDefault: "#1c212c",
+				scope: "theme",
+				selectors:
+					"input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select",
+			},
+			{
+				name: "--input-border",
+				label: "Input Border",
+				desc: "Border color for form inputs in their resting state.",
+				type: "color",
+				lightDefault: "#cfd5e2",
+				darkDefault: "#2a3140",
+				scope: "theme",
+				selectors:
+					"input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select",
+			},
+			{
+				name: "--input-text",
+				label: "Input Text",
+				desc: "Text color inside form fields.",
+				type: "color",
+				lightDefault: "#23262c",
+				darkDefault: "#e0e3e7",
+				scope: "theme",
+				selectors:
+					"input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select",
+			},
+			{
+				name: "--input-fill-active",
+				label: "Input Focus BG",
+				desc: "Background color when a form field is focused.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#1a1f28",
+				scope: "theme",
+				selectors:
+					"input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select",
+			},
+			{
+				name: "--input-opacity-disabled",
+				label: "Disabled Opacity",
+				desc: "Opacity applied to disabled form elements (0–1).",
+				type: "range",
+				lightDefault: "0.5",
+				darkDefault: "0.5",
+				scope: "theme",
+				selectors: "input:disabled, select:disabled, textarea:disabled",
+			},
+		],
+	},
+	{
+		label: "Buttons",
+		vars: [
+			{
+				name: "--button-shadow",
+				label: "Button Shadow",
+				desc: "Box shadow on buttons in their resting state.",
+				type: "text",
+				lightDefault: "0 0 0 rgba(0, 0, 0, 0)",
+				darkDefault: "0 0 0 rgba(0, 0, 0, 0)",
+				scope: "theme",
+				selectors: "button, [type=submit]",
+			},
+			{
+				name: "--button-shadow-hover",
+				label: "Button Hover Shadow",
+				desc: "Box shadow on buttons when hovered.",
+				type: "text",
+				lightDefault: "0 0 0 rgba(0, 0, 0, 0)",
+				darkDefault: "0 0 0 rgba(0, 0, 0, 0)",
+				scope: "theme",
+				selectors: "button, [type=submit]",
+			},
+		],
+	},
+	{
+		label: "Switch",
+		vars: [
+			{
+				name: "--switch-fill",
+				label: "Track Background",
+				desc: "Background of the toggle switch track when unchecked.",
+				type: "color",
+				lightDefault: "#bfc7d9",
+				darkDefault: "#333c4e",
+				scope: "theme",
+				selectors: "[type=checkbox][role=switch]",
+			},
+			{
+				name: "--switch-thumb-fill",
+				label: "Thumb Color",
+				desc: "Color of the toggle switch thumb (knob).",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#ffffff",
+				scope: "theme",
+				selectors: "[type=checkbox][role=switch]",
+			},
+		],
+	},
+	{
+		label: "Tables",
+		vars: [
+			{
+				name: "--table-row-fill-striped",
+				label: "Stripe Background",
+				desc: "Background for alternating (striped) table rows.",
+				type: "text",
+				lightDefault: "oklch(from #6f7887 l c h / 0.0375)",
+				darkDefault: "oklch(from #6f7887 l c h / 0.0375)",
+				scope: "theme",
+				selectors: "table.striped tbody tr:nth-child(odd)",
+			},
+		],
+	},
+	{
+		label: "Code",
+		vars: [
+			{
+				name: "--code-fill",
+				label: "Code Background",
+				desc: "Background for inline <code> and <pre> blocks.",
+				type: "color",
+				lightDefault: "#f3f5f7",
+				darkDefault: "#1a1f28",
+				scope: "theme",
+				selectors: "code, pre",
+			},
+			{
+				name: "--code-text",
+				label: "Code Text",
+				desc: "Text color inside code blocks.",
+				type: "color",
+				lightDefault: "#646b79",
+				darkDefault: "#8891a4",
+				scope: "theme",
+				selectors: "code, pre",
+			},
+		],
+	},
+	{
+		label: "Dialog, Pane & Card",
+		vars: [
+			{
+				name: "--dialog-fill",
+				label: "Background",
+				desc: "Background color of pane, panel and card components.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#181c25",
+				scope: "theme",
+				selectors: "article",
+			},
+			{
+				name: "--dialog-border",
+				label: "Section Border",
+				desc: "Border color of header/footer sections.",
+				type: "color",
+				lightDefault: "#dfe3eb",
+				darkDefault: "#181c25",
+				scope: "theme",
+				selectors: "article > header, article > footer",
+			},
+			{
+				name: "--dialog-section-fill",
+				label: "Section Background",
+				desc: "Background for header/footer sections.",
+				type: "color",
+				lightDefault: "#fbfcfc",
+				darkDefault: "#1a1f28",
+				scope: "theme",
+				selectors: "article > header, article > footer",
+			},
+		],
+	},
+	{
+		label: "Accordion",
+		vars: [
+			{
+				name: "--details-summary-text",
+				label: "Closed Summary",
+				desc: "Text color of <summary> when accordion is closed.",
+				type: "color",
+				lightDefault: "#373c44",
+				darkDefault: "#c2c7d0",
+				scope: "theme",
+				selectors: "details:not([open]) summary",
+			},
+			{
+				name: "--details-summary-text-open",
+				label: "Open Summary",
+				desc: "Text color of <summary> when accordion is open.",
+				type: "color",
+				lightDefault: "#646b79",
+				darkDefault: "#7b8495",
+				scope: "theme",
+				selectors: "details[open] summary",
+			},
+		],
+	},
+	{
+		label: "Menus & Dropdowns",
+		vars: [
+			{
+				name: "--menu-fill",
+				label: "Menus & Dropdowns BG",
+				desc: "Background of flyout dropdown menus.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#181c25",
+				scope: "theme",
+				selectors: 'details:has(> summary[aria-haspopup="menu"])',
+			},
+			{
+				name: "--menu-border",
+				label: "Menus & Dropdowns Border",
+				desc: "Border color of dropdown menus.",
+				type: "color",
+				lightDefault: "#eff1f4",
+				darkDefault: "#202632",
+				scope: "theme",
+				selectors: 'details:has(> summary[aria-haspopup="menu"])',
+			},
+			{
+				name: "--menu-text",
+				label: "Menus & Dropdowns Text",
+				desc: "Text color inside dropdown menus.",
+				type: "color",
+				lightDefault: "#373c44",
+				darkDefault: "#c2c7d0",
+				scope: "theme",
+				selectors: 'details:has(> summary[aria-haspopup="menu"])',
+			},
+			{
+				name: "--menu-fill-hover",
+				label: "Menus & Dropdowns Hover",
+				desc: "Background of hovered dropdown items.",
+				type: "color",
+				lightDefault: "#eff1f4",
+				darkDefault: "#202632",
+				scope: "theme",
+				selectors: 'details:has(> summary[aria-haspopup="menu"])',
+			},
+		],
+	},
+	{
+		label: "Progress",
+		vars: [
+			{
+				name: "--progress-track-fill",
+				label: "Track BG",
+				desc: "Background of the progress bar track (empty portion).",
+				type: "color",
+				lightDefault: "#dfe3eb",
+				darkDefault: "#202632",
+				scope: "theme",
+				selectors: "progress",
+			},
+			{
+				name: "--progress-fill",
+				label: "Fill Color",
+				desc: "Color of the filled portion of progress bars.",
+				type: "color",
+				lightDefault: "#0172ad",
+				darkDefault: "#0172ad",
+				scope: "theme",
+				selectors: "progress",
+			},
+		],
+	},
+	{
+		label: "Tooltip",
+		vars: [
+			{
+				name: "--tooltip-fill",
+				label: "Tooltip BG",
+				desc: "Background of tooltips shown on [role=tooltip] elements.",
+				type: "color",
+				lightDefault: "#181c25",
+				darkDefault: "#eff1f4",
+				scope: "theme",
+				selectors: "[role=tooltip]",
+			},
+			{
+				name: "--tooltip-text",
+				label: "Tooltip Text",
+				desc: "Text color inside tooltips.",
+				type: "color",
+				lightDefault: "#ffffff",
+				darkDefault: "#000000",
+				scope: "theme",
+				selectors: "[role-tooltip]",
+			},
+		],
+	},
+	{
+		label: "Dialog Overlay",
+		vars: [
+			{
+				name: "--dialog-overlay",
+				label: "Overlay BG",
+				desc: "Semi-transparent backdrop behind open modals. Adapts to light/dark mode automatically.",
+				type: "text",
+				lightDefault: "oklch(from #e8eaed l c h / 0.75)",
+				darkDefault: "oklch(from #07090c l c h / 0.75)",
+				scope: "theme",
+				selectors: "dialog",
+			},
+		],
+	},
+];
 
 // ── State ───────────────────────────────────────────────────────────────────
 
-const currentTheme = computed(() => isDark.value ? 'dark' : 'light');
-const customValues = reactive({})   // { 'light:--color-primary': '#ff0000', 'root:--spacing': '1.5rem' }
-const selectedVar = ref(null)
-const iframeRef = ref(null)
-const searchQuery = ref('')
-const expandedGroups = reactive({})
-const activePopover = ref(null)
-const compareMode = ref(false)
-const showTour = ref(false)
-const tourStep = ref(0)
-const copiedFeedback = ref(null)
-const currentPalette = ref('azure')
-const currentSize = ref('default')
-const sidebarWidth = ref(280)
-const isResizing = ref(false)
-const showExportModal = ref(false)
-const exportMode = ref('inline') // 'file' or 'inline'
+const currentTheme = computed(() => (isDark.value ? "dark" : "light"));
+const customValues = reactive({}); // { 'light:--color-primary': '#ff0000', 'root:--spacing': '1.5rem' }
+const selectedVar = ref(null);
+const iframeRef = ref(null);
+const searchQuery = ref("");
+const expandedGroups = reactive({});
+const activePopover = ref(null);
+const compareMode = ref(false);
+const showTour = ref(false);
+const tourStep = ref(0);
+const copiedFeedback = ref(null);
+const currentPalette = ref("azure");
+const currentSize = ref("default");
+const sidebarWidth = ref(280);
+const isResizing = ref(false);
+const showExportModal = ref(false);
+const exportMode = ref("inline"); // 'file' or 'inline'
 
 // Available color palettes (derived from variations)
-const palettes = variations.palettes.map((p) => ({ name: p.name, label: p.label, color: p.color || '#0172ad' }))
+const palettes = variations.palettes.map((p) => ({
+	name: p.name,
+	label: p.label,
+	color: p.color || "#0172ad",
+}));
 
 // Available size variants (derived from variations)
-const sizes = variations.sizes.map((s) => ({ name: s.name, label: s.label, description: s.description || '' }))
+const sizes = variations.sizes.map((s) => ({
+	name: s.name,
+	label: s.label,
+	description: s.description || "",
+}));
 
 // Initialize all groups as expanded
-variableGroups.forEach(g => {
-  expandedGroups[g.label] = true
-})
+variableGroups.forEach((g) => {
+	expandedGroups[g.label] = true;
+});
 
 // Tour steps
 const tourSteps = [
-  {
-    title: 'Welcome to Theme Builder!',
-    content: 'This tool helps you customize Semanticus CSS variables. Changes are previewed live in the iframe on the right.',
-    target: null
-  },
-  {
-    title: 'Search Variables',
-    content: 'Use the search box to quickly find variables by name, label, or description.',
-    target: '.search-box'
-  },
-  {
-    title: 'Variable Input',
-    content: 'Each input shows the CSS variable name (e.g., --color-primary). Click the ? icon for details.',
-    target: '.var-row'
-  },
-  {
-    title: 'Compare Mode',
-    content: 'Toggle "Compare" to see a before/after split view of your changes.',
-    target: '.compare-btn'
-  },
-  {
-    title: 'Export Your Theme',
-    content: 'When done, click "Export CSS" to download your custom theme file.',
-    target: '.export-btn'
-  }
-]
+	{
+		title: "Welcome to Theme Builder!",
+		content:
+			"This tool helps you customize Semanticus CSS variables. Changes are previewed live in the iframe on the right.",
+		target: null,
+	},
+	{
+		title: "Search Variables",
+		content:
+			"Use the search box to quickly find variables by name, label, or description.",
+		target: ".search-box",
+	},
+	{
+		title: "Variable Input",
+		content:
+			"Each input shows the CSS variable name (e.g., --color-primary). Click the ? icon for details.",
+		target: ".var-row",
+	},
+	{
+		title: "Compare Mode",
+		content:
+			'Toggle "Compare" to see a before/after split view of your changes.',
+		target: ".compare-btn",
+	},
+	{
+		title: "Export Your Theme",
+		content:
+			'When done, click "Export CSS" to download your custom theme file.',
+		target: ".export-btn",
+	},
+];
 
 // ── Computed ────────────────────────────────────────────────────────────────
 
 const filteredGroups = computed(() => {
-  const q = searchQuery.value.toLowerCase().trim()
-  if (!q) return variableGroups
+	const q = searchQuery.value.toLowerCase().trim();
+	if (!q) return variableGroups;
 
-  return variableGroups
-    .map(group => ({
-      ...group,
-      vars: group.vars.filter(v =>
-        v.name.toLowerCase().includes(q) ||
-        v.label.toLowerCase().includes(q) ||
-        v.desc.toLowerCase().includes(q)
-      )
-    }))
-    .filter(group => group.vars.length > 0)
-})
+	return variableGroups
+		.map((group) => ({
+			...group,
+			vars: group.vars.filter(
+				(v) =>
+					v.name.toLowerCase().includes(q) ||
+					v.label.toLowerCase().includes(q) ||
+					v.desc.toLowerCase().includes(q),
+			),
+		}))
+		.filter((group) => group.vars.length > 0);
+});
 
 // Count of changed variables
-const changedCount = computed(() => Object.keys(customValues).length)
+const changedCount = computed(() => Object.keys(customValues).length);
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 function getKey(v) {
-  return v.scope === 'root' ? `root:${v.name}` : `${currentTheme.value}:${v.name}`
+	return v.scope === "root"
+		? `root:${v.name}`
+		: `${currentTheme.value}:${v.name}`;
 }
 
 function getDefault(v) {
-  if (v.scope === 'root') return v.lightDefault
-  return currentTheme.value === 'dark' && v.darkDefault ? v.darkDefault : v.lightDefault
+	if (v.scope === "root") return v.lightDefault;
+	return currentTheme.value === "dark" && v.darkDefault
+		? v.darkDefault
+		: v.lightDefault;
 }
 
 function getCurrentValue(v) {
-  return customValues[getKey(v)] ?? ''
+	return customValues[getKey(v)] ?? "";
 }
 
 function setCurrentValue(v, value) {
-  const key = getKey(v)
-  if (value === '' || value === getDefault(v)) {
-    delete customValues[key]
-  } else {
-    customValues[key] = value
-  }
-  updateIframeStyles()
+	const key = getKey(v);
+	if (value === "" || value === getDefault(v)) {
+		delete customValues[key];
+	} else {
+		customValues[key] = value;
+	}
+	updateIframeStyles();
 }
 
 function isChanged(v) {
-  return getKey(v) in customValues
+	return getKey(v) in customValues;
 }
 
 function resetVar(v) {
-  delete customValues[getKey(v)]
-  updateIframeStyles()
+	delete customValues[getKey(v)];
+	updateIframeStyles();
 }
 
 function resetAll() {
-  Object.keys(customValues).forEach(k => delete customValues[k])
-  updateIframeStyles()
+	Object.keys(customValues).forEach((k) => delete customValues[k]);
+	updateIframeStyles();
 }
 
 // Convert color for the color input (best effort hex conversion)
 function toHex(color) {
-  if (!color) return '#000000'
-  const s = color.trim()
-  if (s.startsWith('#')) {
-    if (s.length === 4) {
-      return '#' + s[1] + s[1] + s[2] + s[2] + s[3] + s[3]
-    }
-    return s.slice(0, 7)
-  }
-  // Try to parse rgb/rgba
-  const m = s.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/)
-  if (m) {
-    const r = Math.round(parseFloat(m[1])).toString(16).padStart(2, '0')
-    const g = Math.round(parseFloat(m[2])).toString(16).padStart(2, '0')
-    const b = Math.round(parseFloat(m[3])).toString(16).padStart(2, '0')
-    return `#${r}${g}${b}`
-  }
-  return '#000000'
+	if (!color) return "#000000";
+	const s = color.trim();
+	if (s.startsWith("#")) {
+		if (s.length === 4) {
+			return "#" + s[1] + s[1] + s[2] + s[2] + s[3] + s[3];
+		}
+		return s.slice(0, 7);
+	}
+	// Try to parse rgb/rgba
+	const m = s.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
+	if (m) {
+		const r = Math.round(parseFloat(m[1])).toString(16).padStart(2, "0");
+		const g = Math.round(parseFloat(m[2])).toString(16).padStart(2, "0");
+		const b = Math.round(parseFloat(m[3])).toString(16).padStart(2, "0");
+		return `#${r}${g}${b}`;
+	}
+	return "#000000";
 }
 
 function toggleGroup(label) {
-  expandedGroups[label] = !expandedGroups[label]
+	expandedGroups[label] = !expandedGroups[label];
 }
 
 function togglePopover(varName) {
-  activePopover.value = activePopover.value === varName ? null : varName
+	activePopover.value = activePopover.value === varName ? null : varName;
 }
 
 function closePopover() {
-  activePopover.value = null
+	activePopover.value = null;
 }
 
 // Close popover when clicking outside
 function handleDocumentClick(event) {
-  if (activePopover.value && !event.target.closest('.popover-container')) {
-    closePopover()
-  }
+	if (activePopover.value && !event.target.closest(".popover-container")) {
+		closePopover();
+	}
 }
 
 // Copy to clipboard
 async function copyToClipboard(text, type) {
-  try {
-    await navigator.clipboard.writeText(text)
-    copiedFeedback.value = type
-    setTimeout(() => copiedFeedback.value = null, 2000)
-  } catch (err) {
-    console.error('Failed to copy:', err)
-  }
+	try {
+		await navigator.clipboard.writeText(text);
+		copiedFeedback.value = type;
+		setTimeout(() => (copiedFeedback.value = null), 2000);
+	} catch (err) {
+		console.error("Failed to copy:", err);
+	}
 }
 
 // Search highlighting
 function highlightMatch(text, query) {
-  if (!query) return text
-  const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi')
-  return text.replace(regex, '<mark class="search-highlight">$1</mark>')
+	if (!query) return text;
+	const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
+	return text.replace(regex, '<mark class="search-highlight">$1</mark>');
 }
 
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 // Tour functions
 function startTour() {
-  showTour.value = true
-  tourStep.value = 0
+	showTour.value = true;
+	tourStep.value = 0;
 }
 
 function nextTourStep() {
-  if (tourStep.value < tourSteps.length - 1) {
-    tourStep.value++
-  } else {
-    endTour()
-  }
+	if (tourStep.value < tourSteps.length - 1) {
+		tourStep.value++;
+	} else {
+		endTour();
+	}
 }
 
 function prevTourStep() {
-  if (tourStep.value > 0) {
-    tourStep.value--
-  }
+	if (tourStep.value > 0) {
+		tourStep.value--;
+	}
 }
 
 function endTour() {
-  showTour.value = false
-  tourStep.value = 0
+	showTour.value = false;
+	tourStep.value = 0;
 }
 
 // ── Sidebar Resize ─────────────────────────────────────────────────────────
 
 function startResize(event) {
-  isResizing.value = true
-  document.body.style.cursor = 'col-resize'
-  document.body.style.userSelect = 'none'
+	isResizing.value = true;
+	document.body.style.cursor = "col-resize";
+	document.body.style.userSelect = "none";
 }
 
 function stopResize() {
-  isResizing.value = false
-  document.body.style.cursor = ''
-  document.body.style.userSelect = ''
+	isResizing.value = false;
+	document.body.style.cursor = "";
+	document.body.style.userSelect = "";
 }
 
 function handleResize(event) {
-  if (!isResizing.value) return
+	if (!isResizing.value) return;
 
-  const minWidth = 280  // Minimum to fit popover content
-  const maxWidth = 500
-  const newWidth = Math.max(minWidth, Math.min(maxWidth, event.clientX))
-  sidebarWidth.value = newWidth
+	const minWidth = 280; // Minimum to fit popover content
+	const maxWidth = 500;
+	const newWidth = Math.max(minWidth, Math.min(maxWidth, event.clientX));
+	sidebarWidth.value = newWidth;
 }
 
 function updatePreviewTheme() {
-  if (iframeRef.value?.contentWindow) {
-    iframeRef.value.contentWindow.postMessage({
-      type: 'update-theme',
-      palette: currentPalette.value,
-      size: currentSize.value
-    }, '*')
-  }
+	if (iframeRef.value?.contentWindow) {
+		iframeRef.value.contentWindow.postMessage(
+			{
+				type: "update-theme",
+				palette: currentPalette.value,
+				size: currentSize.value,
+			},
+			"*",
+		);
+	}
 }
 
 function setPalette(palette) {
-  currentPalette.value = palette
-  updatePreviewTheme()
+	currentPalette.value = palette;
+	updatePreviewTheme();
 }
 
 function setSize(size) {
-  currentSize.value = size
-  updatePreviewTheme()
+	currentSize.value = size;
+	updatePreviewTheme();
 }
 
 function toggleCompare() {
-  compareMode.value = !compareMode.value
-  if (iframeRef.value?.contentWindow) {
-    // First, tell iframe to enable/disable compare mode layout
-    iframeRef.value.contentWindow.postMessage({
-      type: 'set-compare-mode',
-      enabled: compareMode.value
-    }, '*')
+	compareMode.value = !compareMode.value;
+	if (iframeRef.value?.contentWindow) {
+		// First, tell iframe to enable/disable compare mode layout
+		iframeRef.value.contentWindow.postMessage(
+			{
+				type: "set-compare-mode",
+				enabled: compareMode.value,
+			},
+			"*",
+		);
 
-    // Wait for layout to settle, then update CSS
-    setTimeout(() => {
-      updateIframeStyles()
-    }, 100)
-  }
+		// Wait for layout to settle, then update CSS
+		setTimeout(() => {
+			updateIframeStyles();
+		}, 100);
+	}
 }
 
 // ── iframe Communication ────────────────────────────────────────────────────
 
 function buildCustomCSS() {
-  const rootVars = []
-  const lightVars = []
-  const darkVars = []
+	const rootVars = [];
+	const lightVars = [];
+	const darkVars = [];
 
-  for (const [key, value] of Object.entries(customValues)) {
-    const [scope, ...nameParts] = key.split(':')
-    const name = nameParts.join(':') // Handle -- prefix
-    if (scope === 'root') {
-      rootVars.push(`  ${name}: ${value};`)
-    } else if (scope === 'light') {
-      lightVars.push(`  ${name}: ${value};`)
-    } else if (scope === 'dark') {
-      darkVars.push(`  ${name}: ${value};`)
-    }
-  }
+	for (const [key, value] of Object.entries(customValues)) {
+		const [scope, ...nameParts] = key.split(":");
+		const name = nameParts.join(":"); // Handle -- prefix
+		if (scope === "root") {
+			rootVars.push(`  ${name}: ${value};`);
+		} else if (scope === "light") {
+			lightVars.push(`  ${name}: ${value};`);
+		} else if (scope === "dark") {
+			darkVars.push(`  ${name}: ${value};`);
+		}
+	}
 
-  let css = ''
+	let css = "";
 
-  if (rootVars.length) {
-    rootVars.push('')
-  } else {
-    rootVars.push('  /* No custom variables set */')
-    rootVars.push('')
-  }
+	if (rootVars.length) {
+		rootVars.push("");
+	} else {
+		rootVars.push("  /* No custom variables set */");
+		rootVars.push("");
+	}
 
-  css += `:root, :host {\n${rootVars.join('\n')}}\n`
+	css += `:root, :host {\n${rootVars.join("\n")}}\n`;
 
-  if (lightVars.length) {
-    css += `[data-theme="light"],\n:root:not([data-theme="dark"]),\n:host(:not([data-theme="dark"])) {\n${lightVars.join('\n')}\n}\n\n`
-  }
-  if (darkVars.length) {
-    css += `[data-theme="dark"] {\n${darkVars.join('\n')}\n}\n`
-  }
-  return css
+	if (lightVars.length) {
+		css += `[data-theme="light"],\n:root:not([data-theme="dark"]),\n:host(:not([data-theme="dark"])) {\n${lightVars.join("\n")}\n}\n\n`;
+	}
+	if (darkVars.length) {
+		css += `[data-theme="dark"] {\n${darkVars.join("\n")}\n}\n`;
+	}
+	return css;
 }
 
 function buildCompareModeCSS() {
-  // In compare mode, only apply custom overrides inside .custom-mode.
-  // .default-mode shows the natural theme (base + palette) without any overrides.
+	// In compare mode, only apply custom overrides inside .custom-mode.
+	// .default-mode shows the natural theme (base + palette) without any overrides.
 
-  const customVars = []
+	const customVars = [];
 
-  // Get all variables from all groups
-  const allVars = []
-  variableGroups.forEach(group => {
-    allVars.push(...group.vars)
-  })
+	// Get all variables from all groups
+	const allVars = [];
+	variableGroups.forEach((group) => {
+		allVars.push(...group.vars);
+	});
 
-  allVars.forEach(v => {
-    const customKey = getKey(v)
-    const hasCustomValue = customValues[customKey]
-    if (hasCustomValue) {
-      customVars.push(`  ${v.name}: ${customValues[customKey]};`)
-    }
-  })
+	allVars.forEach((v) => {
+		const customKey = getKey(v);
+		const hasCustomValue = customValues[customKey];
+		if (hasCustomValue) {
+			customVars.push(`  ${v.name}: ${customValues[customKey]};`);
+		}
+	});
 
-  if (!customVars.length) return ''
+	if (!customVars.length) return "";
 
-  return `.custom-mode {\n${customVars.join('\n')}\n}\n`
+	return `.custom-mode {\n${customVars.join("\n")}\n}\n`;
 }
 
 function updateIframeStyles() {
-  if (!iframeRef.value?.contentWindow) return
+	if (!iframeRef.value?.contentWindow) return;
 
-  const css = compareMode.value
-    ? buildCompareModeCSS()
-    : buildCustomCSS()
+	const css = compareMode.value ? buildCompareModeCSS() : buildCustomCSS();
 
-  iframeRef.value.contentWindow.postMessage({
-    type: 'update-custom-css',
-    css: css,
-    theme: currentTheme.value
-  }, '*')
+	iframeRef.value.contentWindow.postMessage(
+		{
+			type: "update-custom-css",
+			css: css,
+			theme: currentTheme.value,
+		},
+		"*",
+	);
 }
 
 function highlightInPreview(v) {
-  selectedVar.value = v?.name ?? null
-  if (!iframeRef.value?.contentWindow) return
-  iframeRef.value.contentWindow.postMessage({
-    type: 'highlight-elements',
-    selectors: v?.selectors ?? null,
-    varName: v?.name ?? null
-  }, '*')
+	selectedVar.value = v?.name ?? null;
+	if (!iframeRef.value?.contentWindow) return;
+	iframeRef.value.contentWindow.postMessage(
+		{
+			type: "highlight-elements",
+			selectors: v?.selectors ?? null,
+			varName: v?.name ?? null,
+		},
+		"*",
+	);
 }
 
 function clearHighlight() {
-  selectedVar.value = null
-  if (!iframeRef.value?.contentWindow) return
-  iframeRef.value.contentWindow.postMessage({
-    type: 'highlight-elements',
-    selectors: null,
-    varName: null
-  }, '*')
+	selectedVar.value = null;
+	if (!iframeRef.value?.contentWindow) return;
+	iframeRef.value.contentWindow.postMessage(
+		{
+			type: "highlight-elements",
+			selectors: null,
+			varName: null,
+		},
+		"*",
+	);
 }
 
 // ── Export ───────────────────────────────────────────────────────────────────
 
 function exportCSS() {
-  // const css = buildCustomCSS()
-  // if (!css.trim()) {
-  //   alert('No custom values to export. Modify some variables first!')
-  //   return
-  // }
-  showExportModal.value = true
+	// const css = buildCustomCSS()
+	// if (!css.trim()) {
+	//   alert('No custom values to export. Modify some variables first!')
+	//   return
+	// }
+	showExportModal.value = true;
 }
 
 function closeExportModal() {
-  showExportModal.value = false
+	showExportModal.value = false;
 }
 
 function downloadCSS() {
-  const css = buildCustomCSS()
-  const header = `/* Semanticus CSS Custom Theme\n * Generated by Semanticus CSS Theme Builder\n * ${new Date().toISOString().split('T')[0]}\n */\n\n`
-  const blob = new Blob([header + css], { type: 'text/css' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = 'semanticus.custom.css'
-  a.click()
-  URL.revokeObjectURL(url)
+	const css = buildCustomCSS();
+	const header = `/* Semanticus CSS Custom Theme\n * Generated by Semanticus CSS Theme Builder\n * ${new Date().toISOString().split("T")[0]}\n */\n\n`;
+	const blob = new Blob([header + css], { type: "text/css" });
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement("a");
+	a.href = url;
+	a.download = "semanticus.custom.css";
+	a.click();
+	URL.revokeObjectURL(url);
 }
 
 const exportSnippet = computed(() => {
-  let result = `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n`;
-  if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${currentPalette.value}.css`)}">\n`
-  }
-  if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${currentSize.value}.css`)}">\n`
-  }
-  result += `<link rel="stylesheet" href="/css/semanticus.custom.css">`
+	let result = `<link rel="stylesheet" href="${cdnBaseUrl("/dist/semanticus.css")}">\n`;
+	if (currentPalette.value !== "azure") {
+		result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${currentPalette.value}.css`)}">\n`;
+	}
+	if (currentSize.value !== "default") {
+		result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${currentSize.value}.css`)}">\n`;
+	}
+	result += `<link rel="stylesheet" href="/css/semanticus.custom.css">`;
 
-  return result;
-})
+	return result;
+});
 const highlightedExportSnippet = computed(() => {
-  return hljs.highlight(exportSnippet.value, { language: 'html' }).value;
-})
+	return hljs.highlight(exportSnippet.value, { language: "html" }).value;
+});
 
 const inlineSnippet = computed(() => {
-  const css = buildCustomCSS()
-  let result = `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n`
-  if (currentPalette.value !== 'azure') {
-    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${currentPalette.value}.css`)}">\n`
-  }
-  if (currentSize.value !== 'default') {
-    result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${currentSize.value}.css`)}">\n`
-  }
-  result += `<style>\n${css}</style>`
+	const css = buildCustomCSS();
+	let result = `<link rel="stylesheet" href="${cdnBaseUrl("/dist/semanticus.css")}">\n`;
+	if (currentPalette.value !== "azure") {
+		result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${currentPalette.value}.css`)}">\n`;
+	}
+	if (currentSize.value !== "default") {
+		result += `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${currentSize.value}.css`)}">\n`;
+	}
+	result += `<style>\n${css}</style>`;
 
-  return result;
-})
+	return result;
+});
 const highlightedInlineSnippet = computed(() => {
-  return hljs.highlight(inlineSnippet.value, { language: 'html' }).value;
-})
+	return hljs.highlight(inlineSnippet.value, { language: "html" }).value;
+});
 
 // ── Lifecycle ───────────────────────────────────────────────────────────────
 
 onMounted(() => {
-  document.addEventListener('click', handleDocumentClick)
-})
+	document.addEventListener("click", handleDocumentClick);
+});
 
 onUnmounted(() => {
-  document.removeEventListener('click', handleDocumentClick)
-})
+	document.removeEventListener("click", handleDocumentClick);
+});
 
 watch(currentTheme, () => {
-  updateIframeStyles()
-})
+	updateIframeStyles();
+});
 
 // Delay to allow the iframe content to fully initialize before sending styles
-const IFRAME_INIT_DELAY_MS = 300
+const IFRAME_INIT_DELAY_MS = 300;
 
 function onIframeLoad() {
-  setTimeout(() => {
-    updatePreviewTheme()
-    updateIframeStyles()
-  }, IFRAME_INIT_DELAY_MS)
+	setTimeout(() => {
+		updatePreviewTheme();
+		updateIframeStyles();
+	}, IFRAME_INIT_DELAY_MS);
 }
 
 // Get inline styles for preview box in popover
 function getPreviewStyle(v) {
-  const value = getCurrentValue(v) || getDefault(v)
-  const styles = {}
+	const value = getCurrentValue(v) || getDefault(v);
+	const styles = {};
 
-  if (v.type === 'color') {
-    if (v.name.includes('bg') || v.name.includes('background')) {
-      styles.backgroundColor = value
-    } else if (v.name.includes('text') || v.name.includes('color')) {
-      styles.color = value
-    } else if (v.name.includes('border')) {
-      styles.borderColor = value
-      styles.border = `2px solid ${value}`
-    } else {
-      styles.backgroundColor = value
-    }
-  }
+	if (v.type === "color") {
+		if (v.name.includes("bg") || v.name.includes("background")) {
+			styles.backgroundColor = value;
+		} else if (v.name.includes("text") || v.name.includes("color")) {
+			styles.color = value;
+		} else if (v.name.includes("border")) {
+			styles.borderColor = value;
+			styles.border = `2px solid ${value}`;
+		} else {
+			styles.backgroundColor = value;
+		}
+	}
 
-  if (v.name === '--font-size') {
-    styles.fontSize = value
-  }
-  if (v.name === '--line-height') {
-    styles.lineHeight = value
-  }
-  if (v.name === '--radius') {
-    styles.borderRadius = value
-  }
-  if (v.name === '--spacing') {
-    styles.padding = value
-  }
+	if (v.name === "--font-size") {
+		styles.fontSize = value;
+	}
+	if (v.name === "--line-height") {
+		styles.lineHeight = value;
+	}
+	if (v.name === "--radius") {
+		styles.borderRadius = value;
+	}
+	if (v.name === "--spacing") {
+		styles.padding = value;
+	}
 
-  return styles
+	return styles;
 }
 </script>
 

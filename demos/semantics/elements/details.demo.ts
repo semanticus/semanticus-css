@@ -1,15 +1,19 @@
 import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("details", attrs, `<summary>Accordion 1</summary>
+	return renderElement(
+		"details",
+		attrs,
+		`<summary>Accordion 1</summary>
 <p>
   This content is hidden by default and revealed when you click the summary.
   Accordions are great for organizing content into collapsible sections.
-</p>`);
+</p>`,
+	);
 }
 
 export function entangledAccordions() {
-  return `<details name="accordion-group">
+	return `<details name="accordion-group">
   <summary>Accordion 1</summary>
   <p>
     This content is hidden by default and revealed when you click the summary.
@@ -30,23 +34,34 @@ export function entangledAccordions() {
 </details>`;
 }
 
-export function asButton(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement("details", {}, `${renderElement("summary", { ...attrs, role: 'button' }, slot || "Button-style Accordion")}
-<p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>`);
+export function asButton(
+	attrs: Record<string, string> = {},
+	slot: string = "",
+) {
+	return renderElement(
+		"details",
+		{},
+		`${renderElement("summary", { ...attrs, role: "button" }, slot || "Button-style Accordion")}
+<p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>`,
+	);
 }
 
 export function basicDropdown(attrs: Record<string, string> = {}) {
-  return renderElement("details", attrs, `<summary aria-haspopup="menu">Dropdown</summary>
+	return renderElement(
+		"details",
+		attrs,
+		`<summary aria-haspopup="menu">Dropdown</summary>
 <ul role="menu">
   <li><a role="menuitem" href="#">Solid</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
   <li><a role="menuitem" href="#">Plasma</a></li>
-</ul>`);
+</ul>`,
+	);
 }
 
 export function dropdownWithRadios() {
-  return `<details>
+	return `<details>
   <summary aria-haspopup="menu">Select a phase of matter...</summary>
   <ul role="menu">
     <li>
@@ -67,7 +82,10 @@ export function dropdownWithRadios() {
 }
 
 export function dropdownWithCheckboxes(attrs: Record<string, string> = {}) {
-  return renderElement("details", attrs, `<summary aria-haspopup="menu">Select phases of matter...</summary>
+	return renderElement(
+		"details",
+		attrs,
+		`<summary aria-haspopup="menu">Select phases of matter...</summary>
 <ul role="menu">
   <li>
     <label>
@@ -81,21 +99,26 @@ export function dropdownWithCheckboxes(attrs: Record<string, string> = {}) {
       Liquid
     </label>
   </li>
-</ul>`);
+</ul>`,
+	);
 }
 
 export function dropdownAsButton(attrs: Record<string, string> = {}) {
-  return renderElement("details", {}, `${renderElement("summary", { ...attrs, role: 'button', 'aria-haspopup': 'menu' }, "Dropdown as a button")}
+	return renderElement(
+		"details",
+		{},
+		`${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown as a button")}
 <ul role="menu">
   <li><a role="menuitem" href="#">Solid</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
   <li><a role="menuitem" href="#">Plasma</a></li>
-</ul>`);
+</ul>`,
+	);
 }
 
 export function dropdownValidationStates() {
-  return `<details>
+	return `<details>
   <summary aria-haspopup="menu" aria-invalid="false">Valid phase of matter: Solid</summary>
   <ul role="menu">
     <li><a role="menuitem" href="#">Solid</a></li>
@@ -118,7 +141,7 @@ export function dropdownValidationStates() {
 }
 
 export function dropdownInNav() {
-  return `<nav>
+	return `<nav>
   <ul>
     <li><strong>Acme Corp</strong></li>
   </ul>
@@ -141,7 +164,7 @@ export function dropdownInNav() {
 }
 
 export function faqExample() {
-  return `<h1>Frequently Asked Questions</h1>
+	return `<h1>Frequently Asked Questions</h1>
 <br>
 <section>
   <details>

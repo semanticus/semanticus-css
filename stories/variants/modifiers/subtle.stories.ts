@@ -1,33 +1,33 @@
-import type { Meta, StoryObj } from "@storybook/html-vite";
 import { SubtleDemo } from "@demos/overviews/variants/modifiers";
+import type { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Variants/Modifiers/Subtle",
-  parameters: {},
+	title: "Variants/Modifiers/Subtle",
+	parameters: {},
 };
 
 export default meta;
 
 export const ButtonExample: StoryObj = {
-  render: () => SubtleDemo.buttons(),
+	render: () => SubtleDemo.buttons(),
 };
 
 export const InputButtons: StoryObj = {
-  render: () => SubtleDemo.inputButtons(),
+	render: () => SubtleDemo.inputButtons(),
 };
 
 export const RoleButtons: StoryObj = {
-  render: () => SubtleDemo.roleButtons(),
+	render: () => SubtleDemo.roleButtons(),
 };
 
 export const Dropdowns: StoryObj = {
-  render: () => SubtleDemo.dropdowns(),
+	render: () => SubtleDemo.dropdowns(),
 };
 
 export const Accordions: StoryObj = {
-  render: () => SubtleDemo.accordions(),
+	render: () => SubtleDemo.accordions(),
 };
 
 export const Cards: StoryObj = {
-  render: () => SubtleDemo.cardsWithHeaderAndFooter(),
+	render: () => SubtleDemo.cardsWithHeaderAndFooter(),
 };

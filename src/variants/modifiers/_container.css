@@ -1,29 +1,29 @@
 .container,
 .container-fluid {
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: var(--spacing);
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: var(--spacing);
 }
 
 .container {
-  @media (--breakpoint-sm) {
-    max-width: 510px;
-    padding-inline: calc(var(--spacing) / 2);
-  }
+	@media (--breakpoint-sm) {
+		max-width: 510px;
+		padding-inline: calc(var(--spacing) / 2);
+	}
 
-  @media (--breakpoint-md) {
-    max-width: 700px;
-  }
+	@media (--breakpoint-md) {
+		max-width: 700px;
+	}
 
-  @media (--breakpoint-lg) {
-    max-width: 950px;
-  }
+	@media (--breakpoint-lg) {
+		max-width: 950px;
+	}
 
-  @media (--breakpoint-xl) {
-    max-width: 1200px;
-  }
+	@media (--breakpoint-xl) {
+		max-width: 1200px;
+	}
 
-  @media (--breakpoint-xxl) {
-    max-width: 1440px;
-  }
+	@media (--breakpoint-xxl) {
+		max-width: 1440px;
+	}
 }

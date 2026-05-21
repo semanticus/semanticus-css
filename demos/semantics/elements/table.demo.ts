@@ -1,7 +1,10 @@
 import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("table", attrs, `<thead>
+	return renderElement(
+		"table",
+		attrs,
+		`<thead>
   <tr>
     <th>Name</th>
     <th>Email</th>
@@ -19,11 +22,12 @@ export function main(attrs: Record<string, string> = {}) {
     <td>jane@example.com</td>
     <td>User</td>
   </tr>
-</tbody>`);
+</tbody>`,
+	);
 }
 
 export function bigExample() {
-  return `<div class="overflow-auto">
+	return `<div class="overflow-auto">
   <table class="striped">
     <thead>
       <tr>

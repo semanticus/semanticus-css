@@ -1,59 +1,66 @@
 progress {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  display: inline-block;
-  appearance: none;
-  width: 100%;
-  height: 0.5rem;
-  margin-bottom: calc(var(--spacing) * 0.5);
-  overflow: hidden;
-  border: 0;
-  border-radius: var(--radius);
-  background-color: var(--progress-track-fill);
-  color: var(--progress-fill);
-  vertical-align: baseline;
-  accent-color: var(--color-primary-fill);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	display: inline-block;
+	appearance: none;
+	width: 100%;
+	height: 0.5rem;
+	margin-bottom: calc(var(--spacing) * 0.5);
+	overflow: hidden;
+	border: 0;
+	border-radius: var(--radius);
+	background-color: var(--progress-track-fill);
+	color: var(--progress-fill);
+	vertical-align: baseline;
+	accent-color: var(--color-primary-fill);
 
-  &::-webkit-progress-bar {
-    border-radius: var(--radius);
-    background: none;
-  }
+	&::-webkit-progress-bar {
+		border-radius: var(--radius);
+		background: none;
+	}
 
-  &[value]::-webkit-progress-value {
-    background-color: var(--progress-fill);
-    transition: inline-size var(--transition);
-  }
+	&[value]::-webkit-progress-value {
+		background-color: var(--progress-fill);
+		transition: inline-size var(--transition);
+	}
 
-  &::-moz-progress-bar {
-    background-color: var(--progress-fill);
-  }
+	&::-moz-progress-bar {
+		background-color: var(--progress-fill);
+	}
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  progress:indeterminate {
-    background: var(--progress-track-fill) linear-gradient(to right, var(--progress-fill) 30%, var(--progress-track-fill) 30%) top left/150% 150% no-repeat;
-    animation: progress-indeterminate 1s linear infinite;
+	progress:indeterminate {
+		background:
+			var(--progress-track-fill)
+			linear-gradient(
+				to right,
+				var(--progress-fill) 30%,
+				var(--progress-track-fill) 30%
+			)
+			top left / 150% 150% no-repeat;
+		animation: progress-indeterminate 1s linear infinite;
 
-    &[value]::-webkit-progress-value {
-      background-color: transparent;
-    }
+		&[value]::-webkit-progress-value {
+			background-color: transparent;
+		}
 
-    &::-moz-progress-bar {
-      background-color: transparent;
-    }
-  }
+		&::-moz-progress-bar {
+			background-color: transparent;
+		}
+	}
 
-  [dir=rtl] progress:indeterminate {
-    animation-direction: reverse;
-  }
+	[dir="rtl"] progress:indeterminate {
+		animation-direction: reverse;
+	}
 }
 
 @keyframes progress-indeterminate {
-  0% {
-    background-position: 200% 0;
-  }
+	0% {
+		background-position: 200% 0;
+	}
 
-  100% {
-    background-position: -200% 0;
-  }
+	100% {
+		background-position: -200% 0;
+	}
 }

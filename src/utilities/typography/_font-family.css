@@ -1,7 +1,7 @@
 .font-family {
-  font-family: var(--font-family) !important;
+	font-family: var(--font-family) !important;
 }
 
 .font-monospace {
-  font-family: var(--font-family-monospace) !important;
+	font-family: var(--font-family-monospace) !important;
 }
