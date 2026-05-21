@@ -1,53 +1,73 @@
 import { renderElement } from "@scripts/utils";
 
-export function main(attrs: Record<string, string> = {}) {
-  return renderElement("dialog", { id: "dialog-basic", ...attrs }, `<button aria-label="Close" rel="prev" commandfor="dialog-basic" command="close"></button>
-<h3>&#x1F4C5; Thank You for Registering!</h3>
+const defaultId = "dialog-basic";
 
-<p>
-  We're excited to have you join us for our
-  upcoming event. Please arrive at the museum
-  on time to check in and get started.
-</p>
+function headerAndFooterContent(attrs: Record<string, string>) {
+  return `<header>
+  <h2 id="modal-title">Confirm Your Membership</h2>
+  <button aria-label="Close" rel="prev" commandfor="${attrs.id || defaultId}" command="close"></button>
+</header>
 
-<ul>
-  <li>Date: Saturday, April 15</li>
-  <li>Time: 10:00am - 12:00pm</li>
-</ul>`);
+<div id="modal-description">
+  <p>
+    Thank you for signing up for a membership!
+    Please review the membership details below:
+  </p>
+
+  <ul>
+    <li>Membership: Individual</li>
+    <li>Price: $10</li>
+  </ul>
+</div>
+
+<footer>
+  <button class="secondary" commandfor="${attrs.id || defaultId}" command="close">
+    Cancel
+  </button>
+  <button commandfor="${attrs.id || defaultId}" command="close">Confirm</button>
+</footer>`;
 }
 
-export function showModal(attrs: Record<string, string> = {}) {
-  return `<button command="show-modal" commandfor="dialog-basic" class="contrast">Show Modal</button>
+export function main(attrs: Record<string, string> = {}, slot: string = "") {
+  const mergedAttrs = { id: defaultId, ...attrs, "aria-labelledby": "modal-title", "aria-describedby": "modal-description" };
 
-${main(attrs)}`;
+  return renderElement("dialog", mergedAttrs, slot || `<button aria-label="Close" rel="prev" commandfor="${mergedAttrs.id}" command="close"></button>
+<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
+
+<div id="modal-description">
+  <p>
+    We're excited to have you join us for our
+    upcoming event. Please arrive at the museum
+    on time to check in and get started.
+  </p>
+
+  <ul>
+    <li>Date: Saturday, April 15</li>
+    <li>Time: 10:00am - 12:00pm</li>
+  </ul>
+</div>`);
 }
 
 export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return renderElement("dialog", { id: "dialog-header-footer", ...attrs }, `<header>
-  <h2>Confirm Your Membership</h2>
-  <button aria-label="Close" rel="prev" commandfor="dialog-header-footer" command="close"></button>
-</header>
+  return main(attrs, headerAndFooterContent(attrs));
+}
 
-<p>
-  Thank you for signing up for a membership!
-  Please review the membership details below:
-</p>
+export function modal(attrs: Record<string, string> = {}, slot: string = "") {
+  return main(attrs, slot);
+}
 
-<ul>
-  <li>Membership: Individual</li>
-  <li>Price: $10</li>
-</ul>
+export function showModal(attrs: Record<string, string> = {}) {
+  return `<button command="show-modal" commandfor="${defaultId}" class="contrast">Show Modal</button>
 
-<footer>
-  <button class="secondary" commandfor="dialog-header-footer" command="close">
-    Cancel
-  </button>
-  <button commandfor="dialog-header-footer" command="close">Confirm</button>
-</footer>`);
+${modal(attrs)}`;
+}
+
+export function modalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
+  return modal(attrs, headerAndFooterContent(attrs));
 }
 
 export function showModalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
     return `<button command="show-modal" commandfor="dialog-header-footer" class="contrast">Show Modal</button>
 
-${withHeaderAndFooter(attrs)}`;
+${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 }

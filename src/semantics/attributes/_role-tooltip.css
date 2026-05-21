@@ -4,7 +4,7 @@
   width: fit-content;
 }
 
-:not(a, button, input, [role=button])[aria-describedby] {
+:not(a, button, dialog, input, [role=button])[aria-describedby] {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;
