@@ -1,0 +1,16 @@
+/* Base styles shared by all .icon-* classes */
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  vertical-align: -.199em;
+}
+
+.icon-close {
+  mask-image: var(--icon-close);
+}
