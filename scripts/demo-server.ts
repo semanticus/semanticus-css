@@ -10,9 +10,11 @@ import path from 'path';
 import vm from 'vm';
 import { createRequire } from 'module';
 import * as esbuild from 'esbuild';
-import { renderHtmlTemplate } from '@scripts/utils';
+import { variations, renderHtmlTemplate } from '@scripts/utils';
 
 const projectRoot = path.join(__dirname, '..');
+const validPalettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default');
+const validThemes = variations.themes.map((p) => p.name);
 
 const mimeTypes: Record<string, string> = {
   '.html': 'text/html',
@@ -137,12 +139,10 @@ const server = http.createServer(async (req, res) => {
       if (fnName) {
         const html = await runDemo(demoParts.join('/'), fnName);
         const stylePaths = ['/dist/semanticus.css'];
-        const VALID_PALETTES = new Set(['amber','azure','blue','cyan','fuchsia','green','grey','indigo','jade','lime','orange','pink','pumpkin','purple','red','sand','slate','violet','yellow','zinc']);
-        const VALID_THEMES = new Set(['light', 'dark']);
         const rawPalette = url.searchParams.get('palette');
         const rawTheme = url.searchParams.get('theme');
-        const paletteName = rawPalette && VALID_PALETTES.has(rawPalette) ? rawPalette : undefined;
-        const themeName = rawTheme && VALID_THEMES.has(rawTheme) ? rawTheme : undefined;
+        const paletteName = rawPalette && validPalettes.includes(rawPalette) ? rawPalette : undefined;
+        const themeName = rawTheme && validThemes.includes(rawTheme) ? rawTheme : undefined;
 
         if (paletteName) {
           stylePaths.push(`/dist/semanticus.palette.${paletteName}.css`);

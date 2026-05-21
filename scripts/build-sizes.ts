@@ -10,10 +10,12 @@
  *   <link rel="stylesheet" href="semanticus.size.pico.css">
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawnSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { spawnSync } from 'child_process';
+import { variations } from './utils';
 
+const sizes = variations.sizes.map((p) => p.name).filter((n) => n !== 'default');
 const srcDir = path.join(__dirname, '..', 'src', 'sizes');
 const distDir = path.join(__dirname, '..', 'dist');
 
@@ -29,10 +31,9 @@ if (files.length === 0) {
 
 let successCount = 0;
 
-for (const file of files) {
-  const name = path.basename(file, '.css');
-  const srcPath = path.join('src', 'sizes', file);
-  const outPath = path.join(distDir, `semanticus.size.${name}.css`);
+for (const size of sizes) {
+  const srcFile = path.join(srcDir, `${size}.css`);
+  const distFile = path.join(distDir, `semanticus.size.${size}.css`);
 
   // Use npx to run the locally installed lightningcss CLI with bundling enabled
   const args = [
@@ -40,22 +41,22 @@ for (const file of files) {
     '--bundle',
     '--minify',
     '--browserslist',
-    srcPath,
+    srcFile,
     '-o',
-    outPath,
+    distFile,
     '--custom-media',
   ];
 
   const res = spawnSync('npx', args, { encoding: 'utf8' });
 
   if (res.error || res.status !== 0) {
-    console.error(`  ✗ Failed to build size ${name}:`);
+    console.error(`  ✗ Failed to build size ${size}:`);
     if (res.stdout) console.error(res.stdout);
     if (res.stderr) console.error(res.stderr);
     process.exit(1);
   }
 
-  console.log(`  ✓ ${outPath}`);
+  console.log(`  ✓ ${distFile}`);
   successCount++;
 }
 

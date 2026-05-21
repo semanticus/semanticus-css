@@ -10,36 +10,16 @@
  *   <link rel="stylesheet" href="semanticus.palette.blue.css">
  */
 
-const fs = require('fs');
-const path = require('path');
-const { transform } = require('lightningcss');
+import fs from 'fs';
+import path from 'path';
+import { transform } from 'lightningcss';
+import { variations } from './utils';
 
-const palettes = [
-  'amber',
-  'blue',
-  'cyan',
-  'fuchsia',
-  'green',
-  'grey',
-  'indigo',
-  'jade',
-  'lime',
-  'orange',
-  'pink',
-  'pumpkin',
-  'purple',
-  'red',
-  'sand',
-  'slate',
-  'violet',
-  'yellow',
-  'zinc'
-];
-
+const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default');
 const srcDir = path.join(__dirname, '..', 'src', 'palettes');
 const distDir = path.join(__dirname, '..', 'dist');
 
-// Ensure dist/palettes directory exists
+// Ensure dist directory exists
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
@@ -73,7 +53,7 @@ for (const palette of palettes) {
     console.log(`  ✓ ${distFile}`);
     successCount++;
   } catch (error) {
-    console.error(`  ✗ Failed to build palette ${palette}:`, error.message);
+    console.error(`  ✗ Failed to build palette ${palette}:`, (error as Error).message);
     process.exit(1);
   }
 }

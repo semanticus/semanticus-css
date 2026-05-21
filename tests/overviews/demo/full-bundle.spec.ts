@@ -1,29 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { variations } from '@scripts/utils';
 
 test.use({ viewport: { width: 1024, height: 900 } });
 
-const palettes = [
-  'amber',
-  'blue',
-  'cyan',
-  'fuchsia',
-  'green',
-  'grey',
-  'indigo',
-  'jade',
-  'lime',
-  'orange',
-  'pink',
-  'pumpkin',
-  'purple',
-  'red',
-  'sand',
-  'slate',
-  'violet',
-  'yellow',
-  'zinc',
-];
-const themes = ['light', 'dark'];
+const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default');
+const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
   test(`/overviews/demo/fullBundle?theme=${theme} - visual snapshot`, async ({ page }) => {

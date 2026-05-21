@@ -6,7 +6,7 @@ import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
 import githubDark from 'highlight.js/styles/github-dark.css?raw'
-import { cdnBaseUrl } from '@scripts/utils';
+import { cdnBaseUrl, variations } from '@scripts/utils';
 
 // isDark is a reactive Ref<boolean>
 const { isDark, site } = useData();
@@ -387,35 +387,11 @@ const isResizing = ref(false)
 const showExportModal = ref(false)
 const exportMode = ref('inline') // 'file' or 'inline'
 
-// Available color palettes
-const palettes = [
-  { name: 'azure', label: 'Azure', color: '#0172ad' },
-  { name: 'amber', label: 'Amber', color: '#ffbf00' },
-  { name: 'blue', label: 'Blue', color: '#2060df' },
-  { name: 'cyan', label: 'Cyan', color: '#047878' },
-  { name: 'fuchsia', label: 'Fuchsia', color: '#c1208b' },
-  { name: 'green', label: 'Green', color: '#33790f' },
-  { name: 'grey', label: 'Grey', color: '#ababab' },
-  { name: 'indigo', label: 'Indigo', color: '#524ed2' },
-  { name: 'jade', label: 'Jade', color: '#007a50' },
-  { name: 'lime', label: 'Lime', color: '#a5d601' },
-  { name: 'orange', label: 'Orange', color: '#d24317' },
-  { name: 'pink', label: 'Pink', color: '#d92662' },
-  { name: 'pumpkin', label: 'Pumpkin', color: '#ff9500' },
-  { name: 'purple', label: 'Purple', color: '#9236a4' },
-  { name: 'red', label: 'Red', color: '#c52f21' },
-  { name: 'sand', label: 'Sand', color: '#ccc6b4' },
-  { name: 'slate', label: 'Slate', color: '#525f7a' },
-  { name: 'violet', label: 'Violet', color: '#7540bf' },
-  { name: 'yellow', label: 'Yellow', color: '#f2df0d' },
-  { name: 'zinc', label: 'Zinc', color: '#646b79' },
-]
+// Available color palettes (derived from variations)
+const palettes = variations.palettes.map((p) => ({ name: p.name, label: p.label, color: p.color || '#0172ad' }))
 
-// Available size variants
-const sizes = [
-  { name: 'default', label: 'Default', description: 'Standard sizing for all elements' },
-  { name: 'pico', label: 'PicoCSS', description: 'PicoCSS original values' },
-]
+// Available size variants (derived from variations)
+const sizes = variations.sizes.map((s) => ({ name: s.name, label: s.label, description: s.description || '' }))
 
 // Initialize all groups as expanded
 variableGroups.forEach(g => {

@@ -5,3 +5,4 @@ export * from './package-props';
 export * from './render-attributes';
 export * from './render-element';
 export * from './render-html-template';
+export * from './variations';
