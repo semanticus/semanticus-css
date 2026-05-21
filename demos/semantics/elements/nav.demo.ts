@@ -36,7 +36,7 @@ export function buttonBasedPagination() {
 export function linkBasedPagination() {
   return `<nav aria-label="Pagination">
   <div role="group">
-    <a href="#" role="button" aria-disabled="true">Previous</a>
+    <a role="button" aria-disabled="true" tabindex="0">Previous</a>
     <a href="#page-1" role="button">1</a>
     <a href="#page-2" role="button" aria-current="page">2</a>
     <a href="#page-3" role="button">3</a>
