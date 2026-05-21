@@ -18,6 +18,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ⌛ | `role="alert"` |
+| ⌛ | `aria-disabled="true"` |
 
 ## Components
 
@@ -85,6 +86,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Exhaustive Utility classes documentation |
 | ✅ | Documentation page example |
 | ✅ | Grid system documentation |
+| ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
 | ⌛ | Login page example |
