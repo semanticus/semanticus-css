@@ -4,7 +4,7 @@ The `.contrast` class provides a high-contrast visual style for links, buttons, 
 
 ## Links
 
-Apply `.contrast` to `<a>` elements or elements with `[role="link"]` to de-emphasize them.
+Apply `.contrast` to `<a>` elements or elements with `[role="link"]` to emphasize them.
 
 <HtmlPreviewer :code="ContrastDemo.overviewLinks()" />
 

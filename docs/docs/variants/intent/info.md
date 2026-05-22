@@ -10,13 +10,13 @@ Apply `.info` to `<a>` elements or elements with `[role="link"]` to indicate an 
 
 ## Buttons
 
-Apply `.info` to `<button>` elements or elements with `[role="button"]` for a info action button.
+Apply `.info` to `<button>` elements or elements with `[role="button"]` for an info action button.
 
 <HtmlPreviewer :code="InfoDemo.overviewButtons()" />
 
 ## Cards
 
-Apply `.info` to an element with `.card` for a info action card.
+Apply `.info` to an element with `.card` for an info action card.
 
 <HtmlPreviewer :code="InfoDemo.overviewCards()" :codeCollapsed="true" />
 

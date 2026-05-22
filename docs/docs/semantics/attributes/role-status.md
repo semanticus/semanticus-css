@@ -23,7 +23,7 @@ Use a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, wh
 Add the `popover` attribute to the element, and set the `data-placement` attribute to specify where the toast should appear on the screen, and make use of the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API), for basic open/close behavior, follow these steps:
 
 1. Give your HTML element a unique `id` attribute
-2. Add the `popover` attribute plus the `role="alert"` and `data-placement` attributes to specify where the toast should appear on the screen.
+2. Add the `popover` attribute plus the `role="status"` and `data-placement` attributes to specify where the toast should appear on the screen.
 3. Create an opening button with `popovertarget="your-modal-id"` (alternatively, you can use JS to `document.querySelector('#your-modal-id').showPopover()`)
 4. The toast will display at the designated position
 
@@ -41,11 +41,11 @@ To convey **intent** and **importance**, status messages can be styled with diff
 
 ### Modifiers
 
-`.ghost` creates transparent background buttons with colored text and borders, useful for secondary actions where you want minimal visual weight.
+`.ghost` creates transparent background alerts with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
 <HtmlPreviewer :code="RoleStatusDemo.ghostVariants()" :codeCollapsed="true" />
 
-`.subtle` creates buttons with a more muted appearance, often used for less prominent actions.
+`.subtle` creates alerts with a more muted appearance, often used for less prominent notifications.
 
 <HtmlPreviewer :code="RoleStatusDemo.subtleVariants()" :codeCollapsed="true" />
 

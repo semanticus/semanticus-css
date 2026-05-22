@@ -8,7 +8,7 @@ They can be used to display success, error, warning, or informational messages a
 
 Inline alerts are displayed within the content of a page, simply add `role="status"` or `role="alert"` to any HTML element to create an inline alert. The choice between these two **ARIA** roles depends on the urgency and importance of the message being conveyed.
 
-Please see [[role="status"]](/docs/semantics/attributes/role-status) and [[role="alert"]](/docs/semantics/attributes/role-alert) for more details on how to choose which ARIA role to use for your inline alerts and how to stylize them with **variants**, **close button** and other.
+Please see [[role="status"]](/docs/semantics/attributes/role-status) and [[role="alert"]](/docs/semantics/attributes/role-alert) for more details on how to choose which ARIA role to use for your inline alerts and how to stylize them with **variants**, **close button** and more.
 
 <HtmlPreviewer :code="AlertsDemo.inlineAlerts()"/>
 
@@ -33,7 +33,7 @@ Dialog alerts are modal windows that require user interaction before they can be
 ${AlertsDemo.showDialogAlert()}
 &lt;/div&gt;`" />
 
-> **Remark:** When it comes these type of dialogs that interrupt the user’s workflow, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="alertdialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` so you only need to change the role to `alertdialog`.
+> **Remark:** When it comes to these types of dialogs that interrupt the user’s workflow, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="alertdialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` so you only need to change the role to `alertdialog`.
 
 <script setup>
 import { AlertsDemo } from "@demos/composites";

@@ -1,6 +1,6 @@
 # Subtle Modifier
 
-The `.subtle` class creates transparent background buttons with colored text and borders. This "outline" or "subtle" style is useful for secondary actions where you want minimal visual weight.
+The `.subtle` class creates elements with a muted, reduced-opacity background and softened colors. This style is useful for secondary actions where you want a subdued but still contextually colored appearance.
 
 `.subtle` can be combined with **Intent Variants** like `.secondary`, `.success`, etc. for different color variations.
 

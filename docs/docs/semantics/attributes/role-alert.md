@@ -45,11 +45,11 @@ To convey **intent** and **importance**, alert messages can be styled with diffe
 
 ### Modifiers
 
-`.ghost` creates transparent background buttons with colored text and borders, useful for secondary actions where you want minimal visual weight.
+`.ghost` creates transparent background alerts with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
 <HtmlPreviewer :code="RoleAlertDemo.ghostVariants()" :codeCollapsed="true" />
 
-`.subtle` creates buttons with a more muted appearance, often used for less prominent actions.
+`.subtle` creates alerts with a more muted appearance, often used for less prominent notifications.
 
 <HtmlPreviewer :code="RoleAlertDemo.subtleVariants()" :codeCollapsed="true" />
 
