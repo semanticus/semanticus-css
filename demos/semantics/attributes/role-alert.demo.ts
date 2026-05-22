@@ -8,7 +8,10 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 }
 
 export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, popover: 'popover', role: "alert" }, slot || defaultMessage);
+  const mergedAttrs = { id: "alert-toast", ...attrs, popover: 'popover', role: "alert" };
+
+  return renderElement(tagName, mergedAttrs, renderElement('nav', {}, `${slot || defaultMessage}
+${ButtonDemo.closeButton({ popovertarget: mergedAttrs.id })}`));
 }
 
 export function showToast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
@@ -17,6 +20,29 @@ export function showToast(tagName: string = "div", attrs: Record<string, string>
   return `<button popovertarget="${mergedAttrs.id}" class="contrast">Show Alert Toast</button>
 
 ${toast(tagName, mergedAttrs, slot)}`;
+}
+
+export function overviewShowToasts() {
+  return `<button popovertarget="top-start-toast" class="contrast">Top Start</button>
+<button popovertarget="top-center-toast" class="contrast">Top Center</button>
+<button popovertarget="top-end-toast" class="contrast">Top End</button>
+<button popovertarget="middle-start-toast" class="contrast">Middle Start</button>
+<button popovertarget="middle-center-toast" class="contrast">Middle Center</button>
+<button popovertarget="middle-end-toast" class="contrast">Middle End</button>
+<button popovertarget="bottom-start-toast" class="contrast">Bottom Start</button>
+<button popovertarget="bottom-center-toast" class="contrast">Bottom Center</button>
+<button popovertarget="bottom-end-toast" class="contrast">Bottom End</button>
+
+${toast('div', { id: "top-start-toast", class: "primary", 'data-placement': "top-start" }, 'Top Start Alert')}
+${toast('div', { id: "top-center-toast", class: "secondary", 'data-placement': "top-center" }, 'Top Center Alert')}
+${toast('div', { id: "top-end-toast", class: "contrast", 'data-placement': "top-end" }, 'Top End Alert')}
+${toast('div', { id: "middle-start-toast", class: "success", 'data-placement': "middle-start" }, 'Middle Start Alert')}
+${toast('div', { id: "middle-center-toast", class: "info", 'data-placement': "middle-center" }, 'Middle Center Alert')}
+${toast('div', { id: "middle-end-toast", class: "warning", 'data-placement': "middle-end" }, 'Middle End Alert')}
+${toast('div', { id: "bottom-start-toast", class: "danger", 'data-placement': "bottom-start" }, 'Bottom Start Alert')}
+${toast('div', { id: "bottom-center-toast", class: "success ghost", 'data-placement': "bottom-center" }, 'Bottom Center Alert')}
+${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement': "bottom-end" }, 'Bottom End Alert')}
+`;
 }
 
 export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {

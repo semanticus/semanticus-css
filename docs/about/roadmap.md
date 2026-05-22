@@ -18,7 +18,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ✅ | `aria-disabled="true"` |
-| 🚧 | `role="status"` and `role="alert"` |
+| ✅ | `role="status"` and `role="alert"` |
 | ⌛ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
 
 ## Components
@@ -59,6 +59,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 
 | Status | Feature |
 | --- | --- |
+| ⌛ | Multiple toasts with the same placement overlap |
 | ⌛ | When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
 | ⌛ | **shadow** utility classes don't seem to affect `.card` styling |
 | ⌛ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
@@ -71,9 +72,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Popover-based sidebar patterns |
 | ✅ | Invoker Commands API modal patterns |
 | ✅ | Dropdown menu primitives |
-| 🚧 | Floating Alert |
-| 🚧 | Alert Dialog |
-| 🚧 | Anchor Positioning tooltips |
+| ✅ | Floating Alert |
+| ✅ | Alert Dialog |
+| ✅ | Anchor Positioning tooltips |
 | ⌛ | Tabs |
 | ⌛ | Carousel |
 | ⌛ | Popper |
@@ -98,7 +99,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Documentation page example |
 | ✅ | Grid system documentation |
 | ✅ | `.icon-*` component documentation |
-| 🚧 | Alerts composite documentation |
+| ✅ | Alerts composite documentation |
 | 🚧 | Navigation composite documentation |
 | ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
@@ -132,16 +133,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` variant combinations |
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
-| 🚧 | Include `.icon-*` in Full & Colors Demo Overview |
-| 🚧 | Include `[role="status"]` and `[role="alert"]` in Full & Colors Demo Overview |
+| ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | 🚧 | Include **list group** in Full & Colors Demo Overview |
+| ⌛ | Floating Alert interaction |
+| ⌛ | Alert Dialog interaction |
 | ⌛ | `.content-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid Demo Overview |
 | ⌛ | Tab interaction |
 | ⌛ | Carousel interaction |
-| ⌛ | Floating Alert interaction |
-| ⌛ | Alert Dialog interaction |
-| ⌛ | Confirm Dialog interaction |
-| ⌛ | Prompt Dialog interaction |
 | ⌛ | Popper interaction |

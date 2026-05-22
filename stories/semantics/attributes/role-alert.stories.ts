@@ -18,8 +18,8 @@ export const WithCloseButton: StoryObj = {
   render: (args) => args.html,
 };
 
-export const AsToast: StoryObj = {
-  args: { html: RoleAlertDemo.showToast('div', { class: 'danger', 'data-placement': 'bottom-end' }, "Failed to save.Please look for validation errors.") },
+export const OverviewToasts: StoryObj = {
+  args: { html: RoleAlertDemo.overviewShowToasts() },
   render: (args) => args.html,
 };
 

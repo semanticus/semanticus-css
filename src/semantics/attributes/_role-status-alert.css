@@ -20,4 +20,104 @@
   &:is(.ghost, .subtle) {
     --alert-size: calc(var(--border-size) * 4);
   }
+
+  /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
+  /* Gracefully degrades to instant appearance in unsupported browsers */
+  transition: opacity 0.2s ease-in-out, top 0.2s ease-in-out, right 0.2s ease-in-out, left 0.2s ease-in-out, bottom 0.2s ease-in-out;
+
+  &[popover] {
+    display: none;
+    box-shadow: var(--shadow);
+    left: unset;
+    right: 0;
+    bottom: 0;
+    top: unset;
+    margin: var(--spacing);
+
+    &:popover-open {
+      display: flex;
+    }
+
+    &[data-placement="top-start"] {
+      left: 0;
+      right: unset;
+      top: 0;
+      bottom: unset;
+    }
+
+    &[data-placement="top-center"] {
+      right: 50%;
+      transform: translateX(50%);
+      top: 0;
+      bottom: unset;
+    }
+
+    &[data-placement="top-end"] {
+      right: 0;
+      top: 0;
+      bottom: unset;
+    }
+
+    &[data-placement="middle-start"] {
+      left: 0;
+      right: unset;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+
+    &[data-placement="middle-center"] {
+      right: 50%;
+      transform: translate(50%, 50%);
+      bottom: 50%;
+    }
+
+    &[data-placement="middle-end"] {
+      right: 0;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+
+    &[data-placement="bottom-start"] {
+      left: 0;
+      right: unset;
+      bottom: 0;
+    }
+
+    &[data-placement="bottom-center"] {
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 0;
+    }
+
+    &[data-placement="bottom-end"] {
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+@starting-style {
+  :is([role="status"], [role="alert"]):popover-open {
+    opacity: 0;
+
+    &:not([data-placement]) {
+      right: -20px;
+    }
+
+    &[data-placement$="start"] {
+      left: -20px;
+    }
+
+    &[data-placement="top-center"] {
+      top: -20px;
+    }
+
+    &[data-placement="bottom-center"] {
+      bottom: -20px;
+    }
+
+    &[data-placement$="end"] {
+      right: -20px;
+    }
+  }
 }
