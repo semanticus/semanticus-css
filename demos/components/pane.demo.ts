@@ -1,5 +1,4 @@
 import { renderElement } from "@scripts/utils";
-import * as CardDemo from "@demos/components/card.demo";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Pane title') {
   const mergedAttrs = { ...attrs, class: `pane ${attrs.class || ''}`.trim() };

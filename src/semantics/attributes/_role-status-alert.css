@@ -1,9 +1,10 @@
 [role="status"],
 [role="alert"] {
-  --color-background: var(--dialog-fill);
+  --color-background:  color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
   --border-color: var(--dialog-border);
   --alert-accent: var(--dialog-border);
 
+  color: var(--color-text);
   padding: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
