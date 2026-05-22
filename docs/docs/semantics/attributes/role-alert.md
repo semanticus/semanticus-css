@@ -22,6 +22,12 @@ Use a [Close Button](/docs/composites/close-button) inside a `<nav>`, which will
 
 <HtmlPreviewer :code="RoleAlertDemo.withCloseButton()" />
 
+## As Toast
+
+Add the `popover` attribute to the element, and set the `data-placement` attribute to specify where the toast should appear on the screen.
+
+<HtmlPreviewer :code="RoleAlertDemo.showToast('div', { class: 'danger', 'data-placement': 'bottom-end' }, 'Failed to save. Please look for validation errors.')" />
+
 ## With title and description
 
 <HtmlPreviewer :code="RoleAlertDemo.withHgroup()" />

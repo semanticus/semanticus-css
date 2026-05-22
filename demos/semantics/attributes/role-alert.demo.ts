@@ -7,6 +7,18 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
   return renderElement(tagName, { ...attrs, role: "alert" }, slot || defaultMessage);
 }
 
+export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, { ...attrs, popover: 'popover', role: "alert" }, slot || defaultMessage);
+}
+
+export function showToast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  const mergedAttrs = { id: "alert-toast", ...attrs };
+
+  return `<button popovertarget="${mergedAttrs.id}" class="contrast">Show Alert Toast</button>
+
+${toast(tagName, mergedAttrs, slot)}`;
+}
+
 export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement(tagName, { ...attrs, role: "alert" }, renderElement('nav', {}, `${slot || defaultMessage}
 ${ButtonDemo.closeButton()}`));

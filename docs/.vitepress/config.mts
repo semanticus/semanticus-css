@@ -325,7 +325,7 @@ export default defineConfig({
         {
           text: "Composites",
           items: [
-            { text: "Alerts", link: "/docs/composites/alerts" },
+            { text: "Alert", link: "/docs/composites/alert" },
             { text: "Card", link: "/docs/composites/card" },
             { text: "Close Button", link: "/docs/composites/close-button" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
