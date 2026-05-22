@@ -31,9 +31,9 @@ export function overviewInputButtons(attrs: Record<string, string> = {}) {
 }
 
 export function overviewRoleButtonsAndDropdowns(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, `${RoleButtonDemo.subtleVariants(attrs)}
+  return renderElement('section', {}, `${RoleButtonDemo.ghostVariants(attrs)}
 
 <hr>
 
-${DropdownDemo.intentVariants(attrs)}`);
+${DropdownDemo.ghostVariants(attrs)}`);
 }

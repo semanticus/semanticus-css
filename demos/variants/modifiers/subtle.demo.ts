@@ -35,5 +35,5 @@ export function overviewRoleButtonsAndDropdowns(attrs: Record<string, string> = 
 
 <hr>
 
-${DropdownDemo.intentVariants(attrs)}`);
+${DropdownDemo.subtleVariants(attrs)}`);
 }
