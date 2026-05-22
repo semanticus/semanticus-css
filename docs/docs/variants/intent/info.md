@@ -6,32 +6,31 @@ The `.info` class provides a visual style for links and buttons that indicate an
 
 Apply `.info` to `<a>` elements or elements with `[role="link"]` to indicate an informational action.
 
-<HtmlPreviewer :code="InfoDemo.links()" />
+<HtmlPreviewer :code="InfoDemo.overviewLinks()" />
 
 ## Buttons
 
 Apply `.info` to `<button>` elements or elements with `[role="button"]` for a info action button.
 
-<HtmlPreviewer :code="InfoDemo.buttons()" />
+<HtmlPreviewer :code="InfoDemo.overviewButtons()" />
 
 ## Cards
 
 Apply `.info` to an element with `.card` for a info action card.
 
-<HtmlPreviewer :code="InfoDemo.cards()" />
+<HtmlPreviewer :code="InfoDemo.overviewCards()" :codeCollapsed="true" />
 
 ## Modifiers
 
 `.info` can be modified with `.subtle` to create cards with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.main({ class: 'info' })" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overview({ class: 'info' })" :codeCollapsed="true" />
 
 `.info` can be modified with `.ghost` to create ghost buttons and cards, which have a transparent background and a border, making them less visually prominent while still maintaining the info effect.
 
-<HtmlPreviewer :code="GhostDemo.main({ class: 'info' })" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overview({ class: 'info' })" :codeCollapsed="true" />
 
 
 <script setup>
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import { InfoDemo } from "@demos/overviews/variants/intent";
+import { GhostDemo, SubtleDemo, InfoDemo } from '@demos/variants';
 </script>

@@ -397,6 +397,10 @@ export default defineConfig({
                 },
                 { text: "[hidden]", link: "/docs/semantics/attributes/hidden" },
                 {
+                  text: '[role="alert"]',
+                  link: "/docs/semantics/attributes/role-alert",
+                },
+                {
                   text: '[role="button"]',
                   link: "/docs/semantics/attributes/role-button",
                 },
@@ -411,6 +415,10 @@ export default defineConfig({
                 {
                   text: '[role="search"]',
                   link: "/docs/semantics/attributes/role-search",
+                },
+                {
+                  text: '[role="status"]',
+                  link: "/docs/semantics/attributes/role-status",
                 },
                 {
                   text: '[role="toolbar"]',

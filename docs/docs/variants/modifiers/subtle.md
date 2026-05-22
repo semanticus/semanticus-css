@@ -8,26 +8,26 @@ The `.subtle` class creates transparent background buttons with colored text and
 
 Apply `.subtle` to `<button>` elements:
 
-<HtmlPreviewer :code="SubtleDemo.buttons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overviewButtons()" :codeCollapsed="true" />
 
 ## Input Buttons
 
 Like `<input type="submit">` and `<input type="reset">`:
 
-<HtmlPreviewer :code="SubtleDemo.inputButtons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overviewInputButtons()" :codeCollapsed="true" />
 
 ## Role Buttons
 
 Any HTML element with `[role="button"]`:
 
-<HtmlPreviewer :code="SubtleDemo.roleButtonsAndDropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overviewRoleButtonsAndDropdowns()" :codeCollapsed="true" />
 
 ## Cards
 
 `.subtle` can also be applied to other elements or components, such as cards, to create a transparent background with colored borders and text.
 
-<HtmlPreviewer :code="SubtleDemo.cards()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overviewCards()" :codeCollapsed="true" />
 
 <script setup>
-import { SubtleDemo } from "@demos/overviews/variants/modifiers";
+import { SubtleDemo } from "@demos/variants";
 </script>

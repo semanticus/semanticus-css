@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import { SuccessDemo } from "@demos/overviews/variants/intent";
+import { SuccessDemo, GhostDemo, SubtleDemo } from "@demos/variants";
 
 const meta: Meta = {
   title: "Variants/Intent/Success",
@@ -10,21 +9,21 @@ const meta: Meta = {
 export default meta;
 
 export const links: StoryObj = {
-  render: () => SuccessDemo.links(),
+  render: () => SuccessDemo.overviewLinks(),
 };
 
 export const buttons: StoryObj = {
-  render: () => SuccessDemo.buttons(),
+  render: () => SuccessDemo.overviewButtons(),
 };
 
 export const cards: StoryObj = {
-  render: () => SuccessDemo.cards(),
+  render: () => SuccessDemo.overviewCards(),
 };
 
 export const subtleExamples: StoryObj = {
-  render: () => SubtleDemo.main({ class: 'success' }),
+  render: () => SubtleDemo.overview({ class: 'Success' }),
 };
 
 export const ghostExamples: StoryObj = {
-  render: () => GhostDemo.main({ class: 'success' }),
+  render: () => GhostDemo.overview({ class: 'Success' }),
 };

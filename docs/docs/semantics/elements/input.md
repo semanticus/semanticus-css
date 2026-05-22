@@ -134,15 +134,14 @@ Reset inputs have the secondary style by default.
 
 `.ghost` creates transparent background buttons with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="GhostDemo.inputButtons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overviewInputButtons()" :codeCollapsed="true" />
 
 `.subtle` creates buttons with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.inputButtons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overviewInputButtons()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/variants';
+import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 
 import { InputDemo } from "@demos/semantics/elements";
 const miscellaneousTypes = [

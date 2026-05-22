@@ -1,35 +1,63 @@
-import { RoleButtonDemo, RoleLinkDemo } from "@demos/semantics/attributes";
-import { ADemo, ButtonDemo } from "@demos/semantics/elements";
+import { ADemo, ButtonDemo, RoleButtonDemo, RoleLinkDemo } from "@demos/semantics";
 import { CardDemo } from "@demos/components";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
+
+function mergedAttrs(attrs: Record<string, string> = {}) {
+  return classMergeAttributes('warning', attrs);
+}
 
 export function anchor(attrs: Record<string, string> = {}) {
-  return ADemo.main({ ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return ADemo.main(mergedAttrs(attrs));
 }
 
 export function roleLink(tagName: string = "button", attrs: Record<string, string> = {}) {
-  return RoleLinkDemo.main(tagName, { ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return RoleLinkDemo.main(tagName, mergedAttrs(attrs));
 }
 
 export function button(attrs: Record<string, string> = {}) {
-  return ButtonDemo.main({ ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return ButtonDemo.main(mergedAttrs(attrs));
 }
 
 export function roleButton(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.main(tagName, { ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return RoleButtonDemo.main(tagName, mergedAttrs(attrs));
 }
 
 export function dropdown(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.dropdown({ ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return RoleButtonDemo.dropdown(mergedAttrs(attrs));
 }
 
 export function accordion(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.accordion({ ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return RoleButtonDemo.accordion(mergedAttrs(attrs));
 }
 
 export function card(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return CardDemo.main(tagName, { ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return CardDemo.main(tagName, mergedAttrs(attrs));
 }
 
 export function cardWithHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return CardDemo.withHeaderAndFooter(tagName, { ...attrs, class: ["warning", attrs.class || ""].join(' ') });
+  return CardDemo.withHeaderAndFooter(tagName, mergedAttrs(attrs));
+}
+
+/* Overviews */
+
+export function overviewLinks(attrs: Record<string, string> = {}) {
+  return `${ADemo.overview(mergedAttrs(attrs))}
+<hr>
+${RoleLinkDemo.overview(mergedAttrs(attrs))}`;
+}
+
+export function overviewButtons(attrs: Record<string, string> = {}) {
+  return renderElement('nav', { role: 'toolbar' }, `${button(attrs)}
+
+${roleButton("div", attrs)}
+
+${dropdown(attrs)}`);
+}
+
+export function overviewCards() {
+  return `${card("div", {})}
+
+<hr>
+
+${cardWithHeaderAndFooter("div", {})}`;
 }

@@ -15,6 +15,6 @@ export const BasicUsage: StoryObj = {
 };
 
 export const intentVariants: StoryObj = {
-  args: { html: IntentDemo.roleLinks() },
+  args: { html: IntentDemo.overviewRoleLinks() },
   render: (args) => args.html,
 };

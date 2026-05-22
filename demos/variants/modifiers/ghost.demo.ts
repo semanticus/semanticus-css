@@ -1,9 +1,51 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { CardDemo } from '@demos/components';
 import { ButtonDemo, InputDemo } from '@demos/semantics/elements';
-import { RoleButtonDemo } from '@demos/semantics/attributes';
+import { RoleButtonDemo, RoleStatusDemo } from '@demos/semantics/attributes';
 
-export function main(attrs: Record<string, string> = {}) {
+function mergedAttrs(attrs: Record<string, string> = {}) {
+  return classMergeAttributes('ghost', attrs);
+}
+
+export function main(tagName: string = 'div', attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, mergedAttrs(attrs), slot);
+}
+
+export function button(attrs: Record<string, string> = {}) {
+  return ButtonDemo.main(mergedAttrs(attrs));
+}
+
+export function inputButtons(attrs: Record<string, string> = {}) {
+  return InputDemo.buttons(mergedAttrs(attrs));
+}
+
+export function roleButton(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return RoleButtonDemo.main(tagName, mergedAttrs(attrs), `&lt;${tagName}&gt; as button`);
+}
+
+export function roleStatus(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return RoleStatusDemo.main(tagName, mergedAttrs(attrs), slot);
+}
+
+export function dropdown(attrs: Record<string, string> = {}) {
+  return RoleButtonDemo.dropdown(mergedAttrs(attrs));
+}
+
+export function accordion(attrs: Record<string, string> = {}) {
+  return RoleButtonDemo.accordion(mergedAttrs(attrs));
+}
+
+export function card(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return CardDemo.main(tagName, mergedAttrs(attrs));
+}
+
+export function cardWithHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return CardDemo.withHeaderAndFooter(tagName, mergedAttrs(attrs));
+}
+
+/* Overviews */
+
+export function overview(attrs: Record<string, string> = {}) {
   return `${renderElement('nav', { role: 'toolbar' }, `${button(attrs)}
 
   ${roleButton('section', attrs)}
@@ -17,44 +59,88 @@ ${card('div', attrs)}
 ${cardWithHeaderAndFooter('div', attrs)}`;
 }
 
-export function button(_attrs: Record<string, string> = {}) {
+export function overviewButtons(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return ButtonDemo.main({ ...attrs, class: `ghost ${_class || ''}` });
+  return renderElement('section', { role: 'toolbar' }, `${button(attrs)}
+${button(classMergeAttributes('secondary', attrs))}
+${button(classMergeAttributes('contrast', attrs))}
+${button(classMergeAttributes('success', attrs))}
+${button(classMergeAttributes('info', attrs))}
+${button(classMergeAttributes('warning', attrs))}
+${button(classMergeAttributes('danger', attrs))}`);
 }
 
-export function inputButtons(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return InputDemo.buttons({ ...attrs, class: `ghost ${_class || ''}` });
+export function overviewInputButtons(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, inputButtons(attrs));
 }
 
-export function roleButton(tagName: string = "div", _attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
+export function overviewRoleButtonsAndDropdowns(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${overviewRoleButtons(attrs)}
 
-  return RoleButtonDemo.main(tagName, { ...attrs, class: `ghost ${_class || ''}` }, `&lt;${tagName}&gt; as button`);
+<hr>
+
+${overviewDropdowns(attrs)}`);
 }
 
-export function dropdown(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return RoleButtonDemo.dropdown({ ...attrs, class: `ghost ${_class || ''}` });
+export function overviewRoleButtons(attrs: Record<string, string> = {}) {
+  return `${roleButton('section', attrs)}
+${roleButton('section', classMergeAttributes('secondary', attrs))}
+${roleButton('section', classMergeAttributes('contrast', attrs))}
+${roleButton('section', classMergeAttributes('success', attrs))}
+${roleButton('section', classMergeAttributes('info', attrs))}
+${roleButton('section', classMergeAttributes('warning', attrs))}
+${roleButton('section', classMergeAttributes('danger', attrs))}`;
 }
 
-export function accordion(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return RoleButtonDemo.accordion({ ...attrs, class: `ghost ${_class || ''}` });
+export function overviewRoleStatuses(attrs: Record<string, string> = {}) {
+  return `${roleStatus('section', attrs)}
+${roleStatus('section', classMergeAttributes('secondary', attrs))}
+${roleStatus('section', classMergeAttributes('contrast', attrs))}
+${roleStatus('section', classMergeAttributes('success', attrs))}
+${roleStatus('section', classMergeAttributes('info', attrs))}
+${roleStatus('section', classMergeAttributes('warning', attrs))}
+${roleStatus('section', classMergeAttributes('danger', attrs))}`;
 }
 
-export function card(tagName: string = "div", _attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return CardDemo.main(tagName, { ...attrs, class: `ghost ${_class || ''}` });
+export function overviewDropdowns(attrs: Record<string, string> = {}) {
+  return `${dropdown(attrs)}
+${dropdown(classMergeAttributes('secondary', attrs))}
+${dropdown(classMergeAttributes('contrast', attrs))}
+${dropdown(classMergeAttributes('success', attrs))}
+${dropdown(classMergeAttributes('info', attrs))}
+${dropdown(classMergeAttributes('warning', attrs))}
+${dropdown(classMergeAttributes('danger', attrs))}`;
 }
 
-export function cardWithHeaderAndFooter(tagName: string = "div", _attrs: Record<string, string> = {}) {
+export function overviewAccordions(attrs: Record<string, string> = {}) {
+  return `${accordion(attrs)}
+${accordion(classMergeAttributes('secondary', attrs))}
+${accordion(classMergeAttributes('contrast', attrs))}
+${accordion(classMergeAttributes('success', attrs))}
+${accordion(classMergeAttributes('info', attrs))}
+${accordion(classMergeAttributes('warning', attrs))}
+${accordion(classMergeAttributes('danger', attrs))}`;
+}
+
+export function overviewCards(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${card('div', classMergeAttributes('primary', attrs))}
+${card('div', classMergeAttributes('secondary', attrs))}
+${card('div', classMergeAttributes('contrast', attrs))}
+${card('div', classMergeAttributes('success', attrs))}
+${card('div', classMergeAttributes('info', attrs))}
+${card('div', classMergeAttributes('warning', attrs))}
+${card('div', classMergeAttributes('danger', attrs))}`);
+}
+
+export function overviewCardsWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
   const { class: _class, ...attrs } = _attrs;
 
-  return CardDemo.withHeaderAndFooter(tagName, { ...attrs, class: `ghost ${_class || ''}` });
+  return renderElement('section', {}, `${cardWithHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
+${cardWithHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
+${cardWithHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
+${cardWithHeaderAndFooter('div', classMergeAttributes('success', attrs))}
+${cardWithHeaderAndFooter('div', classMergeAttributes('info', attrs))}
+${cardWithHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
+${cardWithHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
 }

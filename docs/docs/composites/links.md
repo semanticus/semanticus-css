@@ -18,7 +18,7 @@ Simply add `role="link"` to any element to make it behave like a link, including
 
 To convey **intent** and **importance**, links can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.anchorsAndRoleLinks()" />
+<HtmlPreviewer :code="IntentDemo.overviewAnchorsAndRoleLinks()" />
 
 <script setup>
 import { ADemo, RoleLinkDemo } from '@demos/semantics';

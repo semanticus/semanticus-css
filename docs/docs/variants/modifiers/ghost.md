@@ -8,26 +8,26 @@ The `.ghost` class creates transparent background buttons with colored text and 
 
 Apply `.ghost` to `<button>` elements:
 
-<HtmlPreviewer :code="GhostDemo.buttons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overviewButtons()" :codeCollapsed="true" />
 
 ## Input Buttons
 
 Like `<input type="submit">` and `<input type="reset">`:
 
-<HtmlPreviewer :code="GhostDemo.inputButtons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overviewInputButtons()" :codeCollapsed="true" />
 
 ## Role Buttons
 
 Any HTML element with `[role="button"]`:
 
-<HtmlPreviewer :code="GhostDemo.roleButtonsAndDropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overviewRoleButtonsAndDropdowns()" :codeCollapsed="true" />
 
 ## Cards
 
 `.ghost` can also be applied to other elements or components, such as cards, to create a transparent background with colored borders and text.
 
-<HtmlPreviewer :code="GhostDemo.cards()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overviewCards()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo } from "@demos/overviews/variants/modifiers";
+import { GhostDemo } from "@demos/variants";
 </script>

@@ -24,20 +24,19 @@ The `.card` class works on any semantic element. Choose the element that best ma
 
 To convey **intent** and **importance**, cards can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.cards()" :codeCollapsed="true" />
+<HtmlPreviewer :code="IntentDemo.overviewCards()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.subtle` creates cards with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.cards()" :codeCollapsed="true" />
+<HtmlPreviewer :code="SubtleDemo.overviewCards()" :codeCollapsed="true" />
 
 `.ghost` creates transparent background cards with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="GhostDemo.cards()" :codeCollapsed="true" />
+<HtmlPreviewer :code="GhostDemo.overviewCards()" :codeCollapsed="true" />
 
 <script setup>
 import { CardDemo } from "@demos/components";
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/variants';
+import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 </script>

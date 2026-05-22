@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import { SecondaryDemo } from "@demos/overviews/variants/intent";
+import { SecondaryDemo, GhostDemo, SubtleDemo } from "@demos/variants";
 
 const meta: Meta = {
   title: "Variants/Intent/Secondary",
@@ -10,21 +9,21 @@ const meta: Meta = {
 export default meta;
 
 export const links: StoryObj = {
-  render: () => SecondaryDemo.links(),
+  render: () => SecondaryDemo.overviewLinks(),
 };
 
 export const buttons: StoryObj = {
-  render: () => SecondaryDemo.buttons(),
+  render: () => SecondaryDemo.overviewButtons(),
 };
 
 export const cards: StoryObj = {
-  render: () => SecondaryDemo.cards(),
+  render: () => SecondaryDemo.overviewCards(),
 };
 
 export const subtleExamples: StoryObj = {
-  render: () => SubtleDemo.main({ class: 'secondary' }),
+  render: () => SubtleDemo.overview({ class: 'Secondary' }),
 };
 
 export const ghostExamples: StoryObj = {
-  render: () => GhostDemo.main({ class: 'secondary' }),
+  render: () => GhostDemo.overview({ class: 'Secondary' }),
 };

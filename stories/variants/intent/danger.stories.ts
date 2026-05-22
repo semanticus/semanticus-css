@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import { DangerDemo } from "@demos/overviews/variants/intent";
+import { DangerDemo, GhostDemo, SubtleDemo } from "@demos/variants";
 
 const meta: Meta = {
   title: "Variants/Intent/Danger",
@@ -10,21 +9,21 @@ const meta: Meta = {
 export default meta;
 
 export const links: StoryObj = {
-  render: () => DangerDemo.links(),
+  render: () => DangerDemo.overviewLinks(),
 };
 
 export const buttons: StoryObj = {
-  render: () => DangerDemo.buttons(),
+  render: () => DangerDemo.overviewButtons(),
 };
 
 export const cards: StoryObj = {
-  render: () => DangerDemo.cards(),
+  render: () => DangerDemo.overviewCards(),
 };
 
 export const subtleExamples: StoryObj = {
-  render: () => SubtleDemo.main({ class: 'danger' }),
+  render: () => SubtleDemo.overview({ class: 'Danger' }),
 };
 
 export const ghostExamples: StoryObj = {
-  render: () => GhostDemo.main({ class: 'danger' }),
+  render: () => GhostDemo.overview({ class: 'Danger' }),
 };

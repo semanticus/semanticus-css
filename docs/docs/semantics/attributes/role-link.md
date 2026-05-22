@@ -16,7 +16,7 @@ This is useful when a non-link element (e.g. `<button>`, `<div>`) needs to behav
 
 To convey **intent** and **importance**, links can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.roleLinks()" />
+<HtmlPreviewer :code="IntentDemo.overviewRoleLinks()" />
 
 <script setup>
 import { RoleLinkDemo } from '@demos/semantics';

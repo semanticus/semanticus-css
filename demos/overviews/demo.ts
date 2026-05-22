@@ -1,8 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-import { IntentDemo } from '@demos/variants';
+import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 import { CardDemo } from "@demos/components";
-import { GhostDemo, SubtleDemo } from "@demos/overviews";
 import {
   ADemo,
   InputDemo,
@@ -616,9 +615,9 @@ export function fullBundleColorsButtons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
-  ${IntentDemo.buttons()}
-  ${SubtleDemo.buttons()}
-  ${GhostDemo.buttons()}
+  ${IntentDemo.overviewButtons()}
+  ${SubtleDemo.overviewButtons()}
+  ${GhostDemo.overviewButtons()}
 </section>`;
 }
 
@@ -644,15 +643,15 @@ function fullBundleColorsDropdowns() {
 
   <section role="toolbar">
     <section>
-      ${IntentDemo.dropdowns()}
+      ${IntentDemo.overviewDropdowns()}
     </section>
 
     <section>
-      ${SubtleDemo.dropdowns()}
+      ${SubtleDemo.overviewDropdowns()}
     </section>
 
     <section>
-      ${GhostDemo.dropdowns()}
+      ${GhostDemo.overviewDropdowns()}
     </section>
   </section>
 </section>`;
@@ -669,9 +668,9 @@ function fullBundleColorsCards() {
   </section>
 
   <section role="toolbar">
-    ${IntentDemo.cardsWithHeaderAndFooter()}
-    ${SubtleDemo.cardsWithHeaderAndFooter()}
-    ${GhostDemo.cardsWithHeaderAndFooter()}
+    ${IntentDemo.overviewCardsWithHeaderAndFooter()}
+    ${SubtleDemo.overviewCardsWithHeaderAndFooter()}
+    ${GhostDemo.overviewCardsWithHeaderAndFooter()}
   </section>
 </section>`;
 }

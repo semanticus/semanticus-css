@@ -19,6 +19,6 @@ export const Active: StoryObj = {
 };
 
 export const intentVariants: StoryObj = {
-  args: { html: IntentDemo.anchors() },
+  args: { html: IntentDemo.overviewAnchors() },
   render: (args) => args.html,
 };
