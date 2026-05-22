@@ -6,13 +6,13 @@ title: 'role="status"'
 
 Adding `role="status"` to an element will stylize it as an **alert** component and make it accessible to screen readers as a status message.
 
-> **Accessibility:** Whenever you need to provide non-critical, polite announcements, like **success** and **info** messages, `role="status"` should be used.
+> **Accessibility:** Whenever you need to provide non-critical announcements, like **success** and **info** messages, `role="status"` should be used.
 >
-> Also, adding `aria-live="polite"` ensures that screen readers will wait until the user finishes whatever they are currently reading before announcing the status message.
+> Also, consider adding `aria-live="polite"` which ensures that screen readers will wait until the user finishes whatever they are currently reading before announcing the status message.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleStatusDemo.main()" />
+<HtmlPreviewer :code="RoleStatusDemo.main('div', { 'aria-live': 'polite' })" />
 
 ## Intent Variants
 

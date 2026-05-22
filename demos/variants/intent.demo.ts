@@ -6,7 +6,7 @@ import { RoleLinkDemo, RoleButtonDemo, RoleStatusDemo } from '@demos/semantics/a
 /* Overviews */
 
 export function overviewButtons(attrs: Record<string, string> = {}) {
-  return renderElement('section', { role: 'toolbar' }, `${ButtonDemo.main(attrs)}
+  return renderElement('section', { role: 'toolbar' }, `${ButtonDemo.main(classMergeAttributes('primary', attrs))}
 ${ButtonDemo.main(classMergeAttributes('secondary', attrs))}
 ${ButtonDemo.main(classMergeAttributes('contrast', attrs))}
 ${ButtonDemo.main(classMergeAttributes('success', attrs))}
@@ -28,7 +28,7 @@ ${overviewDropdowns(attrs)}`);
 }
 
 export function overviewRoleButtons(attrs: Record<string, string> = {}) {
-  return `${RoleButtonDemo.main('section', attrs, '&lt;section&gt; as button')}
+  return `${RoleButtonDemo.main('section', classMergeAttributes('primary', attrs), '&lt;section&gt; as button')}
 ${RoleButtonDemo.main('section', classMergeAttributes('secondary', attrs), '&lt;section&gt; as button')}
 ${RoleButtonDemo.main('section', classMergeAttributes('contrast', attrs), '&lt;section&gt; as button')}
 ${RoleButtonDemo.main('section', classMergeAttributes('success', attrs), '&lt;section&gt; as button')}
@@ -38,7 +38,7 @@ ${RoleButtonDemo.main('section', classMergeAttributes('danger', attrs), '&lt;sec
 }
 
 export function overviewDropdowns(attrs: Record<string, string> = {}) {
-  return `${RoleButtonDemo.dropdown(attrs)}
+  return `${RoleButtonDemo.dropdown(classMergeAttributes('primary', attrs))}
 ${RoleButtonDemo.dropdown(classMergeAttributes('secondary', attrs))}
 ${RoleButtonDemo.dropdown(classMergeAttributes('contrast', attrs))}
 ${RoleButtonDemo.dropdown(classMergeAttributes('success', attrs))}
@@ -48,7 +48,7 @@ ${RoleButtonDemo.dropdown(classMergeAttributes('danger', attrs))}`;
 }
 
 export function overviewAccordions(attrs: Record<string, string> = {}) {
-  return `${RoleButtonDemo.accordion(attrs)}
+  return `${RoleButtonDemo.accordion(classMergeAttributes('primary', attrs))}
 ${RoleButtonDemo.accordion(classMergeAttributes('secondary', attrs))}
 ${RoleButtonDemo.accordion(classMergeAttributes('contrast', attrs))}
 ${RoleButtonDemo.accordion(classMergeAttributes('success', attrs))}
@@ -86,7 +86,7 @@ ${overviewRoleLinks(attrs)}`;
 }
 
 export function overviewAnchors(attrs: Record<string, string> = {}) {
-  return renderElement('section', { role: 'toolbar' }, `${ADemo.main(attrs, 'Primary')}
+  return renderElement('section', { role: 'toolbar' }, `${ADemo.main(classMergeAttributes('primary', attrs), 'Primary')}
 ${ADemo.main(classMergeAttributes('secondary', attrs), 'Secondary')}
 ${ADemo.main(classMergeAttributes('contrast', attrs), 'Contrast')}
 ${ADemo.main(classMergeAttributes('success', attrs), 'Success')}
@@ -96,7 +96,7 @@ ${ADemo.main(classMergeAttributes('danger', attrs), 'Danger')}`);
 }
 
 export function overviewRoleLinks(attrs: Record<string, string> = {}) {
-    return renderElement('section', { role: 'toolbar' }, `${RoleLinkDemo.main('div', attrs, 'Primary')}
+    return renderElement('section', { role: 'toolbar' }, `${RoleLinkDemo.main('div', classMergeAttributes('primary', attrs), 'Primary')}
 ${RoleLinkDemo.main('div', classMergeAttributes('secondary', attrs), 'Secondary')}
 ${RoleLinkDemo.main('div', classMergeAttributes('contrast', attrs), 'Contrast')}
 ${RoleLinkDemo.main('div', classMergeAttributes('success', attrs), 'Success')}
@@ -106,7 +106,7 @@ ${RoleLinkDemo.main('div', classMergeAttributes('danger', attrs), 'Danger')}`);
 }
 
 export function overviewRoleStatuses(attrs: Record<string, string> = {}) {
-    return `${RoleStatusDemo.main('div', attrs, 'Primary')}
+    return `${RoleStatusDemo.main('div', classMergeAttributes('primary', attrs), 'Primary')}
 ${RoleStatusDemo.main('div', classMergeAttributes('secondary', attrs), 'Secondary')}
 ${RoleStatusDemo.main('div', classMergeAttributes('contrast', attrs), 'Contrast')}
 ${RoleStatusDemo.main('div', classMergeAttributes('success', attrs), 'Success')}

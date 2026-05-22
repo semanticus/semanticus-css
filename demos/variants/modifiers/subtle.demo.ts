@@ -94,7 +94,7 @@ ${roleButton('section', classMergeAttributes('danger', attrs))}`;
 }
 
 export function overviewRoleStatuses(attrs: Record<string, string> = {}) {
-  return `${roleStatus('section', attrs)}
+  return `${roleStatus('section', classMergeAttributes('primary', attrs))}
 ${roleStatus('section', classMergeAttributes('secondary', attrs))}
 ${roleStatus('section', classMergeAttributes('contrast', attrs))}
 ${roleStatus('section', classMergeAttributes('success', attrs))}
