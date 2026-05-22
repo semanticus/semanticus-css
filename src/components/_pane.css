@@ -5,7 +5,15 @@
   --shadow: none;
   --dialog-border: transparent;
   --border-color: transparent;
-  --color-background: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
+  --color-background: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-50), transparent 95%)
+  );
+  --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
 
   border-radius: 0;
+
+  > :is(header, footer) {
+    border-radius: 0;
+  }
 }
