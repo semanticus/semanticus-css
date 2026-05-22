@@ -1,5 +1,5 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { CardDemo } from '@demos/components';
+import { CardDemo, PaneDemo } from '@demos/components';
 import { ADemo, ButtonDemo, InputDemo } from '@demos/semantics/elements';
 import { RoleLinkDemo, RoleButtonDemo, RoleStatusDemo } from '@demos/semantics/attributes';
 
@@ -65,6 +65,16 @@ ${CardDemo.main('div', classMergeAttributes('success', attrs))}
 ${CardDemo.main('div', classMergeAttributes('info', attrs))}
 ${CardDemo.main('div', classMergeAttributes('warning', attrs))}
 ${CardDemo.main('div', classMergeAttributes('danger', attrs))}`);
+}
+
+export function overviewPanes(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${PaneDemo.main('div', classMergeAttributes('primary', attrs))}
+${PaneDemo.main('div', classMergeAttributes('secondary', attrs))}
+${PaneDemo.main('div', classMergeAttributes('contrast', attrs))}
+${PaneDemo.main('div', classMergeAttributes('success', attrs))}
+${PaneDemo.main('div', classMergeAttributes('info', attrs))}
+${PaneDemo.main('div', classMergeAttributes('warning', attrs))}
+${PaneDemo.main('div', classMergeAttributes('danger', attrs))}`);
 }
 
 export function overviewCardsWithHeaderAndFooter(attrs: Record<string, string> = {}) {

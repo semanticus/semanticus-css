@@ -1,5 +1,5 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { CardDemo } from '@demos/components';
+import { CardDemo, PaneDemo } from '@demos/components';
 import { ButtonDemo, InputDemo } from '@demos/semantics/elements';
 import { RoleButtonDemo, RoleStatusDemo } from '@demos/semantics/attributes';
 
@@ -37,6 +37,10 @@ export function accordion(attrs: Record<string, string> = {}) {
 
 export function card(tagName: string = "div", attrs: Record<string, string> = {}) {
   return CardDemo.main(tagName, mergedAttrs(attrs));
+}
+
+export function pane(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return PaneDemo.main(tagName, mergedAttrs(attrs));
 }
 
 export function cardWithHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
@@ -121,6 +125,16 @@ ${accordion(classMergeAttributes('success', attrs))}
 ${accordion(classMergeAttributes('info', attrs))}
 ${accordion(classMergeAttributes('warning', attrs))}
 ${accordion(classMergeAttributes('danger', attrs))}`;
+}
+
+export function overviewPanes(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${pane('div', classMergeAttributes('primary', attrs))}
+${pane('div', classMergeAttributes('secondary', attrs))}
+${pane('div', classMergeAttributes('contrast', attrs))}
+${pane('div', classMergeAttributes('success', attrs))}
+${pane('div', classMergeAttributes('info', attrs))}
+${pane('div', classMergeAttributes('warning', attrs))}
+${pane('div', classMergeAttributes('danger', attrs))}`);
 }
 
 export function overviewCards(attrs: Record<string, string> = {}) {
