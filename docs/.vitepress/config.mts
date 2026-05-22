@@ -331,6 +331,7 @@ export default defineConfig({
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
+            { text: "List Group", link: "/docs/composites/list-group" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },

@@ -8,8 +8,13 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: RoleGroupDemo.main() },
+  render: (args) => args.html,
+};
+
+export const unorderedList: StoryObj = {
+  args: { html: RoleGroupDemo.unorderedList() },
   render: (args) => args.html,
 };
 

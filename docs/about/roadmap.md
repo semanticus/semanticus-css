@@ -19,7 +19,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ✅ | `aria-disabled="true"` |
 | ✅ | `role="status"` and `role="alert"` |
-| ⌛ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
+| ✅ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
 
 ## Components
 
