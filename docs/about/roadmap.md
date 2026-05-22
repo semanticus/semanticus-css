@@ -93,6 +93,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.icon-*` component documentation |
 | 🚧 | Alerts composite documentation |
 | 🚧 | Navigation composite documentation |
+| ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
 | ⌛ | List Group composite documentation |
 | ⌛ | `.sidebar` component documentation |
