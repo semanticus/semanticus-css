@@ -12,7 +12,7 @@ export const BasicUsage: StoryObj = {
   render: () => PaneDemo.main(),
 };
 
-export const heroSection: StoryObj = {
+export const HeroSection: StoryObj = {
   render: () => PaneDemo.heroSection({ class: 'primary subtle' }),
 };
 

@@ -36,7 +36,7 @@ ${closeButton(attrs.id)}`)}
 }
 
 function closeButton(commandFor: string) {
-  return ButtonDemo.closeButton({ commandfor: commandFor, command: "close" });;
+  return ButtonDemo.closeButton({ commandfor: commandFor, command: "close" });
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
