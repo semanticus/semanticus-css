@@ -102,13 +102,13 @@ ${roleButton('section', classMergeAttributes('danger', attrs))}`;
 }
 
 export function overviewRoleStatuses(attrs: Record<string, string> = {}) {
-  return `${roleStatus('section', classMergeAttributes('primary', attrs))}
-${roleStatus('section', classMergeAttributes('secondary', attrs))}
-${roleStatus('section', classMergeAttributes('contrast', attrs))}
-${roleStatus('section', classMergeAttributes('success', attrs))}
-${roleStatus('section', classMergeAttributes('info', attrs))}
-${roleStatus('section', classMergeAttributes('warning', attrs))}
-${roleStatus('section', classMergeAttributes('danger', attrs))}`;
+  return `${roleStatus('section', classMergeAttributes('primary', attrs), 'Primary')}
+${roleStatus('section', classMergeAttributes('secondary', attrs), 'Secondary')}
+${roleStatus('section', classMergeAttributes('contrast', attrs), 'Contrast')}
+${roleStatus('section', classMergeAttributes('success', attrs), 'Success')}
+${roleStatus('section', classMergeAttributes('info', attrs), 'Info')}
+${roleStatus('section', classMergeAttributes('warning', attrs), 'Warning')}
+${roleStatus('section', classMergeAttributes('danger', attrs), 'Danger')}`;
 }
 
 export function overviewDropdowns(attrs: Record<string, string> = {}) {

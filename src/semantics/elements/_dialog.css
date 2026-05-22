@@ -19,7 +19,7 @@ dialog {
   border-radius: var(--radius);
   background: var(--dialog-fill);
   box-shadow: var(--dialog-shadow);
-  border: 0;
+  border: var(--border-size) solid var(--border-color);
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
