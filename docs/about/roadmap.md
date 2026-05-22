@@ -17,8 +17,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactor **Dropdown**, using the `ARIA: menu pattern` |
 | ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
-| 🚧 | `role="status"` and `role="alert"` |
 | ✅ | `aria-disabled="true"` |
+| 🚧 | `role="status"` and `role="alert"` |
 | ⌛ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
 
 ## Components
@@ -50,12 +50,18 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.danger` intent variant |
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
-| 🚧 | `.striped` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
+| 🚧 | `.striped` modifier variant |
+| ⌛ | Extend **intent variants** to stylize **list group** |
+| ⌛ | Extend **intent variants** to stylize `<progress>` |
+
+## Known Issues
+
+| Status | Feature |
+| --- | --- |
 | ⌛ | Fix: When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
 | ⌛ | Fix: **shadow** utility classes don't seem to affect `.card` styling |
-| ⌛ | Extend **intent variants** to stylize `<progress>` |
-| ⌛ | Extend **intent variants** to stylize **list group** |
+| ⌛ | Fix: When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
 
 ## Interactive Patterns
 
