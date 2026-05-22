@@ -1,22 +1,32 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
+import { ButtonDemo } from "@demos/semantics";
+
+const defaultMessage = "10 results found";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "status" }, slot || `10 results found`);
+  return renderElement(tagName, { ...attrs, role: "status" }, slot || defaultMessage);
 }
 
 export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "status" }, slot || `10 results found`);
+  return renderElement(tagName, { ...attrs, role: "status" }, renderElement('nav', {}, `${slot || defaultMessage}
+${ButtonDemo.closeButton()}`));
+}
+
+export function withHgroup() {
+  return withCloseButton('div', { class: 'contrast' }, `<hgroup>
+  <h2>You appear to be offline</h2>
+  <p>Please check your internet connection, to get the latest updates.</p>
+</hgroup>`);
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${main('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), 'Primary')}
-${main('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), 'Secondary')}
-${main('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), 'Contrast')}
-${main('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), 'Success')}
-${main('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), 'Info')}
-${main('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), 'Warning')}
-${main('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), 'Danger')}`;
+    return `${main('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), 'Uploading document 1 of 3...')}
+${main('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), defaultMessage)}
+${main('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), defaultMessage)}
+${main('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), 'Item saved successfully!')}
+${main('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), 'We are fetching your latest account details...')}
+${main('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), 'Your session will expire in 2 minutes.')}
+${main('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), 'Unable to connect to the server. Please try again.')}`;
 }
 
 export function subtleVariants(attrs: Record<string, string> = {}) {

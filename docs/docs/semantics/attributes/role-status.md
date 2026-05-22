@@ -7,8 +7,6 @@ title: 'role="status"'
 Adding `role="status"` to an element will stylize it as an **alert** component and make it accessible to screen readers as a status message.
 
 > **Accessibility:** Whenever you need to provide non-critical announcements, like **success** and **info** messages, `role="status"` should be used.
->
-> Also, consider adding `aria-live="polite"` which ensures that screen readers will wait until the user finishes whatever they are currently reading before announcing the status message.
 
 ## Basic Usage
 
@@ -16,7 +14,13 @@ Adding `role="status"` to an element will stylize it as an **alert** component a
 
 ## With Close Button
 
-<HtmlPreviewer :code="RoleStatusDemo.withCloseButton('div', { 'aria-live': 'polite' })" />
+Use a [Close Button](/docs/composites/close-button) inside a `<nav>`, which will justify its contents to the left and right, to create a status message with a close button.
+
+<HtmlPreviewer :code="RoleStatusDemo.withCloseButton()" />
+
+## With title and description
+
+<HtmlPreviewer :code="RoleStatusDemo.withHgroup()" />
 
 ## Intent Variants
 

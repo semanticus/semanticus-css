@@ -1,60 +1,60 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { ButtonDemo } from "@demos/semantics";
 
-function alertSection(
-  attrs: Record<string, string> = {},
-  slot: string = "",
-  role: "alert" | "status" = "status"
-) {
-  const { class: _class, ...rest } = attrs;
-  return renderElement(
-    "section",
-    { ...rest, class: `alert ${_class || ""}`, role },
-    `<p>${slot}</p>
-<button aria-label="Close alert" class="close"></button>`
-  );
+const defaultMessage = "Unable to connect to the server. Please try again.";
+
+export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, { ...attrs, role: "alert" }, slot || defaultMessage);
 }
 
-export function inlineAlerts() {
-  return `${alertSection({ class: "success" }, "Your changes have been saved successfully!", "status")}
-
-${alertSection({ class: "info" }, "Please be aware of the new updates.", "status")}
-
-${alertSection({ class: "warning ghost" }, "Your subscription is about to expire.", "alert")}
-
-${alertSection({ class: "danger ghost" }, "An error occurred while processing your request. Please try again later.", "alert")}`;
+export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, { ...attrs, role: "alert" }, renderElement('nav', {}, `${slot || defaultMessage}
+${ButtonDemo.closeButton()}`));
 }
 
-export function floatingAlerts() {
-  return `<div class="position-fixed top-0 end-0 m-3 vstack gap-2" style="max-width: 320px; z-index: 1050;" role="region" aria-label="Notifications">
-  ${renderElement(
-    "section",
-    { class: "alert success", role: "status", "aria-live": "polite" },
-    `<p>Changes saved successfully</p>
-<button aria-label="Dismiss notification" class="close"></button>`
-  )}
-  ${renderElement(
-    "section",
-    { class: "alert danger", role: "alert" },
-    `<p>Connection lost. Reconnecting...</p>
-<button aria-label="Dismiss notification" class="close"></button>`
-  )}
-</div>`;
+export function withHgroup() {
+  return withCloseButton('div', { class: 'danger' }, `<hgroup>
+  <h2>Connection error</h2>
+  <p>${defaultMessage}</p>
+</hgroup>`);
 }
 
-export function inlineAlerts2() {
-  return `${inlineAlert({ class: `success` }, "Your changes have been saved successfully!")}
-
-${inlineAlert({ class: `info` }, "Please be aware of the new updates.")}
-
-${inlineAlert({ class: `warning ghost` }, "Your subscription is about to expire.")}
-
-${inlineAlert({ class: `danger ghost` }, "An error occurred while processing your request. Please try again later.")}`;
+export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
+    return `${main('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), 'Uploading document 1 of 3...')}
+${main('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), defaultMessage)}
+${main('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), defaultMessage)}
+${main('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), 'Item saved successfully!')}
+${main('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), 'We are fetching your latest account details...')}
+${main('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), 'Your session will expire in 2 minutes.')}
+${main('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), 'Unable to connect to the server. Please try again.')}`;
 }
 
-export function inlineAlert(_attrs: Record<string, string> = {}, slot: string = "") {
-  const { class: _class, ...attrs } = _attrs;
+export function subtleVariants(attrs: Record<string, string> = {}) {
+  return intentVariants(attrs, 'subtle');
+}
 
-  return renderElement('section', { ...attrs, class: `panel ${_class || ''}` }, `<p>${slot}</p>
-${ButtonDemo.closeButton()}`);
+export function ghostVariants(attrs: Record<string, string> = {}) {
+  return intentVariants(attrs, 'ghost');
+}
+
+export function overviewVariants(attrs: Record<string, string> = {}) {
+  return renderElement('section', attrs, `<section class="mb-0" role="toolbar">
+  ${main()}
+  ${main('div', { class: 'subtle' })}
+  ${main('div', { class: 'ghost' })}
+</section>
+
+<section role="toolbar">
+  <div>
+    ${intentVariants()}
+  </div>
+
+  <div>
+    ${subtleVariants()}
+  </div>
+
+  <div>
+    ${ghostVariants()}
+  </div>
+</section>`);
 }

@@ -16,14 +16,7 @@
   mask-repeat: no-repeat;
   vertical-align: -.199em;
   align-self: center;
-
-  &:is(button:not([role="link"])) {
-    color: var(--color-background);
-  }
-
-  &:not(a, [role="link"]) {
-    color: inherit;
-  }
+  color: inherit;
 }
 
 .icon-checkbox {
