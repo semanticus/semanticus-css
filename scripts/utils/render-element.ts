@@ -19,9 +19,10 @@ export function renderElement(
 
   if ((renderedAttrs ?? "") !== "") renderedAttrs = ` ${renderedAttrs}`;
 
-  // if (content.length === 0) {
-  //   return `<${tagName}${renderedAttrs} />`;
-  // }
+  // This is necessary for self-closing tags like <img> or <input>. If there is no content, we can render it as a self-closing tag.
+  if (content.length === 0) {
+    return `<${tagName}${renderedAttrs} />`;
+  }
 
   return `<${tagName}${renderedAttrs}>${content}</${tagName}>`;
 }
