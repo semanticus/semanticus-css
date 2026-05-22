@@ -127,16 +127,6 @@ ${accordion(classMergeAttributes('warning', attrs))}
 ${accordion(classMergeAttributes('danger', attrs))}`;
 }
 
-export function overviewPanes(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, `${pane('div', classMergeAttributes('primary', attrs))}
-${pane('div', classMergeAttributes('secondary', attrs))}
-${pane('div', classMergeAttributes('contrast', attrs))}
-${pane('div', classMergeAttributes('success', attrs))}
-${pane('div', classMergeAttributes('info', attrs))}
-${pane('div', classMergeAttributes('warning', attrs))}
-${pane('div', classMergeAttributes('danger', attrs))}`);
-}
-
 export function overviewCards(attrs: Record<string, string> = {}) {
   return renderElement('section', {}, `${card('div', classMergeAttributes('primary', attrs))}
 ${card('div', classMergeAttributes('secondary', attrs))}
@@ -157,4 +147,26 @@ ${cardWithHeaderAndFooter('div', classMergeAttributes('success', attrs))}
 ${cardWithHeaderAndFooter('div', classMergeAttributes('info', attrs))}
 ${cardWithHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
 ${cardWithHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
+}
+
+export function overviewPanes(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${pane('div', classMergeAttributes('primary', attrs))}
+${pane('div', classMergeAttributes('secondary', attrs))}
+${pane('div', classMergeAttributes('contrast', attrs))}
+${pane('div', classMergeAttributes('success', attrs))}
+${pane('div', classMergeAttributes('info', attrs))}
+${pane('div', classMergeAttributes('warning', attrs))}
+${pane('div', classMergeAttributes('danger', attrs))}`);
+}
+
+export function overviewPanesWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
+  const { class: _class, ...attrs } = _attrs;
+
+  return renderElement('section', {}, `${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('success', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('info', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
 }

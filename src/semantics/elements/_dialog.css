@@ -61,6 +61,8 @@ dialog {
   > header {
     margin-top: calc(var(--spacing) * -1);
     border-bottom: var(--border-size) solid var(--dialog-section-border);
+    border-top-right-radius: var(--radius);
+    border-top-left-radius: var(--radius);
     justify-content: space-between;
   }
 
@@ -68,6 +70,8 @@ dialog {
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
     border-top: var(--border-size) solid var(--dialog-section-border);
+    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
     justify-content: end;
   }
 

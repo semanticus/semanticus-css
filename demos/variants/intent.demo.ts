@@ -67,6 +67,16 @@ ${CardDemo.main('div', classMergeAttributes('warning', attrs))}
 ${CardDemo.main('div', classMergeAttributes('danger', attrs))}`);
 }
 
+export function overviewCardsWithHeaderAndFooter(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${CardDemo.withHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
+${CardDemo.withHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
+${CardDemo.withHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
+${CardDemo.withHeaderAndFooter('div', classMergeAttributes('success', attrs))}
+${CardDemo.withHeaderAndFooter('div', classMergeAttributes('info', attrs))}
+${CardDemo.withHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
+${CardDemo.withHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
+}
+
 export function overviewPanes(attrs: Record<string, string> = {}) {
   return renderElement('section', {}, `${PaneDemo.main('div', classMergeAttributes('primary', attrs))}
 ${PaneDemo.main('div', classMergeAttributes('secondary', attrs))}
@@ -77,14 +87,14 @@ ${PaneDemo.main('div', classMergeAttributes('warning', attrs))}
 ${PaneDemo.main('div', classMergeAttributes('danger', attrs))}`);
 }
 
-export function overviewCardsWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, `${CardDemo.withHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
-${CardDemo.withHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
-${CardDemo.withHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
-${CardDemo.withHeaderAndFooter('div', classMergeAttributes('success', attrs))}
-${CardDemo.withHeaderAndFooter('div', classMergeAttributes('info', attrs))}
-${CardDemo.withHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
-${CardDemo.withHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
+export function overviewPanesWithHeaderAndFooter(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('success', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('info', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
+${PaneDemo.withHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
 }
 
 export function overviewAnchorsAndRoleLinks(attrs: Record<string, string> = {}) {

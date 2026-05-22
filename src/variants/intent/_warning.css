@@ -10,7 +10,7 @@
   }
 }
 
-:is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
+:is(button, .pane, [role="status"], [role="alert"], [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.warning {
     --color-background: oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity));
     --border-color: oklch(from var(--color-warning-fill) l c h / var(--color-border-opacity));

@@ -1,42 +1,34 @@
----
-title: Typography
----
-
-<script setup>
-import { TypographyDemo } from "@demos/semantics";
-</script>
-
 # Typography
 
 ## Headings
 
-<HtmlPreviewer :code="TypographyDemo.headings()" />
+<HtmlPreviewer :code="TextDemo.headings()" />
 
 ## Paragraphs
 
-<HtmlPreviewer :code="TypographyDemo.paragraphs()" />
+<HtmlPreviewer :code="TextDemo.paragraphs()" />
 
 ## Address
 
 The `<address>` element provides contact information for the nearest `<article>` or the document body. Semanticus removes the default italic style and adds vertical spacing.
 
-<HtmlPreviewer :code="TypographyDemo.address()" />
+<HtmlPreviewer :code="TextDemo.address()" />
 
 ## Blockquote
 
 The `<blockquote>` element indicates that the enclosed text is an extended quotation. Semanticus styles it with a left border accent.
 
-<HtmlPreviewer :code="TypographyDemo.blockquote()" />
+<HtmlPreviewer :code="TextDemo.blockquote()" />
 
 ## Code Block
 
 Wrap `<code>` in `<pre>` for a multi-line code block that preserves whitespace.
 
-<HtmlPreviewer :code="TypographyDemo.codeBlock()" />
+<HtmlPreviewer :code="TextDemo.codeBlock()" />
 
 ## Inline Elements
 
-<HtmlPreviewer :code="TypographyDemo.inlineElements()" />
+<HtmlPreviewer :code="TextDemo.inlineElements()" />
 
 ---
 
@@ -44,7 +36,7 @@ Wrap `<code>` in `<pre>` for a multi-line code block that preserves whitespace.
 
 The `<abbr>` element marks an abbreviation or acronym. When a `title` attribute is provided, Semanticus adds a dotted underline and a `help` cursor so users know they can hover for the full form.
 
-<HtmlPreviewer :code="TypographyDemo.abbr()" />
+<HtmlPreviewer :code="TextDemo.abbr()" />
 
 ---
 
@@ -52,7 +44,7 @@ The `<abbr>` element marks an abbreviation or acronym. When a `title` attribute 
 
 The `<mark>` element highlights text of contextual relevance — such as search result matches.
 
-<HtmlPreviewer :code="TypographyDemo.mark()" />
+<HtmlPreviewer :code="TextDemo.mark()" />
 
 ---
 
@@ -62,7 +54,7 @@ The `<small>` element acts as helper text and is styled with a muted color and s
 
 Use `aria-describedby` to associate it with the input.
 
-<HtmlPreviewer :code="TypographyDemo.small()" />
+<HtmlPreviewer :code="TextDemo.small()" />
 
 ---
 
@@ -74,7 +66,7 @@ Use `<strong>` for content of importance, seriousness, or urgency.
 
 Use `<b>` for stylistic offset without semantic weight.
 
-<HtmlPreviewer :code="TypographyDemo.strongAndBold()" />
+<HtmlPreviewer :code="TextDemo.strongAndBold()" />
 
 ---
 
@@ -86,7 +78,7 @@ The `<sup>` element renders superscript text — positioned above the baseline w
 
 Common uses include chemical formulas, mathematical exponents and footnote references.
 
-<HtmlPreviewer :code="TypographyDemo.subAndSup()" />
+<HtmlPreviewer :code="TextDemo.subAndSup()" />
 
 ---
 
@@ -94,7 +86,7 @@ Common uses include chemical formulas, mathematical exponents and footnote refer
 
 The `<del>` element represents deleted text and the `<ins>` element represents inserted text — useful for showing editorial changes or price reductions.
 
-<HtmlPreviewer :code="TypographyDemo.delAndIns()" />
+<HtmlPreviewer :code="TextDemo.delAndIns()" />
 
 ---
 
@@ -102,7 +94,7 @@ The `<del>` element represents deleted text and the `<ins>` element represents i
 
 Use `<kbd>` to represent keyboard shortcuts.
 
-<HtmlPreviewer :code="TypographyDemo.keyboard()" />
+<HtmlPreviewer :code="TextDemo.keyboard()" />
 
 ---
 
@@ -110,5 +102,8 @@ Use `<kbd>` to represent keyboard shortcuts.
 
 Use `<samp>` to represent sample output from a program.
 
-<HtmlPreviewer :code="TypographyDemo.sample()" />
+<HtmlPreviewer :code="TextDemo.sample()" />
 
+<script setup>
+import { TextDemo } from "@demos/semantics";
+</script>

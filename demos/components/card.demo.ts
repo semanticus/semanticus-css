@@ -1,7 +1,8 @@
-import { renderComponent } from "./render-component";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
+import { IntentDemo, GhostDemo, SubtleDemo } from "@demos/variants";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Card title') {
-  return renderComponent(tagName, 'card', attrs, `<hgroup>
+  return renderElement(tagName, classMergeAttributes('card', attrs), `<hgroup>
   <h2>${title}</h2>
   <p>This is the subtitle</p>
 </hgroup>
@@ -9,14 +10,14 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 }
 
 export function withHeader(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderComponent(tagName, 'card', attrs, `<header>
+  return renderElement(tagName, classMergeAttributes('card', attrs), `<header>
   <h2>Card title</h2>
 </header>
 <p>This is a sample Card</p>`);
 }
 
 export function withFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderComponent(tagName, 'card', attrs, `<hgroup>
+  return renderElement(tagName, classMergeAttributes('card', attrs), `<hgroup>
   <h2>Card title</h2>
   <p>Card description</p>
 </hgroup>
@@ -28,7 +29,7 @@ export function withFooter(tagName: string = "div", attrs: Record<string, string
 }
 
 export function withHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderComponent(tagName, 'card', attrs, `<header>
+  return renderElement(tagName, classMergeAttributes('card', attrs), `<header>
   <h2>Card title</h2>
 </header>
 <p>Cards support optional header and footer sections that are visually distinct from the main content.</p>
@@ -54,4 +55,18 @@ export function htmlElements() {
   <p>Thematic grouping of content.</p>
 </section>
 `;
+}
+
+export function overviewVariants(attrs: Record<string, string> = {}) {
+  return renderElement('section', attrs, `<section class="mb-0" role="toolbar">
+  ${withHeaderAndFooter()}
+  ${withHeaderAndFooter('div', { class: 'subtle' })}
+  ${withHeaderAndFooter('div', { class: 'ghost' })}
+</section>
+
+<section role="toolbar">
+  ${IntentDemo.overviewCardsWithHeaderAndFooter()}
+  ${SubtleDemo.overviewCardsWithHeaderAndFooter()}
+  ${GhostDemo.overviewCardsWithHeaderAndFooter()}
+</section>`);
 }

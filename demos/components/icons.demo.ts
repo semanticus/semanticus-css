@@ -1,9 +1,7 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(iconName: string, tagName: string = "span", attrs: Record<string, string> = {}) {
-  const mergedAttrs = { ...attrs, "aria-hidden": "true", class: `icon-${iconName} ${attrs.class || ""}`.trim() };
-
-  return renderElement(tagName, mergedAttrs);
+  return renderElement(tagName, classMergeAttributes(`icon-${iconName}`, { ...attrs, "aria-hidden": "true" }));
 }
 
 export function overview() {

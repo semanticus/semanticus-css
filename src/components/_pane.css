@@ -5,7 +5,7 @@
   --shadow: none;
   --dialog-border: transparent;
   --border-color: transparent;
-  --color-background:  color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
+  --color-background: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
 
   border-radius: 0;
 }
