@@ -1,0 +1,11 @@
+/* Please see src/components/_card.css, since .pane shares most of its styling with .card */
+
+.pane {
+  --dialog-shadow: none;
+  --shadow: none;
+  --dialog-border: transparent;
+  --border-color: transparent;
+  --color-background:  color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
+
+  border-radius: 0;
+}

@@ -430,6 +430,7 @@ export default defineConfig({
             { text: ".card", link: "/docs/components/card" },
             { text: ".container", link: "/docs/components/container" },
             { text: ".icon-*", link: "/docs/components/icons" },
+            { text: ".pane", link: "/docs/components/pane" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },

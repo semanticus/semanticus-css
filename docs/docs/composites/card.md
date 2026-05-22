@@ -12,12 +12,6 @@ Cards support `<header>` and `<footer>` child elements with distinct background 
 
 <HtmlPreviewer :code="CardDemo.withHeaderAndFooter()" />
 
-## Combine with Modifiers and Utilities
-
-The `.card` class works on any semantic element and combined with **modifier** variants and **utility classes** to create various styles like **panes** and **panels**, ideal for grouping content in a visually distinct way.
-
-<HtmlPreviewer :code="CardDemo.modifiersAndUtilities()" />
-
 ## Variants
 
 ### Intent Variants

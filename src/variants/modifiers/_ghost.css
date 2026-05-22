@@ -4,7 +4,7 @@
   background-color: var(--color-background) !important;
 }
 
-:is(.card, [role="status"], [role="alert"], button, [type="submit"], [type="button"], [role="button"]) {
+:is(.card, .pane, [role="status"], [role="alert"], button, [type="submit"], [type="button"], [role="button"]) {
   &.ghost {
     &.primary {
       --color-background: transparent;
@@ -131,7 +131,7 @@
   }
 }
 
-:is(.card, [role="status"], [role="alert"]).ghost {
+:is(.card, .pane, [role="status"], [role="alert"]).ghost {
   > header,
   > footer {
     --dialog-section-fill: light-dark(

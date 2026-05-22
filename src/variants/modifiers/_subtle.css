@@ -2,7 +2,7 @@
   --subtle-opacity: 60%;
 }
 
-:is(.card, [role="status"], [role="alert"], button, [type="submit"], [type="button"], [role="button"]) {
+:is(.card, .pane, [role="status"], [role="alert"], button, [type="submit"], [type="button"], [role="button"]) {
   &.subtle {
     &.primary {
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
