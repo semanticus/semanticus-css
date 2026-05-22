@@ -58,7 +58,7 @@ export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
 export function modal(attrs: Record<string, string> = {}, slot: string = "") {
   const mergedAttrs = { id: "dialog-modal", ...attrs };
 
-  return main(mergedAttrs, slot || thankYouWithCloseButtonContent(attrs));
+  return main(mergedAttrs, slot || thankYouWithCloseButtonContent(mergedAttrs));
 }
 
 export function showModal(attrs: Record<string, string> = {}) {
