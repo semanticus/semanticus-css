@@ -48,7 +48,7 @@ export function main(attrs: Record<string, string> = {}, slot: string = "") {
 export function withCloseButton(attrs: Record<string, string> = {}) {
   const mergedAttrs = { id: "dialog-close-button", ...attrs };
 
-  return renderElement("dialog", mergedAttrs, thankYouWithCloseButtonContent(mergedAttrs));
+  return main(mergedAttrs, thankYouWithCloseButtonContent(mergedAttrs));
 }
 
 export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
