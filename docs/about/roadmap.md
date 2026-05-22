@@ -134,9 +134,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
 | ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
-| 🚧 | Include **list group** in Full & Colors Demo Overview |
-| ⌛ | Floating Alert interaction |
-| ⌛ | Alert Dialog interaction |
+| ✅ | Floating Alert interaction |
+| ⌛ | Include **list group** in Full & Colors Demo Overview |
 | ⌛ | `.content-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid Demo Overview |
