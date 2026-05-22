@@ -1,15 +1,15 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 
-export function main(iconName: string, tagName: string = "span", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, classMergeAttributes(`icon-${iconName}`, { ...attrs, "aria-hidden": "true" }));
+export function main(iconName: string, tagName: string = "span", attrs: Record<string, string> = { "aria-hidden": "true" }) {
+  return renderElement(tagName, classMergeAttributes(`icon-${iconName}`, attrs), '');
 }
 
 export function overview() {
   return `<nav>
-  ${main("close", "h1")}
-  ${main("close", "p")}
-  ${main("close", "small")}
-  ${main("close", "button")}
+  ${main("close", "h1", {})}
+  ${main("close", "p", {})}
+  ${main("close", "small", {})}
+  ${main("close", "button", {})}
   ${main("close", "button", { role: "link" })}
   ${main("close", "a", { href: "#" })}
 </nav>
