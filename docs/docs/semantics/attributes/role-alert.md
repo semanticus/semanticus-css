@@ -18,7 +18,7 @@ Adding `role="alert"` to an element will stylize it as an **alert** component an
 
 ## With Close Button
 
-Use a [Close Button](/docs/composites/close-button) inside a `<nav>`, which will justify its contents to the left and right, to create an alert message with a close button.
+Use a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, which will justify its contents to the left and right, to create an alert message with a close button.
 
 <HtmlPreviewer :code="RoleAlertDemo.withCloseButton()" />
 

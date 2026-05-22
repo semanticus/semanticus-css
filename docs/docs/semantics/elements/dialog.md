@@ -18,7 +18,7 @@ ${DialogDemo.main({ open: true })}
 
 ## With Close Button
 
-Wrap title and a [Close Button](/docs/composites/close-button) inside a `<nav>`, which will justify the title to the left and the close button to the right.
+Wrap title and a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, which will justify the title to the left and the close button to the right.
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 150px;&quot;&gt;
 ${DialogDemo.withCloseButton({ open: true })}
