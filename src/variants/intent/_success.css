@@ -10,12 +10,15 @@
   }
 }
 
+.success:not([role="link"], a:not([role="button"])) {
+  --color-background: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
+  --border-color: oklch(from var(--color-success-fill) l c h / var(--color-border-opacity));
+  --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
+  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+}
+
 :is(button, [type="submit"], [type="button"], [role="button"]):not([role="link"]) {
   &.success {
-    --color-background: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
-    --border-color: oklch(from var(--color-success-fill) l c h / var(--color-border-opacity));
-    --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-background: oklch(from var(--color-success-fill-hover) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-success-fill-hover) l c h / var(--color-border-opacity));
@@ -29,9 +32,7 @@
   }
 }
 
-:is(.card, .pane, .panel).success {
-  --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+:is(.card, .pane, [role="status"], [role="alert"]).success {
   --dialog-fill: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
   --dialog-border: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
   --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);

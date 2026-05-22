@@ -1,0 +1,59 @@
+/* Base styles shared by all .icon-* classes */
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: currentColor;
+  background-image: none;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  vertical-align: -.199em;
+  align-self: center;
+  color: inherit;
+}
+
+.icon-checkbox {
+  mask-image: var(--icon-checkbox);
+}
+
+.icon-chevron {
+  mask-image: var(--icon-chevron);
+}
+
+.icon-close {
+  mask-image: var(--icon-close);
+}
+
+.icon-date {
+  mask-image: var(--icon-date);
+}
+
+.icon-invalid {
+  mask-image: var(--icon-invalid);
+}
+
+.icon-loading {
+  mask-image: var(--icon-loading);
+}
+
+.icon-minus {
+  mask-image: var(--icon-minus);
+}
+
+.icon-search {
+  mask-image: var(--icon-search);
+}
+
+.icon-time {
+  mask-image: var(--icon-time);
+}
+
+.icon-valid {
+  mask-image: var(--icon-valid);
+}

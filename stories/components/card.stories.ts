@@ -23,3 +23,8 @@ export const WithFooter: StoryObj = {
 export const WithHeaderAndFooter: StoryObj = {
   render: () => CardDemo.withHeaderAndFooter(),
 };
+
+export const Variants: StoryObj = {
+  args: { html: CardDemo.overviewVariants() },
+  render: (args) => args.html,
+};

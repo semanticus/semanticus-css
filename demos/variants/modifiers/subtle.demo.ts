@@ -1,60 +1,39 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { CardDemo } from '@demos/components';
 import { ButtonDemo, InputDemo } from '@demos/semantics/elements';
 import { RoleButtonDemo } from '@demos/semantics/attributes';
+import { DropdownDemo } from "@demos/composites";
 
-export function main(attrs: Record<string, string> = {}) {
-  return `${renderElement('nav', { role: 'toolbar' }, `${button(attrs)}
+function mergedAttrs(attrs: Record<string, string> = {}) {
+  return classMergeAttributes('subtle', attrs);
+}
 
-  ${roleButton('section', attrs)}
+export function main(tagName: string = 'div', attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, mergedAttrs(attrs), slot);
+}
 
-${dropdown(attrs)}`)}
+export function overview(attrs: Record<string, string> = {}) {
+  return `${renderElement('nav', { role: 'toolbar' }, `${ButtonDemo.main(mergedAttrs(attrs))}
+
+  ${RoleButtonDemo.main('section', mergedAttrs(attrs))}
+
+${RoleButtonDemo.dropdown(mergedAttrs(attrs))}`)}
 
 <br>
 
-${card('div', attrs)}
+${CardDemo.main('div', mergedAttrs(attrs))}
 
-${cardWithHeaderAndFooter('div', attrs)}`;
+${CardDemo.withHeaderAndFooter('div', mergedAttrs(attrs))}`;
 }
 
-export function button(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return ButtonDemo.main({ ...attrs, class: `subtle ${_class || ''}` });
+export function overviewInputButtons(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, InputDemo.buttons(mergedAttrs(attrs)));
 }
 
-export function inputButtons(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
+export function overviewRoleButtonsAndDropdowns(attrs: Record<string, string> = {}) {
+  return renderElement('section', {}, `${RoleButtonDemo.subtleVariants(attrs)}
 
-  return InputDemo.buttons({ ...attrs, class: `subtle ${_class || ''}` });
-}
+<hr>
 
-export function roleButton(tagName: string = "div", _attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return RoleButtonDemo.main(tagName, { ...attrs, class: `subtle ${_class || ''}` }, `&lt;${tagName}&gt; as button`);
-}
-
-export function dropdown(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return RoleButtonDemo.dropdown({ ...attrs, class: `subtle ${_class || ''}` });
-}
-
-export function accordion(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return RoleButtonDemo.accordion({ ...attrs, class: `subtle ${_class || ''}` });
-}
-
-export function card(tagName: string = "div", _attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return CardDemo.main(tagName, { ...attrs, class: `subtle ${_class || ''}` });
-}
-
-export function cardWithHeaderAndFooter(tagName: string = "div", _attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return CardDemo.withHeaderAndFooter(tagName, { ...attrs, class: `subtle ${_class || ''}` });
+${DropdownDemo.subtleVariants(attrs)}`);
 }

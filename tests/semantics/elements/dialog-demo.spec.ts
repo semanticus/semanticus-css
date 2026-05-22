@@ -18,7 +18,7 @@ test('/semantics/elements/dialog.demo/showModalWithHeaderAndFooter - visual snap
   await expect(page).toHaveScreenshot('open-modal.png', screenshotOptions);
   await expect(dialog).toBeVisible();
 
-  await dialog.locator('[rel="prev"]').click();
+  await dialog.locator('.icon-close').click();
 
   await expect(page).toHaveScreenshot('closed-modal.png', screenshotOptions);
   await expect(dialog).not.toBeVisible();

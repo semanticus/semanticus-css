@@ -8,7 +8,6 @@
 @import "./intent/_success.css";
 @import "./intent/_warning.css";
 
-@import "./modifiers/_container.css";
 @import "./modifiers/_ghost.css";
 @import "./modifiers/_striped.css";
 @import "./modifiers/_subtle.css";

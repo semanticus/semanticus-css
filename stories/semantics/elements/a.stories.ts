@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { ADemo } from "@demos/semantics/elements";
-import { IntentDemo } from '@demos/variants';
 
 const meta: Meta = {
   title: "Semantics/Elements/<a>",
@@ -19,6 +18,6 @@ export const Active: StoryObj = {
 };
 
 export const intentVariants: StoryObj = {
-  args: { html: IntentDemo.anchors() },
+  args: { html: ADemo.intentVariants() },
   render: (args) => args.html,
 };

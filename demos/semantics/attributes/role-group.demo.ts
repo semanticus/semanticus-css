@@ -1,5 +1,5 @@
 import { renderElement } from "@scripts/utils";
-import * as DetailsDemo from "@demos/semantics/elements/details.demo";
+import { DropdownDemo } from "@demos/composites";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
   return renderElement(tagName, { ...attrs, role: "group" }, `<button>One</button>
@@ -28,7 +28,7 @@ export function selectWithButton(tagName: string = "fieldset", attrs: Record<str
 }
 
 export function dropdownWithButton(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `${DetailsDemo.dropdownWithCheckboxes({ class: 'w-100' })}
+  return renderElement(tagName, { ...attrs, role: "group" }, `${DropdownDemo.withCheckboxes({ class: 'w-100' })}
 <button>Action</button>`);
 }
 

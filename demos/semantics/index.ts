@@ -1,3 +1,3 @@
-export * from "@demos/semantics/attributes";
-export * from "@demos/semantics/elements";
-export * as TypographyDemo from "@demos/semantics/typography.demo";
+export * from "./attributes";
+export * from "./elements";
+export * as TextDemo from "./text.demo";

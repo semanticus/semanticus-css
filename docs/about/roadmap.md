@@ -17,8 +17,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactor **Dropdown**, using the `ARIA: menu pattern` |
 | ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
-| ⌛ | `role="alert"` |
-| ⌛ | `aria-disabled="true"` |
+| ✅ | `aria-disabled="true"` |
+| ✅ | `role="status"` and `role="alert"` |
+| ⌛ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
 
 ## Components
 
@@ -27,10 +28,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
 | ✅ | `.pane` component |
-| ✅ | `.panel` component |
+| ✅ | `.icon-*` component |
 | 🚧 | `.sidebar` component |
+| ⌛ | `.content-grid` component in favor of `.container` |
 | ⌛ | `.carousel` component |
 | ⌛ | `.badge` component |
+| ⌛ | `.popper` component |
 
 ## Variants & Utilities
 
@@ -47,9 +50,20 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.danger` intent variant |
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
-| 🚧 | `.striped` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
-| ⌛ | Extend **intent variants**'s reach to `<progress>` |
+| 🚧 | `.striped` modifier variant |
+| ⌛ | Extend **intent variants** to stylize **list group** |
+| ⌛ | Extend **intent variants** to stylize `<progress>` |
+
+## Known Issues
+
+| Status | Feature |
+| --- | --- |
+| ⌛ | Multiple toasts with the same placement overlap |
+| ⌛ | When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
+| ⌛ | **shadow** utility classes don't seem to affect `.card` styling |
+| ⌛ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
+| ⌛ | `<button role="link">` seems to have bigger line height than a normal link |
 
 ## Interactive Patterns
 
@@ -58,14 +72,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Popover-based sidebar patterns |
 | ✅ | Invoker Commands API modal patterns |
 | ✅ | Dropdown menu primitives |
-| 🚧 | Anchor Positioning tooltips |
-| ⌛ | Tab |
+| ✅ | Floating Alert |
+| ✅ | Alert Dialog |
+| ✅ | Anchor Positioning tooltips |
+| ⌛ | Tabs |
 | ⌛ | Carousel |
-| ⌛ | Floating Alert |
-| ⌛ | Alert Dialog |
-| ⌛ | Confirm Dialog |
-| ⌛ | Prompt Dialog |
-| ⌛ | Popover |
+| ⌛ | Popper |
 
 ## Documentation & Tooling
 
@@ -86,6 +98,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Exhaustive Utility classes documentation |
 | ✅ | Documentation page example |
 | ✅ | Grid system documentation |
+| ✅ | `.icon-*` component documentation |
+| ✅ | Alerts composite documentation |
+| 🚧 | Navigation composite documentation |
+| ⌛ | Github check to prevent PRs that fail the visual regression tests |
+| ⌛ | Tabs composite documentation |
+| ⌛ | List Group composite documentation |
+| ⌛ | `.sidebar` component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
@@ -94,14 +113,16 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ⌛ | Account settings page example |
 | ⌛ | Replacing **vitepress** with **astro** and use **Semanticus CSS** to style documentation |
 | ⌛ | Migration guide from Pico CSS |
+| ⌛ | Migration guide from Bootstrap |
 
 ## Visual Regression Testing
 
 | Status | Feature |
 | --- | --- |
-| ✅ | Semantics overview |
+| ✅ | Full Demo Overview |
+| ✅ | Colors Demo Overview |
+| ✅ | Layout Demo Overview |
 | ✅ | Documentation page example |
-| ✅ | Layout combinations |
 | ✅ | Modal interaction |
 | ✅ | Accordion interaction |
 | ✅ | Dropdown interaction |
@@ -112,12 +133,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` variant combinations |
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
+| ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
+| ✅ | Floating Alert interaction |
+| ⌛ | Include **list group** in Full & Colors Demo Overview |
+| ⌛ | `.content-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
-| 🚧 | Different Grid combinations |
+| ⌛ | Grid Demo Overview |
 | ⌛ | Tab interaction |
 | ⌛ | Carousel interaction |
-| ⌛ | Floating Alert interaction |
-| ⌛ | Alert Dialog interaction |
-| ⌛ | Confirm Dialog interaction |
-| ⌛ | Prompt Dialog interaction |
-| ⌛ | Popover interaction |
+| ⌛ | Popper interaction |

@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { RoleButtonDemo } from "@demos/semantics/attributes";
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/variants';
 
 const meta: Meta = {
   title: "Semantics/Attributes/[role=button]",
@@ -26,16 +24,16 @@ export const dropdown: StoryObj = {
 };
 
 export const intentVariants: StoryObj = {
-  args: { html: IntentDemo.roleButtons() },
+  args: { html: RoleButtonDemo.intentVariants() },
   render: (args) => args.html,
 };
 
 export const subtleModifier: StoryObj = {
-  args: { html: SubtleDemo.roleButtons() },
+  args: { html: RoleButtonDemo.subtleVariants() },
   render: (args) => args.html,
 };
 
 export const ghostModifier: StoryObj = {
-  args: { html: GhostDemo.roleButtons() },
+  args: { html: RoleButtonDemo.ghostVariants() },
   render: (args) => args.html,
 };

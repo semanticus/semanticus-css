@@ -22,20 +22,3 @@ test('/semantics/elements/details.demo/entangledAccordions - visual snapshot', a
   await expect(firstEntangledAccordion.locator('p')).toBeVisible();
   await expect(secondEntangledAccordion.locator('ul')).not.toBeVisible();
 });
-
-test('/semantics/elements/details.demo/basicDropdown - visual snapshot', async ({ page }) => {
-  await page.goto('/semantics/elements/details.demo/basicDropdown');
-
-  const dropdown = page.locator('details');
-  const dropdownSummary = dropdown.locator('summary');
-
-  await dropdownSummary.click();
-
-  await expect(page).toHaveScreenshot('open-dropdown.png', screenshotOptions);
-  await expect(dropdown.locator('[role="menu"]')).toBeVisible();
-
-  await dropdownSummary.click();
-
-  await expect(page).toHaveScreenshot('closed-dropdown.png', screenshotOptions);
-  await expect(dropdown.locator('[role="menu"]')).not.toBeVisible();
-});

@@ -11,3 +11,12 @@ export default meta;
 export const BasicUsage: StoryObj = {
   render: () => PaneDemo.main(),
 };
+
+export const HeroSection: StoryObj = {
+  render: () => PaneDemo.heroSection({ class: 'primary subtle' }),
+};
+
+export const Variants: StoryObj = {
+  args: { html: PaneDemo.overviewVariants() },
+  render: (args) => args.html,
+};

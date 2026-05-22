@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { ButtonDemo } from "@demos/semantics/elements";
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/variants';
 
 const meta: Meta = {
   title: "Semantics/Elements/<button>",
@@ -15,16 +13,16 @@ export const BasicUsage: StoryObj = {
 };
 
 export const intentVariants: StoryObj = {
-  args: { html: IntentDemo.buttons() },
+  args: { html: ButtonDemo.intentVariants() },
   render: (args) => args.html,
 };
 
 export const subtleModifier: StoryObj = {
-  args: { html: SubtleDemo.buttons() },
+  args: { html: ButtonDemo.subtleVariants() },
   render: (args) => args.html,
 };
 
 export const ghostModifier: StoryObj = {
-  args: { html: GhostDemo.buttons() },
+  args: { html: ButtonDemo.ghostVariants() },
   render: (args) => args.html,
 };

@@ -1,4 +1,4 @@
-import { renderAttributes } from "@scripts/utils";
+import { renderElement, renderAttributes, classMergeAttributes } from "@scripts/utils";
 
 export function overview(attrs: Record<string, string> = {}) {
   return `${main(attrs)}
@@ -16,4 +16,14 @@ export function active(attrs: Record<string, string> = {}, slot: string = 'Activ
   const attributes = { href: "#", "aria-current": "page", ...attrs };
 
   return `<a ${renderAttributes(attributes)}>${slot}</a>`;
+}
+
+export function intentVariants(attrs: Record<string, string> = {}) {
+  return renderElement('section', { role: 'toolbar' }, `${main(classMergeAttributes('primary', attrs), 'Primary')}
+${main(classMergeAttributes('secondary', attrs), 'Secondary')}
+${main(classMergeAttributes('contrast', attrs), 'Contrast')}
+${main(classMergeAttributes('success', attrs), 'Success')}
+${main(classMergeAttributes('info', attrs), 'Info')}
+${main(classMergeAttributes('warning', attrs), 'Warning')}
+${main(classMergeAttributes('danger', attrs), 'Danger')}`);
 }

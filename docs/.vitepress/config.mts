@@ -326,6 +326,7 @@ export default defineConfig({
           text: "Composites",
           items: [
             { text: "Alerts", link: "/docs/composites/alerts" },
+            { text: "Buttons", link: "/docs/composites/buttons" },
             { text: "Card", link: "/docs/composites/card" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
@@ -396,6 +397,10 @@ export default defineConfig({
                 },
                 { text: "[hidden]", link: "/docs/semantics/attributes/hidden" },
                 {
+                  text: '[role="alert"]',
+                  link: "/docs/semantics/attributes/role-alert",
+                },
+                {
                   text: '[role="button"]',
                   link: "/docs/semantics/attributes/role-button",
                 },
@@ -410,6 +415,10 @@ export default defineConfig({
                 {
                   text: '[role="search"]',
                   link: "/docs/semantics/attributes/role-search",
+                },
+                {
+                  text: '[role="status"]',
+                  link: "/docs/semantics/attributes/role-status",
                 },
                 {
                   text: '[role="toolbar"]',
@@ -427,8 +436,9 @@ export default defineConfig({
           text: "Components API",
           items: [
             { text: ".card", link: "/docs/components/card" },
+            { text: ".container", link: "/docs/components/container" },
+            { text: ".icon-*", link: "/docs/components/icons" },
             { text: ".pane", link: "/docs/components/pane" },
-            { text: ".panel", link: "/docs/components/panel" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
@@ -450,7 +460,6 @@ export default defineConfig({
             {
               text: "Modifiers",
               items: [
-                { text: ".container", link: "/docs/variants/modifiers/container" },
                 { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
                 { text: ".striped", link: "/docs/variants/modifiers/striped" },
                 { text: ".subtle", link: "/docs/variants/modifiers/subtle" },

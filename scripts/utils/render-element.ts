@@ -11,15 +11,16 @@ function ident(str: string, spaces: number): string {
 export function renderElement(
   tagName: string,
   attrs: Record<string, string>,
-  slot: string = "",
+  slot?: string,
 ): string {
-  const content = slot.length > 0 ? sanitizeNewLines(ident(slot, 2)) : slot;
+  const content = slot?.length > 0 ? sanitizeNewLines(ident(slot, 2)) : slot;
 
   let renderedAttrs = renderAttributes(attrs);
 
   if ((renderedAttrs ?? "") !== "") renderedAttrs = ` ${renderedAttrs}`;
 
-  if (content.length === 0) {
+  // This is necessary for self-closing tags like <img> or <input>. If there is no content, we can render it as a self-closing tag.
+  if (content === undefined) {
     return `<${tagName}${renderedAttrs} />`;
   }
 

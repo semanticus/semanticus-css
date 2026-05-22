@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { GhostDemo, SubtleDemo } from "@demos/variants/modifiers";
-import { ContrastDemo } from "@demos/overviews/variants/intent";
+import { ContrastDemo, GhostDemo, SubtleDemo } from "@demos/variants";
 
 const meta: Meta = {
   title: "Variants/Intent/Contrast",
@@ -10,21 +9,21 @@ const meta: Meta = {
 export default meta;
 
 export const links: StoryObj = {
-  render: () => ContrastDemo.links(),
+  render: () => ContrastDemo.overviewLinks(),
 };
 
 export const buttons: StoryObj = {
-  render: () => ContrastDemo.buttons(),
+  render: () => ContrastDemo.overviewButtons(),
 };
 
 export const cards: StoryObj = {
-  render: () => ContrastDemo.cards(),
+  render: () => ContrastDemo.overviewCards(),
 };
 
 export const subtleExamples: StoryObj = {
-  render: () => SubtleDemo.main({ class: 'contrast' }),
+  render: () => SubtleDemo.overview({ class: 'contrast' }),
 };
 
 export const ghostExamples: StoryObj = {
-  render: () => GhostDemo.main({ class: 'contrast' }),
+  render: () => GhostDemo.overview({ class: 'contrast' }),
 };

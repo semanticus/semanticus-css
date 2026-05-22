@@ -8,19 +8,19 @@ Unless they are in a `<nav>`, dropdowns are `width: 100%;` by default.
 
 For style consistency with the form elements, dropdowns are styled like a select by default.
 
-<HtmlPreviewer :code="DetailsDemo.basicDropdown()" />
+<HtmlPreviewer :code="DropdownDemo.main()" />
 
 ## With Checkboxes
 
 Dropdowns can be used as custom selects with `<input type="checkbox">`.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownWithCheckboxes()" />
+<HtmlPreviewer :code="DropdownDemo.withCheckboxes()" />
 
 ## With Radios
 
 Dropdowns can be used as custom selects with `<input type="radio">`.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownWithRadios()" />
+<HtmlPreviewer :code="DropdownDemo.withRadios()" />
 
 ## Different alignment (showcased with &lt;nav&gt;)
 
@@ -28,19 +28,19 @@ Use `<ul dir="rtl">` to change the alignment of the dropdown menu.
 
 When using dropdowns inside a `<nav>`, they are automatically styled to fit the navigation layout.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownInNav()" />
+<HtmlPreviewer :code="DropdownDemo.inNav()" />
 
 ## Validation States
 
 Just like any form elements, validation states are provided with `aria-invalid`.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownValidationStates()" />
+<HtmlPreviewer :code="DropdownDemo.validationStates()" />
 
 ## As a Button
 
 `<summary role="button">` transforms the dropdown into a button.
 
-<HtmlPreviewer :code="DetailsDemo.dropdownAsButton()" />
+<HtmlPreviewer :code="DropdownDemo.asButton()" />
 
 ## Variants
 
@@ -48,20 +48,18 @@ Just like any form elements, validation states are provided with `aria-invalid`.
 
 To convey **intent** and **importance**, dropdowns can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.dropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.intentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.ghost` creates transparent background dropdowns with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="GhostDemo.dropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.ghostVariants()" :codeCollapsed="true" />
 
 `.subtle` creates dropdowns with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.dropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.subtleVariants()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo, SubtleDemo } from "@demos/overviews/variants/modifiers";
-import { IntentDemo } from '@demos/variants';
-import { DetailsDemo } from "@demos/semantics/elements";
+import { DropdownDemo } from "@demos/composites";
 </script>

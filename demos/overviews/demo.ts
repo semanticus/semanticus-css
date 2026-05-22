@@ -1,8 +1,8 @@
 import { renderElement } from "@scripts/utils";
 
-import { IntentDemo } from '@demos/variants';
-import { CardDemo } from "@demos/components";
-import { GhostDemo, SubtleDemo } from "@demos/overviews";
+import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
+import { DropdownDemo, LinksDemo, TypographyDemo } from "@demos/composites";
+import { CardDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -23,7 +23,9 @@ import {
   RoleSearchDemo,
   RoleTooltipDemo,
   RoleLinkDemo,
-  TypographyDemo,
+  TextDemo,
+  RoleStatusDemo,
+  ButtonDemo,
 } from '@demos/semantics';
 
 export function buttons() {
@@ -278,7 +280,7 @@ function dropdowns() {
   <h2>Dropdowns</h2>
 
   <section>
-    ${DetailsDemo.basicDropdown()}
+    ${DropdownDemo.main()}
   </section>
 
   <br>
@@ -286,7 +288,7 @@ function dropdowns() {
   <section>
     <h4>Button Style (role="button")</h4>
 
-    ${DetailsDemo.dropdownAsButton()}
+    ${DropdownDemo.asButton()}
   </section>
 </section>`;
 }
@@ -359,13 +361,13 @@ function typography() {
 
   <section role="toolbar">
     <section>
-      ${TypographyDemo.headings()}
+      ${TextDemo.headings()}
     </section>
 
     <section>
       <h3>Paragraphs</h3>
 
-      ${TypographyDemo.paragraphs()}
+      ${TextDemo.paragraphs()}
     </section>
   </section>
 
@@ -373,7 +375,7 @@ function typography() {
 
   <section>
     <h4>Inline Elements</h4>
-    ${TypographyDemo.inlineElements()}
+    ${TextDemo.inlineElements()}
   </section>
 </section>`;
 }
@@ -416,7 +418,7 @@ function blockquotes() {
   <h2>Blockquote</h2>
 
   <section>
-    ${TypographyDemo.blockquote()}
+    ${TextDemo.blockquote()}
   </section>
 </section>`;
 }
@@ -426,7 +428,7 @@ function codeBlocks() {
   <h2>Code Block</h2>
 
   <section>
-    ${TypographyDemo.codeBlock()}
+    ${TextDemo.codeBlock()}
   </section>
 </section>`;
 }
@@ -436,7 +438,7 @@ function address() {
   <h2>Address</h2>
 
   <section>
-    ${TypographyDemo.address()}
+    ${TextDemo.address()}
   </section>
 </section>`;
 }
@@ -596,89 +598,23 @@ ${codeBlocks()}
 ${address()}`);
 }
 
-function typographySection(cssClass: string) {
-  return `<section class="${cssClass}">
-  <section>
-    ${TypographyDemo.headings('Heading')}
-  </section>
-
-  <hgroup>
-    <h2>HGroup</h2>
-    <p>last child gets muted text</p>
-  </hgroup>
-
-  <p>The paragraph element is the most basic block of text content.</p>
-  <p class="text-muted">Text explicitly marked as muted.</p>
-</section>`;
-}
-
 export function fullBundleColorsButtons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
-  ${IntentDemo.buttons()}
-  ${SubtleDemo.buttons()}
-  ${GhostDemo.buttons()}
-</section>`;
-}
-
-function fullBundleColorsTypography() {
-  return `<section id="typography">
-  <h2>Typography</h2>
-
-  <section role="toolbar">
-    ${typographySection('text-primary')}
-    ${typographySection('text-secondary')}
-    ${typographySection('text-contrast')}
-    ${typographySection('text-success')}
-    ${typographySection('text-info')}
-    ${typographySection('text-warning')}
-    ${typographySection('text-danger')}
-  </section>
-</section>`;
-}
-
-function fullBundleColorsDropdowns() {
-  return `<section id="dropdowns">
-  <h2>Dropdowns (role="button")</h2>
-
-  <section role="toolbar">
-    <section>
-      ${IntentDemo.dropdowns()}
-    </section>
-
-    <section>
-      ${SubtleDemo.dropdowns()}
-    </section>
-
-    <section>
-      ${GhostDemo.dropdowns()}
-    </section>
-  </section>
-</section>`;
-}
-
-function fullBundleColorsCards() {
-  return `<section id="cards">
-  <h2>Cards</h2>
-
-  <section class="mb-0" role="toolbar">
-    ${CardDemo.withHeaderAndFooter()}
-    ${CardDemo.withHeaderAndFooter('div', { class: 'subtle' })}
-    ${CardDemo.withHeaderAndFooter('div', { class: 'ghost' })}
-  </section>
-
-  <section role="toolbar">
-    ${IntentDemo.cardsWithHeaderAndFooter()}
-    ${SubtleDemo.cardsWithHeaderAndFooter()}
-    ${GhostDemo.cardsWithHeaderAndFooter()}
-  </section>
+  ${ButtonDemo.intentVariants()}
+  ${ButtonDemo.subtleVariants()}
+  ${ButtonDemo.ghostVariants()}
 </section>`;
 }
 
 export function fullBundleColors(attrs: Record<string, string> = {}) {
   return renderElement("main", { class: 'container', ...attrs }, `<br>
-${fullBundleColorsTypography()}
+<section id="typography">
+  <h2>Typography</h2>
+
+  ${TypographyDemo.overviewVariants()}
+</section>
 
 <hr>
 <br>
@@ -688,15 +624,45 @@ ${fullBundleColorsButtons()}
 <hr>
 <br>
 
-${links()}
+<section id="links">
+  <h2>Links</h2>
+
+  ${LinksDemo.overviewVariants()}
+</section>
 
 <hr>
 <br>
 
-${fullBundleColorsDropdowns()}
+<section id="dropdowns">
+  <h2>Dropdowns (role="button")</h2>
+
+  ${DropdownDemo.overviewVariants()}
+</section>
 
 <hr>
 <br>
 
-${fullBundleColorsCards()}`);
+<section id="cards">
+  <h2>Cards</h2>
+
+  ${CardDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
+<section id="panes">
+  <h2>Panes</h2>
+
+  ${PaneDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
+<section id="role-statuses">
+  <h2>Role Statuses</h2>
+
+  ${RoleStatusDemo.overviewVariants()}
+</section>`);
 }
