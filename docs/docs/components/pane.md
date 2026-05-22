@@ -18,20 +18,19 @@ Combine it with **modifier variants** and **utility classes** to create various 
 
 To convey **intent** and **importance**, panes can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.overviewPanes()" :codeCollapsed="true" />
+<HtmlPreviewer :code="PaneDemo.intentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.subtle` creates panes with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.overviewPanes()" :codeCollapsed="true" />
+<HtmlPreviewer :code="PaneDemo.subtleVariants()" :codeCollapsed="true" />
 
 `.ghost` creates transparent background panes with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="GhostDemo.overviewPanes()" :codeCollapsed="true" />
+<HtmlPreviewer :code="PaneDemo.ghostVariants()" :codeCollapsed="true" />
 
 
 <script setup>
 import { PaneDemo } from "@demos/components";
-import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 </script>

@@ -25,6 +25,7 @@ import {
   RoleLinkDemo,
   TextDemo,
   RoleStatusDemo,
+  ButtonDemo,
 } from '@demos/semantics';
 
 export function buttons() {
@@ -601,9 +602,9 @@ export function fullBundleColorsButtons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
-  ${IntentDemo.overviewButtons()}
-  ${SubtleDemo.overviewButtons()}
-  ${GhostDemo.overviewButtons()}
+  ${ButtonDemo.intentVariants()}
+  ${ButtonDemo.subtleVariants()}
+  ${ButtonDemo.ghostVariants()}
 </section>`;
 }
 

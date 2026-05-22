@@ -11,6 +11,14 @@ import { ADemo, RoleLinkDemo } from "@demos/semantics";
 // </ul>`);
 // }
 
+export function intentVariants(attrs: Record<string, string> = {}) {
+  return `${ADemo.intentVariants(attrs)}
+
+<hr>
+
+${RoleLinkDemo.intentVariants(attrs)}`;
+}
+
 export function overviewVariants(attrs: Record<string, string> = {}) {
   return renderElement('section', { role: 'toolbar', ...attrs }, `<aside>
   <ul class="ps-0">

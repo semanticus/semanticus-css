@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { SubtleDemo } from "@demos/variants";
+import { ButtonDemo } from "@demos/semantics";
+import { DropdownDemo } from "@demos/composites";
+import { CardDemo } from "@demos/components";
+import { RoleButtonDemo } from "@demos/semantics/attributes";
 
 const meta: Meta = {
   title: "Variants/Modifiers/Subtle",
@@ -9,7 +13,7 @@ const meta: Meta = {
 export default meta;
 
 export const ButtonExample: StoryObj = {
-  render: () => SubtleDemo.overviewButtons(),
+  render: () => ButtonDemo.subtleVariants(),
 };
 
 export const InputButtons: StoryObj = {
@@ -17,17 +21,17 @@ export const InputButtons: StoryObj = {
 };
 
 export const RoleButtons: StoryObj = {
-  render: () => SubtleDemo.overviewRoleButtons(),
+  render: () => RoleButtonDemo.subtleVariants(),
 };
 
 export const Dropdowns: StoryObj = {
-  render: () => SubtleDemo.overviewDropdowns(),
+  render: () => DropdownDemo.subtleVariants(),
 };
 
 export const Accordions: StoryObj = {
-  render: () => SubtleDemo.overviewAccordions(),
+  render: () => RoleButtonDemo.accordionSubtleVariants(),
 };
 
 export const Cards: StoryObj = {
-  render: () => SubtleDemo.overviewCardsWithHeaderAndFooter(),
+  render: () => CardDemo.withHeaderAndFooterSubtleVariants(),
 };

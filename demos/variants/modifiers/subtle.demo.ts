@@ -1,7 +1,8 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { CardDemo, PaneDemo } from '@demos/components';
+import { CardDemo } from '@demos/components';
 import { ButtonDemo, InputDemo } from '@demos/semantics/elements';
-import { RoleButtonDemo, RoleStatusDemo } from '@demos/semantics/attributes';
+import { RoleButtonDemo } from '@demos/semantics/attributes';
+import { DropdownDemo } from "@demos/composites";
 
 function mergedAttrs(attrs: Record<string, string> = {}) {
   return classMergeAttributes('subtle', attrs);
@@ -11,166 +12,28 @@ export function main(tagName: string = 'div', attrs: Record<string, string> = {}
   return renderElement(tagName, mergedAttrs(attrs), slot);
 }
 
-export function button(attrs: Record<string, string> = {}) {
-  return ButtonDemo.main(mergedAttrs(attrs));
-}
-
-export function inputButtons(attrs: Record<string, string> = {}) {
-  return InputDemo.buttons(mergedAttrs(attrs));
-}
-
-export function roleButton(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.main(tagName, mergedAttrs(attrs), `&lt;${tagName}&gt; as button`);
-}
-
-export function roleStatus(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return RoleStatusDemo.main(tagName, mergedAttrs(attrs), slot);
-}
-
-export function dropdown(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.dropdown(mergedAttrs(attrs));
-}
-
-export function accordion(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.accordion(mergedAttrs(attrs));
-}
-
-export function card(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return CardDemo.main(tagName, mergedAttrs(attrs));
-}
-
-export function cardWithHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return CardDemo.withHeaderAndFooter(tagName, mergedAttrs(attrs));
-}
-
-export function pane(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return PaneDemo.main(tagName, mergedAttrs(attrs));
-}
-
-export function paneWithHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return PaneDemo.withHeaderAndFooter(tagName, mergedAttrs(attrs));
-}
-
-/* Overviews */
-
 export function overview(attrs: Record<string, string> = {}) {
-  return `${renderElement('nav', { role: 'toolbar' }, `${button(attrs)}
+  return `${renderElement('nav', { role: 'toolbar' }, `${ButtonDemo.main(mergedAttrs(attrs))}
 
-  ${roleButton('section', attrs)}
+  ${RoleButtonDemo.main('section', mergedAttrs(attrs))}
 
-${dropdown(attrs)}`)}
+${RoleButtonDemo.dropdown(mergedAttrs(attrs))}`)}
 
 <br>
 
-${card('div', attrs)}
+${CardDemo.main('div', mergedAttrs(attrs))}
 
-${cardWithHeaderAndFooter('div', attrs)}`;
-}
-
-export function overviewButtons(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return renderElement('section', { role: 'toolbar' }, `${button(attrs)}
-${button(classMergeAttributes('secondary', attrs))}
-${button(classMergeAttributes('contrast', attrs))}
-${button(classMergeAttributes('success', attrs))}
-${button(classMergeAttributes('info', attrs))}
-${button(classMergeAttributes('warning', attrs))}
-${button(classMergeAttributes('danger', attrs))}`);
+${CardDemo.withHeaderAndFooter('div', mergedAttrs(attrs))}`;
 }
 
 export function overviewInputButtons(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, inputButtons(attrs));
+  return renderElement('section', {}, InputDemo.buttons(mergedAttrs(attrs)));
 }
 
 export function overviewRoleButtonsAndDropdowns(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, `${overviewRoleButtons(attrs)}
+  return renderElement('section', {}, `${RoleButtonDemo.subtleVariants(attrs)}
 
 <hr>
 
-${overviewDropdowns(attrs)}`);
-}
-
-export function overviewRoleButtons(attrs: Record<string, string> = {}) {
-  return `${roleButton('section', attrs)}
-${roleButton('section', classMergeAttributes('secondary', attrs))}
-${roleButton('section', classMergeAttributes('contrast', attrs))}
-${roleButton('section', classMergeAttributes('success', attrs))}
-${roleButton('section', classMergeAttributes('info', attrs))}
-${roleButton('section', classMergeAttributes('warning', attrs))}
-${roleButton('section', classMergeAttributes('danger', attrs))}`;
-}
-
-export function overviewRoleStatuses(attrs: Record<string, string> = {}) {
-  return `${roleStatus('section', classMergeAttributes('primary', attrs), 'Primary')}
-${roleStatus('section', classMergeAttributes('secondary', attrs), 'Secondary')}
-${roleStatus('section', classMergeAttributes('contrast', attrs), 'Contrast')}
-${roleStatus('section', classMergeAttributes('success', attrs), 'Success')}
-${roleStatus('section', classMergeAttributes('info', attrs), 'Info')}
-${roleStatus('section', classMergeAttributes('warning', attrs), 'Warning')}
-${roleStatus('section', classMergeAttributes('danger', attrs), 'Danger')}`;
-}
-
-export function overviewDropdowns(attrs: Record<string, string> = {}) {
-  return `${dropdown(attrs)}
-${dropdown(classMergeAttributes('secondary', attrs))}
-${dropdown(classMergeAttributes('contrast', attrs))}
-${dropdown(classMergeAttributes('success', attrs))}
-${dropdown(classMergeAttributes('info', attrs))}
-${dropdown(classMergeAttributes('warning', attrs))}
-${dropdown(classMergeAttributes('danger', attrs))}`;
-}
-
-export function overviewAccordions(attrs: Record<string, string> = {}) {
-  return `${accordion(attrs)}
-${accordion(classMergeAttributes('secondary', attrs))}
-${accordion(classMergeAttributes('contrast', attrs))}
-${accordion(classMergeAttributes('success', attrs))}
-${accordion(classMergeAttributes('info', attrs))}
-${accordion(classMergeAttributes('warning', attrs))}
-${accordion(classMergeAttributes('danger', attrs))}`;
-}
-
-export function overviewCards(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, `${card('div', classMergeAttributes('primary', attrs))}
-${card('div', classMergeAttributes('secondary', attrs))}
-${card('div', classMergeAttributes('contrast', attrs))}
-${card('div', classMergeAttributes('success', attrs))}
-${card('div', classMergeAttributes('info', attrs))}
-${card('div', classMergeAttributes('warning', attrs))}
-${card('div', classMergeAttributes('danger', attrs))}`);
-}
-
-export function overviewCardsWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return renderElement('section', {}, `${cardWithHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
-${cardWithHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
-${cardWithHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
-${cardWithHeaderAndFooter('div', classMergeAttributes('success', attrs))}
-${cardWithHeaderAndFooter('div', classMergeAttributes('info', attrs))}
-${cardWithHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
-${cardWithHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
-}
-
-export function overviewPanes(attrs: Record<string, string> = {}) {
-  return renderElement('section', {}, `${pane('div', classMergeAttributes('primary', attrs))}
-${pane('div', classMergeAttributes('secondary', attrs))}
-${pane('div', classMergeAttributes('contrast', attrs))}
-${pane('div', classMergeAttributes('success', attrs))}
-${pane('div', classMergeAttributes('info', attrs))}
-${pane('div', classMergeAttributes('warning', attrs))}
-${pane('div', classMergeAttributes('danger', attrs))}`);
-}
-
-export function overviewPanesWithHeaderAndFooter(_attrs: Record<string, string> = {}) {
-  const { class: _class, ...attrs } = _attrs;
-
-  return renderElement('section', {}, `${paneWithHeaderAndFooter('div', classMergeAttributes('primary', attrs))}
-${paneWithHeaderAndFooter('div', classMergeAttributes('secondary', attrs))}
-${paneWithHeaderAndFooter('div', classMergeAttributes('contrast', attrs))}
-${paneWithHeaderAndFooter('div', classMergeAttributes('success', attrs))}
-${paneWithHeaderAndFooter('div', classMergeAttributes('info', attrs))}
-${paneWithHeaderAndFooter('div', classMergeAttributes('warning', attrs))}
-${paneWithHeaderAndFooter('div', classMergeAttributes('danger', attrs))}`);
+${DropdownDemo.intentVariants(attrs)}`);
 }

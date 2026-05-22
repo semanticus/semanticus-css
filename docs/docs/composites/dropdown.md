@@ -48,19 +48,18 @@ Just like any form elements, validation states are provided with `aria-invalid`.
 
 To convey **intent** and **importance**, dropdowns can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.overviewDropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.intentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.ghost` creates transparent background dropdowns with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="GhostDemo.overviewDropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.ghostVariants()" :codeCollapsed="true" />
 
 `.subtle` creates dropdowns with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.overviewDropdowns()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.subtleVariants()" :codeCollapsed="true" />
 
 <script setup>
-import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 import { DropdownDemo } from "@demos/composites";
 </script>

@@ -14,21 +14,25 @@ Adding `role="status"` to an element will stylize it as an **alert** component a
 
 <HtmlPreviewer :code="RoleStatusDemo.main('div', { 'aria-live': 'polite' })" />
 
+## With Close Button
+
+<HtmlPreviewer :code="RoleStatusDemo.withCloseButton('div', { 'aria-live': 'polite' })" />
+
 ## Intent Variants
 
 To convey **intent** and **importance**, status messages can be styled with different variants:
 
-<HtmlPreviewer :code="IntentDemo.overviewRoleStatuses()" />
+<HtmlPreviewer :code="RoleStatusDemo.intentVariants()" />
 
 ### Modifiers
 
 `.ghost` creates transparent background buttons with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="GhostDemo.overviewRoleStatuses()" :codeCollapsed="true" />
+<HtmlPreviewer :code="RoleStatusDemo.ghostVariants()" :codeCollapsed="true" />
 
 `.subtle` creates buttons with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="SubtleDemo.overviewRoleStatuses()" :codeCollapsed="true" />
+<HtmlPreviewer :code="RoleStatusDemo.subtleVariants()" :codeCollapsed="true" />
 
 <script setup>
 import { RoleStatusDemo } from '@demos/semantics';

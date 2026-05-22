@@ -1,5 +1,4 @@
 import { renderElement } from "@scripts/utils";
-import * as DetailsDemo from "@demos/semantics/elements/details.demo";
 import { DropdownDemo } from "@demos/composites";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}) {

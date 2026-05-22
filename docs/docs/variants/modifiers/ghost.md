@@ -8,7 +8,7 @@ The `.ghost` class creates transparent background buttons with colored text and 
 
 Apply `.ghost` to `<button>` elements:
 
-<HtmlPreviewer :code="GhostDemo.overviewButtons()" :codeCollapsed="true" />
+<HtmlPreviewer :code="ButtonDemo.ghostVariants()" :codeCollapsed="true" />
 
 ## Input Buttons
 
@@ -26,8 +26,10 @@ Any HTML element with `[role="button"]`:
 
 `.ghost` can also be applied to other elements or components, such as cards, to create a transparent background with colored borders and text.
 
-<HtmlPreviewer :code="GhostDemo.overviewCards()" :codeCollapsed="true" />
+<HtmlPreviewer :code="CardDemo.ghostVariants()" :codeCollapsed="true" />
 
 <script setup>
+import { CardDemo } from "@demos/components";
+import { ButtonDemo } from "@demos/semantics";
 import { GhostDemo } from "@demos/variants";
 </script>
