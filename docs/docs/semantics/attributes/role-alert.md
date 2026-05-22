@@ -14,7 +14,7 @@ Adding `role="alert"` to an element will stylize it as an **alert** component an
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleAlertDemo.main('div', { 'aria-live': 'polite' })" />
+<HtmlPreviewer :code="RoleAlertDemo.main()" />
 
 ## With Close Button
 

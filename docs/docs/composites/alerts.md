@@ -27,7 +27,7 @@ Dialog alerts are modal windows that require user interaction before they can be
 - Ensure the dialog contains at least one focusable element (e.g., action buttons).
 - The user must interact with the dialog to dismiss it; do not close on backdrop click.
 
-> **Warning:** Be mindful that the role `role="alertdialog"`, tells the browser to trigger a system alert event, which immediately announces the contents to the user and ensures they focus on the prompt, so it's important to consider the use of this role versus simply using a less intrusive [Modal](/docs/composites/modal).
+> **Warning:** Be mindful that the role `role="alertdialog"` tells screen readers to treat the dialog as a high-priority alert, immediately interrupting the current reading to announce its contents, so it's important to consider the use of this role versus simply using a less intrusive [Modal](/docs/composites/modal).
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
 ${AlertsDemo.showDialogAlert()}

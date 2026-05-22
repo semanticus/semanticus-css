@@ -10,7 +10,7 @@ Adding `role="status"` to an element will stylize it as an **alert** component a
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleStatusDemo.main('div', { 'aria-live': 'polite' })" />
+<HtmlPreviewer :code="RoleStatusDemo.main()" />
 
 ## With Close Button
 
