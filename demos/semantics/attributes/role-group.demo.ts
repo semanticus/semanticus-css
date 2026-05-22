@@ -7,6 +7,13 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 <button>Three</button>`);
 }
 
+export function unorderedList(attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement('ul', { ...attrs, role: "group" }, slot || `<li>Item 1</li>
+<li>Item 2</li>
+<li aria-current="true">Item 3</li>
+<li>Item 4</li>`);
+}
+
 export function inputWithButton(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
   return renderElement(tagName, { ...attrs, role: "group" }, `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
 <input type="submit" value="Subscribe" />`);

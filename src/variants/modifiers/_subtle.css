@@ -2,7 +2,7 @@
   --subtle-opacity: 60%;
 }
 
-:is(.card, .pane, [role="status"], [role="alert"], button, [type="submit"], [type="button"], [role="button"]) {
+:not([role="link"], a:not([role="button"])) {
   &.subtle {
     &.primary {
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
@@ -62,7 +62,7 @@
     --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
     --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
 
-    &:is(.primary, [aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
       --color-background: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
       --border-color: oklch(from var(--color-primary-fill) l c h / var(--color-border-opacity));
