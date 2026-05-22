@@ -21,9 +21,9 @@ export const cards: StoryObj = {
 };
 
 export const subtleExamples: StoryObj = {
-  render: () => SubtleDemo.overview({ class: 'Info' }),
+  render: () => SubtleDemo.overview({ class: 'info' }),
 };
 
 export const ghostExamples: StoryObj = {
-  render: () => GhostDemo.overview({ class: 'Info' }),
+  render: () => GhostDemo.overview({ class: 'info' }),
 };
