@@ -4,17 +4,20 @@
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
-  --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
   --border-color: var(--dialog-border);
-  --alert-accent: var(--dialog-border);
+  --alert-size: var(--border-size);
 
   color: var(--color-text);
   padding: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
   border: var(--border-size) solid var(--border-color);
-  border-inline-start-width: calc(var(--border-size) * 4);
-  border-inline-start-color: var(--alert-accent);
+  border-inline-start-width: var(--alert-size);
+  border-inline-start-color: var(--dialog-border);
   background: var(--color-background);
   position: relative;
+
+  &:is(.ghost, .subtle) {
+    --alert-size: calc(var(--border-size) * 4);
+  }
 }
