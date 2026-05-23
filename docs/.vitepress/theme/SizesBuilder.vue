@@ -1,0 +1,1095 @@
+<script setup>
+import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
+import { useData } from 'vitepress'
+import { Demo } from '@demos/overviews';
+
+const { isDark, site } = useData();
+
+const basePath = computed(() => site.value.base || '/');
+
+function htmlTemplate(base, theme) {
+  return `<!DOCTYPE html>
+<html lang="en" data-theme="${theme}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Semanticus CSS Size Builder</title>
+  <link rel="stylesheet" href="${base}semanticus.css" id="theme-stylesheet">
+  <style>
+    body { transition: background-color 0.3s ease, color 0.3s ease; }
+  </style>
+</head>
+<body class="px-2">
+  ${Demo.palettesExample({ class: 'container-fluid' })}
+
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'update-size-css') {
+        var customStyle = document.getElementById('size-builder-custom');
+        if (!customStyle) {
+          customStyle = document.createElement('style');
+          customStyle.id = 'size-builder-custom';
+          document.head.appendChild(customStyle);
+        }
+        customStyle.textContent = event.data.css || '';
+      }
+    });
+  <\/script>
+</body>
+</html>`;
+}
+
+const previewTheme = ref(isDark.value ? 'dark' : 'light')
+
+const iframeContent = computed(() => {
+  return htmlTemplate(basePath.value, previewTheme.value)
+})
+
+function togglePreviewTheme() {
+  previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
+}
+
+// ── Variable definitions (non-color size variables from src/sizes/pico.css) ──
+
+const variableGroups = [
+  {
+    label: 'Font Families',
+    vars: [
+      { name: '--font-family', label: 'Font Family', desc: 'Primary font family for body text.', default: 'var(--font-family-sans-serif)' },
+      { name: '--font-family-sans-serif', label: 'Sans-serif Family', desc: 'System sans-serif font stack.', default: 'system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--font-family-emoji)' },
+      { name: '--font-family-monospace', label: 'Monospace Family', desc: 'Monospace font stack for code elements.', default: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji)' },
+      { name: '--font-family-emoji', label: 'Emoji Family', desc: 'Font fallback for emoji characters.', default: '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"' },
+    ]
+  },
+  {
+    label: 'Typography',
+    vars: [
+      { name: '--font-size', label: 'Root Font Size', desc: 'Root font-size; scales with breakpoints.', default: '100%' },
+      { name: '--line-height', label: 'Line Height', desc: 'Default line-height for body text.', default: '1.5' },
+      { name: '--font-weight', label: 'Font Weight', desc: 'Default font weight for body text.', default: '400' },
+      { name: '--text-underline-offset', label: 'Underline Offset', desc: 'Offset for underlined text.', default: '0.1rem' },
+      { name: '--a-decoration', label: 'Link Decoration', desc: 'Text decoration style for links.', default: 'underline' },
+    ]
+  },
+  {
+    label: 'Heading Sizes',
+    vars: [
+      { name: '--h1-size', label: 'H1 Size', desc: 'Font size for <h1> elements.', default: '2rem' },
+      { name: '--h2-size', label: 'H2 Size', desc: 'Font size for <h2> elements.', default: '1.75rem' },
+      { name: '--h3-size', label: 'H3 Size', desc: 'Font size for <h3> elements.', default: '1.5rem' },
+      { name: '--h4-size', label: 'H4 Size', desc: 'Font size for <h4> elements.', default: '1.25rem' },
+      { name: '--h5-size', label: 'H5 Size', desc: 'Font size for <h5> elements.', default: '1.125rem' },
+      { name: '--h6-size', label: 'H6 Size', desc: 'Font size for <h6> elements.', default: '1rem' },
+    ]
+  },
+  {
+    label: 'Spacing',
+    vars: [
+      { name: '--base-spacing', label: 'Base Spacing', desc: 'Base spacing unit used for margins and padding.', default: '1rem' },
+      { name: '--spacing', label: 'Spacing', desc: 'Applied spacing; scales with base-spacing and breakpoints.', default: 'var(--base-spacing)' },
+      { name: '--typography-spacing-vertical', label: 'Typography Vertical', desc: 'Vertical margin below typographic elements.', default: '1rem' },
+      { name: '--input-spacing-vertical', label: 'Input Vertical', desc: 'Vertical padding inside form inputs.', default: '0.75rem' },
+      { name: '--input-spacing-horizontal', label: 'Input Horizontal', desc: 'Horizontal padding inside form inputs.', default: '1rem' },
+    ]
+  },
+  {
+    label: 'Borders & Effects',
+    vars: [
+      { name: '--radius', label: 'Border Radius', desc: 'Default border-radius for elements.', default: '0.25rem' },
+      { name: '--border-size', label: 'Border Size', desc: 'Default border width.', default: '0.0625rem' },
+      { name: '--outline-size', label: 'Outline Size', desc: 'Focus-ring outline width.', default: '0.125rem' },
+      { name: '--transition', label: 'Transition', desc: 'Default transition timing for interactive states.', default: '0.2s ease-in-out' },
+    ]
+  },
+  {
+    label: 'Navigation',
+    vars: [
+      { name: '--nav-link-gap', label: 'Nav Link Gap', desc: 'Spacing inside nav links.', default: 'calc(var(--spacing) * 0.5)' },
+      { name: '--nav-breadcrumb-divider', label: 'Breadcrumb Divider', desc: 'Character between breadcrumb items.', default: '">"' },
+      { name: '--sidebar-size', label: 'Sidebar Width', desc: 'Sidebar width; scales with breakpoints.', default: '25%' },
+    ]
+  },
+  {
+    label: 'Group Shadows',
+    vars: [
+      { name: '--group-shadow', label: 'Group Shadow', desc: 'Shadow on [role="group"] and [role="search"] combos.', default: '0 0 0 rgba(0, 0, 0, 0)' },
+      { name: '--group-shadow-focus-button', label: 'Group Button Focus', desc: 'Focus shadow when a button inside the group is focused.', default: '0 0 0 var(--outline-size) var(--color-primary-focus-ring)' },
+      { name: '--group-shadow-focus-input', label: 'Group Input Focus', desc: 'Focus shadow when an input inside the group is focused.', default: '0 0 0 0.0625rem var(--input-border)' },
+    ]
+  },
+  {
+    label: 'Button Shadows',
+    vars: [
+      { name: '--button-shadow', label: 'Button Shadow', desc: 'Shadow on buttons at rest.', default: '0 0 0 rgb(0 0 0 / 0)' },
+      { name: '--button-shadow-hover', label: 'Button Hover Shadow', desc: 'Shadow on buttons when hovered.', default: '0 0 0 rgb(0 0 0 / 0)' },
+    ]
+  },
+  {
+    label: 'Form States & Misc',
+    vars: [
+      { name: '--input-opacity-disabled', label: 'Disabled Opacity', desc: 'Opacity for disabled form inputs.', default: '0.5' },
+      { name: '--loading-spinner-opacity', label: 'Loading Opacity', desc: 'Opacity for the loading spinner overlay.', default: '0.5' },
+    ]
+  },
+]
+
+// ── State ───────────────────────────────────────────────────────────────────
+
+const customValues = reactive({})
+const searchQuery = ref('')
+const expandedGroups = reactive({})
+const iframeRef = ref(null)
+const sidebarWidth = ref(280)
+const isResizing = ref(false)
+const showExportModal = ref(false)
+const copiedFeedback = ref(null)
+const activePopover = ref(null)
+
+// Initialize all groups as collapsed except the first
+variableGroups.forEach((g, i) => {
+  expandedGroups[g.label] = i === 0
+})
+
+// ── Computed ────────────────────────────────────────────────────────────────
+
+const filteredGroups = computed(() => {
+  const q = searchQuery.value.toLowerCase().trim()
+  if (!q) return variableGroups
+
+  return variableGroups
+    .map(group => ({
+      ...group,
+      vars: group.vars.filter(v =>
+        v.name.toLowerCase().includes(q) ||
+        v.label.toLowerCase().includes(q) ||
+        v.desc.toLowerCase().includes(q)
+      )
+    }))
+    .filter(group => group.vars.length > 0)
+})
+
+const changedCount = computed(() => Object.keys(customValues).length)
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+function getKey(v) {
+  return `root:${v.name}`
+}
+
+function getDefault(v) {
+  return v.default
+}
+
+function getDisplayValue(v) {
+  const key = getKey(v)
+  if (key in customValues) return customValues[key]
+  return v.default
+}
+
+function setCurrentValue(v, value) {
+  const key = getKey(v)
+  if (value === '' || value === v.default) {
+    delete customValues[key]
+  } else {
+    customValues[key] = value
+  }
+  updateIframeStyles()
+}
+
+function isChanged(v) {
+  return getKey(v) in customValues
+}
+
+function resetVar(v) {
+  delete customValues[getKey(v)]
+  updateIframeStyles()
+}
+
+function resetAll() {
+  Object.keys(customValues).forEach(k => delete customValues[k])
+  updateIframeStyles()
+}
+
+function toggleGroup(label) {
+  expandedGroups[label] = !expandedGroups[label]
+}
+
+function togglePopover(varName) {
+  activePopover.value = activePopover.value === varName ? null : varName
+}
+
+function closePopover() {
+  activePopover.value = null
+}
+
+function handleDocumentClick(event) {
+  if (activePopover.value && !event.target.closest('.popover-container')) {
+    closePopover()
+  }
+}
+
+function highlightMatch(text, query) {
+  if (!query) return text
+  const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi')
+  return text.replace(regex, '<mark class="search-highlight">$1</mark>')
+}
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+async function copyToClipboard(text, type) {
+  try {
+    await navigator.clipboard.writeText(text)
+    copiedFeedback.value = type
+    setTimeout(() => copiedFeedback.value = null, 2000)
+  } catch (err) {
+    console.error('Failed to copy:', err)
+  }
+}
+
+// ── Sidebar Resize ────────────────────────────────────────────────────────
+
+function startResize(event) {
+  isResizing.value = true
+  document.body.style.cursor = 'col-resize'
+  document.body.style.userSelect = 'none'
+}
+
+function stopResize() {
+  isResizing.value = false
+  document.body.style.cursor = ''
+  document.body.style.userSelect = ''
+}
+
+function handleResize(event) {
+  if (!isResizing.value) return
+  const minWidth = 280
+  const maxWidth = 460
+  const newWidth = Math.max(minWidth, Math.min(maxWidth, event.clientX))
+  sidebarWidth.value = newWidth
+}
+
+// ── iframe Communication ────────────────────────────────────────────────────
+
+function buildCustomCSS() {
+  const rootVars = []
+
+  for (const [key, value] of Object.entries(customValues)) {
+    const [, ...nameParts] = key.split(':')
+    const name = nameParts.join(':')
+    rootVars.push(`  ${name}: ${value};`)
+  }
+
+  const allRootLines = [...rootVars]
+  if (!allRootLines.length) {
+    return `/* No custom variables set */`
+  }
+
+  return `:root,
+:host {
+${allRootLines.join('\n')}
+}
+`
+}
+
+function updateIframeStyles() {
+  if (!iframeRef.value?.contentWindow) return
+  iframeRef.value.contentWindow.postMessage({
+    type: 'update-size-css',
+    css: buildCustomCSS()
+  }, '*')
+}
+
+// ── Export ─────────────────────────────────────────────────────────────────
+
+function exportCSS() {
+  showExportModal.value = true
+}
+
+function closeExportModal() {
+  showExportModal.value = false
+}
+
+function downloadCSS() {
+  const name = 'custom'
+  const css = buildCustomCSS()
+  const header = `/* Semanticus CSS Custom Size
+ * Generated by Semanticus CSS Size Builder
+ * ${new Date().toISOString().split('T')[0]}
+ */
+
+`
+  const blob = new Blob([header + css], { type: 'text/css' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `semanticus.size.${name}.css`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+// ── Lifecycle ───────────────────────────────────────────────────────────────
+
+onMounted(() => {
+  document.addEventListener('click', handleDocumentClick)
+  document.addEventListener('mouseup', stopResize)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleDocumentClick)
+  document.removeEventListener('mouseup', stopResize)
+})
+
+const IFRAME_INIT_DELAY_MS = 300
+
+function onIframeLoad() {
+  setTimeout(() => {
+    updateIframeStyles()
+  }, IFRAME_INIT_DELAY_MS)
+}
+
+defineExpose({
+  changedCount,
+  previewTheme,
+  togglePreviewTheme,
+  exportCSS,
+  resetAll,
+})
+</script>
+
+<template>
+  <div class="sizes-builder">
+    <div
+      class="builder-body"
+      :style="{ gridTemplateColumns: sidebarWidth + 'px auto 1fr' }"
+      @mousemove="handleResize"
+      @mouseup="stopResize"
+      @mouseleave="stopResize"
+    >
+      <!-- Sidebar: Variable Editors -->
+      <aside class="builder-sidebar">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <input
+            v-model="searchQuery"
+            type="search"
+            placeholder="Search variables..."
+            class="search-input"
+          >
+        </div>
+
+        <div class="var-groups">
+          <div
+            v-for="group in filteredGroups"
+            :key="group.label"
+            class="var-group"
+          >
+            <button class="group-header" @click="toggleGroup(group.label)">
+              <svg :class="['chevron', { expanded: expandedGroups[group.label] }]" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6" /></svg>
+              <span class="group-label">{{ group.label }}</span>
+              <span class="group-count">{{ group.vars.length }}</span>
+            </button>
+
+            <div v-show="expandedGroups[group.label]" class="group-vars">
+              <div
+                v-for="v in group.vars"
+                :key="v.name"
+                :class="['var-row', { changed: isChanged(v) }]"
+              >
+                <div class="var-label-row">
+                  <label class="var-label" :for="'input-' + v.name">
+                    <code class="var-name-label" v-html="highlightMatch(v.name, searchQuery)"></code>
+                  </label>
+                  <div class="popover-container">
+                    <button
+                      type="button"
+                      class="help-trigger"
+                      :aria-expanded="activePopover === v.name"
+                      @click.stop="togglePopover(v.name)"
+                      title="Show details"
+                    >
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+                    </button>
+                    <div
+                      v-if="activePopover === v.name"
+                      class="help-popover"
+                      @click.stop
+                    >
+                      <div class="popover-header">
+                        <code class="var-name-popover">{{ v.name }}</code>
+                        <button
+                          type="button"
+                          class="popover-close"
+                          @click.stop="closePopover"
+                        >✕</button>
+                      </div>
+                      <div class="popover-content">
+                        <p class="popover-short-label" v-html="highlightMatch(v.label, searchQuery)"></p>
+                        <p class="popover-desc" v-html="highlightMatch(v.desc, searchQuery)"></p>
+                        <div class="popover-default">
+                          <span class="default-label">Default:</span>
+                          <code class="default-value">{{ getDefault(v) }}</code>
+                        </div>
+                        <div class="popover-copy-css">
+                          <button
+                            type="button"
+                            class="copy-css-btn"
+                            @click.stop="copyToClipboard(`${v.name}: ${getDisplayValue(v)};`, 'cssRule')"
+                          >
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            {{ copiedFeedback === 'cssRule' ? 'Copied CSS!' : 'Copy CSS Rule' }}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    v-if="isChanged(v)"
+                    class="reset-var-btn"
+                    @click="resetVar(v)"
+                    title="Reset to default"
+                  >✕</button>
+                </div>
+
+                <div class="var-input-row">
+                  <input
+                    type="text"
+                    class="text-input"
+                    :id="'input-' + v.name"
+                    :value="getDisplayValue(v)"
+                    :placeholder="getDefault(v)"
+                    @change="setCurrentValue(v, $event.target.value)"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Resize Handle -->
+      <div
+        class="resize-handle"
+        :class="{ resizing: isResizing }"
+        @mousedown="startResize"
+        title="Drag to resize sidebar"
+      ></div>
+
+      <!-- Preview -->
+      <main class="builder-preview">
+        <div class="preview-container">
+          <ClientOnly>
+            <iframe
+              :key="previewTheme"
+              ref="iframeRef"
+              :srcdoc="iframeContent"
+              class="preview-iframe"
+              title="Size Preview"
+              sandbox="allow-scripts allow-same-origin"
+              @load="onIframeLoad"
+            ></iframe>
+            <template #fallback>
+              <div class="preview-iframe preview-iframe-fallback">
+                <div class="preview-loading">Loading size preview...</div>
+              </div>
+            </template>
+          </ClientOnly>
+        </div>
+      </main>
+    </div>
+
+    <!-- Export Modal -->
+    <div v-if="showExportModal" class="export-overlay" @click="closeExportModal">
+      <div class="export-modal" @click.stop>
+        <div class="export-header">
+          <h3 class="export-title">Export Your Size Overrides</h3>
+          <button class="export-close" @click="closeExportModal">✕</button>
+        </div>
+        <div class="export-content">
+          <p class="export-description">Save this CSS file to your project and include it <strong>after</strong> the main Semanticus CSS:</p>
+          <div class="export-code-block">
+            <pre><code>{{ buildCustomCSS() }}</code></pre>
+            <button
+              class="copy-snippet-btn"
+              @click="copyToClipboard(buildCustomCSS(), 'css')"
+            >
+              {{ copiedFeedback === 'css' ? 'Copied!' : 'Copy' }}
+            </button>
+          </div>
+        </div>
+        <div class="export-footer">
+          <button class="export-btn-secondary" @click="closeExportModal">Cancel</button>
+          <button class="export-btn-primary" @click="downloadCSS">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+            Download .css file
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.sizes-builder {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--vp-c-bg);
+}
+
+/* ── Body Layout ── */
+.builder-body {
+  display: grid;
+  grid-template-columns: min-content auto 1fr;
+  flex: 1;
+  min-height: 0;
+  overflow: visible;
+}
+
+/* ── Resize Handle ── */
+.resize-handle {
+  width: 6px;
+  background: transparent;
+  cursor: col-resize;
+  position: relative;
+  z-index: 10;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.resize-handle:hover,
+.resize-handle.resizing {
+  background: var(--vp-c-brand-1);
+}
+
+.resize-handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 20px;
+  background: var(--vp-c-divider);
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.resize-handle:hover::before,
+.resize-handle.resizing::before {
+  opacity: 1;
+  background: #fff;
+}
+
+/* ── Sidebar ── */
+.builder-sidebar {
+  overflow-y: auto;
+  background: var(--vp-c-bg-soft);
+  max-height: 100%;
+  flex-shrink: 0;
+}
+
+.search-box {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--vp-c-bg-soft);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: var(--vp-c-text-3);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-1);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--vp-c-text-3);
+}
+
+/* ── Variable Groups ── */
+.var-groups {
+  padding: 0.25rem 0;
+}
+
+.var-group {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vp-c-text-2);
+  font-weight: 600;
+}
+
+.group-header:hover {
+  color: var(--vp-c-text-1);
+}
+
+.chevron {
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+
+.chevron.expanded {
+  transform: rotate(90deg);
+}
+
+.group-label {
+  flex: 1;
+  text-align: left;
+}
+
+.group-count {
+  font-size: 0.625rem;
+  padding: 0.0625rem 0.375rem;
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-3);
+}
+
+/* ── Variable Rows ── */
+.group-vars {
+  padding: 0 0.5rem 0.5rem;
+}
+
+.var-row {
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+  border: 1px solid transparent;
+}
+
+.var-row:hover,
+.var-row.selected {
+  background: var(--vp-c-bg);
+  border-color: var(--vp-c-divider);
+}
+
+.var-row.changed {
+  background: rgba(242, 112, 54, 0.04);
+}
+
+.var-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.var-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.popover-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.help-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-3);
+  border: 1px solid var(--vp-c-divider);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: all 0.15s;
+}
+
+.help-trigger:hover,
+.help-trigger[aria-expanded="true"] {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.help-popover {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 260px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.75rem;
+  background: var(--vp-c-bg-soft);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.var-name-popover {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+}
+
+.popover-close {
+  background: none;
+  border: none;
+  padding: 0.125rem 0.25rem;
+  cursor: pointer;
+  color: var(--vp-c-text-3);
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.popover-close:hover {
+  color: var(--vp-c-danger-1, #e53e3e);
+  background: var(--vp-c-danger-soft, rgba(229, 62, 62, 0.1));
+}
+
+.popover-content {
+  padding: 0.75rem;
+}
+
+.popover-short-label {
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-1);
+  margin: 0 0 0.375rem 0;
+  font-weight: 600;
+}
+
+.popover-desc {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.popover-default {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.default-label {
+  font-size: 0.6875rem;
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.default-value {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  color: var(--vp-c-brand-1);
+  word-break: break-word;
+}
+
+.popover-copy-css {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.copy-css-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.15s;
+}
+
+.copy-css-btn:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.reset-var-btn {
+  background: none;
+  border: none;
+  padding: 0.125rem 0.25rem;
+  cursor: pointer;
+  color: var(--vp-c-text-3);
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.reset-var-btn:hover {
+  color: var(--vp-c-danger-1, #e53e3e);
+  background: var(--vp-c-danger-soft, rgba(229, 62, 62, 0.1));
+}
+
+.var-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.text-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.text-input:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px var(--vp-c-brand-soft);
+}
+
+/* ── Search Highlight ── */
+:deep(.search-highlight) {
+  background: var(--vp-c-warning-soft, rgba(255, 214, 165, 0.4));
+  color: var(--vp-c-warning-1, #d97706);
+  padding: 0 0.125rem;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* ── Var Name Label ── */
+.var-name-label {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-mute);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* ── Preview ── */
+.builder-preview {
+  background: var(--vp-c-bg);
+  overflow: hidden;
+}
+
+.preview-container {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.preview-iframe-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-loading {
+  color: var(--vp-c-text-3);
+  font-size: 0.875rem;
+}
+
+/* ── Export Modal ── */
+.export-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.export-modal {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.export-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.export-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--vp-c-text-1);
+}
+
+.export-close {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--vp-c-text-3);
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.export-close:hover {
+  color: var(--vp-c-danger-1, #e53e3e);
+  background: var(--vp-c-danger-soft, rgba(229, 62, 62, 0.1));
+}
+
+.export-content {
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
+.export-description {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  margin: 0 0 1rem 0;
+}
+
+.export-code-block {
+  position: relative;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.export-code-block pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.export-code-block code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  color: var(--vp-c-text-1);
+}
+
+.copy-snippet-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  color: var(--vp-c-text-2);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.copy-snippet-btn:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.export-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.export-btn-secondary {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.export-btn-secondary:hover {
+  border-color: var(--vp-c-text-1);
+  color: var(--vp-c-text-1);
+}
+
+.export-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.export-btn-primary:hover {
+  background: var(--vp-c-brand-2);
+}
+</style>
