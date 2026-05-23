@@ -12,7 +12,7 @@ After importing any of semanticus-css's css files, you can further customize it 
 }
 ```
 
-To help you create your own custom styles, check out the [Theme Builder](/guide/theme-builder) tool.
+To help you create your own custom styles, check out the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) builder tools.
 
 ## Color Variables List
 
@@ -313,4 +313,4 @@ Here is a complete customization file:
 }
 ```
 
-To help you create your own custom styles, check out the [Theme Builder](/guide/theme-builder) tool.
+To help you create your own custom styles, check out the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) builder tools.

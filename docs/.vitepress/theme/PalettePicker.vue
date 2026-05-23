@@ -40,7 +40,8 @@ function htmlTemplate(style, theme) {
     observer.observe(document.body, { childList: true, subtree: true, attributes: true });
     sendHeight();
   <\/script>
-</body>`;
+</body>
+</html>`;
 }
 
 hljs.registerLanguage('html', html)
