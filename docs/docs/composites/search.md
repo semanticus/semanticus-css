@@ -4,22 +4,22 @@ title: Search
 
 # Search
 
-Search forms use the `role="search"` attribute to mark a landmark region containing site or application search functionality.
+Combine `role="search"` with a `<fieldset>` to create a stylized search input with proper semantics and accessibility.
 
 Screen readers expose it as a "search" landmark, allowing users to jump directly to the search form.
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleSearchDemo.main()" />
+<HtmlPreviewer :code="SearchDemo.main()" />
 
 ## Search with Reset Button
 
-<HtmlPreviewer :code="RoleSearchDemo.withResetButton()" />
+<HtmlPreviewer :code="SearchDemo.withResetButton()" />
 
 ## Filter Search
 
-<HtmlPreviewer :code="RoleSearchDemo.filterSearch()" />
+<HtmlPreviewer :code="SearchDemo.filterSearch()" />
 
 <script setup>
-import { RoleSearchDemo } from "@demos/semantics/attributes";
+import { SearchDemo } from "@demos/composites";
 </script>

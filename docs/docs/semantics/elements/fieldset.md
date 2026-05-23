@@ -6,31 +6,39 @@ title: fieldset
 
 `<fieldset>` groups related form elements together and can optionally include a `<legend>` label.
 
-## Basic Usage
+You can also combine it with `[role="group"]` and `[role="search"]`, to make use of the **ARIA** roles while adding a group styling it.
 
-<HtmlPreviewer :code="FieldsetDemo.main()" />
+## With a Form Input
 
-### Grouping Input a with Button
+<HtmlPreviewer :code="FieldsetDemo.formInput()" />
 
-<HtmlPreviewer :code="FieldsetDemo.groupingInputWithAButton()" />
+## Input Search Group
 
-### Grouping Select with a Button
+For more search examples see [Search](http://localhost:5173/docs/composites/search) documentation.
 
-<HtmlPreviewer :code="FieldsetDemo.groupingSelectWithAButton()" />
+<HtmlPreviewer :code="FieldsetDemo.searchInputButton()" />
 
-### Grouping Dropdown with a Button
+## Input Button Group
 
-<HtmlPreviewer :code="FieldsetDemo.groupingDropdownWithAButton()" />
+<HtmlPreviewer :code="FieldsetDemo.groupInputButton()" />
 
-## Grouping Multiple Inputs
+## Select Button Group
 
-<HtmlPreviewer :code="FieldsetDemo.groupingTwoInputsWithAButton()" />
+<HtmlPreviewer :code="FieldsetDemo.groupSelectButton()" />
 
-## Inside a Form
+## Dropdown Button Group
+
+<HtmlPreviewer :code="FieldsetDemo.groupDropdownButton()" />
+
+## Multiple Inputs Group
+
+<HtmlPreviewer :code="FieldsetDemo.groupMultipleInputs()" />
+
+## Form Example
 
 Inputs are `width: 100%` by default and match button sizes for consistent layouts. For label placement and helper text, see [&lt;label&gt;](/docs/semantics/elements/label).
 
-<HtmlPreviewer :code="FieldsetDemo.insideForm()" />
+<HtmlPreviewer :code="FieldsetDemo.formExample()" />
 
 ## Disabled
 

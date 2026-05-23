@@ -36,84 +36,119 @@
       }
     }
   }
-}
 
-:is([role="search"], [role="group"]):not(ul) {
-  border-radius: var(--radius);
-  box-shadow: var(--group-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  display: inline-flex;
-  gap: 0;
-  margin-bottom: var(--spacing);
-  position: relative;
-  transition: box-shadow var(--transition);
-  vertical-align: middle;
-  width: 100%;
-
-  & > *:not(details),
-  & input:not([type="checkbox"], [type="radio"]),
-  & select {
+  &:is(nav) {
+    border-radius: var(--radius);
+    box-shadow: var(--group-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    display: inline-flex;
+    gap: 0;
+    margin-bottom: var(--spacing);
     position: relative;
-    flex: 1 1 auto;
-    margin-bottom: 0;
+    transition: box-shadow var(--transition);
+    vertical-align: middle;
+    width: 100%;
 
-    &:not(:first-child) {
-      margin-left: calc(var(--border-size) * -1);
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
+    > * {
+      position: relative;
+      flex: 1 1 auto;
+      margin-bottom: 0;
 
-    &:not(:last-child) {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &:focus {
-      z-index: 2;
-    }
-  }
-
-  & button,
-  & [type="submit"],
-  & [type="reset"],
-  & [type="button"],
-  & [role="button"] {
-    width: auto;
-  }
-
-  /* Details dropdown inside group */
-  & > details {
-    position: relative;
-    margin-bottom: 0;
-    /* Constrain details height to just the button, not the dropdown menu */
-    height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
-    overflow: visible;
-
-    &:not(:first-child) {
-      margin-left: calc(var(--border-size) * -1);
-
-      & > summary {
+      &:not(:first-child) {
+        margin-left: calc(var(--border-size) * -1);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
-    }
 
-    &:not(:last-child) > summary {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
 
-    & > summary:focus {
+      &:focus {
         z-index: 2;
+      }
+    }
+  }
+}
+
+:is([role="search"], [role="group"]) {
+  &:is(fieldset) {
+    border-radius: var(--radius);
+    box-shadow: var(--group-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    display: inline-flex;
+    gap: 0;
+    margin-bottom: var(--spacing);
+    position: relative;
+    transition: box-shadow var(--transition);
+    vertical-align: middle;
+    width: 100%;
+
+    & > *:not(details),
+    & input:not([type="checkbox"], [type="radio"]),
+    & select {
+      position: relative;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-left: calc(var(--border-size) * -1);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:focus {
+        z-index: 2;
+      }
     }
 
-    /* Ensure consistent height with other form elements in the group */
-    & > summary[role="button"] {
-      display: flex;
-      align-items: center;
-      height: 100%;
+    & button,
+    & [type="submit"],
+    & [type="reset"],
+    & [type="button"],
+    & [role="button"] {
+      width: auto;
+    }
 
-      &::after {
-        height: calc(1rem * var(--line-height, 1.5));
+    /* Details dropdown inside group */
+    & > details {
+      position: relative;
+      margin-bottom: 0;
+      /* Constrain details height to just the button, not the dropdown menu */
+      height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
+      overflow: visible;
+
+      &:not(:first-child) {
+        margin-left: calc(var(--border-size) * -1);
+
+        & > summary {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      &:not(:last-child) > summary {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      & > summary:focus {
+          z-index: 2;
+      }
+
+      /* Ensure consistent height with other form elements in the group */
+      & > summary[role="button"] {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &::after {
+          height: calc(1rem * var(--line-height, 1.5));
+        }
       }
     }
   }
@@ -123,10 +158,10 @@
   [role="search"],
   [role="group"] {
     &:has(
-        button:focus,
-        [type="submit"]:focus,
-        [type="button"]:focus,
-        [role="button"]:focus
+      button:focus,
+      [type="submit"]:focus,
+      [type="button"]:focus,
+      [role="button"]:focus
     ) {
       --group-shadow: var(--group-shadow-focus-button);
 

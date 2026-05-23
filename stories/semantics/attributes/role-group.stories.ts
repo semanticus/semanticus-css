@@ -15,7 +15,7 @@ export const ListGroup: StoryObj = {
 };
 
 export const FieldsetGroup: StoryObj = {
-  args: { html: FieldsetDemo.groupingInputWithAButton() },
+  args: { html: FieldsetDemo.groupInputButton() },
   render: (args) => args.html,
 };
 

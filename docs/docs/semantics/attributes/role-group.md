@@ -22,7 +22,7 @@ When used inside a `<fieldset>`, `role="group"` can cluster related form control
 
 See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
 
-<HtmlPreviewer :code="FieldsetDemo.groupingInputWithAButton()" />
+<HtmlPreviewer :code="FieldsetDemo.groupInputButton()" />
 
 ## Nav Group
 

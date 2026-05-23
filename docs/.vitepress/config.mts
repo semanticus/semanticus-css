@@ -454,10 +454,10 @@ export default defineConfig({
                   text: '[role="link"]',
                   link: "/docs/semantics/attributes/role-link",
                 },
-                {
-                  text: '[role="search"]',
-                  link: "/docs/semantics/attributes/role-search",
-                },
+                // {
+                //   text: '[role="search"]',
+                //   link: "/docs/semantics/attributes/role-search",
+                // },
                 {
                   text: '[role="status"]',
                   link: "/docs/semantics/attributes/role-status",

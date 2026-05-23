@@ -3,19 +3,21 @@ import * as InputDemo from "@demos/semantics/elements/input.demo";
 import * as DropdownDemo from "@demos/composites/dropdown.demo";
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  return renderElement(
-    "fieldset",
+  return renderElement("fieldset", attrs, slot);
+}
+
+export function formInput(attrs: Record<string, string> = {}) {
+  return main(
     attrs,
-    slot ||
-      `<label>Email</label>
-${InputDemo.email({ "aria-describedby": "email-helper" })}
+    `<label for="email">Email</label>
+${InputDemo.email({ id: "email", "aria-describedby": "email-helper" })}
 <small id="email-helper">
   We'll never share your email with anyone else.
 </small>`,
   );
 }
 
-export function groupingInputWithAButton(attrs: Record<string, string> = {}) {
+export function searchInputButton(attrs: Record<string, string> = {}) {
   return main(
     { ...attrs, role: "group" },
     `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
@@ -23,7 +25,15 @@ export function groupingInputWithAButton(attrs: Record<string, string> = {}) {
   );
 }
 
-export function groupingTwoInputsWithAButton(
+export function groupInputButton(attrs: Record<string, string> = {}) {
+  return main(
+    { ...attrs, role: "group" },
+    `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
+<input type="submit" value="Subscribe" />`,
+  );
+}
+
+export function groupMultipleInputs(
   attrs: Record<string, string> = {},
 ) {
   return main(
@@ -34,7 +44,7 @@ export function groupingTwoInputsWithAButton(
   );
 }
 
-export function groupingSelectWithAButton(attrs: Record<string, string> = {}) {
+export function groupSelectButton(attrs: Record<string, string> = {}) {
   return main(
     { ...attrs, role: "group" },
     `<select>
@@ -46,7 +56,7 @@ export function groupingSelectWithAButton(attrs: Record<string, string> = {}) {
   );
 }
 
-export function groupingDropdownWithAButton(
+export function groupDropdownButton(
   attrs: Record<string, string> = {},
 ) {
   return main(
@@ -56,7 +66,7 @@ export function groupingDropdownWithAButton(
   );
 }
 
-export function insideForm() {
+export function formExample() {
   return `<form>
   <fieldset>
     <label>
