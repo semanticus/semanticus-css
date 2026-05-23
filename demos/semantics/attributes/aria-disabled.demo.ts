@@ -9,7 +9,11 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 export function overview() {
   return renderElement('nav', { role: 'toolbar' }, `${main("button")}
 
+<hr>
+
 ${main("button", { tabindex: "-1" }, 'unfocusable button')}
+
+<hr>
 
 ${main("a", {}, "Disabled link")}`);
 }

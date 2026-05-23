@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { RoleSearchDemo } from "@demos/semantics/attributes";
+import { SearchDemo } from "@demos/composites";
 
 const meta: Meta = {
   title: "Semantics/Attributes/[role=search]",
@@ -9,16 +9,16 @@ const meta: Meta = {
 export default meta;
 
 export const BasicUsage: StoryObj = {
-  args: { html: RoleSearchDemo.main() },
+  args: { html: SearchDemo.main() },
   render: (args) => args.html,
 };
 
 export const withIconButton: StoryObj = {
-  args: { html: RoleSearchDemo.withIconButton() },
+  args: { html: SearchDemo.withIconButton() },
   render: (args) => args.html,
 };
 
 export const filterSearch: StoryObj = {
-  args: { html: RoleSearchDemo.filterSearch() },
+  args: { html: SearchDemo.filterSearch() },
   render: (args) => args.html,
 };

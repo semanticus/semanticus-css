@@ -1,11 +1,11 @@
 import { renderElement } from "@scripts/utils";
 
-import { GhostDemo, SubtleDemo, IntentDemo } from "@demos/variants";
 import {
   DropdownDemo,
   LinksDemo,
   ListGroupDemo,
   TypographyDemo,
+  SearchDemo,
 } from "@demos/composites";
 import { CardDemo, PaneDemo } from "@demos/components";
 import {
@@ -24,7 +24,6 @@ import {
   ListsDemo,
   AriaBusyDemo,
   DisabledDemo,
-  RoleSearchDemo,
   RoleTooltipDemo,
   RoleLinkDemo,
   TextDemo,
@@ -198,16 +197,16 @@ function fieldsets() {
   </hgroup>
 
   <section>
-    ${FieldsetDemo.main()}
+    ${FieldsetDemo.formInput()}
   </section>
 
   <section>
     <h4>Group fieldset (role="group")</h4>
 
     <section>
-      ${FieldsetDemo.groupingInputWithAButton()}
-      ${FieldsetDemo.groupingTwoInputsWithAButton()}
-      ${FieldsetDemo.groupingSelectWithAButton()}
+      ${FieldsetDemo.groupInputButton()}
+      ${FieldsetDemo.groupMultipleInputs()}
+      ${FieldsetDemo.groupSelectButton()}
     </section>
   </section>
 
@@ -215,8 +214,8 @@ function fieldsets() {
     <h4>Search fieldset (role="search")</h4>
 
     <section>
-      ${RoleSearchDemo.main("fieldset")}
-      ${RoleSearchDemo.withResetButton("fieldset")}
+      ${SearchDemo.main()}
+      ${SearchDemo.withResetButton()}
     </section>
   </section>
 </section>`;
@@ -485,7 +484,7 @@ ${links()}
   <fieldset>
     <label class="w-100">
       Dropdown group
-      ${FieldsetDemo.groupingDropdownWithAButton()}
+      ${FieldsetDemo.groupDropdownButton()}
     </label>
   </fieldset>
 

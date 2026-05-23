@@ -10,16 +10,16 @@ Screen readers expose it as a "search" landmark, allowing users to jump directly
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleSearchDemo.main()" />
+<HtmlPreviewer :code="SearchDemo.main()" />
 
 ## Search with Reset Button
 
-<HtmlPreviewer :code="RoleSearchDemo.withResetButton()" />
+<HtmlPreviewer :code="SearchDemo.withResetButton()" />
 
 ## Filter Search
 
-<HtmlPreviewer :code="RoleSearchDemo.filterSearch()" />
+<HtmlPreviewer :code="SearchDemo.filterSearch()" />
 
 <script setup>
-import { RoleSearchDemo } from "@demos/semantics/attributes";
+import { SearchDemo } from "@demos/composites";
 </script>
