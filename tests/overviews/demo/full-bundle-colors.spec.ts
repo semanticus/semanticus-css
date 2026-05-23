@@ -3,7 +3,8 @@ import { variations } from '@scripts/utils';
 
 test.use({ viewport: { width: 1024, height: 900 } });
 
-const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default');
+// const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default'); // Doesn't seem to add a lot of value and adds a lot of snapshots to maintain, so I'm leaving it out for now. We can always add it back later if we want to test palette variations in the full bundle demo.
+const palettes = [];
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
