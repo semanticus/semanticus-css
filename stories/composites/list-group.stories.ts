@@ -12,6 +12,10 @@ export const BasicUsage: StoryObj = {
   render: () => ListGroupDemo.main(),
 };
 
+export const HorizontalStack: StoryObj = {
+  render: () => ListGroupDemo.horizontalStack(),
+};
+
 export const Variants: StoryObj = {
   render: () => ListGroupDemo.overviewVariants(),
 };
