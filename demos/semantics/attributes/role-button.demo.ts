@@ -1,6 +1,6 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { DetailsDemo } from "@demos/semantics";
-import { DropdownDemo } from "@demos/composites";
+import * as DetailsDemo from "@demos/semantics/elements/details.demo";
+import * as DropdownDemo from "@demos/composites/dropdown.demo";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement(tagName, { ...attrs, role: "button" }, slot || `${tagName} as button`);
