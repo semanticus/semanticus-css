@@ -2,7 +2,8 @@
 @import "./attributes/_aria-disabled.css";
 @import "./attributes/_hidden.css";
 @import "./attributes/_popover.css";
-@import "./attributes/_role-group-search.css";
+@import "./attributes/_role-group.css";
+@import "./attributes/_role-search.css";
 @import "./attributes/_role-status-alert.css";
 @import "./attributes/_role-toolbar.css";
 @import "./attributes/_role-tooltip.css";

@@ -2,7 +2,7 @@
 
 List groups are built with `<ul>` and `<li>` elements, and by adding `role="group"` to the `<ul>`, you can create a list group that is accessible and semantically correct.
 
-## Basic Button
+## Basic Usage
 
 Through the use of `aria-current="true"` you can indicate the current active item in the list group.
 
