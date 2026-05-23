@@ -65,6 +65,18 @@ function htmlTemplate(base, theme) {
           customContent.innerHTML = '';
         }
       }
+      if (event.data && event.data.type === 'request-computed-values') {
+        var result = {};
+        for (var i = 0; i < event.data.vars.length; i++) {
+          var item = event.data.vars[i];
+          result[item.name] = getComputedStyle(document.documentElement).getPropertyValue(item.name).trim();
+        }
+        event.source.postMessage({
+          type: 'computed-values',
+          requestId: event.data.requestId,
+          values: result
+        }, '*');
+      }
     });
   <\/script>
 </body>
@@ -79,6 +91,8 @@ const iframeContent = computed(() => {
 
 function togglePreviewTheme() {
   previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
+  computedReady.value = false
+  Object.keys(computedValues).forEach(k => delete computedValues[k])
 }
 
 // ── Variable definitions (non-color size variables from src/sizes/pico.css) ──
@@ -176,6 +190,9 @@ const showExportModal = ref(false)
 const copiedFeedback = ref(null)
 const activePopover = ref(null)
 const compareMode = ref(false)
+const computedValues = reactive({})
+const computedReady = ref(false)
+const pendingRequestId = ref(null)
 
 // Initialize all groups as collapsed except the first
 variableGroups.forEach((g, i) => {
@@ -214,6 +231,9 @@ function getDefault(v) {
 
 function getDisplayValue(v) {
   const key = getKey(v)
+  if (computedReady.value && computedValues[v.name] && computedValues[v.name] !== '') {
+    return computedValues[v.name]
+  }
   if (key in customValues) return customValues[key]
   return v.default
 }
@@ -323,6 +343,7 @@ function updateIframeStyles() {
     type: 'update-size-css',
     css: buildCustomCSS()
   }, '*')
+  setTimeout(requestComputedValues, 80)
 }
 
 // ── Export ─────────────────────────────────────────────────────────────────
@@ -353,13 +374,41 @@ function downloadCSS() {
   URL.revokeObjectURL(url)
 }
 
+function requestComputedValues() {
+  if (!iframeRef.value?.contentWindow) return
+  const reqId = Date.now()
+  pendingRequestId.value = reqId
+  const payload = []
+  for (const group of variableGroups) {
+    for (const v of group.vars) {
+      payload.push({ name: v.name })
+    }
+  }
+  iframeRef.value.contentWindow.postMessage({
+    type: 'request-computed-values',
+    requestId: reqId,
+    vars: payload
+  }, '*')
+}
+
+function handleMessage(event) {
+  if (event.data && event.data.type === 'computed-values') {
+    if (event.source !== iframeRef.value?.contentWindow) return
+    if (event.data.requestId !== pendingRequestId.value) return
+    Object.assign(computedValues, event.data.values)
+    computedReady.value = true
+  }
+}
+
 // ── Lifecycle ───────────────────────────────────────────────────────────────
 
 onMounted(() => {
+  window.addEventListener('message', handleMessage)
   document.addEventListener('click', handleDocumentClick)
 })
 
 onUnmounted(() => {
+  window.removeEventListener('message', handleMessage)
   document.removeEventListener('click', handleDocumentClick)
 })
 
@@ -368,6 +417,7 @@ const IFRAME_INIT_DELAY_MS = 300
 function onIframeLoad() {
   setTimeout(() => {
     updateIframeStyles()
+    requestComputedValues()
   }, IFRAME_INIT_DELAY_MS)
 }
 
