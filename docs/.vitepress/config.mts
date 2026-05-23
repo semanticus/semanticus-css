@@ -320,7 +320,7 @@ export default defineConfig({
         { text: "Palettes & Sizes", link: "/guide/palettes-sizes" },
         { text: "CSS Variables", link: "/guide/css-variables" },
         { text: "Theme Builder", link: "/guide/theme-builder" },
-        { text: "Palette Builder", link: "/guide/palette-builder" },
+        { text: "Palettes", link: "/guide/palettes" },
       ],
       "/docs/": [
         {

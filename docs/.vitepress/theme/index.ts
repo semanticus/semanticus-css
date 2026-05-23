@@ -5,6 +5,8 @@ import HtmlPreviewer from './HtmlPreviewer.vue'
 import ThemeBuilder from './ThemeBuilder.vue'
 import InstallGuide from './InstallGuide.vue'
 import PaletteBuilder from './PaletteBuilder.vue'
+import PalettePicker from './PalettePicker.vue'
+import Palettes from './Palettes.vue'
 
 export default {
   extends: DefaultTheme,
@@ -14,5 +16,7 @@ export default {
     app.component('ThemeBuilder', ThemeBuilder)
     app.component('InstallGuide', InstallGuide)
     app.component('PaletteBuilder', PaletteBuilder)
+    app.component('PalettePicker', PalettePicker)
+    app.component('Palettes', Palettes)
   }
 }

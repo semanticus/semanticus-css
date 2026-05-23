@@ -21,9 +21,8 @@ function htmlTemplate(base, theme) {
   </style>
 </head>
 <body class="px-2">
-  <main class="container" id="main-content">
-    ${Demo.fullBundleColors()}
-  </main>
+  ${Demo.palettesExample({ class: 'container-fluid' })}
+
   <script>
     window.addEventListener('message', function(event) {
       if (event.data && event.data.type === 'update-palette-css') {
@@ -632,47 +631,18 @@ function onIframeLoad() {
     requestComputedColors()
   }, IFRAME_INIT_DELAY_MS)
 }
+
+defineExpose({
+  changedCount,
+  previewTheme,
+  togglePreviewTheme,
+  exportCSS,
+  resetAll,
+})
 </script>
 
 <template>
   <div class="palette-builder">
-    <!-- Toolbar -->
-    <div class="builder-toolbar">
-      <div class="toolbar-left">
-        <span class="toolbar-title">Palette Builder</span>
-        <button
-          v-if="changedCount"
-          class="change-badge"
-          @click="resetAll"
-          title="Reset all changes"
-        >
-          {{ changedCount }} changed
-          <span class="change-badge-close">✕</span>
-        </button>
-      </div>
-
-      <div class="toolbar-right">
-        <button
-          class="toolbar-btn theme-toggle"
-          @click="togglePreviewTheme"
-          :title="`Preview: ${previewTheme} mode`"
-        >
-          <template v-if="previewTheme === 'light'">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            Light
-          </template>
-          <template v-else>
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            Dark
-          </template>
-        </button>
-        <button class="toolbar-btn export-btn" @click="exportCSS" title="Export palette CSS">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Export
-        </button>
-      </div>
-    </div>
-
     <div
       class="builder-body"
       :style="{ gridTemplateColumns: sidebarWidth + 'px auto 1fr' }"
@@ -864,113 +834,20 @@ function onIframeLoad() {
 
 <style scoped>
 .palette-builder {
-  width: 100%;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
   background: var(--vp-c-bg);
-  height: calc(100vh - 150px);
-}
-
-/* ── Toolbar ── */
-.builder-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.625rem 1rem;
-  border-bottom: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg-soft);
-}
-
-.toolbar-left,
-.toolbar-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.toolbar-title {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-}
-
-.change-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 10px;
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.change-badge:hover {
-  background: var(--vp-c-danger-soft, rgba(229, 62, 62, 0.1));
-  color: var(--vp-c-danger-1, #e53e3e);
-}
-
-.change-badge-close {
-  font-size: 0.625rem;
-  opacity: 0.7;
-  transition: opacity 0.15s;
-}
-
-.change-badge:hover .change-badge-close {
-  opacity: 1;
-}
-
-.toolbar-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.375rem 0.75rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  font-size: 0.8125rem;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.toolbar-btn:hover:not(:disabled) {
-  color: var(--vp-c-text-1);
-  border-color: var(--vp-c-brand-1);
-}
-
-.theme-toggle {
-  background: var(--vp-c-bg);
-}
-
-.theme-toggle:hover {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-}
-
-.export-btn {
-  background: var(--vp-c-brand-1);
-  color: #fff;
-}
-
-.export-btn:hover:not(:disabled) {
-  background: var(--vp-c-brand-2);
-  color: #fff;
 }
 
 /* ── Body Layout ── */
 .builder-body {
   display: grid;
   grid-template-columns: min-content auto 1fr;
-  min-height: 600px;
-  max-height: 85vh;
+  flex: 1;
+  min-height: 0;
   overflow: visible;
 }
 
@@ -1014,7 +891,7 @@ function onIframeLoad() {
 .builder-sidebar {
   overflow-y: auto;
   background: var(--vp-c-bg-soft);
-  max-height: calc(100vh - 211px);
+  max-height: 100%;
   flex-shrink: 0;
 }
 
