@@ -14,7 +14,7 @@ You can also combine it with `[role="group"]` and `[role="search"]`, to make use
 
 ## Input Search Group
 
-For more search examples see [Search](http://localhost:5173/docs/composites/search) documentation.
+For more search examples see [Search](/docs/composites/search) documentation.
 
 <HtmlPreviewer :code="FieldsetDemo.searchInputButton()" />
 
