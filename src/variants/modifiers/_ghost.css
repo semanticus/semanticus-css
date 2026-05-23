@@ -1,7 +1,7 @@
 .ghost {
   --color-background: transparent;
 
-  background-color: var(--color-background) !important;
+  background-color: var(--color-background);
 }
 
 :not([role="link"], a:not([role="button"])) {

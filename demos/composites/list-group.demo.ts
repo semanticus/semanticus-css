@@ -11,11 +11,29 @@ export function main(attrs: Record<string, string> = {}, slot: string = '') {
 <li>Item 4</li>`);
 }
 
-export function stripedVariant(attrs: Record<string, string> = {}, slot: string = '') {
-  return main(classMergeAttributes('striped', attrs), `<li>Item 1</li>
+export function overviewVariants(attrs: Record<string, string> = {}) {
+  return renderElement('section', attrs, `<section role="toolbar">
+  ${listOfSeven()}
+  ${stripedVariant()}
+  ${intentVariants()}
+  ${subtleVariants()}
+  ${ghostVariants()}
+  ${ghostVariants({ class: 'striped' })}
+</section>`);
+}
+
+export function listOfSeven(attrs: Record<string, string> = {}) {
+  return main(attrs, `<li>Item 1</li>
 <li>Item 2</li>
 <li>Item 3</li>
-<li>Item 4</li>`);
+<li>Item 4</li>
+<li>Item 5</li>
+<li>Item 6</li>
+<li>Item 7</li>`);
+}
+
+export function stripedVariant(attrs: Record<string, string> = {}) {
+  return listOfSeven(classMergeAttributes('striped', attrs));
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
