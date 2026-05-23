@@ -1,6 +1,7 @@
 import { renderElement } from "@scripts/utils";
 import * as InputDemo from "@demos/semantics/elements/input.demo";
 import * as DropdownDemo from "@demos/composites/dropdown.demo";
+import { SearchDemo } from "@demos/composites";
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
   return renderElement("fieldset", attrs, slot);
@@ -18,11 +19,7 @@ ${InputDemo.email({ id: "email", "aria-describedby": "email-helper" })}
 }
 
 export function searchInputButton(attrs: Record<string, string> = {}) {
-  return main(
-    { ...attrs, role: "group" },
-    `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
-<input type="submit" value="Subscribe" />`,
-  );
+  return SearchDemo.main();
 }
 
 export function groupInputButton(attrs: Record<string, string> = {}) {
