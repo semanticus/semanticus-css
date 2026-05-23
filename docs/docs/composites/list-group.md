@@ -18,6 +18,10 @@ To convey **intent** and **importance**, list groups can be styled with differen
 
 ### Modifiers
 
+`.striped` creates list groups with alternating background colors for better readability.
+
+<HtmlPreviewer :code="ListGroupDemo.stripedVariant()" />
+
 `.ghost` creates transparent background list groups with colored text and borders
 
 <HtmlPreviewer :code="ListGroupDemo.ghostVariants()" :codeCollapsed="true" />

@@ -13,11 +13,6 @@ export const BasicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
-export const unorderedList: StoryObj = {
-  args: { html: RoleGroupDemo.unorderedList() },
-  render: (args) => args.html,
-};
-
 export const inputWithButton: StoryObj = {
   args: { html: RoleGroupDemo.inputWithButton() },
   render: (args) => args.html,
