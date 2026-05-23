@@ -6,7 +6,7 @@ title: fieldset
 
 `<fieldset>` groups related form elements together and can optionally include a `<legend>` label.
 
-You can also combine it with `[role="group"]` and `[role="search"]`, indicate that the collection of interactive elements forms a single, cohesive unit, while adding a group styling it.
+You can also combine it with `[role="group"]` and `[role="search"]`, indicate that the collection of interactive elements forms a single, cohesive unit, while also applying group styling to it.
 
 ## With a Form Input
 
