@@ -1,4 +1,5 @@
 import { renderElement } from "@scripts/utils";
+import * as RoleGroupDemo from "@demos/semantics/attributes/role-group.demo";
 import * as InputDemo from "@demos/semantics/elements/input.demo";
 import * as DropdownDemo from "@demos/composites/dropdown.demo";
 import { SearchDemo } from "@demos/composites";
@@ -19,12 +20,13 @@ ${InputDemo.email({ id: "email", "aria-describedby": "email-helper" })}
 }
 
 export function searchInputButton(attrs: Record<string, string> = {}) {
-  return SearchDemo.main();
+  return SearchDemo.main(attrs);
 }
 
 export function groupInputButton(attrs: Record<string, string> = {}) {
-  return main(
-    { ...attrs, role: "group" },
+  return RoleGroupDemo.main(
+    'fieldset',
+    { ...attrs, 'aria-label': 'Email subscription' },
     `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
 <input type="submit" value="Subscribe" />`,
   );
@@ -33,8 +35,9 @@ export function groupInputButton(attrs: Record<string, string> = {}) {
 export function groupMultipleInputs(
   attrs: Record<string, string> = {},
 ) {
-  return main(
-    { ...attrs, role: "group" },
+  return RoleGroupDemo.main(
+    'fieldset',
+    attrs,
     `<input type="text" placeholder="First name">
 <input type="text" placeholder="Last name">
 <button>Save</button>`,
@@ -42,8 +45,9 @@ export function groupMultipleInputs(
 }
 
 export function groupSelectButton(attrs: Record<string, string> = {}) {
-  return main(
-    { ...attrs, role: "group" },
+  return RoleGroupDemo.main(
+    'fieldset',
+    attrs,
     `<select>
   <option>Option 1</option>
   <option>Option 2</option>
@@ -56,8 +60,9 @@ export function groupSelectButton(attrs: Record<string, string> = {}) {
 export function groupDropdownButton(
   attrs: Record<string, string> = {},
 ) {
-  return main(
-    { ...attrs, role: "group" },
+  return RoleGroupDemo.main(
+    'fieldset',
+    attrs,
     `${DropdownDemo.withCheckboxes({ class: "w-100" })}
 <button>Action</button>`,
   );

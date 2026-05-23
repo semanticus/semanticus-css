@@ -4,33 +4,37 @@ title: 'role="group"'
 
 # [role="group"]
 
-The `role="group"` attribute identifies a set of related user interface objects.
+The `role="group"` is used to semantically associate related UI elements together like grouping buttons together in a menu, or grouping tree items together in a tree structure, but typically the normal use cases are in combination with `<fieldset>` and `<div>` elements, as seen bellow.
 
-They can be combined with `<ul>`, `<fieldset>` and `<nav>` to create **list groups**, **fieldset groups** and **nav groups** respectively.
+> [!CAUTION]
+> Even though Semanticus CSS provides styling to `[role="group"]`, use it with caution, as it is not meant to be used as a generic container for styling purposes, but rather to semantically group related elements together.
+>
+> Specialy in combination with `<main>`, `<header>`, `<footer>`, `<nav>` or `<aside>`, as they are already announced as landmarks and have implicit roles, adding `role="group"` would override that semantic meaning as cause confusion.
 
-## List Group
 
-When applied to an `<ul>`, `role="group"` will stylize the list as a connected group of items, similar to a list group component in UI libraries.
+## Grouping related form controls
 
-See [List Group](/docs/composites/list-group) for more examples and variations.
+This is the **ARIA** equivalent of saying:
 
-<HtmlPreviewer :code="ListGroupDemo.main()" />
+> "These controls/content belong together as a logical set."
 
-## Fieldset Group
+<HtmlPreviewer :code="RoleGroupDemo.relatedControls()" />
 
-When used inside a `<fieldset>`, `role="group"` can cluster related form controls together, such as an input and its associated button.
+Screen readers may announce:
+
+> "Email subscription, group"
 
 See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
 
-<HtmlPreviewer :code="FieldsetDemo.groupInputButton()" />
+## Grouping buttons visually and semantically
 
-## Nav Group
+When you have a set of related buttons, but they don't fit into a toolbar or menu.
+
+<HtmlPreviewer :code="RoleGroupDemo.textFormatingButtons()" />
 
 See [Pagination](/docs/composites/pagination) for more details.
 
-<HtmlPreviewer :code="PaginationDemo.buttons()" />
-
 <script setup>
 import { ListGroupDemo, PaginationDemo } from "@demos/composites";
-import { FieldsetDemo } from "@demos/semantics";
+import { RoleGroupDemo } from "@demos/semantics";
 </script>
