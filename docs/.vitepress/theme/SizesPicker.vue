@@ -126,16 +126,16 @@ const cdnSnippet = computed(() => {
 })
 
 const npmInstallSnippet = computed(() => {
-  return 'npm install semanticus-css'
+  return 'npm install @semanticus/semanticus-css'
 })
 
 const tarballUrl = npmRegistryTarballUrl();
 
 const npmImportSnippet = computed(() => {
   const sizeName = currentSize.value
-  let snippet = "import 'semanticus-css';"
+  let snippet = "import '@semanticus/semanticus-css';"
   if (sizeName !== 'default') {
-    snippet += `\nimport 'semanticus-css/sizes/${sizeName}';`
+    snippet += `\nimport '@semanticus/semanticus-css/sizes/${sizeName}';`
   }
   return snippet
 })

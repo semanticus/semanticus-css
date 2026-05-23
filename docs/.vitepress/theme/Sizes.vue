@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import SizesPicker from './SizesPicker.vue'
 import SizesBuilder from './SizesBuilder.vue'
@@ -9,8 +9,6 @@ const { isDark } = useData()
 const activeTab = ref('picker')
 const pickerRef = ref(null)
 const builderRef = ref(null)
-const previewTheme = computed(() => isDark.value ? 'dark' : 'light')
-
 // Sync theme with children
 watch(isDark, (val) => {
   const newTheme = val ? 'dark' : 'light'

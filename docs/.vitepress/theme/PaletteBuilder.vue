@@ -612,7 +612,7 @@ function downloadCSS() {
 }
 
 const exportSnippet = computed(() => {
-  const cssPath = '/css/semanticus.custom.css'
+  const cssPath = '/css/semanticus.palette.custom.css'
   return `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n<link rel="stylesheet" href="${cssPath}">`
 })
 const highlightedExportSnippet = computed(() => {
@@ -928,7 +928,7 @@ defineExpose({
 
           <!-- External File Mode -->
           <div v-if="exportMode === 'file'">
-            <p class="export-description">Download the <strong>semanticus.custom.css</strong> to your <strong>stylesheets</strong> folder and include these lines in your HTML:</p>
+            <p class="export-description">Download the <strong>semanticus.palette.custom.css</strong> to your <strong>stylesheets</strong> folder and include these lines in your HTML:</p>
             <div class="export-code-block">
               <pre><code class="language-html" v-html="highlightedExportSnippet"></code></pre>
               <button
@@ -958,7 +958,7 @@ defineExpose({
           <button class="export-btn-secondary" @click="closeExportModal">Cancel</button>
           <button v-if="exportMode === 'file'" class="export-btn-primary" @click="downloadCSS">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
-            Download semanticus.custom.css
+            Download semanticus.palette.custom.css
           </button>
         </div>
       </div>

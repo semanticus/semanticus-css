@@ -128,16 +128,16 @@ const cdnSnippet = computed(() => {
 })
 
 const npmInstallSnippet = computed(() => {
-  return 'npm install semanticus-css'
+  return 'npm install @semanticus/semanticus-css'
 })
 
 const tarballUrl = npmRegistryTarballUrl();
 
 const npmImportSnippet = computed(() => {
   const paletteName = currentPalette.value
-  let snippet = "import 'semanticus-css';"
+  let snippet = "import '@semanticus/semanticus-css';"
   if (paletteName !== 'azure') {
-    snippet += `\nimport 'semanticus-css/palettes/${paletteName}';`
+    snippet += `\nimport '@semanticus/semanticus-css/palettes/${paletteName}';`
   }
   return snippet
 })
