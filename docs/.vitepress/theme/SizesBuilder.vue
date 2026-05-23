@@ -4,6 +4,8 @@ import { useData } from 'vitepress'
 import { Demo } from '@demos/overviews';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
+import githubLight from 'highlight.js/styles/github.css?raw'
+import githubDark from 'highlight.js/styles/github-dark.css?raw'
 import { cdnBaseUrl } from '@scripts/utils';
 
 hljs.registerLanguage('html', html)
@@ -11,6 +13,10 @@ hljs.registerLanguage('html', html)
 const { isDark, site } = useData();
 
 const basePath = computed(() => site.value.base || '/');
+
+const cssStyles = computed(() => {
+  return isDark.value ? githubDark : githubLight;
+});
 
 function htmlTemplate(base, theme) {
   return `<!DOCTYPE html>
@@ -530,6 +536,7 @@ defineExpose({
 
 <template>
   <div class="sizes-builder">
+    <component :is="'style'" v-html="cssStyles"></component>
     <div
       class="builder-body"
       :style="{ gridTemplateColumns: sidebarCollapsed ? '0px auto 1fr' : 'minmax(280px, 30%) auto 1fr' }"
