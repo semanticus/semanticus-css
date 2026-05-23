@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
 
-    li {
+    > li {
       --color-background: transparent;
       --_color-background: var(--color-background);
       --_color-text: var(--color-text);

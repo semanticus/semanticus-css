@@ -12,27 +12,27 @@ export const FormInput: StoryObj = {
   render: (args) => args.html,
 };
 
-export const groupInputButton: StoryObj = {
+export const Groupinputbutton: StoryObj = {
   args: { html: FieldsetDemo.groupInputButton() },
   render: (args) => args.html,
 };
 
-export const groupSelectButton: StoryObj = {
+export const Groupselectbutton: StoryObj = {
   args: { html: FieldsetDemo.groupSelectButton() },
   render: (args) => args.html,
 };
 
-export const groupDropdownButton: StoryObj = {
+export const Groupdropdownbutton: StoryObj = {
   args: { html: FieldsetDemo.groupDropdownButton() },
   render: (args) => args.html,
 };
 
-export const groupMultipleInputs: StoryObj = {
+export const Groupmultipleinputs: StoryObj = {
   args: { html: FieldsetDemo.groupMultipleInputs() },
   render: (args) => args.html,
 };
 
-export const formExample: StoryObj = {
+export const Formexample: StoryObj = {
   args: { html: FieldsetDemo.formExample() },
   render: (args) => args.html,
 };
