@@ -5,10 +5,14 @@ function renderLi(attrs: Record<string, string> = {}, slot: string = '') {
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement('ul', { ...attrs, role: "group" }, slot || `<li>Item 1</li>
+  return renderElement('ul', classMergeAttributes('panel', attrs), slot || `<li>Item 1</li>
 <li>Item 2</li>
 <li aria-current="true">Item 3</li>
 <li>Item 4</li>`);
+}
+
+export function horizontalStack(attrs: Record<string, string> = {}) {
+  return renderElement('nav', {}, main(attrs));
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
@@ -37,7 +41,7 @@ export function stripedVariant(attrs: Record<string, string> = {}) {
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-  return renderElement('ul', { ...attrs, role: "group" }, `${renderLi(classMergeAttributes(`primary ${modifier}`.trim()), 'Primary')}
+  return main(attrs, `${renderLi(classMergeAttributes(`primary ${modifier}`.trim()), 'Primary')}
 ${renderLi(classMergeAttributes(`secondary ${modifier}`.trim()), 'Secondary')}
 ${renderLi(classMergeAttributes(`contrast ${modifier}`.trim()), 'Contrast')}
 ${renderLi(classMergeAttributes(`success ${modifier}`.trim()), 'Success')}
