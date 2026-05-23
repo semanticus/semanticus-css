@@ -43,20 +43,30 @@ function htmlTemplate(base, theme) {
   </div>
 
   <script>
+    var sizeBuilderCss = '';
+    function applySizeBuilderCss() {
+      var customStyle = document.getElementById('size-builder-custom');
+      if (!customStyle) {
+        customStyle = document.createElement('style');
+        customStyle.id = 'size-builder-custom';
+        document.head.appendChild(customStyle);
+      }
+      var inCompare = document.getElementById('preview-container').classList.contains('compare-mode');
+      if (inCompare) {
+        customStyle.textContent = sizeBuilderCss.replace(new RegExp(':root,\\n:host {', 'g'), '#custom-content {');
+      } else {
+        customStyle.textContent = sizeBuilderCss;
+      }
+    }
     window.addEventListener('message', function(event) {
       if (event.data && event.data.type === 'update-size-css') {
-        var customStyle = document.getElementById('size-builder-custom');
-        if (!customStyle) {
-          customStyle = document.createElement('style');
-          customStyle.id = 'size-builder-custom';
-          document.head.appendChild(customStyle);
-        }
-        customStyle.textContent = event.data.css || '';
+        sizeBuilderCss = event.data.css || '';
+        applySizeBuilderCss();
       }
       if (event.data && event.data.type === 'set-compare-mode') {
-        const container = document.getElementById('preview-container');
-        const customContent = document.getElementById('custom-content');
-        const defaultContent = document.getElementById('default-content');
+        var container = document.getElementById('preview-container');
+        var customContent = document.getElementById('custom-content');
+        var defaultContent = document.getElementById('default-content');
         if (event.data.enabled) {
           customContent.innerHTML = defaultContent.innerHTML;
           container.classList.add('compare-mode');
@@ -64,12 +74,18 @@ function htmlTemplate(base, theme) {
           container.classList.remove('compare-mode');
           customContent.innerHTML = '';
         }
+        applySizeBuilderCss();
       }
       if (event.data && event.data.type === 'request-computed-values') {
         var result = {};
+        var inCompare = document.getElementById('preview-container').classList.contains('compare-mode');
         for (var i = 0; i < event.data.vars.length; i++) {
           var item = event.data.vars[i];
-          result[item.name] = getComputedStyle(document.documentElement).getPropertyValue(item.name).trim();
+          if (inCompare) {
+            result[item.name] = getComputedStyle(document.getElementById('custom-content')).getPropertyValue(item.name).trim();
+          } else {
+            result[item.name] = getComputedStyle(document.documentElement).getPropertyValue(item.name).trim();
+          }
         }
         event.source.postMessage({
           type: 'computed-values',
