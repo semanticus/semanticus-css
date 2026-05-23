@@ -1,4 +1,6 @@
-import { DialogDemo, RoleStatusDemo, RoleAlertDemo } from "@demos/semantics";
+import * as DialogDemo from "@demos/semantics/elements/dialog.demo";
+import * as RoleStatusDemo from "@demos/semantics/attributes/role-status.demo";
+import * as RoleAlertDemo from "@demos/semantics/attributes/role-alert.demo";
 
 export function inlineAlerts() {
   return `${RoleStatusDemo.main('div', { class: 'success' }, "Item saved successfully!")}

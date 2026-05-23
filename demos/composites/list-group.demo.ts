@@ -1,5 +1,5 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { RoleGroupDemo } from "@demos/semantics";
+import * as RoleGroupDemo from "@demos/semantics/attributes/role-group.demo";
 
 export function main(attrs: Record<string, string> = {}, slot: string = '') {
   return RoleGroupDemo.unorderedList(attrs, slot);

@@ -1,5 +1,5 @@
 import { renderElement } from "@scripts/utils";
-import { DropdownDemo } from "@demos/composites";
+import * as DropdownDemo from "@demos/composites/dropdown.demo";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
   return renderElement(tagName, { ...attrs, role: "group" }, `<button>One</button>

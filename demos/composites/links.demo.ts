@@ -1,5 +1,6 @@
 import { renderElement } from "@scripts/utils";
-import { ADemo, RoleLinkDemo } from "@demos/semantics";
+import * as ADemo from "@demos/semantics/elements/a.demo";
+import * as RoleLinkDemo from "@demos/semantics/attributes/role-link.demo";
 
 // export function main(attrs: Record<string, string> = {}) {
 //   return renderElement("details", attrs, `<summary aria-haspopup="menu">Dropdown</summary>

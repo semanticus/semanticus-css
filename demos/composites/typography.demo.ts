@@ -1,5 +1,5 @@
 import { renderElement } from "@scripts/utils";
-import { TextDemo } from "@demos/semantics";
+import * as TextDemo from "@demos/semantics/text.demo";
 
 function typographySection(cssClass: string) {
   return `<section class="${cssClass}">
