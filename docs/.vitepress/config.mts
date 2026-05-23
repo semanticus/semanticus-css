@@ -1,7 +1,6 @@
 import { defineConfig } from "vitepress";
 import path from "path";
 import fs from "fs";
-import { bundle as lightningcssBunde } from "lightningcss";
 import { packageProps } from "../../scripts/utils";
 
 function loadTsconfigAliases() {
@@ -74,46 +73,6 @@ export default defineConfig({
     },
     publicDir: "public",
     plugins: [
-      {
-        name: 'virtual-semanticus-css',
-        resolveId(id: string) {
-          if (id === 'virtual:semanticus-css') return '\0virtual:semanticus-css';
-        },
-        load(id: string) {
-          if (id === '\0virtual:semanticus-css') {
-            if (!isProd) {
-              const { code } = lightningcssBunde({
-                filename: path.resolve(process.cwd(), 'src/index.css'),
-                minify: false,
-                drafts: { customMedia: true },
-              });
-              return `export default ${JSON.stringify(code.toString())}`;
-            } else {
-              const css = fs.readFileSync(
-                path.join(semanticusDistPath, 'semanticus.css'),
-                'utf-8',
-              );
-              return `export default ${JSON.stringify(css)}`;
-            }
-          }
-        },
-        configureServer(server: any) {
-          const srcDir = path.resolve(process.cwd(), 'src');
-          // Belt-and-suspenders: also watch the src directory directly via
-          // chokidar. Watching the directory (not a glob) is more reliable
-          // with macOS FSEvents when paths are added after watcher init.
-          server.watcher.add(srcDir);
-          const handleSrcChange = (file: string) => {
-            if (file.startsWith(srcDir) && file.endsWith('.css')) {
-              const mod = server.moduleGraph.getModuleById('\0virtual:semanticus-css');
-              if (mod) server.moduleGraph.invalidateModule(mod);
-              server.ws.send({ type: 'full-reload' });
-            }
-          };
-          server.watcher.on('change', handleSrcChange);
-          server.watcher.on('add', handleSrcChange);
-        },
-      },
       {
         name: "semanticus-css",
         configureServer(server) {
