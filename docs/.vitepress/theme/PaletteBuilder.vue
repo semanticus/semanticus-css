@@ -2,6 +2,11 @@
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
 import { Demo } from '@demos/overviews';
+import hljs from 'highlight.js/lib/core'
+import html from 'highlight.js/lib/languages/xml'
+import { cdnBaseUrl } from '@scripts/utils';
+
+hljs.registerLanguage('html', html)
 
 const { isDark, site } = useData();
 
@@ -307,6 +312,7 @@ const expandedGroups = reactive({})
 const iframeRef = ref(null)
 const sidebarCollapsed = ref(false)
 const showExportModal = ref(false)
+const exportMode = ref('inline')
 const copiedFeedback = ref(null)
 const activePopover = ref(null)
 const computedColors = reactive({})
@@ -599,6 +605,22 @@ function downloadCSS() {
   URL.revokeObjectURL(url)
 }
 
+const exportSnippet = computed(() => {
+  const cssPath = '/css/semanticus.custom.css'
+  return `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n<link rel="stylesheet" href="${cssPath}">`
+})
+const highlightedExportSnippet = computed(() => {
+  return hljs.highlight(exportSnippet.value, { language: 'html' }).value;
+})
+
+const inlineSnippet = computed(() => {
+  const css = buildCustomCSS().trimEnd()
+  return `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n<style>\n${css}\n</style>`
+})
+const highlightedInlineSnippet = computed(() => {
+  return hljs.highlight(inlineSnippet.value, { language: 'html' }).value;
+})
+
 function triggerImport() {
   if (fileInputRef.value) {
     fileInputRef.value.value = ''
@@ -869,22 +891,67 @@ defineExpose({
           <button class="export-close" @click="closeExportModal">✕</button>
         </div>
         <div class="export-content">
-          <p class="export-description">Save this CSS file to your project and include it <strong>after</strong> the main Semanticus CSS:</p>
-          <div class="export-code-block">
-            <pre><code>{{ buildCustomCSS() }}</code></pre>
-            <button
-              class="copy-snippet-btn"
-              @click="copyToClipboard(buildCustomCSS(), 'css')"
-            >
-              {{ copiedFeedback === 'css' ? 'Copied!' : 'Copy' }}
-            </button>
+          <!-- Export Mode Toggle -->
+          <div class="export-mode-toggle">
+            <label class="export-mode-option" :class="{ active: exportMode === 'inline' }">
+              <input
+                type="radio"
+                v-model="exportMode"
+                value="inline"
+                class="export-mode-input"
+              >
+              <span class="export-mode-label">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Code Snippet
+              </span>
+            </label>
+            <label class="export-mode-option" :class="{ active: exportMode === 'file' }">
+              <input
+                type="radio"
+                v-model="exportMode"
+                value="file"
+                class="export-mode-input"
+              >
+              <span class="export-mode-label">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                Download CSS file
+              </span>
+            </label>
+          </div>
+
+          <!-- External File Mode -->
+          <div v-if="exportMode === 'file'">
+            <p class="export-description">Download the <strong>semanticus.custom.css</strong> to your <strong>stylesheets</strong> folder and include these lines in your HTML:</p>
+            <div class="export-code-block">
+              <pre><code class="language-html" v-html="highlightedExportSnippet"></code></pre>
+              <button
+                class="copy-snippet-btn"
+                @click="copyToClipboard(exportSnippet, 'snippet')"
+              >
+                {{ copiedFeedback === 'snippet' ? 'Copied!' : 'Copy' }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Inline Mode -->
+          <div v-else>
+            <p class="export-description">Copy this snippet to use inline styles directly in your HTML:</p>
+            <div class="export-code-block">
+              <pre><code class="language-html" v-html="highlightedInlineSnippet"></code></pre>
+              <button
+                class="copy-snippet-btn"
+                @click="copyToClipboard(inlineSnippet, 'inlineSnippet')"
+              >
+                {{ copiedFeedback === 'inlineSnippet' ? 'Copied!' : 'Copy' }}
+              </button>
+            </div>
           </div>
         </div>
         <div class="export-footer">
           <button class="export-btn-secondary" @click="closeExportModal">Cancel</button>
-          <button class="export-btn-primary" @click="downloadCSS">
+          <button v-if="exportMode === 'file'" class="export-btn-primary" @click="downloadCSS">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
-            Download .css file
+            Download semanticus.custom.css
           </button>
         </div>
       </div>
@@ -1481,5 +1548,56 @@ defineExpose({
 
 .export-btn-primary:hover {
   background: var(--vp-c-brand-2);
+}
+
+/* Export Mode Toggle */
+.export-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--vp-c-bg-soft);
+  padding: 0.375rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.export-mode-option {
+  flex: 1;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.export-mode-option:hover {
+  background: var(--vp-c-bg);
+}
+
+.export-mode-option.active {
+  background: var(--vp-c-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.export-mode-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.export-mode-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.export-mode-option.active .export-mode-label {
+  color: var(--vp-c-brand-1);
 }
 </style>
