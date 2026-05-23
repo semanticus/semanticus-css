@@ -2,10 +2,6 @@
 title: fieldset
 ---
 
-<script setup>
-import { FieldsetDemo } from "@demos/semantics/elements";
-</script>
-
 # &lt;fieldset&gt;
 
 `<fieldset>` groups related form elements together and can optionally include a `<legend>` label.
@@ -13,6 +9,22 @@ import { FieldsetDemo } from "@demos/semantics/elements";
 ## Basic Usage
 
 <HtmlPreviewer :code="FieldsetDemo.main()" />
+
+### Grouping Input a with Button
+
+<HtmlPreviewer :code="FieldsetDemo.groupingInputWithAButton()" />
+
+### Grouping Select with a Button
+
+<HtmlPreviewer :code="FieldsetDemo.groupingSelectWithAButton()" />
+
+### Grouping Dropdown with a Button
+
+<HtmlPreviewer :code="FieldsetDemo.groupingDropdownWithAButton()" />
+
+## Grouping Multiple Inputs
+
+<HtmlPreviewer :code="FieldsetDemo.groupingTwoInputsWithAButton()" />
 
 ## Inside a Form
 
@@ -30,9 +42,6 @@ Setting `disabled` on a `<fieldset>` disables all contained form elements.
 
 <HtmlPreviewer :code="FieldsetDemo.section()" />
 
-## Usage with Group
-
-Use `role="group"` inside a fieldset for inline input+button combinations. See [[role="group"]](/docs/semantics/attributes/role-group).
-
-<HtmlPreviewer :code="FieldsetDemo.withGroup()" />
-
+<script setup>
+import { FieldsetDemo } from "@demos/semantics/elements";
+</script>

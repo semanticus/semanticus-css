@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { RoleGroupDemo } from "@demos/semantics/attributes";
+import { ListGroupDemo, PaginationDemo } from "@demos/composites";
+import { FieldsetDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Semantics/Attributes/[role=group]",
@@ -8,32 +9,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
-  args: { html: RoleGroupDemo.main() },
+export const ListGroup: StoryObj = {
+  args: { html: ListGroupDemo.main() },
   render: (args) => args.html,
 };
 
-export const inputWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.inputWithButton() },
+export const FieldsetGroup: StoryObj = {
+  args: { html: FieldsetDemo.groupingInputWithAButton() },
   render: (args) => args.html,
 };
 
-export const selectWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.selectWithButton() },
-  render: (args) => args.html,
-};
-
-export const twoInputsWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.twoInputsWithButton() },
-  render: (args) => args.html,
-};
-
-export const pagination: StoryObj = {
-  args: { html: RoleGroupDemo.pagination() },
-  render: (args) => args.html,
-};
-
-export const newsletterForm: StoryObj = {
-  args: { html: RoleGroupDemo.newsletterForm() },
+export const NavGroup: StoryObj = {
+  args: { html: PaginationDemo.buttons() },
   render: (args) => args.html,
 };

@@ -1,7 +1,12 @@
 import { renderElement } from "@scripts/utils";
 
-import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
-import { DropdownDemo, LinksDemo, ListGroupDemo, TypographyDemo } from "@demos/composites";
+import { GhostDemo, SubtleDemo, IntentDemo } from "@demos/variants";
+import {
+  DropdownDemo,
+  LinksDemo,
+  ListGroupDemo,
+  TypographyDemo,
+} from "@demos/composites";
 import { CardDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
@@ -19,14 +24,13 @@ import {
   ListsDemo,
   AriaBusyDemo,
   DisabledDemo,
-  RoleGroupDemo,
   RoleSearchDemo,
   RoleTooltipDemo,
   RoleLinkDemo,
   TextDemo,
   RoleStatusDemo,
   ButtonDemo,
-} from '@demos/semantics';
+} from "@demos/semantics";
 
 export function buttons() {
   return `<section id="buttons">
@@ -49,11 +53,11 @@ export function links() {
 
   <section role="toolbar">
     ${ADemo.main()}
-    ${RoleLinkDemo.main('button')}
-    ${RoleLinkDemo.main('div')}
+    ${RoleLinkDemo.main("button")}
+    ${RoleLinkDemo.main("div")}
     ${ADemo.active()}
-    ${RoleLinkDemo.active('button')}
-    ${RoleLinkDemo.active('div')}
+    ${RoleLinkDemo.active("button")}
+    ${RoleLinkDemo.active("div")}
   </section>
 </section>`;
 }
@@ -201,9 +205,9 @@ function fieldsets() {
     <h4>Group fieldset (role="group")</h4>
 
     <section>
-      ${RoleGroupDemo.inputWithButton("fieldset")}
-      ${RoleGroupDemo.twoInputsWithButton("fieldset")}
-      ${RoleGroupDemo.selectWithButton("fieldset")}
+      ${FieldsetDemo.groupingInputWithAButton()}
+      ${FieldsetDemo.groupingTwoInputsWithAButton()}
+      ${FieldsetDemo.groupingSelectWithAButton()}
     </section>
   </section>
 
@@ -449,7 +453,10 @@ function address() {
 }
 
 export function customizerExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 ${buttons()}
 
 <hr>
@@ -478,7 +485,7 @@ ${links()}
   <fieldset>
     <label class="w-100">
       Dropdown group
-      ${RoleGroupDemo.dropdownWithButton()}
+      ${FieldsetDemo.groupingDropdownWithAButton()}
     </label>
   </fieldset>
 
@@ -500,11 +507,18 @@ ${links()}
   ${CardDemo.main()}
 
   ${CardDemo.withHeaderAndFooter()}
-</section>`);
+</section>`,
+  );
 }
 
-export function fullBundle(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+export function fullBundle(
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 
 ${buttons()}
 
@@ -600,7 +614,8 @@ ${codeBlocks()}
 <hr>
 <br>
 
-${address()}`);
+${address()}`,
+  );
 }
 
 export function fullBundleColorsButtons() {
@@ -614,7 +629,10 @@ export function fullBundleColorsButtons() {
 }
 
 export function fullBundleColors(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 <section id="typography">
   <h2>Typography</h2>
 
@@ -678,5 +696,6 @@ ${fullBundleColorsButtons()}
   <h2>Role Statuses</h2>
 
   ${RoleStatusDemo.overviewVariants()}
-</section>`);
+</section>`,
+  );
 }
