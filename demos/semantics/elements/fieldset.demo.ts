@@ -19,7 +19,7 @@ ${InputDemo.email({ id: "email", "aria-describedby": "email-helper" })}
 }
 
 export function searchInputButton(attrs: Record<string, string> = {}) {
-  return SearchDemo.main();
+  return SearchDemo.main(attrs);
 }
 
 export function groupInputButton(attrs: Record<string, string> = {}) {
