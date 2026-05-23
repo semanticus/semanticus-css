@@ -1,7 +1,8 @@
 import { NavDemo } from "@demos/semantics";
+import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return NavDemo.main({ ...attrs, "aria-label": "Pagination", role: "group" }, slot);
+  return NavDemo.main({ ...attrs, "aria-label": "Pagination" }, renderElement('div', { role: "group" }, slot));
 }
 
 export function buttons(attrs: Record<string, string> = {}) {
