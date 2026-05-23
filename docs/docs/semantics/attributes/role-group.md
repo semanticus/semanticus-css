@@ -6,49 +6,31 @@ title: 'role="group"'
 
 The `role="group"` attribute identifies a set of related user interface objects.
 
-Unlike a toolbar, it does not enforce keyboard navigation patterns between items.
+They can be combined with `<ul>`, `<fieldset>` and `<nav>` to create **list groups**, **fieldset groups** and **nav groups** respectively.
 
-Use it to semantically cluster controls and communicate their relationship to assistive technologies.
-
-## Basic Usage
-
-Use `role="group"` to create connected groups of buttons or form elements. For search groups, see [[role="search"]](/docs/semantics/attributes/role-search).
-
-<HtmlPreviewer :code="RoleGroupDemo.main()" />
-
-## Lists
+## List Group
 
 When applied to an `<ul>`, `role="group"` will stylize the list as a connected group of items, similar to a list group component in UI libraries.
 
-See [List Group](/docs/composites/list-group) for more examples of list groups using `role="group"`.
+See [List Group](/docs/composites/list-group) for more examples and variations.
 
 <HtmlPreviewer :code="ListGroupDemo.main()" />
 
-## Input Groups
+## Fieldset Group
 
-### Input with Button
+When used inside a `<fieldset>`, `role="group"` can cluster related form controls together, such as an input and its associated button.
 
-<HtmlPreviewer :code="RoleGroupDemo.inputWithButton()" />
+See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
 
-### Select with Button
+<HtmlPreviewer :code="FieldsetDemo.groupingInputWithAButton()" />
 
-<HtmlPreviewer :code="RoleGroupDemo.selectWithButton()" />
+## Nav Group
 
-### Multiple Inputs
+See [Pagination](/docs/composites/pagination) for more details.
 
-<HtmlPreviewer :code="RoleGroupDemo.twoInputsWithButton()" />
-
-## Pagination Groups
-
-<HtmlPreviewer :code="RoleGroupDemo.pagination()" />
-
-## Practical Examples
-
-### Newsletter Signup
-
-<HtmlPreviewer :code="RoleGroupDemo.newsletterForm()" />
+<HtmlPreviewer :code="PaginationDemo.buttons()" />
 
 <script setup>
-import { ListGroupDemo } from "@demos/composites";
-import { RoleGroupDemo } from "@demos/semantics";
+import { ListGroupDemo, PaginationDemo } from "@demos/composites";
+import { FieldsetDemo } from "@demos/semantics";
 </script>

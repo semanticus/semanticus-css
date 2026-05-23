@@ -1,7 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-export function main(attrs: Record<string, string> = {}) {
-  return renderElement("nav", attrs, `<ul>
+export function main(attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement("nav", attrs, slot || `<ul>
   <li><h2>logo</h2></li>
 </ul>
 
@@ -19,30 +19,6 @@ export function main(attrs: Record<string, string> = {}) {
   </li>
   <li><button>Log In</button></li>
 </ul>`);
-}
-
-export function buttonBasedPagination() {
-  return `<nav aria-label="Pagination">
-  <div role="group">
-    <button>Previous</button>
-    <button>1</button>
-    <button>2</button>
-    <button aria-current="page">3</button>
-    <button aria-disabled="true" tabindex="-1">Next</button>
-  </div>
-</nav>`;
-}
-
-export function linkBasedPagination() {
-  return `<nav aria-label="Pagination">
-  <div role="group">
-    <a role="button" aria-disabled="true" tabindex="-1">Previous</a>
-    <a href="#page-1" role="button" aria-current="page">1</a>
-    <a href="#page-2" role="button">2</a>
-    <a href="#page-3" role="button">3</a>
-    <a href="#page-3" role="button">Next</a>
-  </div>
-</nav>`;
 }
 
 export function logoTaglineLinks() {

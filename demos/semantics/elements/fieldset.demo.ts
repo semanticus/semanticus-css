@@ -1,15 +1,59 @@
-import * as InputDemo from '@demos/semantics/elements/input.demo';
-import * as RoleGroupDemo from '@demos/semantics/attributes/role-group.demo';
+import { renderElement } from "@scripts/utils";
+import * as InputDemo from "@demos/semantics/elements/input.demo";
+import * as DropdownDemo from "@demos/composites/dropdown.demo";
 
-export function main() {
-  return `<fieldset>
-  <label>Email</label>
-  ${InputDemo.email({ "aria-describedby": "email-helper" })}
-  <small id="email-helper">
-    We'll never share your email with anyone else.
-  </small>
-</fieldset>
-`;
+export function main(attrs: Record<string, string> = {}, slot: string = "") {
+  return renderElement(
+    "fieldset",
+    attrs,
+    slot ||
+      `<label>Email</label>
+${InputDemo.email({ "aria-describedby": "email-helper" })}
+<small id="email-helper">
+  We'll never share your email with anyone else.
+</small>`,
+  );
+}
+
+export function groupingInputWithAButton(attrs: Record<string, string> = {}) {
+  return main(
+    { ...attrs, role: "group" },
+    `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
+<input type="submit" value="Subscribe" />`,
+  );
+}
+
+export function groupingTwoInputsWithAButton(
+  attrs: Record<string, string> = {},
+) {
+  return main(
+    { ...attrs, role: "group" },
+    `<input type="text" placeholder="First name">
+<input type="text" placeholder="Last name">
+<button>Save</button>`,
+  );
+}
+
+export function groupingSelectWithAButton(attrs: Record<string, string> = {}) {
+  return main(
+    { ...attrs, role: "group" },
+    `<select>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+<button>Action</button>`,
+  );
+}
+
+export function groupingDropdownWithAButton(
+  attrs: Record<string, string> = {},
+) {
+  return main(
+    { ...attrs, role: "group" },
+    `${DropdownDemo.withCheckboxes({ class: "w-100" })}
+<button>Action</button>`,
+  );
 }
 
 export function insideForm() {
@@ -62,8 +106,4 @@ export function section() {
   </label>
 </fieldset>
 `;
-}
-
-export function withGroup() {
-  return RoleGroupDemo.inputWithButton("fieldset");
 }
