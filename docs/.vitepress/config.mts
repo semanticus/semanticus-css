@@ -358,9 +358,9 @@ export default defineConfig({
       "/guide/": [
         { text: "Getting Started", link: "/guide/" },
         { text: "Light & Dark Modes", link: "/guide/light-dark-modes" },
-        { text: "Palettes & Sizes", link: "/guide/palettes-sizes" },
+        { text: "Palettes", link: "/guide/palettes" },
+        { text: "Sizes", link: "/guide/sizes" },
         { text: "CSS Variables", link: "/guide/css-variables" },
-        { text: "Theme Builder", link: "/guide/theme-builder" },
       ],
       "/docs/": [
         {

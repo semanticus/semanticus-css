@@ -24,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${Demo.customizerExample({ class: 'container-fluid' })}
+  ${Demo.palettesExample({ class: 'container-fluid' })}
 
   <script>
     function sendHeight() {
@@ -40,7 +40,8 @@ function htmlTemplate(style, theme) {
     observer.observe(document.body, { childList: true, subtree: true, attributes: true });
     sendHeight();
   <\/script>
-</body>`;
+</body>
+</html>`;
 }
 
 hljs.registerLanguage('html', html)
@@ -58,44 +59,37 @@ const palettes = variations.palettes.map((p) => ({
   description: p.description || ''
 }))
 
-const sizes = variations.sizes.map((s) => ({ name: s.name, label: s.label, description: s.description || '' }))
-
 const currentPalette = ref('azure')
-const currentSize = ref('default')
 const previewFrame = ref(null)
 const showInstallModal = ref(false)
-const showHelpModal = ref(false)
 const installMode = ref('cdn')
 const copiedFeedback = ref(null)
+const previewTheme = ref(isDark.value ? 'dark' : 'light')
 
 const previewHtml = computed(() => {
   const paletteName = currentPalette.value
-  const sizeName = currentSize.value
-  const dataTheme = isDark.value ? 'dark' : 'light'
-  const paletteCssPath = paletteName === 'azure' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.palette.${paletteName}.css">`
-  const sizeCssPath = sizeName === 'default' ? '' : `<link rel="stylesheet" href="${basePath.value}semanticus.size.${sizeName}.css">`
+  const dataTheme = previewTheme.value
 
   const style = `
     @import url('${basePath.value}semanticus.css');
     ${paletteName !== 'azure' ? `@import url('${basePath.value}semanticus.palette.${paletteName}.css');` : ''}
-    ${sizeName !== 'default' ? `@import url('${basePath.value}semanticus.size.${sizeName}.css');` : ''}
   `
 
   return htmlTemplate(style, dataTheme);
 })
 
-watch([currentPalette, currentSize, isDark], () => {
+watch([currentPalette, previewTheme], () => {
   if (previewFrame.value) {
     previewFrame.value.srcdoc = previewHtml.value
   }
 })
 
-function selectPalette(paletteName) {
-  currentPalette.value = paletteName
+function togglePreviewTheme() {
+  previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
 }
 
-function selectSize(sizeName) {
-  currentSize.value = sizeName
+function selectPalette(paletteName) {
+  currentPalette.value = paletteName
 }
 
 function openInstallModal() {
@@ -104,14 +98,6 @@ function openInstallModal() {
 
 function closeInstallModal() {
   showInstallModal.value = false
-}
-
-function openHelpModal() {
-  showHelpModal.value = true
-}
-
-function closeHelpModal() {
-  showHelpModal.value = false
 }
 
 async function copyToClipboard(text, type) {
@@ -126,45 +112,33 @@ async function copyToClipboard(text, type) {
 
 const manualSnippet = computed(() => {
   const paletteName = currentPalette.value
-  const sizeName = currentSize.value
   let snippet = '<link rel="stylesheet" href="/css/semanticus.css">'
   if (paletteName !== 'azure') {
     snippet += `\n<link rel="stylesheet" href="/css/semanticus.palette.${paletteName}.css">`
-  }
-  if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="/css/semanticus.size.${sizeName}.css">`
   }
   return snippet
 })
 
 const cdnSnippet = computed(() => {
   const paletteName = currentPalette.value
-  const sizeName = currentSize.value
   let snippet = `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">`
   if (paletteName !== 'azure') {
     snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${paletteName}.css`)}">`
-  }
-  if (sizeName !== 'default') {
-    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.${sizeName}.css`)}">`
   }
   return snippet
 })
 
 const npmInstallSnippet = computed(() => {
-  return 'npm install semanticus-css'
+  return 'npm install @semanticus/semanticus-css'
 })
 
 const tarballUrl = npmRegistryTarballUrl();
 
 const npmImportSnippet = computed(() => {
   const paletteName = currentPalette.value
-  const sizeName = currentSize.value
-  let snippet = "import 'semanticus-css';"
+  let snippet = "import '@semanticus/semanticus-css';"
   if (paletteName !== 'azure') {
-    snippet += `\nimport 'semanticus-css/palettes/${paletteName}';`
-  }
-  if (sizeName !== 'default') {
-    snippet += `\nimport 'semanticus-css/sizes/${sizeName}';`
+    snippet += `\nimport '@semanticus/semanticus-css/palettes/${paletteName}';`
   }
   return snippet
 })
@@ -201,29 +175,18 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('message', handleMessage)
 })
+
+defineExpose({
+  openInstallModal,
+  previewTheme,
+  togglePreviewTheme,
+})
 </script>
 
 <template>
-  <div class="customizer">
-    <div class="customizer-body">
+  <div class="palette-picker">
+    <div class="palette-picker-body">
       <aside class="sidebar">
-        <section class="sidebar-section">
-          <h3 class="sidebar-title">Sizes</h3>
-          <ul class="option-list">
-            <li
-              v-for="size in sizes"
-              :key="size.name"
-              :class="['option-item', { active: currentSize === size.name }]"
-              @click="selectSize(size.name)"
-            >
-              <div class="option-info">
-                <span class="option-label">{{ size.label }}</span>
-                <span class="option-description">{{ size.description }}</span>
-              </div>
-            </li>
-          </ul>
-        </section>
-
         <section class="sidebar-section">
           <h3 class="sidebar-title">Palettes</h3>
           <ul class="option-list">
@@ -247,20 +210,6 @@ onUnmounted(() => {
       </aside>
 
       <div class="main-column">
-        <!-- Toolbar -->
-        <div class="customizer-toolbar">
-          <div class="toolbar-right">
-            <button class="toolbar-btn help-btn" @click="openHelpModal" title="Show help">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Help
-            </button>
-            <button class="toolbar-btn install-btn" @click="openInstallModal" title="How to install">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              How to install
-            </button>
-          </div>
-        </div>
-
         <main class="preview">
           <ClientOnly>
             <iframe
@@ -277,32 +226,6 @@ onUnmounted(() => {
             </template>
           </ClientOnly>
         </main>
-      </div>
-    </div>
-
-    <!-- Help Modal -->
-    <div v-if="showHelpModal" class="help-overlay" @click="closeHelpModal">
-      <div class="help-modal" @click.stop>
-        <div class="help-header">
-          <h3 class="help-title">Customizer Help</h3>
-          <button class="help-close" @click="closeHelpModal">✕</button>
-        </div>
-        <div class="help-content">
-          <p class="help-text">
-            The Customizer lets you preview different color palettes and size variants for Semanticus CSS.
-          </p>
-          <ul class="help-list">
-            <li><strong>Sizes</strong> — Choose between <em>Default</em> (standard spacing) or <em>PicoCSS</em> (compact spacing).</li>
-            <li><strong>Palettes</strong> — Pick a color palette. The preview updates instantly to show how components look.</li>
-            <li><strong>How to install</strong> — Click the top-right button to get copy-paste ready snippets for your project.</li>
-          </ul>
-          <p class="help-text">
-            All changes are previewed live in the iframe. When you're happy with the combination, use the install button to grab the exact files or CDN links you need.
-          </p>
-        </div>
-        <div class="help-footer">
-          <button class="help-btn-primary" @click="closeHelpModal">Got it</button>
-        </div>
       </div>
     </div>
 
@@ -388,17 +311,15 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.customizer {
+.palette-picker {
   display: flex;
   flex-direction: column;
-  min-height: 600px;
-  max-height: 800px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
 }
 
-.customizer-body {
+.palette-picker-body {
   display: grid;
   grid-template-columns: 280px 1fr;
   flex: 1;
@@ -418,56 +339,6 @@ onUnmounted(() => {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
-}
-
-/* ── Toolbar ── */
-.customizer-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  padding: 0.625rem 1rem;
-  border-bottom: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg-soft);
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-}
-
-.toolbar-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.toolbar-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.375rem 0.75rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  font-size: 0.8125rem;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.toolbar-btn:hover:not(:disabled) {
-  color: var(--vp-c-text-1);
-  border-color: var(--vp-c-brand-1);
-}
-
-.toolbar-btn.install-btn {
-  background: var(--vp-c-brand-1);
-  color: #fff;
-  border-color: var(--vp-c-brand-1);
-}
-
-.toolbar-btn.install-btn:hover:not(:disabled) {
-  background: var(--vp-c-brand-2);
-  color: #fff;
 }
 
 .sidebar-section {
@@ -566,12 +437,12 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
-  .customizer-body {
+  .palette-picker-body {
     grid-template-columns: 1fr;
     max-height: none;
   }
 
-  .customizer {
+  .palette-picker {
     max-height: none;
   }
 
@@ -584,112 +455,6 @@ onUnmounted(() => {
   .preview {
     max-height: none;
   }
-}
-
-/* ── Help Modal ── */
-.help-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.help-modal {
-  background: var(--vp-c-bg);
-  border-radius: 12px;
-  border: 1px solid var(--vp-c-divider);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  max-width: 480px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.help-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  background: var(--vp-c-bg-soft);
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-
-.help-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  margin: 0;
-}
-
-.help-close {
-  background: none;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  color: var(--vp-c-text-3);
-  font-size: 1rem;
-  line-height: 1;
-  border-radius: 4px;
-}
-
-.help-close:hover {
-  color: var(--vp-c-danger-1);
-  background: var(--vp-c-danger-soft);
-}
-
-.help-content {
-  padding: 1.25rem;
-}
-
-.help-text {
-  font-size: 0.9375rem;
-  color: var(--vp-c-text-2);
-  margin: 0 0 1rem 0;
-  line-height: 1.6;
-}
-
-.help-list {
-  margin: 0 0 1rem 0;
-  padding-left: 1.25rem;
-  color: var(--vp-c-text-2);
-  font-size: 0.9375rem;
-  line-height: 1.7;
-}
-
-.help-list li {
-  margin-bottom: 0.5rem;
-}
-
-.help-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  background: var(--vp-c-bg-soft);
-  border-top: 1px solid var(--vp-c-divider);
-}
-
-.help-btn-primary {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-  background: var(--vp-c-brand-1);
-  color: #fff;
-  border: none;
-}
-
-.help-btn-primary:hover {
-  background: var(--vp-c-brand-2);
 }
 
 /* ── Install Modal ── */

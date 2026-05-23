@@ -6,7 +6,7 @@ Add **Semanticus CSS** to your project either via **CDN**, **manual download**, 
 
 <InstallGuide />
 
-Looking for alternative color palettes or sizing options? Check out the [Palettes & Sizes](/guide/palettes-sizes) guide.
+Looking for alternative color palettes or sizing options? Check out the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) guides.
 
 ## Usage
 

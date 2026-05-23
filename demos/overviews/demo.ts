@@ -510,14 +510,63 @@ ${links()}
   );
 }
 
-export function fullBundle(
-  attrs: Record<string, string> = {},
-  slot: string = "",
-) {
-  return renderElement(
-    "main",
-    { class: "container", ...attrs },
-    `<br>
+export function palettesExample(attrs: Record<string, string> = {}) {
+  return renderElement("main", { class: 'container', ...attrs }, `<br>
+${buttons()}
+
+<hr>
+<br>
+
+${links()}
+
+<hr>
+<br>
+
+<section id="input-elements">
+  <h2>Input Elements</h2>
+
+  <fieldset role="toolbar">
+    <label>
+      Text Input
+      <input type="text" name="text" placeholder="Text" aria-label="Text" />
+    </label>
+
+    <label>
+      Select
+      ${SelectDemo.main()}
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <label class="w-100">
+      Dropdown group
+      ${RoleGroupDemo.dropdownWithButton()}
+    </label>
+  </fieldset>
+
+  <fieldset role="toolbar">
+    ${InputDemo.checkboxBasic()}
+
+    ${InputDemo.radioBasic()}
+
+    ${InputDemo.switchBasic()}
+  </fieldset>
+</section>
+
+<hr>
+<br>
+
+<section id="cards">
+  <h2>Cards</h2>
+
+  ${CardDemo.main()}
+
+  ${CardDemo.withHeaderAndFooter()}
+</section>`);
+}
+
+export function fullBundle(attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement("main", { class: 'container', ...attrs }, `<br>
 
 ${buttons()}
 

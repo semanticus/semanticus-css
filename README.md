@@ -70,7 +70,7 @@ import '@semanticus/semanticus-css/sizes/pico';
 
 > **Note:** The `import` syntax requires a bundler that supports CSS imports (e.g., Vite, Webpack, Rollup, or Parcel).
 
-Check out the [Palettes & Sizes](https://semanticus.design/guide/palettes-sizes.html) guide for more options.
+Check out the [Palettes](https://semanticus.design/guide/palettes.html) and [Sizes](https://semanticus.design/guide/sizes.html) guides for more options.
 
 ## How It Works
 
@@ -189,7 +189,7 @@ You can override its variables to create your own themes and styles. For example
 }
 ```
 
-Check out the [CSS Variables](https://semanticus.design/guide/css-variables.html) guide for more details or the [Theme Builder](https://semanticus.design/theme-builder.html) to help you create your own custom styles.
+Check out the [CSS Variables](https://semanticus.design/guide/css-variables.html) guide for more details or the [Palettes](https://semanticus.design/guide/palettes.html) and [Sizes](https://semanticus.design/guide/sizes.html) builders to help you create your own custom styles.
 
 ## Browser Support
 
