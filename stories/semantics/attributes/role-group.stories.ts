@@ -8,7 +8,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicUsage: StoryObj = {
+export const BasicUsage: StoryObj = {
   args: { html: RoleGroupDemo.main() },
   render: (args) => args.html,
 };
