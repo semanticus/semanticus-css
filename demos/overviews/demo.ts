@@ -540,7 +540,7 @@ ${links()}
   <fieldset>
     <label class="w-100">
       Dropdown group
-      ${RoleGroupDemo.dropdownWithButton()}
+      ${FieldsetDemo.groupDropdownButton()}
     </label>
   </fieldset>
 

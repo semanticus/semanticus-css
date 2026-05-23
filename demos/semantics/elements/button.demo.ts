@@ -19,7 +19,7 @@ export function closeButton(attrs: Record<string, string> = {}, text: string = "
     return renderElement("button", mergedAttrs, `${text} <span class="icon-close" aria-hidden="true"></span>`);
   }
 
-  return renderElement("button", { ...mergedAttrs, class: `icon-close ${attrs.class || ""}`.trim() });
+  return renderElement("button", { ...mergedAttrs, class: `icon-close ${attrs.class || ""}`.trim() }, "");
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
