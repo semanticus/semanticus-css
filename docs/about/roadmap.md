@@ -19,7 +19,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ✅ | `aria-disabled="true"` |
 | ✅ | `role="status"` and `role="alert"` |
-| ✅ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
 
 ## Components
 
@@ -28,6 +27,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
 | ✅ | `.pane` component |
+| ✅ | `.panel` component |
 | ✅ | `.icon-*` component |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.content-grid` component |
