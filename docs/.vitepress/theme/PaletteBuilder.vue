@@ -305,8 +305,7 @@ const customValues = reactive({})
 const searchQuery = ref('')
 const expandedGroups = reactive({})
 const iframeRef = ref(null)
-const sidebarWidth = ref(280)
-const isResizing = ref(false)
+const sidebarCollapsed = ref(false)
 const showExportModal = ref(false)
 const copiedFeedback = ref(null)
 const activePopover = ref(null)
@@ -391,6 +390,10 @@ function resetAll() {
   updateIframeStyles()
 }
 
+function toggleSidebar() {
+  sidebarCollapsed.value = !sidebarCollapsed.value
+}
+
 function toggleGroup(label) {
   expandedGroups[label] = !expandedGroups[label]
 }
@@ -406,15 +409,6 @@ function closePopover() {
 function handleDocumentClick(event) {
   if (activePopover.value && !event.target.closest('.popover-container')) {
     closePopover()
-  }
-}
-
-function handleMessage(event) {
-  if (event.data && event.data.type === 'computed-colors') {
-    if (event.source !== iframeRef.value?.contentWindow) return
-    if (event.data.requestId !== pendingRequestId.value) return
-    Object.assign(computedColors, event.data.colors)
-    computedReady.value = true
   }
 }
 
@@ -461,28 +455,6 @@ async function copyToClipboard(text, type) {
   }
 }
 
-// ── Sidebar Resize ────────────────────────────────────────────────────────
-
-function startResize(event) {
-  isResizing.value = true
-  document.body.style.cursor = 'col-resize'
-  document.body.style.userSelect = 'none'
-}
-
-function stopResize() {
-  isResizing.value = false
-  document.body.style.cursor = ''
-  document.body.style.userSelect = ''
-}
-
-function handleResize(event) {
-  if (!isResizing.value) return
-  const minWidth = 280
-  const maxWidth = 460
-  const newWidth = Math.max(minWidth, Math.min(maxWidth, event.clientX))
-  sidebarWidth.value = newWidth
-}
-
 function parseLightDark(expr) {
   const prefix = 'light-dark('
   const trimmed = expr.trimStart()
@@ -504,6 +476,15 @@ function parseLightDark(expr) {
   const light = trimmed.slice(prefix.length, commaIndex).trim()
   const dark = trimmed.slice(commaIndex + 1, trimmed.length - 1).trim()
   return { light, dark }
+}
+
+function handleMessage(event) {
+  if (event.data && event.data.type === 'computed-colors') {
+    if (event.source !== iframeRef.value?.contentWindow) return
+    if (event.data.requestId !== pendingRequestId.value) return
+    Object.assign(computedColors, event.data.colors)
+    computedReady.value = true
+  }
 }
 
 // ── iframe Communication ────────────────────────────────────────────────────
@@ -614,13 +595,11 @@ function downloadCSS() {
 onMounted(() => {
   window.addEventListener('message', handleMessage)
   document.addEventListener('click', handleDocumentClick)
-  document.addEventListener('mouseup', stopResize)
 })
 
 onUnmounted(() => {
   window.removeEventListener('message', handleMessage)
   document.removeEventListener('click', handleDocumentClick)
-  document.removeEventListener('mouseup', stopResize)
 })
 
 const IFRAME_INIT_DELAY_MS = 300
@@ -645,13 +624,10 @@ defineExpose({
   <div class="palette-builder">
     <div
       class="builder-body"
-      :style="{ gridTemplateColumns: sidebarWidth + 'px auto 1fr' }"
-      @mousemove="handleResize"
-      @mouseup="stopResize"
-      @mouseleave="stopResize"
+      :style="{ gridTemplateColumns: sidebarCollapsed ? '0px auto 1fr' : 'minmax(280px, 30%) auto 1fr' }"
     >
       <!-- Sidebar: Variable Editors -->
-      <aside class="builder-sidebar">
+      <aside class="builder-sidebar" :class="{ collapsed: sidebarCollapsed }">
         <div class="search-box">
           <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input
@@ -770,13 +746,15 @@ defineExpose({
         </div>
       </aside>
 
-      <!-- Resize Handle -->
-      <div
-        class="resize-handle"
-        :class="{ resizing: isResizing }"
-        @mousedown="startResize"
-        title="Drag to resize sidebar"
-      ></div>
+      <!-- Sidebar Toggle -->
+      <button
+        class="sidebar-toggle"
+        @click="toggleSidebar"
+        :title="sidebarCollapsed ? 'Show sidebar' : 'Hide sidebar'"
+        :class="{ collapsed: sidebarCollapsed }"
+      >
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline :points="sidebarCollapsed ? '9 18 15 12 9 6' : '15 18 9 12 15 6'" /></svg>
+      </button>
 
       <!-- Preview -->
       <main class="builder-preview">
@@ -845,46 +823,38 @@ defineExpose({
 /* ── Body Layout ── */
 .builder-body {
   display: grid;
-  grid-template-columns: min-content auto 1fr;
+  grid-template-columns: minmax(280px, 30%) auto 1fr;
   flex: 1;
   min-height: 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
-/* ── Resize Handle ── */
-.resize-handle {
-  width: 6px;
-  background: transparent;
-  cursor: col-resize;
+/* ── Sidebar Toggle ── */
+.sidebar-toggle {
+  width: 20px;
+  background: var(--vp-c-bg-soft);
+  border: none;
+  border-left: 1px solid var(--vp-c-divider);
+  border-right: 1px solid var(--vp-c-divider);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vp-c-text-3);
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+  padding: 0;
   position: relative;
   z-index: 10;
-  transition: background 0.15s;
-  flex-shrink: 0;
 }
 
-.resize-handle:hover,
-.resize-handle.resizing {
+.sidebar-toggle:hover {
   background: var(--vp-c-brand-1);
+  color: #fff;
 }
 
-.resize-handle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2px;
-  height: 20px;
-  background: var(--vp-c-divider);
-  border-radius: 1px;
-  opacity: 0;
-  transition: opacity 0.15s;
-}
-
-.resize-handle:hover::before,
-.resize-handle.resizing::before {
-  opacity: 1;
-  background: #fff;
+.sidebar-toggle.collapsed {
+  border-left-color: var(--vp-c-divider);
 }
 
 /* ── Sidebar ── */
@@ -892,7 +862,11 @@ defineExpose({
   overflow-y: auto;
   background: var(--vp-c-bg-soft);
   max-height: 100%;
-  flex-shrink: 0;
+}
+
+.builder-sidebar.collapsed {
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .search-box {

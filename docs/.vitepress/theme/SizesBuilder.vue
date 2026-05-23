@@ -18,10 +18,29 @@ function htmlTemplate(base, theme) {
   <link rel="stylesheet" href="${base}semanticus.css" id="theme-stylesheet">
   <style>
     body { transition: background-color 0.3s ease, color 0.3s ease; }
+    .compare-mode { display: flex !important; flex-direction: row; width: 100%; gap: 0; }
+    .compare-mode .default-mode { display: block !important; flex: 0 0 50% !important; width: 50% !important; position: relative; padding: 1rem; box-sizing: border-box; }
+    .compare-mode .custom-mode { display: block !important; flex: 0 0 50% !important; width: 50% !important; position: relative; padding: 1rem; box-sizing: border-box; }
+    .compare-mode .compare-side-label { display: block !important; position: absolute; top: -0.5rem; font-size: 0.625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--vp-c-text-3, #646b79); background: var(--vp-c-bg-soft, #f3f4f6); padding: 0.125rem 0.5rem; border-radius: 3px; z-index: 5; }
+    .compare-mode .default-mode .compare-side-label { left: 0.5rem; }
+    .compare-mode .custom-mode .compare-side-label { right: 0.5rem; }
+    .compare-mode .compare-divider { display: block !important; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #f27036; transform: translateX(-50%); pointer-events: none; z-index: 10; }
   </style>
 </head>
 <body class="px-2">
-  ${Demo.palettesExample({ class: 'container-fluid' })}
+  <div id="preview-container" class="position-relative w-100 overflow-visible">
+    <div class="default-mode w-100 py-3 my-4">
+      <span class="compare-side-label d-none">Before</span>
+      <div id="default-content">
+        ${Demo.palettesExample({ class: 'container-fluid' })}
+      </div>
+    </div>
+    <div class="custom-mode d-none w-100 py-3 my-4">
+      <span class="compare-side-label d-none">After</span>
+      <div id="custom-content"></div>
+    </div>
+    <div class="compare-divider d-none"></div>
+  </div>
 
   <script>
     window.addEventListener('message', function(event) {
@@ -33,6 +52,18 @@ function htmlTemplate(base, theme) {
           document.head.appendChild(customStyle);
         }
         customStyle.textContent = event.data.css || '';
+      }
+      if (event.data && event.data.type === 'set-compare-mode') {
+        const container = document.getElementById('preview-container');
+        const customContent = document.getElementById('custom-content');
+        const defaultContent = document.getElementById('default-content');
+        if (event.data.enabled) {
+          customContent.innerHTML = defaultContent.innerHTML;
+          container.classList.add('compare-mode');
+        } else {
+          container.classList.remove('compare-mode');
+          customContent.innerHTML = '';
+        }
       }
     });
   <\/script>
@@ -140,11 +171,11 @@ const customValues = reactive({})
 const searchQuery = ref('')
 const expandedGroups = reactive({})
 const iframeRef = ref(null)
-const sidebarWidth = ref(280)
-const isResizing = ref(false)
+const sidebarCollapsed = ref(false)
 const showExportModal = ref(false)
 const copiedFeedback = ref(null)
 const activePopover = ref(null)
+const compareMode = ref(false)
 
 // Initialize all groups as collapsed except the first
 variableGroups.forEach((g, i) => {
@@ -249,26 +280,18 @@ async function copyToClipboard(text, type) {
   }
 }
 
-// ── Sidebar Resize ────────────────────────────────────────────────────────
-
-function startResize(event) {
-  isResizing.value = true
-  document.body.style.cursor = 'col-resize'
-  document.body.style.userSelect = 'none'
+function toggleCompare() {
+  compareMode.value = !compareMode.value
+  if (iframeRef.value?.contentWindow) {
+    iframeRef.value.contentWindow.postMessage({
+      type: 'set-compare-mode',
+      enabled: compareMode.value
+    }, '*')
+  }
 }
 
-function stopResize() {
-  isResizing.value = false
-  document.body.style.cursor = ''
-  document.body.style.userSelect = ''
-}
-
-function handleResize(event) {
-  if (!isResizing.value) return
-  const minWidth = 280
-  const maxWidth = 460
-  const newWidth = Math.max(minWidth, Math.min(maxWidth, event.clientX))
-  sidebarWidth.value = newWidth
+function toggleSidebar() {
+  sidebarCollapsed.value = !sidebarCollapsed.value
 }
 
 // ── iframe Communication ────────────────────────────────────────────────────
@@ -334,12 +357,10 @@ function downloadCSS() {
 
 onMounted(() => {
   document.addEventListener('click', handleDocumentClick)
-  document.addEventListener('mouseup', stopResize)
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleDocumentClick)
-  document.removeEventListener('mouseup', stopResize)
 })
 
 const IFRAME_INIT_DELAY_MS = 300
@@ -352,9 +373,11 @@ function onIframeLoad() {
 
 defineExpose({
   changedCount,
+  compareMode,
   previewTheme,
   togglePreviewTheme,
   exportCSS,
+  toggleCompare,
   resetAll,
 })
 </script>
@@ -363,13 +386,10 @@ defineExpose({
   <div class="sizes-builder">
     <div
       class="builder-body"
-      :style="{ gridTemplateColumns: sidebarWidth + 'px auto 1fr' }"
-      @mousemove="handleResize"
-      @mouseup="stopResize"
-      @mouseleave="stopResize"
+      :style="{ gridTemplateColumns: sidebarCollapsed ? '0px auto 1fr' : 'minmax(280px, 30%) auto 1fr' }"
     >
       <!-- Sidebar: Variable Editors -->
-      <aside class="builder-sidebar">
+      <aside class="builder-sidebar" :class="{ collapsed: sidebarCollapsed }">
         <div class="search-box">
           <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           <input
@@ -469,13 +489,15 @@ defineExpose({
         </div>
       </aside>
 
-      <!-- Resize Handle -->
-      <div
-        class="resize-handle"
-        :class="{ resizing: isResizing }"
-        @mousedown="startResize"
-        title="Drag to resize sidebar"
-      ></div>
+      <!-- Sidebar Toggle -->
+      <button
+        class="sidebar-toggle"
+        @click="toggleSidebar"
+        :title="sidebarCollapsed ? 'Show sidebar' : 'Hide sidebar'"
+        :class="{ collapsed: sidebarCollapsed }"
+      >
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline :points="sidebarCollapsed ? '9 18 15 12 9 6' : '15 18 9 12 15 6'" /></svg>
+      </button>
 
       <!-- Preview -->
       <main class="builder-preview">
@@ -544,46 +566,38 @@ defineExpose({
 /* ── Body Layout ── */
 .builder-body {
   display: grid;
-  grid-template-columns: min-content auto 1fr;
+  grid-template-columns: minmax(280px, 30%) auto 1fr;
   flex: 1;
   min-height: 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
-/* ── Resize Handle ── */
-.resize-handle {
-  width: 6px;
-  background: transparent;
-  cursor: col-resize;
+/* ── Sidebar Toggle ── */
+.sidebar-toggle {
+  width: 20px;
+  background: var(--vp-c-bg-soft);
+  border: none;
+  border-left: 1px solid var(--vp-c-divider);
+  border-right: 1px solid var(--vp-c-divider);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vp-c-text-3);
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+  padding: 0;
   position: relative;
   z-index: 10;
-  transition: background 0.15s;
-  flex-shrink: 0;
 }
 
-.resize-handle:hover,
-.resize-handle.resizing {
+.sidebar-toggle:hover {
   background: var(--vp-c-brand-1);
+  color: #fff;
 }
 
-.resize-handle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2px;
-  height: 20px;
-  background: var(--vp-c-divider);
-  border-radius: 1px;
-  opacity: 0;
-  transition: opacity 0.15s;
-}
-
-.resize-handle:hover::before,
-.resize-handle.resizing::before {
-  opacity: 1;
-  background: #fff;
+.sidebar-toggle.collapsed {
+  border-left-color: var(--vp-c-divider);
 }
 
 /* ── Sidebar ── */
@@ -591,7 +605,11 @@ defineExpose({
   overflow-y: auto;
   background: var(--vp-c-bg-soft);
   max-height: 100%;
-  flex-shrink: 0;
+}
+
+.builder-sidebar.collapsed {
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .search-box {
