@@ -8,8 +8,12 @@ nav {
   justify-content: space-between;
   overflow: visible;
 
-  & > * {
+  > * {
     margin: 0 !important;
+
+    &:only-child {
+      width: 100%;
+    }
   }
 
   &[aria-label=breadcrumb] {

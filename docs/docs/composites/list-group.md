@@ -1,12 +1,18 @@
 # List Group
 
-List groups are built with `<ul>` and `<li>` elements, and by adding `role="group"` to the `<ul>`, you can create a list group that is accessible and semantically correct.
+List groups are implemented by combining `<ul>` with the `.panel` component class. This creates a vertical list of items that can be used for navigation, selection, or displaying related content.
 
 ## Basic Usage
 
 Through the use of `aria-current="true"` you can indicate the current active item in the list group.
 
 <HtmlPreviewer :code="ListGroupDemo.main()" />
+
+## Horizontal Stacking
+
+Wrapping the list group in a `<nav>` element will cause the items to be distributed horizontally instead of vertically.
+
+<HtmlPreviewer :code="ListGroupDemo.horizontalStack()" />
 
 ## Variants
 

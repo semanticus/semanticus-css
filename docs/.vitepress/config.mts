@@ -481,6 +481,7 @@ export default defineConfig({
             { text: ".container", link: "/docs/components/container" },
             { text: ".icon-*", link: "/docs/components/icons" },
             { text: ".pane", link: "/docs/components/pane" },
+            { text: ".panel", link: "/docs/components/panel" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
