@@ -147,7 +147,6 @@ const variableGroups = [
   {
     label: 'Spacing',
     vars: [
-      { name: '--base-spacing', label: 'Base Spacing', desc: 'Base spacing unit used for margins and padding.', default: '1rem' },
       { name: '--spacing', label: 'Spacing', desc: 'Applied spacing; scales with base-spacing and breakpoints.', default: 'var(--base-spacing)' },
       { name: '--typography-spacing-vertical', label: 'Typography Vertical', desc: 'Vertical margin below typographic elements.', default: '1rem' },
       { name: '--input-spacing-vertical', label: 'Input Vertical', desc: 'Vertical padding inside form inputs.', default: '0.75rem' },
@@ -209,6 +208,15 @@ const compareMode = ref(false)
 const computedValues = reactive({})
 const computedReady = ref(false)
 const pendingRequestId = ref(null)
+const fileInputRef = ref(null)
+
+// Build a lookup from variable name to its default for import
+const varDefaults = {}
+variableGroups.forEach(g => {
+  g.vars.forEach(v => {
+    varDefaults[v.name] = v.default
+  })
+})
 
 // Initialize all groups as collapsed except the first
 variableGroups.forEach((g, i) => {
@@ -390,6 +398,55 @@ function downloadCSS() {
   URL.revokeObjectURL(url)
 }
 
+function triggerImport() {
+  if (fileInputRef.value) {
+    fileInputRef.value.value = ''
+    fileInputRef.value.click()
+  }
+}
+
+function handleFileImport(event) {
+  const file = event.target.files?.[0]
+  if (!file) return
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    const text = e.target?.result
+    if (typeof text === 'string') {
+      parseAndApplyCSS(text)
+    }
+  }
+  reader.readAsText(file)
+}
+
+function parseAndApplyCSS(text) {
+  // Match --var-name: value; lines
+  const regex = /--[\w-]+\s*:\s*[^;]+/g
+  const matches = text.matchAll(regex)
+  let changed = false
+  for (const match of matches) {
+    const [full] = match
+    const colonIdx = full.indexOf(':')
+    const name = full.slice(0, colonIdx).trim()
+    const value = full.slice(colonIdx + 1).trim()
+    if (name in varDefaults) {
+      const key = `root:${name}`
+      const def = varDefaults[name]
+      if (value === def) {
+        if (key in customValues) {
+          delete customValues[key]
+          changed = true
+        }
+      } else {
+        customValues[key] = value
+        changed = true
+      }
+    }
+  }
+  if (changed) {
+    updateIframeStyles()
+  }
+}
+
 function requestComputedValues() {
   if (!iframeRef.value?.contentWindow) return
   const reqId = Date.now()
@@ -444,6 +501,7 @@ defineExpose({
   togglePreviewTheme,
   exportCSS,
   toggleCompare,
+  triggerImport,
   resetAll,
 })
 </script>
@@ -616,6 +674,15 @@ defineExpose({
         </div>
       </div>
     </div>
+
+    <!-- Hidden file input for import -->
+    <input
+      ref="fileInputRef"
+      type="file"
+      accept=".css"
+      @change="handleFileImport"
+      style="display: none"
+    />
   </div>
 </template>
 

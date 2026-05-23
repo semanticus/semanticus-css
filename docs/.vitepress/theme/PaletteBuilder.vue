@@ -312,6 +312,15 @@ const activePopover = ref(null)
 const computedColors = reactive({})
 const computedReady = ref(false)
 const pendingRequestId = ref(null)
+const fileInputRef = ref(null)
+
+// Build a lookup from variable name to its def + scope for import
+const varMeta = {}
+variableGroups.forEach(g => {
+  g.vars.forEach(v => {
+    varMeta[v.name] = { default: v.default, scope: getScope(v) }
+  })
+})
 
 // Initialize all groups as collapsed except the first few
 variableGroups.forEach((g, i) => {
@@ -590,6 +599,78 @@ function downloadCSS() {
   URL.revokeObjectURL(url)
 }
 
+function triggerImport() {
+  if (fileInputRef.value) {
+    fileInputRef.value.value = ''
+    fileInputRef.value.click()
+  }
+}
+
+function handleFileImport(event) {
+  const file = event.target.files?.[0]
+  if (!file) return
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    const text = e.target?.result
+    if (typeof text === 'string') {
+      parseAndApplyCSS(text)
+    }
+  }
+  reader.readAsText(file)
+}
+
+function parseAndApplyCSS(text) {
+  const regex = /--[\w-]+\s*:\s*[^;]+/g
+  const matches = text.matchAll(regex)
+  let changed = false
+  for (const match of matches) {
+    const [full] = match
+    const colonIdx = full.indexOf(':')
+    const name = full.slice(0, colonIdx).trim()
+    const rawValue = full.slice(colonIdx + 1).trim()
+    const meta = varMeta[name]
+    if (!meta) continue
+    const key = getKey({ name, default: meta.default }) // reuse getKey's scope logic
+
+    // Check if value uses light-dark() for theme-scoped vars
+    const parsed = parseLightDark(rawValue)
+    if (parsed) {
+      // Theme-scoped variable: set both light and dark keys
+      const lightKey = `light:${name}`
+      const darkKey = `dark:${name}`
+      const defParsed = parseLightDark(meta.default)
+      const lightDef = defParsed ? defParsed.light : meta.default
+      const darkDef = defParsed ? defParsed.dark : meta.default
+      if (parsed.light === lightDef) {
+        delete customValues[lightKey]
+      } else {
+        customValues[lightKey] = parsed.light
+      }
+      if (parsed.dark === darkDef) {
+        delete customValues[darkKey]
+      } else {
+        customValues[darkKey] = parsed.dark
+      }
+      changed = true
+    } else {
+      // Root or simple value
+      const def = meta.default
+      if (rawValue === def) {
+        if (key in customValues) {
+          delete customValues[key]
+          changed = true
+        }
+      } else {
+        customValues[key] = rawValue
+        changed = true
+      }
+    }
+  }
+  if (changed) {
+    updateIframeStyles()
+  }
+}
+
 // ── Lifecycle ───────────────────────────────────────────────────────────────
 
 onMounted(() => {
@@ -616,6 +697,7 @@ defineExpose({
   previewTheme,
   togglePreviewTheme,
   exportCSS,
+  triggerImport,
   resetAll,
 })
 </script>
@@ -807,6 +889,15 @@ defineExpose({
         </div>
       </div>
     </div>
+
+    <!-- Hidden file input for import -->
+    <input
+      ref="fileInputRef"
+      type="file"
+      accept=".css"
+      @change="handleFileImport"
+      style="display: none"
+    />
   </div>
 </template>
 
