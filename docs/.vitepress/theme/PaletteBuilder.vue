@@ -3,7 +3,7 @@ import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
 import { Demo } from '@demos/overviews';
 
-const { site } = useData();
+const { isDark, site } = useData();
 
 const basePath = computed(() => site.value.base || '/');
 
@@ -84,7 +84,7 @@ function htmlTemplate(base, theme) {
 </html>`;
 }
 
-const previewTheme = ref('light')
+const previewTheme = ref(isDark.value ? 'dark' : 'light')
 
 const iframeContent = computed(() => {
   return htmlTemplate(basePath.value, previewTheme.value)

@@ -1,18 +1,32 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useData } from 'vitepress'
 import PalettePicker from './PalettePicker.vue'
 import PaletteBuilder from './PaletteBuilder.vue'
+
+const { isDark } = useData()
 
 const activeTab = ref('picker')
 const pickerRef = ref(null)
 const builderRef = ref(null)
-const previewTheme = ref('light')
+const userToggled = ref(false)
+const previewTheme = ref(isDark.value ? 'dark' : 'light')
+
+// Sync with VitePress theme until the user manually toggles
+watch(isDark, (val) => {
+  if (userToggled.value) return
+  const newTheme = val ? 'dark' : 'light'
+  previewTheme.value = newTheme
+  if (pickerRef.value) pickerRef.value.previewTheme = newTheme
+  if (builderRef.value) builderRef.value.previewTheme = newTheme
+})
 
 function setTab(tab) {
   activeTab.value = tab
 }
 
 function togglePreviewTheme() {
+  userToggled.value = true
   previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
   pickerRef.value?.togglePreviewTheme()
   builderRef.value?.togglePreviewTheme()

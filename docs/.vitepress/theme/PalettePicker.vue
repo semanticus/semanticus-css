@@ -63,7 +63,7 @@ const previewFrame = ref(null)
 const showInstallModal = ref(false)
 const installMode = ref('cdn')
 const copiedFeedback = ref(null)
-const previewTheme = ref('light')
+const previewTheme = ref(isDark.value ? 'dark' : 'light')
 
 const previewHtml = computed(() => {
   const paletteName = currentPalette.value

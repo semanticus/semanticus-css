@@ -317,10 +317,10 @@ export default defineConfig({
       "/guide/": [
         { text: "Getting Started", link: "/guide/" },
         { text: "Light & Dark Modes", link: "/guide/light-dark-modes" },
-        { text: "Palettes & Sizes", link: "/guide/palettes-sizes" },
-        { text: "CSS Variables", link: "/guide/css-variables" },
-        { text: "Theme Builder", link: "/guide/theme-builder" },
         { text: "Palettes", link: "/guide/palettes" },
+        // { text: "Palettes & Sizes", link: "/guide/palettes-sizes" },
+        { text: "Theme Builder", link: "/guide/theme-builder" },
+        { text: "CSS Variables", link: "/guide/css-variables" },
       ],
       "/docs/": [
         {
