@@ -30,7 +30,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.pane` component |
 | ✅ | `.icon-*` component |
 | 🚧 | `.sidebar` component |
-| ⌛ | `.content-grid` component in favor of `.container` |
+| ⌛ | `.content-grid` component |
 | ⌛ | `.carousel` component |
 | ⌛ | `.badge` component |
 | ⌛ | `.popper` component |
@@ -51,8 +51,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
-| 🚧 | `.striped` modifier variant |
-| ⌛ | Extend **intent variants** to stylize **list group** |
+| ✅ | `.striped` modifier variant |
+| ✅ | Extend **intent variants** to stylize **list group** |
 | ⌛ | Extend **intent variants** to stylize `<progress>` |
 
 ## Known Issues
@@ -100,10 +100,10 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Grid system documentation |
 | ✅ | `.icon-*` component documentation |
 | ✅ | Alerts composite documentation |
+| ✅ | List Group composite documentation |
 | 🚧 | Navigation composite documentation |
 | ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
-| ⌛ | List Group composite documentation |
 | ⌛ | `.sidebar` component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |

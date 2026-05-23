@@ -2,10 +2,6 @@
 title: 'role="group"'
 ---
 
-<script setup>
-import { RoleGroupDemo } from "@demos/semantics/attributes";
-</script>
-
 # [role="group"]
 
 The `role="group"` attribute identifies a set of related user interface objects.
@@ -22,7 +18,11 @@ Use `role="group"` to create connected groups of buttons or form elements. For s
 
 ## Lists
 
-<HtmlPreviewer :code="RoleGroupDemo.unorderedList()" />
+When applied to an `<ul>`, `role="group"` will stylize the list as a connected group of items, similar to a list group component in UI libraries.
+
+See [List Group](/docs/composites/list-group) for more examples of list groups using `role="group"`.
+
+<HtmlPreviewer :code="ListGroupDemo.main()" />
 
 ## Input Groups
 
@@ -47,3 +47,8 @@ Use `role="group"` to create connected groups of buttons or form elements. For s
 ### Newsletter Signup
 
 <HtmlPreviewer :code="RoleGroupDemo.newsletterForm()" />
+
+<script setup>
+import { ListGroupDemo } from "@demos/composites";
+import { RoleGroupDemo } from "@demos/semantics";
+</script>

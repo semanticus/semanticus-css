@@ -8,15 +8,17 @@
 
     li {
       --color-background: transparent;
+      --_color-background: var(--color-background);
+      --_color-text: var(--color-text);
       --border-color: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%);
 
       list-style: none;
       padding: var(--spacing);
       border-inline: var(--border-size) solid var(--border-color);
       border-bottom: var(--border-size) solid var(--border-color);
-      background: var(--color-background);
+      background: var(--_color-background);
       margin: 0;
-      color: var(--color-text);
+      color: var(--_color-text);
 
       &:first-child {
         border-top: var(--border-size) solid var(--border-color);
@@ -30,10 +32,7 @@
       }
 
       &:is([aria-current]:not([aria-current=false])) {
-        --color-background: light-dark(
-          color-mix(in srgb, var(--color-slate-50) 25%, white),
-          color-mix(in srgb, var(--color-slate-50), transparent 95%)
-        );
+        --_color-background: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
       }
     }
   }

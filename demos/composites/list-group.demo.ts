@@ -1,12 +1,21 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import * as RoleGroupDemo from "@demos/semantics/attributes/role-group.demo";
-
-export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return RoleGroupDemo.unorderedList(attrs, slot);
-}
 
 function renderLi(attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement('li', attrs, slot);
+}
+
+export function main(attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement('ul', { ...attrs, role: "group" }, slot || `<li>Item 1</li>
+<li>Item 2</li>
+<li aria-current="true">Item 3</li>
+<li>Item 4</li>`);
+}
+
+export function stripedVariant(attrs: Record<string, string> = {}, slot: string = '') {
+  return main(classMergeAttributes('striped', attrs), `<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>`);
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
