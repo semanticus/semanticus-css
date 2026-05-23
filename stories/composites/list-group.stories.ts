@@ -12,6 +12,6 @@ export const BasicUsage: StoryObj = {
   render: () => ListGroupDemo.main(),
 };
 
-export const variants: StoryObj = {
+export const Variants: StoryObj = {
   render: () => ListGroupDemo.overviewVariants(),
 };
