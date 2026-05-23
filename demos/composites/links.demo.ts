@@ -2,16 +2,6 @@ import { renderElement } from "@scripts/utils";
 import * as ADemo from "@demos/semantics/elements/a.demo";
 import * as RoleLinkDemo from "@demos/semantics/attributes/role-link.demo";
 
-// export function main(attrs: Record<string, string> = {}) {
-//   return renderElement("details", attrs, `<summary aria-haspopup="menu">Dropdown</summary>
-// <ul role="menu">
-//   <li><a role="menuitem" href="#">Solid</a></li>
-//   <li><a role="menuitem" href="#">Liquid</a></li>
-//   <li><a role="menuitem" href="#">Gas</a></li>
-//   <li><a role="menuitem" href="#">Plasma</a></li>
-// </ul>`);
-// }
-
 export function intentVariants(attrs: Record<string, string> = {}) {
   return `${ADemo.intentVariants(attrs)}
 

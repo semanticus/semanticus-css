@@ -1,5 +1,4 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Pane title') {
   return renderElement(tagName, classMergeAttributes('pane', attrs), `<hgroup>

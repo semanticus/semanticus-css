@@ -447,17 +447,9 @@ export default defineConfig({
                   link: "/docs/semantics/attributes/role-button",
                 },
                 {
-                  text: '[role="group"]',
-                  link: "/docs/semantics/attributes/role-group",
-                },
-                {
                   text: '[role="link"]',
                   link: "/docs/semantics/attributes/role-link",
                 },
-                // {
-                //   text: '[role="search"]',
-                //   link: "/docs/semantics/attributes/role-search",
-                // },
                 {
                   text: '[role="status"]',
                   link: "/docs/semantics/attributes/role-status",
@@ -481,6 +473,7 @@ export default defineConfig({
             { text: ".container", link: "/docs/components/container" },
             { text: ".icon-*", link: "/docs/components/icons" },
             { text: ".pane", link: "/docs/components/pane" },
+            { text: ".panel", link: "/docs/components/panel" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },

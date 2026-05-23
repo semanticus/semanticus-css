@@ -10,6 +10,8 @@ import { MainDemo } from "@demos/semantics/elements";
 
 The `<main>` element represents the dominant content of the document body. There should be only one `<main>` per page, and it should not be nested inside `<article>`, `<aside>`, `<header>`, `<footer>`, or `<nav>`.
 
+> **Important:** Assistive technologies implicitly add the `role="main"` so, don't combine it with `role="group"` or any other roles like `role="region"` that would override the main landmark semantics.
+
 ## Basic Usage
 
 <HtmlPreviewer :code="MainDemo.main()" />

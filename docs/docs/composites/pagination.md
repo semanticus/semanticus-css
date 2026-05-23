@@ -7,6 +7,8 @@ Pagination is a navigation pattern that allows users to move between pages of co
 - Use buttons when pagination triggers dynamic content updates without page reloads
 - Use anchor links when pagination navigates to distinct URLs
 
+> **Accessibility** Avoid setting `role="group"` directly on the `<nav>` element, as it overrides the native navigation landmark semantics of `<nav>` for assistive technologies. Instead, place `role="group"` on an inner wrapper (e.g., a `<div>`) to maintain both semantic structure and styling.
+
 ## Basic Pagination
 
 The simplest pagination pattern uses buttons within a group:
@@ -29,7 +31,7 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 
 - Always include an `aria-label` on the `<nav>` element to identify the pagination region
 - Use `aria-current="page"` to indicate the current page to assistive technologies
-- Disable (don't hide) navigation buttons when they are unavailable (e.g., "Previous" on page 1)
+- Disable (don't hide) navigation buttons when they are unavailable (e.g., "Previous" on page 1) and use `aria-disabled="true"` to indicate their state
 - Ensure keyboard users can navigate between page controls using Tab/Shift+Tab
 - Consider adding `aria-live` regions to announce page changes to screen reader users
 
@@ -39,7 +41,7 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 - [&lt;button&gt;](/docs/semantics/elements/button) - Button element styling
 - [&lt;nav&gt;](/docs/semantics/elements/nav) - Navigation element semantics
 - [disabled](/docs/semantics/attributes/disabled) - Disabled state semantics
-- [role="group"](/docs/semantics/attributes/role-group) - For grouping related controls
+- [aria-disabled](/docs/semantics/attributes/aria-disabled) - ARIA disabled state semantics
 
 <script setup>
 import { PaginationDemo } from "@demos/composites";

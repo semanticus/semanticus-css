@@ -8,6 +8,8 @@ The `<nav>` element is a landmark that identifies a region of navigation links.
 
 Screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation.
 
+> **Important:** Assistive technologies implicitly add the `role="navigation"` so, don't combine it with `role="group"` or any other roles like `role="region"` that would override the navigation landmark semantics.
+
 ## Basic Usage
 
 <HtmlPreviewer :code="NavDemo.main()" />
