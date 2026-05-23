@@ -319,8 +319,6 @@ export default defineConfig({
         { text: "Light & Dark Modes", link: "/guide/light-dark-modes" },
         { text: "Palettes", link: "/guide/palettes" },
         { text: "Sizes", link: "/guide/sizes" },
-        // { text: "Palettes & Sizes", link: "/guide/palettes-sizes" },
-        { text: "Theme Builder", link: "/guide/theme-builder" },
         { text: "CSS Variables", link: "/guide/css-variables" },
       ],
       "/docs/": [
