@@ -12,14 +12,6 @@ export const BasicUsage: StoryObj = {
   render: () => ListGroupDemo.main(),
 };
 
-export const intentVariants: StoryObj = {
-  render: () => ListGroupDemo.intentVariants(),
-};
-
-export const ghostVariants: StoryObj = {
-  render: () => ListGroupDemo.ghostVariants(),
-};
-
-export const subtleVariants: StoryObj = {
-  render: () => ListGroupDemo.subtleVariants(),
+export const variants: StoryObj = {
+  render: () => ListGroupDemo.overviewVariants(),
 };

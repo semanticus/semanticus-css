@@ -1,7 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
 import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
-import { DropdownDemo, LinksDemo, TypographyDemo } from "@demos/composites";
+import { DropdownDemo, LinksDemo, ListGroupDemo, TypographyDemo } from "@demos/composites";
 import { CardDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
@@ -393,6 +393,11 @@ function lists() {
   <h2>Lists</h2>
 
   <section>
+    <h4>Group</h4>
+    ${ListGroupDemo.main()}
+  </section>
+
+  <section>
     <h4>Unordered</h4>
     ${ListsDemo.unordered()}
   </section>
@@ -637,6 +642,15 @@ ${fullBundleColorsButtons()}
   <h2>Dropdowns (role="button")</h2>
 
   ${DropdownDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
+<section id="list-group">
+  <h2>List Group</h2>
+
+  ${ListGroupDemo.overviewVariants()}
 </section>
 
 <hr>
