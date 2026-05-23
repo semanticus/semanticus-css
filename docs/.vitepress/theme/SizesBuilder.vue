@@ -338,11 +338,15 @@ async function copyToClipboard(text, type) {
 
 function toggleCompare() {
   compareMode.value = !compareMode.value
+  computedReady.value = false
   if (iframeRef.value?.contentWindow) {
     iframeRef.value.contentWindow.postMessage({
       type: 'set-compare-mode',
       enabled: compareMode.value
     }, '*')
+    setTimeout(() => {
+      requestComputedValues()
+    }, 0)
   }
 }
 
