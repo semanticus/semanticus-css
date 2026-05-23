@@ -1,5 +1,5 @@
 .striped {
-  > tr:nth-child(odd) {
+  > tbody > tr:nth-child(odd) {
     & th,
     & td {
       background-color: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
