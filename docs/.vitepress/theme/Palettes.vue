@@ -6,9 +6,16 @@ import PaletteBuilder from './PaletteBuilder.vue'
 const activeTab = ref('picker')
 const pickerRef = ref(null)
 const builderRef = ref(null)
+const previewTheme = ref('light')
 
 function setTab(tab) {
   activeTab.value = tab
+}
+
+function togglePreviewTheme() {
+  previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
+  pickerRef.value?.togglePreviewTheme()
+  builderRef.value?.togglePreviewTheme()
 }
 </script>
 
@@ -35,21 +42,21 @@ function setTab(tab) {
       </div>
 
       <div class="toolbar-right">
+        <button
+          class="toolbar-btn theme-toggle"
+          @click="togglePreviewTheme()"
+          :title="`Preview: ${previewTheme} mode`"
+        >
+          <template v-if="previewTheme === 'light'">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            Light
+          </template>
+          <template v-else>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            Dark
+          </template>
+        </button>
         <template v-if="activeTab === 'picker'">
-          <button
-            class="toolbar-btn theme-toggle"
-            @click="pickerRef?.togglePreviewTheme()"
-            :title="`Preview: ${pickerRef?.previewTheme} mode`"
-          >
-            <template v-if="pickerRef?.previewTheme === 'light'">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-              Light
-            </template>
-            <template v-else>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-              Dark
-            </template>
-          </button>
           <button class="toolbar-btn install-btn" @click="pickerRef?.openInstallModal()" title="How to install">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             How to install
@@ -64,20 +71,6 @@ function setTab(tab) {
           >
             {{ builderRef.changedCount }} changed
             <span class="change-badge-close">✕</span>
-          </button>
-          <button
-            class="toolbar-btn theme-toggle"
-            @click="builderRef?.togglePreviewTheme()"
-            :title="`Preview: ${builderRef?.previewTheme} mode`"
-          >
-            <template v-if="builderRef?.previewTheme === 'light'">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-              Light
-            </template>
-            <template v-else>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-              Dark
-            </template>
           </button>
           <button class="toolbar-btn export-btn" @click="builderRef?.exportCSS()" title="Export palette CSS">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
