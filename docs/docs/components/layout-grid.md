@@ -7,7 +7,7 @@ The `.layout-grid` class eliminates the need for wrapper or container divs. Inst
 The grid provides **three width levels** via three CSS Grid named lines:
 
 | Level | Grid area | Class | Width |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Content** | `content` | *(none — default)* | Constrained to `--layout-grid-content-max-width` (default `70ch`) |
 | **Breakout** | `breakout` | `.breakout` | Wider than content, up to `--layout-grid-breakout-max-width` (default `90ch`) |
 | **Full-width** | `full-width` | `.full-width` | Edge-to-edge spanning the entire viewport |
@@ -76,7 +76,7 @@ min(var(--layout-grid-content-max-width), 100% - var(--layout-grid-padding-inlin
 Customise the layout by overriding these variables on any `.layout-grid` element:
 
 | Variable | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `--layout-grid-padding-inline` | `var(--spacing)` | Minimum padding on each side (between viewport edge and content) |
 | `--layout-grid-content-max-width` | `70ch` | Maximum width of the content column |
 | `--layout-grid-breakout-max-width` | `90ch` | Maximum total width when using `.breakout` |
@@ -113,22 +113,22 @@ You can also set these inline or scope them to a specific region:
 The technique relies on CSS Grid **named lines**. The grid template defines five columns bracketed by named lines that follow the `{name}-start` / `{name}-end` pattern, which creates implicit named grid areas:
 
 ```
-┌─────────────┬────────────┬──────────────────┬────────────┬─────────────┐
-│  full-width │  breakout  │    content       │  breakout  │  full-width │
-│   padding   │   column   │    column        │   column   │   padding   │
-├─────────────┼────────────┼──────────────────┼────────────┼─────────────┤
-│  minmax(    │  minmax(   │  min(max-width,  │  minmax(   │  minmax(    │
-│  padding,   │  0, size)  │  100%-padding*2) │  0, size)  │  padding,   │
-│  1fr)       │            │                  │            │  1fr)       │
-└─────────────┴────────────┴──────────────────┴────────────┴─────────────┘
-   [full-       [breakout-    [content-         [content-    [breakout-    [full-
-   width-start] start]        start]            end]         end]          width-end]
+  ┌─────────────┬────────────┬──────────────────┬────────────┬─────────────┐
+  │  full-width │  breakout  │    content       │  breakout  │  full-width │
+  │   padding   │   column   │    column        │   column   │   padding   │
+  ├─────────────┼────────────┼──────────────────┼────────────┼─────────────┤
+  │  minmax(    │  minmax(   │  min(max-width,  │  minmax(   │  minmax(    │
+  │  padding,   │  0, size)  │  100%-padding*2) │  0, size)  │  padding,   │
+  │  1fr)       │            │                  │            │  1fr)       │
+  └─────────────┴────────────┴──────────────────┴────────────┴─────────────┘
+[full-       [breakout-   [content-          [content-     [breakout-    [full-
+width-start]  start]       start]             end]          end]         width-end]
 ```
 
 Any child can target one of these areas by setting `grid-column` to its name:
 
 | CSS | Spans |
-|---|---|
+| --- | --- |
 | `grid-column: content` | Just the content column |
 | `grid-column: breakout` | From breakout-start to breakout-end (content + both breakout columns) |
 | `grid-column: full-width` | From full-width-start to full-width-end (everything) |
