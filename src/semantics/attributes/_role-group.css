@@ -123,15 +123,3 @@
     }
   }
 }
-
-[role="search"] {
-  & > :first-child {
-    border-top-left-radius: 5rem;
-    border-bottom-left-radius: 5rem;
-  }
-
-  & > :last-child {
-    border-top-right-radius: 5rem;
-    border-bottom-right-radius: 5rem;
-  }
-}
