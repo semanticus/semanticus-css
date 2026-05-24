@@ -7,7 +7,7 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 }
 
 export function overview() {
-  return renderElement('nav', { role: 'toolbar' }, `${main("button")}
+  return renderElement('nav', { class: 'grid' }, `${main("button")}
 
 <hr>
 

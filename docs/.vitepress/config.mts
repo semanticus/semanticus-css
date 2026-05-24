@@ -422,10 +422,6 @@ export default defineConfig({
                   link: "/docs/semantics/attributes/role-status",
                 },
                 {
-                  text: '[role="toolbar"]',
-                  link: "/docs/semantics/attributes/role-toolbar",
-                },
-                {
                   text: '[role="tooltip"]',
                   link: "/docs/semantics/attributes/role-tooltip",
                 },

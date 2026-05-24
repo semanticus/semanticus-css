@@ -21,7 +21,7 @@ ${RoleLinkDemo.intentVariants(attrs)}`;
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', { role: 'toolbar', ...attrs }, `<aside>
+  return renderElement('section', { class: 'grid', ...attrs }, `<aside>
   <ul class="ps-0">
     <li>${ADemo.main()}</li>
     <li>${ADemo.main({ class: 'secondary' })}</li>

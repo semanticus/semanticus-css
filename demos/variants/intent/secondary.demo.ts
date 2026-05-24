@@ -47,7 +47,7 @@ ${RoleLinkDemo.overview(mergedAttrs(attrs))}`;
 }
 
 export function overviewButtons(attrs: Record<string, string> = {}) {
-  return renderElement('nav', { role: 'toolbar' }, `${button(attrs)}
+  return renderElement('nav', { class: 'grid' }, `${button(attrs)}
 
 ${roleButton("div", attrs)}
 

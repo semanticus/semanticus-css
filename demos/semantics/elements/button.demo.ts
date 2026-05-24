@@ -23,7 +23,7 @@ export function closeButton(attrs: Record<string, string> = {}, text: string = "
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return renderElement('section', { role: 'toolbar' }, `${main(classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+    return renderElement('section', { class: 'grid' }, `${main(classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
 ${main(classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
 ${main(classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
 ${main(classMergeAttributes(`success ${modifier}`.trim(), attrs))}
