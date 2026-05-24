@@ -24,7 +24,7 @@ export default defineConfig({
     isCI ? ['github'] : ['line'],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  snapshotPathTemplate: '{testDir}/_snapshots/{projectName}/{testFilePath}/{arg}{ext}',
+  snapshotPathTemplate: '{testDir}/_snapshots/{projectName}/{platform}/{testFilePath}/{arg}{ext}',
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: baseUrl,
