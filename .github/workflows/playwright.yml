@@ -37,6 +37,9 @@ jobs:
       - name: Run Lint
         run: npm run lint
 
+      - name: Build CSS
+        run: npm run build
+
       - name: Initialize snapshots
         if: ${{inputs.update_snapshots == 'true'}}
         run: npx playwright test --update-snapshots --reporter html
