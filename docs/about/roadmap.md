@@ -26,9 +26,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
-| ✅ | `.card-list` component |
 | ✅ | `.icon-*` component |
 | ✅ | `.layout-grid` component |
+| ✅ | Extended `.card` to implement **card lists** |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.carousel` component |
 | ⌛ | `.badge` component |
@@ -51,7 +51,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.subtle` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
 | ✅ | `.striped` modifier variant |
-| ✅ | Extend **intent variants** to stylize `.card-list` |
+| ✅ | Extend **intent variants** to stylize **card lists** |
 | ⌛ | Extend **intent variants** to stylize `<progress>` |
 
 ## Known Issues
@@ -134,7 +134,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.danger` variant combinations |
 | ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | ✅ | Floating Alert interaction |
-| ✅ | Include `.card-list` in Full & Colors Demo Overview |
+| ✅ | Include **card lists** in Full & Colors Demo Overview |
 | ✅ | `.layout-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid Demo Overview |

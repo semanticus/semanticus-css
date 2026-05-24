@@ -328,10 +328,10 @@ export default defineConfig({
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Buttons", link: "/docs/composites/buttons" },
             { text: "Card", link: "/docs/composites/card" },
+            { text: "Card List", link: "/docs/composites/card-list" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
-            { text: "List Group", link: "/docs/composites/list-group" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
@@ -432,7 +432,6 @@ export default defineConfig({
         {
           text: "Components API",
           items: [
-            { text: ".card-list", link: "/docs/components/card-list" },
             { text: ".card", link: "/docs/components/card" },
             { text: ".container", link: "/docs/components/container" },
             { text: ".grid", link: "/docs/components/grid" },

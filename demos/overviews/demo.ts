@@ -5,8 +5,9 @@ import {
   LinksDemo,
   TypographyDemo,
   SearchDemo,
+  CardListDemo,
 } from "@demos/composites";
-import { CardDemo, CardListDemo } from "@demos/components";
+import { CardDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
