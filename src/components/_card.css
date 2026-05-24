@@ -1,9 +1,12 @@
 .card {
+  --color-background: var(--dialog-fill);
+  --border-color: var(--dialog-border);
+
   padding-block: var(--spacing);
   padding-inline: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
-  border: var(--border-size) solid var(--dialog-border);
+  border: var(--border-size) solid var(--border-color);
   background: var(--color-background);
 
   > header,

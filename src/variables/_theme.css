@@ -220,7 +220,7 @@
 
   /* === Dialog / Alert tokens === */
   --dialog-fill: light-dark(var(--color-background), var(--color-slate-900));
-  --dialog-border: light-dark(var(--color-border), var(--color-slate-900));
+  --dialog-border: var(--color-border);
   --dialog-shadow: var(--shadow);
   --dialog-section-fill: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
