@@ -12,6 +12,10 @@ export const basicUsage: StoryObj = {
   render: () => CardDemo.main(),
 };
 
+export const heroSection: StoryObj = {
+  render: () => CardDemo.heroSection({ class: 'primary subtle' }),
+};
+
 export const withHeader: StoryObj = {
   render: () => CardDemo.withHeader(),
 };
