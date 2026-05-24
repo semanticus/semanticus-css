@@ -9,11 +9,11 @@ const meta: Meta = {
 export default meta;
 
 export const basicUsage: StoryObj = {
-  render: () => CardListDemo.main(),
+  render: () => CardListDemo.overview(),
 };
 
 export const horizontalStack: StoryObj = {
-  render: () => CardListDemo.horizontalStack(),
+  render: () => CardListDemo.overviewHorizontalStack(),
 };
 
 export const variants: StoryObj = {

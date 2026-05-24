@@ -396,7 +396,7 @@ function lists() {
 
   <section>
     <h4>Group</h4>
-    ${CardListDemo.main()}
+    ${CardListDemo.unorderedList()}
   </section>
 
   <section>

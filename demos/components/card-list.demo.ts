@@ -1,18 +1,40 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
+import * as NavDemo from "@demos/semantics/elements/nav.demo";
 
 function renderLi(attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement('li', attrs, slot);
 }
 
-export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement('ul', classMergeAttributes('card-list                                                                                                                                                                                               ', attrs), slot || `<li>Item 1</li>
+export function main(tagName: string = 'div', attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, classMergeAttributes('card-list', attrs), slot);
+}
+
+export function unorderedList(attrs: Record<string, string> = {}, slot: string = '') {
+  return main('ul', attrs, slot || `<li>Item 1</li>
 <li>Item 2</li>
 <li aria-current="true">Item 3</li>
 <li>Item 4</li>`);
 }
 
-export function horizontalStack(attrs: Record<string, string> = {}) {
-  return renderElement('nav', {}, main(attrs));
+export function divs(attrs: Record<string, string> = {}, slot: string = '') {
+  return main('div', attrs, slot || `<div>Item 1</div>
+<div aria-current="true">Item 2</div>
+<div>Item 3</div>
+<div>Item 4</div>`);
+}
+
+export function overview(attrs: Record<string, string> = {}) {
+  return renderElement('section', { role: 'toolbar' }, `${unorderedList(attrs)}
+
+${divs(attrs)}`);
+}
+
+export function overviewHorizontalStack(attrs: Record<string, string> = {}) {
+  return `${NavDemo.main({}, unorderedList(attrs))}
+
+<hr>
+
+${NavDemo.main({}, divs(attrs))}`;
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
@@ -27,7 +49,7 @@ export function overviewVariants(attrs: Record<string, string> = {}) {
 }
 
 export function listOfSeven(attrs: Record<string, string> = {}) {
-  return main(attrs, `<li>Item 1</li>
+  return unorderedList(attrs, `<li>Item 1</li>
 <li>Item 2</li>
 <li>Item 3</li>
 <li>Item 4</li>
@@ -41,7 +63,7 @@ export function stripedVariant(attrs: Record<string, string> = {}) {
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-  return main(attrs, `${renderLi(classMergeAttributes(`primary ${modifier}`.trim()), 'Primary')}
+  return unorderedList(attrs, `${renderLi(classMergeAttributes(`primary ${modifier}`.trim()), 'Primary')}
 ${renderLi(classMergeAttributes(`secondary ${modifier}`.trim()), 'Secondary')}
 ${renderLi(classMergeAttributes(`contrast ${modifier}`.trim()), 'Contrast')}
 ${renderLi(classMergeAttributes(`success ${modifier}`.trim()), 'Success')}

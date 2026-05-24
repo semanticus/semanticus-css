@@ -6,13 +6,13 @@ List groups are implemented by adding the `.card-list` class to a `<ul>`, `<div>
 
 Through the use of `aria-current="true"` you can indicate the current active item in the list group.
 
-<HtmlPreviewer :code="CardListDemo.main()" />
+<HtmlPreviewer :code="CardListDemo.overview()" />
 
 ## Horizontal Stacking
 
 Wrapping the list group in a `<nav>` element will cause the items to be distributed horizontally instead of vertically.
 
-<HtmlPreviewer :code="CardListDemo.horizontalStack()" />
+<HtmlPreviewer :code="CardListDemo.overviewHorizontalStack()" />
 
 ## Variants
 
