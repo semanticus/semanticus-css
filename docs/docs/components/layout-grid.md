@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 # Layout Grid
 
 > **Inspired by** [Kevin Powell's content grid technique](https://www.youtube.com/watch?v=c13gpBrnGEw), based on original ideas from [Stephanie Eckles (smolcss.dev)](https://smolcss.dev/) and [Ryan Mulligan](https://ryanmulligan.dev/blog/layout-breakouts/).
