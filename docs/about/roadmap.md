@@ -29,7 +29,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.card-list` component |
 | ✅ | `.icon-*` component |
 | 🚧 | `.sidebar` component |
-| ⌛ | `.content-grid` component |
+| 🚧 | `.layout-grid` component in favor of `.container` |
 | ⌛ | `.carousel` component |
 | ⌛ | `.badge` component |
 | ⌛ | `.popper` component |
@@ -135,7 +135,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | ✅ | Floating Alert interaction |
 | ✅ | Include `.card-list` in Full & Colors Demo Overview |
-| ⌛ | `.content-grid` Demo Overview |
+| 🚧 | `.layout-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid Demo Overview |
 | ⌛ | Tab interaction |

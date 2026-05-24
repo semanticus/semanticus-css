@@ -439,6 +439,7 @@ export default defineConfig({
             { text: ".card", link: "/docs/components/card" },
             { text: ".card-list", link: "/docs/components/card-list" },
             { text: ".container", link: "/docs/components/container" },
+            { text: ".layout-grid", link: "/docs/components/layout-grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
