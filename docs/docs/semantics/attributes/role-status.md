@@ -14,7 +14,7 @@ Adding `role="status"` to an element will stylize it as an **alert** component a
 
 ## With Close Button
 
-`role="status"` will strech the first child and let the second child fit its content, so in order for the text to take up the remaining space we need to wrap it in an element (like `<p>`), and then we can add a [Close Button](/docs/composites/buttons#close-button) as the second child.
+`role="status"` will stretch the first child and let the second child fit its content, so in order for the text to take up the remaining space we need to wrap it in an element (like `<p>`), and then we can add a [Close Button](/docs/composites/buttons#close-button) as the second child.
 
 <HtmlPreviewer :code="RoleStatusDemo.withCloseButton()" />
 
