@@ -1,0 +1,79 @@
+/*!
+ * Layout Grid
+ *
+ * A CSS Grid layout pattern that eliminates the need for container/wrapper divs.
+ * Inspired by Kevin Powell's content grid technique (https://www.youtube.com/watch?v=c13gpBrnGEw)
+ * and the original idea from Stephanie Eckles (smolcss.dev) and Ryan Mulligan.
+ *
+ * The grid provides three width levels for direct children:
+ *   - content (default) — constrained to the content max-width
+ *   - .breakout        — wider than content, narrower than full-width
+ *   - .full-width      — edge-to-edge spanning the entire viewport
+ *
+ * .full-width elements also create a nested grid with the same column structure,
+ * so their children follow the same content / breakout / full-width rules.
+ */
+
+.layout-grid {
+  --layout-grid-padding-inline: var(--spacing);
+  --layout-grid-content-max-width: 70ch;
+  --layout-grid-breakout-max-width: 90ch;
+
+  /* Internal computed value */
+  --layout-grid-breakout-size: max(
+    0px,
+    calc(
+      (var(--layout-grid-breakout-max-width) - var(--layout-grid-content-max-width)) / 2
+    )
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start]
+    minmax(var(--layout-grid-padding-inline), 1fr)
+    [breakout-start]
+    minmax(0px, var(--layout-grid-breakout-size))
+    [content-start]
+    min(
+      var(--layout-grid-content-max-width),
+      100% - var(--layout-grid-padding-inline) * 2
+    )
+    [content-end]
+    minmax(0px, var(--layout-grid-breakout-size))
+    [breakout-end]
+    minmax(var(--layout-grid-padding-inline), 1fr)
+    [full-width-end];
+}
+
+/* ── Default placement: all direct children → content column ── */
+.layout-grid > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+/* ── Breakout: spans the breakout area (wider than content) ── */
+.layout-grid > .breakout {
+  grid-column: breakout;
+}
+
+/* ── Full-width: spans edge-to-edge, becomes a nested layout grid ── */
+.layout-grid > .full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+/* Children of any .full-width (at any nesting depth) follow the same rules */
+.layout-grid .full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.layout-grid .full-width > .breakout {
+  grid-column: breakout;
+}
+
+/* ── Nested full-width: spans edge-to-edge within any .full-width ancestor ── */
+.layout-grid .full-width > .full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}

@@ -436,10 +436,12 @@ export default defineConfig({
         {
           text: "Components API",
           items: [
-            { text: ".card", link: "/docs/components/card" },
             { text: ".card-list", link: "/docs/components/card-list" },
+            { text: ".card", link: "/docs/components/card" },
             { text: ".container", link: "/docs/components/container" },
+            { text: ".grid", link: "/docs/components/grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
+            { text: ".layout-grid", link: "/docs/components/layout-grid" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
