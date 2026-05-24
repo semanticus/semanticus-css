@@ -7,10 +7,10 @@
 
   > * {
     --color-background: transparent;
-    --_color-background: var(--color-background);
+    --card-fill: var(--color-background);
     --border-color: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%);
 
-    background: var(--_color-background);
+    background: var(--card-fill);
     border-bottom: var(--border-size) solid var(--border-color);
     border-inline: var(--border-size) solid var(--border-color);
     color: var(--color-text);
@@ -29,8 +29,8 @@
       border-bottom-right-radius: var(--radius);
     }
 
-    &:is([aria-current]:not([aria-current=false])) {
-      --_color-background: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
+    &:is([aria-current]:not([aria-current="false"])) {
+      --card-fill: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
     }
   }
 
