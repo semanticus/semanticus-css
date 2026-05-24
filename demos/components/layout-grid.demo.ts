@@ -22,7 +22,7 @@ export function fullWidth() {
   return `<main class="layout-grid">
   <h1>My Page</h1>
 
-  <div class="full-width" style="background: var(--color-primary-fill); padding-block: 3rem;">
+  <div class="full-width text-bg-primary py-5 mb-d">
     <h2>Full-width section</h2>
     <p>This section spans edge-to-edge, but the text inside is still constrained
        to the content column because ".full-width" creates a nested grid.</p>
@@ -35,10 +35,10 @@ export function fullWidth() {
 
 export function nested() {
   return `<main class="layout-grid">
-  <section class="full-width" style="background: var(--color-primary-fill);">
+  <section class="full-width text-bg-primary py-d">
     <h2>Services</h2>
     <p>All children of a ".full-width" inherit the layout grid.</p>
-    <div class="breakout" style="background: var(--color-primary-fill-hover); padding: 1rem;">
+    <div class="breakout text-bg-contrast mt-d py-d">
       This card breaks out wider than the surrounding content.
     </div>
   </section>
@@ -47,11 +47,11 @@ export function nested() {
 
 export function nestedFullWidth() {
   return `<main class="layout-grid">
-  <section class="full-width" style="background: var(--color-primary-fill); padding-block: 2rem;">
+  <section class="full-width text-bg-primary py-d">
     <h2>Outer full-width section</h2>
     <p>This section spans edge-to-edge and creates a nested layout grid.</p>
 
-    <div class="full-width" style="background: var(--color-primary-fill-hover); padding-block: 1.5rem;">
+    <div class="full-width text-bg-contrast mb-d py-d">
       <h3>Nested full-width section</h3>
       <p>This inner ".full-width" also spans edge-to-edge within the outer one,
          and its children are still constrained to the content column.</p>
