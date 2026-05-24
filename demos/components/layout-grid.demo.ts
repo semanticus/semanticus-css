@@ -38,8 +38,8 @@ export function nested() {
   <section class="full-width text-bg-primary py-d">
     <h2>Services</h2>
     <p>All children of a ".full-width" inherit the layout grid.</p>
-    <div class="breakout text-bg-contrast mt-d py-d">
-      This card breaks out wider than the surrounding content.
+    <div class="breakout text-bg-contrast my-d p-d">
+      <p>This card breaks out wider than the surrounding content.</p>
     </div>
   </section>
 </main>`;
