@@ -104,16 +104,16 @@ To run the test suite, use:
 npm test
 ```
 
-In case you want to update all existing snapshots after making changes to the codebase, you can run:
+To run a specific test:
 
 ```bash
-npm run test:update-snapshots
+npm test <path to the spec.ts file>
 ```
 
-When the need to debug a specific test arises, you can run:
+When writing new tests, or when you want to debug existing ones:
 
 ```bash
-npm test <path to the spec.ts file> -- --debug
+npm run test:dev
 ```
 
 ### Snapshot consistency and the dev container
