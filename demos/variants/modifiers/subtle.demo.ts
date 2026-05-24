@@ -13,9 +13,9 @@ export function main(tagName: string = 'div', attrs: Record<string, string> = {}
 }
 
 export function overview(attrs: Record<string, string> = {}) {
-  return `${renderElement('nav', { role: 'toolbar' }, `${ButtonDemo.main(mergedAttrs(attrs))}
+  return `${renderElement('div', { class: 'grid' }, `${ButtonDemo.main(mergedAttrs(attrs))}
 
-  ${RoleButtonDemo.main('section', mergedAttrs(attrs))}
+  ${RoleButtonDemo.main('div', mergedAttrs(attrs))}
 
 ${RoleButtonDemo.dropdown(mergedAttrs(attrs))}`)}
 

@@ -24,7 +24,7 @@ export function divs(attrs: Record<string, string> = {}, slot: string = '') {
 }
 
 export function overview(attrs: Record<string, string> = {}) {
-  return renderElement('section', { role: 'toolbar' }, `${unorderedList(attrs)}
+  return renderElement('section', { class: 'grid' }, `${unorderedList(attrs)}
 
 ${divs(attrs)}`);
 }
@@ -38,7 +38,7 @@ ${NavDemo.main({}, divs(attrs))}`;
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', attrs, `<section role="toolbar">
+  return renderElement('section', attrs, `<section class="grid">
   ${listOfSeven()}
   ${stripedVariant()}
   ${intentVariants()}

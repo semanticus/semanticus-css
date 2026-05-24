@@ -1,4 +1,4 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 import * as TextDemo from "@demos/semantics/text.demo";
 
 function typographySection(cssClass: string) {
@@ -18,7 +18,7 @@ function typographySection(cssClass: string) {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', { role: 'toolbar', ...attrs }, `${typographySection('text-primary')}
+  return renderElement('section', classMergeAttributes('grid', attrs), `${typographySection('text-primary')}
 ${typographySection('text-secondary')}
 ${typographySection('text-contrast')}
 ${typographySection('text-success')}

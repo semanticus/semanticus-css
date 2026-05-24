@@ -34,7 +34,7 @@ export function buttons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
-  <section role="toolbar">
+  <section class="grid">
     <button>Primary</button>
     <button class="secondary">Secondary</button>
     <button class="contrast">Contrast</button>
@@ -49,7 +49,7 @@ export function links() {
   return `<section id="links">
   <h2>Links</h2>
 
-  <section role="toolbar">
+  <section class="grid">
     ${ADemo.main()}
     ${RoleLinkDemo.main("button")}
     ${RoleLinkDemo.main("div")}
@@ -64,7 +64,7 @@ export function inputButtons() {
   return `<section id="input-buttons">
   <h4>Input buttons (type="button|submit|reset")</h4>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.button()}
     ${InputDemo.submit()}
     ${InputDemo.reset()}
@@ -77,18 +77,18 @@ export function disabledState() {
   return `<section id="disabled-state">
   <h4>Disabled State</h4>
 
-  <section role="toolbar">
+  <section class="grid">
     ${DisabledDemo.input()}
     ${DisabledDemo.select()}
   </section>
 
-  <section role="toolbar">
+  <section class="grid">
     ${DisabledDemo.checkbox()}
     ${DisabledDemo.radio()}
     ${DisabledDemo.switch_()}
   </section>
 
-  <section role="toolbar">
+  <section class="grid">
     ${DisabledDemo.inputButtons()}
   </section>
 </section>
@@ -99,12 +99,12 @@ export function validState() {
   return `<section id="valid-state">
   <h4>Valid State (aria-invalid="false")</h4>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.main({ "aria-invalid": "false" })}
     ${SelectDemo.main({ "aria-invalid": "false" })}
   </section>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.checkboxBasic({ "aria-invalid": "false" })}
     ${InputDemo.radioBasic({ "aria-invalid": "false" })}
     ${InputDemo.switchBasic({ "aria-invalid": "false" })}
@@ -117,12 +117,12 @@ export function invalidState() {
   return `<section id="invalid-state">
   <h4>Invalid State (aria-invalid="true")</h4>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.main({ "aria-invalid": "true" })}
     ${SelectDemo.main({ "aria-invalid": "true" })}
   </section>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.checkboxBasic({ "aria-invalid": "true" })}
     ${InputDemo.radioBasic({ "aria-invalid": "true" })}
     ${InputDemo.switchBasic({ "aria-invalid": "true" })}
@@ -141,7 +141,7 @@ export function inputElements() {
 
   ${InputDemo.search()}
 
-  <fieldset role="toolbar">
+  <fieldset class="grid">
     <label>
       Date
       ${InputDemo.date()}
@@ -158,7 +158,7 @@ export function inputElements() {
     </label>
   </fieldset>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.checkboxBasic()}
 
     ${InputDemo.radioBasic()}
@@ -166,13 +166,13 @@ export function inputElements() {
     ${InputDemo.switchBasic()}
   </section>
 
-  <section role="toolbar">
+  <section class="grid">
     ${TextareaDemo.main()}
 
     ${SelectDemo.multipleSelect()}
   </section>
 
-  <section role="toolbar">
+  <section class="grid">
     ${InputDemo.rangeBasic()}
 
     ${InputDemo.file()}
@@ -234,7 +234,7 @@ function loadingStates() {
   return `<section id="loading-states">
   <h2>Loading States (aria-busy="true")</h2>
 
-  <section role="toolbar">
+  <section class="grid">
     <section>
       ${AriaBusyDemo.main("article", {}, "")}
     </section>
@@ -361,7 +361,7 @@ function typography() {
   return `<section id="typography">
   <h2>Typography</h2>
 
-  <section role="toolbar">
+  <section class="grid">
     <section>
       ${TextDemo.headings()}
     </section>
@@ -468,7 +468,7 @@ ${links()}
 <section id="input-elements">
   <h2>Input Elements</h2>
 
-  <fieldset role="toolbar">
+  <fieldset class="grid">
     <label>
       Text Input
       <input type="text" name="text" placeholder="Text" aria-label="Text" />
@@ -487,7 +487,7 @@ ${links()}
     </label>
   </fieldset>
 
-  <fieldset role="toolbar">
+  <fieldset class="grid">
     ${InputDemo.checkboxBasic()}
 
     ${InputDemo.radioBasic()}
@@ -524,7 +524,7 @@ ${links()}
 <section id="input-elements">
   <h2>Input Elements</h2>
 
-  <fieldset role="toolbar">
+  <fieldset class="grid">
     <label>
       Text Input
       <input type="text" name="text" placeholder="Text" aria-label="Text" />
@@ -543,7 +543,7 @@ ${links()}
     </label>
   </fieldset>
 
-  <fieldset role="toolbar">
+  <fieldset class="grid">
     ${InputDemo.checkboxBasic()}
 
     ${InputDemo.radioBasic()}

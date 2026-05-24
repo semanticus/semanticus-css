@@ -4,7 +4,6 @@ summary {
 
 details {
   display: block;
-  margin-bottom: var(--spacing);
 
   & summary {
     line-height: 1rem;

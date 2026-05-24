@@ -106,13 +106,13 @@ export function inNav() {
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${asButton(classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${asButton(classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${asButton(classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${asButton(classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${asButton(classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${asButton(classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${asButton(classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`;
+    return `${asButton(classMergeAttributes(`primary mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`secondary mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`contrast mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`success mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`info mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`warning mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`danger mb-d ${modifier}`.trim(), attrs))}`;
 }
 
 export function subtleVariants(attrs: Record<string, string> = {}) {
@@ -124,7 +124,7 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', { role: 'toolbar', ...attrs }, `<section>
+  return renderElement('section', classMergeAttributes('grid', attrs), `<section>
   ${intentVariants()}
 </section>
 

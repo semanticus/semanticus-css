@@ -21,7 +21,7 @@ export function main() {
 }
 
 export function placement() {
-  return `<section role="toolbar">
+  return `<section class="grid">
   <span><button aria-describedby="tip-top">Top</button><span id="tip-top" role="tooltip">Top</span></span>
   <span><button aria-describedby="tip-right">Right</button><span id="tip-right" role="tooltip" data-placement="right">Right</span></span>
   <span><button aria-describedby="tip-bottom">Bottom</button><span id="tip-bottom" role="tooltip" data-placement="bottom">Bottom</span></span>

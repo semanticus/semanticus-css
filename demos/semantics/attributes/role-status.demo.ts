@@ -23,14 +23,14 @@ ${toast(tagName, mergedAttrs, slot)}`;
 }
 
 export function overviewShowToasts() {
-  return `<section role="toolbar" style="padding-block: 70px;">
+  return `<section class="grid" style="padding-block: 70px;">
   <button popovertarget="top-start-toast" class="contrast">Top Start</button>
   <button popovertarget="top-center-toast" class="contrast">Top Center</button>
   <button popovertarget="top-end-toast" class="contrast">Top End</button>
   <button popovertarget="middle-start-toast" class="contrast">Middle Start</button>
 </section>
 
-<section role="toolbar" style="padding-block: 70px;">
+<section class="grid" style="padding-block: 70px;">
   <button popovertarget="middle-center-toast" class="contrast">Middle Center</button>
   <button popovertarget="middle-end-toast" class="contrast">Middle End</button>
   <button popovertarget="bottom-start-toast" class="contrast">Bottom Start</button>
@@ -81,13 +81,13 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', attrs, `<section class="mb-0" role="toolbar">
+  return renderElement('section', attrs, `<section class="grid mb-0">
   ${main()}
   ${main('div', { class: 'subtle' })}
   ${main('div', { class: 'ghost' })}
 </section>
 
-<section role="toolbar">
+<section class="grid">
   <div>
     ${intentVariants()}
   </div>

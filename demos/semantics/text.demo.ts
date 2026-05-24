@@ -40,27 +40,27 @@ export function blockquote() {
 }
 
 export function inlineElements() {
-  return `<div role="toolbar">
+  return `<div class="grid">
   <p>${ADemo.main()}</p>
   <p>${ADemo.active()}</p>
   <p><code>Code</code></p>
 </div>
-<div role="toolbar">
+<div class="grid">
   <p><strong>Bold</strong></p>
   <p><em>Italic</em></p>
   <p><u>Underline</u></p>
 </div>
-<div role="toolbar">
+<div class="grid">
   <p><del>Deleted</del></p>
   <p><ins>Inserted</ins></p>
   <p><s>Strikethrough</s></p>
 </div>
-<div role="toolbar">
+<div class="grid">
   <p><small>Small </small></p>
   <p>Text <sub>Sub</sub></p>
   <p>Text <sup>Sup</sup></p>
 </div>
-<div role="toolbar">
+<div class="grid">
   <p><kbd>Kbd</kbd></p>
   <p>
     <abbr aria-describedby="tip-abbr">Abbr.</abbr>
