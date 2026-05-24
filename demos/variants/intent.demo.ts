@@ -1,5 +1,4 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { CardDemo, PaneDemo } from '@demos/components';
+import { renderElement } from "@scripts/utils";
 import { InputDemo } from '@demos/semantics/elements';
 import { RoleButtonDemo } from '@demos/semantics/attributes';
 import { DropdownDemo } from "@demos/composites";

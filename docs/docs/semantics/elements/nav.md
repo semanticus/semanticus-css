@@ -8,7 +8,7 @@ The `<nav>` element is a landmark that identifies a region of navigation links.
 
 Screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation.
 
-> **Important:** Assistive technologies implicitly add the `role="navigation"` so it's best not to combine them with other roles like `role="group"`.
+> **Important:** Assistive technologies implicitly add the `role="navigation"`, so it's best not to combine it with other roles like `role="group"`.
 
 ## Basic Usage
 

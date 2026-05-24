@@ -10,7 +10,7 @@ import { FooterDemo } from "@demos/semantics/elements";
 
 The `<footer>` element represents the footer for its nearest sectioning ancestor — typically containing copyright info, links, or supplemental navigation.
 
-> **Important:** Assistive technologies implicitly add the `role="contentinfo"`  it's best not to combine them with other roles like `role="region"` or `role="group"`.
+> **Important:** Assistive technologies implicitly add the `role="contentinfo"`, so it's best not to combine it with other roles like `role="region"` or `role="group"`.
 
 ## Basic Usage
 

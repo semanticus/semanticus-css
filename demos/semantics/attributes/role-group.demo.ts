@@ -1,12 +1,16 @@
 import { renderElement } from "@scripts/utils";
-import * as FieldsetDemo from "@demos/semantics/elements/fieldset.demo";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement(tagName, { ...attrs, role: "group" }, slot);
 }
 
 export function relatedControls(attrs: Record<string, string> = {}) {
-  return FieldsetDemo.groupInputButton(attrs);
+  return main(
+    'fieldset',
+    { ...attrs, 'aria-label': 'Email subscription' },
+    `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
+<input type="submit" value="Subscribe" />`,
+  );
 }
 
 export function textFormattingButtons(tagName: string = "div", attrs: Record<string, string> = {}) {

@@ -2,7 +2,7 @@ import { renderElement } from "@scripts/utils";
 import * as RoleGroupDemo from "@demos/semantics/attributes/role-group.demo";
 import * as InputDemo from "@demos/semantics/elements/input.demo";
 import * as DropdownDemo from "@demos/composites/dropdown.demo";
-import { SearchDemo } from "@demos/composites";
+import * as SearchDemo from "@demos/composites/search.demo";
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
   return renderElement("fieldset", attrs, slot);

@@ -1,7 +1,7 @@
-import { FieldsetDemo } from "@demos/semantics";
+import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return FieldsetDemo.main({ ...attrs, role: "search" }, slot || `<input type="search" placeholder="Search...">
+  return renderElement("fieldset", { ...attrs, role: "search" }, slot || `<input type="search" placeholder="Search...">
 <button type="submit">Search</button>`);
 }
 
