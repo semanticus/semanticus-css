@@ -50,7 +50,7 @@ A `.full-width` element creates a nested layout grid, so you can place another `
 
 The inner `.full-width` receives `grid-column: full-width` on the nested grid, so its background fills the entire width of the parent. Its children are still automatically constrained to the content column, and you can use `.breakout` or further `.full-width` children inside it.
 
-## Responsive Behaviour
+## Responsive Behavior
 
 The content grid is **fully responsive with zero media queries**. It works at every viewport size:
 
