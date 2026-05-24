@@ -1,6 +1,4 @@
-.card,
-.pane {
-  --shadow: var(--dialog-shadow);
+.card {
   --color-background: var(--dialog-fill);
   --border-color: var(--dialog-border);
 
@@ -10,7 +8,6 @@
   border-radius: var(--radius);
   border: var(--border-size) solid var(--border-color);
   background: var(--color-background);
-  box-shadow: var(--shadow);
 
   > header,
   > footer {

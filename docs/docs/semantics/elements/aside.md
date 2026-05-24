@@ -10,6 +10,8 @@ import { AsideDemo } from "@demos/semantics/elements";
 
 The `<aside>` element represents content tangentially related to the main content — like sidebars, call-outs, or supplementary navigation.
 
+> **Important:** Assistive technologies implicitly add the `role="complementary"`, so it's best not to combine it with other roles like `role="group"`.
+
 ## Basic Usage
 
 <HtmlPreviewer :code="AsideDemo.main()" />

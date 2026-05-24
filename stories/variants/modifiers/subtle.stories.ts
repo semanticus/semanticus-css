@@ -12,26 +12,26 @@ const meta: Meta = {
 
 export default meta;
 
-export const ButtonExample: StoryObj = {
+export const buttonExample: StoryObj = {
   render: () => ButtonDemo.subtleVariants(),
 };
 
-export const InputButtons: StoryObj = {
+export const inputButtons: StoryObj = {
   render: () => SubtleDemo.overviewInputButtons(),
 };
 
-export const RoleButtons: StoryObj = {
+export const roleButtons: StoryObj = {
   render: () => RoleButtonDemo.subtleVariants(),
 };
 
-export const Dropdowns: StoryObj = {
+export const dropdowns: StoryObj = {
   render: () => DropdownDemo.subtleVariants(),
 };
 
-export const Accordions: StoryObj = {
+export const accordions: StoryObj = {
   render: () => RoleButtonDemo.accordionSubtleVariants(),
 };
 
-export const Cards: StoryObj = {
+export const cards: StoryObj = {
   render: () => CardDemo.withHeaderAndFooterSubtleVariants(),
 };

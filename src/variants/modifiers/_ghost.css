@@ -1,10 +1,10 @@
 .ghost {
   --color-background: transparent;
 
-  background-color: var(--color-background) !important;
+  background-color: var(--color-background);
 }
 
-:is(.card, .pane, [role="status"], [role="alert"], button, [type="submit"], [type="button"], [role="button"]) {
+:not([role="link"], a:not([role="button"])) {
   &.ghost {
     &.primary {
       --color-background: transparent;

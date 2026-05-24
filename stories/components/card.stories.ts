@@ -8,23 +8,27 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   render: () => CardDemo.main(),
 };
 
-export const WithHeader: StoryObj = {
+export const heroSection: StoryObj = {
+  render: () => CardDemo.heroSection({ class: 'primary subtle' }),
+};
+
+export const withHeader: StoryObj = {
   render: () => CardDemo.withHeader(),
 };
 
-export const WithFooter: StoryObj = {
+export const withFooter: StoryObj = {
   render: () => CardDemo.withFooter(),
 };
 
-export const WithHeaderAndFooter: StoryObj = {
+export const withHeaderAndFooter: StoryObj = {
   render: () => CardDemo.withHeaderAndFooter(),
 };
 
-export const Variants: StoryObj = {
+export const variants: StoryObj = {
   args: { html: CardDemo.overviewVariants() },
   render: (args) => args.html,
 };

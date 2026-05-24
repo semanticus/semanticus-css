@@ -1,5 +1,5 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { ButtonDemo } from "@demos/semantics";
+import * as ButtonDemo from "@demos/semantics/elements/button.demo";
 
 const defaultMessage = "10 results found";
 

@@ -7,17 +7,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: AsideDemo.main() },
   render: (args) => args.html,
 };
 
-export const LeftSidebar: StoryObj = {
+export const leftSidebar: StoryObj = {
   args: { html: AsideDemo.leftSidebar() },
   render: (args) => args.html,
 };
 
-export const RightSidebar: StoryObj = {
+export const rightSidebar: StoryObj = {
   args: { html: AsideDemo.rightSidebar() },
   render: (args) => args.html,
 };

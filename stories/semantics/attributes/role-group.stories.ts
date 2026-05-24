@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { RoleGroupDemo } from "@demos/semantics/attributes";
+import { RoleGroupDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Semantics/Attributes/[role=group]",
@@ -8,32 +8,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
-  args: { html: RoleGroupDemo.main() },
+export const relatedControls: StoryObj = {
+  args: { html: RoleGroupDemo.relatedControls() },
   render: (args) => args.html,
 };
 
-export const inputWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.inputWithButton() },
-  render: (args) => args.html,
-};
-
-export const selectWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.selectWithButton() },
-  render: (args) => args.html,
-};
-
-export const twoInputsWithButton: StoryObj = {
-  args: { html: RoleGroupDemo.twoInputsWithButton() },
-  render: (args) => args.html,
-};
-
-export const pagination: StoryObj = {
-  args: { html: RoleGroupDemo.pagination() },
-  render: (args) => args.html,
-};
-
-export const newsletterForm: StoryObj = {
-  args: { html: RoleGroupDemo.newsletterForm() },
+export const textFormattingButtons: StoryObj = {
+  args: { html: RoleGroupDemo.textFormattingButtons() },
   render: (args) => args.html,
 };

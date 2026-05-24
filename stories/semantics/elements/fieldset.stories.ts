@@ -7,13 +7,33 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
-  args: { html: FieldsetDemo.main() },
+export const formInput: StoryObj = {
+  args: { html: FieldsetDemo.formInput() },
   render: (args) => args.html,
 };
 
-export const insideForm: StoryObj = {
-  args: { html: FieldsetDemo.insideForm() },
+export const groupInputButton: StoryObj = {
+  args: { html: FieldsetDemo.groupInputButton() },
+  render: (args) => args.html,
+};
+
+export const groupSelectButton: StoryObj = {
+  args: { html: FieldsetDemo.groupSelectButton() },
+  render: (args) => args.html,
+};
+
+export const groupDropdownButton: StoryObj = {
+  args: { html: FieldsetDemo.groupDropdownButton() },
+  render: (args) => args.html,
+};
+
+export const groupMultipleInputs: StoryObj = {
+  args: { html: FieldsetDemo.groupMultipleInputs() },
+  render: (args) => args.html,
+};
+
+export const formExample: StoryObj = {
+  args: { html: FieldsetDemo.formExample() },
   render: (args) => args.html,
 };
 
@@ -22,13 +42,7 @@ export const disabled: StoryObj = {
   render: (args) => args.html,
 };
 
-export const AsASection: StoryObj = {
-  name: "As a section",
+export const section: StoryObj = {
   args: { html: FieldsetDemo.section() },
-  render: (args) => args.html,
-};
-
-export const UsageWithGroup: StoryObj = {
-  args: { html: FieldsetDemo.withGroup() },
   render: (args) => args.html,
 };

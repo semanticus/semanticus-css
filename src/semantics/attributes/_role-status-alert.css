@@ -15,7 +15,6 @@
   border-inline-start-width: var(--alert-size);
   border-inline-start-color: var(--dialog-border);
   background: var(--color-background);
-  position: relative;
 
   &:is(.ghost, .subtle) {
     --alert-size: calc(var(--border-size) * 4);

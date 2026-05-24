@@ -1,51 +1,20 @@
 import { renderElement } from "@scripts/utils";
-import { DropdownDemo } from "@demos/composites";
 
-export function main(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `<button>One</button>
-<button>Two</button>
-<button>Three</button>`);
+export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, { ...attrs, role: "group" }, slot);
 }
 
-export function inputWithButton(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
-<input type="submit" value="Subscribe" />`);
+export function relatedControls(attrs: Record<string, string> = {}) {
+  return main(
+    'fieldset',
+    { ...attrs, 'aria-label': 'Email subscription' },
+    `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
+<input type="submit" value="Subscribe" />`,
+  );
 }
 
-export function twoInputsWithButton(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `<input type="text" placeholder="First name">
-<input type="text" placeholder="Last name">
-<button>Save</button>`);
-}
-
-export function selectWithButton(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `<select>
-  <option>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</select>
-<button>Action</button>`);
-}
-
-export function dropdownWithButton(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `${DropdownDemo.withCheckboxes({ class: 'w-100' })}
-<button>Action</button>`);
-}
-
-export function pagination(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, role: "group" }, `<a href="#" role="button" disabled>Previous</a>
-<a href="#page-1" role="button">1</a>
-<a href="#page-2" role="button" aria-current="page">2</a>
-<a href="#page-3" role="button">3</a>
-<a href="#page-3" role="button">Next</a>`);
-}
-
-export function newsletterForm(tagName: string = "fieldset", attrs: Record<string, string> = {}) {
-  return `<form>
-  <label for="email">Subscribe to our newsletter</label>
-  ${renderElement(tagName, { ...attrs, role: "group" }, `
-    <input type="email" id="email" placeholder="your@email.com">
-    <button type="submit">Subscribe</button>
-  `)}
-</form>`;
+export function textFormattingButtons(tagName: string = "div", attrs: Record<string, string> = {}) {
+  return main(tagName, { ...attrs, 'aria-label': 'Text formatting' }, `<button>Bold</button>
+<button>Italic</button>
+<button>Underline</button>`);
 }

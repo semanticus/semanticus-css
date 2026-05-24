@@ -8,6 +8,8 @@ The `<nav>` element is a landmark that identifies a region of navigation links.
 
 Screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation.
 
+> **Important:** Assistive technologies implicitly add the `role="navigation"`, so it's best not to combine it with other roles like `role="group"`.
+
 ## Basic Usage
 
 <HtmlPreviewer :code="NavDemo.main()" />
@@ -40,7 +42,7 @@ The simplest pagination pattern uses buttons within a group:
 > Remember that `aria-disabled` does not block activation on its own, so you must also prevent activation/navigation in code (for example, in a JavaScript handler).
 > In case you want to remove it from the tab order as well, add `tabindex="-1"`.
 
-<HtmlPreviewer :code="NavDemo.buttonBasedPagination()" />
+<HtmlPreviewer :code="PaginationDemo.buttons()" />
 
 ## Link-Based Pagination
 
@@ -48,8 +50,9 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 
 > **Note:** `disabled` is not a valid attribute for `<a>` elements, so in this case you really need to use `aria-disabled="true"` instead.
 
-<HtmlPreviewer :code="NavDemo.linkBasedPagination()" />
+<HtmlPreviewer :code="PaginationDemo.links()" />
 
 <script setup>
+import { PaginationDemo } from "@demos/composites";
 import { NavDemo } from "@demos/semantics/elements";
 </script>

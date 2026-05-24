@@ -7,12 +7,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: HeaderDemo.main() },
   render: (args) => args.html,
 };
 
-export const WithSearchDropdownAndLinks: StoryObj = {
+export const withSearchDropdownAndLinks: StoryObj = {
   args: { html: HeaderDemo.withSearchDropdownAndLinks() },
   render: (args) => args.html,
 };

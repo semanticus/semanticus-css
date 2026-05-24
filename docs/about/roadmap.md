@@ -19,7 +19,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ✅ | `aria-disabled="true"` |
 | ✅ | `role="status"` and `role="alert"` |
-| ⌛ | Extend `role="group"` to stylize `<ul>`, like a **list group** |
 
 ## Components
 
@@ -27,10 +26,10 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
-| ✅ | `.pane` component |
+| ✅ | `.card-list` component |
 | ✅ | `.icon-*` component |
 | 🚧 | `.sidebar` component |
-| ⌛ | `.content-grid` component in favor of `.container` |
+| ⌛ | `.content-grid` component |
 | ⌛ | `.carousel` component |
 | ⌛ | `.badge` component |
 | ⌛ | `.popper` component |
@@ -51,8 +50,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` intent variant |
 | ✅ | `.subtle` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
-| 🚧 | `.striped` modifier variant |
-| ⌛ | Extend **intent variants** to stylize **list group** |
+| ✅ | `.striped` modifier variant |
+| ✅ | Extend **intent variants** to stylize `.card-list` |
 | ⌛ | Extend **intent variants** to stylize `<progress>` |
 
 ## Known Issues
@@ -100,10 +99,10 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Grid system documentation |
 | ✅ | `.icon-*` component documentation |
 | ✅ | Alerts composite documentation |
+| ✅ | List Group composite documentation |
 | 🚧 | Navigation composite documentation |
 | ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
-| ⌛ | List Group composite documentation |
 | ⌛ | `.sidebar` component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |
@@ -135,7 +134,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.danger` variant combinations |
 | ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | ✅ | Floating Alert interaction |
-| ⌛ | Include **list group** in Full & Colors Demo Overview |
+| ✅ | Include `.card-list` in Full & Colors Demo Overview |
 | ⌛ | `.content-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid Demo Overview |

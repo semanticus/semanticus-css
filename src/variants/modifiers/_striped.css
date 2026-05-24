@@ -1,11 +1,11 @@
-:root,
-:host {
-  --table-row-fill-striped: oklch(from var(--color-zinc-500) l c h / 0.0375);
-}
+.striped {
+  > :not(table):nth-child(odd) {
+    background-color: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
+  }
 
-table.striped tbody tr:nth-child(odd) {
-  & th,
-  & td {
-    background-color: var(--table-row-fill-striped);
+  > tbody > tr:nth-child(odd) {
+    &:is(th, td) {
+      background-color: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
+    }
   }
 }

@@ -9,10 +9,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const DocumentationPage: StoryObj = {
+export const documentationPage: StoryObj = {
   render: () => DocumentationPageDemo.main("div"),
 };
 
-export const StarterHtmlTemplate: StoryObj = {
+export const starterHtmlTemplate: StoryObj = {
   render: () => StarterHtmlTemplateDemo.main("div"),
 };

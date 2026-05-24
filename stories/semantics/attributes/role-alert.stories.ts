@@ -8,27 +8,27 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: RoleAlertDemo.main('div', { 'aria-live': 'polite' }) },
   render: (args) => args.html,
 };
 
-export const WithCloseButton: StoryObj = {
+export const withCloseButton: StoryObj = {
   args: { html: RoleAlertDemo.withCloseButton() },
   render: (args) => args.html,
 };
 
-export const OverviewToasts: StoryObj = {
+export const overviewToasts: StoryObj = {
   args: { html: RoleAlertDemo.overviewShowToasts() },
   render: (args) => args.html,
 };
 
-export const WithTitleAndDescription: StoryObj = {
+export const withTitleAndDescription: StoryObj = {
   args: { html: RoleAlertDemo.withHgroup() },
   render: (args) => args.html,
 };
 
-export const Variants: StoryObj = {
+export const variants: StoryObj = {
   args: { html: RoleAlertDemo.overviewVariants() },
   render: (args) => args.html,
 };

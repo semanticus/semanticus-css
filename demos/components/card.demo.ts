@@ -1,5 +1,4 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import { IntentDemo, GhostDemo, SubtleDemo } from "@demos/variants";
 
 export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Card title') {
   return renderElement(tagName, classMergeAttributes('card', attrs), `<hgroup>
@@ -7,6 +6,14 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
   <p>This is the subtitle</p>
 </hgroup>
 <p>This is the main content of the card.</p>`);
+}
+
+export function heroSection(attrs: Record<string, string> = {}, slot: string = "") {
+  return renderElement('section', classMergeAttributes('card text-center py-5 px-4', attrs), slot || `<hgroup>
+  <h1>Welcome to our website</h1>
+  <p>Discover our amazing products and services that can help you achieve your goals.</p>
+</hgroup>
+<button>Get Started</button>`);
 }
 
 export function withHeader(tagName: string = "div", attrs: Record<string, string> = {}) {

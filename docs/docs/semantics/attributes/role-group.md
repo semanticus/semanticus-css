@@ -2,44 +2,38 @@
 title: 'role="group"'
 ---
 
-<script setup>
-import { RoleGroupDemo } from "@demos/semantics/attributes";
-</script>
-
 # [role="group"]
 
-The `role="group"` attribute identifies a set of related user interface objects.
+The `role="group"` is used to semantically associate related UI elements together like grouping buttons together in a menu, or grouping tree items together in a tree structure, but typically the normal use cases are in combination with `<fieldset>` and `<div>` elements, as seen below.
 
-Unlike a toolbar, it does not enforce keyboard navigation patterns between items.
+> [!CAUTION]
+> Even though Semanticus CSS provides styling to `[role="group"]`, use it with caution, as it is not meant to be used as a generic container for styling purposes, but rather to semantically group related elements together.
+>
+> Especially in combination with `<main>`, `<header>`, `<footer>`, `<nav>` or `<aside>`, as they are already announced as landmarks and have implicit roles, adding `role="group"` would override that semantic meaning and can cause screen readers to miss or skip important information.
 
-Use it to semantically cluster controls and communicate their relationship to assistive technologies.
 
-## Basic Usage
+## Grouping related form controls
 
-Use `role="group"` to create connected groups of buttons or form elements. For search groups, see [[role="search"]](/docs/semantics/attributes/role-search).
+This is the **ARIA** equivalent of saying:
 
-<HtmlPreviewer :code="RoleGroupDemo.main()" />
+> "These controls/content belong together as a logical set."
 
-## Input Groups
+<HtmlPreviewer :code="RoleGroupDemo.relatedControls()" />
 
-### Input with Button
+Screen readers may announce:
 
-<HtmlPreviewer :code="RoleGroupDemo.inputWithButton()" />
+> "Email subscription, group"
 
-### Select with Button
+See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
 
-<HtmlPreviewer :code="RoleGroupDemo.selectWithButton()" />
+## Grouping buttons visually and semantically
 
-### Multiple Inputs
+When you have a set of related buttons, but they don't fit into a toolbar or menu.
 
-<HtmlPreviewer :code="RoleGroupDemo.twoInputsWithButton()" />
+<HtmlPreviewer :code="RoleGroupDemo.textFormattingButtons()" />
 
-## Pagination Groups
+See [Pagination](/docs/composites/pagination) for more details.
 
-<HtmlPreviewer :code="RoleGroupDemo.pagination()" />
-
-## Practical Examples
-
-### Newsletter Signup
-
-<HtmlPreviewer :code="RoleGroupDemo.newsletterForm()" />
+<script setup>
+import { RoleGroupDemo } from "@demos/semantics";
+</script>

@@ -331,6 +331,7 @@ export default defineConfig({
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
+            { text: "List Group", link: "/docs/composites/list-group" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
@@ -412,10 +413,10 @@ export default defineConfig({
                   text: '[role="link"]',
                   link: "/docs/semantics/attributes/role-link",
                 },
-                {
-                  text: '[role="search"]',
-                  link: "/docs/semantics/attributes/role-search",
-                },
+                // {
+                //   text: '[role="search"]',
+                //   link: "/docs/semantics/attributes/role-search",
+                // },
                 {
                   text: '[role="status"]',
                   link: "/docs/semantics/attributes/role-status",
@@ -436,9 +437,9 @@ export default defineConfig({
           text: "Components API",
           items: [
             { text: ".card", link: "/docs/components/card" },
+            { text: ".card-list", link: "/docs/components/card-list" },
             { text: ".container", link: "/docs/components/container" },
             { text: ".icon-*", link: "/docs/components/icons" },
-            { text: ".pane", link: "/docs/components/pane" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },
