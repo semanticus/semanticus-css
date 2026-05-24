@@ -10,7 +10,7 @@
   color: var(--color-text);
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: calc(var(--nav-link-gap) * 1.5);
+  gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
 
   &:has(> :nth-child(2)) {
