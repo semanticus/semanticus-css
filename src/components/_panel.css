@@ -1,4 +1,4 @@
-/* Please see src/components/_card.css, since .pane shares most of its styling with .card */
+/* Please see src/components/_card.css, since .panel shares most of its styling with .card */
 
 .panel {
   --dialog-shadow: none;
