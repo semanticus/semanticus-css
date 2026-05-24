@@ -69,7 +69,7 @@ Customise the layout by overriding these variables on any `.layout-grid` element
 
 | Variable | Default | Description |
 |---|---|---|
-| `--layout-grid-padding-inline` | `2rem` | Minimum padding on each side (between viewport edge and content) |
+| `--layout-grid-padding-inline` | `var(--spacing)` | Minimum padding on each side (between viewport edge and content) |
 | `--layout-grid-content-max-width` | `70ch` | Maximum width of the content column |
 | `--layout-grid-breakout-max-width` | `90ch` | Maximum total width when using `.breakout` |
 
