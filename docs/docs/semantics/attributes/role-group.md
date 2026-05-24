@@ -30,7 +30,7 @@ See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of g
 
 When you have a set of related buttons, but they don't fit into a toolbar or menu.
 
-<HtmlPreviewer :code="RoleGroupDemo.textFormatingButtons()" />
+<HtmlPreviewer :code="RoleGroupDemo.textFormattingButtons()" />
 
 See [Pagination](/docs/composites/pagination) for more details.
 
