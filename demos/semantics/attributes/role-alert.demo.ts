@@ -10,7 +10,7 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   const mergedAttrs = { id: "alert-toast", ...attrs, popover: 'popover', role: "alert" };
 
-  return withIconAndCloseButton(tagName, mergedAttrs, slot || defaultMessage);
+  return withIconAndCloseButton(tagName, mergedAttrs, slot || `<p>${defaultMessage}</p>`);
 }
 
 export function showToast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
