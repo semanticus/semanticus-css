@@ -20,14 +20,11 @@ export default defineConfig({
   workers: isCI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', {
-      outputFolder: './tests/_report',
-      open: 'never',
-    }],
+    ['html', { open: 'never' }],
     isCI ? ['github'] : ['line'],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  snapshotPathTemplate: '{testDir}/_snaps/{projectName}/{testFilePath}/{arg}{ext}',
+  snapshotPathTemplate: '{testDir}/_snapshots/{projectName}/{testFilePath}/{arg}{ext}',
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     baseURL: baseUrl,
