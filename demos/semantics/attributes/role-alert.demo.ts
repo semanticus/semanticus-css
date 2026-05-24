@@ -37,15 +37,15 @@ export function overviewShowToasts() {
   <button popovertarget="bottom-end-toast" class="contrast">Bottom End</button>
 </section>
 
-${toast('div', { id: "top-start-toast", class: "primary", 'data-placement': "top-start" }, 'Top Start')}
-${toast('div', { id: "top-center-toast", class: "secondary", 'data-placement': "top-center" }, 'Top Center')}
-${toast('div', { id: "top-end-toast", class: "contrast", 'data-placement': "top-end" }, 'Top End')}
-${toast('div', { id: "middle-start-toast", class: "success", 'data-placement': "middle-start" }, 'Middle Start')}
-${toast('div', { id: "middle-center-toast", class: "info", 'data-placement': "middle-center" }, 'Middle Center')}
-${toast('div', { id: "middle-end-toast", class: "warning", 'data-placement': "middle-end" }, 'Middle End')}
-${toast('div', { id: "bottom-start-toast", class: "danger", 'data-placement': "bottom-start" }, 'Bottom Start')}
-${toast('div', { id: "bottom-center-toast", class: "success ghost", 'data-placement': "bottom-center" }, 'Bottom Center')}
-${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement': "bottom-end" }, 'Bottom End')}
+${toast('div', { id: "top-start-toast", class: "primary", 'data-placement': "top-start" }, '<p>Top Start</p>')}
+${toast('div', { id: "top-center-toast", class: "secondary", 'data-placement': "top-center" }, '<p>Top Center</p>')}
+${toast('div', { id: "top-end-toast", class: "contrast", 'data-placement': "top-end" }, '<p>Top End</p>')}
+${toast('div', { id: "middle-start-toast", class: "success", 'data-placement': "middle-start" }, '<p>Middle Start</p>')}
+${toast('div', { id: "middle-center-toast", class: "info", 'data-placement': "middle-center" }, '<p>Middle Center</p>')}
+${toast('div', { id: "middle-end-toast", class: "warning", 'data-placement': "middle-end" }, '<p>Middle End</p>')}
+${toast('div', { id: "bottom-start-toast", class: "danger", 'data-placement': "bottom-start" }, '<p>Bottom Start</p>')}
+${toast('div', { id: "bottom-center-toast", class: "success ghost", 'data-placement': "bottom-center" }, '<p>Bottom Center</p>')}
+${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement': "bottom-end" }, '<p>Bottom End</p>')}
 `;
 }
 
@@ -57,7 +57,7 @@ ${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
 export function withIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement(tagName, { ...attrs, role: "alert" }, `<span class="icon-invalid" aria-hidden="true"></span>
 
-<p>${slot || defaultMessage}</p>
+${slot || `<p>${defaultMessage}</p>`}
 
 ${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
 }

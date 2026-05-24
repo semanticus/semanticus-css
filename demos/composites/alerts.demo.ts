@@ -12,9 +12,9 @@ ${RoleAlertDemo.main('div', { class: 'danger' }, "Unable to connect to the serve
 
 export function floatingAlerts() {
   return `<div style="min-height: 200px;">
-${RoleStatusDemo.showToast('div', { class: 'success', 'data-placement': 'top-end' }, "Item saved successfully!")}
+${RoleStatusDemo.showToast('div', { class: 'success', 'data-placement': 'top-end' }, "<p>Item saved successfully!</p>")}
 
-${RoleAlertDemo.showToast('div', { class: 'danger', 'data-placement': 'bottom-end' }, "Failed to save. Please look for validation errors.")}
+${RoleAlertDemo.showToast('div', { class: 'danger', 'data-placement': 'bottom-end' }, "<p>Failed to save. Please look for validation errors.</p>")}
 </div>`;
 }
 
