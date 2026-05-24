@@ -1,0 +1,14 @@
+.grid {
+  grid-column-gap: var(--spacing);
+  grid-row-gap: var(--spacing);
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (--breakpoint-sm) {
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  }
+
+  & > * {
+    min-width: 0;
+  }
+}
