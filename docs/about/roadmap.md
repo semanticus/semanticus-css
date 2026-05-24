@@ -26,8 +26,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | --- | --- |
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
-| ✅ | `.pane` component |
-| ✅ | `.panel` component |
+| ✅ | `.card-list` component |
 | ✅ | `.icon-*` component |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.content-grid` component |

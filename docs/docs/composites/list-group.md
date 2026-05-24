@@ -1,18 +1,18 @@
 # List Group
 
-List groups are implemented by adding the `.panel-list` class to a `<ul>`, `<div>`, `<section>`, etc. to create a panel containing list items.
+List groups are implemented by adding the `.card-list` class to a `<ul>`, `<div>`, `<section>`, etc. to create a panel containing list items.
 
 ## Basic Usage
 
 Through the use of `aria-current="true"` you can indicate the current active item in the list group.
 
-<HtmlPreviewer :code="PanelListDemo.main()" />
+<HtmlPreviewer :code="CardListDemo.main()" />
 
 ## Horizontal Stacking
 
 Wrapping the list group in a `<nav>` element will cause the items to be distributed horizontally instead of vertically.
 
-<HtmlPreviewer :code="PanelListDemo.horizontalStack()" />
+<HtmlPreviewer :code="CardListDemo.horizontalStack()" />
 
 ## Variants
 
@@ -20,22 +20,22 @@ Wrapping the list group in a `<nav>` element will cause the items to be distribu
 
 To convey **intent** and **importance**, list groups can be styled with different variants:
 
-<HtmlPreviewer :code="PanelListDemo.intentVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="CardListDemo.intentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.striped` creates list groups with alternating background colors for better readability.
 
-<HtmlPreviewer :code="PanelListDemo.stripedVariant()" />
+<HtmlPreviewer :code="CardListDemo.stripedVariant()" />
 
 `.ghost` creates transparent background list groups with colored text and borders
 
-<HtmlPreviewer :code="PanelListDemo.ghostVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="CardListDemo.ghostVariants()" :codeCollapsed="true" />
 
 `.subtle` creates list groups with a more muted appearance.
 
-<HtmlPreviewer :code="PanelListDemo.subtleVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="CardListDemo.subtleVariants()" :codeCollapsed="true" />
 
 <script setup>
-import { PanelListDemo } from "@demos/components";
+import { CardListDemo } from "@demos/components";
 </script>

@@ -1,5 +1,3 @@
 export * as CardDemo from "./card.demo";
+export * as CardListDemo from "./card-list.demo";
 export * as IconsDemo from "./icons.demo";
-export * as PaneDemo from "./pane.demo";
-export * as PanelDemo from "./panel.demo";
-export * as PanelListDemo from "./panel-list.demo";

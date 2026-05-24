@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { PanelListDemo } from "@demos/components";
+import { CardListDemo } from "@demos/components";
 
 const meta: Meta = {
   title: "Composites/List Group",
@@ -9,13 +9,13 @@ const meta: Meta = {
 export default meta;
 
 export const basicUsage: StoryObj = {
-  render: () => PanelListDemo.main(),
+  render: () => CardListDemo.main(),
 };
 
 export const horizontalStack: StoryObj = {
-  render: () => PanelListDemo.horizontalStack(),
+  render: () => CardListDemo.horizontalStack(),
 };
 
 export const variants: StoryObj = {
-  render: () => PanelListDemo.overviewVariants(),
+  render: () => CardListDemo.overviewVariants(),
 };

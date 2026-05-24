@@ -5,7 +5,7 @@ function renderLi(attrs: Record<string, string> = {}, slot: string = '') {
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement('ul', classMergeAttributes('panel-list                                                                                                                                                                                               ', attrs), slot || `<li>Item 1</li>
+  return renderElement('ul', classMergeAttributes('card-list                                                                                                                                                                                               ', attrs), slot || `<li>Item 1</li>
 <li>Item 2</li>
 <li aria-current="true">Item 3</li>
 <li>Item 4</li>`);

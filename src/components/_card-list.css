@@ -1,28 +1,4 @@
-/* .pane and .panel share most of their styling with .card, check src/components/_card.css */
-
-.pane,
-.panel {
-  --dialog-shadow: none;
-  --shadow: none;
-  --color-background: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-  --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
-}
-
-.pane {
-  --dialog-border: transparent;
-  --border-color: transparent;
-
-  border-radius: 0;
-
-  > :is(header, footer) {
-    border-radius: 0;
-  }
-}
-
-.panel-list {
+.card-list {
   &:is(ul) {
     list-style: none;
     margin: 0;

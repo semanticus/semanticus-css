@@ -6,7 +6,7 @@ import {
   TypographyDemo,
   SearchDemo,
 } from "@demos/composites";
-import { CardDemo, PanelListDemo, PaneDemo } from "@demos/components";
+import { CardDemo, CardListDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -396,7 +396,7 @@ function lists() {
 
   <section>
     <h4>Group</h4>
-    ${PanelListDemo.main()}
+    ${CardListDemo.main()}
   </section>
 
   <section>
@@ -712,10 +712,10 @@ ${fullBundleColorsButtons()}
 <hr>
 <br>
 
-<section id="list-group">
-  <h2>List Group</h2>
+<section id="card-list">
+  <h2>Card List</h2>
 
-  ${PanelListDemo.overviewVariants()}
+  ${CardListDemo.overviewVariants()}
 </section>
 
 <hr>
@@ -725,15 +725,6 @@ ${fullBundleColorsButtons()}
   <h2>Cards</h2>
 
   ${CardDemo.overviewVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="panes">
-  <h2>Panes</h2>
-
-  ${PaneDemo.overviewVariants()}
 </section>
 
 <hr>
