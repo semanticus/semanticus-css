@@ -7,7 +7,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: FooterDemo.main() },
   render: (args) => args.html,
 };

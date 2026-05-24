@@ -7,12 +7,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const Image: StoryObj = {
+export const image: StoryObj = {
   args: { html: EmbeddedDemo.image() },
   render: (args) => args.html,
 };
 
-export const ResponsiveImage: StoryObj = {
+export const responsiveImage: StoryObj = {
   args: { html: EmbeddedDemo.responsiveImage() },
   render: (args) => args.html,
 };

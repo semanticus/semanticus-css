@@ -8,10 +8,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   render: () => DropdownDemo.main(),
 };
 
-export const Variants: StoryObj = {
+export const variants: StoryObj = {
   render: () => DropdownDemo.overviewVariants(),
 };

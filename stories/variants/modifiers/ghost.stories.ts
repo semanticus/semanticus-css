@@ -12,26 +12,26 @@ const meta: Meta = {
 
 export default meta;
 
-export const ButtonExample: StoryObj = {
+export const buttonExample: StoryObj = {
   render: () => ButtonDemo.ghostVariants(),
 };
 
-export const InputButtons: StoryObj = {
+export const inputButtons: StoryObj = {
   render: () => GhostDemo.overviewInputButtons(),
 };
 
-export const RoleButtons: StoryObj = {
+export const roleButtons: StoryObj = {
   render: () => RoleButtonDemo.ghostVariants(),
 };
 
-export const Dropdowns: StoryObj = {
+export const dropdowns: StoryObj = {
   render: () => DropdownDemo.ghostVariants(),
 };
 
-export const Accordions: StoryObj = {
+export const accordions: StoryObj = {
   render: () => RoleButtonDemo.accordionGhostVariants(),
 };
 
-export const Cards: StoryObj = {
+export const cards: StoryObj = {
   render: () => CardDemo.withHeaderAndFooterGhostVariants(),
 };

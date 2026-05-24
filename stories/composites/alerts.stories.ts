@@ -9,10 +9,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const InlineAlerts: StoryObj = {
+export const inlineAlerts: StoryObj = {
   render: () => AlertsDemo.inlineAlerts(),
 };
 
-export const OverviewShowToasts: StoryObj = {
+export const overviewShowToasts: StoryObj = {
   render: () => RoleStatusDemo.overviewShowToasts(),
 };

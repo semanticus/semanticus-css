@@ -7,12 +7,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: ADemo.main() },
   render: (args) => args.html,
 };
 
-export const Active: StoryObj = {
+export const active: StoryObj = {
   args: { html: ADemo.active() },
   render: (args) => args.html,
 };

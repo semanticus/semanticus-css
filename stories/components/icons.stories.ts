@@ -8,10 +8,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const UsageOverview: StoryObj = {
+export const usageOverview: StoryObj = {
   render: () => IconsDemo.overview(),
 };
 
-export const All: StoryObj = {
+export const all: StoryObj = {
   render: () => IconsDemo.allIcons(),
 };

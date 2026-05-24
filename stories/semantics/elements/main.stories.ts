@@ -7,42 +7,42 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: MainDemo.main() },
   render: (args) => args.html,
 };
 
-export const WithHeader: StoryObj = {
+export const withHeader: StoryObj = {
   args: { html: MainDemo.withHeader() },
   render: (args) => args.html,
 };
 
-export const WithFooter: StoryObj = {
+export const withFooter: StoryObj = {
   args: { html: MainDemo.withFooter() },
   render: (args) => args.html,
 };
 
-export const WithHeaderPlusFooter: StoryObj = {
+export const withHeaderPlusFooter: StoryObj = {
   args: { html: MainDemo.withHeaderPlusFooter() },
   render: (args) => args.html,
 };
 
-export const WithArticle: StoryObj = {
+export const withArticle: StoryObj = {
   args: { html: MainDemo.withArticle() },
   render: (args) => args.html,
 };
 
-export const WithHeaderPlusArticle: StoryObj = {
+export const withHeaderPlusArticle: StoryObj = {
   args: { html: MainDemo.withHeaderPlusArticle() },
   render: (args) => args.html,
 };
 
-export const WithArticlePlusFooter: StoryObj = {
+export const withArticlePlusFooter: StoryObj = {
   args: { html: MainDemo.withArticlePlusFooter() },
   render: (args) => args.html,
 };
 
-export const WithHeaderPlusArticlePlusFooter: StoryObj = {
+export const withHeaderPlusArticlePlusFooter: StoryObj = {
   args: { html: MainDemo.withHeaderPlusArticlePlusFooter() },
   render: (args) => args.html,
 };

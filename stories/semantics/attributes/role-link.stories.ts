@@ -8,7 +8,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: RoleLinkDemo.overview() },
   render: (args) => args.html,
 };

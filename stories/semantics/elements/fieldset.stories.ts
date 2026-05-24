@@ -7,42 +7,42 @@ const meta: Meta = {
 
 export default meta;
 
-export const FormInput: StoryObj = {
+export const formInput: StoryObj = {
   args: { html: FieldsetDemo.formInput() },
   render: (args) => args.html,
 };
 
-export const Groupinputbutton: StoryObj = {
+export const groupInputButton: StoryObj = {
   args: { html: FieldsetDemo.groupInputButton() },
   render: (args) => args.html,
 };
 
-export const Groupselectbutton: StoryObj = {
+export const groupSelectButton: StoryObj = {
   args: { html: FieldsetDemo.groupSelectButton() },
   render: (args) => args.html,
 };
 
-export const Groupdropdownbutton: StoryObj = {
+export const groupDropdownButton: StoryObj = {
   args: { html: FieldsetDemo.groupDropdownButton() },
   render: (args) => args.html,
 };
 
-export const Groupmultipleinputs: StoryObj = {
+export const groupMultipleInputs: StoryObj = {
   args: { html: FieldsetDemo.groupMultipleInputs() },
   render: (args) => args.html,
 };
 
-export const Formexample: StoryObj = {
+export const formExample: StoryObj = {
   args: { html: FieldsetDemo.formExample() },
   render: (args) => args.html,
 };
 
-export const Disabled: StoryObj = {
+export const disabled: StoryObj = {
   args: { html: FieldsetDemo.disabled() },
   render: (args) => args.html,
 };
 
-export const Section: StoryObj = {
+export const section: StoryObj = {
   args: { html: FieldsetDemo.section() },
   render: (args) => args.html,
 };
