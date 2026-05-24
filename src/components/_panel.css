@@ -57,7 +57,7 @@
       text-align: center;
       border-top: var(--border-size) solid var(--border-color);
       border-left: none;
-      text-wrap-mode: nowrap;
+      text-wrap: nowrap;
 
       &:first-child {
         border-left: var(--border-size) solid var(--border-color);
