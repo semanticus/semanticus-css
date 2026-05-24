@@ -57,7 +57,7 @@ This is powered by `minmax()` for the side columns and `min()` for the content c
 minmax(var(--layout-grid-padding-inline), 1fr)
 
 /* Breakout columns — can shrink to 0 on small screens */
-minmax(0px, var(--_breakout))
+minmax(0px, var(--layout-grid-breakout-size))
 
 /* Content column — chooses the smaller of max-width vs available space */
 min(var(--layout-grid-content-max-width), 100% - var(--layout-grid-padding-inline) * 2)
