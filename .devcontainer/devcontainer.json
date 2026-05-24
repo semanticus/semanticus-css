@@ -4,7 +4,7 @@
   "postCreateCommand": "npm ci",
   "remoteUser": "pwuser",
   "mounts": [
-    "source=${localWorkspaceFolder}/node_modules,target=${containerWorkspaceFolder}/node_modules,type=bind,consistency=cached"
+    "source=devcontainer_node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
   "customizations": {
     "vscode": {

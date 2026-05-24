@@ -72,8 +72,24 @@
 }
 
 /* ── Nested full-width: spans edge-to-edge within any .full-width ancestor ── */
+/*
+ * Instead of inheriting the full 5-track template (which starts with a gutter
+ * column), we define a single centered content-width column. This ensures that
+ * auto-placed items — including bare text nodes, which CSS selectors cannot
+ * target — land in the content column rather than the first gutter track.
+ *
+ * Trade-off: .breakout and .full-width children inside a nested .full-width
+ * will not span wider than the content column (graceful degradation).
+ */
 .layout-grid .full-width > .full-width {
   grid-column: full-width;
   display: grid;
-  grid-template-columns: inherit;
+  grid-template-columns:
+    [full-width-start breakout-start content-start]
+    min(
+      var(--layout-grid-content-max-width),
+      100% - var(--layout-grid-padding-inline) * 2
+    )
+    [content-end breakout-end full-width-end];
+  justify-content: center;
 }
