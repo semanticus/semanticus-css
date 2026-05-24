@@ -8,10 +8,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const FullBundle: StoryObj = {
+export const fullBundle: StoryObj = {
   render: () => Demo.fullBundle(),
 };
 
-export const FullBundleColors: StoryObj = {
+export const fullBundleColors: StoryObj = {
   render: () => Demo.fullBundleColors(),
 };

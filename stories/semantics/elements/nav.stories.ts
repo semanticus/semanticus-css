@@ -7,42 +7,42 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   args: { html: NavDemo.main() },
   render: (args) => args.html,
 };
 
-export const LogoTaglineLinks: StoryObj = {
+export const logoTaglineLinks: StoryObj = {
   args: { html: NavDemo.logoTaglineLinks() },
   render: (args) => args.html,
 };
 
-export const SearchDropdownAndLinks: StoryObj = {
+export const searchDropdownAndLinks: StoryObj = {
   args: { html: NavDemo.searchDropdownAndLinks() },
   render: (args) => args.html,
 };
 
-export const CopyrightAndContactUs: StoryObj = {
+export const copyrightAndContactUs: StoryObj = {
   args: { html: NavDemo.copyrightAndContactUs() },
   render: (args) => args.html,
 };
 
-export const PagesLinks: StoryObj = {
+export const pagesLinks: StoryObj = {
   args: { html: NavDemo.pagesLinks() },
   render: (args) => args.html,
 };
 
-export const PageLinks: StoryObj = {
+export const pageLinks: StoryObj = {
   args: { html: NavDemo.pageLinks() },
   render: (args) => args.html,
 };
 
-export const VerticalInAside: StoryObj = {
+export const verticalInAside: StoryObj = {
     args: { html: NavDemo.verticalInAside() },
   render: (args) => args.html,
 };
 
-export const Breadcrumbs: StoryObj = {
+export const breadcrumbs: StoryObj = {
     args: { html: NavDemo.breadcrumbs() },
   render: (args) => args.html,
 };

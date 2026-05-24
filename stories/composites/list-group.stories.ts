@@ -8,14 +8,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicUsage: StoryObj = {
+export const basicUsage: StoryObj = {
   render: () => ListGroupDemo.main(),
 };
 
-export const HorizontalStack: StoryObj = {
+export const horizontalStack: StoryObj = {
   render: () => ListGroupDemo.horizontalStack(),
 };
 
-export const Variants: StoryObj = {
+export const variants: StoryObj = {
   render: () => ListGroupDemo.overviewVariants(),
 };

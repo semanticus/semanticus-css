@@ -9,17 +9,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const ListGroup: StoryObj = {
+export const listGroup: StoryObj = {
   args: { html: ListGroupDemo.main() },
   render: (args) => args.html,
 };
 
-export const FieldsetGroup: StoryObj = {
+export const fieldsetGroup: StoryObj = {
   args: { html: FieldsetDemo.groupInputButton() },
   render: (args) => args.html,
 };
 
-export const NavGroup: StoryObj = {
+export const navGroup: StoryObj = {
   args: { html: PaginationDemo.buttons() },
   render: (args) => args.html,
 };

@@ -8,37 +8,37 @@ const meta: Meta = {
 
 export default meta;
 
-export const Headings: StoryObj = {
+export const headings: StoryObj = {
   args: { html: TextDemo.headings() },
   render: (args) => args.html,
 };
 
-export const Paragraphs: StoryObj = {
+export const paragraphs: StoryObj = {
   args: { html: TextDemo.paragraphs() },
   render: (args) => args.html,
 };
 
-export const Variants: StoryObj = {
+export const variants: StoryObj = {
   args: { html: TypographyDemo.overviewVariants() },
   render: (args) => args.html,
 };
 
-export const Address: StoryObj = {
+export const address: StoryObj = {
   args: { html: TextDemo.address() },
   render: (args) => args.html,
 };
 
-export const Blockquote: StoryObj = {
+export const blockquote: StoryObj = {
   args: { html: TextDemo.blockquote() },
   render: (args) => args.html,
 };
 
-export const CodeBlock: StoryObj = {
+export const codeBlock: StoryObj = {
   args: { html: TextDemo.codeBlock() },
   render: (args) => args.html,
 };
 
-export const InlineElements: StoryObj = {
+export const inlineElements: StoryObj = {
   args: { html: TextDemo.inlineElements() },
   render: (args) => args.html,
 };
