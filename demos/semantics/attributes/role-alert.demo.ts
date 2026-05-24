@@ -10,8 +10,7 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   const mergedAttrs = { id: "alert-toast", ...attrs, popover: 'popover', role: "alert" };
 
-  return renderElement(tagName, mergedAttrs, renderElement('nav', {}, `${slot || defaultMessage}
-${ButtonDemo.closeButton({ popovertarget: mergedAttrs.id })}`));
+  return withIconAndCloseButton(tagName, mergedAttrs, slot || defaultMessage);
 }
 
 export function showToast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
@@ -51,25 +50,33 @@ ${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement'
 }
 
 export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "alert" }, renderElement('nav', {}, `${slot || defaultMessage}
-${ButtonDemo.closeButton()}`));
+  return renderElement(tagName, { ...attrs, role: "alert" }, `${slot || `<p>${defaultMessage}</p>`}
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+}
+
+export function withIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, { ...attrs, role: "alert" }, `<span class="icon-invalid" aria-hidden="true"></span>
+
+<p>${slot || defaultMessage}</p>
+
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
 }
 
 export function withHgroup() {
-  return withCloseButton('div', { class: 'danger' }, `<hgroup>
-  <h2>Connection error</h2>
-  <p>${defaultMessage}</p>
+  return withCloseButton('div', { class: 'contrast' }, `<hgroup>
+  <h2>You appear to be offline</h2>
+  <p>Please check your internet connection, to get the latest updates.</p>
 </hgroup>`);
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${main('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), 'Uploading document 1 of 3...')}
-${main('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), defaultMessage)}
-${main('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), defaultMessage)}
-${main('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), 'Item saved successfully!')}
-${main('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), 'We are fetching your latest account details...')}
-${main('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), 'Your session will expire in 2 minutes.')}
-${main('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), 'Unable to connect to the server. Please try again.')}`;
+    return `${withCloseButton('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), '<p>Uploading document 1 of 3...</p>')}
+${withCloseButton('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), `<p>${defaultMessage}</p>`)}
+${withCloseButton('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), `<p>${defaultMessage}</p>`)}
+${withCloseButton('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), '<p>Item saved successfully!</p>')}
+${withCloseButton('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), '<p>We are fetching your latest account details...</p>')}
+${withCloseButton('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), '<p>Your session will expire in 2 minutes.</p>')}
+${withCloseButton('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), '<p>Unable to connect to the server. Please try again.</p>')}`;
 }
 
 export function subtleVariants(attrs: Record<string, string> = {}) {
@@ -82,9 +89,9 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
   return renderElement('section', attrs, `<section class="grid mb-0">
-  ${main()}
-  ${main('div', { class: 'subtle' })}
-  ${main('div', { class: 'ghost' })}
+  ${withCloseButton()}
+  ${withCloseButton('div', { class: 'subtle' })}
+  ${withCloseButton('div', { class: 'ghost' })}
 </section>
 
 <section class="grid">

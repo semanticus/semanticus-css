@@ -14,9 +14,17 @@ Adding `role="status"` to an element will stylize it as an **alert** component a
 
 ## With Close Button
 
-Use a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, which will justify its contents to the left and right, to create a status message with a close button.
+`role="status"` will strech the first child and let the second child fit its content, so in order for the text to take up the remaining space we need to wrap it in an element (like `<p>`), and then we can add a [Close Button](/docs/composites/buttons#close-button) as the second child.
 
 <HtmlPreviewer :code="RoleStatusDemo.withCloseButton()" />
+
+## With an Icon and a Close Button
+
+Similarly to the previous example, but with an [icon](/docs/components/icons) added to the left of the text.
+
+In case of 3 children, the first and last will fit their content, and the middle one will take up the remaining space.
+
+<HtmlPreviewer :code="RoleStatusDemo.withIconAndCloseButton()" />
 
 ## As Toast
 

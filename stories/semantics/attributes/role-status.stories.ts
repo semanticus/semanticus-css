@@ -18,6 +18,11 @@ export const withCloseButton: StoryObj = {
   render: (args) => args.html,
 };
 
+export const withIconAndCloseButton: StoryObj = {
+  args: { html: RoleStatusDemo.withIconAndCloseButton() },
+  render: (args) => args.html,
+};
+
 export const overviewToasts: StoryObj = {
   args: { html: RoleStatusDemo.overviewShowToasts() },
   render: (args) => args.html,

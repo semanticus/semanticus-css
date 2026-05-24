@@ -8,6 +8,19 @@
   --alert-size: var(--border-size);
 
   color: var(--color-text);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: calc(var(--nav-link-gap) * 1.5);
+  align-items: start;
+
+  &:has(> :nth-child(2)) {
+    grid-template-columns: 1fr auto;
+  }
+
+  &:has(> :nth-child(3)) {
+    grid-template-columns: auto 1fr auto;
+  }
+
   padding: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
@@ -18,6 +31,16 @@
 
   &:is(.ghost, .subtle) {
     --alert-size: calc(var(--border-size) * 4);
+  }
+
+  > * {
+    margin: 0 !important;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    position: relative;
+    top: 4px;
   }
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
@@ -34,7 +57,7 @@
     margin: var(--spacing);
 
     &:popover-open {
-      display: flex;
+      display: grid;
     }
 
     &[data-placement="top-start"] {
