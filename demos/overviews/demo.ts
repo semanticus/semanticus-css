@@ -1,8 +1,12 @@
 import { renderElement } from "@scripts/utils";
 
-import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
-import { DropdownDemo, LinksDemo, TypographyDemo } from "@demos/composites";
-import { CardDemo, PaneDemo } from "@demos/components";
+import {
+  DropdownDemo,
+  LinksDemo,
+  TypographyDemo,
+  SearchDemo,
+} from "@demos/composites";
+import { CardDemo, PanelListDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -19,14 +23,12 @@ import {
   ListsDemo,
   AriaBusyDemo,
   DisabledDemo,
-  RoleGroupDemo,
-  RoleSearchDemo,
   RoleTooltipDemo,
   RoleLinkDemo,
   TextDemo,
   RoleStatusDemo,
   ButtonDemo,
-} from '@demos/semantics';
+} from "@demos/semantics";
 
 export function buttons() {
   return `<section id="buttons">
@@ -49,11 +51,11 @@ export function links() {
 
   <section role="toolbar">
     ${ADemo.main()}
-    ${RoleLinkDemo.main('button')}
-    ${RoleLinkDemo.main('div')}
+    ${RoleLinkDemo.main("button")}
+    ${RoleLinkDemo.main("div")}
     ${ADemo.active()}
-    ${RoleLinkDemo.active('button')}
-    ${RoleLinkDemo.active('div')}
+    ${RoleLinkDemo.active("button")}
+    ${RoleLinkDemo.active("div")}
   </section>
 </section>`;
 }
@@ -194,16 +196,16 @@ function fieldsets() {
   </hgroup>
 
   <section>
-    ${FieldsetDemo.main()}
+    ${FieldsetDemo.formInput()}
   </section>
 
   <section>
     <h4>Group fieldset (role="group")</h4>
 
     <section>
-      ${RoleGroupDemo.inputWithButton("fieldset")}
-      ${RoleGroupDemo.twoInputsWithButton("fieldset")}
-      ${RoleGroupDemo.selectWithButton("fieldset")}
+      ${FieldsetDemo.groupInputButton()}
+      ${FieldsetDemo.groupMultipleInputs()}
+      ${FieldsetDemo.groupSelectButton()}
     </section>
   </section>
 
@@ -211,8 +213,8 @@ function fieldsets() {
     <h4>Search fieldset (role="search")</h4>
 
     <section>
-      ${RoleSearchDemo.main("fieldset")}
-      ${RoleSearchDemo.withResetButton("fieldset")}
+      ${SearchDemo.main()}
+      ${SearchDemo.withResetButton()}
     </section>
   </section>
 </section>`;
@@ -393,6 +395,11 @@ function lists() {
   <h2>Lists</h2>
 
   <section>
+    <h4>Group</h4>
+    ${PanelListDemo.main()}
+  </section>
+
+  <section>
     <h4>Unordered</h4>
     ${ListsDemo.unordered()}
   </section>
@@ -444,7 +451,10 @@ function address() {
 }
 
 export function customizerExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 ${buttons()}
 
 <hr>
@@ -473,7 +483,7 @@ ${links()}
   <fieldset>
     <label class="w-100">
       Dropdown group
-      ${RoleGroupDemo.dropdownWithButton()}
+      ${FieldsetDemo.groupDropdownButton()}
     </label>
   </fieldset>
 
@@ -495,7 +505,8 @@ ${links()}
   ${CardDemo.main()}
 
   ${CardDemo.withHeaderAndFooter()}
-</section>`);
+</section>`,
+  );
 }
 
 export function palettesExample(attrs: Record<string, string> = {}) {
@@ -528,7 +539,7 @@ ${links()}
   <fieldset>
     <label class="w-100">
       Dropdown group
-      ${RoleGroupDemo.dropdownWithButton()}
+      ${FieldsetDemo.groupDropdownButton()}
     </label>
   </fieldset>
 
@@ -650,7 +661,8 @@ ${codeBlocks()}
 <hr>
 <br>
 
-${address()}`);
+${address()}`,
+  );
 }
 
 export function fullBundleColorsButtons() {
@@ -664,7 +676,10 @@ export function fullBundleColorsButtons() {
 }
 
 export function fullBundleColors(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 <section id="typography">
   <h2>Typography</h2>
 
@@ -697,6 +712,15 @@ ${fullBundleColorsButtons()}
 <hr>
 <br>
 
+<section id="list-group">
+  <h2>List Group</h2>
+
+  ${PanelListDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
 <section id="cards">
   <h2>Cards</h2>
 
@@ -719,5 +743,6 @@ ${fullBundleColorsButtons()}
   <h2>Role Statuses</h2>
 
   ${RoleStatusDemo.overviewVariants()}
-</section>`);
+</section>`,
+  );
 }
