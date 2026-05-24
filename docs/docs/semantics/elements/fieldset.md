@@ -6,7 +6,7 @@ title: fieldset
 
 `<fieldset>` groups related form elements together and can optionally include a `<legend>` label.
 
-You can also combine it with `[role="group"]` and `[role="search"]`, to make use of the **ARIA** roles while adding a group styling it.
+You can also combine it with `[role="group"]` and `[role="search"]`, to make use of the **ARIA** roles while also applying the group styling.
 
 ## With a Form Input
 
