@@ -10,9 +10,8 @@ Combined with `<ul>`, it can be used to create a list of items with a clean and 
 
 ## List Group
 
-<HtmlPreviewer :code="ListGroupDemo.main()"/>
+<HtmlPreviewer :code="PanelListDemo.main()"/>
 
 <script setup>
-import { PanelDemo } from "@demos/components";
-import { ListGroupDemo } from "@demos/composites";
+import { PanelDemo, PanelListDemo } from "@demos/components";
 </script>

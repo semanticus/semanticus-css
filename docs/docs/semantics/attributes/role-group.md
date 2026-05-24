@@ -35,6 +35,5 @@ When you have a set of related buttons, but they don't fit into a toolbar or men
 See [Pagination](/docs/composites/pagination) for more details.
 
 <script setup>
-import { ListGroupDemo, PaginationDemo } from "@demos/composites";
 import { RoleGroupDemo } from "@demos/semantics";
 </script>

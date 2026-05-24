@@ -1,4 +1,4 @@
-# .icon-*
+# Icons
 
 Inline decorative icons rendered via CSS `mask-image`. Apply an `.icon-<name>` class to a `<span>` (or any inline element) to display an icon that scales with the surrounding text and inherits its color.
 
