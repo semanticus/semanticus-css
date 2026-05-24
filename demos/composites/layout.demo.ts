@@ -39,7 +39,7 @@ ${AsideDemo.rightSidebar({ class: rightSidebarClass })}`);
 }
 
 export function headerExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Header</h3>
     ${withHeader({
       class: "bg-danger",
@@ -59,7 +59,7 @@ export function headerExample(attrs: Record<string, string> = {}) {
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Header And Right Sidebar</h3>
     ${withLeftSidebarAndHeaderAndRightSidebar({
@@ -356,7 +356,7 @@ ${AsideDemo.rightSidebar({ class: rightSidebarClass })}`);
 // Storybook examples
 
 export function footerExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Footer</h3>
     ${withFooter({
       class: "bg-danger",
@@ -376,7 +376,7 @@ export function footerExample(attrs: Record<string, string> = {}) {
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Footer And Right Sidebar</h3>
     ${withLeftSidebarAndFooterAndRightSidebar({
@@ -401,7 +401,7 @@ export function footerExample(attrs: Record<string, string> = {}) {
 }
 
 export function mainExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main</h3>
     ${withMain({
       class: "bg-danger",
@@ -421,7 +421,7 @@ export function mainExample(attrs: Record<string, string> = {}) {
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Main And Right Sidebar</h3>
     ${withLeftSidebarAndMainAndRightSidebar({
@@ -446,7 +446,7 @@ export function mainExample(attrs: Record<string, string> = {}) {
 }
 
 export function mainWithHeaderExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Header</h3>
     ${withMainWithHeader({
       class: "bg-danger",
@@ -468,7 +468,7 @@ export function mainWithHeaderExample(attrs: Record<string, string> = {}) {
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Main With Header And Right Sidebar</h3>
     ${withLeftSidebarAndMainWithHeaderAndRightSidebar({
@@ -495,7 +495,7 @@ export function mainWithHeaderExample(attrs: Record<string, string> = {}) {
 }
 
 export function mainWithFooterExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Footer</h3>
     ${withMainWithFooter({
       class: "bg-danger",
@@ -517,7 +517,7 @@ export function mainWithFooterExample(attrs: Record<string, string> = {}) {
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Main With Footer And Right Sidebar</h3>
     ${withLeftSidebarAndMainWithFooterAndRightSidebar({
@@ -544,7 +544,7 @@ export function mainWithFooterExample(attrs: Record<string, string> = {}) {
 }
 
 export function mainWithHeaderPlusFooterExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Header Plus Footer</h3>
     ${withMainWithHeaderPlusFooter({
       class: "bg-danger",
@@ -568,7 +568,7 @@ export function mainWithHeaderPlusFooterExample(attrs: Record<string, string> = 
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Main With Header Plus Footer And Right Sidebar</h3>
     ${withLeftSidebarAndMainWithHeaderPlusFooterAndRightSidebar({
@@ -597,7 +597,7 @@ export function mainWithHeaderPlusFooterExample(attrs: Record<string, string> = 
 }
 
 export function mainWithArticleExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Article</h3>
     ${withMainWithArticle({
       class: "bg-danger",
@@ -619,7 +619,7 @@ export function mainWithArticleExample(attrs: Record<string, string> = {}) {
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Main With Article And Right Sidebar</h3>
     ${withLeftSidebarAndMainWithArticleAndRightSidebar({
@@ -646,7 +646,7 @@ export function mainWithArticleExample(attrs: Record<string, string> = {}) {
 }
 
 export function mainWithHeaderPlusArticleExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Header Plus Article</h3>
     ${withMainWithHeaderPlusArticle({
       class: "bg-danger",
@@ -670,7 +670,7 @@ export function mainWithHeaderPlusArticleExample(attrs: Record<string, string> =
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Main With Header Plus Article And Right Sidebar</h3>
     ${withMainWithHeaderPlusArticleAndRightSidebar({
@@ -686,7 +686,7 @@ export function mainWithHeaderPlusArticleExample(attrs: Record<string, string> =
 }
 
 export function mainWithArticlePlusFooterExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Article Plus Footer</h3>
     ${withMainWithArticlePlusFooter({
       class: "bg-danger",
@@ -710,7 +710,7 @@ export function mainWithArticlePlusFooterExample(attrs: Record<string, string> =
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Aside And Main With Article Plus Footer And Right Sidebar</h3>
     ${withLeftSidebarAndMainWithArticlePlusFooterAndRightSidebar({
@@ -739,7 +739,7 @@ export function mainWithArticlePlusFooterExample(attrs: Record<string, string> =
 }
 
 export function mainWithHeaderPlusArticlePlusFooterExample(attrs: Record<string, string> = {}) {
-  return renderElement('section', { ...attrs, class: ['grid', attrs.class || ''].join(' ') }, `<div>
+  return renderElement('section', attrs, `<div>
     <h3>Main With Header Plus Article Plus Footer</h3>
     ${withMainWithHeaderPlusArticlePlusFooter({
       class: "bg-danger",
@@ -765,7 +765,7 @@ export function mainWithHeaderPlusArticlePlusFooterExample(attrs: Record<string,
   </div>
 </section>
 
-<section class="grid" style="min-width: 1024px;">
+<section style="min-width: 1024px;">
   <div>
     <h3>Main With Header Plus Article Plus Footer And Right Sidebar</h3>
     ${withMainWithHeaderPlusArticlePlusFooterAndRightSidebar({
