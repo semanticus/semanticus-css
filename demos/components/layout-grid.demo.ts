@@ -44,3 +44,22 @@ export function nested() {
   </section>
 </main>`;
 }
+
+export function nestedFullWidth() {
+  return `<main class="layout-grid">
+  <section class="full-width" style="background: var(--color-primary-fill); padding-block: 2rem;">
+    <h2>Outer full-width section</h2>
+    <p>This section spans edge-to-edge and creates a nested layout grid.</p>
+
+    <div class="full-width" style="background: var(--color-primary-fill-hover); padding-block: 1.5rem;">
+      <h3>Nested full-width section</h3>
+      <p>This inner ".full-width" also spans edge-to-edge within the outer one,
+         and its children are still constrained to the content column.</p>
+    </div>
+
+    <p>Back to the outer section's content column.</p>
+  </section>
+
+  <p>Back to the top-level content column.</p>
+</main>`;
+}

@@ -42,6 +42,14 @@ Use `.full-width` on an element that should span edge-to-edge — sections with 
 
 <HtmlPreviewer :code="LayoutGridDemo.nested()" />
 
+## Nested full-width inside full-width
+
+A `.full-width` element creates a nested layout grid, so you can place another `.full-width` inside it and it will span edge-to-edge within the parent — useful for alternating background bands nested inside a larger section:
+
+<HtmlPreviewer :code="LayoutGridDemo.nestedFullWidth()" />
+
+The inner `.full-width` receives `grid-column: full-width` on the nested grid, so its background fills the entire width of the parent. Its children are still automatically constrained to the content column, and you can use `.breakout` or further `.full-width` children inside it.
+
 ## Responsive Behaviour
 
 The content grid is **fully responsive with zero media queries**. It works at every viewport size:

@@ -62,11 +62,18 @@
   grid-template-columns: inherit;
 }
 
-/* Children of .full-width also follow the content / breakout / full-width rules */
-.layout-grid > .full-width > :not(.breakout, .full-width) {
+/* Children of any .full-width (at any nesting depth) follow the same rules */
+.layout-grid .full-width > :not(.breakout, .full-width) {
   grid-column: content;
 }
 
-.layout-grid > .full-width > .breakout {
+.layout-grid .full-width > .breakout {
   grid-column: breakout;
+}
+
+/* ── Nested full-width: spans edge-to-edge within any .full-width ancestor ── */
+.layout-grid .full-width > .full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
 }

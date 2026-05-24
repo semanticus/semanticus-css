@@ -23,3 +23,7 @@ export const fullWidth: StoryObj = {
 export const nested: StoryObj = {
   render: () => LayoutGridDemo.nested(),
 };
+
+export const nestedFullWidth: StoryObj = {
+  render: () => LayoutGridDemo.nestedFullWidth(),
+};
