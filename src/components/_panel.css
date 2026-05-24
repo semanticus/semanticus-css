@@ -1,4 +1,4 @@
-/* Please see src/components/_card.css, since .panel shares most of its styling with .card */
+/* Please see src/components/_card.css, since .pane shares most of its styling with .card */
 
 .panel {
   --dialog-shadow: none;
@@ -57,7 +57,7 @@
       text-align: center;
       border-top: var(--border-size) solid var(--border-color);
       border-left: none;
-      text-wrap: nowrap;
+      text-wrap-mode: nowrap;
 
       &:first-child {
         border-left: var(--border-size) solid var(--border-color);
