@@ -18,7 +18,7 @@ ${DialogDemo.main({ open: true })}
 
 ## With Close Button
 
-Wrap title and a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, which will justify the title to the left and the close button to the right.
+Add a [Close Button](/docs/composites/buttons#close-button) with the utility class `.float-end` to position it on the right side of the dialog.
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 150px;&quot;&gt;
 ${DialogDemo.withCloseButton({ open: true })}
@@ -26,7 +26,7 @@ ${DialogDemo.withCloseButton({ open: true })}
 
 ## With Header and Footer
 
-> **Note:** Inside `<dialog>`, the `<header>` will justify its content to the left and right and `<footer>` will justify its content to the right, saving you the need to wrap its content inside a `<nav>`.
+> **Note:** Inside `<dialog>`, the `<header>` will justify its content to the left and right and `<footer>` will justify its content to the right, allowing you to add a close button or other actions, without needing to use utility classes.
 
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
 ${DialogDemo.withHeaderAndFooter({ open: true })}

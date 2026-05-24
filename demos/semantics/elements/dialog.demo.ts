@@ -21,9 +21,9 @@ function thankYouContent() {
 }
 
 function thankYouWithCloseButtonContent(attrs: Record<string, string>) {
-  return `${renderElement("nav", {}, `<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
+  return `${closeButton({ commandfor: attrs.id, class: 'float-end' })}
 
-${closeButton(attrs.id)}`)}
+<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
 
 <br>
 
@@ -35,8 +35,8 @@ ${closeButton(attrs.id)}`)}
 </article>`;
 }
 
-function closeButton(commandFor: string) {
-  return ButtonDemo.closeButton({ commandfor: commandFor, command: "close" });
+function closeButton(attrs: Record<string, string>) {
+  return ButtonDemo.closeButton({ ...attrs, command: "close" });
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
@@ -82,7 +82,7 @@ ${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 function headerAndFooterContent(attrs: Record<string, string>) {
   return `<header>
   <h2 id="modal-title">Confirm Your Membership</h2>
-  ${closeButton(attrs.id || defaultId)}
+  ${closeButton({ commandfor: attrs.id || defaultId })}
 </header>
 
 <article id="modal-description">

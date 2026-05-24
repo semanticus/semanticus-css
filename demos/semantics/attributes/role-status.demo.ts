@@ -10,8 +10,7 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   const mergedAttrs = { id: "status-toast", ...attrs, popover: 'popover', role: "status" };
 
-  return renderElement(tagName, mergedAttrs, renderElement('nav', {}, `${slot || defaultMessage}
-${ButtonDemo.closeButton({ popovertarget: mergedAttrs.id })}`));
+  return withIconAndCloseButton(tagName, mergedAttrs, slot || `<p>${defaultMessage}</p>`);
 }
 
 export function showToast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
@@ -38,21 +37,29 @@ export function overviewShowToasts() {
   <button popovertarget="bottom-end-toast" class="contrast">Bottom End</button>
 </section>
 
-${toast('div', { id: "top-start-toast", class: "primary", 'data-placement': "top-start" }, 'Top Start')}
-${toast('div', { id: "top-center-toast", class: "secondary", 'data-placement': "top-center" }, 'Top Center')}
-${toast('div', { id: "top-end-toast", class: "contrast", 'data-placement': "top-end" }, 'Top End')}
-${toast('div', { id: "middle-start-toast", class: "success", 'data-placement': "middle-start" }, 'Middle Start')}
-${toast('div', { id: "middle-center-toast", class: "info", 'data-placement': "middle-center" }, 'Middle Center')}
-${toast('div', { id: "middle-end-toast", class: "warning", 'data-placement': "middle-end" }, 'Middle End')}
-${toast('div', { id: "bottom-start-toast", class: "danger", 'data-placement': "bottom-start" }, 'Bottom Start')}
-${toast('div', { id: "bottom-center-toast", class: "success ghost", 'data-placement': "bottom-center" }, 'Bottom Center')}
-${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement': "bottom-end" }, 'Bottom End')}
+${toast('div', { id: "top-start-toast", class: "primary", 'data-placement': "top-start" }, '<p>Top Start</p>')}
+${toast('div', { id: "top-center-toast", class: "secondary", 'data-placement': "top-center" }, '<p>Top Center</p>')}
+${toast('div', { id: "top-end-toast", class: "contrast", 'data-placement': "top-end" }, '<p>Top End</p>')}
+${toast('div', { id: "middle-start-toast", class: "success", 'data-placement': "middle-start" }, '<p>Middle Start</p>')}
+${toast('div', { id: "middle-center-toast", class: "info", 'data-placement': "middle-center" }, '<p>Middle Center</p>')}
+${toast('div', { id: "middle-end-toast", class: "warning", 'data-placement': "middle-end" }, '<p>Middle End</p>')}
+${toast('div', { id: "bottom-start-toast", class: "danger", 'data-placement': "bottom-start" }, '<p>Bottom Start</p>')}
+${toast('div', { id: "bottom-center-toast", class: "success ghost", 'data-placement': "bottom-center" }, '<p>Bottom Center</p>')}
+${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement': "bottom-end" }, '<p>Bottom End</p>')}
 `;
 }
 
 export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "status" }, renderElement('nav', {}, `${slot || defaultMessage}
-${ButtonDemo.closeButton()}`));
+  return renderElement(tagName, { ...attrs, role: "status" }, `${slot || `<p>${defaultMessage}</p>`}
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+}
+
+export function withIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return renderElement(tagName, { ...attrs, role: "status" }, `<span class="icon-checkbox" aria-hidden="true"></span>
+
+${slot || `<p>${defaultMessage}</p>`}
+
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
 }
 
 export function withHgroup() {
@@ -63,13 +70,13 @@ export function withHgroup() {
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${main('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), 'Uploading document 1 of 3...')}
-${main('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), defaultMessage)}
-${main('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), defaultMessage)}
-${main('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), 'Item saved successfully!')}
-${main('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), 'We are fetching your latest account details...')}
-${main('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), 'Your session will expire in 2 minutes.')}
-${main('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), 'Unable to connect to the server. Please try again.')}`;
+    return `${withCloseButton('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), '<p>Uploading document 1 of 3...</p>')}
+${withCloseButton('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), `<p>${defaultMessage}</p>`)}
+${withCloseButton('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), `<p>${defaultMessage}</p>`)}
+${withCloseButton('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), '<p>Item saved successfully!</p>')}
+${withCloseButton('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), '<p>We are fetching your latest account details...</p>')}
+${withCloseButton('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), '<p>Your session will expire in 2 minutes.</p>')}
+${withCloseButton('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), '<p>Unable to connect to the server. Please try again.</p>')}`;
 }
 
 export function subtleVariants(attrs: Record<string, string> = {}) {
@@ -82,9 +89,9 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
   return renderElement('section', attrs, `<section class="grid mb-0">
-  ${main()}
-  ${main('div', { class: 'subtle' })}
-  ${main('div', { class: 'ghost' })}
+  ${withCloseButton()}
+  ${withCloseButton('div', { class: 'subtle' })}
+  ${withCloseButton('div', { class: 'ghost' })}
 </section>
 
 <section class="grid">
