@@ -9,7 +9,7 @@ The `role="group"` is used to semantically associate related UI elements togethe
 > [!CAUTION]
 > Even though Semanticus CSS provides styling to `[role="group"]`, use it with caution, as it is not meant to be used as a generic container for styling purposes, but rather to semantically group related elements together.
 >
-> Specialy in combination with `<main>`, `<header>`, `<footer>`, `<nav>` or `<aside>`, as they are already announced as landmarks and have implicit roles, adding `role="group"` would override that semantic meaning as cause confusion.
+> Specialy in combination with `<main>`, `<header>`, `<footer>`, `<nav>` or `<aside>`, as they are already announced as landmarks and have implicit roles, adding `role="group"` would override that semantic meaning and can cause screen readers to miss or skip important information.
 
 
 ## Grouping related form controls
