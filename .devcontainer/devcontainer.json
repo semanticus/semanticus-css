@@ -3,7 +3,6 @@
   "image": "mcr.microsoft.com/playwright:v1.59.1-noble",
   "postCreateCommand": "npm ci",
   "remoteUser": "pwuser",
-  "initializeCommand": "if id -u pwuser >/dev/null 2>&1; then chown -R $(id -u pwuser):$(id -g pwuser) ${containerWorkspaceFolder}/node_modules || true; fi",
   "mounts": [
     "source=devcontainer_node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
