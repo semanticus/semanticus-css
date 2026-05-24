@@ -9,7 +9,7 @@ Semanticus offers a variety of building blocks for page layout and responsive de
 
 ## Examples
 
-<!-- Bellow is a list of examples on how to combine these building blocks to create different layouts. -->
+<!-- Below is a list of examples on how to combine these building blocks to create different layouts. -->
 
 Be sure to check out the [examples section](/examples) for more complex layouts and specific use cases.
 
