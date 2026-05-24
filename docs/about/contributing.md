@@ -115,3 +115,29 @@ When the need to debug a specific test arises, you can run:
 ```bash
 npm test <path to the spec.ts file> -- --debug
 ```
+
+### Snapshot consistency and the dev container
+
+Playwright's pixel-level snapshots are sensitive to the OS and browser rendering engine. To ensure that snapshots are always generated in the same environment as CI, this project ships a **dev container** (`.devcontainer/devcontainer.json`) based on the official Playwright Docker image (`mcr.microsoft.com/playwright:v1.59.1-noble`, Ubuntu 24.04).
+
+**You must generate and update snapshots inside the dev container.** Snapshots committed from a different OS (macOS, Windows, a different Linux distro) will differ from the ones used in CI and will cause test failures on every run.
+
+#### Opening the dev container
+
+1. Install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension in VS Code.
+2. Open the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run **Dev Containers: Reopen in Container**.
+3. VS Code will build the container and run `npm ci` automatically.
+
+#### Before opening a PR
+
+If your changes affect any styles, **run the full test suite inside the dev container** and commit any snapshot changes:
+
+```bash
+# Run the tests — this will flag any visual regressions
+npm test
+
+# If the visual changes are intentional, update the snapshots
+npm run test:update-snapshots
+```
+
+Commit the updated `tests/_snapshots/` files alongside your other changes. PRs that introduce style changes without updated snapshots will fail CI.

@@ -1,0 +1,16 @@
+{
+  "name": "Playwright (Linux/Ubuntu 24.04)",
+  "image": "mcr.microsoft.com/playwright:v1.59.1-noble",
+  "postCreateCommand": "npm ci",
+  "remoteUser": "pwuser",
+  "mounts": [
+    "source=${localWorkspaceFolder}/node_modules,target=${containerWorkspaceFolder}/node_modules,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright"
+      ]
+    }
+  }
+}
