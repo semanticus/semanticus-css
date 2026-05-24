@@ -21,7 +21,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['html', {
-      outputFolder: './tmp/playwright-results',
+      outputFolder: './tests/_report',
       open: 'never',
     }],
     isCI ? ['github'] : ['line'],
