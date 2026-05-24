@@ -43,7 +43,7 @@
       text-align: center;
       border-top: var(--border-size) solid var(--border-color);
       border-left: none;
-      text-wrap: nowrap;
+      white-space: nowrap;
 
       &:first-child {
         border-left: var(--border-size) solid var(--border-color);

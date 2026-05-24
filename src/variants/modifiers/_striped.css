@@ -1,5 +1,5 @@
 .striped {
-  > :nth-child(odd) {
+  > :not(table):nth-child(odd) {
     background-color: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
   }
 
