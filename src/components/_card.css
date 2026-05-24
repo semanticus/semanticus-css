@@ -1,5 +1,6 @@
 .card,
-.pane {
+.pane,
+.panel {
   --shadow: var(--dialog-shadow);
   --color-background: var(--dialog-fill);
   --border-color: var(--dialog-border);

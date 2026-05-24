@@ -1,5 +1,6 @@
-/* Please see src/components/_card.css, since .pane shares most of its styling with .card */
+/* .pane and .panel share most of their styling with .card, check src/components/_card.css */
 
+.pane,
 .panel {
   --dialog-shadow: none;
   --shadow: none;
@@ -8,7 +9,20 @@
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
   --dialog-section-fill: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-slate-50)), transparent 90%);
+}
 
+.pane {
+  --dialog-border: transparent;
+  --border-color: transparent;
+
+  border-radius: 0;
+
+  > :is(header, footer) {
+    border-radius: 0;
+  }
+}
+
+.panel-list {
   &:is(ul) {
     list-style: none;
     margin: 0;
@@ -57,7 +71,7 @@
       text-align: center;
       border-top: var(--border-size) solid var(--border-color);
       border-left: none;
-      text-wrap-mode: nowrap;
+      text-wrap: nowrap;
 
       &:first-child {
         border-left: var(--border-size) solid var(--border-color);

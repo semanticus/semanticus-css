@@ -2,7 +2,6 @@ export * as AlertsDemo from "./alerts.demo";
 export * as LinksDemo from "./links.demo";
 export * as DropdownDemo from "./dropdown.demo";
 export * as LayoutDemo from "./layout.demo";
-export * as ListGroupDemo from "./list-group.demo";
 export * as PaginationDemo from "./pagination.demo";
 export * as SearchDemo from "./search.demo";
 export * as TypographyDemo from "./typography.demo";

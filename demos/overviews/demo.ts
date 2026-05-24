@@ -3,11 +3,10 @@ import { renderElement } from "@scripts/utils";
 import {
   DropdownDemo,
   LinksDemo,
-  ListGroupDemo,
   TypographyDemo,
   SearchDemo,
 } from "@demos/composites";
-import { CardDemo, PaneDemo } from "@demos/components";
+import { CardDemo, PanelListDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -397,7 +396,7 @@ function lists() {
 
   <section>
     <h4>Group</h4>
-    ${ListGroupDemo.main()}
+    ${PanelListDemo.main()}
   </section>
 
   <section>
@@ -716,7 +715,7 @@ ${fullBundleColorsButtons()}
 <section id="list-group">
   <h2>List Group</h2>
 
-  ${ListGroupDemo.overviewVariants()}
+  ${PanelListDemo.overviewVariants()}
 </section>
 
 <hr>

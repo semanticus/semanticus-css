@@ -1,6 +1,6 @@
-# List Group
+# Panel List
 
-List groups are implemented by adding the `.panel-list` class to a `<ul>`, `<div>`, `<section>`, etc. to create a panel containing list items.
+The `.panel-list` class can be added to a `<ul>`, `<div>`, `<section>`, etc. to create a panel containing list items. This component is ideal for displaying collections of related items, such as navigation links, options, or grouped content.
 
 ## Basic Usage
 
