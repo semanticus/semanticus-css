@@ -1,5 +1,3 @@
-// import { renderElement, classMergeAttributes } from "@scripts/utils";
-
 export function main() {
   return `<main class="layout-grid">
   <h1>Page title</h1>
