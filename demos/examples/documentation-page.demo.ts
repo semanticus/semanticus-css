@@ -1,9 +1,3 @@
-import {
-  FooterDemo,
-  AsideDemo,
-  HeaderDemo,
-  ArticleDemo,
-} from "@demos/semantics/elements";
 import { renderElement } from "@scripts/utils";
 
 export function main(tagName: string = "body", attrs: Record<string, string> = {}) {
@@ -29,7 +23,13 @@ ${renderElement("main", { class: "flex-grow-1" } , `${withSearchDropdownAndLinks
 
 ${renderElement("div", { class: "flow-h pt-d" }, `${renderElement("div", { class: "layout-grid" } , `${multipleParagraphs({ class: "full-width pb-d" })}
 
-${FooterDemo.main({ class: "border-top" })}`)}
+${renderElement("footer", { class: 'border-top' }, `<nav>
+  <p>Copyright</p>
+
+  <ul>
+    <li><a href="#!">Contact Us</a></li>
+  </ul>
+</nav>`)}`)}
 
 ${rightSidebar({
   class: "border-start d-none d-xl-flex",
