@@ -67,18 +67,35 @@ jobs:
 
             echo "target_branch=$TARGET_BRANCH" >> "$GITHUB_OUTPUT"
 
-      - name: Commit updated version references
+      - name: Create pull request for version reference updates
+        id: create-pr
         env:
           PACKAGE_VERSION: ${{ steps.verify-tag.outputs.package_version }}
           TARGET_BRANCH: ${{ steps.prepare-target-branch.outputs.target_branch }}
+          GH_TOKEN: ${{ github.token }}
         run: |
             if git diff --quiet; then
               echo "No version reference updates to commit."
+              echo "pr_number=" >> "$GITHUB_OUTPUT"
               exit 0
             fi
 
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add README.md docs src/ LICENSE NOTICE package.json
+
+            TIMESTAMP="$(date +%s)"
+            PR_BRANCH="release-sync/v$PACKAGE_VERSION-$TIMESTAMP"
+            git switch --create "$PR_BRANCH"
             git commit -m "chore: sync version references for v$PACKAGE_VERSION"
-            git push origin "HEAD:$TARGET_BRANCH"
+            git push origin "$PR_BRANCH"
+
+            gh pr create \
+              --base "$TARGET_BRANCH" \
+              --head "$PR_BRANCH" \
+              --title "chore: sync version references for v$PACKAGE_VERSION" \
+              --body "Automated update of version references following the v$PACKAGE_VERSION release."
+
+            PR_NUMBER="$(gh pr view --json number --jq '.number')"
+            echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "Created PR #$PR_NUMBER to merge version sync into $TARGET_BRANCH"
