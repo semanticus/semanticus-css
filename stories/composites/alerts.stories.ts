@@ -9,7 +9,11 @@ const meta: Meta = {
 export default meta;
 
 export const basicUsage: StoryObj = {
-  render: () => AlertsDemo.overview(),
+  render: () => `${AlertsDemo.savedItemExample()}
+
+<hr>
+
+${AlertsDemo.failedToSaveItemExample()}`,
 };
 
 export const withHgroupExample: StoryObj = {

@@ -4,17 +4,17 @@ import * as AlertsDemo from "@demos/composites/alerts.demo";
 const defaultMessage = "10 results found";
 
 export function overview() {
-  return `${AlertsDemo.inlineAlert('status', 'div', { class: 'success' }, "Item saved successfully!")}
+  return `${AlertsDemo.main('status', 'div', { class: 'success' }, "Item saved successfully!")}
 
 <hr>
 
-${AlertsDemo.inlineAlert('status', 'div', { class: 'danger ghost' }, "Failed to save Item. Please check for validation errors.")}
+${AlertsDemo.main('status', 'div', { class: 'danger ghost' }, "Failed to save Item. Please check for validation errors.")}
 
 <hr>
 
 Alerts with empty content, stay hidden
 <!-- edit the content to see it appear on the preview above -->
-${AlertsDemo.inlineAlert('status', 'div', { class: "info subtle" }, "")}`;
+${AlertsDemo.main('status', 'div', { class: "info subtle" }, "")}`;
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {

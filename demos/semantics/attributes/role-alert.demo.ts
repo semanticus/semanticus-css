@@ -4,17 +4,17 @@ import * as AlertsDemo from "@demos/composites/alerts.demo";
 const defaultMessage = "Unable to connect to the server. Please try again.";
 
 export function overview() {
-  return `${AlertsDemo.inlineAlert('alert', 'div', { class: 'danger' }, "We couldn't reserve your seat due to connection failure.<br>Please check your internet connection.")}
+  return `${AlertsDemo.main('alert', 'div', { class: 'danger' }, "We couldn't reserve your seat due to connection failure.<br>Please check your internet connection.")}
 
 <hr>
 
-${AlertsDemo.inlineAlert('alert', 'div', { class: 'warning ghost' }, "Your reserved seat will be released in 5 minutes.")}
+${AlertsDemo.main('alert', 'div', { class: 'warning ghost' }, "Your reserved seat will be released in 5 minutes.")}
 
 <hr>
 
 Alerts with empty content, stay hidden
 <!-- edit the content to see it appear on the preview above -->
-${AlertsDemo.inlineAlert('alert', 'div', { class: "info subtle" }, "")}`;
+${AlertsDemo.main('alert', 'div', { class: "info subtle" }, "")}`;
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
