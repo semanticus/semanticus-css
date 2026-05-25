@@ -20,6 +20,8 @@ ${DialogDemo.main({ open: true })}
 
 Add a [Close Button](/docs/composites/buttons#close-button) with the utility class `.float-end` to position it on the right side of the dialog.
 
+> **Note:** In case you are using the `no-utilities` bundle, `.float-end` won't be avaible, in which case using a `<header>`, as seen in the next section, is a good alternative to position the close button on the right side of the dialog.
+
 <HtmlPreviewer :code="`&lt;div style=&quot;min-height: 150px;&quot;&gt;
 ${DialogDemo.withCloseButton({ open: true })}
 &lt;/div&gt;`" />

@@ -36,11 +36,11 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', attrs, `<section class="grid mb-0">
+  return renderElement('section', attrs, `<div class="grid">
   ${AlertsDemo.withCloseButton('status', {}, 'Uploading document 1 of 3...')}
   ${AlertsDemo.withCloseButton('status', { class: 'subtle' }, 'Uploading document 1 of 3...')}
   ${AlertsDemo.withCloseButton('status', { class: 'ghost' }, 'Uploading document 1 of 3...')}
-</section>
+</div>
 
 <section class="grid">
   <div>

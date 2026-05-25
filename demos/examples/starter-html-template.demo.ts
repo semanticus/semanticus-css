@@ -1,27 +1,30 @@
 import { renderElement } from "@scripts/utils";
 
 export function main(tagName: string = "body", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, class: ["vstack", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header class="container">
+  return renderElement(tagName, { ...attrs, class: ["layout-grid", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header>
   <nav>
     <h3><a href="#">Acme Corp</a></h3>
 
     <ul>
       <li><a href="#">About</a></li>
-      <li><a href="#" role="button">Log In</a></li>
+      <li><a href="#" role="button" class="secondary">Log In</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container py-d flex-grow-1">
+<main class="py-d mb-3">
   <hgroup>
     <h1>Welcome to Semanticus CSS</h1>
     <p>A lightweight CSS framework for modern web development.</p>
   </hgroup>
 
-  <button class="secondary">Get Started</button>
+  <button>Get Started</button>
 </main>
 
-<footer class="text-center text-bg-secondary-subtle">
-  <p>Acme Corp &copy; 2026. All rights reserved.</p>
+<footer class="full-width text-bg-secondary-subtle">
+  <nav>
+    <p>Acme Corp &copy; 2026</p>
+    <a href="#">Contact Us</a>
+  </nav>
 </footer>`);
 }

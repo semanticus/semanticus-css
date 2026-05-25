@@ -147,31 +147,34 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@1.1.0/dist/semanticus.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@2.0.0/dist/semanticus.css">
 </head>
-<body class="vstack">
-  <header class="container">
+<body class="layout-grid">
+  <header>
     <nav>
       <h3><a href="#">Acme Corp</a></h3>
 
       <ul>
         <li><a href="#">About</a></li>
-        <li><a href="#" role="button">Log In</a></li>
+        <li><a href="#" role="button" class="secondary">Log In</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container py-d flex-grow-1">
+  <main class="py-d mb-3">
     <hgroup>
       <h1>Welcome to Semanticus CSS</h1>
       <p>A lightweight CSS framework for modern web development.</p>
     </hgroup>
 
-    <button class="secondary">Get Started</button>
+    <button>Get Started</button>
   </main>
 
-  <footer class="text-center text-bg-secondary-subtle">
-    <p>Acme Corp &copy; 2026. All rights reserved.</p>
+  <footer class="full-width text-bg-secondary-subtle">
+    <nav>
+      <p>Acme Corp &copy; 2026</p>
+      <a href="#">Contact Us</a>
+    </nav>
   </footer>
 </body>
 </html>

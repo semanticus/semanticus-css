@@ -16,6 +16,8 @@ The grid provides **three width levels** via three CSS Grid named lines:
 | **Breakout** | `breakout` | `.breakout` | Wider than content, up to `--layout-grid-breakout-max-width` (default `90ch`) |
 | **Full-width** | `full-width` | `.full-width` | Edge-to-edge spanning the entire viewport |
 
+> **Note:** Some of the examples below use utility classes. In case you are using the `no-utilities` bundle, be aware that these classes won't be available.
+
 ## Basic Usage
 
 Apply `.layout-grid` to your `<main>` (or `<body>`, or any wrapper). All direct children are automatically placed in the **content** column:
