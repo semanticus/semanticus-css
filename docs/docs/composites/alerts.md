@@ -6,13 +6,15 @@ Alerts are implemented using the **ARIA** roles `role="status"` and `role="alert
 >
 > For typical feedback messages, like `Profile updated` or `Failed to save, please check for validation errors.`, it's recommended to use `role="status"`, since it allows screen readers to announce the message at the next available opportunity without interrupting the user.
 
-## Inline alerts
+Check the [Toasts](/docs/composites/toasts) page for instructions on how to create **floating alerts**, and the [Modal](/docs/composites/modal#dialog-alerts) page, for **dialog alerts**.
 
-As the name implies these messages are displayed within the content of a page, simply add `role="status"` or `role="alert"` to any HTML element in combination with **variant** classes to create an inline alert.
+## Basic Usage
+
+Simply add `role="status"` or `role="alert"` to any HTML element in combination with **variant** classes to create an alert message.
 
 > **Note:** Alerts without content will be hidden, this way you can add the element to the DOM from the start and it will only be shown and announced when you update its content, without the need to worry about adding/removing it from the DOM.
 
-<HtmlPreviewer :code="AlertsDemo.inlineAlertsExample()"/>
+<HtmlPreviewer :code="AlertsDemo.overview()"/>
 
 ## With title and description
 
@@ -36,35 +38,11 @@ Check out [.icon-*](/docs/components/icons) components area for more icons.
 
 <HtmlPreviewer :code="AlertsDemo.withIconAndOrCloseButtonExample()" />
 
-## Floating alerts
+## Little bit of everything
 
-Also known as **Toasts**, these types of alerts are designed to appear temporarily and overlay the content of a page.
+References: [Icons](/docs/components/icons), [Close Button](/docs/composites/buttons#close-button), [Danger Intent](/docs/variants/intent/danger), [Ghost Modifier](/docs/variants/modifiers/ghost), [Font Size Utility Classes](/docs/utilities/typography#font-size)
 
-Add the `popover` attribute to the element, and set the `data-placement` attribute to specify where the toast should appear on the screen, and make use of the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API), for basic open/close behavior, follow these steps:
-
-1. Give your HTML element a unique `id` attribute
-2. Add the `popover` attribute plus the `role="status"` and `data-placement` attributes to specify where the toast should appear on the screen.
-3. Create an opening button with `popovertarget="your-modal-id"` (alternatively, you can use JS to `document.querySelector('#your-modal-id').showPopover()`)
-4. The toast will display at the designated position
-
-<HtmlPreviewer :code="AlertsDemo.overviewShowToasts()" :codeCollapsed="true" />
-
-## Dialog alerts
-
-Dialog alerts are modal windows that require user interaction before they can be dismissed. They are often used for critical messages or actions that require confirmation from the user.
-
-- Use `<dialog role="alertdialog">` for critical decisions.
-- Provide `aria-labelledby` pointing to the dialog title and `aria-describedby` pointing to the message text.
-- Ensure the dialog contains at least one focusable element (e.g., action buttons).
-- The user must interact with the dialog to dismiss it; do not close on backdrop click.
-
-> **Warning:** Be mindful that the role `role="alertdialog"` tells screen readers to treat the dialog as a high-priority alert, immediately interrupting the current reading to announce its contents, so it's important to consider the use of this role versus simply using a less intrusive [Modal](/docs/composites/modal).
-
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
-${AlertsDemo.showDialogAlert()}
-&lt;/div&gt;`" />
-
-> **Remark:** When it comes to these types of dialogs that interrupt the user’s workflow, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="alertdialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` so you only need to change the role to `alertdialog`.
+<HtmlPreviewer :code="AlertsDemo.littleBitOfEverything()" />
 
 <script setup>
 import { AlertsDemo } from "@demos/composites";
