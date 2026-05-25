@@ -18,6 +18,7 @@
     margin-bottom: 0;
 
     &:not(:first-child) {
+      /* when a button is next to an input that has a border */
       margin-left: calc(var(--border-size) * -1);
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;

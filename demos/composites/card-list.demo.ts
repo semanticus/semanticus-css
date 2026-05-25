@@ -1,5 +1,4 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import * as NavDemo from "@demos/semantics/elements/nav.demo";
 
 function renderLi(attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement('li', attrs, slot);
@@ -18,7 +17,7 @@ export function unorderedList(attrs: Record<string, string> = {}, slot: string =
 
 export function divs(attrs: Record<string, string> = {}, slot: string = '') {
   return main('div', { role: 'list', ...attrs }, slot || `<div>Item 1</div>
-<div aria-current="true">Item 2</div>
+<div aria-current="true"><p>Item 2</p></div>
 <div>Item 3</div>
 <div>Item 4</div>`);
 }
