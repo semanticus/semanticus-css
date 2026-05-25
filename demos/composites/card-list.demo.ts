@@ -1,12 +1,11 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import * as NavDemo from "@demos/semantics/elements/nav.demo";
 
 function renderLi(attrs: Record<string, string> = {}, slot: string = '') {
   return renderElement('li', attrs, slot);
 }
 
 export function main(tagName: string = 'div', attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, classMergeAttributes('card-list', attrs), slot);
+  return renderElement(tagName, classMergeAttributes('card', attrs), slot);
 }
 
 export function unorderedList(attrs: Record<string, string> = {}, slot: string = '') {
@@ -17,8 +16,8 @@ export function unorderedList(attrs: Record<string, string> = {}, slot: string =
 }
 
 export function divs(attrs: Record<string, string> = {}, slot: string = '') {
-  return main('div', attrs, slot || `<div>Item 1</div>
-<div aria-current="true">Item 2</div>
+  return main('div', { role: 'list', ...attrs }, slot || `<div>Item 1</div>
+<div aria-current="true"><p>Item 2</p></div>
 <div>Item 3</div>
 <div>Item 4</div>`);
 }
@@ -30,11 +29,7 @@ ${divs(attrs)}`);
 }
 
 export function overviewHorizontalStack(attrs: Record<string, string> = {}) {
-  return `${NavDemo.main({}, unorderedList(attrs))}
-
-<hr>
-
-${NavDemo.main({}, divs(attrs))}`;
+  return `${divs({ ...attrs, role: 'group' })}`;
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {

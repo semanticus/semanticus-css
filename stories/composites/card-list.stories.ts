@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { CardListDemo } from "@demos/components";
+import { CardListDemo } from "@demos/composites";
 
 const meta: Meta = {
-  title: "Composites/List Group",
+  title: "Composites/Card List",
   parameters: {},
 };
 
