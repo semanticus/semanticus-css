@@ -8,18 +8,18 @@ const palettes = [];
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overviews/components/layout-grid.demo/overview?theme=${theme} - visual snapshot`, async ({ page }) => {
-    await page.goto(`/overviews/components/layout-grid.demo/overview?theme=${theme}`);
-    const main = page.locator('.layout-grid:first-of-type');
+  test(`/overviews/components/content-grid.demo/overview?theme=${theme} - visual snapshot`, async ({ page }) => {
+    await page.goto(`/overviews/components/content-grid.demo/overview?theme=${theme}`);
+    const main = page.locator('.content-grid:first-of-type');
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot({ animations: 'disabled', fullPage: true, maxDiffPixelRatio: 0.02 });
   });
 
   palettes.forEach((palette) => {
-    test(`/overviews/components/layout-grid.demo/overview?theme=${theme}&palette=${palette} - visual snapshot`, async ({ page }) => {
-      await page.goto(`/overviews/components/layout-grid.demo/overview?theme=${theme}&palette=${palette}`);
-      const main = page.locator('.layout-grid:first-of-type');
+    test(`/overviews/components/content-grid.demo/overview?theme=${theme}&palette=${palette} - visual snapshot`, async ({ page }) => {
+      await page.goto(`/overviews/components/content-grid.demo/overview?theme=${theme}&palette=${palette}`);
+      const main = page.locator('.content-grid:first-of-type');
 
       await expect(main).toBeVisible();
       await expect(page).toHaveScreenshot({ animations: 'disabled', fullPage: true, maxDiffPixelRatio: 0.02 });

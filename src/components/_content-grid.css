@@ -1,5 +1,5 @@
 /*!
- * Layout Grid
+ * Content Grid
  *
  * A CSS Grid layout pattern that eliminates the need for container/wrapper divs.
  * Inspired by Kevin Powell's content grid technique (https://www.youtube.com/watch?v=c13gpBrnGEw)
@@ -14,60 +14,60 @@
  * so their children follow the same content / breakout / full-width rules.
  */
 
-.layout-grid {
-  --layout-grid-padding-inline: var(--spacing);
-  --layout-grid-content-max-width: 70ch;
-  --layout-grid-breakout-max-width: 90ch;
+.content-grid {
+  --content-grid-padding-inline: var(--spacing);
+  --content-grid-content-max-width: 70ch;
+  --content-grid-breakout-max-width: 90ch;
 
   /* Internal computed value */
-  --layout-grid-breakout-size: max(
+  --content-grid-breakout-size: max(
     0px,
     calc(
-      (var(--layout-grid-breakout-max-width) - var(--layout-grid-content-max-width)) / 2
+      (var(--content-grid-breakout-max-width) - var(--content-grid-content-max-width)) / 2
     )
   );
 
   display: grid;
   grid-template-columns:
     [full-width-start]
-    minmax(var(--layout-grid-padding-inline), 1fr)
+    minmax(var(--content-grid-padding-inline), 1fr)
     [breakout-start]
-    minmax(0px, var(--layout-grid-breakout-size))
+    minmax(0px, var(--content-grid-breakout-size))
     [content-start]
     min(
-      var(--layout-grid-content-max-width),
-      100% - var(--layout-grid-padding-inline) * 2
+      var(--content-grid-content-max-width),
+      100% - var(--content-grid-padding-inline) * 2
     )
     [content-end]
-    minmax(0px, var(--layout-grid-breakout-size))
+    minmax(0px, var(--content-grid-breakout-size))
     [breakout-end]
-    minmax(var(--layout-grid-padding-inline), 1fr)
+    minmax(var(--content-grid-padding-inline), 1fr)
     [full-width-end];
 }
 
 /* ── Default placement: all direct children → content column ── */
-.layout-grid > :not(.breakout, .full-width) {
+.content-grid > :not(.breakout, .full-width) {
   grid-column: content;
 }
 
 /* ── Breakout: spans the breakout area (wider than content) ── */
-.layout-grid > .breakout {
+.content-grid > .breakout {
   grid-column: breakout;
 }
 
-/* ── Full-width: spans edge-to-edge, becomes a nested layout grid ── */
-.layout-grid > .full-width {
+/* ── Full-width: spans edge-to-edge, becomes a nested content grid ── */
+.content-grid > .full-width {
   grid-column: full-width;
   display: grid;
   grid-template-columns: inherit;
 }
 
 /* Children of any .full-width (at any nesting depth) follow the same rules */
-.layout-grid .full-width > :not(.breakout, .full-width) {
+.content-grid .full-width > :not(.breakout, .full-width) {
   grid-column: content;
 }
 
-.layout-grid .full-width > .breakout {
+.content-grid .full-width > .breakout {
   grid-column: breakout;
 }
 
@@ -81,14 +81,14 @@
  * Trade-off: .breakout and .full-width children inside a nested .full-width
  * will not span wider than the content column (graceful degradation).
  */
-.layout-grid .full-width > .full-width {
+.content-grid .full-width > .full-width {
   grid-column: full-width;
   display: grid;
   grid-template-columns:
     [full-width-start breakout-start content-start]
     min(
-      var(--layout-grid-content-max-width),
-      100% - var(--layout-grid-padding-inline) * 2
+      var(--content-grid-content-max-width),
+      100% - var(--content-grid-padding-inline) * 2
     )
     [content-end breakout-end full-width-end];
   justify-content: center;
