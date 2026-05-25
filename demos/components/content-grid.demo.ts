@@ -1,9 +1,9 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(tagName: string = "main", attrs: Record<string, string> = {}, slot: string = "") {
-  return renderElement(tagName, classMergeAttributes('layout-grid', attrs), slot || `<h1>Page title</h1>
+  return renderElement(tagName, classMergeAttributes('content-grid', attrs), slot || `<h1>Page title</h1>
 <p>This paragraph stays within the content column automatically.</p>
-<p>Every direct child is constrained to "--layout-grid-content-max-width".</p>`);
+<p>Every direct child is constrained to "--content-grid-content-max-width".</p>`);
 }
 
 export function breakout(tagName: string = "main", attrs: Record<string, string> = {}) {
@@ -32,7 +32,7 @@ export function fullWidth(tagName: string = "main", attrs: Record<string, string
 export function nested(tagName: string = "main", attrs: Record<string, string> = {}) {
   return main(tagName, attrs, `<section class="full-width text-bg-primary py-d">
   <h2>Services</h2>
-  <p>All children of a ".full-width" inherit the layout grid.</p>
+  <p>All children of a ".full-width" inherit the content grid.</p>
   <div class="breakout text-bg-contrast my-d p-d">
     This card breaks out wider than the surrounding content.
   </div>
@@ -42,7 +42,7 @@ export function nested(tagName: string = "main", attrs: Record<string, string> =
 export function nestedFullWidth(tagName: string = "main", attrs: Record<string, string> = {}) {
   return main(tagName, attrs, `<section class="full-width text-bg-primary py-d">
   <h2>Outer full-width section</h2>
-  <p>This section spans edge-to-edge and creates a nested layout grid.</p>
+  <p>This section spans edge-to-edge and creates a nested content grid.</p>
 
   <div class="full-width text-bg-contrast mb-d py-d">
     <h3>Nested full-width section</h3>

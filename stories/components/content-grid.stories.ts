@@ -1,29 +1,29 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { LayoutGridDemo } from "@demos/components";
+import { ContentGridDemo } from "@demos/components";
 
 const meta: Meta = {
-  title: "Components/Layout Grid",
+  title: "Components/Content Grid",
   parameters: {},
 };
 
 export default meta;
 
 export const basicUsage: StoryObj = {
-  render: () => LayoutGridDemo.main(),
+  render: () => ContentGridDemo.main(),
 };
 
 export const breakout: StoryObj = {
-  render: () => LayoutGridDemo.breakout(),
+  render: () => ContentGridDemo.breakout(),
 };
 
 export const fullWidth: StoryObj = {
-  render: () => LayoutGridDemo.fullWidth(),
+  render: () => ContentGridDemo.fullWidth(),
 };
 
 export const nested: StoryObj = {
-  render: () => LayoutGridDemo.nested(),
+  render: () => ContentGridDemo.nested(),
 };
 
 export const nestedFullWidth: StoryObj = {
-  render: () => LayoutGridDemo.nestedFullWidth(),
+  render: () => ContentGridDemo.nestedFullWidth(),
 };

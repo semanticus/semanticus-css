@@ -1,7 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
 export function main(tagName: string = "body", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, { ...attrs, class: ["layout-grid", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header>
+  return renderElement(tagName, { ...attrs, class: ["content-grid", ...(attrs.class ? [attrs.class] : [])].join(' ') }, `<header>
   <nav>
     <h3><a href="#">Acme Corp</a></h3>
 

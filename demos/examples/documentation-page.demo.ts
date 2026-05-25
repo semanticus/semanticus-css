@@ -21,7 +21,7 @@ ${renderElement("main", { class: "flex-grow-1" } , `${withSearchDropdownAndLinks
   </button>
 </nav>
 
-${renderElement("div", { class: "flow-h pt-d" }, `${renderElement("div", { class: "layout-grid" } , `${multipleParagraphs({ class: "full-width pb-d" })}
+${renderElement("div", { class: "flow-h pt-d" }, `${renderElement("div", { class: "content-grid" } , `${multipleParagraphs({ class: "full-width pb-d" })}
 
 ${renderElement("footer", { class: 'border-top' }, `<nav>
   <p>Copyright</p>

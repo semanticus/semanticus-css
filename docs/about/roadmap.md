@@ -27,7 +27,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
 | ✅ | `.icon-*` component |
-| ✅ | `.layout-grid` component inspired by **Kevin Powell**'s content grid technique |
+| ✅ | `.content-grid` component inspired by **Kevin Powell**'s content grid technique |
 | ✅ | Extended `.card` to implement **card lists** |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.carousel` component |
@@ -139,7 +139,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Toasts interaction |
 | ✅ | Alert hide/show interaction |
 | ✅ | Include **card lists** in Full & Colors Demo Overview |
-| ✅ | `.layout-grid` Demo Overview |
+| ✅ | `.content-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid System Overview |
 | ⌛ | Tab interaction |
