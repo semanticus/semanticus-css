@@ -8,8 +8,8 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
   maxDiffPixelRatio: 0.02
 };
 
-test('/semantics/attributes/role-status.demo/overviewShowToasts - visual snapshot', async ({ page }) => {
-  await page.goto('/semantics/attributes/role-status.demo/overviewShowToasts');
+test('/composites/toasts.demo - interaction', async ({ page }) => {
+  await page.goto('/composites/toasts.demo/overviewShowToasts');
   const buttonTopStart = page.locator('[popovertarget="top-start-toast"].contrast');
   const buttonTopCenter = page.locator('[popovertarget="top-center-toast"].contrast');
   const buttonTopEnd = page.locator('[popovertarget="top-end-toast"].contrast');

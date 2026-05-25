@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { AlertsDemo } from '@demos/composites';
-import { RoleStatusDemo } from '@demos/semantics';
 
 const meta: Meta = {
   title: "Composites/Alerts",
@@ -9,10 +8,26 @@ const meta: Meta = {
 
 export default meta;
 
-export const inlineAlerts: StoryObj = {
-  render: () => AlertsDemo.inlineAlerts(),
+export const basicUsage: StoryObj = {
+  render: () => `${AlertsDemo.savedItemExample()}
+
+<hr>
+
+${AlertsDemo.failedToSaveItemExample()}`,
 };
 
-export const overviewShowToasts: StoryObj = {
-  render: () => RoleStatusDemo.overviewShowToasts(),
+export const withHgroupExample: StoryObj = {
+  render: () => AlertsDemo.withHgroupExample(),
+};
+
+export const withCloseButtonExample: StoryObj = {
+  render: () => AlertsDemo.withCloseButtonExample(),
+};
+
+export const withIconAndOrCloseButtonExample: StoryObj = {
+  render: () => AlertsDemo.withIconAndOrCloseButtonExample(),
+};
+
+export const littleBitOfEverything: StoryObj = {
+  render: () => AlertsDemo.littleBitOfEverything(),
 };

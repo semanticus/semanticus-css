@@ -18,7 +18,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactor **Modal**, so that it doesn't depend on a card styled `<article>` |
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ✅ | `aria-disabled="true"` |
-| ✅ | `role="status"` and `role="alert"` |
+| ✅ | `role="status"` and `role="alert"` to implement **alerts** and **toasts** |
 
 ## Components
 
@@ -27,7 +27,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
 | ✅ | `.icon-*` component |
-| ✅ | `.layout-grid` component |
+| ✅ | `.layout-grid` component inspired by **Kevin Powell**'s content grid technique |
 | ✅ | Extended `.card` to implement **card lists** |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.carousel` component |
@@ -71,7 +71,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Popover-based sidebar patterns |
 | ✅ | Invoker Commands API modal patterns |
 | ✅ | Dropdown menu primitives |
-| ✅ | Floating Alert |
+| ✅ | Toasts |
+| ✅ | Alert hide/show interaction |
 | ✅ | Alert Dialog |
 | ✅ | Anchor Positioning tooltips |
 | ⌛ | Tabs |
@@ -99,7 +100,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Grid system documentation |
 | ✅ | `.icon-*` component documentation |
 | ✅ | Alerts composite documentation |
-| ✅ | List Group composite documentation |
+| ✅ | Toasts composite documentation |
+| ✅ | Pagination composite documentation |
+| ✅ | Card List composite documentation |
 | 🚧 | Navigation composite documentation |
 | ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
@@ -133,11 +136,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
 | ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
-| ✅ | Floating Alert interaction |
+| ✅ | Toasts interaction |
+| ✅ | Alert hide/show interaction |
 | ✅ | Include **card lists** in Full & Colors Demo Overview |
 | ✅ | `.layout-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
-| ⌛ | Grid Demo Overview |
+| ⌛ | Grid System Overview |
 | ⌛ | Tab interaction |
 | ⌛ | Carousel interaction |
 | ⌛ | Popper interaction |

@@ -20,6 +20,23 @@ ${DialogDemo.showModal()}
 >
 > So you can be sure that if you follow the steps above you have all you need to create an accessible modal dialog.
 
+## Dialog alerts
+
+Dialog alerts are modal windows that require user interaction before they can be dismissed. They are often used for critical messages or actions that require confirmation from the user.
+
+- Use `<dialog role="alertdialog">` for critical decisions.
+- Provide `aria-labelledby` pointing to the dialog title and `aria-describedby` pointing to the message text.
+- Ensure the dialog contains at least one focusable element (e.g., action buttons).
+- The user must interact with the dialog to dismiss it; do not close on backdrop click.
+
+> **Warning:** Be mindful that the role `role="alertdialog"` tells screen readers to treat the dialog as a high-priority alert, immediately interrupting the current reading to announce its contents, so it's important to consider the use of this role versus simply using a less intrusive [Modal](/docs/composites/modal).
+
+<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
+${DialogDemo.showDialogAlert()}
+&lt;/div&gt;`" />
+
+> **Remark:** When it comes to these types of dialogs that interrupt the user’s workflow, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="alertdialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` so you only need to change the role to `alertdialog`.
+
 <script setup>
 import { DialogDemo } from "@demos/semantics/elements";
 </script>

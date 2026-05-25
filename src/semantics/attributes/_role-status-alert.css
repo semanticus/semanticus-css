@@ -13,12 +13,24 @@
   gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
 
-  &:has(> :nth-child(2)) {
-    grid-template-columns: 1fr auto;
+  &:empty {
+    display: none;
   }
 
-  &:has(> :nth-child(3)) {
+  &:has(> :nth-child(2):last-child) {
+    grid-template-columns: 1fr auto;
+
+    &:has(> :first-child:empty) {
+      display: none;
+    }
+  }
+
+  &:has(> :nth-child(3):last-child) {
     grid-template-columns: auto 1fr auto;
+
+    &:has(> :nth-child(2):empty) {
+      display: none;
+    }
   }
 
   padding: var(--spacing);

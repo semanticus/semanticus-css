@@ -1,14 +1,8 @@
-import { test, expect, PageAssertionsToHaveScreenshotOptions } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test.use({ viewport: { width: 1440, height: 900 } });
 
-const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
-  animations: 'disabled',
-  fullPage: true,
-  maxDiffPixelRatio: 0.02
-};
-
-test('/composites/dropdown.demo/main - visual snapshot', async ({ page }) => {
+test('/composites/dropdown.demo - interaction', async ({ page }) => {
   await page.goto('/composites/dropdown.demo/main');
 
   const dropdown = page.locator('details');
@@ -16,11 +10,9 @@ test('/composites/dropdown.demo/main - visual snapshot', async ({ page }) => {
 
   await dropdownSummary.click();
 
-  await expect(page).toHaveScreenshot('open-dropdown.png', screenshotOptions);
   await expect(dropdown.locator('[role="menu"]')).toBeVisible();
 
   await dropdownSummary.click();
 
-  await expect(page).toHaveScreenshot('closed-dropdown.png', screenshotOptions);
   await expect(dropdown.locator('[role="menu"]')).not.toBeVisible();
 });

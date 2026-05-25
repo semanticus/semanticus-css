@@ -327,8 +327,8 @@ export default defineConfig({
           items: [
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Buttons", link: "/docs/composites/buttons" },
-            { text: "Card", link: "/docs/composites/card" },
             { text: "Card List", link: "/docs/composites/card-list" },
+            { text: "Card", link: "/docs/composites/card" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
@@ -336,6 +336,7 @@ export default defineConfig({
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
             { text: "Search", link: "/docs/composites/search" },
+            { text: "Toasts", link: "/docs/composites/toasts" },
             { text: "Tooltip", link: "/docs/composites/tooltip" },
             { text: "Typography", link: "/docs/composites/typography" },
             {

@@ -4,44 +4,25 @@ title: 'role="alert"'
 
 # [role="alert"]
 
-Adding `role="alert"` to an element will stylize it as an **alert** component and make it accessible to screen readers as an alert message.
+Adding `role="alert"` to an element will stylize it as an **alert** message, for more examples on how you can combine this role with other attributes and elements to create different types of alerts, check out the [Alerts](/docs/composites/alerts) composite documentation.
 
-> **Accessibility:** Whenever you need to provide critical announcements, like **error** and **warning** messages, `role="alert"`, that require immediate attention, should be used.
+> **Accessibility:** This role will make screen readers interrupt their current reading to announce the alert message, so it should be used only for critical messages like `We couldn't reserve your seat due to connection failure. Please check your internet connection.`, or time-sensitive information like `Your reserved seat will be released in 5 minutes.`.
 
-- Please keep in mind that this role will make screen readers interrupt their current reading to announce the alert message, so it should be used only for important and time-sensitive information.
-
-- For less sensitive information, consider using [[role="status"]](/docs/semantics/attributes/role-status) instead, which will wait until the user finishes their current reading before announcing the message.
+For typical feedback messages, like `Profile updated` or `Failed to save, please check for validation errors.` the recommended role is [role="status"](/docs/semantics/attributes/role-status).
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleAlertDemo.main()" />
+Simply add `role="alert"` to any HTML element in combination with **variant** classes to create an inline alert message.
 
-## With Close Button
+> **Note:** Elements without content will be hidden, this way you can add the element to the DOM from the start and it will only be shown and announced when you update its content, without the need to worry about adding/removing it from the DOM.
 
-Use a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, which will justify its contents to the left and right, to create an alert message with a close button.
-
-<HtmlPreviewer :code="RoleAlertDemo.withCloseButton()" />
-
-## As Toast
-
-Add the `popover` attribute to the element, and set the `data-placement` attribute to specify where the toast should appear on the screen, and make use of the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API), for basic open/close behavior, follow these steps:
-
-1. Give your HTML element a unique `id` attribute
-2. Add the `popover` attribute plus the `role="alert"` and `data-placement` attributes to specify where the toast should appear on the screen.
-3. Create an opening button with `popovertarget="your-modal-id"` (alternatively, you can use JS to `document.querySelector('#your-modal-id').showPopover()`)
-4. The toast will display at the designated position
-
-<HtmlPreviewer :code="RoleAlertDemo.overviewShowToasts()" :codeCollapsed="true" />
-
-## With title and description
-
-<HtmlPreviewer :code="RoleAlertDemo.withHgroup()" />
+<HtmlPreviewer :code="RoleAlertDemo.overview()" />
 
 ## Intent Variants
 
 To convey **intent** and **importance**, alert messages can be styled with different variants:
 
-<HtmlPreviewer :code="RoleAlertDemo.intentVariants()" />
+<HtmlPreviewer :code="RoleAlertDemo.intentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 

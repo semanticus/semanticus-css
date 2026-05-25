@@ -9,26 +9,11 @@ const meta: Meta = {
 export default meta;
 
 export const basicUsage: StoryObj = {
-  args: { html: RoleAlertDemo.main('div', { 'aria-live': 'polite' }) },
+  args: { html: RoleAlertDemo.overview() },
   render: (args) => args.html,
 };
 
-export const withCloseButton: StoryObj = {
-  args: { html: RoleAlertDemo.withCloseButton() },
-  render: (args) => args.html,
-};
-
-export const overviewToasts: StoryObj = {
-  args: { html: RoleAlertDemo.overviewShowToasts() },
-  render: (args) => args.html,
-};
-
-export const withTitleAndDescription: StoryObj = {
-  args: { html: RoleAlertDemo.withHgroup() },
-  render: (args) => args.html,
-};
-
-export const variants: StoryObj = {
+export const overviewVariants: StoryObj = {
   args: { html: RoleAlertDemo.overviewVariants() },
   render: (args) => args.html,
 };
