@@ -1,127 +1,30 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
-import * as ButtonDemo from "@demos/semantics/elements/button.demo";
+import * as AlertsDemo from "@demos/composites/alerts.demo";
 
 const defaultMessage = "10 results found";
 
-export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "status" }, slot || defaultMessage);
-}
-
-export function overview(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return `${main(tagName, attrs, slot)}
+export function overview() {
+  return `${AlertsDemo.inlineAlert('status', 'div', { class: 'success' }, "Item saved successfully!")}
 
 <hr>
 
-Elements with empty content, stay hidden.
-${renderElement(tagName, { ...attrs, role: "status" }, '')}`;
-}
-
-export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  const mergedAttrs = { id: "status-toast", ...attrs, popover: 'popover', role: "status" };
-
-  return withIconAndCloseButton(tagName, mergedAttrs, slot || `<p>${defaultMessage}</p>`);
-}
-
-export function showToast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  const mergedAttrs = { id: "status-toast", ...attrs };
-
-  return `<button popovertarget="${mergedAttrs.id}" class="contrast">Show Status Toast</button>
-
-${toast(tagName, mergedAttrs, slot)}`;
-}
-
-export function overviewShowToasts() {
-  return `<section class="grid" style="padding-block: 70px;">
-  <button popovertarget="top-start-toast" class="contrast">Top Start</button>
-  <button popovertarget="top-center-toast" class="contrast">Top Center</button>
-  <button popovertarget="top-end-toast" class="contrast">Top End</button>
-  <button popovertarget="middle-start-toast" class="contrast">Middle Start</button>
-</section>
-
-<section class="grid" style="padding-block: 70px;">
-  <button popovertarget="middle-center-toast" class="contrast">Middle Center</button>
-  <button popovertarget="middle-end-toast" class="contrast">Middle End</button>
-  <button popovertarget="bottom-start-toast" class="contrast">Bottom Start</button>
-  <button popovertarget="bottom-center-toast" class="contrast">Bottom Center</button>
-  <button popovertarget="bottom-end-toast" class="contrast">Bottom End</button>
-</section>
-
-${toast('div', { id: "top-start-toast", class: "primary", 'data-placement': "top-start" }, '<p>Top Start</p>')}
-${toast('div', { id: "top-center-toast", class: "secondary", 'data-placement': "top-center" }, '<p>Top Center</p>')}
-${toast('div', { id: "top-end-toast", class: "contrast", 'data-placement': "top-end" }, '<p>Top End</p>')}
-${toast('div', { id: "middle-start-toast", class: "success", 'data-placement': "middle-start" }, '<p>Middle Start</p>')}
-${toast('div', { id: "middle-center-toast", class: "info", 'data-placement': "middle-center" }, '<p>Middle Center</p>')}
-${toast('div', { id: "middle-end-toast", class: "warning", 'data-placement': "middle-end" }, '<p>Middle End</p>')}
-${toast('div', { id: "bottom-start-toast", class: "danger", 'data-placement': "bottom-start" }, '<p>Bottom Start</p>')}
-${toast('div', { id: "bottom-center-toast", class: "success ghost", 'data-placement': "bottom-center" }, '<p>Bottom Center</p>')}
-${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement': "bottom-end" }, '<p>Bottom End</p>')}
-`;
-}
-
-export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return main(tagName, attrs, `${slot || `<p>${defaultMessage}</p>`}
-${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
-}
-
-export function overviewWithCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  const alert1 = main(tagName, attrs, `${slot || `<p>${defaultMessage}</p>`}
-${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
-
-  const alert2 = main(tagName, attrs, `${slot || `<p></p>`}
-${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
-
-  return `${alert1}
+${AlertsDemo.inlineAlert('status', 'div', { class: 'danger ghost' }, "Failed to save Item. Please check for validation errors.")}
 
 <hr>
 
-Elements with two children, stay hidden if the first child is empty.
-${alert2}`;
-}
-
-export function withIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return main(tagName, attrs, `<span class="icon-checkbox" aria-hidden="true"></span>
-
-${slot || `<p>${defaultMessage}</p>`}
-
-${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
-}
-
-export function overviewWithIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  const alert1 = main(tagName, attrs, `<span class="icon-checkbox" aria-hidden="true"></span>
-
-${slot || `<p>${defaultMessage}</p>`}
-
-${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
-
-  const alert2 = main(tagName, attrs, `<span class="icon-checkbox" aria-hidden="true"></span>
-
-<p></p>
-
-${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
-
-  return `${alert1}
-
-<hr>
-
-Elements with 3 children, stay hidden if the second child is empty.
-${alert2}`;
-}
-
-export function withHgroup() {
-  return withCloseButton('div', { class: 'contrast' }, `<hgroup>
-  <h2>You appear to be offline</h2>
-  <p>Please check your internet connection, to get the latest updates.</p>
-</hgroup>`);
+Alerts with empty content, stay hidden
+<!-- edit the content to see it appear on the preview above -->
+${AlertsDemo.inlineAlert('status', 'div', { class: "info subtle" }, "")}`;
 }
 
 export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${withCloseButton('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs), '<p>Uploading document 1 of 3...</p>')}
-${withCloseButton('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), `<p>${defaultMessage}</p>`)}
-${withCloseButton('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), `<p>${defaultMessage}</p>`)}
-${withCloseButton('div', classMergeAttributes(`success ${modifier}`.trim(), attrs), '<p>Item saved successfully!</p>')}
-${withCloseButton('div', classMergeAttributes(`info ${modifier}`.trim(), attrs), '<p>We are fetching your latest account details...</p>')}
-${withCloseButton('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs), '<p>Your session will expire in 2 minutes.</p>')}
-${withCloseButton('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs), '<p>Unable to connect to the server. Please try again.</p>')}`;
+    return `${AlertsDemo.withCloseButton('status', classMergeAttributes(`primary ${modifier}`.trim(), attrs), 'Uploading document 1 of 3...')}
+${AlertsDemo.withCloseButton('status', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), `${defaultMessage}`)}
+${AlertsDemo.withCloseButton('status', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), `${defaultMessage}`)}
+${AlertsDemo.withCloseButton('status', classMergeAttributes(`success ${modifier}`.trim(), attrs), 'Item saved successfully!')}
+${AlertsDemo.withCloseButton('status', classMergeAttributes(`info ${modifier}`.trim(), attrs), 'We are fetching your latest account details...')}
+${AlertsDemo.withCloseButton('status', classMergeAttributes(`warning ${modifier}`.trim(), attrs), 'Your session will expire in 2 minutes.')}
+${AlertsDemo.withCloseButton('status', classMergeAttributes(`danger ${modifier}`.trim(), attrs), 'Unable to connect to the server. Please try again.')}`;
 }
 
 export function subtleVariants(attrs: Record<string, string> = {}) {
@@ -134,9 +37,9 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
   return renderElement('section', attrs, `<section class="grid mb-0">
-  ${withCloseButton()}
-  ${withCloseButton('div', { class: 'subtle' })}
-  ${withCloseButton('div', { class: 'ghost' })}
+  ${AlertsDemo.withCloseButton('status')}
+  ${AlertsDemo.withCloseButton('status', { class: 'subtle' })}
+  ${AlertsDemo.withCloseButton('status', { class: 'ghost' })}
 </section>
 
 <section class="grid">

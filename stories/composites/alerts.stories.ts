@@ -9,10 +9,22 @@ const meta: Meta = {
 
 export default meta;
 
-export const inlineAlerts: StoryObj = {
-  render: () => AlertsDemo.inlineAlerts(),
+export const inlineAlertsExample: StoryObj = {
+  render: () => AlertsDemo.inlineAlertsExample(),
+};
+
+export const withHgroupExample: StoryObj = {
+  render: () => AlertsDemo.withHgroupExample(),
+};
+
+export const withCloseButtonExample: StoryObj = {
+  render: () => AlertsDemo.withCloseButtonExample(),
+};
+
+export const withIconAndCloseButtonExample: StoryObj = {
+  render: () => AlertsDemo.withIconAndCloseButtonExample(),
 };
 
 export const overviewShowToasts: StoryObj = {
-  render: () => RoleStatusDemo.overviewShowToasts(),
+  render: () => AlertsDemo.overviewShowToasts(),
 };

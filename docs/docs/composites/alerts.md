@@ -1,22 +1,43 @@
 # Alerts
 
-Alerts are implemented using the ARIA roles `role="status"` and `role="alert"`, which are designed to provide feedback to users.
+Alerts are implemented using the **ARIA** roles `role="status"` and `role="alert"`, which are designed to provide feedback to users.
 
-Check out [[role="status"]](/docs/semantics/attributes/role-status) and [[role="alert"]](/docs/semantics/attributes/role-alert) for more details and examples.
+> **Accessibility:** Since `role="alert"` disrupts the user’s workflow and is announced immediately by screen readers, it should only be used for critical messages like `We couldn't reserve your seat due to connection failure. Please check your internet connection.`, or time-sensitive information like `Your reserved seat will be released in 5 minutes.`.
+>
+> For typical feedback messages, like `Profile updated` or `Failed to save, please check for validation errors.`, it's recommended to use `role="status"`, since it allows screen readers to announce the message at the next available opportunity without interrupting the user.
 
 ## Inline alerts
 
-Inline alerts are displayed within the content of a page, simply add `role="status"` or `role="alert"` to any HTML element to create an inline alert. The choice between these two **ARIA** roles depends on the urgency and importance of the message being conveyed.
+As the name implies these messages are displayed within the content of a page, simply add `role="status"` or `role="alert"` to any HTML element in combination with **variant** classes to create an inline alert.
 
-Please see [[role="status"]](/docs/semantics/attributes/role-status) and [[role="alert"]](/docs/semantics/attributes/role-alert) to help you make a more informed decision on which role to use.
+> **Note:** Alerts without content will be hidden, this way you can add the element to the DOM from the start and it will only be shown and announced when you update its content, without the need to worry about adding/removing it from the DOM.
 
-<HtmlPreviewer :code="AlertsDemo.inlineAlerts()"/>
+<HtmlPreviewer :code="AlertsDemo.inlineAlertsExample()"/>
+
+## With title and description
+
+<HtmlPreviewer :code="AlertsDemo.withHgroupExample()" />
+
+## With Close Button
+
+<HtmlPreviewer :code="AlertsDemo.withCloseButtonExample()" />
+
+## With an Icon and a Close Button
+
+<HtmlPreviewer :code="AlertsDemo.withIconAndCloseButtonExample()" />
 
 ## Floating alerts
 
-Also known as toast notifications, floating alerts are designed to appear temporarily and overlay the content of a page. Simply add `popover` attribute to any HTML element with `role="status"` or `role="alert"` to create a floating alert.
+Also known as **Toasts**, these types of alerts are designed to appear temporarily and overlay the content of a page.
 
-<HtmlPreviewer :code="AlertsDemo.floatingAlerts()"/>
+Add the `popover` attribute to the element, and set the `data-placement` attribute to specify where the toast should appear on the screen, and make use of the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API), for basic open/close behavior, follow these steps:
+
+1. Give your HTML element a unique `id` attribute
+2. Add the `popover` attribute plus the `role="status"` and `data-placement` attributes to specify where the toast should appear on the screen.
+3. Create an opening button with `popovertarget="your-modal-id"` (alternatively, you can use JS to `document.querySelector('#your-modal-id').showPopover()`)
+4. The toast will display at the designated position
+
+<HtmlPreviewer :code="AlertsDemo.overviewShowToasts()" :codeCollapsed="true" />
 
 ## Dialog alerts
 
