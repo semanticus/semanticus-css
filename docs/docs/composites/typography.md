@@ -6,6 +6,8 @@ The best practice is to start with an `<h1>`, then an `<h2>` and so forth, don't
 
 In case you need, for example, an `<h2>` to have the size of an `<h4>`, you can apply the `.fs-4` utility class to it. This maintains a proper semantic structure for accessibility and SEO, while achieving the desired visual appearance.
 
+> **Note:** In case you are using the `no-utilities` bundle, `.fs-4` or any other **utility** class won't be available.
+
 See [Typography Utilities](/docs/utilities/typography) for more details.
 
 ## Headings
