@@ -7,7 +7,12 @@ export function inlineAlerts() {
 
 <hr>
 
-${RoleAlertDemo.main('div', { class: 'danger' }, "Unable to connect to the server. Please try again.")}`;
+${RoleAlertDemo.main('div', { class: 'danger' }, "Unable to connect to the server. Please try again.")}
+
+<hr>
+
+Alerts with empty content, stay hidden.
+<div class="info" role="status"></div>`;
 }
 
 export function floatingAlerts() {

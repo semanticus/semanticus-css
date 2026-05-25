@@ -14,13 +14,27 @@ Adding `role="alert"` to an element will stylize it as an **alert** component an
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleAlertDemo.main()" />
+> **Note:** `role="alert"` will hide the element if it doesn't contain any content, this way you add the element to the DOM from the start and it will only be announced when you update its content, without the need to worry about adding/removing it from the DOM.
+
+<HtmlPreviewer :code="RoleAlertDemo.overview()" />
 
 ## With Close Button
 
-Use a [Close Button](/docs/composites/buttons#close-button) inside a `<nav>`, which will justify its contents to the left and right, to create an alert message with a close button.
+When an element has two children (message and close button) `role="alert"` will set a two-column layout, where the first child will take up the remaining space, and the second will fit its content.
 
-<HtmlPreviewer :code="RoleAlertDemo.withCloseButton()" />
+Since text alone doesn't count as a child element, if we want the message to take up the remaining space, we need to wrap it in an element (like `<p>`), and then we can add a [Close Button](/docs/composites/buttons#close-button) as the second child.
+
+<HtmlPreviewer :code="RoleAlertDemo.overviewWithCloseButton()" />
+
+> **Note:** Check out the [As Toast](/docs/semantics/attributes/role-alert#as-toast) section for an example on how to you can make the close button actually close the alert message.
+
+## With an Icon and a Close Button
+
+Similarly to the previous example, but with an [icon](/docs/components/icons) added to the left of the text.
+
+In case of 3 children, the first and last will fit their content, and the middle one will take up the remaining space.
+
+<HtmlPreviewer :code="RoleAlertDemo.overviewWithIconAndCloseButton()" />
 
 ## As Toast
 

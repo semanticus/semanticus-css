@@ -14,12 +14,12 @@ export const basicUsage: StoryObj = {
 };
 
 export const withCloseButton: StoryObj = {
-  args: { html: RoleStatusDemo.withCloseButton() },
+  args: { html: RoleStatusDemo.overviewWithCloseButton() },
   render: (args) => args.html,
 };
 
 export const withIconAndCloseButton: StoryObj = {
-  args: { html: RoleStatusDemo.withIconAndCloseButton() },
+  args: { html: RoleStatusDemo.overviewWithIconAndCloseButton() },
   render: (args) => args.html,
 };
 

@@ -7,6 +7,15 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
   return renderElement(tagName, { ...attrs, role: "alert" }, slot || defaultMessage);
 }
 
+export function overview(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  return `${main(tagName, attrs, slot)}
+
+<hr>
+
+Elements with empty content, stay hidden.
+${renderElement(tagName, { ...attrs, role: "alert" }, '')}`;
+}
+
 export function toast(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
   const mergedAttrs = { id: "alert-toast", ...attrs, popover: 'popover', role: "alert" };
 
@@ -50,16 +59,52 @@ ${toast('div', { id: "bottom-end-toast", class: "danger ghost", 'data-placement'
 }
 
 export function withCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "alert" }, `${slot || `<p>${defaultMessage}</p>`}
+  return main(tagName, attrs, `${slot || `<p>${defaultMessage}</p>`}
 ${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
 }
 
+export function overviewWithCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  const alert1 = main(tagName, attrs, `${slot || `<p>${defaultMessage}</p>`}
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+
+  const alert2 = main(tagName, attrs, `${slot || `<p></p>`}
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+
+  return `${alert1}
+
+<hr>
+
+Elements with two children, stay hidden if the first child is empty.
+${alert2}`;
+}
+
 export function withIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "alert" }, `<span class="icon-invalid" aria-hidden="true"></span>
+  return main(tagName, attrs, `<span class="icon-invalid" aria-hidden="true"></span>
 
 ${slot || `<p>${defaultMessage}</p>`}
 
 ${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+}
+
+export function overviewWithIconAndCloseButton(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
+  const alert1 = main(tagName, attrs, `<span class="icon-invalid" aria-hidden="true"></span>
+
+${slot || `<p>${defaultMessage}</p>`}
+
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+
+  const alert2 = main(tagName, attrs, `<span class="icon-invalid" aria-hidden="true"></span>
+
+<p></p>
+
+${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+
+  return `${alert1}
+
+<hr>
+
+Elements with 3 children, stay hidden if the second child is empty.
+${alert2}`;
 }
 
 export function withHgroup() {

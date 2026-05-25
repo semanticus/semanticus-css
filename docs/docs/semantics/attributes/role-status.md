@@ -10,13 +10,19 @@ Adding `role="status"` to an element will stylize it as an **alert** component a
 
 ## Basic Usage
 
-<HtmlPreviewer :code="RoleStatusDemo.main()" />
+> **Note:** `role="status"` will hide the element if it doesn't contain any content, this way you add the element to the DOM from the start and it will only be announced when you update its content, without the need to worry about adding/removing it from the DOM.
+
+<HtmlPreviewer :code="RoleStatusDemo.overview()" />
 
 ## With Close Button
 
-`role="status"` will stretch the first child and let the second child fit its content, so in order for the text to take up the remaining space we need to wrap it in an element (like `<p>`), and then we can add a [Close Button](/docs/composites/buttons#close-button) as the second child.
+When an element has two children (message and close button) `role="status"` will set a two-column layout, where the first child will take up the remaining space, and the second will fit its content.
 
-<HtmlPreviewer :code="RoleStatusDemo.withCloseButton()" />
+Since text alone doesn't count as a child element, if we want the message to take up the remaining space, we need to wrap it in an element (like `<p>`), and then we can add a [Close Button](/docs/composites/buttons#close-button) as the second child.
+
+<HtmlPreviewer :code="RoleStatusDemo.overviewWithCloseButton()" />
+
+> **Note:** Check out the [As Toast](/docs/semantics/attributes/role-status#as-toast) section for an example on how to you can make the close button actually close the status message.
 
 ## With an Icon and a Close Button
 
@@ -24,7 +30,7 @@ Similarly to the previous example, but with an [icon](/docs/components/icons) ad
 
 In case of 3 children, the first and last will fit their content, and the middle one will take up the remaining space.
 
-<HtmlPreviewer :code="RoleStatusDemo.withIconAndCloseButton()" />
+<HtmlPreviewer :code="RoleStatusDemo.overviewWithIconAndCloseButton()" />
 
 ## As Toast
 
