@@ -21,8 +21,8 @@ export const withCloseButtonExample: StoryObj = {
   render: () => AlertsDemo.withCloseButtonExample(),
 };
 
-export const withIconAndCloseButtonExample: StoryObj = {
-  render: () => AlertsDemo.withIconAndCloseButtonExample(),
+export const withIconAndOrCloseButtonExample: StoryObj = {
+  render: () => AlertsDemo.withIconAndOrCloseButtonExample(),
 };
 
 export const overviewShowToasts: StoryObj = {

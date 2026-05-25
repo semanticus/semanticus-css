@@ -20,11 +20,21 @@ As the name implies these messages are displayed within the content of a page, s
 
 ## With Close Button
 
+When an element has two children (message and close button) `role="status|alert"` will set a two-column layout, where the first child will take up the remaining space, and the second will fit its content.
+
+Since text alone doesn't count as a child element, we need to wrap it in an element (like `<p>`) followed by a [Close Button](/docs/composites/buttons#close-button), this will cause the text to take up the remaining space and push the button to the end.
+
 <HtmlPreviewer :code="AlertsDemo.withCloseButtonExample()" />
 
-## With an Icon and a Close Button
+## With an Icon or Close Button
 
-<HtmlPreviewer :code="AlertsDemo.withIconAndCloseButtonExample()" />
+When an element contains 3 children, `role="status|alert"` will set a three-column layout, where the first and last children will fit their content, and the middle one will take up the remaining space.
+
+In case you want to add an icon to the left and no close button on the right, since two children will cause the first element to strech, we need to add an empty element as the last child with `aria-hidden="true"` to make sure it is ignored by assistive technologies, this way the first child (icon) and the last child (empty element) will fit their content, and the middle one (message) will take up the remaining space.
+
+Check out [.icon-*](/docs/components/icons) components area for more icons.
+
+<HtmlPreviewer :code="AlertsDemo.withIconAndOrCloseButtonExample()" />
 
 ## Floating alerts
 

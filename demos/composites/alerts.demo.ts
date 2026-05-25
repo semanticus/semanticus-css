@@ -30,13 +30,25 @@ export function withCloseButtonExample(attrs: Record<string, string> = {}) {
   return withCloseButton('status', attrs, "10 results found");
 }
 
-export function withIconAndCloseButtonExample(attrs: Record<string, string> = {}) {
-  return withIconAndCloseButton('status', "search", attrs, "10 results found");
+export function withIconAndOrCloseButtonExample(attrs: Record<string, string> = {}) {
+  return `${withIconAndCloseButton('status', "search", attrs, "10 results found")}
+
+<hr>
+
+${withIcon('status', "search", attrs, "10 results found")}`;
 }
 
 export function withCloseButton(type: 'status' | 'alert' = 'status', attrs: Record<string, string> = {}, message: string = '') {
   return inlineAlert(type, 'div', attrs, `<p>${message}</p>
 ${ButtonDemo.closeButton({ popovertarget: attrs.id || undefined })}`);
+}
+
+export function withIcon(type: 'status' | 'alert' = 'status', iconName: string = "search", attrs: Record<string, string> = {}, message: string = '') {
+  return inlineAlert(type, 'div', attrs, `<span class="icon-${iconName}" aria-hidden="true"></span>
+
+<p>${message}</p>
+
+<span aria-hidden="true"></span>`);
 }
 
 export function withIconAndCloseButton(type: 'status' | 'alert' = 'status', iconName: string = "search", attrs: Record<string, string> = {}, message: string = '') {
