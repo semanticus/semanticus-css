@@ -70,6 +70,8 @@ export function validationStates() {
   </ul>
 </details>
 
+<hr>
+
 <details>
   <summary aria-haspopup="menu" aria-invalid="true">Debated classification: Plasma</summary>
   <ul role="menu">
