@@ -2,13 +2,13 @@
 
 **Semanticus CSS** is inspired by the semantic and accessible foundations of **Pico CSS** and the flexibility of utility composition patterns popularized by **Bootstrap**.
 
-**Semanticus CSS** aims to address the friction that often appears shortly after installing **Pico CSS**, when you want to customize `spacing`, `layout`, `colors`, and other CSS properties. It does so by combining **Bootstrap**-style utilities adapted to the same CSS variable system used by **Pico CSS**.
+It aims to address the friction that often appears shortly after installing **Pico CSS**, when you want to customize `spacing`, `layout`, `colors`, and other CSS properties. It does so by combining **Bootstrap**-style utilities adapted to the same **CSS variable system**.
 
 ## Why not just use Bootstrap?
 
 Or any other full-fledged CSS framework, for that matter.
 
-**Semanticus CSS**'s appeal, is not simply its smaller form factor. The real value lies in its **semantic-first** and **accessibility-focused** styling approach, which helps developers build beautiful and accessible interfaces without having to go off on a tangent to study the complexities of **ARIA** patterns and accessibility implementation details.
+**Semanticus CSS** is not appealing solely because of its small footprint. Its real value lies in its **semantic-first** and **accessibility-focused** styling approach, helping developers build beautiful interfaces while gradually guiding them toward accessibility best practices without overwhelming them with the complexities of **ARIA** patterns and implementation details.
 
 ### Size Comparison
 

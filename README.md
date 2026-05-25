@@ -196,19 +196,23 @@ Semanticus CSS targets modern browsers based on the following [Browserslist](htt
 - Firefox ESR
 - No dead browsers
 
-## Limitations
-
-Semanticus CSS is inspired by the semantic and accessible foundations of Pico CSS￼ and the flexibility of utility-first composition patterns popularized by Bootstrap.
-
-It is not a full UI component framework. Semanticus CSS intentionally avoids shipping exhaustive pre-built components or JavaScript-driven interactions, favoring semantic HTML, composable styling utilities, and framework-agnostic integration instead.
-
-It does however provide documentation and examples on how to implement common UI patterns using semantic HTML and ARIA attributes, along with a small set of utility classes for visual variation and layout.
-
 ## Development
 
 Check out this [How to setup the project](docs/about/contributing.md#how-to-setup-the-project) inside the contributing guide.
 
-## Size comparison
+## About
+
+**Semanticus CSS** is inspired by the semantic and accessible foundations of **Pico CSS** and the flexibility of utility composition patterns popularized by **Bootstrap**.
+
+It aims to address the friction that often appears shortly after installing **Pico CSS**, when you want to customize `spacing`, `layout`, `colors`, and other CSS properties. It does so by combining **Bootstrap**-style utilities adapted to the same **CSS variable system**.
+
+### Why not just use Bootstrap or Pico CSS?
+
+> Or any other full-fledged CSS framework, for that matter.
+
+**Semanticus CSS** is not appealing solely because of its small footprint. Its real value lies in its **semantic-first** and **accessibility-focused** styling approach, helping developers build beautiful interfaces while gradually guiding them toward accessibility best practices without overwhelming them with the complexities of **ARIA** patterns and implementation details.
+
+### Size comparison
 
 | Bundle | Gzip |
 | --- | --- |
