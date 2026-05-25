@@ -16,6 +16,8 @@ Use `[role="group"]` to indicate that the card list items are part of a related 
 
 > **Warning:** Avoid using `[role="group"]` with `<ul>` or `<ol>` elements, as it can interfere with assistive technologies' ability to interpret the list structure correctly. Instead, use a `<div>` or `<section>` with the `.card` class and apply `[role="group"]` to that container.
 
+> **Note:** If what you need is a list of links and buttons, wrap it in a `<nav>` element to preserve the navigation landmark for assistive technologies, see [Pagination](/docs/composites/pagination) for an example.
+
 <HtmlPreviewer :code="CardListDemo.overviewHorizontalStack()" />
 
 ## Variants
