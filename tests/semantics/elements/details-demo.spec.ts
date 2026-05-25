@@ -1,14 +1,8 @@
-import { test, expect, PageAssertionsToHaveScreenshotOptions } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test.use({ viewport: { width: 1440, height: 900 } });
 
-const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
-  animations: 'disabled',
-  fullPage: true,
-  maxDiffPixelRatio: 0.02
-};
-
-test('/semantics/elements/details.demo/entangledAccordions - visual snapshot', async ({ page }) => {
+test('/semantics/elements/details.demo - interaction', async ({ page }) => {
   await page.goto('/semantics/elements/details.demo/entangledAccordions');
 
   const firstEntangledAccordion = page.locator('[name="accordion-group"]:nth-of-type(1)');

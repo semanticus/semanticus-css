@@ -72,6 +72,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Invoker Commands API modal patterns |
 | ✅ | Dropdown menu primitives |
 | ✅ | Toasts |
+| ✅ | Alert hide/show interaction |
 | ✅ | Alert Dialog |
 | ✅ | Anchor Positioning tooltips |
 | ⌛ | Tabs |
@@ -136,6 +137,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.danger` variant combinations |
 | ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | ✅ | Toasts interaction |
+| ✅ | Alert hide/show interaction |
 | ✅ | Include **card lists** in Full & Colors Demo Overview |
 | ✅ | `.layout-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |

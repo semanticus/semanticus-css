@@ -8,7 +8,7 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
   maxDiffPixelRatio: 0.02
 };
 
-test('/composites/toasts.demo/overviewShowToasts - visual snapshot', async ({ page }) => {
+test('/composites/toasts.demo - interaction', async ({ page }) => {
   await page.goto('/composites/toasts.demo/overviewShowToasts');
   const buttonTopStart = page.locator('[popovertarget="top-start-toast"].contrast');
   const buttonTopCenter = page.locator('[popovertarget="top-center-toast"].contrast');
