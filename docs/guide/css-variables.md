@@ -159,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --shadow:
+  --box-shadow:
     0.0145rem 0.029rem 0.174rem light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
     0.0335rem 0.067rem 0.402rem light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)),
     0.0625rem 0.125rem 0.75rem  light-dark(rgb(129 145 181 / 0.03),   rgb(7 9 12 / 0.03)),
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
   --dialog-background-color: light-dark(white, #181c25);
   --dialog-border-color: light-dark(var(--border-color), #181c25);
   --dialog-section-background-color: light-dark(#fbfcfc, #2a3140);
-  --dialog-box-shadow: var(--shadow);
+  --dialog-box-shadow: var(--box-shadow);
   --dialog-overlay-background-color: light-dark(oklch(from #e8eaed l c h / 0.75), oklch(from #07090c l c h / 0.75));
 }
 ```
@@ -253,7 +253,6 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --menu-background-color: light-dark(white, #181c25);
   --menu-border-color: light-dark(#eff1f4, #202632);
-  --menu-box-shadow: var(--shadow);
   --menu-color: var(--color);
   --menu-background-color-hover: light-dark(#eff1f4, #202632);
 }

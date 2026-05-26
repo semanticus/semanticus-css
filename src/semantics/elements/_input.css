@@ -129,12 +129,12 @@ textarea {
   --background-color: var(--input-background-color);
   --border-color: var(--input-border-color);
   --color: var(--input-color);
-  --shadow: none;
+  --_input-box-shadow: none;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
   background-color: var(--background-color);
-  box-shadow: var(--shadow);
+  box-shadow: var(--_input-box-shadow);
   color: var(--color);
   font-weight: var(--font-weight);
   transition:
@@ -176,7 +176,8 @@ input:not(
     [readonly]
   ):focus,
 :where(select, textarea):not([readonly]):focus {
-  --shadow: 0 0 0 var(--outline-width) var(--input-border-color-focus);
+  --_input-box-shadow: 0 0 0 var(--outline-width)
+    var(--input-border-color-focus);
 }
 
 input:not([type="submit"], [type="button"], [type="reset"])[disabled],
@@ -260,7 +261,8 @@ input:not([type="checkbox"], [type="radio"])[aria-invalid="false"]:is(
   ),
 select[aria-invalid="false"]:is(:active, :focus),
 textarea[aria-invalid="false"]:is(:active, :focus) {
-  --shadow: 0 0 0 var(--outline-width) var(--success-background-color);
+  --_input-box-shadow: 0 0 0 var(--outline-width)
+    var(--success-background-color);
 }
 
 :is(input, select, textarea)[aria-invalid="true"] {
@@ -275,7 +277,7 @@ input:not([type="checkbox"], [type="radio"])[aria-invalid="true"]:is(
   ),
 select[aria-invalid="true"]:is(:active, :focus),
 textarea[aria-invalid="true"]:is(:active, :focus) {
-  --shadow: 0 0 0 var(--outline-width) var(--danger-background-color);
+  --_input-box-shadow: 0 0 0 var(--outline-width) var(--danger-background-color);
 }
 
 :where(
