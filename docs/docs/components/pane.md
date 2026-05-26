@@ -1,6 +1,10 @@
 # Pane
 
-Panes are versatile components that can be used to group related content, actions, or information within a container. They provide a structured way to organize and present content while maintaining a consistent visual hierarchy.
+`.pane` is a basic building block for creating structured content areas in your UI. It serves as a container that has `padding`, `margin-bottom` and a `background-color`.
+
+Use it to group related content together, create sections within a page, or to highlight important information and extend it with different variants and modifiers to suit the needs of your application.
+
+Check out the [.content-grid](/docs/components/content-grid#full-width) or [Examples](/examples/) pages for examples on how you can use panes in a layout.
 
 ## Basic Usage
 
