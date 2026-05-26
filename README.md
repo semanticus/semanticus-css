@@ -164,7 +164,7 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
     <button>Get Started</button>
   </main>
 
-  <footer class="full-width text-bg-secondary-subtle">
+  <footer class="full-width pane">
     <nav>
       <p>Acme Corp &copy; 2026</p>
       <a href="#">Contact Us</a>

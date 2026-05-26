@@ -31,6 +31,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.content-grid` component |
 | ✅ | `.auto-grid` component |
 | ✅ | Extended `.card` to implement **card lists** |
+| ✅ | `.pane` component |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.carousel` component |
 | ⌛ | `.badge` component |
@@ -141,6 +142,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Toasts interaction |
 | ✅ | Alert hide/show interaction |
 | ✅ | Include **card lists** in Full & Colors Demo Overview |
+| ✅ | Include `.pane` in Full Colors Demo Overview |
 | ✅ | `.content-grid` Demo Overview |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid System Overview |

@@ -1,22 +1,43 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 
-export function main(tagName: string = "div", attrs: Record<string, string> = {}, title: string = 'Card title') {
-  return renderElement(tagName, classMergeAttributes('card', attrs), `<hgroup>
+export function main(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+  title: string = "Card title",
+) {
+  return renderElement(
+    tagName,
+    classMergeAttributes("card", attrs),
+    `<hgroup>
   <h2>${title}</h2>
   <p>This is the subtitle</p>
 </hgroup>
-<p>This is the main content of the card.</p>`);
+<p>This is the main content of the card.</p>`,
+  );
 }
 
-export function withHeader(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, classMergeAttributes('card', attrs), `<header>
+export function withHeader(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    tagName,
+    classMergeAttributes("card", attrs),
+    `<header>
   <h2>Card title</h2>
 </header>
-<p>This is a sample Card</p>`);
+<p>This is a sample Card</p>`,
+  );
 }
 
-export function withFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, classMergeAttributes('card', attrs), `<hgroup>
+export function withFooter(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    tagName,
+    classMergeAttributes("card", attrs),
+    `<hgroup>
   <h2>Card title</h2>
   <p>Card description</p>
 </hgroup>
@@ -24,18 +45,26 @@ export function withFooter(tagName: string = "div", attrs: Record<string, string
 <footer>
   <button class="secondary">Cancel</button>
   <button>Confirm</button>
-</footer>`);
+</footer>`,
+  );
 }
 
-export function withHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
-  return renderElement(tagName, classMergeAttributes('card', attrs), `<header>
+export function withHeaderAndFooter(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    tagName,
+    classMergeAttributes("card", attrs),
+    `<header>
   <h2>Card title</h2>
 </header>
 <p>Cards support optional header and footer sections that are visually distinct from the main content.</p>
 <footer>
   <button class="secondary">Cancel</button>
   <button>Confirm</button>
-</footer>`);
+</footer>`,
+  );
 }
 
 export function htmlElements() {
@@ -57,51 +86,73 @@ export function htmlElements() {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', attrs, `<section class="auto-grid mb-0">
+  return renderElement(
+    "section",
+    attrs,
+    `<div class="auto-grid">
   ${withHeaderAndFooter()}
-  ${withHeaderAndFooter('div', { class: 'subtle' })}
-  ${withHeaderAndFooter('div', { class: 'ghost' })}
-</section>
+  ${withHeaderAndFooter("div", { class: "subtle" })}
+  ${withHeaderAndFooter("div", { class: "ghost" })}
+</div>
 
-<section class="auto-grid">
+<div class="auto-grid">
   ${withHeaderAndFooterIntentVariants()}
   ${withHeaderAndFooterSubtleVariants()}
   ${withHeaderAndFooterGhostVariants()}
-</section>`);
+</div>`,
+  );
 }
 
-export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-  return renderElement('section', {}, `${main('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${main('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${main('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${main('div', classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${main('div', classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${main('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${main('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`);
+export function intentVariants(
+  attrs: Record<string, string> = {},
+  modifier: string = "",
+) {
+  return renderElement(
+    "section",
+    {},
+    `${main("div", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${main("div", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${main("div", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${main("div", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${main("div", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${main("div", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${main("div", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
+  );
 }
 
 export function subtleVariants(attrs: Record<string, string> = {}) {
-  return intentVariants(attrs, 'subtle');
+  return intentVariants(attrs, "subtle");
 }
 
 export function ghostVariants(attrs: Record<string, string> = {}) {
-  return intentVariants(attrs, 'ghost');
+  return intentVariants(attrs, "ghost");
 }
 
-export function withHeaderAndFooterIntentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-  return renderElement('section', {}, `${withHeaderAndFooter('div', classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${withHeaderAndFooter('div', classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${withHeaderAndFooter('div', classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${withHeaderAndFooter('div', classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${withHeaderAndFooter('div', classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${withHeaderAndFooter('div', classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${withHeaderAndFooter('div', classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`);
+export function withHeaderAndFooterIntentVariants(
+  attrs: Record<string, string> = {},
+  modifier: string = "",
+) {
+  return renderElement(
+    "section",
+    {},
+    `${withHeaderAndFooter("div", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${withHeaderAndFooter("div", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${withHeaderAndFooter("div", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${withHeaderAndFooter("div", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${withHeaderAndFooter("div", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${withHeaderAndFooter("div", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${withHeaderAndFooter("div", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
+  );
 }
 
-export function withHeaderAndFooterSubtleVariants(attrs: Record<string, string> = {}) {
-  return withHeaderAndFooterIntentVariants(attrs, 'subtle');
+export function withHeaderAndFooterSubtleVariants(
+  attrs: Record<string, string> = {},
+) {
+  return withHeaderAndFooterIntentVariants(attrs, "subtle");
 }
 
-export function withHeaderAndFooterGhostVariants(attrs: Record<string, string> = {}) {
-  return withHeaderAndFooterIntentVariants(attrs, 'ghost');
+export function withHeaderAndFooterGhostVariants(
+  attrs: Record<string, string> = {},
+) {
+  return withHeaderAndFooterIntentVariants(attrs, "ghost");
 }

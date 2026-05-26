@@ -42,25 +42,30 @@ const docsBase = isCustomDomain
           : "/"),
     );
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === "production";
 
 export default defineConfig({
   base: docsBase,
   // appearance: 'force-auto',
-  head: !isProd ? [] : [
-    [
-      'script',
-      { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG_ID}` }
-    ],
-    [
-      'script',
-      {},
-      `window.dataLayer = window.dataLayer || [];
+  head: !isProd
+    ? []
+    : [
+        [
+          "script",
+          {
+            async: "",
+            src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG_ID}`,
+          },
+        ],
+        [
+          "script",
+          {},
+          `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${process.env.GTAG_ID}');`
-    ]
-  ],
+      gtag('config', '${process.env.GTAG_ID}');`,
+        ],
+      ],
   ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
@@ -353,28 +358,82 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: "&lt;a&gt;", link: "/docs/semantics/elements/a" },
-                { text: "&lt;article&gt;", link: "/docs/semantics/elements/article" },
-                { text: "&lt;aside&gt;", link: "/docs/semantics/elements/aside" },
+                {
+                  text: "&lt;article&gt;",
+                  link: "/docs/semantics/elements/article",
+                },
+                {
+                  text: "&lt;aside&gt;",
+                  link: "/docs/semantics/elements/aside",
+                },
                 { text: "&lt;body&gt;", link: "/docs/semantics/elements/body" },
-                { text: "&lt;button&gt;", link: "/docs/semantics/elements/button" },
-                { text: "&lt;details&gt;", link: "/docs/semantics/elements/details" },
-                { text: "&lt;dialog&gt;", link: "/docs/semantics/elements/dialog" },
-                { text: "&lt;img&gt; / &lt;video&gt; / &lt;audio&gt;", link: "/docs/semantics/elements/embedded" },
-                { text: "&lt;fieldset&gt;", link: "/docs/semantics/elements/fieldset" },
-                { text: "&lt;figure&gt;", link: "/docs/semantics/elements/figure" },
-                { text: "&lt;header&gt;", link: "/docs/semantics/elements/header" },
-                { text: "&lt;hgroup&gt;", link: "/docs/semantics/elements/hgroup" },
+                {
+                  text: "&lt;button&gt;",
+                  link: "/docs/semantics/elements/button",
+                },
+                {
+                  text: "&lt;details&gt;",
+                  link: "/docs/semantics/elements/details",
+                },
+                {
+                  text: "&lt;dialog&gt;",
+                  link: "/docs/semantics/elements/dialog",
+                },
+                {
+                  text: "&lt;img&gt; / &lt;video&gt; / &lt;audio&gt;",
+                  link: "/docs/semantics/elements/embedded",
+                },
+                {
+                  text: "&lt;fieldset&gt;",
+                  link: "/docs/semantics/elements/fieldset",
+                },
+                {
+                  text: "&lt;figure&gt;",
+                  link: "/docs/semantics/elements/figure",
+                },
+                {
+                  text: "&lt;header&gt;",
+                  link: "/docs/semantics/elements/header",
+                },
+                {
+                  text: "&lt;hgroup&gt;",
+                  link: "/docs/semantics/elements/hgroup",
+                },
                 { text: "&lt;hr&gt;", link: "/docs/semantics/elements/hr" },
-                { text: "&lt;input&gt;", link: "/docs/semantics/elements/input" },
-                { text: "&lt;label&gt;", link: "/docs/semantics/elements/label" },
-                { text: "&lt;ul&gt; / &lt;ol&gt; / &lt;dl&gt;", link: "/docs/semantics/elements/lists" },
+                {
+                  text: "&lt;input&gt;",
+                  link: "/docs/semantics/elements/input",
+                },
+                {
+                  text: "&lt;label&gt;",
+                  link: "/docs/semantics/elements/label",
+                },
+                {
+                  text: "&lt;ul&gt; / &lt;ol&gt; / &lt;dl&gt;",
+                  link: "/docs/semantics/elements/lists",
+                },
                 { text: "&lt;main&gt;", link: "/docs/semantics/elements/main" },
                 { text: "&lt;nav&gt;", link: "/docs/semantics/elements/nav" },
-                { text: "&lt;progress&gt;", link: "/docs/semantics/elements/progress" },
-                { text: "&lt;section&gt;", link: "/docs/semantics/elements/section" },
-                { text: "&lt;select&gt;", link: "/docs/semantics/elements/select" },
-                { text: "&lt;table&gt;", link: "/docs/semantics/elements/table" },
-                { text: "&lt;textarea&gt;", link: "/docs/semantics/elements/textarea" },
+                {
+                  text: "&lt;progress&gt;",
+                  link: "/docs/semantics/elements/progress",
+                },
+                {
+                  text: "&lt;section&gt;",
+                  link: "/docs/semantics/elements/section",
+                },
+                {
+                  text: "&lt;select&gt;",
+                  link: "/docs/semantics/elements/select",
+                },
+                {
+                  text: "&lt;table&gt;",
+                  link: "/docs/semantics/elements/table",
+                },
+                {
+                  text: "&lt;textarea&gt;",
+                  link: "/docs/semantics/elements/textarea",
+                },
               ],
             },
             {
@@ -438,6 +497,7 @@ export default defineConfig({
             { text: ".container", link: "/docs/components/container" },
             { text: ".content-grid", link: "/docs/components/content-grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
+            { text: ".pane", link: "/docs/components/pane" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
         },

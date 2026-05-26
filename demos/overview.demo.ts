@@ -7,7 +7,7 @@ import {
   SearchDemo,
   CardListDemo,
 } from "@demos/composites";
-import { CardDemo } from "@demos/components";
+import { CardDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -511,7 +511,10 @@ ${links()}
 }
 
 export function palettesExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 ${buttons()}
 
 <hr>
@@ -562,11 +565,18 @@ ${links()}
   ${CardDemo.main()}
 
   ${CardDemo.withHeaderAndFooter()}
-</section>`);
+</section>`,
+  );
 }
 
-export function fullBundle(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+export function fullBundle(
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 
 ${buttons()}
 
@@ -726,6 +736,15 @@ ${fullBundleColorsButtons()}
   <h2>Cards</h2>
 
   ${CardDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
+<section id="panes">
+  <h2>Panes</h2>
+
+  ${PaneDemo.overviewVariants()}
 </section>
 
 <hr>
