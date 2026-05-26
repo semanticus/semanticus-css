@@ -1,6 +1,4 @@
 progress {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   display: inline-block;
   appearance: none;
   width: 100%;

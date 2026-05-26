@@ -77,10 +77,6 @@ textarea {
   box-shadow: none;
 }
 
-::-ms-expand {
-  display: none;
-}
-
 [type="file"],
 [type="range"] {
   padding: 0;
@@ -294,9 +290,7 @@ textarea[aria-invalid="true"]:is(:active, :focus) {
 }
 
 input::placeholder,
-input::-webkit-input-placeholder,
 textarea::placeholder,
-textarea::-webkit-input-placeholder,
 select:invalid {
   color: var(--input-placeholder-color);
   opacity: 1;
@@ -309,11 +303,6 @@ textarea {
 }
 
 select {
-  &::-ms-expand {
-    border: 0;
-    background-color: transparent;
-  }
-
   &:not([multiple], [size]) {
     padding-right: calc(var(--input-spacing-horizontal) + 1.5rem);
     padding-left: var(--input-spacing-horizontal);

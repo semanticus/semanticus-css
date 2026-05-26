@@ -30,7 +30,6 @@ samp {
 }
 
 pre {
-  -ms-overflow-style: scrollbar;
   color: var(--color);
   display: block;
   font-style: normal;

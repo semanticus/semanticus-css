@@ -9,7 +9,7 @@ button,
 [type="submit"],
 [type="reset"],
 [type="button"] {
-  -webkit-appearance: button;
+  appearance: auto;
 }
 
 button,
