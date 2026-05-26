@@ -1,3 +1,18 @@
+[type="checkbox"],
+[type="radio"] {
+  --border-width: var(--checkbox-border-width);
+}
+
+[type="checkbox"][role="switch"] {
+  --border-width: var(--switch-border-width);
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="range"] {
+  accent-color: var(--primary-background-color);
+}
+
 label:has([type="checkbox"], [type="radio"]) {
   width: fit-content;
   cursor: pointer;

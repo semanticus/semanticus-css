@@ -84,6 +84,18 @@
   }
 }
 
+/* Buttons inside search/group combos get wider horizontal padding */
+[role="search"] button,
+[role="search"] [type="submit"],
+[role="search"] [type="button"],
+[role="search"] [role="button"],
+[role="group"] button,
+[role="group"] [type="submit"],
+[role="group"] [type="button"],
+[role="group"] [role="button"] {
+  --input-spacing-horizontal: var(--group-button-spacing-horizontal);
+}
+
 @supports selector(:has(*)) {
   [role="search"],
   [role="group"] {
@@ -122,5 +134,39 @@
     & [role="button"]:focus {
       box-shadow: none;
     }
+  }
+
+  /* Secondary button focus in groups */
+  [role="search"]:has(
+    button.secondary:focus,
+    [type="submit"].secondary:focus,
+    [type="button"].secondary:focus,
+    [role="button"].secondary:focus
+  ),
+  [role="group"]:has(
+    button.secondary:focus,
+    [type="submit"].secondary:focus,
+    [type="button"].secondary:focus,
+    [role="button"].secondary:focus
+  ) {
+    --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
+      var(--secondary-focus-ring-color);
+  }
+
+  /* Contrast button focus in groups */
+  [role="search"]:has(
+    button.contrast:focus,
+    [type="submit"].contrast:focus,
+    [type="button"].contrast:focus,
+    [role="button"].contrast:focus
+  ),
+  [role="group"]:has(
+    button.contrast:focus,
+    [type="submit"].contrast:focus,
+    [type="button"].contrast:focus,
+    [role="button"].contrast:focus
+  ) {
+    --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
+      var(--contrast-focus-ring-color);
   }
 }

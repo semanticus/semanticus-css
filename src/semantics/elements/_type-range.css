@@ -1,4 +1,8 @@
 [type="range"] {
+  accent-color: var(--primary-background-color);
+}
+
+[type="range"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

@@ -12,6 +12,14 @@
   tab-size: 4;
 }
 
+::selection {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    white 75%
+  );
+}
+
 /* modern-normalize */
 *,
 ::before,

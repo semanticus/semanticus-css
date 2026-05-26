@@ -275,6 +275,21 @@
   --h4-font-size: 1.25rem;
   --h5-font-size: 1.125rem;
   --h6-font-size: 1rem;
+  --heading-font-weight: 700;
+  --small-font-size: 80%;
+  --h1-gap-top: 3rem;
+  --h2-gap-top: 2.625rem;
+  --h3-gap-top: 2.25rem;
+  --h4-gap-top: 1.874rem;
+  --h5-gap-top: 1.6875rem;
+  --h6-gap-top: 1.5rem;
+
+  --h1-line-height: 1.125;
+  --h2-line-height: 1.15;
+  --h3-line-height: 1.175;
+  --h4-line-height: 1.2;
+  --h5-line-height: 1.225;
+  --h6-line-height: 1.25;
 
   /* === Button tokens === */
   --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);
@@ -288,6 +303,7 @@
   --code-color: light-dark(var(--color-zinc-550), var(--color-zinc-400));
   --kbd-background-color: var(--color);
   --kbd-color: var(--background-color);
+  --kbd-font-weight: bolder;
 
   /* === Input / Form tokens === */
   --input-spacing-vertical: 0.5rem;
@@ -312,6 +328,9 @@
   --input-placeholder-color: var(--color-muted);
   --input-border-color-focus: var(--primary-background-color);
   --input-opacity-disabled: 0.5;
+  --input-outline-width: 0.0625rem;
+  --search-border-radius: 5rem;
+  --checkbox-border-width: 0.125rem;
 
   /* === Switch tokens === */
   --switch-background-color: light-dark(
@@ -320,6 +339,7 @@
   );
   --switch-background-color-checked: var(--primary-background-color);
   --switch-thumb-background-color: white;
+  --switch-border-width: 0.1875rem;
 
   /* === Range tokens === */
   --range-track-border-color: light-dark(
@@ -333,6 +353,10 @@
   --range-thumb-border-color: var(--background-color);
   --range-thumb-background-color: var(--secondary-background-color);
   --range-thumb-background-color-active: var(--primary-background-color);
+
+  /* === Table tokens === */
+  --table-header-font-weight: 600;
+  --table-header-border-width: 0.1875rem;
 
   /* === Details / Accordion tokens === */
   --details-summary-color: var(--color);
@@ -399,6 +423,7 @@
   --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
     var(--primary-focus-ring-color);
   --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--input-border-color);
+  --group-button-spacing-horizontal: 1rem;
 
   /* Navigation */
   --nav-link-gap: calc(var(--spacing) * 0.5);

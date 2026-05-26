@@ -1,3 +1,7 @@
+[role="search"] {
+  --border-radius: var(--search-border-radius);
+}
+
 /* [role="search"] shares most of its styles with [role="group"] */
 /* See _role-group.css for the shared styles */
 

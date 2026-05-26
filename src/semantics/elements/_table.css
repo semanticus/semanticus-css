@@ -22,7 +22,21 @@ td {
   text-align: start;
 }
 
+thead {
+  & th,
+  & td {
+    --font-weight: var(--table-header-font-weight);
+    --border-width: var(--table-header-border-width);
+  }
+}
+
 tfoot {
+  & th,
+  & td {
+    --font-weight: var(--table-header-font-weight);
+    --border-width: var(--table-header-border-width);
+  }
+
   & th,
   & td {
     border-top: var(--border-width) solid var(--border-color);

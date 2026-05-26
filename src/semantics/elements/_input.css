@@ -1,3 +1,15 @@
+input:not(
+  [type="submit"],
+  [type="button"],
+  [type="reset"],
+  [type="checkbox"],
+  [type="radio"],
+  [type="file"]
+),
+:where(select, textarea) {
+  --outline-width: var(--input-outline-width);
+}
+
 input,
 optgroup,
 select,
