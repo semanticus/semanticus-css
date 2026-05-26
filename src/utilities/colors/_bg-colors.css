@@ -7,49 +7,65 @@
 }
 
 .bg-body {
-  --background-color: oklch(from var(--background-color) l c h / var(--background-color-opacity));
-
-  background-color: var(--background-color) !important;
+  background-color: oklch(
+    from var(--background-color) l c h / var(--background-color-opacity)
+  ) !important;
 }
 
 .bg-primary {
-  --background-color: oklch(from var(--primary-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--primary-background-color) l c h / var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }
 
 .bg-secondary {
-  --background-color: oklch(from var(--secondary-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--secondary-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }
 
 .bg-success {
-  --background-color: oklch(from var(--success-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--success-background-color) l c h / var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }
 
 .bg-info {
-  --background-color: oklch(from var(--info-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--info-background-color) l c h / var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }
 
 .bg-warning {
-  --background-color: oklch(from var(--warning-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--warning-background-color) l c h / var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }
 
 .bg-danger {
-  --background-color: oklch(from var(--danger-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--danger-background-color) l c h / var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }
 
 .bg-contrast {
-  --background-color: oklch(from var(--contrast-background-color) l c h / var(--background-color-opacity));
+  --background-color: oklch(
+    from var(--contrast-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
   background-color: var(--background-color) !important;
 }

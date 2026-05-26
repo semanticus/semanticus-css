@@ -1,7 +1,6 @@
 .border {
-  --border-color: oklch(from var(--border-color) l c h / var(--border-color-opacity));
-
-  border: var(--border-width) var(--border-style) var(--border-color) !important;
+  border: var(--border-width) var(--border-style)
+    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
 }
 
 .border-0 {
@@ -9,9 +8,8 @@
 }
 
 .border-top {
-  --border-color: oklch(from var(--border-color) l c h / var(--border-color-opacity));
-
-  border-top: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-top: var(--border-width) var(--border-style)
+    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
 }
 
 .border-top-0 {
@@ -19,9 +17,8 @@
 }
 
 .border-end {
-  --border-color: oklch(from var(--border-color) l c h / var(--border-color-opacity));
-
-  border-right: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-right: var(--border-width) var(--border-style)
+    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
 }
 
 .border-end-0 {
@@ -29,9 +26,8 @@
 }
 
 .border-bottom {
-  --border-color: oklch(from var(--border-color) l c h / var(--border-color-opacity));
-
-  border-bottom: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-bottom: var(--border-width) var(--border-style)
+    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
 }
 
 .border-bottom-0 {
@@ -39,9 +35,8 @@
 }
 
 .border-start {
-  --border-color: oklch(from var(--border-color) l c h / var(--border-color-opacity));
-
-  border-left: var(--border-width) var(--border-style) var(--border-color) !important;
+  border-left: var(--border-width) var(--border-style)
+    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
 }
 
 .border-start-0 {
