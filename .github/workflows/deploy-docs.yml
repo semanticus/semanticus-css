@@ -8,7 +8,11 @@ on:
     types:
       - completed
   workflow_dispatch:
-
+    inputs:
+      re_deploy:
+        description: 'Redeploy the documentation to GitHub Pages'
+        type: boolean
+        default: false
 permissions:
   contents: read
   pages: write
@@ -20,7 +24,7 @@ concurrency:
 
 jobs:
   build:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ inputs.re_deploy == 'true' || github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: blacksmith-4vcpu-ubuntu-2404
 
     steps:
