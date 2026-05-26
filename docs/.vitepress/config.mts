@@ -433,10 +433,10 @@ export default defineConfig({
         {
           text: "Components API",
           items: [
+            { text: ".auto-grid", link: "/docs/components/auto-grid" },
             { text: ".card", link: "/docs/components/card" },
             { text: ".container", link: "/docs/components/container" },
             { text: ".content-grid", link: "/docs/components/content-grid" },
-            { text: ".auto-grid", link: "/docs/components/auto-grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],
