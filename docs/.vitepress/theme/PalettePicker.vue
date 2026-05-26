@@ -5,7 +5,7 @@ import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import bash from 'highlight.js/lib/languages/bash'
 import javascript from 'highlight.js/lib/languages/javascript'
-import { Demo } from '@demos/overviews';
+import { OverviewDemo } from '@demos/index';
 import { cdnBaseUrl, npmRegistryTarballUrl, variations } from '@scripts/utils';
 
 function htmlTemplate(style, theme) {
@@ -24,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${Demo.palettesExample({ class: 'container-fluid' })}
+  ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
 
   <script>
     function sendHeight() {

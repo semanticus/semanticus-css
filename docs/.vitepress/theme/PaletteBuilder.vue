@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
-import { Demo } from '@demos/overviews';
+import { OverviewDemo } from '@demos/index';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import githubLight from 'highlight.js/styles/github.css?raw'
@@ -32,7 +32,7 @@ function htmlTemplate(base, theme) {
   </style>
 </head>
 <body class="px-2">
-  ${Demo.palettesExample({ class: 'container-fluid' })}
+  ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
 
   <script>
     window.addEventListener('message', function(event) {

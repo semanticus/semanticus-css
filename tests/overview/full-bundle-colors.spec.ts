@@ -8,8 +8,8 @@ const palettes = [];
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overviews/demo/fullBundleColors?theme=${theme} - visual snapshot`, async ({ page }) => {
-    await page.goto(`/overviews/demo/fullBundleColors?theme=${theme}`);
+  test(`/overview.demo/fullBundleColors?theme=${theme} - visual snapshot`, async ({ page }) => {
+    await page.goto(`/overview.demo/fullBundleColors?theme=${theme}`);
     const main = page.locator('body > main');
 
     await expect(main).toBeVisible();
@@ -17,8 +17,8 @@ themes.forEach((theme) => {
   });
 
   palettes.forEach((palette) => {
-    test(`/overviews/demo/fullBundleColors?theme=${theme}&palette=${palette} - visual snapshot`, async ({ page }) => {
-      await page.goto(`/overviews/demo/fullBundleColors?theme=${theme}&palette=${palette}`);
+    test(`/overview.demo/fullBundleColors?theme=${theme}&palette=${palette} - visual snapshot`, async ({ page }) => {
+      await page.goto(`/overview.demo/fullBundleColors?theme=${theme}&palette=${palette}`);
       const main = page.locator('body > main');
 
       await expect(main).toBeVisible();
