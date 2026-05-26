@@ -511,7 +511,10 @@ ${links()}
 }
 
 export function palettesExample(attrs: Record<string, string> = {}) {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 ${buttons()}
 
 <hr>
@@ -562,11 +565,18 @@ ${links()}
   ${CardDemo.main()}
 
   ${CardDemo.withHeaderAndFooter()}
-</section>`);
+</section>`,
+  );
 }
 
-export function fullBundle(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement("main", { class: 'container', ...attrs }, `<br>
+export function fullBundle(
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
+  return renderElement(
+    "main",
+    { class: "container", ...attrs },
+    `<br>
 
 ${buttons()}
 
