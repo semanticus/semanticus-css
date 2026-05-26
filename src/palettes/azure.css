@@ -22,10 +22,12 @@
   /* --color-azure: var(--color-azure-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-azure-550), var(--color-azure-350));
-  --color-primary-fill: var(--color-azure-550);
-  --color-primary-on-fill: white;
+  --primary-color: light-dark(var(--color-azure-550), var(--color-azure-350));
+  --primary-background-color: var(--color-azure-550);
 
   /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0.5rem oklch(0% 0 0deg / 0.25));
+  --switch-thumb-box-shadow: light-dark(
+    0 0 0 oklch(0% 0 0deg / 0),
+    0 0 0.5rem oklch(0% 0 0deg / 0.25)
+  );
 }

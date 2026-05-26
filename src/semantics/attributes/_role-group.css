@@ -1,7 +1,7 @@
 [role="search"],
 [role="group"] {
   border-radius: var(--radius);
-  box-shadow: var(--group-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  box-shadow: var(--group-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   display: inline-flex;
   gap: 0;
   margin-bottom: var(--spacing);
@@ -19,7 +19,7 @@
 
     &:not(:first-child) {
       /* when a button is next to an input that has a border */
-      margin-left: calc(var(--border-size) * -1);
+      margin-left: calc(var(--border-width) * -1);
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
@@ -48,13 +48,13 @@
     margin-bottom: 0;
     /* Constrain details height to just the button, not the dropdown menu */
     height: calc(
-        1rem * var(--line-height) + var(--input-spacing-vertical) *
-            2 + var(--border-size) * 2
+      1rem * var(--line-height) + var(--input-spacing-vertical) * 2 +
+        var(--border-width) * 2
     );
     overflow: visible;
 
     &:not(:first-child) {
-      margin-left: calc(var(--border-size) * -1);
+      margin-left: calc(var(--border-width) * -1);
 
       & > summary {
         border-top-left-radius: 0;
@@ -93,7 +93,7 @@
       [type="button"]:focus,
       [role="button"]:focus
     ) {
-      --group-shadow: var(--group-shadow-focus-button);
+      --group-box-shadow: var(--group-box-shadow-focus-button);
 
       & input:not([type="checkbox"], [type="radio"]),
       & select {
@@ -102,16 +102,16 @@
     }
 
     &:has(input:not([type="submit"], [type="button"]):focus, select:focus) {
-      --group-shadow: var(--group-shadow-focus-input);
+      --group-box-shadow: var(--group-box-shadow-focus-input);
 
       & button,
       & [type="submit"],
       & [type="button"],
       & [role="button"] {
-        --button-shadow: 0 0 0 var(--border-size)
-            var(--color-primary-fill);
-        --button-shadow-hover: 0 0 0 var(--border-size)
-            var(--color-primary-fill-hover);
+        --button-box-shadow: 0 0 0 var(--border-width)
+          var(--primary-background-color);
+        --button-box-shadow-hover: 0 0 0 var(--border-width)
+          var(--primary-background-color-hover);
       }
     }
 

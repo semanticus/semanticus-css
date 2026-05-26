@@ -12,13 +12,39 @@ h6 {
   font-family: var(--font-family);
 }
 
-h1 { color: var(--color-text); }
-h2 { color: color-mix(in srgb, var(--color-text) 90%, light-dark(white, black)); }
-h3 { color: color-mix(in srgb, var(--color-text) 80%, light-dark(white, black)); }
-h4 { color: color-mix(in srgb, var(--color-text) 70%, light-dark(white, black)); }
-h5 { color: color-mix(in srgb, var(--color-text) 60%, light-dark(white, black)); }
-h6 { color: color-mix(in srgb, var(--color-text) 65%, light-dark(white, black)); }
+h1 {
+  color: var(--color);
+}
+h2 {
+  color: color-mix(in srgb, var(--color) 90%, light-dark(white, black));
+}
+h3 {
+  color: color-mix(in srgb, var(--color) 80%, light-dark(white, black));
+}
+h4 {
+  color: color-mix(in srgb, var(--color) 70%, light-dark(white, black));
+}
+h5 {
+  color: color-mix(in srgb, var(--color) 60%, light-dark(white, black));
+}
+h6 {
+  color: color-mix(in srgb, var(--color) 65%, light-dark(white, black));
+}
 
-:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul, hr) ~ :is(h1, h2, h3, h4, h5, h6) {
+:where(
+    article,
+    address,
+    blockquote,
+    dl,
+    figure,
+    form,
+    ol,
+    p,
+    pre,
+    table,
+    ul,
+    hr
+  )
+  ~ :is(h1, h2, h3, h4, h5, h6) {
   margin-top: var(--heading-gap-top);
 }

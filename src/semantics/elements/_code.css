@@ -5,8 +5,8 @@ samp {
   font-size: 0.875em;
   font-family: var(--font-family);
   border-radius: var(--radius);
-  background: var(--code-fill);
-  color: var(--code-text);
+  background: var(--code-background-color);
+  color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
 }
@@ -20,7 +20,7 @@ samp {
 
 pre {
   -ms-overflow-style: scrollbar;
-  color: var(--color-text);
+  color: var(--color);
   display: block;
   font-style: normal;
   font-weight: var(--font-weight);
@@ -44,7 +44,7 @@ pre {
 }
 
 kbd {
-  background-color: var(--kbd-fill);
-  color: var(--kbd-text);
+  background-color: var(--kbd-background-color);
+  color: var(--kbd-color);
   vertical-align: baseline;
 }

@@ -2,7 +2,7 @@
   > :not(table):nth-child(odd) {
     background-color: color-mix(
       in srgb,
-      var(--color-background),
+      var(--background-color),
       var(--color-hover-effect) 15%
     );
   }
@@ -11,7 +11,7 @@
     & :is(th, td) {
       background-color: color-mix(
         in srgb,
-        var(--color-background),
+        var(--background-color),
         var(--color-hover-effect) 15%
       );
     }

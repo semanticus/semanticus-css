@@ -1,20 +1,20 @@
 .card {
-  --color-background: var(--dialog-fill);
-  --border-color: var(--dialog-border);
+  --background-color: var(--dialog-background-color);
+  --border-color: var(--dialog-border-color);
 
   padding-block: var(--spacing);
   padding-inline: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
-  border: var(--border-size) solid var(--border-color);
-  background: var(--color-background);
+  border: var(--border-width) solid var(--border-color);
+  background: var(--background-color);
 
   > header,
   > footer {
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--dialog-section-fill);
+    background-color: var(--dialog-section-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -23,7 +23,7 @@
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-size) solid var(--dialog-section-border);
+    border-bottom: var(--border-width) solid var(--dialog-section-border-color);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
     justify-content: space-between;
@@ -32,7 +32,7 @@
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-size) solid var(--dialog-section-border);
+    border-top: var(--border-width) solid var(--dialog-section-border-color);
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     justify-content: end;
@@ -47,8 +47,8 @@
     border: none;
 
     > * {
-      --color-background: transparent;
-      --card-item-fill: var(--color-background);
+      --background-color: transparent;
+      --card-item-fill: var(--background-color);
       --border-color: color-mix(
         in srgb,
         light-dark(var(--color-slate-900), var(--color-zinc-350)),
@@ -56,11 +56,11 @@
       );
 
       background: var(--card-item-fill);
-      color: var(--color-text);
+      color: var(--color);
       margin: 0;
       padding: var(--spacing);
       border-radius: 0;
-      border: var(--border-size) solid var(--border-color);
+      border: var(--border-width) solid var(--border-color);
 
       &:first-child {
         border-top-left-radius: var(--radius);
@@ -73,7 +73,7 @@
       &:is([aria-current]:not([aria-current="false"])) {
         --card-item-fill: color-mix(
           in srgb,
-          var(--color-background),
+          var(--background-color),
           var(--color-hover-effect) 15%
         );
       }
@@ -89,7 +89,7 @@
       list-style: none;
 
       &:first-child {
-        border-top: var(--border-size) solid var(--border-color);
+        border-top: var(--border-width) solid var(--border-color);
         border-top-right-radius: var(--radius);
       }
 
@@ -104,7 +104,7 @@
       border-left: none;
 
       &:first-child {
-        border-left: var(--border-size) solid var(--border-color);
+        border-left: var(--border-width) solid var(--border-color);
         border-bottom-left-radius: var(--radius);
       }
 

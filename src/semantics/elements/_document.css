@@ -1,9 +1,7 @@
-
-
 :where(:root),
 :where(:host) {
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: var(--background-color);
+  color: var(--color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
@@ -15,10 +13,12 @@
 }
 
 /* modern-normalize */
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
 html {
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
 }

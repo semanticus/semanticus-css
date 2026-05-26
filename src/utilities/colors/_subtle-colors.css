@@ -1,127 +1,160 @@
 .bg-primary-subtle,
 .text-bg-primary-subtle {
-  --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--primary-subtle-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .bg-secondary-subtle,
 .text-bg-secondary-subtle {
-  --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--secondary-subtle-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .bg-contrast-subtle,
 .text-bg-contrast-subtle {
-  --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--contrast-subtle-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .bg-success-subtle,
 .text-bg-success-subtle {
-  --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--success-subtle-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .bg-info-subtle,
 .text-bg-info-subtle {
-  --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--info-subtle-background-color) l c h / var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .bg-warning-subtle,
 .text-bg-warning-subtle {
-  --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--warning-subtle-background-color) l c h /
+      var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .bg-danger-subtle,
 .text-bg-danger-subtle {
-  --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
+  --background-color: oklch(
+    from var(--danger-subtle-background-color) l c h / var(--background-color-opacity)
+  );
 
-  background-color: var(--color-background) !important;
+  background-color: var(--background-color) !important;
 }
 
 .text-bg-primary-subtle {
-  --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .text-bg-secondary-subtle {
-  --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .text-bg-contrast-subtle {
-  --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .text-bg-success-subtle {
-  --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .text-bg-info-subtle {
-  --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .text-bg-warning-subtle {
-  --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .text-bg-danger-subtle {
-  --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --color: oklch(from #fff l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--color) !important;
 }
 
 .border-primary-subtle {
-  --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--primary-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .border-secondary-subtle {
-  --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--secondary-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .border-contrast-subtle {
-  --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--contrast-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .border-success-subtle {
-  --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--success-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .border-info-subtle {
-  --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--info-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .border-warning-subtle {
-  --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--warning-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .border-danger-subtle {
-  --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-border-opacity));
+  --border-color: oklch(
+    from var(--danger-subtle-background-color) l c h / var(--border-color-opacity)
+  );
 }
 
 .subtle-opacity-10 {

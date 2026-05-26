@@ -1,13 +1,13 @@
 [role="status"],
 [role="alert"] {
-  --color-background: light-dark(
+  --background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
-  --border-color: var(--dialog-border);
-  --alert-size: var(--border-size);
+  --border-color: var(--dialog-border-color);
+  --alert-size: var(--border-width);
 
-  color: var(--color-text);
+  color: var(--color);
   display: grid;
   grid-template-columns: 1fr;
   gap: calc(var(--nav-link-gap) * 1.5);
@@ -36,13 +36,13 @@
   padding: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--radius);
-  border: var(--border-size) solid var(--border-color);
+  border: var(--border-width) solid var(--border-color);
   border-inline-start-width: var(--alert-size);
-  border-inline-start-color: var(--dialog-border);
-  background: var(--color-background);
+  border-inline-start-color: var(--dialog-border-color);
+  background: var(--background-color);
 
   &:is(.ghost, .subtle) {
-    --alert-size: calc(var(--border-size) * 4);
+    --alert-size: calc(var(--border-width) * 4);
   }
 
   > * {
@@ -57,7 +57,12 @@
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
-  transition: opacity 0.2s ease-in-out, top 0.2s ease-in-out, right 0.2s ease-in-out, left 0.2s ease-in-out, bottom 0.2s ease-in-out;
+  transition:
+    opacity 0.2s ease-in-out,
+    top 0.2s ease-in-out,
+    right 0.2s ease-in-out,
+    left 0.2s ease-in-out,
+    bottom 0.2s ease-in-out;
 
   &[popover] {
     display: none;

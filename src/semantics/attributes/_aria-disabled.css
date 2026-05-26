@@ -1,25 +1,47 @@
 /* Buttons and button-like elements */
-:is(button, [type=submit], [type=button], [type=reset], [role=button])[aria-disabled=true],
-fieldset[aria-disabled=true] :is(button, [type=submit], [type=button], [type=reset], [role=button]) {
+:is(
+  button,
+  [type="submit"],
+  [type="button"],
+  [type="reset"],
+  [role="button"]
+)[aria-disabled="true"],
+fieldset[aria-disabled="true"]
+  :is(
+    button,
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [role="button"]
+  ) {
   opacity: 0.5;
   pointer-events: none;
 }
 
 /* Links */
-a[aria-disabled=true],
-[role=link][aria-disabled=true] {
+a[aria-disabled="true"],
+[role="link"][aria-disabled="true"] {
   opacity: 0.5;
   pointer-events: none;
 }
 
 /* Form controls */
-:is(input:not([type=submit], [type=button], [type=reset]), select, textarea)[aria-disabled=true],
-fieldset[aria-disabled=true] :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
+:is(
+  input:not([type="submit"], [type="button"], [type="reset"]),
+  select,
+  textarea
+)[aria-disabled="true"],
+fieldset[aria-disabled="true"]
+  :is(
+    input:not([type="submit"], [type="button"], [type="reset"]),
+    select,
+    textarea
+  ) {
   opacity: var(--input-opacity-disabled);
   pointer-events: none;
 }
 
 /* Switch color adjustment */
-[type=checkbox][role=switch][aria-disabled=true] {
-  --color-background: var(--border-color);
+[type="checkbox"][role="switch"][aria-disabled="true"] {
+  --background-color: var(--border-color);
 }

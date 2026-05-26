@@ -17,13 +17,15 @@ dialog {
   overflow: auto;
   padding: var(--spacing);
   border-radius: var(--radius);
-  background: var(--dialog-fill);
-  box-shadow: var(--dialog-shadow);
-  border: var(--border-size) solid var(--border-color);
+  background: var(--dialog-background-color);
+  box-shadow: var(--dialog-box-shadow);
+  border: var(--border-width) solid var(--border-color);
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 
   @media (--breakpoint-sm) {
     max-width: 510px;
@@ -35,15 +37,17 @@ dialog {
 
   /* Hidden state */
   &:not([open]),
-  &[open=false] {
+  &[open="false"] {
     display: none;
   }
 
   /* Backdrop overlay */
   &::backdrop {
     backdrop-filter: blur(0.375rem);
-    background-color: var(--dialog-overlay);
-    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    background-color: var(--dialog-overlay-background-color);
+    transition:
+      backdrop-filter 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
   }
 
   > header,
@@ -51,7 +55,7 @@ dialog {
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--dialog-section-fill);
+    background-color: var(--dialog-section-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -60,7 +64,7 @@ dialog {
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-size) solid var(--dialog-section-border);
+    border-bottom: var(--border-width) solid var(--dialog-section-border-color);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
     justify-content: space-between;
@@ -69,7 +73,7 @@ dialog {
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-size) solid var(--dialog-section-border);
+    border-top: var(--border-width) solid var(--dialog-section-border-color);
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     justify-content: end;

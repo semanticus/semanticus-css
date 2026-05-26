@@ -1,6 +1,6 @@
 .focus-ring:focus {
   outline: 0;
-  box-shadow: var(--focus-ring-x, 0) var(--focus-ring-y, 0) var(--focus-ring-blur, 0) var(--outline-size) var(--focus-ring-color);
+  box-shadow: var(--focus-ring-x, 0) var(--focus-ring-y, 0) var(--focus-ring-blur, 0) var(--outline-width) var(--focus-ring-color);
 }
 
 .focus-ring,

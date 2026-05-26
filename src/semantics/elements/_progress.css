@@ -9,10 +9,10 @@ progress {
   overflow: hidden;
   border: 0;
   border-radius: var(--radius);
-  background-color: var(--progress-track-fill);
-  color: var(--progress-fill);
+  background-color: var(--progress-track-background-color);
+  color: var(--progress-background-color);
   vertical-align: baseline;
-  accent-color: var(--color-primary-fill);
+  accent-color: var(--primary-background-color);
 
   &::-webkit-progress-bar {
     border-radius: var(--radius);
@@ -20,18 +20,24 @@ progress {
   }
 
   &[value]::-webkit-progress-value {
-    background-color: var(--progress-fill);
+    background-color: var(--progress-background-color);
     transition: inline-size var(--transition);
   }
 
   &::-moz-progress-bar {
-    background-color: var(--progress-fill);
+    background-color: var(--progress-background-color);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   progress:indeterminate {
-    background: var(--progress-track-fill) linear-gradient(to right, var(--progress-fill) 30%, var(--progress-track-fill) 30%) top left/150% 150% no-repeat;
+    background: var(--progress-track-background-color)
+      linear-gradient(
+        to right,
+        var(--progress-background-color) 30%,
+        var(--progress-track-background-color) 30%
+      )
+      top left/150% 150% no-repeat;
     animation: progress-indeterminate 1s linear infinite;
 
     &[value]::-webkit-progress-value {
@@ -43,7 +49,7 @@ progress {
     }
   }
 
-  [dir=rtl] progress:indeterminate {
+  [dir="rtl"] progress:indeterminate {
     animation-direction: reverse;
   }
 }

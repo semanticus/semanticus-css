@@ -2,8 +2,8 @@
   overflow: auto;
   border: 0;
   padding: 0;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--color);
+  background-color: var(--background-color);
   height: unset;
   margin: unset;
 }

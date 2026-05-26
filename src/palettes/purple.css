@@ -22,10 +22,12 @@
   /* --color-purple: var(--color-purple-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-purple-550), var(--color-purple-350));
-  --color-primary-fill: var(--color-purple-600);
-  --color-primary-on-fill: white;
+  --primary-color: light-dark(var(--color-purple-550), var(--color-purple-350));
+  --primary-background-color: var(--color-purple-600);
 
   /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
+  --switch-thumb-box-shadow: light-dark(
+    0 0 0 oklch(0% 0 0deg / 0),
+    0 0 0 oklch(0% 0 0deg / 0)
+  );
 }

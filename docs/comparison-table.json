@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T16:00:35.749Z",
+  "generatedAt": "2026-05-26T11:39:06.037Z",
   "pico": {
     "version": "2.1.1"
   },
@@ -33,7 +33,7 @@
     },
     "semanticusUtilitiesAndGrid": {
       "label": "Semanticus (utilities + grid)",
-      "gzipKB": "10.5"
+      "gzipKB": "10.4"
     },
     "bootstrapCssBundle": {
       "label": "Bootstrap (CSS bundle only)",
