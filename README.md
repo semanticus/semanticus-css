@@ -180,7 +180,8 @@ You can override its variables to create your own themes and styles. For example
 
 ```css
 :root {
-  --color-primary: #4f46e5;
+  --primary-background-color: #4f46e5;
+  --primary-color: white;
   --border-radius: 0.75rem;
   --font-family: "Inter", sans-serif;
 }
