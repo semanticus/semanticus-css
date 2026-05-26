@@ -7,7 +7,7 @@ import {
   SearchDemo,
   CardListDemo,
 } from "@demos/composites";
-import { CardDemo } from "@demos/components";
+import { CardDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -736,6 +736,15 @@ ${fullBundleColorsButtons()}
   <h2>Cards</h2>
 
   ${CardDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
+<section id="panes">
+  <h2>Panes</h2>
+
+  ${PaneDemo.overviewVariants()}
 </section>
 
 <hr>

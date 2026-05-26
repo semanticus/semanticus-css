@@ -13,18 +13,6 @@ export function main(
   );
 }
 
-export function withColoredWrapper(
-  tagName: string = "div",
-  attrs: Record<string, string> = {},
-  slot: string = "",
-) {
-  return renderElement(
-    "div",
-    { class: "card secondary" },
-    main(tagName, attrs, slot),
-  );
-}
-
 export function withHgroup(
   tagName: string = "div",
   attrs: Record<string, string> = {},
