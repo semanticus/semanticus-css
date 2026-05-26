@@ -15,13 +15,13 @@ const containerFluidHtml = `<div class="container-fluid">
 </div>
 `;
 
-const comparisonHtml = `<section class="container" style="border: 1px dashed rgb(var(--color-primary-rgb));">
+const comparisonHtml = `<section class="container" style="border: 1px dashed var(--border-color);">
   <hgroup>
     <h2>.container</h2>
     <p>Constrained width for articles, forms, and document-like pages.</p>
   </hgroup>
 </section>
-<section class="container-fluid" style="border: 1px dashed rgb(var(--color-primary-rgb));">
+<section class="container-fluid" style="border: 1px dashed var(--border-color);">
   <hgroup>
     <h2>.container-fluid</h2>
     <p>Full-width sections for banners, dashboards, and broad layout regions.</p>
