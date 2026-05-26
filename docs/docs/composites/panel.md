@@ -6,12 +6,6 @@ Are implemented by `.card` component that stylizes containers, ideal for groupin
 
 <HtmlPreviewer :code="CardDemo.main()"/>
 
-## Hero section
-
-Combine it with **modifier variants** and **utility classes** to create various styles like a hero section.
-
-<HtmlPreviewer :code="CardDemo.heroSection({ class: 'primary subtle' })"/>
-
 ## Variants
 
 ### Intent Variants
