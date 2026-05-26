@@ -29,37 +29,37 @@ h6 {
 }
 
 h1 {
-  --font-size: var(--h1-size);
+  --font-size: var(--h1-font-size);
   --line-height: 1.125;
   --heading-gap-top: 3rem;
 }
 
 h2 {
-  --font-size: var(--h2-size);
+  --font-size: var(--h2-font-size);
   --line-height: 1.15;
   --heading-gap-top: 2.625rem;
 }
 
 h3 {
-  --font-size: var(--h3-size);
+  --font-size: var(--h3-font-size);
   --line-height: 1.175;
   --heading-gap-top: 2.25rem;
 }
 
 h4 {
-  --font-size: var(--h4-size);
+  --font-size: var(--h4-font-size);
   --line-height: 1.2;
   --heading-gap-top: 1.874rem;
 }
 
 h5 {
-  --font-size: var(--h5-size);
+  --font-size: var(--h5-font-size);
   --line-height: 1.225;
   --heading-gap-top: 1.6875rem;
 }
 
 h6 {
-  --font-size: var(--h6-size);
+  --font-size: var(--h6-font-size);
   --line-height: 1.25;
   --heading-gap-top: 1.5rem;
 }
