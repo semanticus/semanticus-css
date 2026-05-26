@@ -2,8 +2,7 @@ hgroup {
   margin-bottom: var(--typography-spacing-vertical);
 
   & > * {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block: 0 !important;
 
     &:not(:first-child):last-child {
       color: var(--color-text-muted);

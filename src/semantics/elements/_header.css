@@ -4,7 +4,6 @@ header {
   margin-bottom: var(--spacing);
 
   & > * {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-block: 0 !important;
   }
 }
