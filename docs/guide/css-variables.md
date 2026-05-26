@@ -135,8 +135,9 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --base-spacing: 0.75rem;
-  --spacing: var(--base-spacing); /* scales with each breakpoint */
+  --spacing-base: 0.75rem;
+  --spacing-scale: 1;
+  --spacing: calc(var(--spacing-base) * var(--spacing-scale));
   --typography-spacing-vertical: 1rem;
   --input-spacing-vertical: 0.5rem;
   --input-spacing-horizontal: 0.7rem;

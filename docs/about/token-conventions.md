@@ -363,7 +363,7 @@ Tokens prefixed with `--base-` are **internal helpers** used only inside `calc()
 They are not part of the public API:
 
 ```css
---base-spacing           /* base unit for the spacing scale */
+--spacing-base           /* base unit for the spacing scale */
 ```
 
 Do not reference these directly in component or utility CSS; derive via `calc()` only.

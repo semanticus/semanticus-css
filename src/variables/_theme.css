@@ -10,9 +10,9 @@
     color-scheme: dark;
   }
 
-  /* === COLORS === */
+  /* ===== COLORS ===== */
 
-  /* Slate shades */
+  /* --- Slate --- */
   --color-slate-950: #0e1118;
   --color-slate-900: #181c25;
   --color-slate-850: #202632;
@@ -30,7 +30,7 @@
   --color-slate-100: #dfe3eb;
   --color-slate-50: #eff1f4;
 
-  /* Zinc shades */
+  /* --- Zinc --- */
   --color-zinc-950: #0f1114;
   --color-zinc-900: #191c20;
   --color-zinc-850: #23262c;
@@ -49,8 +49,9 @@
   --color-zinc-100: #e0e3e7;
   --color-zinc-50: #f0f1f3;
 
-  /* === GLOBAL SYSTEM TOKENS === */
+  /* ===== GLOBAL SYSTEM TOKENS ===== */
 
+  /* --- Background & Text --- */
   --background-color: light-dark(
     white,
     color-mix(in srgb, var(--color-slate-950), var(--color-slate-900))
@@ -62,11 +63,12 @@
   --border-color: light-dark(var(--color-slate-100), var(--color-slate-800));
   --border-color-opacity: 100%;
 
-  /* Spacing - shared base unit */
-  --base-spacing: 0.75rem;
-  --spacing: var(--base-spacing);
+  /* --- Spacing --- */
+  --spacing-base: 0.75rem;
+  --spacing-scale: 1;
+  --spacing: calc(var(--spacing-base) * var(--spacing-scale));
 
-  /* Font Families */
+  /* --- Font Families --- */
   --font-family-emoji:
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-sans-serif:
@@ -77,14 +79,14 @@
     monospace, var(--font-family-emoji);
   --font-family: var(--font-family-sans-serif);
 
-  /* Typography - base defaults */
+  /* --- Typography --- */
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 97%;
   --text-underline-offset: 0.1rem;
   --typography-spacing-vertical: 1rem;
 
-  /* Borders & Effects */
+  /* --- Borders & Effects --- */
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 0.125rem;
@@ -104,9 +106,9 @@
     0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
     0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
 
-  /* Intent Colors */
+  /* ===== INTENT TOKENS ===== */
 
-  /* helpers to add/remove shade to hover states */
+  /* --- Hover / Focus helpers --- */
   --color-hover-effect: light-dark(
     var(--color-zinc-700),
     var(--color-zinc-300)
@@ -116,7 +118,8 @@
     var(--color-slate-700)
   );
 
-  /* Primary colors - rest of the variables are defined by the palette that gets imported by the _all.css file */
+  /* --- Primary --- */
+  /* Base values defined by the palette imported in _all.css */
   --primary-color-hover: color-mix(
     in srgb,
     var(--primary-color) 70%,
@@ -133,7 +136,7 @@
     var(--color-focus-effect)
   );
 
-  /* Secondary colors */
+  /* --- Secondary --- */
   --secondary-color: light-dark(var(--color-slate-550), var(--color-zinc-350));
   --secondary-background-color: var(--color-slate-550);
 
@@ -153,7 +156,7 @@
     var(--color-focus-effect)
   );
 
-  /* Contrast colors */
+  /* --- Contrast --- */
   --contrast-color: light-dark(var(--color-slate-900), var(--color-slate-100));
   --contrast-background-color: light-dark(
     var(--color-slate-900),
@@ -176,7 +179,7 @@
     var(--color-focus-effect)
   );
 
-  /* Success colors */
+  /* --- Success --- */
   --color-jade-450: #029764;
   --color-jade-250: #00cc88;
   --success-color: light-dark(var(--color-jade-450), var(--color-jade-250));
@@ -198,7 +201,7 @@
     var(--color-focus-effect)
   );
 
-  /* Info colors */
+  /* --- Info --- */
   --color-azure-450: #018cd4;
   --color-azure-250: #79c0ff;
   --info-color: light-dark(var(--color-azure-450), var(--color-azure-250));
@@ -220,7 +223,7 @@
     var(--color-focus-effect)
   );
 
-  /* Warning colors */
+  /* --- Warning --- */
   --color-amber-350: #c79400;
   --color-amber-250: #e8ae01;
   --warning-color: light-dark(var(--color-amber-350), var(--color-amber-250));
@@ -242,7 +245,7 @@
     var(--color-focus-effect)
   );
 
-  /* Danger colors */
+  /* --- Danger --- */
   --color-red-450: #ee402e;
   --color-red-250: #f5a390;
   --danger-color: light-dark(var(--color-red-450), var(--color-red-250));
@@ -264,11 +267,10 @@
     var(--color-focus-effect)
   );
 
-  /* === COMPONENT TOKENS === */
+  /* ===== COMPONENT TOKENS ===== */
 
+  /* --- Typography --- */
   --link-text-decoration: underline;
-
-  /* === Typography tokens === */
   --h1-font-size: 2rem;
   --h2-font-size: 1.75rem;
   --h3-font-size: 1.5rem;
@@ -291,11 +293,11 @@
   --h5-line-height: 1.225;
   --h6-line-height: 1.25;
 
-  /* === Button tokens === */
+  /* --- Button --- */
   --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);
   --button-box-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
 
-  /* === Code tokens === */
+  /* --- Code --- */
   --code-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 75%, white),
     color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
@@ -305,7 +307,7 @@
   --kbd-color: var(--background-color);
   --kbd-font-weight: bolder;
 
-  /* === Input / Form tokens === */
+  /* --- Input / Form --- */
   --input-spacing-vertical: 0.5rem;
   --input-spacing-horizontal: 0.7rem;
   --input-background-color: light-dark(
@@ -332,7 +334,7 @@
   --search-border-radius: 5rem;
   --checkbox-border-width: 0.125rem;
 
-  /* === Switch tokens === */
+  /* --- Switch --- */
   --switch-background-color: light-dark(
     var(--color-slate-200),
     var(--color-slate-750)
@@ -341,7 +343,7 @@
   --switch-thumb-background-color: white;
   --switch-border-width: 0.1875rem;
 
-  /* === Range tokens === */
+  /* --- Range --- */
   --range-track-border-color: light-dark(
     var(--color-slate-100),
     var(--color-slate-850)
@@ -354,16 +356,16 @@
   --range-thumb-background-color: var(--secondary-background-color);
   --range-thumb-background-color-active: var(--primary-background-color);
 
-  /* === Table tokens === */
+  /* --- Table --- */
   --table-header-font-weight: 600;
   --table-header-border-width: 0.1875rem;
 
-  /* === Details / Accordion tokens === */
+  /* --- Details / Accordion --- */
   --details-summary-color: var(--color);
   --details-summary-color-hover: var(--primary-color-hover);
   --details-summary-color-open: var(--color-muted);
 
-  /* === Dialog / Alert tokens === */
+  /* --- Dialog / Alert --- */
   --dialog-background-color: light-dark(
     var(--background-color),
     var(--color-slate-900)
@@ -391,7 +393,7 @@
     oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
   );
 
-  /* === Menu / Dropdown tokens === */
+  /* --- Menu / Dropdown --- */
   --menu-background-color: light-dark(white, var(--color-slate-900));
   --menu-border-color: light-dark(
     var(--color-slate-50),
@@ -404,36 +406,36 @@
     var(--color-slate-850)
   );
 
-  /* === Loading tokens === */
+  /* --- Loading --- */
   --loading-spinner-opacity: 0.5;
 
-  /* === Progress tokens === */
+  /* --- Progress --- */
   --progress-track-background-color: light-dark(
     var(--color-slate-100),
     var(--color-slate-850)
   );
   --progress-background-color: var(--primary-background-color);
 
-  /* === Tooltip tokens === */
+  /* --- Tooltip --- */
   --tooltip-background-color: var(--contrast-background-color);
   --tooltip-color: light-dark(white, var(--color-zinc-900));
 
-  /* Group Shadows */
+  /* --- Group --- */
   --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
     var(--primary-focus-ring-color);
   --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--input-border-color);
   --group-button-spacing-horizontal: 1rem;
 
-  /* Navigation */
+  /* --- Navigation --- */
   --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
 
-  /* Sidebar */
+  /* --- Sidebar --- */
   --sidebar-size: 25%;
 }
 
-/* === ICONS === */
+/* ===== ICONS ===== */
 body {
   --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -464,13 +466,13 @@ body {
   color-scheme: dark;
 }
 
-/* === RESPONSIVE ADJUSTMENTS === */
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (--breakpoint-sm) {
   :root,
   :host {
     --font-size: 98%;
     --sidebar-size: max(25%, 150px);
-    --spacing: calc(var(--base-spacing) * 1.1);
+    --spacing-scale: 1.1;
   }
 }
 
@@ -479,7 +481,7 @@ body {
   :host {
     --font-size: 99%;
     --sidebar-size: max(22%, 180px);
-    --spacing: calc(var(--base-spacing) * 1.2);
+    --spacing-scale: 1.2;
   }
 }
 
@@ -488,7 +490,7 @@ body {
   :host {
     --font-size: 100%;
     --sidebar-size: max(20%, 200px);
-    --spacing: calc(var(--base-spacing) * 1.3);
+    --spacing-scale: 1.3;
   }
 }
 
@@ -497,7 +499,7 @@ body {
   :host {
     --font-size: 101%;
     --sidebar-size: max(18%, 220px);
-    --spacing: calc(var(--base-spacing) * 1.4);
+    --spacing-scale: 1.4;
   }
 }
 
@@ -506,6 +508,6 @@ body {
   :host {
     --font-size: 102%;
     --sidebar-size: clamp(240px, 16%, 300px);
-    --spacing: calc(var(--base-spacing) * 1.5);
+    --spacing-scale: 1.5;
   }
 }

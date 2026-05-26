@@ -158,7 +158,7 @@ const variableGroups = [
   {
     label: 'Spacing',
     vars: [
-      { name: '--spacing', label: 'Spacing', desc: 'Applied spacing; scales with base-spacing and breakpoints.', default: 'var(--base-spacing)' },
+      { name: '--spacing', label: 'Spacing', desc: 'Applied spacing; product of spacing-base × spacing-scale.', default: 'calc(var(--spacing-base) * var(--spacing-scale))' },
       { name: '--typography-spacing-vertical', label: 'Typography Vertical', desc: 'Vertical margin below typographic elements.', default: '1rem' },
       { name: '--input-spacing-vertical', label: 'Input Vertical', desc: 'Vertical padding inside form inputs.', default: '0.75rem' },
       { name: '--input-spacing-horizontal', label: 'Input Horizontal', desc: 'Horizontal padding inside form inputs.', default: '1rem' },
