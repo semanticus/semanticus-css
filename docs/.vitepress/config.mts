@@ -436,7 +436,7 @@ export default defineConfig({
             { text: ".card", link: "/docs/components/card" },
             { text: ".container", link: "/docs/components/container" },
             { text: ".content-grid", link: "/docs/components/content-grid" },
-            { text: ".grid", link: "/docs/components/grid" },
+            { text: ".auto-grid", link: "/docs/components/auto-grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
             // { text: ".sidebar", link: "/docs/components/sidebar" },
           ],

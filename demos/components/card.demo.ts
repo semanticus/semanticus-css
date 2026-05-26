@@ -57,13 +57,13 @@ export function htmlElements() {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', attrs, `<section class="grid mb-0">
+  return renderElement('section', attrs, `<section class="auto-grid mb-0">
   ${withHeaderAndFooter()}
   ${withHeaderAndFooter('div', { class: 'subtle' })}
   ${withHeaderAndFooter('div', { class: 'ghost' })}
 </section>
 
-<section class="grid">
+<section class="auto-grid">
   ${withHeaderAndFooterIntentVariants()}
   ${withHeaderAndFooterSubtleVariants()}
   ${withHeaderAndFooterGhostVariants()}

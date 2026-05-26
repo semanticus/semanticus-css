@@ -4,5 +4,5 @@ export function main(tagName: string = "div", attrs: Record<string, string> = {}
 <button>2</button>
 <button>3</button>
 <button>4</button>`) {
-  return renderElement(tagName, classMergeAttributes('grid', attrs), slot);
+  return renderElement(tagName, classMergeAttributes('auto-grid', attrs), slot);
 }
