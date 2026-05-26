@@ -38,7 +38,7 @@
     justify-content: end;
   }
 
-  > :last-child:is(hgroup, h1, h2, h3, h4, h5, h6) {
+  > :last-child:not(footer) {
     margin-bottom: 0;
   }
 
@@ -49,7 +49,11 @@
     > * {
       --color-background: transparent;
       --card-item-fill: var(--color-background);
-      --border-color: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%);
+      --border-color: color-mix(
+        in srgb,
+        light-dark(var(--color-slate-900), var(--color-zinc-350)),
+        transparent 90%
+      );
 
       background: var(--card-item-fill);
       color: var(--color-text);
@@ -67,7 +71,11 @@
       }
 
       &:is([aria-current]:not([aria-current="false"])) {
-        --card-item-fill: color-mix(in srgb, var(--color-background), var(--color-hover-effect) 15%);
+        --card-item-fill: color-mix(
+          in srgb,
+          var(--color-background),
+          var(--color-hover-effect) 15%
+        );
       }
     }
   }

@@ -1,4 +1,4 @@
-import * as ADemo from '@demos/semantics/elements/a.demo';
+import * as ADemo from "@demos/semantics/elements/a.demo";
 
 export function headings(title: string = "Heading Level ") {
   return `<h1>${title}1</h1>
@@ -11,8 +11,8 @@ export function headings(title: string = "Heading Level ") {
 
 export function paragraphs() {
   return `<p>The paragraph element is the most basic block of text content.</p>
-<p>A second paragraph follows, automatically spaced below the first.</p>
-<p>The last paragraph in a container has its margin trimmed, avoiding extra whitespace at the bottom.</p>`;
+<p>Paragraph has a margin-bottom of var(--typography-spacing-vertical).</p>
+<p>Use paragraphs to structure text content into readable blocks.</p>`;
 }
 
 export function codeBlock() {

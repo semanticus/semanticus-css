@@ -8,6 +8,29 @@ function base(attrs: Record<string, string>, slot: string) {
   return renderElement("div", { ...attrs, class: `flow-h ${attrs.class || ""}`.trim() }, slot);
 }
 
+export function overview() {
+  return renderElement('main', { class: 'container' }, `${headerExample({ style: "min-width: 1024px;" })}
+
+${footerExample({ style: "min-width: 1024px;" })}
+
+${mainExample({ style: "min-width: 1024px;" })}
+
+${mainWithHeaderExample({ style: "min-width: 1024px;" })}
+
+${mainWithFooterExample({ style: "min-width: 1024px;" })}
+
+${mainWithHeaderPlusFooterExample({ style: "min-width: 1024px;" })}
+
+${mainWithArticleExample({ style: "min-width: 1024px;" })}
+
+${mainWithHeaderPlusArticleExample({ style: "min-width: 1024px;" })}
+
+${mainWithArticlePlusFooterExample({ style: "min-width: 1024px;" })}
+
+${mainWithHeaderPlusArticlePlusFooterExample({ style: "min-width: 1024px;" })}`);
+}
+
+
 // Header
 
 export function withHeader(attrs: Record<string, string> = {}) {
