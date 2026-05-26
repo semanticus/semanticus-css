@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 import { GridDemo } from "@demos/components";
 
 const meta: Meta = {
-  title: "Components/Grid",
+  title: "Components/Auto Grid",
   parameters: {},
 };
 

@@ -19,6 +19,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Refactored **Tooltips** using the `ARIA: tooltip pattern` |
 | ✅ | `aria-disabled="true"` |
 | ✅ | `role="status"` and `role="alert"` to implement **alerts** and **toasts** |
+| ✅ | Replaced **Pico CSS**'s `.grid` with `.auto-grid` |
 
 ## Components
 
@@ -27,7 +28,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
 | ✅ | Removed `<article>` the **card** style |
 | ✅ | `.icon-*` component |
-| ✅ | `.content-grid` component inspired by **Kevin Powell**'s content grid technique |
+| ✅ | `.content-grid` component |
+| ✅ | `.auto-grid` component |
 | ✅ | Extended `.card` to implement **card lists** |
 | 🚧 | `.sidebar` component |
 | ⌛ | `.carousel` component |

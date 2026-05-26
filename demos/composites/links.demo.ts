@@ -11,7 +11,7 @@ ${RoleLinkDemo.intentVariants(attrs)}`;
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', classMergeAttributes('grid', attrs), `<aside>
+  return renderElement('section', classMergeAttributes('auto-grid', attrs), `<aside>
   <ul class="ps-0">
     <li>${ADemo.main()}</li>
     <li>${ADemo.main({ class: 'secondary' })}</li>

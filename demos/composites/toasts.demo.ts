@@ -21,14 +21,14 @@ ${AlertsDemo.withCloseButton('status', mergedAttributes({ id: "floating-alert", 
 }
 
 export function overviewShowToasts() {
-  return `<section class="grid" style="padding-block: 70px;">
+  return `<section class="auto-grid" style="padding-block: 70px;">
   <button popovertarget="top-start-toast" class="contrast">Top Start</button>
   <button popovertarget="top-center-toast" class="contrast">Top Center</button>
   <button popovertarget="top-end-toast" class="contrast">Top End</button>
   <button popovertarget="middle-start-toast" class="contrast">Middle Start</button>
 </section>
 
-<section class="grid" style="padding-block: 70px;">
+<section class="auto-grid" style="padding-block: 70px;">
   <button popovertarget="middle-center-toast" class="contrast">Middle Center</button>
   <button popovertarget="middle-end-toast" class="contrast">Middle End</button>
   <button popovertarget="bottom-start-toast" class="contrast">Bottom Start</button>

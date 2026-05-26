@@ -19,7 +19,7 @@ export function active(attrs: Record<string, string> = {}, slot: string = 'Activ
 }
 
 export function intentVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', { class: 'grid' }, `${main(classMergeAttributes('primary', attrs), 'Primary')}
+  return renderElement('section', { class: 'auto-grid' }, `${main(classMergeAttributes('primary', attrs), 'Primary')}
 ${main(classMergeAttributes('secondary', attrs), 'Secondary')}
 ${main(classMergeAttributes('contrast', attrs), 'Contrast')}
 ${main(classMergeAttributes('success', attrs), 'Success')}

@@ -23,7 +23,7 @@ export function divs(attrs: Record<string, string> = {}, slot: string = '') {
 }
 
 export function overview(attrs: Record<string, string> = {}) {
-  return renderElement('section', { class: 'grid' }, `${unorderedList(attrs)}
+  return renderElement('section', { class: 'auto-grid' }, `${unorderedList(attrs)}
 
 ${divs(attrs)}`);
 }
@@ -33,7 +33,7 @@ export function overviewHorizontalStack(attrs: Record<string, string> = {}) {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', attrs, `<section class="grid">
+  return renderElement('section', attrs, `<section class="auto-grid">
   ${listOfSeven()}
   ${stripedVariant()}
   ${intentVariants()}

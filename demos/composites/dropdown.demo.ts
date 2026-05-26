@@ -126,7 +126,7 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', classMergeAttributes('grid', attrs), `<section>
+  return renderElement('section', classMergeAttributes('auto-grid', attrs), `<section>
   ${intentVariants()}
 </section>
 
