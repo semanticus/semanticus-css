@@ -498,7 +498,7 @@ function handleMessage(event) {
 
 function buildCustomCSS() {
   const rootVars = []
-  const themeVars = {} // { '--color-text': { light: '#111', dark: '#eee' } }
+  const themeVars = {} // { '--color': { light: '#111', dark: '#eee' } }
 
   for (const [key, value] of Object.entries(customValues)) {
     const [scope, ...nameParts] = key.split(':')

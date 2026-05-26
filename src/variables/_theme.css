@@ -270,6 +270,7 @@
   /* ===== COMPONENT TOKENS ===== */
 
   /* --- Typography --- */
+  --link-color: var(--primary-color);
   --link-text-decoration: underline;
   --h1-font-size: 2rem;
   --h2-font-size: 1.75rem;

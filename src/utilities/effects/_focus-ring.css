@@ -1,11 +1,12 @@
 .focus-ring:focus {
   outline: 0;
-  box-shadow: var(--focus-ring-x, 0) var(--focus-ring-y, 0) var(--focus-ring-blur, 0) var(--outline-width) var(--focus-ring-color);
+  box-shadow: var(--focus-ring-x, 0) var(--focus-ring-y, 0)
+    var(--focus-ring-blur, 0) var(--outline-width) var(--focus-ring-color);
 }
 
 .focus-ring,
 .focus-ring-primary {
-  --focus-ring-color: var(--color-primary-focus-ring);
+  --focus-ring-color: var(--primary-focus-ring-color);
 }
 
 .focus-ring-secondary {

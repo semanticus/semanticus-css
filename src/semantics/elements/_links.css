@@ -2,7 +2,7 @@
 [role="link"] {
   --background-color: transparent;
   --border-color: transparent;
-  --color: var(--primary-color);
+  --color: var(--link-color);
   --box-shadow: transparent;
   outline: none;
   padding: 0;
@@ -21,7 +21,11 @@
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --background-color: transparent;
     --border-color: transparent;
-    --color: var(--primary-color-hover);
+    --color: color-mix(
+      in srgb,
+      var(--link-color) 70%,
+      var(--color-hover-effect)
+    );
     --box-shadow: transparent;
     text-decoration-color: oklch(from var(--color) l c h / 0.85);
   }
