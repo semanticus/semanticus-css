@@ -8,15 +8,13 @@ No memorizing role names — if you know CSS, you know the tokens.
 **Token names match the CSS property they control.**
 
 | Instead of | Use | Because |
-|------------|-----|---------|
+| --- | --- | --- |
 | `--color-primary-fill` | `.primary { --background-color: var(--primary-background-color); }` | `background-color` is the property. The variant is the *selector*, not the token name. |
 | `--switch-thumb-glow` | `--switch-thumb-box-shadow` | `box-shadow` is the property that creates the glow. |
 | `--input-border-focus` | `--input-border-color-focus` | `border-color` is the property. No guesswork. |
 
 Every token name is a CSS property name, optionally prefixed by a component or variant scope.
 If you know the CSS property you want to change, you know the token name.
-
----
 
 ## Token structure
 
@@ -25,7 +23,7 @@ If you know the CSS property you want to change, you know the token name.
 ```
 
 | Segment | Description | Examples |
-|---------|-------------|----------|
+| --- | --- | --- |
 | `scope` *(optional)* | Component, variant, or part name | `button`, `card`, `primary`, `dialog-header` |
 | `property` | A CSS longhand property name | `background-color`, `color`, `border-color`, `border-width`, `font-size`, `box-shadow` |
 | `state` *(optional)* | Interaction or ARIA state | `hover`, `focus`, `active`, `checked`, `disabled`, `open` |
@@ -41,20 +39,23 @@ No scope prefix. These define the document-wide baseline.
 ```
 
 ```css
---background-color          /* page background */
---color                     /* page text color */
---color-muted               /* muted/secondary text */
---border-color              /* page border color */
---border-width              /* global border thickness */
---border-radius             /* global corner radius */
---font-family               /* default body font stack */
---font-size                 /* root font size */
---font-weight               /* root font weight */
---line-height               /* root line height */
---outline-width             /* focus ring thickness */
---focus-ring-color          /* focus ring color (used in box-shadow) */
---box-shadow                /* global shadow stack */
---transition                /* default transition duration + easing */
+:root,
+:host {
+  --background-color          /* page background */
+  --color                     /* page text color */
+  --color-muted               /* muted/secondary text */
+  --border-color              /* page border color */
+  --border-width              /* global border thickness */
+  --border-radius             /* global corner radius */
+  --font-family               /* default body font stack */
+  --font-size                 /* root font size */
+  --font-weight               /* root font weight */
+  --line-height               /* root line height */
+  --outline-width             /* focus ring thickness */
+  --focus-ring-color          /* focus ring color (used in box-shadow) */
+  --box-shadow                /* global shadow stack */
+  --transition                /* default transition duration + easing */
+}
 ```
 
 #### 2. Palette tokens — variant-specific definitions
@@ -67,28 +68,31 @@ They are *consumed* by variant classes — users rarely set these directly unles
 ```
 
 ```css
---primary-background-color           /* .primary background */
---primary-background-color-hover     /* .primary background on hover */
---primary-color                      /* .primary text color */
---primary-color-hover                /* .primary text color on hover */
---primary-border-color               /* .primary border color */
---primary-focus-ring-color           /* .primary focus ring color */
+:root,
+:host {
+  --primary-background-color           /* .primary background */
+  --primary-background-color-hover     /* .primary background on hover */
+  --primary-color                      /* .primary text color */
+  --primary-color-hover                /* .primary text color on hover */
+  --primary-border-color               /* .primary border color */
+  --primary-focus-ring-color           /* .primary focus ring color */
 
---secondary-background-color
---secondary-background-color-hover
---secondary-color
---secondary-color-hover
---secondary-border-color
---secondary-focus-ring-color
+  --secondary-background-color
+  --secondary-background-color-hover
+  --secondary-color
+  --secondary-color-hover
+  --secondary-border-color
+  --secondary-focus-ring-color
 
---contrast-background-color
---contrast-background-color-hover
---contrast-color
---contrast-color-hover
---contrast-border-color
---contrast-focus-ring-color
+  --contrast-background-color
+  --contrast-background-color-hover
+  --contrast-color
+  --contrast-color-hover
+  --contrast-border-color
+  --contrast-focus-ring-color
 
-/* ... same pattern for success, info, warning, danger */
+  /* ... same pattern for success, info, warning, danger */
+}
 ```
 
 Note: the variant is part of the token *name* here because multiple palettes coexist in `:root`.
@@ -104,71 +108,72 @@ These fall back to the global tokens.
 ```
 
 ```css
---button-background-color
---button-background-color-hover
---button-color
---button-color-hover
---button-border-color
---button-border-width
---button-border-radius
---button-box-shadow
---button-box-shadow-hover
---button-focus-ring-color
+:root,
+:host {
+  --button-background-color
+  --button-background-color-hover
+  --button-color
+  --button-color-hover
+  --button-border-color
+  --button-border-width
+  --button-border-radius
+  --button-box-shadow
+  --button-box-shadow-hover
+  --button-focus-ring-color
 
---card-background-color
---card-border-color
---card-header-background-color
---card-footer-background-color
+  --card-background-color
+  --card-border-color
+  --card-header-background-color
+  --card-footer-background-color
 
---input-background-color
---input-background-color-focus
---input-color
---input-border-color
---input-border-color-focus
---input-placeholder-color
---input-opacity-disabled
+  --input-background-color
+  --input-background-color-focus
+  --input-color
+  --input-border-color
+  --input-border-color-focus
+  --input-placeholder-color
+  --input-opacity-disabled
 
---dialog-background-color
---dialog-border-color
---dialog-header-background-color
---dialog-footer-background-color
---dialog-overlay-background-color
---dialog-box-shadow
+  --dialog-background-color
+  --dialog-border-color
+  --dialog-header-background-color
+  --dialog-footer-background-color
+  --dialog-overlay-background-color
+  --dialog-box-shadow
 
---switch-background-color
---switch-background-color-checked
---switch-thumb-background-color
+  --switch-background-color
+  --switch-background-color-checked
+  --switch-thumb-background-color
 
---progress-background-color
---progress-track-background-color
+  --progress-background-color
+  --progress-track-background-color
 
---nav-background-color
---nav-link-gap
---nav-breadcrumb-divider
+  --nav-background-color
+  --nav-link-gap
+  --nav-breadcrumb-divider
 
---menu-background-color
---menu-border-color
---menu-color
---menu-background-color-hover
---menu-box-shadow
+  --menu-background-color
+  --menu-border-color
+  --menu-color
+  --menu-background-color-hover
+  --menu-box-shadow
 
---code-background-color
---code-color
---kbd-background-color
---kbd-color
+  --code-background-color
+  --code-color
+  --kbd-background-color
+  --kbd-color
 
---tooltip-background-color
---tooltip-color
+  --tooltip-background-color
+  --tooltip-color
 
---details-summary-color
---details-summary-color-hover
---details-summary-color-open
+  --details-summary-color
+  --details-summary-color-hover
+  --details-summary-color-open
 
---table-header-background-color
---table-row-background-color-striped
+  --table-header-background-color
+  --table-row-background-color-striped
+}
 ```
-
----
 
 ## How components, variants, and modifiers compose
 
@@ -238,14 +243,12 @@ To differentiate, set the component-scoped variable:
 No combinatorial explosion — `.ghost` doesn't need separate blocks for `.ghost.primary`,
 `.ghost.secondary`, etc. The cascade handles it.
 
----
-
 ## Property name rules
 
 ### Use CSS longhand property names
 
 | ✓ Do this | ✖ Not this | Because |
-|-----------|------------|---------|
+| --- | --- | --- |
 | `--background-color` | `--background` | `background` is a shorthand — it resets `background-image`, `background-position`, etc. |
 | `--border-color` | `--border` | `border` is a shorthand for `border-width`, `border-style`, `border-color` |
 | `--margin-top` | `--margin` | `margin` is a shorthand for all four sides |
@@ -259,39 +262,38 @@ A small number of tokens don't map directly to a CSS longhand property name.
 These are the *only* exceptions — every other token follows the rule.
 
 | Token | CSS property | Reason |
-|-------|-------------|--------|
+| --- | --- | --- |
 | `--spacing` | (multiple) | Not a CSS property — a density value used across `padding`, `margin`, `gap`, etc. |
-| `--transition` | `transition` | A shorthand used as a single composite value (`0.2s ease-in-out`) |
-| `--gap` | `gap` | Already a CSS property; the scope prefix (`--nav-link-gap`) carries the context |
-
----
+| `--transition` | `transition` | A shorthand used as a single composite value (`0.2s ease-in-out`). Breaking it into `--transition-duration` and `--transition-timing-function` would add tokens without practical benefit. |
 
 ## State ordering
 
 State always comes last. Multiple states are hyphenated in interaction order:
 
 ```css
---button-background-color-hover
---button-background-color-active
---switch-background-color-checked
---switch-thumb-background-color-checked-hover   /* checked AND hovered */
+:root,
+:host {
+  --button-background-color-hover
+  --button-background-color-active
+  --switch-background-color-checked
+  --switch-thumb-background-color-checked-hover   /* checked AND hovered */
+}
 ```
-
----
 
 ## Theme-invariant tokens
 
 Some tokens have the same value in both light and dark mode. Define them as plain values — no `light-dark()` needed:
 
 ```css
---button-box-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
---input-opacity-disabled: 0.5;                 /* always half-opacity */
---switch-thumb-background-color: white;        /* thumb always white */
+:root,
+:host {
+  --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
+  --input-opacity-disabled: 0.5;                 /* always half-opacity */
+  --switch-thumb-background-color: white;        /* thumb always white */
+}
 ```
 
 The absence of `light-dark()` is intentional, not an omission.
-
----
 
 ## Opacity tokens
 
@@ -299,14 +301,15 @@ When a color token needs a separate opacity channel (for `oklch(from ... l c h /
 append `-opacity`:
 
 ```css
---background-color-opacity   /* default: 100% */
---color-opacity              /* default: 100% */
---border-color-opacity       /* default: 100% */
+:root,
+:host {
+  --background-color-opacity   /* default: 100% */
+  --color-opacity              /* default: 100% */
+  --border-color-opacity       /* default: 100% */
+}
 ```
 
 These are property-mapped: the property name + `-opacity`.
-
----
 
 ## Spacing tokens
 
@@ -314,13 +317,14 @@ Spacing tokens use `spacing` as the property segment for internal padding/gap va
 that don't map to a single CSS property:
 
 ```css
---spacing                       /* base spacing unit (used in padding, margin, gap) */
---input-spacing-vertical        /* input internal vertical padding */
---input-spacing-horizontal      /* input internal horizontal padding */
---typography-spacing-vertical   /* vertical margin between typographic blocks */
+:root,
+:host {
+  --spacing                       /* base spacing unit (used in padding, margin, gap) */
+  --input-spacing-vertical        /* input internal vertical padding */
+  --input-spacing-horizontal      /* input internal horizontal padding */
+  --typography-spacing-vertical   /* vertical margin between typographic blocks */
+}
 ```
-
----
 
 ## Cascade-seed tokens
 
@@ -328,28 +332,30 @@ Some tokens are set on `:root` or an ancestor and propagate via CSS inheritance
 rather than explicit `var()` references. These use the CSS property name directly:
 
 ```css
---font-size                  /* root font-size — seeds rem calculations */
---line-height                /* root line-height — inherited by all text */
---font-weight                /* root font-weight — inherited baseline */
---text-underline-offset      /* root underline offset — inherited by links */
+:root,
+:host {
+  --font-size                  /* root font-size — seeds rem calculations */
+  --line-height                /* root line-height — inherited by all text */
+  --font-weight                /* root font-weight — inherited baseline */
+  --text-underline-offset      /* root underline offset — inherited by links */
+}
 ```
 
 The property name *is* the intent — the inheritance mechanism is the feature.
-
----
 
 ## Font family tokens
 
 Font family tokens use `font-family` as the base, with an optional variant:
 
 ```css
---font-family                /* default body font stack */
---font-family-sans-serif     /* sans-serif stack override */
---font-family-monospace      /* monospace stack (code, pre, kbd) */
---font-family-emoji          /* emoji font stack */
+:root,
+:host {
+  --font-family                /* default body font stack */
+  --font-family-sans-serif     /* sans-serif stack override */
+  --font-family-monospace      /* monospace stack (code, pre, kbd) */
+  --font-family-emoji          /* emoji font stack */
+}
 ```
-
----
 
 ## Internal / calculation helper tokens
 
@@ -362,8 +368,6 @@ They are not part of the public API:
 
 Do not reference these directly in component or utility CSS; derive via `calc()` only.
 
----
-
 ## Content / string tokens
 
 Tokens whose value is a CSS `content` string (for `::before` / `::after` pseudo-elements)
@@ -375,14 +379,12 @@ use the `-content` suffix:
 
 These follow the component token pattern (`{component}[-{part}]-content`) and hold an arbitrary CSS string value, not a colour or size.
 
----
-
 ## Migration from v0.x (role-based convention)
 
 If you're upgrading from an earlier version that used role-based names:
 
 | Old (v0.x) | New (v1.x) | Notes |
-|------------|------------|-------|
+| --- | --- | --- |
 | `--color-primary-fill` | `--primary-background-color` | `fill` → `background-color`; variant is prefix, no `--color-` wrapper |
 | `--color-primary-text` | `--primary-color` | `text` → `color` |
 | `--color-primary-on-fill` | `--primary-color` | Same as text — the "on fill" role is context-dependent and doesn't need a separate token |
