@@ -12,7 +12,7 @@ details {
     transition: color var(--transition);
 
     &:not([role]) {
-      color: var(--details-summary-text);
+      color: var(--details-summary-color);
     }
 
     &::-webkit-details-marker {
@@ -46,7 +46,7 @@ details {
       outline: none;
 
       &:not([role]) {
-        color: var(--details-summary-text-hover);
+        color: var(--details-summary-color-hover);
       }
     }
 
@@ -76,7 +76,7 @@ details {
     margin-bottom: var(--spacing);
 
     &:not([role]):not(:focus) {
-      color: var(--details-summary-text-open);
+      color: var(--details-summary-color-open);
     }
 
     &::after {

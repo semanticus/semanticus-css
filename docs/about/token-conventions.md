@@ -136,8 +136,7 @@ These fall back to the global tokens.
 
   --dialog-background-color
   --dialog-border-color
-  --dialog-header-background-color
-  --dialog-footer-background-color
+  --dialog-section-background-color
   --dialog-overlay-background-color
   --dialog-box-shadow
 

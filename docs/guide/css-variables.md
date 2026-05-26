@@ -125,9 +125,9 @@ h6 { --line-height: 1.25; }
   --font-weight: 400;
 }
 
-/* Headings have scoped font weights */
+/* Headings use the --heading-font-weight token */
 h1, h2, h3, h4, h5, h6 {
-  --font-weight: 700;
+  --font-weight: var(--heading-font-weight);
 }
 ```
 
@@ -178,8 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --dialog-background-color: light-dark(white, #181c25);
   --dialog-border-color: light-dark(var(--border-color), #181c25);
-  --dialog-header-background-color: light-dark(#fbfcfc, #2a3140);
-  --dialog-footer-background-color: light-dark(#fbfcfc, #2a3140);
+  --dialog-section-background-color: light-dark(#fbfcfc, #2a3140);
   --dialog-box-shadow: var(--shadow);
   --dialog-overlay-background-color: light-dark(oklch(from #e8eaed l c h / 0.75), oklch(from #07090c l c h / 0.75));
 }
@@ -286,7 +285,6 @@ CSS variables are organized into separate files for maintainability:
 |------|----------|
 | `_breakpoints.css` | Responsive breakpoint custom media queries |
 | `_theme.css` | Colors, typography, spacing, effects, component tokens, and icons |
-| `_elements.css` | Element-scoped variable overrides (headings, forms, etc.) |
 
 ## Complete Example
 

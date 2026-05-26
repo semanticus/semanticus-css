@@ -110,7 +110,7 @@ function togglePreviewTheme() {
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 function hasColorVar(value) {
-  return typeof value === 'string' && value.includes('var(--color-')
+  return typeof value === 'string' && (value.includes('var(--') || value.includes('light-dark') || value.includes('color-mix') || value.includes('oklch') || value.startsWith('#'))
 }
 
 function varType(defaultValue) {
@@ -123,10 +123,10 @@ const variableGroups = [
   {
     label: 'Core Colors',
     vars: [
-      { name: '--color-background', label: 'Background', desc: 'Main page background.', type: varType('light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)))'), default: 'light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)))' },
-      { name: '--color-text', label: 'Text', desc: 'Default body text color.', type: varType('light-dark(var(--color-zinc-750), var(--color-zinc-200))'), default: 'light-dark(var(--color-zinc-750), var(--color-zinc-200))' },
-      { name: '--color-text-muted', label: 'Muted Text', desc: 'Subdued text for captions and hints.', type: varType('color-mix(in srgb, var(--color-text), transparent 40%)'), default: 'color-mix(in srgb, var(--color-text), transparent 40%)' },
-      { name: '--color-border', label: 'Border', desc: 'Default border color.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-800))' },
+      { name: '--background-color', label: 'Background', desc: 'Main page background.', type: varType('light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)))'), default: 'light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)))' },
+      { name: '--color', label: 'Text', desc: 'Default body text color.', type: varType('light-dark(var(--color-zinc-750), var(--color-zinc-200))'), default: 'light-dark(var(--color-zinc-750), var(--color-zinc-200))' },
+      { name: '--color-muted', label: 'Muted Text', desc: 'Subdued text for captions and hints.', type: varType('color-mix(in srgb, var(--color), transparent 40%)'), default: 'color-mix(in srgb, var(--color), transparent 40%)' },
+      { name: '--border-color', label: 'Border', desc: 'Default border color.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-800))' },
     ]
   },
   {
@@ -139,34 +139,31 @@ const variableGroups = [
   {
     label: 'Primary Intent',
     vars: [
-      { name: '--color-primary-text', label: 'Primary Text', desc: 'Primary text/link color.', type: varType('light-dark(var(--color-azure-550), var(--color-azure-350))'), default: 'light-dark(var(--color-azure-550), var(--color-azure-350))' },
-      { name: '--color-primary-fill', label: 'Primary Fill', desc: 'Primary button/input fill.', type: varType('var(--color-azure-550)'), default: 'var(--color-azure-550)' },
-      { name: '--color-primary-on-fill', label: 'Primary On Fill', desc: 'Text over primary fill.', type: 'color', default: '#ffffff' },
-      { name: '--color-primary-text-hover', label: 'Primary Text Hover', desc: 'Primary text on hover.', type: varType('color-mix(in srgb, var(--color-primary-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-primary-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-primary-fill-hover', label: 'Primary Fill Hover', desc: 'Primary fill on hover.', type: varType('color-mix(in srgb, var(--color-primary-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-primary-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-primary-focus-ring', label: 'Primary Focus Ring', desc: 'Focus ring for primary elements.', type: varType('color-mix(in srgb, var(--color-primary-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-primary-text) 70%, var(--color-focus-effect))' },
+      { name: '--primary-color', label: 'Primary Text', desc: 'Primary text/link color.', type: varType('light-dark(var(--color-azure-550), var(--color-azure-350))'), default: 'light-dark(var(--color-azure-550), var(--color-azure-350))' },
+      { name: '--primary-background-color', label: 'Primary Fill', desc: 'Primary button/input fill.', type: varType('var(--color-azure-550)'), default: 'var(--color-azure-550)' },
+      { name: '--primary-color-hover', label: 'Primary Text Hover', desc: 'Primary text on hover.', type: varType('color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-effect))' },
+      { name: '--primary-background-color-hover', label: 'Primary Fill Hover', desc: 'Primary fill on hover.', type: varType('color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--primary-focus-ring-color', label: 'Primary Focus Ring', desc: 'Focus ring for primary elements.', type: varType('color-mix(in srgb, var(--primary-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--primary-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
     label: 'Secondary Intent',
     vars: [
-      { name: '--color-secondary-text', label: 'Secondary Text', desc: 'Secondary text color.', type: varType('light-dark(var(--color-slate-550), var(--color-zinc-350))'), default: 'light-dark(var(--color-slate-550), var(--color-zinc-350))' },
-      { name: '--color-secondary-fill', label: 'Secondary Fill', desc: 'Secondary button fill.', type: varType('var(--color-slate-550)'), default: 'var(--color-slate-550)' },
-      { name: '--color-secondary-on-fill', label: 'Secondary On Fill', desc: 'Text over secondary fill.', type: 'color', default: '#ffffff' },
-      { name: '--color-secondary-text-hover', label: 'Secondary Text Hover', desc: 'Secondary text on hover.', type: varType('color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-secondary-fill-hover', label: 'Secondary Fill Hover', desc: 'Secondary fill on hover.', type: varType('color-mix(in srgb, var(--color-secondary-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-secondary-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-secondary-focus-ring', label: 'Secondary Focus Ring', desc: 'Focus ring for secondary elements.', type: varType('color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-focus-effect))' },
+      { name: '--secondary-color', label: 'Secondary Text', desc: 'Secondary text color.', type: varType('light-dark(var(--color-slate-550), var(--color-zinc-350))'), default: 'light-dark(var(--color-slate-550), var(--color-zinc-350))' },
+      { name: '--secondary-background-color', label: 'Secondary Fill', desc: 'Secondary button fill.', type: varType('var(--color-slate-550)'), default: 'var(--color-slate-550)' },
+      { name: '--secondary-color-hover', label: 'Secondary Text Hover', desc: 'Secondary text on hover.', type: varType('color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-effect))' },
+      { name: '--secondary-background-color-hover', label: 'Secondary Fill Hover', desc: 'Secondary fill on hover.', type: varType('color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--secondary-focus-ring-color', label: 'Secondary Focus Ring', desc: 'Focus ring for secondary elements.', type: varType('color-mix(in srgb, var(--secondary-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--secondary-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
     label: 'Contrast Intent',
     vars: [
-      { name: '--color-contrast-text', label: 'Contrast Text', desc: 'Contrast text color.', type: varType('light-dark(var(--color-slate-900), var(--color-slate-100))'), default: 'light-dark(var(--color-slate-900), var(--color-slate-100))' },
-      { name: '--color-contrast-fill', label: 'Contrast Fill', desc: 'Contrast button fill.', type: varType('light-dark(var(--color-slate-900), var(--color-slate-50))'), default: 'light-dark(var(--color-slate-900), var(--color-slate-50))' },
-      { name: '--color-contrast-on-fill', label: 'Contrast On Fill', desc: 'Text over contrast fill.', type: varType('light-dark(white, var(--color-zinc-900))'), default: 'light-dark(white, var(--color-zinc-900))' },
-      { name: '--color-contrast-text-hover', label: 'Contrast Text Hover', desc: 'Contrast text on hover.', type: varType('color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-contrast-fill-hover', label: 'Contrast Fill Hover', desc: 'Contrast fill on hover.', type: varType('color-mix(in srgb, var(--color-contrast-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-contrast-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-contrast-focus-ring', label: 'Contrast Focus Ring', desc: 'Focus ring for contrast elements.', type: varType('color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-focus-effect))' },
+      { name: '--contrast-color', label: 'Contrast Text', desc: 'Contrast text color.', type: varType('light-dark(var(--color-slate-900), var(--color-slate-100))'), default: 'light-dark(var(--color-slate-900), var(--color-slate-100))' },
+      { name: '--contrast-background-color', label: 'Contrast Fill', desc: 'Contrast button fill.', type: varType('light-dark(var(--color-slate-900), var(--color-slate-50))'), default: 'light-dark(var(--color-slate-900), var(--color-slate-50))' },
+      { name: '--contrast-color-hover', label: 'Contrast Text Hover', desc: 'Contrast text on hover.', type: varType('color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-effect))' },
+      { name: '--contrast-background-color-hover', label: 'Contrast Fill Hover', desc: 'Contrast fill on hover.', type: varType('color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--contrast-focus-ring-color', label: 'Contrast Focus Ring', desc: 'Focus ring for contrast elements.', type: varType('color-mix(in srgb, var(--contrast-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--contrast-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
@@ -174,12 +171,11 @@ const variableGroups = [
     vars: [
       { name: '--color-jade-450', label: 'Jade 450', desc: 'Success base shade.', type: 'color', default: '#029764' },
       { name: '--color-jade-250', label: 'Jade 250', desc: 'Success light shade.', type: 'color', default: '#00cc88' },
-      { name: '--color-success-text', label: 'Success Text', desc: 'Success text color.', type: varType('light-dark(var(--color-jade-450), var(--color-jade-250))'), default: 'light-dark(var(--color-jade-450), var(--color-jade-250))' },
-      { name: '--color-success-fill', label: 'Success Fill', desc: 'Success button fill.', type: varType('var(--color-jade-450)'), default: 'var(--color-jade-450)' },
-      { name: '--color-success-on-fill', label: 'Success On Fill', desc: 'Text over success fill.', type: 'color', default: '#ffffff' },
-      { name: '--color-success-text-hover', label: 'Success Text Hover', desc: 'Success text on hover.', type: varType('color-mix(in srgb, var(--color-success-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-success-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-success-fill-hover', label: 'Success Fill Hover', desc: 'Success fill on hover.', type: varType('color-mix(in srgb, var(--color-success-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-success-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-success-focus-ring', label: 'Success Focus Ring', desc: 'Focus ring for success elements.', type: varType('color-mix(in srgb, var(--color-success-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-success-text) 70%, var(--color-focus-effect))' },
+      { name: '--success-color', label: 'Success Text', desc: 'Success text color.', type: varType('light-dark(var(--color-jade-450), var(--color-jade-250))'), default: 'light-dark(var(--color-jade-450), var(--color-jade-250))' },
+      { name: '--success-background-color', label: 'Success Fill', desc: 'Success button fill.', type: varType('var(--color-jade-450)'), default: 'var(--color-jade-450)' },
+      { name: '--success-color-hover', label: 'Success Text Hover', desc: 'Success text on hover.', type: varType('color-mix(in srgb, var(--success-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--success-color) 70%, var(--color-hover-effect))' },
+      { name: '--success-background-color-hover', label: 'Success Fill Hover', desc: 'Success fill on hover.', type: varType('color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--success-focus-ring-color', label: 'Success Focus Ring', desc: 'Focus ring for success elements.', type: varType('color-mix(in srgb, var(--success-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--success-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
@@ -187,12 +183,11 @@ const variableGroups = [
     vars: [
       { name: '--color-azure-450', label: 'Azure 450', desc: 'Info base shade.', type: 'color', default: '#018cd4' },
       { name: '--color-azure-250', label: 'Azure 250', desc: 'Info light shade.', type: 'color', default: '#79c0ff' },
-      { name: '--color-info-text', label: 'Info Text', desc: 'Info text color.', type: varType('light-dark(var(--color-azure-450), var(--color-azure-250))'), default: 'light-dark(var(--color-azure-450), var(--color-azure-250))' },
-      { name: '--color-info-fill', label: 'Info Fill', desc: 'Info button fill.', type: varType('var(--color-azure-450)'), default: 'var(--color-azure-450)' },
-      { name: '--color-info-on-fill', label: 'Info On Fill', desc: 'Text over info fill.', type: 'color', default: '#ffffff' },
-      { name: '--color-info-text-hover', label: 'Info Text Hover', desc: 'Info text on hover.', type: varType('color-mix(in srgb, var(--color-info-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-info-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-info-fill-hover', label: 'Info Fill Hover', desc: 'Info fill on hover.', type: varType('color-mix(in srgb, var(--color-info-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-info-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-info-focus-ring', label: 'Info Focus Ring', desc: 'Focus ring for info elements.', type: varType('color-mix(in srgb, var(--color-info-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-info-text) 70%, var(--color-focus-effect))' },
+      { name: '--info-color', label: 'Info Text', desc: 'Info text color.', type: varType('light-dark(var(--color-azure-450), var(--color-azure-250))'), default: 'light-dark(var(--color-azure-450), var(--color-azure-250))' },
+      { name: '--info-background-color', label: 'Info Fill', desc: 'Info button fill.', type: varType('var(--color-azure-450)'), default: 'var(--color-azure-450)' },
+      { name: '--info-color-hover', label: 'Info Text Hover', desc: 'Info text on hover.', type: varType('color-mix(in srgb, var(--info-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--info-color) 70%, var(--color-hover-effect))' },
+      { name: '--info-background-color-hover', label: 'Info Fill Hover', desc: 'Info fill on hover.', type: varType('color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--info-focus-ring-color', label: 'Info Focus Ring', desc: 'Focus ring for info elements.', type: varType('color-mix(in srgb, var(--info-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--info-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
@@ -200,12 +195,11 @@ const variableGroups = [
     vars: [
       { name: '--color-amber-350', label: 'Amber 350', desc: 'Warning base shade.', type: 'color', default: '#c79400' },
       { name: '--color-amber-250', label: 'Amber 250', desc: 'Warning light shade.', type: 'color', default: '#e8ae01' },
-      { name: '--color-warning-text', label: 'Warning Text', desc: 'Warning text color.', type: varType('light-dark(var(--color-amber-350), var(--color-amber-250))'), default: 'light-dark(var(--color-amber-350), var(--color-amber-250))' },
-      { name: '--color-warning-fill', label: 'Warning Fill', desc: 'Warning button fill.', type: varType('var(--color-amber-350)'), default: 'var(--color-amber-350)' },
-      { name: '--color-warning-on-fill', label: 'Warning On Fill', desc: 'Text over warning fill.', type: 'color', default: '#ffffff' },
-      { name: '--color-warning-text-hover', label: 'Warning Text Hover', desc: 'Warning text on hover.', type: varType('color-mix(in srgb, var(--color-warning-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-warning-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-warning-fill-hover', label: 'Warning Fill Hover', desc: 'Warning fill on hover.', type: varType('color-mix(in srgb, var(--color-warning-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-warning-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-warning-focus-ring', label: 'Warning Focus Ring', desc: 'Focus ring for warning elements.', type: varType('color-mix(in srgb, var(--color-warning-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-warning-text) 70%, var(--color-focus-effect))' },
+      { name: '--warning-color', label: 'Warning Text', desc: 'Warning text color.', type: varType('light-dark(var(--color-amber-350), var(--color-amber-250))'), default: 'light-dark(var(--color-amber-350), var(--color-amber-250))' },
+      { name: '--warning-background-color', label: 'Warning Fill', desc: 'Warning button fill.', type: varType('var(--color-amber-350)'), default: 'var(--color-amber-350)' },
+      { name: '--warning-color-hover', label: 'Warning Text Hover', desc: 'Warning text on hover.', type: varType('color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-effect))' },
+      { name: '--warning-background-color-hover', label: 'Warning Fill Hover', desc: 'Warning fill on hover.', type: varType('color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--warning-focus-ring-color', label: 'Warning Focus Ring', desc: 'Focus ring for warning elements.', type: varType('color-mix(in srgb, var(--warning-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--warning-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
@@ -213,99 +207,91 @@ const variableGroups = [
     vars: [
       { name: '--color-red-450', label: 'Red 450', desc: 'Danger base shade.', type: 'color', default: '#ee402e' },
       { name: '--color-red-250', label: 'Red 250', desc: 'Danger light shade.', type: 'color', default: '#f5a390' },
-      { name: '--color-danger-text', label: 'Danger Text', desc: 'Danger text color.', type: varType('light-dark(var(--color-red-450), var(--color-red-250))'), default: 'light-dark(var(--color-red-450), var(--color-red-250))' },
-      { name: '--color-danger-fill', label: 'Danger Fill', desc: 'Danger button fill.', type: varType('var(--color-red-450)'), default: 'var(--color-red-450)' },
-      { name: '--color-danger-on-fill', label: 'Danger On Fill', desc: 'Text over danger fill.', type: 'color', default: '#ffffff' },
-      { name: '--color-danger-text-hover', label: 'Danger Text Hover', desc: 'Danger text on hover.', type: varType('color-mix(in srgb, var(--color-danger-text) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-danger-text) 70%, var(--color-hover-effect))' },
-      { name: '--color-danger-fill-hover', label: 'Danger Fill Hover', desc: 'Danger fill on hover.', type: varType('color-mix(in srgb, var(--color-danger-fill) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--color-danger-fill) 70%, var(--color-hover-effect))' },
-      { name: '--color-danger-focus-ring', label: 'Danger Focus Ring', desc: 'Focus ring for danger elements.', type: varType('color-mix(in srgb, var(--color-danger-text) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--color-danger-text) 70%, var(--color-focus-effect))' },
+      { name: '--danger-color', label: 'Danger Text', desc: 'Danger text color.', type: varType('light-dark(var(--color-red-450), var(--color-red-250))'), default: 'light-dark(var(--color-red-450), var(--color-red-250))' },
+      { name: '--danger-background-color', label: 'Danger Fill', desc: 'Danger button fill.', type: varType('var(--color-red-450)'), default: 'var(--color-red-450)' },
+      { name: '--danger-color-hover', label: 'Danger Text Hover', desc: 'Danger text on hover.', type: varType('color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-effect))' },
+      { name: '--danger-background-color-hover', label: 'Danger Fill Hover', desc: 'Danger fill on hover.', type: varType('color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))'), default: 'color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))' },
+      { name: '--danger-focus-ring-color', label: 'Danger Focus Ring', desc: 'Focus ring for danger elements.', type: varType('color-mix(in srgb, var(--danger-color) 70%, var(--color-focus-effect))'), default: 'color-mix(in srgb, var(--danger-color) 70%, var(--color-focus-effect))' },
     ]
   },
   {
     label: 'Code',
     vars: [
-      { name: '--code-fill', label: 'Code Background', desc: 'Background for code blocks.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 75%, white), color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 75%, white), color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))' },
-      { name: '--code-text', label: 'Code Text', desc: 'Text color inside code blocks.', type: varType('light-dark(var(--color-zinc-550), var(--color-zinc-400))'), default: 'light-dark(var(--color-zinc-550), var(--color-zinc-400))' },
-      { name: '--kbd-fill', label: 'Kbd Background', desc: 'Background for keyboard elements.', type: varType('var(--color-text)'), default: 'var(--color-text)' },
-      { name: '--kbd-text', label: 'Kbd Text', desc: 'Text color for keyboard elements.', type: varType('var(--color-background)'), default: 'var(--color-background)' },
+      { name: '--code-background-color', label: 'Code Background', desc: 'Background for code blocks.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 75%, white), color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 75%, white), color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))' },
+      { name: '--code-color', label: 'Code Text', desc: 'Text color inside code blocks.', type: varType('light-dark(var(--color-zinc-550), var(--color-zinc-400))'), default: 'light-dark(var(--color-zinc-550), var(--color-zinc-400))' },
+      { name: '--kbd-background-color', label: 'Kbd Background', desc: 'Background for keyboard elements.', type: varType('var(--color)'), default: 'var(--color)' },
+      { name: '--kbd-color', label: 'Kbd Text', desc: 'Text color for keyboard elements.', type: varType('var(--background-color)'), default: 'var(--background-color)' },
     ]
   },
   {
     label: 'Form Inputs',
     vars: [
-      { name: '--input-fill', label: 'Input Background', desc: 'Default input background.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))' },
-      { name: '--input-fill-selected', label: 'Input Selected BG', desc: 'Input background when selected.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-800))' },
-      { name: '--input-fill-active', label: 'Input Active BG', desc: 'Input background when active/focused.', type: varType('light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))'), default: 'light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))' },
-      { name: '--input-border', label: 'Input Border', desc: 'Input border color.', type: varType('light-dark(var(--color-slate-150), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-150), var(--color-slate-800))' },
-      { name: '--input-text', label: 'Input Text', desc: 'Text color inside inputs.', type: varType('light-dark(var(--color-zinc-850), var(--color-zinc-100))'), default: 'light-dark(var(--color-zinc-850), var(--color-zinc-100))' },
-      { name: '--input-placeholder-text', label: 'Placeholder Text', desc: 'Placeholder text color.', type: varType('var(--color-text-muted)'), default: 'var(--color-text-muted)' },
-      { name: '--input-border-focus', label: 'Input Focus Border', desc: 'Border color when input is focused.', type: varType('var(--color-primary-fill)'), default: 'var(--color-primary-fill)' },
+      { name: '--input-background-color', label: 'Input Background', desc: 'Default input background.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))' },
+      { name: '--input-background-color-selected', label: 'Input Selected BG', desc: 'Input background when selected.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-800))' },
+      { name: '--input-background-color-focus', label: 'Input Active BG', desc: 'Input background when active/focused.', type: varType('light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))'), default: 'light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))' },
+      { name: '--input-border-color', label: 'Input Border', desc: 'Input border color.', type: varType('light-dark(var(--color-slate-150), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-150), var(--color-slate-800))' },
+      { name: '--input-color', label: 'Input Text', desc: 'Text color inside inputs.', type: varType('light-dark(var(--color-zinc-850), var(--color-zinc-100))'), default: 'light-dark(var(--color-zinc-850), var(--color-zinc-100))' },
+      { name: '--input-placeholder-color', label: 'Placeholder Text', desc: 'Placeholder text color.', type: varType('var(--color-muted)'), default: 'var(--color-muted)' },
+      { name: '--input-border-color-focus', label: 'Input Focus Border', desc: 'Border color when input is focused.', type: varType('var(--primary-background-color)'), default: 'var(--primary-background-color)' },
     ]
   },
   {
     label: 'Switch',
     vars: [
-      { name: '--switch-fill', label: 'Switch Track', desc: 'Switch track background when unchecked.', type: varType('light-dark(var(--color-slate-200), var(--color-slate-750))'), default: 'light-dark(var(--color-slate-200), var(--color-slate-750))' },
-      { name: '--switch-fill-checked', label: 'Switch Track Checked', desc: 'Switch track background when checked.', type: varType('var(--color-primary-fill)'), default: 'var(--color-primary-fill)' },
-      { name: '--switch-thumb-fill', label: 'Switch Thumb', desc: 'Switch thumb (knob) color.', type: 'color', default: '#ffffff' },
+      { name: '--switch-background-color', label: 'Switch Track', desc: 'Switch track background when unchecked.', type: varType('light-dark(var(--color-slate-200), var(--color-slate-750))'), default: 'light-dark(var(--color-slate-200), var(--color-slate-750))' },
+      { name: '--switch-background-color-checked', label: 'Switch Track Checked', desc: 'Switch track background when checked.', type: varType('var(--primary-background-color)'), default: 'var(--primary-background-color)' },
+      { name: '--switch-thumb-background-color', label: 'Switch Thumb', desc: 'Switch thumb (knob) color.', type: 'color', default: '#ffffff' },
     ]
   },
   {
     label: 'Range',
     vars: [
-      { name: '--range-track-border', label: 'Range Track Border', desc: 'Range slider track border.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-850))' },
-      { name: '--range-track-border-active', label: 'Range Track Active Border', desc: 'Range slider track border when active.', type: varType('light-dark(var(--color-slate-200), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-200), var(--color-slate-800))' },
-      { name: '--range-thumb-border', label: 'Range Thumb Border', desc: 'Range slider thumb border.', type: varType('var(--color-background)'), default: 'var(--color-background)' },
-      { name: '--range-thumb-fill', label: 'Range Thumb Fill', desc: 'Range slider thumb fill.', type: varType('var(--color-secondary-fill)'), default: 'var(--color-secondary-fill)' },
-      { name: '--range-thumb-fill-active', label: 'Range Thumb Active', desc: 'Range slider thumb fill when active.', type: varType('var(--color-primary-fill)'), default: 'var(--color-primary-fill)' },
+      { name: '--range-track-border-color', label: 'Range Track Border', desc: 'Range slider track border.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-850))' },
+      { name: '--range-track-border-color-active', label: 'Range Track Active Border', desc: 'Range slider track border when active.', type: varType('light-dark(var(--color-slate-200), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-200), var(--color-slate-800))' },
+      { name: '--range-thumb-border-color', label: 'Range Thumb Border', desc: 'Range slider thumb border.', type: varType('var(--background-color)'), default: 'var(--background-color)' },
+      { name: '--range-thumb-background-color', label: 'Range Thumb Fill', desc: 'Range slider thumb fill.', type: varType('var(--secondary-background-color)'), default: 'var(--secondary-background-color)' },
+      { name: '--range-thumb-background-color-active', label: 'Range Thumb Active', desc: 'Range slider thumb fill when active.', type: varType('var(--primary-background-color)'), default: 'var(--primary-background-color)' },
     ]
   },
   {
     label: 'Details / Accordion',
     vars: [
-      { name: '--details-summary-text', label: 'Summary Text', desc: 'Accordion summary text color.', type: varType('var(--color-text)'), default: 'var(--color-text)' },
-      { name: '--details-summary-text-hover', label: 'Summary Hover', desc: 'Accordion summary text on hover.', type: varType('var(--color-primary-text-hover)'), default: 'var(--color-primary-text-hover)' },
-      { name: '--details-summary-text-open', label: 'Summary Open', desc: 'Accordion summary text when open.', type: varType('var(--color-text-muted)'), default: 'var(--color-text-muted)' },
+      { name: '--details-summary-color', label: 'Summary Text', desc: 'Accordion summary text color.', type: varType('var(--color)'), default: 'var(--color)' },
+      { name: '--details-summary-color-hover', label: 'Summary Hover', desc: 'Accordion summary text on hover.', type: varType('var(--primary-color-hover)'), default: 'var(--primary-color-hover)' },
+      { name: '--details-summary-color-open', label: 'Summary Open', desc: 'Accordion summary text when open.', type: varType('var(--color-muted)'), default: 'var(--color-muted)' },
     ]
   },
   {
     label: 'Dialog / Alert',
     vars: [
-      { name: '--dialog-fill', label: 'Dialog Background', desc: 'Dialog/card background.', type: varType('light-dark(var(--color-background), var(--color-slate-900))'), default: 'light-dark(var(--color-background), var(--color-slate-900))' },
-      { name: '--dialog-border', label: 'Dialog Border', desc: 'Dialog/card border color.', type: varType('light-dark(var(--color-border), var(--color-slate-900))'), default: 'light-dark(var(--color-border), var(--color-slate-900))' },
-      { name: '--dialog-section-fill', label: 'Dialog Section BG', desc: 'Header/footer section background.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))' },
-      { name: '--dialog-section-border', label: 'Dialog Section Border', desc: 'Header/footer section border.', type: varType('color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)'), default: 'color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)' },
-      { name: '--dialog-overlay', label: 'Dialog Overlay', desc: 'Modal backdrop color.', type: varType('light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))'), default: 'light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))' },
+      { name: '--dialog-background-color', label: 'Dialog Background', desc: 'Dialog/card background.', type: varType('light-dark(var(--background-color), var(--color-slate-900))'), default: 'light-dark(var(--background-color), var(--color-slate-900))' },
+      { name: '--dialog-border-color', label: 'Dialog Border', desc: 'Dialog/card border color.', type: varType('var(--border-color)'), default: 'var(--border-color)' },
+      { name: '--dialog-section-background-color', label: 'Dialog Section BG', desc: 'Header/footer section background.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))' },
+      { name: '--dialog-section-border-color', label: 'Dialog Section Border', desc: 'Header/footer section border.', type: varType('color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)'), default: 'color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)' },
+      { name: '--dialog-overlay-background-color', label: 'Dialog Overlay', desc: 'Modal backdrop color.', type: varType('light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))'), default: 'light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))' },
     ]
   },
   {
     label: 'Menu / Dropdown',
     vars: [
-      { name: '--menu-fill', label: 'Menu Background', desc: 'Dropdown menu background.', type: varType('light-dark(white, var(--color-slate-900))'), default: 'light-dark(white, var(--color-slate-900))' },
-      { name: '--menu-border', label: 'Menu Border', desc: 'Dropdown menu border.', type: varType('light-dark(var(--color-slate-50), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-50), var(--color-slate-850))' },
-      { name: '--menu-text', label: 'Menu Text', desc: 'Dropdown menu text color.', type: varType('var(--color-text)'), default: 'var(--color-text)' },
-      { name: '--menu-fill-hover', label: 'Menu Hover', desc: 'Dropdown item hover background.', type: varType('light-dark(var(--color-slate-50), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-50), var(--color-slate-850))' },
+      { name: '--menu-background-color', label: 'Menu Background', desc: 'Dropdown menu background.', type: varType('light-dark(white, var(--color-slate-900))'), default: 'light-dark(white, var(--color-slate-900))' },
+      { name: '--menu-border-color', label: 'Menu Border', desc: 'Dropdown menu border.', type: varType('light-dark(var(--color-slate-50), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-50), var(--color-slate-850))' },
+      { name: '--menu-color', label: 'Menu Text', desc: 'Dropdown menu text color.', type: varType('var(--color)'), default: 'var(--color)' },
+      { name: '--menu-background-color-hover', label: 'Menu Hover', desc: 'Dropdown item hover background.', type: varType('light-dark(var(--color-slate-50), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-50), var(--color-slate-850))' },
     ]
   },
   {
     label: 'Progress',
     vars: [
-      { name: '--progress-track-fill', label: 'Progress Track', desc: 'Progress bar track (empty portion).', type: varType('light-dark(var(--color-slate-100), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-850))' },
-      { name: '--progress-fill', label: 'Progress Fill', desc: 'Progress bar filled portion.', type: varType('var(--color-primary-fill)'), default: 'var(--color-primary-fill)' },
+      { name: '--progress-track-background-color', label: 'Progress Track', desc: 'Progress bar track (empty portion).', type: varType('light-dark(var(--color-slate-100), var(--color-slate-850))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-850))' },
+      { name: '--progress-background-color', label: 'Progress Fill', desc: 'Progress bar filled portion.', type: varType('var(--primary-background-color)'), default: 'var(--primary-background-color)' },
     ]
   },
   {
     label: 'Tooltip',
     vars: [
-      { name: '--tooltip-fill', label: 'Tooltip Background', desc: 'Tooltip background color.', type: varType('var(--color-contrast-fill)'), default: 'var(--color-contrast-fill)' },
-      { name: '--tooltip-text', label: 'Tooltip Text', desc: 'Tooltip text color.', type: varType('var(--color-contrast-on-fill)'), default: 'var(--color-contrast-on-fill)' },
-    ]
-  },
-  {
-    label: 'Button Shadows',
-    vars: [
-      { name: '--button-shadow', label: 'Button Shadow', desc: 'Shadow on buttons at rest.', type: 'text', default: '0 0 0 rgb(0 0 0 / 0)' },
-      { name: '--button-shadow-hover', label: 'Button Hover Shadow', desc: 'Shadow on buttons when hovered.', type: 'text', default: '0 0 0 rgb(0 0 0 / 0)' },
+      { name: '--tooltip-background-color', label: 'Tooltip Background', desc: 'Tooltip background color.', type: varType('var(--contrast-background-color)'), default: 'var(--contrast-background-color)' },
+      { name: '--tooltip-color', label: 'Tooltip Text', desc: 'Tooltip text color.', type: varType('light-dark(white, var(--color-zinc-900))'), default: 'light-dark(white, var(--color-zinc-900))' },
     ]
   },
 ]

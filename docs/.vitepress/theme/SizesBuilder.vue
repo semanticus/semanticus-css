@@ -141,35 +141,56 @@ const variableGroups = [
       { name: '--line-height', label: 'Line Height', desc: 'Default line-height for body text.', default: '1.5' },
       { name: '--font-weight', label: 'Font Weight', desc: 'Default font weight for body text.', default: '400' },
       { name: '--text-underline-offset', label: 'Underline Offset', desc: 'Offset for underlined text.', default: '0.1rem' },
-      { name: '--a-decoration', label: 'Link Decoration', desc: 'Text decoration style for links.', default: 'underline' },
+      { name: '--link-text-decoration', label: 'Link Decoration', desc: 'Text decoration style for links.', default: 'underline' },
     ]
   },
   {
     label: 'Heading Sizes',
     vars: [
-      { name: '--h1-size', label: 'H1 Size', desc: 'Font size for <h1> elements.', default: '2rem' },
-      { name: '--h2-size', label: 'H2 Size', desc: 'Font size for <h2> elements.', default: '1.75rem' },
-      { name: '--h3-size', label: 'H3 Size', desc: 'Font size for <h3> elements.', default: '1.5rem' },
-      { name: '--h4-size', label: 'H4 Size', desc: 'Font size for <h4> elements.', default: '1.25rem' },
-      { name: '--h5-size', label: 'H5 Size', desc: 'Font size for <h5> elements.', default: '1.125rem' },
-      { name: '--h6-size', label: 'H6 Size', desc: 'Font size for <h6> elements.', default: '1rem' },
+      { name: '--h1-font-size', label: 'H1 Size', desc: 'Font size for <h1> elements.', default: '2rem' },
+      { name: '--h2-font-size', label: 'H2 Size', desc: 'Font size for <h2> elements.', default: '1.75rem' },
+      { name: '--h3-font-size', label: 'H3 Size', desc: 'Font size for <h3> elements.', default: '1.5rem' },
+      { name: '--h4-font-size', label: 'H4 Size', desc: 'Font size for <h4> elements.', default: '1.25rem' },
+      { name: '--h5-font-size', label: 'H5 Size', desc: 'Font size for <h5> elements.', default: '1.125rem' },
+      { name: '--h6-font-size', label: 'H6 Size', desc: 'Font size for <h6> elements.', default: '1rem' },
+    ]
+  },
+  {
+    label: 'Heading Typography',
+    vars: [
+      { name: '--heading-font-weight', label: 'Heading Weight', desc: 'Font weight for all headings.', default: '700' },
+      { name: '--h1-line-height', label: 'H1 Line Height', desc: 'Line height for <h1>.', default: '1.125' },
+      { name: '--h2-line-height', label: 'H2 Line Height', desc: 'Line height for <h2>.', default: '1.15' },
+      { name: '--h3-line-height', label: 'H3 Line Height', desc: 'Line height for <h3>.', default: '1.175' },
+      { name: '--h4-line-height', label: 'H4 Line Height', desc: 'Line height for <h4>.', default: '1.2' },
+      { name: '--h5-line-height', label: 'H5 Line Height', desc: 'Line height for <h5>.', default: '1.225' },
+      { name: '--h6-line-height', label: 'H6 Line Height', desc: 'Line height for <h6>.', default: '1.25' },
+      { name: '--h1-gap-top', label: 'H1 Gap Top', desc: 'Top margin gap before <h1>.', default: '3rem' },
+      { name: '--h2-gap-top', label: 'H2 Gap Top', desc: 'Top margin gap before <h2>.', default: '2.625rem' },
+      { name: '--h3-gap-top', label: 'H3 Gap Top', desc: 'Top margin gap before <h3>.', default: '2.25rem' },
+      { name: '--h4-gap-top', label: 'H4 Gap Top', desc: 'Top margin gap before <h4>.', default: '1.874rem' },
+      { name: '--h5-gap-top', label: 'H5 Gap Top', desc: 'Top margin gap before <h5>.', default: '1.6875rem' },
+      { name: '--h6-gap-top', label: 'H6 Gap Top', desc: 'Top margin gap before <h6>.', default: '1.5rem' },
+      { name: '--small-font-size', label: 'Small Font Size', desc: 'Font size for <small> text.', default: '80%' },
     ]
   },
   {
     label: 'Spacing',
     vars: [
+      { name: '--spacing-base', label: 'Spacing Base', desc: 'Base spacing unit.', default: '0.75rem' },
+      { name: '--spacing-scale', label: 'Spacing Scale', desc: 'Responsive spacing multiplier.', default: '1' },
       { name: '--spacing', label: 'Spacing', desc: 'Applied spacing; product of spacing-base × spacing-scale.', default: 'calc(var(--spacing-base) * var(--spacing-scale))' },
       { name: '--typography-spacing-vertical', label: 'Typography Vertical', desc: 'Vertical margin below typographic elements.', default: '1rem' },
-      { name: '--input-spacing-vertical', label: 'Input Vertical', desc: 'Vertical padding inside form inputs.', default: '0.75rem' },
-      { name: '--input-spacing-horizontal', label: 'Input Horizontal', desc: 'Horizontal padding inside form inputs.', default: '1rem' },
+      { name: '--input-spacing-vertical', label: 'Input Vertical', desc: 'Vertical padding inside form inputs.', default: '0.5rem' },
+      { name: '--input-spacing-horizontal', label: 'Input Horizontal', desc: 'Horizontal padding inside form inputs.', default: '0.7rem' },
     ]
   },
   {
     label: 'Borders & Effects',
     vars: [
-      { name: '--radius', label: 'Border Radius', desc: 'Default border-radius for elements.', default: '0.25rem' },
-      { name: '--border-size', label: 'Border Size', desc: 'Default border width.', default: '0.0625rem' },
-      { name: '--outline-size', label: 'Outline Size', desc: 'Focus-ring outline width.', default: '0.125rem' },
+      { name: '--border-radius', label: 'Border Radius', desc: 'Default border-radius for elements.', default: '0.25rem' },
+      { name: '--border-width', label: 'Border Width', desc: 'Default border width.', default: '0.0625rem' },
+      { name: '--outline-width', label: 'Outline Width', desc: 'Focus-ring outline width.', default: '0.125rem' },
       { name: '--transition', label: 'Transition', desc: 'Default transition timing for interactive states.', default: '0.2s ease-in-out' },
     ]
   },
@@ -182,25 +203,41 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Group Shadows',
+    label: 'Group',
     vars: [
-      { name: '--group-shadow', label: 'Group Shadow', desc: 'Shadow on [role="group"] and [role="search"] combos.', default: '0 0 0 rgba(0, 0, 0, 0)' },
-      { name: '--group-shadow-focus-button', label: 'Group Button Focus', desc: 'Focus shadow when a button inside the group is focused.', default: '0 0 0 var(--outline-size) var(--color-primary-focus-ring)' },
-      { name: '--group-shadow-focus-input', label: 'Group Input Focus', desc: 'Focus shadow when an input inside the group is focused.', default: '0 0 0 0.0625rem var(--input-border)' },
+      { name: '--group-box-shadow', label: 'Group Shadow', desc: 'Shadow on [role="group"] and [role="search"] combos.', default: '0 0 0 rgba(0, 0, 0, 0)' },
+      { name: '--group-box-shadow-focus-button', label: 'Group Button Focus', desc: 'Focus shadow when a button inside the group is focused.', default: '0 0 0 var(--outline-width) var(--primary-focus-ring-color)' },
+      { name: '--group-box-shadow-focus-input', label: 'Group Input Focus', desc: 'Focus shadow when an input inside the group is focused.', default: '0 0 0 0.0625rem var(--input-border-color)' },
+      { name: '--group-button-spacing-horizontal', label: 'Group Button Spacing', desc: 'Horizontal padding for buttons inside groups.', default: '1rem' },
     ]
   },
   {
     label: 'Button Shadows',
     vars: [
-      { name: '--button-shadow', label: 'Button Shadow', desc: 'Shadow on buttons at rest.', default: '0 0 0 rgb(0 0 0 / 0)' },
-      { name: '--button-shadow-hover', label: 'Button Hover Shadow', desc: 'Shadow on buttons when hovered.', default: '0 0 0 rgb(0 0 0 / 0)' },
+      { name: '--button-box-shadow', label: 'Button Shadow', desc: 'Shadow on buttons at rest.', default: '0 0 0 rgb(0 0 0 / 0)' },
+      { name: '--button-box-shadow-hover', label: 'Button Hover Shadow', desc: 'Shadow on buttons when hovered.', default: '0 0 0 rgb(0 0 0 / 0)' },
+    ]
+  },
+  {
+    label: 'Form Details',
+    vars: [
+      { name: '--input-outline-width', label: 'Input Outline Width', desc: 'Focus-ring width for text inputs.', default: '0.0625rem' },
+      { name: '--search-border-radius', label: 'Search Border Radius', desc: 'Border radius for search inputs and roles.', default: '5rem' },
+      { name: '--checkbox-border-width', label: 'Checkbox Border Width', desc: 'Border width for checkboxes and radios.', default: '0.125rem' },
+      { name: '--switch-border-width', label: 'Switch Border Width', desc: 'Border width for toggle switches.', default: '0.1875rem' },
+    ]
+  },
+  {
+    label: 'Table',
+    vars: [
+      { name: '--table-header-font-weight', label: 'Table Header Weight', desc: 'Font weight for table headers.', default: '600' },
+      { name: '--table-header-border-width', label: 'Table Header Border', desc: 'Border width for table header/footer rows.', default: '0.1875rem' },
     ]
   },
   {
     label: 'Form States & Misc',
     vars: [
       { name: '--input-opacity-disabled', label: 'Disabled Opacity', desc: 'Opacity for disabled form inputs.', default: '0.5' },
-      { name: '--loading-spinner-opacity', label: 'Loading Opacity', desc: 'Opacity for the loading spinner overlay.', default: '0.5' },
     ]
   },
 ]

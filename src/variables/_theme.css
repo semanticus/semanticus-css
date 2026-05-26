@@ -372,11 +372,7 @@
   );
   --dialog-border-color: var(--border-color);
   --dialog-box-shadow: var(--box-shadow);
-  --dialog-header-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-  --dialog-footer-background-color: light-dark(
+  --dialog-section-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
@@ -399,15 +395,11 @@
     var(--color-slate-50),
     var(--color-slate-850)
   );
-  --menu-box-shadow: var(--box-shadow);
   --menu-color: var(--color);
   --menu-background-color-hover: light-dark(
     var(--color-slate-50),
     var(--color-slate-850)
   );
-
-  /* --- Loading --- */
-  --loading-spinner-opacity: 0.5;
 
   /* --- Progress --- */
   --progress-track-background-color: light-dark(
