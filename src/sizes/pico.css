@@ -21,7 +21,7 @@
   --text-underline-offset: 0.1rem;
 
   /* Borders & Effects – global defaults for border-radius, border-width, outline, and transition */
-  --radius: 0.25rem;
+  --border-radius: 0.25rem;
   --border-width: 0.0625rem; /* 1px – base border width used by forms, tables, etc. */
   --outline-width: 0.125rem; /* 2px – focus-ring width */
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */

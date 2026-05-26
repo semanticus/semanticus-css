@@ -1,6 +1,6 @@
 [role="search"],
 [role="group"] {
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   box-shadow: var(--group-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   display: inline-flex;
   gap: 0;

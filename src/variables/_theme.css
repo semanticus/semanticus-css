@@ -85,12 +85,12 @@
   --typography-spacing-vertical: 1rem;
 
   /* Borders & Effects */
-  --radius: 0.25rem;
+  --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 0.125rem;
   --transition: 0.2s ease-in-out;
 
-  --shadow:
+  --box-shadow:
     0.0145rem 0.029rem 0.174rem
       light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
     0.0335rem 0.067rem 0.402rem
@@ -345,7 +345,7 @@
     var(--color-slate-900)
   );
   --dialog-border-color: var(--border-color);
-  --dialog-box-shadow: var(--shadow);
+  --dialog-box-shadow: var(--box-shadow);
   --dialog-header-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
@@ -373,7 +373,7 @@
     var(--color-slate-50),
     var(--color-slate-850)
   );
-  --menu-box-shadow: var(--shadow);
+  --menu-box-shadow: var(--box-shadow);
   --menu-color: var(--color);
   --menu-background-color-hover: light-dark(
     var(--color-slate-50),

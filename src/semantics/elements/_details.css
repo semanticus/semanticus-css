@@ -131,7 +131,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     );
     padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
     border: var(--border-width) solid var(--input-border-color);
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     background-color: var(--input-background-color);
     color: var(--input-placeholder-color);
     line-height: inherit;
@@ -179,7 +179,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     margin-top: var(--outline-width);
     padding: 0;
     border: var(--border-width) solid var(--menu-border-color);
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     background-color: var(--menu-background-color);
     box-shadow: var(--menu-box-shadow);
     color: var(--menu-color);

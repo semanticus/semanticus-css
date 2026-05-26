@@ -35,7 +35,7 @@
 
   padding: var(--spacing);
   margin-bottom: var(--spacing);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   border: var(--border-width) solid var(--border-color);
   border-inline-start-width: var(--alert-size);
   border-inline-start-color: var(--dialog-border-color);
@@ -66,7 +66,7 @@
 
   &[popover] {
     display: none;
-    box-shadow: var(--shadow);
+    box-shadow: var(--box-shadow);
     left: unset;
     right: 0;
     bottom: 0;

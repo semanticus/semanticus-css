@@ -8,14 +8,14 @@ progress {
   margin-bottom: calc(var(--spacing) * 0.5);
   overflow: hidden;
   border: 0;
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   background-color: var(--progress-track-background-color);
   color: var(--progress-background-color);
   vertical-align: baseline;
   accent-color: var(--primary-background-color);
 
   &::-webkit-progress-bar {
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     background: none;
   }
 

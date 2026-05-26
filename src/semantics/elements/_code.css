@@ -4,7 +4,7 @@ kbd,
 samp {
   font-size: 0.875em;
   font-family: var(--font-family);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);

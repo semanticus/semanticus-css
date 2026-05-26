@@ -53,7 +53,7 @@ No scope prefix. These define the document-wide baseline.
 --line-height               /* root line height */
 --outline-width             /* focus ring thickness */
 --focus-ring-color          /* focus ring color (used in box-shadow) */
---shadow                    /* global shadow stack */
+--box-shadow                /* global shadow stack */
 --transition                /* default transition duration + easing */
 ```
 
@@ -253,16 +253,15 @@ No combinatorial explosion — `.ghost` doesn't need separate blocks for `.ghost
 | `--border-width` | `--border-size` | CSS property is `border-width` |
 | `--outline-width` | `--outline-size` | CSS property is `outline-width` |
 
-### Well-known exceptions
+### Genuine exceptions
 
-A small set of tokens deviate for brevity and long-standing convention:
+A small number of tokens don't map directly to a CSS longhand property name.
+These are the *only* exceptions — every other token follows the rule.
 
 | Token | CSS property | Reason |
 |-------|-------------|--------|
-| `--shadow` | `box-shadow` | Ubiquitous in CSS frameworks; shorter and universally understood |
-| `--spacing` | (multiple) | Not a CSS property — a density value used in `padding`, `margin`, `gap`, etc. |
+| `--spacing` | (multiple) | Not a CSS property — a density value used across `padding`, `margin`, `gap`, etc. |
 | `--transition` | `transition` | A shorthand used as a single composite value (`0.2s ease-in-out`) |
-| `--radius` | `border-radius` | Ubiquitous shorthand; `--button-radius` is clearer than `--button-border-radius` |
 | `--gap` | `gap` | Already a CSS property; the scope prefix (`--nav-link-gap`) carries the context |
 
 ---

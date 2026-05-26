@@ -110,7 +110,7 @@ input:not(
 
 /* Search inputs are pill-shaped */
 [type="search"] {
-  --radius: 5rem;
+  --border-radius: 5rem;
 }
 
 /* Checkboxes & radios use a slightly thicker border */
@@ -126,7 +126,7 @@ input:not(
 
 /* Search role wrappers are pill-shaped */
 [role="search"] {
-  --radius: 5rem;
+  --border-radius: 5rem;
 }
 
 /* ==========================================================================

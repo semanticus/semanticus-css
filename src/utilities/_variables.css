@@ -15,11 +15,11 @@
 
   /* Borders & radii */
   --border-radius-pill: 50rem;
-  --border-radius-1: var(--radius);
-  --border-radius-2: calc(var(--radius) * 2);
-  --border-radius-3: calc(var(--radius) * 4);
-  --border-radius-4: calc(var(--radius) * 6);
-  --border-radius-5: calc(var(--radius) * 8);
+  --border-radius-1: var(--border-radius);
+  --border-radius-2: calc(var(--border-radius) * 2);
+  --border-radius-3: calc(var(--border-radius) * 4);
+  --border-radius-4: calc(var(--border-radius) * 6);
+  --border-radius-5: calc(var(--border-radius) * 8);
 
   /* Border-width scale */
   --border-style: solid;

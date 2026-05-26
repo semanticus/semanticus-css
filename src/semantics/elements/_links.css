@@ -3,7 +3,7 @@
   --background-color: transparent;
   --border-color: transparent;
   --color: var(--primary-color);
-  --shadow: transparent;
+  --box-shadow: transparent;
   outline: none;
   padding: 0;
   background-color: var(--background-color);
@@ -22,7 +22,7 @@
     --background-color: transparent;
     --border-color: transparent;
     --color: var(--primary-color-hover);
-    --shadow: transparent;
+    --box-shadow: transparent;
     text-decoration-color: oklch(from var(--color) l c h / 0.85);
   }
 

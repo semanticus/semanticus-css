@@ -19,7 +19,7 @@
   }
 
   &:focus::file-selector-button {
-    --shadow:
+    --box-shadow:
       var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
       0 0 0 var(--outline-width) var(--secondary-focus-ring-color);
   }
