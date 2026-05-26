@@ -1,6 +1,6 @@
 {
   "name": "@semanticus/semanticus-css",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities",
   "author": "Joao Goncalves",
   "style": "./dist/semanticus.css",
