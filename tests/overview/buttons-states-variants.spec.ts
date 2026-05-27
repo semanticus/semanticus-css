@@ -6,10 +6,12 @@ test.use({ viewport: { width: 1024, height: 900 } });
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overview/all-buttons.demo/main?theme=${theme} - visual snapshot`, async ({
+  test(`/overview/buttons-states-variants.demo/main?theme=${theme} - visual snapshot`, async ({
     page,
   }) => {
-    await page.goto(`/overview/all-buttons.demo/main?theme=${theme}`);
+    await page.goto(
+      `/overview/buttons-states-variants.demo/main?theme=${theme}`,
+    );
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();

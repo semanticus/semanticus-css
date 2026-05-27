@@ -44,23 +44,23 @@ export function overviewVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewStatesAndModifiers(intent: string = "") {
-  return `<h3>Buttons</h3>
+  return `<h3>button</h3>
 ${ButtonDemo.overviewStatesAndModifiers(intent)}
 
 <br>
-<h3>Div [role="button"]</h3>
+<h3>div [role="button"]</h3>
 ${RoleButtonDemo.overviewStatesAndModifiers("div", intent)}
 
 <br>
-<h3>Input [type="button"]</h3>
+<h3>input [type="button"]</h3>
 ${inputTypeOverviewStatesAndModifiers("button", intent)}
 
 <br>
-<h3>Input [type="submit"]</h3>
+<h3>input [type="submit"]</h3>
 ${inputTypeOverviewStatesAndModifiers("submit", intent)}
 
 <br>
-<h3>Input [type="reset"]</h3>
+<h3>input [type="reset"]</h3>
 ${inputTypeOverviewStatesAndModifiers("reset", intent)}
 `;
 }

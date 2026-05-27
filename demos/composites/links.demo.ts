@@ -89,9 +89,10 @@ export function overviewVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewStatesAndModifiers(intent: string = "") {
-  return `${ADemo.overviewStatesAndModifiers(intent)}
+  return `<h3>anchor</h3>
+${ADemo.overviewStatesAndModifiers(intent)}
 
-<hr>
-
+<br>
+<h3>button [role="link"]</h3>
 ${RoleLinkDemo.overviewStatesAndModifiers("button", intent)}`;
 }

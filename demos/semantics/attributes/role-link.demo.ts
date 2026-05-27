@@ -1,5 +1,6 @@
 import {
   renderElement,
+  renderGrid,
   renderAttributes,
   classMergeAttributes,
 } from "@scripts/utils";
@@ -60,23 +61,25 @@ export function overviewStatesAndModifiers(
 ) {
   const namePrefix = `&lt;${tagName}&gt; as ${intent ? `${intent[0].toUpperCase() + intent.slice(1)}` : ""}`;
 
-  return renderElement(
-    "section",
-    { class: "auto-grid", style: "--auto-grid-min-column: 180px" },
+  return `${renderGrid(
     `${main(tagName, { class: intent }, `${namePrefix} Link`)}
 ${main(tagName, { class: intent, "aria-current": "false" }, "Not Current")}
 ${main(tagName, { class: intent, "aria-current": "true" }, "Current")}
-${main(tagName, { class: intent, "aria-disabled": "true" }, "ARIA Disabled")}
+${main(tagName, { class: intent, disabled: "true" }, "Disabled")}`,
+  )}
 
-${main(tagName, classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Link`)}
+${renderGrid(
+  `${main(tagName, classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Link`)}
 ${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
 ${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
-${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-disabled": "true" }), "ARIA Disabled Subtle")}
+${main(tagName, classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}`,
+)}
 
-${main(tagName, classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Link`)}
+${renderGrid(
+  `${main(tagName, classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Link`)}
 ${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
 ${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
-${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-disabled": "true" }), "ARIA Disabled Ghost")}
-`,
-  );
+${main(tagName, classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}`,
+)}
+`;
 }

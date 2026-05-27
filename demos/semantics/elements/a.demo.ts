@@ -1,5 +1,6 @@
 import {
   renderElement,
+  renderGrid,
   renderAttributes,
   classMergeAttributes,
 } from "@scripts/utils";
@@ -47,23 +48,25 @@ export function overviewStatesAndModifiers(intent: string = "") {
     ? `${intent[0].toUpperCase() + intent.slice(1)}`
     : "";
 
-  return renderElement(
-    "section",
-    { class: "auto-grid", style: "--auto-grid-min-column: 180px" },
+  return `${renderGrid(
     `${main({ class: intent }, `${namePrefix} Link`)}
 ${main({ class: intent, "aria-current": "false" }, "Not Current")}
 ${main({ class: intent, "aria-current": "true" }, "Current")}
-${main({ class: intent, "aria-disabled": "true" }, "ARIA Disabled")}
+${main({ class: intent, "aria-disabled": "true" }, "Disabled")}`,
+  )}
 
-${main(classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Link`)}
+${renderGrid(
+  `${main(classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Link`)}
 ${main(classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
 ${main(classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
-${main(classMergeAttributes("subtle", { class: intent, "aria-disabled": "true" }), "ARIA Disabled Subtle")}
+${main(classMergeAttributes("subtle", { class: intent, "aria-disabled": "true" }), "Disabled Subtle")}`,
+)}
 
-${main(classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Link`)}
+${renderGrid(
+  `${main(classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Link`)}
 ${main(classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
 ${main(classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
-${main(classMergeAttributes("ghost", { class: intent, "aria-disabled": "true" }), "ARIA Disabled Ghost")}
-`,
-  );
+${main(classMergeAttributes("ghost", { class: intent, "aria-disabled": "true" }), "Disabled Ghost")}`,
+)}
+`;
 }

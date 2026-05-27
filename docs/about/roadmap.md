@@ -145,6 +145,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Include `.pane` in Full Colors Demo Overview |
 | ✅ | `.content-grid` Demo Overview |
 | ✅ | Exhaustive combination of button types in all states with all variants |
+| ✅ | Exhaustive combination of link types in all states with all variants |
 | ⌛ | `.sidebar` popover interaction |
 | ⌛ | Grid System Overview |
 | ⌛ | Tab interaction |
