@@ -1,5 +1,4 @@
-:where(a:not([role="button"])),
-[role="link"] {
+:is(a:not([role="button"]), [role="link"]) {
   --border-color: transparent;
   --_link-color: var(--link-color, var(--primary-color));
 

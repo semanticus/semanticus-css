@@ -43,17 +43,20 @@
   &:is(ul, [role="list"], [role="group"]) {
     padding: 0;
     border: none;
+    background: transparent;
 
     > * {
-      --card-background-color: transparent;
-      --card-item-fill: var(--background-color);
+      --card-item-background-color: var(
+        --card-background-color,
+        var(--background-color)
+      );
       --card-item-border-color: color-mix(
         in srgb,
         light-dark(var(--color-slate-900), var(--color-zinc-350)),
         transparent 90%
       );
 
-      background: var(--card-item-fill);
+      background: var(--card-item-background-color);
       color: var(--color);
       margin: 0;
       padding: var(--spacing);
@@ -69,7 +72,7 @@
       }
 
       &:is([aria-current]:not([aria-current="false"])) {
-        --card-item-fill: color-mix(
+        --card-item-background-color: color-mix(
           in srgb,
           var(--background-color),
           var(--color-hover-effect) 15%

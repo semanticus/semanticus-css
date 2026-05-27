@@ -1,5 +1,4 @@
-[role="status"],
-[role="alert"] {
+:is([role="status"], [role="alert"]) {
   color: var(--color);
   display: grid;
   grid-template-columns: 1fr;
@@ -9,9 +8,12 @@
   margin-bottom: var(--spacing);
   border-radius: var(--border-radius);
   border: var(--border-width) solid
-    var(--alert-border-color, var(--pane-border-color, var(--border-color)));
+    var(--alert-border-color, var(--pane-border-color));
   border-inline-start-width: var(--alert-border-width, var(--border-width));
-  border-inline-start-color: var(--pane-border-color);
+  border-inline-start-color: var(
+    --alert-border-color,
+    var(--pane-border-color)
+  );
   background: var(
     --alert-background-color,
     var(--pane-background-color, var(--background-color))

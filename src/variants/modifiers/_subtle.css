@@ -1,90 +1,76 @@
 .subtle {
-  --button-background-color: var(--background-color);
-  --button-border-color: var(--border-color);
-
-  --pane-background-color: var(--background-color);
-  --pane-border-color: var(--border-color);
-
-  &.primary,
-  &:is(
-      button,
-      [type="submit"],
-      [type="reset"],
-      [type="button"],
-      [type="file"]::file-selector-button,
-      [role="button"]
-    ):not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
-    --background-color: oklch(
+  &.primary {
+    --intent-background-color: oklch(
       from var(--primary-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--primary-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
   }
 
   &.secondary {
-    --background-color: oklch(
+    --intent-background-color: oklch(
       from var(--secondary-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--secondary-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
   }
 
   &.contrast {
-    --background-color: oklch(
+    --intent-background-color: oklch(
       from var(--contrast-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--contrast-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
   }
 
   &.success {
-    --background-color: oklch(
+    --intent-background-color: oklch(
       from var(--success-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--success-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
   }
 
   &.info {
-    --background-color: oklch(
+    --intent-background-color: oklch(
       from var(--info-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--info-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
   }
 
   &.warning {
-    --background-color: oklch(
+    --intent-background-color: oklch(
       from var(--warning-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--warning-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
   }
 
   &.danger {
-    --background-color: oklch(
+    --intent-background-color: oklch(
       from var(--danger-subtle-background-color) l c h /
         var(--background-color-opacity)
     );
-    --border-color: oklch(
+    --intent-border-color: oklch(
       from var(--danger-subtle-background-color) l c h /
         var(--border-color-opacity)
     );

@@ -18,17 +18,17 @@ button,
 [type="button"],
 [type="file"]::file-selector-button,
 [role="button"] {
-  --button-background-color: var(--primary-background-color);
-  --button-border-color: var(--primary-background-color);
-  --button-color: #fff;
-
   padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
-  border: var(--border-width) solid var(--button-border-color);
+  border: var(--border-width) solid
+    var(--button-border-color, var(--primary-background-color));
   border-radius: var(--border-radius);
   outline: none;
-  background-color: var(--button-background-color);
+  background-color: var(
+    --button-background-color,
+    var(--primary-background-color)
+  );
   box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  color: var(--button-color);
+  color: var(--button-color, white);
   font-weight: var(--font-weight);
   font-size: 1rem;
   line-height: var(--line-height);
