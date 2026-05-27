@@ -12,14 +12,14 @@
     from var(--contrast-background-color) l c h / var(--border-color-opacity)
   );
 
-  --dialog-background-color: var(--button-background-color);
-  --dialog-border-color: var(--button-background-color);
-  --dialog-section-background-color: color-mix(
+  --pane-background-color: var(--button-background-color);
+  --pane-border-color: var(--button-background-color);
+  --pane-marginals-background-color: color-mix(
     in srgb,
     light-dark(var(--color-slate-50), var(--color-slate-900)),
     transparent 90%
   );
-  --dialog-section-border-color: color-mix(
+  --pane-marginals-border-color: color-mix(
     in srgb,
     light-dark(var(--color-slate-50), black),
     transparent 95%

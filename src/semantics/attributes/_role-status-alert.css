@@ -4,7 +4,7 @@
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
-  --border-color: var(--dialog-border-color);
+  --border-color: var(--pane-border-color);
   --alert-size: var(--border-width);
 
   color: var(--color);
@@ -38,7 +38,7 @@
   border-radius: var(--border-radius);
   border: var(--border-width) solid var(--border-color);
   border-inline-start-width: var(--alert-size);
-  border-inline-start-color: var(--dialog-border-color);
+  border-inline-start-color: var(--pane-border-color);
   background: var(--background-color);
 
   &:is(.ghost, .subtle) {

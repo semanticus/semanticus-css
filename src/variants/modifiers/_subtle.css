@@ -2,8 +2,8 @@
   --button-background-color: var(--background-color);
   --button-border-color: var(--border-color);
 
-  --dialog-background-color: var(--background-color);
-  --dialog-border-color: var(--border-color);
+  --pane-background-color: var(--background-color);
+  --pane-border-color: var(--border-color);
 
   &.primary,
   &:is(

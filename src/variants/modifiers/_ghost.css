@@ -6,13 +6,13 @@
   --button-background-color: var(--background-color);
   --button-border-color: var(--border-color);
 
-  --dialog-background-color: var(--background-color);
-  --dialog-border-color: var(--border-color);
-  --dialog-section-background-color: light-dark(
+  --pane-background-color: var(--background-color);
+  --pane-border-color: var(--border-color);
+  --pane-marginals-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
-  --dialog-section-border-color: color-mix(
+  --pane-marginals-border-color: color-mix(
     in srgb,
     light-dark(var(--color-slate-900), var(--color-zinc-350)),
     transparent 90%
@@ -22,7 +22,7 @@
     --button-color: var(--color);
     --background-color: transparent;
     --button-background-color: var(--background-color);
-    --dialog-background-color: var(--background-color);
+    --pane-background-color: var(--background-color);
   }
 
   &.primary,

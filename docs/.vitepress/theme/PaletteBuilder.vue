@@ -263,12 +263,12 @@ const variableGroups = [
     ]
   },
   {
-    label: 'Dialog / Alert',
+    label: 'Pane / Dialog / Alert',
     vars: [
-      { name: '--dialog-background-color', label: 'Dialog Background', desc: 'Dialog/card background.', type: varType('light-dark(var(--background-color), var(--color-slate-900))'), default: 'light-dark(var(--background-color), var(--color-slate-900))' },
-      { name: '--dialog-border-color', label: 'Dialog Border', desc: 'Dialog/card border color.', type: varType('var(--border-color)'), default: 'var(--border-color)' },
-      { name: '--dialog-section-background-color', label: 'Dialog Section BG', desc: 'Header/footer section background.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))' },
-      { name: '--dialog-section-border-color', label: 'Dialog Section Border', desc: 'Header/footer section border.', type: varType('color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)'), default: 'color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)' },
+      { name: '--pane-background-color', label: 'Pane Background', desc: 'Dialog/card/pane background.', type: varType('light-dark(var(--background-color), var(--color-slate-900))'), default: 'light-dark(var(--background-color), var(--color-slate-900))' },
+      { name: '--pane-border-color', label: 'Pane Border', desc: 'Dialog/card/pane border color.', type: varType('var(--border-color)'), default: 'var(--border-color)' },
+      { name: '--pane-marginals-background-color', label: 'Pane Marginals BG', desc: 'Header/footer background for panes, dialogs, and cards.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))' },
+      { name: '--pane-marginals-border-color', label: 'Pane Marginals Border', desc: 'Header/footer border for panes, dialogs, and cards.', type: varType('color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)'), default: 'color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)' },
     ]
   },
   {

@@ -176,9 +176,9 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --dialog-background-color: light-dark(white, #181c25);
-  --dialog-border-color: light-dark(var(--border-color), #181c25);
-  --dialog-section-background-color: light-dark(#fbfcfc, #2a3140);
+  --pane-background-color: light-dark(white, #181c25);
+  --pane-border-color: light-dark(var(--border-color), #181c25);
+  --pane-marginals-background-color: light-dark(#fbfcfc, #2a3140);
 }
 ```
 

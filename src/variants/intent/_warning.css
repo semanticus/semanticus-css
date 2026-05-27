@@ -13,9 +13,9 @@
   --button-background-color: var(--background-color);
   --button-border-color: var(--border-color);
 
-  --dialog-background-color: var(--background-color);
-  --dialog-border-color: var(--background-color);
-  --dialog-section-background-color: color-mix(
+  --pane-background-color: var(--background-color);
+  --pane-border-color: var(--background-color);
+  --pane-marginals-background-color: color-mix(
     in srgb,
     light-dark(var(--color-slate-900), var(--color-slate-50)),
     transparent 90%

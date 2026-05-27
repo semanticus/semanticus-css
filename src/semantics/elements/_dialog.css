@@ -17,7 +17,7 @@ dialog {
   overflow: auto;
   padding: var(--spacing);
   border-radius: var(--border-radius);
-  background: var(--dialog-background-color);
+  background: var(--pane-background-color);
   box-shadow: var(--dialog-box-shadow, var(--box-shadow));
   border: var(--border-width) solid var(--border-color);
 
@@ -58,7 +58,7 @@ dialog {
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--dialog-section-background-color);
+    background-color: var(--pane-marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -67,7 +67,7 @@ dialog {
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-width) solid var(--dialog-section-border-color);
+    border-bottom: var(--border-width) solid var(--pane-marginals-border-color);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
     justify-content: space-between;
@@ -76,7 +76,7 @@ dialog {
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-width) solid var(--dialog-section-border-color);
+    border-top: var(--border-width) solid var(--pane-marginals-border-color);
     border-bottom-right-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     justify-content: end;

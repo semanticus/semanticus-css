@@ -135,9 +135,9 @@ These fall back to the global tokens.
   --input-placeholder-color
   --input-opacity-disabled
 
-  --dialog-background-color
-  --dialog-border-color
-  --dialog-section-background-color
+  --pane-background-color
+  --pane-border-color
+  --pane-marginals-background-color
 
   --switch-background-color
   --switch-background-color-checked
@@ -391,6 +391,6 @@ If you're upgrading from an earlier version that used role-based names:
 | `--color-text` | `--color` | Global page text |
 | `--color-text-muted` | `--color-muted` | Muted text variant |
 | `--color-border` | `--border-color` | Global border color |
-| `--dialog-fill` | `--dialog-background-color` | Component + property |
+| `--dialog-fill` | `--pane-background-color` | Component + property |
 | `--input-border-focus` | `--input-border-color-focus` | State at end, `border-color` |
 | `--switch-thumb-glow` | `--switch-thumb-box-shadow` | Property name replaces role name |
