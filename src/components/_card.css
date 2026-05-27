@@ -1,13 +1,14 @@
 .card {
-  --background-color: var(--pane-background-color);
-  --border-color: var(--pane-border-color);
-
   padding-block: var(--spacing);
   padding-inline: var(--spacing);
   margin-bottom: var(--spacing);
   border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--border-color);
-  background: var(--background-color);
+  border: var(--border-width) solid
+    var(--card-border-color, var(--border-color));
+  background: var(
+    --card-background-color,
+    light-dark(var(--background-color), var(--color-slate-900))
+  );
 
   > header,
   > footer {
@@ -47,9 +48,9 @@
     border: none;
 
     > * {
-      --background-color: transparent;
+      --card-background-color: transparent;
       --card-item-fill: var(--background-color);
-      --border-color: color-mix(
+      --card-item-border-color: color-mix(
         in srgb,
         light-dark(var(--color-slate-900), var(--color-zinc-350)),
         transparent 90%
@@ -60,7 +61,7 @@
       margin: 0;
       padding: var(--spacing);
       border-radius: 0;
-      border: var(--border-width) solid var(--border-color);
+      border: var(--border-width) solid var(--card-item-border-color);
 
       &:first-child {
         border-top-left-radius: var(--border-radius);
@@ -89,7 +90,7 @@
       list-style: none;
 
       &:first-child {
-        border-top: var(--border-width) solid var(--border-color);
+        border-top: var(--border-width) solid var(--card-item-border-color);
         border-top-right-radius: var(--border-radius);
       }
 
@@ -104,7 +105,7 @@
       border-left: none;
 
       &:first-child {
-        border-left: var(--border-width) solid var(--border-color);
+        border-left: var(--border-width) solid var(--card-item-border-color);
         border-bottom-left-radius: var(--border-radius);
       }
 

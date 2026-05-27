@@ -374,10 +374,10 @@
 
   /* --- Panes / Dialogs / Cards / Alerts --- */
   --pane-background-color: light-dark(
-    var(--background-color),
-    var(--color-slate-900)
+    color-mix(in srgb, var(--color-slate-50), white 25%),
+    color-mix(in srgb, var(--color-slate-50), black 75%)
   );
-  --pane-border-color: var(--border-color);
+  --pane-border-color: var(--pane-background-color);
   --pane-marginals-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
