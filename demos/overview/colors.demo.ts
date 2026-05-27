@@ -8,6 +8,7 @@ import {
   RoleStatusDemo,
   ButtonDemo,
   RoleButtonDemo,
+  ProgressDemo,
 } from "@demos/semantics";
 
 export function main(attrs: Record<string, string> = {}) {
@@ -98,10 +99,19 @@ export function main(attrs: Record<string, string> = {}) {
 <hr>
 <br>
 
-<section id="role-statuses">
-  <a href="#role-statuses"><h2>Role Statuses</h2></a>
+<section id="alerts">
+  <a href="#alerts"><h2>Alerts</h2></a>
 
   ${RoleStatusDemo.overviewVariants()}
+</section>
+
+<hr>
+<br>
+
+<section id="progress">
+  <a href="#progress"><h2>Progress</h2></a>
+
+  ${ProgressDemo.overviewVariants()}
 </section>`,
   );
 }

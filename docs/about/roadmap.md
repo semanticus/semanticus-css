@@ -55,7 +55,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
 | ✅ | `.striped` modifier variant |
 | ✅ | Extend **intent variants** to stylize **card lists** |
-| ⌛ | Extend **intent variants** to stylize `<progress>` |
+| ✅ | Extend **intent variants** to stylize `<progress>` |
 
 ## Known Issues
 
@@ -106,8 +106,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Toasts composite documentation |
 | ✅ | Pagination composite documentation |
 | ✅ | Card List composite documentation |
+| ✅ | Github check to prevent PRs that fail the visual regression tests |
 | 🚧 | Navigation composite documentation |
-| ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
 | ⌛ | `.sidebar` component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
@@ -143,6 +143,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Alert hide/show interaction |
 | ✅ | Include **card lists** in Full & Colors Demo Overview |
 | ✅ | Include `.pane` in Full Colors Demo Overview |
+| ✅ | Include `<progress>` in Full Colors Demo Overview |
 | ✅ | `.content-grid` Demo Overview |
 | ✅ | Exhaustive combination of button types in all states with all variants |
 | ✅ | Exhaustive combination of link types in all states with all variants |

@@ -400,13 +400,6 @@
     var(--color-slate-850)
   );
 
-  /* --- Progress --- */
-  --progress-track-background-color: light-dark(
-    var(--color-slate-100),
-    var(--color-slate-850)
-  );
-  --progress-background-color: var(--primary-background-color);
-
   /* --- Tooltip --- */
   --tooltip-background-color: var(--contrast-background-color);
   --tooltip-color: light-dark(white, var(--color-zinc-900));

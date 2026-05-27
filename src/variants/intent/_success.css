@@ -11,6 +11,10 @@
     --link-color: var(--intent-color);
   }
 
+  &progress {
+    --progress-background-color: var(--intent-background-color);
+  }
+
   &:is(
     button:not([role="link"]),
     [type="submit"],

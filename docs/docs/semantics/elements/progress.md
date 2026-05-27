@@ -2,10 +2,6 @@
 title: progress
 ---
 
-<script setup>
-import { ProgressDemo } from "@demos/semantics/elements";
-</script>
-
 # &lt;progress&gt;
 
 The `<progress>` element visually represents task completion.
@@ -25,3 +21,21 @@ Pair with a `<label>` to give it an accessible name for screen readers.
 ## Progress with Label
 
 <HtmlPreviewer :code="ProgressDemo.withLabel()" />
+
+## Variants
+
+### Intent Variants
+
+To convey **intent** and **importance**, progress bars can be styled with different variants:
+
+<HtmlPreviewer :code="ProgressDemo.intentVariants()" :codeCollapsed="true" />
+
+### Modifiers
+
+`.subtle` creates progress bars with a more muted appearance, often used for less prominent actions.
+
+<HtmlPreviewer :code="ProgressDemo.subtleVariants()" :codeCollapsed="true" />
+
+<script setup>
+import { ProgressDemo } from "@demos/semantics/elements";
+</script>
