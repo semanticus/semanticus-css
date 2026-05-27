@@ -13,52 +13,30 @@ export const overview: StoryObj = {
   render: (args) => args.html,
 };
 
+export const primary: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "primary"),
+};
+
 export const secondary: StoryObj = {
-  args: {
-    html: RoleButtonDemo.overviewStatesAndModifiers("div", {
-      class: "secondary",
-    }),
-  },
-  render: (args) => args.html,
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "secondary"),
 };
 
 export const contrast: StoryObj = {
-  args: {
-    html: RoleButtonDemo.overviewStatesAndModifiers("div", {
-      class: "contrast",
-    }),
-  },
-  render: (args) => args.html,
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "contrast"),
 };
 
 export const success: StoryObj = {
-  args: {
-    html: RoleButtonDemo.overviewStatesAndModifiers("div", {
-      class: "success",
-    }),
-  },
-  render: (args) => args.html,
+  render: (args) => RoleButtonDemo.overviewStatesAndModifiers("div", "success"),
 };
 
 export const info: StoryObj = {
-  args: {
-    html: RoleButtonDemo.overviewStatesAndModifiers("div", { class: "info" }),
-  },
-  render: (args) => args.html,
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "info"),
 };
 
 export const warning: StoryObj = {
-  args: {
-    html: RoleButtonDemo.overviewStatesAndModifiers("div", {
-      class: "warning",
-    }),
-  },
-  render: (args) => args.html,
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "warning"),
 };
 
 export const danger: StoryObj = {
-  args: {
-    html: RoleButtonDemo.overviewStatesAndModifiers("div", { class: "danger" }),
-  },
-  render: (args) => args.html,
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "danger"),
 };

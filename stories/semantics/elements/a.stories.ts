@@ -8,36 +8,33 @@ const meta: Meta = {
 export default meta;
 
 export const overview: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers() },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers(),
+};
+
+export const primary: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("primary"),
 };
 
 export const secondary: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers({ class: "secondary" }) },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers("secondary"),
 };
 
 export const contrast: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers({ class: "contrast" }) },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers("contrast"),
 };
 
 export const success: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers({ class: "success" }) },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers("success"),
 };
 
 export const info: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers({ class: "info" }) },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers("info"),
 };
 
 export const warning: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers({ class: "warning" }) },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers("warning"),
 };
 
 export const danger: StoryObj = {
-  args: { html: ADemo.overviewStatesAndModifiers({ class: "danger" }) },
-  render: (args) => args.html,
+  render: () => ADemo.overviewStatesAndModifiers("danger"),
 };

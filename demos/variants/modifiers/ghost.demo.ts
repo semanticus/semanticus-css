@@ -44,7 +44,7 @@ export function overviewRoleButtonsAndDropdowns(
   return renderElement(
     "section",
     {},
-    `${RoleButtonDemo.ghostVariants(attrs)}
+    `${RoleButtonDemo.ghostVariants("section", attrs)}
 
 <hr>
 

@@ -42,24 +42,28 @@ ${main(classMergeAttributes("danger", attrs), "Danger")}`,
   );
 }
 
-export function overviewStatesAndModifiers(attrs: Record<string, string> = {}) {
+export function overviewStatesAndModifiers(intent: string = "") {
+  const namePrefix = intent
+    ? `${intent[0].toUpperCase() + intent.slice(1)}`
+    : "";
+
   return renderElement(
     "section",
     { class: "auto-grid", style: "--auto-grid-min-column: 180px" },
-    `${main({ ...attrs, "aria-disabled": "true" }, "ARIA Disabled")}
-${main(attrs, "Primary")}
-${main({ ...attrs, "aria-current": "false" }, "Not Current")}
-${main({ ...attrs, "aria-current": "true" }, "Current")}
+    `${main({ class: intent }, `${namePrefix} Link`)}
+${main({ class: intent, "aria-current": "false" }, "Not Current")}
+${main({ class: intent, "aria-current": "true" }, "Current")}
+${main({ class: intent, "aria-disabled": "true" }, "ARIA Disabled")}
 
-${main(classMergeAttributes("subtle", { ...attrs, "aria-disabled": "true" }), "Subtle ARIA Disabled")}
-${main(classMergeAttributes("subtle", { ...attrs }), "Primary Subtle")}
-${main(classMergeAttributes("subtle", { ...attrs, "aria-current": "false" }), "Subtle Not Current")}
-${main(classMergeAttributes("subtle", { ...attrs, "aria-current": "true" }), "Subtle Current")}
+${main(classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Link`)}
+${main(classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
+${main(classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
+${main(classMergeAttributes("subtle", { class: intent, "aria-disabled": "true" }), "ARIA Disabled Subtle")}
 
-${main(classMergeAttributes("ghost", { ...attrs, "aria-disabled": "true" }), "Ghost ARIA Disabled")}
-${main(classMergeAttributes("ghost", { ...attrs }), "Primary Ghost")}
-${main(classMergeAttributes("ghost", { ...attrs, "aria-current": "false" }), "Ghost Not Current")}
-${main(classMergeAttributes("ghost", { ...attrs, "aria-current": "true" }), "Ghost Current")}
+${main(classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Link`)}
+${main(classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
+${main(classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
+${main(classMergeAttributes("ghost", { class: intent, "aria-disabled": "true" }), "ARIA Disabled Ghost")}
 `,
   );
 }

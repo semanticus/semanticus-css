@@ -15,7 +15,7 @@ export function overviewRoleButtonsAndDropdowns(
   return renderElement(
     "section",
     {},
-    `${RoleButtonDemo.intentVariants(attrs)}
+    `${RoleButtonDemo.intentVariants("section", attrs)}
 
 <hr>
 

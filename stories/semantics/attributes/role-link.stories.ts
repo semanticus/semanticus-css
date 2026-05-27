@@ -9,40 +9,33 @@ const meta: Meta = {
 export default meta;
 
 export const overview: StoryObj = {
-  args: { html: RoleLinkDemo.overviewStatesAndModifiers() },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers(),
+};
+
+export const primary: StoryObj = {
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "primary"),
 };
 
 export const secondary: StoryObj = {
-  args: {
-    html: RoleLinkDemo.overviewStatesAndModifiers({ class: "secondary" }),
-  },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "secondary"),
 };
 
 export const contrast: StoryObj = {
-  args: {
-    html: RoleLinkDemo.overviewStatesAndModifiers({ class: "contrast" }),
-  },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "contrast"),
 };
 
 export const success: StoryObj = {
-  args: { html: RoleLinkDemo.overviewStatesAndModifiers({ class: "success" }) },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "success"),
 };
 
 export const info: StoryObj = {
-  args: { html: RoleLinkDemo.overviewStatesAndModifiers({ class: "info" }) },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "info"),
 };
 
 export const warning: StoryObj = {
-  args: { html: RoleLinkDemo.overviewStatesAndModifiers({ class: "warning" }) },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "warning"),
 };
 
 export const danger: StoryObj = {
-  args: { html: RoleLinkDemo.overviewStatesAndModifiers({ class: "danger" }) },
-  render: (args) => args.html,
+  render: () => RoleLinkDemo.overviewStatesAndModifiers("button", "danger"),
 };

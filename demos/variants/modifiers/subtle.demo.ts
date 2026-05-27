@@ -44,7 +44,7 @@ export function overviewRoleButtonsAndDropdowns(
   return renderElement(
     "section",
     {},
-    `${RoleButtonDemo.subtleVariants(attrs)}
+    `${RoleButtonDemo.subtleVariants("section", attrs)}
 
 <hr>
 

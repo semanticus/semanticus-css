@@ -29,6 +29,7 @@ import {
   TextDemo,
   RoleStatusDemo,
   ButtonDemo,
+  RoleButtonDemo,
 } from "@demos/semantics";
 
 export function buttons() {
@@ -648,6 +649,18 @@ export function fullBundleColors(attrs: Record<string, string> = {}) {
   ${ButtonDemo.intentVariants()}
   ${ButtonDemo.subtleVariants()}
   ${ButtonDemo.ghostVariants()}
+
+  <hr>
+
+  <section class="auto-grid">
+    ${RoleButtonDemo.intentVariants("a")}
+  </section>
+  <section class="auto-grid">
+    ${RoleButtonDemo.subtleVariants("a")}
+  </section>
+  <section class="auto-grid">
+    ${RoleButtonDemo.ghostVariants("a")}
+  </section>
 </section>
 
 <hr>
@@ -656,7 +669,13 @@ export function fullBundleColors(attrs: Record<string, string> = {}) {
 <section id="links">
   <a href="#links"><h2>Links</h2></a>
 
-  ${LinksDemo.overviewVariants()}
+  ${ADemo.intentVariants()}
+
+  <hr>
+
+  <section class="auto-grid">
+    ${RoleLinkDemo.intentVariants("button")}
+  </section>
 </section>
 
 <hr>

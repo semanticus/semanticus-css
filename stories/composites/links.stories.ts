@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { LinksDemo } from "@demos/composites";
-import { ADemo, RoleLinkDemo } from '@demos/semantics';
 
 const meta: Meta = {
   title: "Composites/Links",
@@ -9,14 +8,34 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicUsage: StoryObj = {
-  render: () => ADemo.overview(),
+export const overview: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers(),
 };
 
-export const elementsRenderedAsALink: StoryObj = {
-  render: () => RoleLinkDemo.overview(),
+export const primary: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("primary"),
 };
 
-export const variants: StoryObj = {
-  render: () => LinksDemo.overviewVariants(),
+export const secondary: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("secondary"),
+};
+
+export const contrast: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("contrast"),
+};
+
+export const success: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("success"),
+};
+
+export const info: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("info"),
+};
+
+export const warning: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("warning"),
+};
+
+export const danger: StoryObj = {
+  render: () => LinksDemo.overviewStatesAndModifiers("danger"),
 };
