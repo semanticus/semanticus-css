@@ -21,6 +21,8 @@ import {
   RoleTooltipDemo,
   RoleLinkDemo,
   TextDemo,
+  ButtonDemo,
+  RoleButtonDemo,
 } from "@demos/semantics";
 
 function buttons() {
@@ -28,12 +30,13 @@ function buttons() {
   <h2>Buttons</h2>
 
   <section class="auto-grid">
-    <button>Primary</button>
-    <button class="secondary">Secondary</button>
-    <button class="contrast">Contrast</button>
-    <button disabled>Disabled</button>
-    <button class="secondary" disabled>Disabled</button>
-    <button class="contrast" disabled>Disabled</button>
+    ${ButtonDemo.main()}
+    ${ButtonDemo.main({ "aria-current": "true" }, "Current")}
+    ${ButtonDemo.main({ disabled: "true" }, "Disabled")}
+
+    ${RoleButtonDemo.main("div")}
+    ${RoleButtonDemo.main("div", { "aria-current": "true" }, "Current")}
+    ${RoleButtonDemo.main("div", { disabled: "true" }, "Disabled")}
   </section>
 `;
 }
@@ -44,11 +47,11 @@ function links() {
 
   <section class="auto-grid">
     ${ADemo.main()}
+    ${ADemo.active({}, "Current")}
+    ${ADemo.main({ "aria-disabled": "true" }, "Disabled")}
     ${RoleLinkDemo.main("button")}
-    ${RoleLinkDemo.main("div")}
-    ${ADemo.active()}
-    ${RoleLinkDemo.active("button")}
-    ${RoleLinkDemo.active("div")}
+    ${RoleLinkDemo.active("button", {}, "Current")}
+    ${RoleLinkDemo.main("button", { "aria-disabled": "true" }, "Disabled")}
   </section>
 </section>`;
 }
@@ -212,24 +215,6 @@ function cards() {
 </section>`;
 }
 
-function loadingStates() {
-  return `<section id="loading-states">
-  <a href="#loading-states"><h2>Loading States (aria-busy="true")</h2></a>
-
-  <section class="auto-grid">
-    <section>
-      ${AriaBusyDemo.main("article", {}, "")}
-    </section>
-    <section>
-      ${AriaBusyDemo.button({})}
-    </section>
-    <section>
-      ${AriaBusyDemo.inline()}
-    </section>
-  </section>
-</section>`;
-}
-
 function tooltips() {
   return `<section id="tooltips">
   <hgroup>
@@ -303,7 +288,6 @@ function progressBars() {
   ${ProgressDemo.main({ value: "0" })}
   ${ProgressDemo.main({ value: "50" })}
   ${ProgressDemo.main({ value: "100" })}
-  ${ProgressDemo.indeterminate()}
 </section>`;
 }
 
@@ -459,11 +443,6 @@ ${fieldsets()}
 <br>
 
 ${cards()}
-
-<hr>
-<br>
-
-${loadingStates()}
 
 <hr>
 <br>

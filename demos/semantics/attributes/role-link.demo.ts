@@ -5,13 +5,15 @@ import {
 } from "@scripts/utils";
 
 export function main(
-  tagName: string = "button",
+  tagName: string = "div",
   attrs: Record<string, string> = {},
-  slot: string = undefined,
+  slot: string = "",
 ) {
-  const attributes = { role: "link", ...attrs };
-
-  return `<${tagName} ${renderAttributes(attributes)}>${slot || `${tagName[0].toUpperCase() + tagName.slice(1)} Link`}</${tagName}>`;
+  return renderElement(
+    tagName,
+    { ...attrs, role: "link" },
+    slot || `&lt;${tagName}&gt; as link`,
+  );
 }
 
 export function overview(attrs: Record<string, string> = {}) {
@@ -42,13 +44,13 @@ export function intentVariants(
   return renderElement(
     "section",
     { class: "auto-grid" },
-    `${main(tagName, classMergeAttributes(`primary ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}
-${main(tagName, classMergeAttributes(`secondary ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}
-${main(tagName, classMergeAttributes(`contrast ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}
-${main(tagName, classMergeAttributes(`success ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}
-${main(tagName, classMergeAttributes(`info ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}
-${main(tagName, classMergeAttributes(`warning ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}
-${main(tagName, classMergeAttributes(`danger ${modifier}`.trim(), attrs), `&lt;${tagName}&gt; as link`)}`,
+    `${main(tagName, classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
   );
 }
 

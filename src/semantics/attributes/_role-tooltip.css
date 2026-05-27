@@ -4,11 +4,12 @@
   width: fit-content;
 }
 
-:not(a, button, dialog, input, [role="button"])[aria-describedby] {
+/* TODO: reconsider using a declarative selector */
+/*:not(a, button, dialog, input, [role="button"])[aria-describedby] {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;
-}
+}*/
 
 [role="tooltip"] {
   display: block;
