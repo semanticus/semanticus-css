@@ -12,53 +12,64 @@ export function main(attrs: Record<string, string> = {}, value: string = "") {
 
 export function withLabel() {
   return `<label for="message">Message</label>
-${main({ id: 'message' })}
+${main({ id: "message" })}
 `;
 }
 
 export function withHelperText() {
   return `<label for="name">Name</label>
-${main({ id: 'name', 'aria-describedby': 'name-helper', placeholder: "Your name" })}
+${main({ id: "name", "aria-describedby": "name-helper", placeholder: "Your name" })}
 <small id="name-helper">Cannot be empty.</small>
 `;
 }
 
 export function validationStates() {
-  return `${main({ 'aria-invalid': 'false' })}
+  return `${main({ "aria-invalid": "false" })}
 
-${main({ 'aria-invalid': 'true' })}`;
+${main({ "aria-invalid": "true" })}`;
 }
 
 export function validationStatesWithTextHelper() {
-  return `${main({ 'aria-invalid': 'false', 'aria-describedby': 'valid-helper' }, 'John Doe')}
-<small id="valid-helper">Looks good!</small>
+  return `<label for="valid-input">Valid Input</label>
+${main({ id: "valid-input", "aria-invalid": "false", "aria-describedby": "valid-input-helper" }, "John Doe")}
+<small id="valid-input-helper">Looks good!</small>
 
-${main({ 'aria-invalid': 'true', 'aria-describedby': 'invalid-helper', placeholder: "Your name" }, '')}
-<small id="invalid-helper">Cannot be empty.</small>
+<label for="invalid-input">Invalid Input</label>
+${main({ id: "invalid-input", "aria-invalid": "true", "aria-describedby": "invalid-input-helper", placeholder: "Your name" }, "")}
+<small id="invalid-input-helper">Cannot be empty.</small>
 `;
 }
 
-export function button(attrs: Record<string, string> = {}, value: string = "Input Button") {
+export function button(
+  attrs: Record<string, string> = {},
+  value: string = "Input Button",
+) {
   return renderElement("input", {
     ...attrs,
     type: "button",
-    value: value
+    value: value,
   });
 }
 
-export function submit(attrs: Record<string, string> = {}, value: string = "Input Submit") {
+export function submit(
+  attrs: Record<string, string> = {},
+  value: string = "Input Submit",
+) {
   return renderElement("input", {
     ...attrs,
     type: "submit",
-    value: value
+    value: value,
   });
 }
 
-export function reset(attrs: Record<string, string> = {}, value: string = "Input Reset") {
+export function reset(
+  attrs: Record<string, string> = {},
+  value: string = "Input Reset",
+) {
   return renderElement("input", {
     ...attrs,
     type: "reset",
-    value: value
+    value: value,
   });
 }
 

@@ -88,38 +88,29 @@ function disabledState() {
 `;
 }
 
-function validState() {
-  return `<section id="valid-state">
-  <a href="#valid-state"><h4>Valid State (aria-invalid="false")</h4></a>
+function validationStates() {
+  return `<section id="valid-states">
+  <a href="#valid-states"><h4>Validation States</h4></a>
 
   <section class="auto-grid">
-    ${InputDemo.main({ "aria-invalid": "false" })}
-    ${SelectDemo.main({ "aria-invalid": "false" })}
+    <div>
+      ${InputDemo.validationStatesWithTextHelper()}
+    </div>
+    <div>
+      ${SelectDemo.validationStatesWithTextHelper()}
+    </div>
   </section>
 
   <section class="auto-grid">
     ${InputDemo.checkboxBasic({ "aria-invalid": "false" })}
-    ${InputDemo.radioBasic({ "aria-invalid": "false" })}
-    ${InputDemo.switchBasic({ "aria-invalid": "false" })}
-  </section>
-</section>
-`;
-}
-
-function invalidState() {
-  return `<section id="invalid-state">
-  <a href="#invalid-state"><h4>Invalid State (aria-invalid="true")</h4></a>
-
-  <section class="auto-grid">
-    ${InputDemo.main({ "aria-invalid": "true" })}
-    ${SelectDemo.main({ "aria-invalid": "true" })}
-  </section>
-
-  <section class="auto-grid">
     ${InputDemo.checkboxBasic({ "aria-invalid": "true" })}
+    ${InputDemo.radioBasic({ "aria-invalid": "false" })}
     ${InputDemo.radioBasic({ "aria-invalid": "true" })}
+    ${InputDemo.switchBasic({ "aria-invalid": "false" })}
     ${InputDemo.switchBasic({ "aria-invalid": "true" })}
   </section>
+
+  ${TextareaDemo.validationStatesWithTextHelper()}
 </section>
 `;
 }
@@ -175,9 +166,7 @@ function inputElements() {
 
   ${disabledState()}
 
-  ${validState()}
-
-  ${invalidState()}
+  ${validationStates()}
 </section>`;
 }
 
