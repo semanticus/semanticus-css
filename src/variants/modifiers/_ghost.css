@@ -56,6 +56,28 @@
     --intent-border-color: oklch(
       from var(--contrast-background-color) l c h / var(--border-color-opacity)
     );
+
+    &:is(
+      button:not([role="link"]),
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [type="file"]::file-selector-button,
+      [role="button"]
+    ) {
+      --button-color: var(--contrast-color);
+
+      &:is(
+        [aria-current]:not([aria-current="false"]),
+        :hover,
+        :active,
+        :focus
+      ) {
+        --button-color: oklch(
+          from light-dark(#fff, #191c20) l c h / var(--color-opacity)
+        );
+      }
+    }
   }
 
   &.success {

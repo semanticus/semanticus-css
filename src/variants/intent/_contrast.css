@@ -24,6 +24,9 @@
     [type="file"]::file-selector-button,
     [role="button"]
   ) {
+    --button-color: oklch(
+      from light-dark(#fff, #191c20) l c h / var(--color-opacity)
+    );
     --button-background-color: var(--intent-background-color);
     --button-border-color: var(--intent-border-color);
 
@@ -47,7 +50,7 @@
   }
 
   &:is(.card, .pane, [role="status"], [role="alert"]) {
-    --color: #fff;
+    --color: oklch(from light-dark(#fff, #191c20) l c h / var(--color-opacity));
     --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
     --card-background-color: var(--intent-background-color);
