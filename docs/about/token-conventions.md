@@ -55,6 +55,7 @@ No scope prefix. These define the document-wide baseline.
   --focus-ring-color          /* focus ring color (used in box-shadow) */
   --box-shadow                /* global shadow stack */
   --transition                /* default transition duration + easing */
+  --backdrop-background-color /* global background for modals, dialogs, and other overlays */
 }
 ```
 
@@ -137,7 +138,6 @@ These fall back to the global tokens.
   --dialog-background-color
   --dialog-border-color
   --dialog-section-background-color
-  --dialog-overlay-background-color
   --dialog-box-shadow
 
   --switch-background-color

@@ -127,6 +127,7 @@ const variableGroups = [
       { name: '--color', label: 'Text', desc: 'Default body text color.', type: varType('light-dark(var(--color-zinc-750), var(--color-zinc-200))'), default: 'light-dark(var(--color-zinc-750), var(--color-zinc-200))' },
       { name: '--color-muted', label: 'Muted Text', desc: 'Subdued text for captions and hints.', type: varType('color-mix(in srgb, var(--color), transparent 40%)'), default: 'color-mix(in srgb, var(--color), transparent 40%)' },
       { name: '--border-color', label: 'Border', desc: 'Default border color.', type: varType('light-dark(var(--color-slate-100), var(--color-slate-800))'), default: 'light-dark(var(--color-slate-100), var(--color-slate-800))' },
+      { name: '--backdrop-background-color', label: 'Backdrop', desc: 'Default backdrop color for modals, dialogs, and other overlays.', type: varType('light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))'), default: 'light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))' },
     ]
   },
   {
@@ -268,7 +269,6 @@ const variableGroups = [
       { name: '--dialog-border-color', label: 'Dialog Border', desc: 'Dialog/card border color.', type: varType('var(--border-color)'), default: 'var(--border-color)' },
       { name: '--dialog-section-background-color', label: 'Dialog Section BG', desc: 'Header/footer section background.', type: varType('light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))'), default: 'light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))' },
       { name: '--dialog-section-border-color', label: 'Dialog Section Border', desc: 'Header/footer section border.', type: varType('color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)'), default: 'color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)' },
-      { name: '--dialog-overlay-background-color', label: 'Dialog Overlay', desc: 'Modal backdrop color.', type: varType('light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))'), default: 'light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))' },
     ]
   },
   {

@@ -62,6 +62,13 @@
   --color-muted: color-mix(in srgb, var(--color), transparent 40%);
   --border-color: light-dark(var(--color-slate-100), var(--color-slate-800));
   --border-color-opacity: 100%;
+  --backdrop-background-color: light-dark(
+    oklch(
+      from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c
+        h / 0.75
+    ),
+    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
+  );
 
   /* --- Spacing --- */
   --spacing-base: 0.75rem;
@@ -380,13 +387,6 @@
     in srgb,
     light-dark(var(--color-slate-900), var(--color-zinc-350)),
     transparent 90%
-  );
-  --dialog-overlay-background-color: light-dark(
-    oklch(
-      from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c
-        h / 0.75
-    ),
-    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
   );
 
   /* --- Menu / Dropdown --- */

@@ -180,7 +180,6 @@ h1, h2, h3, h4, h5, h6 {
   --dialog-border-color: light-dark(var(--border-color), #181c25);
   --dialog-section-background-color: light-dark(#fbfcfc, #2a3140);
   --dialog-box-shadow: var(--box-shadow);
-  --dialog-overlay-background-color: light-dark(oklch(from #e8eaed l c h / 0.75), oklch(from #07090c l c h / 0.75));
 }
 ```
 
