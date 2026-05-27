@@ -378,7 +378,6 @@
     var(--color-slate-900)
   );
   --dialog-border-color: var(--border-color);
-  --dialog-box-shadow: var(--box-shadow);
   --dialog-section-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)

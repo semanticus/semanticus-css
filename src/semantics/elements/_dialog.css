@@ -18,7 +18,7 @@ dialog {
   padding: var(--spacing);
   border-radius: var(--border-radius);
   background: var(--dialog-background-color);
-  box-shadow: var(--dialog-box-shadow);
+  box-shadow: var(--dialog-box-shadow, var(--box-shadow));
   border: var(--border-width) solid var(--border-color);
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */

@@ -138,7 +138,6 @@ These fall back to the global tokens.
   --dialog-background-color
   --dialog-border-color
   --dialog-section-background-color
-  --dialog-box-shadow
 
   --switch-background-color
   --switch-background-color-checked
