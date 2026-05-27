@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { OverviewDemo } from "@demos/index";
+import { AllComponentsDemo, ColorsDemo } from "@demos/overview";
 
 const meta: Meta = {
   title: "Overview",
@@ -8,10 +8,10 @@ const meta: Meta = {
 
 export default meta;
 
-export const fullBundle: StoryObj = {
-  render: () => OverviewDemo.fullBundle(),
+export const allComponents: StoryObj = {
+  render: () => AllComponentsDemo.main(),
 };
 
-export const fullBundleColors: StoryObj = {
-  render: () => OverviewDemo.fullBundleColors(),
+export const colors: StoryObj = {
+  render: () => ColorsDemo.main(),
 };

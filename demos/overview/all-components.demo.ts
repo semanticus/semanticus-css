@@ -1,13 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
-import {
-  DropdownDemo,
-  LinksDemo,
-  TypographyDemo,
-  SearchDemo,
-  CardListDemo,
-} from "@demos/composites";
-import { CardDemo, PaneDemo } from "@demos/components";
+import { DropdownDemo, SearchDemo, CardListDemo } from "@demos/composites";
+import { CardDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -27,12 +21,9 @@ import {
   RoleTooltipDemo,
   RoleLinkDemo,
   TextDemo,
-  RoleStatusDemo,
-  ButtonDemo,
-  RoleButtonDemo,
 } from "@demos/semantics";
 
-export function buttons() {
+function buttons() {
   return `<section id="buttons">
   <h2>Buttons</h2>
 
@@ -47,7 +38,7 @@ export function buttons() {
 `;
 }
 
-export function links() {
+function links() {
   return `<section id="links">
   <a href="#links"><h2>Links</h2></a>
 
@@ -62,7 +53,7 @@ export function links() {
 </section>`;
 }
 
-export function inputButtons() {
+function inputButtons() {
   return `<section id="input-buttons">
   <a href="#input-buttons"><h4>Input buttons (type="button|submit|reset")</h4></a>
 
@@ -75,7 +66,7 @@ export function inputButtons() {
 `;
 }
 
-export function disabledState() {
+function disabledState() {
   return `<section id="disabled-state">
   <a href="#disabled-state"><h4>Disabled State</h4></a>
 
@@ -97,7 +88,7 @@ export function disabledState() {
 `;
 }
 
-export function validState() {
+function validState() {
   return `<section id="valid-state">
   <a href="#valid-state"><h4>Valid State (aria-invalid="false")</h4></a>
 
@@ -115,7 +106,7 @@ export function validState() {
 `;
 }
 
-export function invalidState() {
+function invalidState() {
   return `<section id="invalid-state">
   <a href="#invalid-state"><h4>Invalid State (aria-invalid="true")</h4></a>
 
@@ -133,7 +124,7 @@ export function invalidState() {
 `;
 }
 
-export function inputElements() {
+function inputElements() {
   return `<section id="input-elements">
   <a href="#input-elements"><h2>Input Elements</h2></a>
 
@@ -452,80 +443,7 @@ function address() {
 </section>`;
 }
 
-export function customizerExample(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "main",
-    { class: "container", ...attrs },
-    `<br>
-${buttons()}
-
-<hr>
-<br>
-
-<section id="links">
-  <h2>Links</h2>
-
-  <section class="auto-grid">
-    ${ADemo.main()}
-    ${RoleLinkDemo.main("button")}
-    ${RoleLinkDemo.main("div")}
-    ${ADemo.active()}
-    ${RoleLinkDemo.active("button")}
-    ${RoleLinkDemo.active("div")}
-  </section>
-</section>
-
-<hr>
-<br>
-
-<section id="input-elements">
-  <h2>Input Elements</h2>
-
-  <fieldset class="auto-grid">
-    <label>
-      Text Input
-      <input type="text" name="text" placeholder="Text" aria-label="Text" />
-    </label>
-
-    <label>
-      Select
-      ${SelectDemo.main()}
-    </label>
-  </fieldset>
-
-  <fieldset>
-    <label class="w-100">
-      Dropdown group
-      ${FieldsetDemo.groupDropdownButton()}
-    </label>
-  </fieldset>
-
-  <fieldset class="auto-grid">
-    ${InputDemo.checkboxBasic()}
-
-    ${InputDemo.radioBasic()}
-
-    ${InputDemo.switchBasic()}
-  </fieldset>
-</section>
-
-<hr>
-<br>
-
-<section id="cards">
-  <h2>Cards</h2>
-
-  ${CardDemo.main()}
-
-  ${CardDemo.withHeaderAndFooter()}
-</section>`,
-  );
-}
-
-export function fullBundle(
-  attrs: Record<string, string> = {},
-  slot: string = "",
-) {
+export function main(attrs: Record<string, string> = {}, slot: string = "") {
   return renderElement(
     "main",
     { class: "container", ...attrs },
@@ -626,101 +544,5 @@ ${codeBlocks()}
 <br>
 
 ${address()}`,
-  );
-}
-
-export function fullBundleColors(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "main",
-    { class: "container", ...attrs },
-    `<br>
-<section id="typography">
-  <a href="#typography"><h2>Typography</h2></a>
-
-  ${TypographyDemo.overviewVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="buttons">
-  <a href="#buttons"><h2>Buttons</h2></a>
-
-  ${ButtonDemo.intentVariants()}
-  ${ButtonDemo.subtleVariants()}
-  ${ButtonDemo.ghostVariants()}
-
-  <hr>
-
-  <section class="auto-grid">
-    ${RoleButtonDemo.intentVariants("a")}
-  </section>
-  <section class="auto-grid">
-    ${RoleButtonDemo.subtleVariants("a")}
-  </section>
-  <section class="auto-grid">
-    ${RoleButtonDemo.ghostVariants("a")}
-  </section>
-</section>
-
-<hr>
-<br>
-
-<section id="links">
-  <a href="#links"><h2>Links</h2></a>
-
-  ${ADemo.intentVariants()}
-
-  <hr>
-
-  <section class="auto-grid">
-    ${RoleLinkDemo.intentVariants("button")}
-  </section>
-</section>
-
-<hr>
-<br>
-
-<section id="dropdowns">
-  <a href="#dropdowns"><h2>Dropdowns (role="button")</h2></a>
-
-  ${DropdownDemo.overviewAsButtonVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="card-list">
-  <a href="#card-list"><h2>Card List</h2></a>
-
-  ${CardListDemo.overviewVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="cards">
-  <a href="#cards"><h2>Cards</h2></a>
-
-  ${CardDemo.overviewVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="panes">
-  <a href="#panes"><h2>Panes</h2></a>
-
-  ${PaneDemo.overviewVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="role-statuses">
-  <a href="#role-statuses"><h2>Role Statuses</h2></a>
-
-  ${RoleStatusDemo.overviewVariants()}
-</section>`,
   );
 }
