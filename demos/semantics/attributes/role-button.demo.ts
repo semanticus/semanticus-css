@@ -1,4 +1,8 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
 export function main(
   tagName: string = "div",
@@ -46,23 +50,25 @@ export function overviewStatesAndModifiers(
 ) {
   const namePrefix = `&lt;${tagName}&gt; as ${intent ? `${intent[0].toUpperCase() + intent.slice(1)}` : ""}`;
 
-  return renderElement(
-    "section",
-    { class: "auto-grid", style: "--auto-grid-min-column: 180px" },
+  return `${renderGrid(
     `${main(tagName, { class: intent }, `${namePrefix} Button`)}
 ${main(tagName, { class: intent, "aria-current": "false" }, "Not Current")}
 ${main(tagName, { class: intent, "aria-current": "true" }, "Current")}
-${main(tagName, { class: intent, disabled: "true" }, "Disabled")}
+${main(tagName, { class: intent, disabled: "true" }, "Disabled")}`,
+  )}
 
-${main(tagName, classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Button`)}
+${renderGrid(
+  `${main(tagName, classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Button`)}
 ${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
 ${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
-${main(tagName, classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}
+${main(tagName, classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}`,
+)}
 
-${main(tagName, classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Button`)}
+${renderGrid(
+  `${main(tagName, classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Button`)}
 ${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
 ${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
-${main(tagName, classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}
-`,
-  );
+${main(tagName, classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}`,
+)}
+`;
 }

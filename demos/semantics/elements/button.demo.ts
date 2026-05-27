@@ -1,4 +1,8 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
 export function main(
   attrs: Record<string, string> = {},
@@ -66,23 +70,25 @@ export function overviewStatesAndModifiers(intent: string = "") {
     ? `${intent[0].toUpperCase() + intent.slice(1)}`
     : "";
 
-  return renderElement(
-    "section",
-    { class: "auto-grid", style: "--auto-grid-min-column: 180px" },
+  return `${renderGrid(
     `${main({ class: intent }, `${namePrefix} Button`)}
 ${main({ class: intent, "aria-current": "false" }, "Not Current")}
 ${main({ class: intent, "aria-current": "true" }, "Current")}
-${main({ class: intent, disabled: "true" }, "Disabled")}
+${main({ class: intent, disabled: "true" }, "Disabled")}`,
+  )}
 
-${main(classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Button`)}
+${renderGrid(
+  `${main(classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Button`)}
 ${main(classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
 ${main(classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
-${main(classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}
+${main(classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}`,
+)}
 
-${main(classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Button`)}
+${renderGrid(
+  `${main(classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Button`)}
 ${main(classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
 ${main(classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
-${main(classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}
-`,
-  );
+${main(classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}`,
+)}
+`;
 }

@@ -20,7 +20,8 @@
     [type="file"]::file-selector-button,
     [role="button"]
   ) {
-    --button-color: var(--intent-color);
+    --button-color: var(--intent-color, var(--primary-color));
+    --button-background-color: var(--intent-background-color);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --button-color: #fff;
