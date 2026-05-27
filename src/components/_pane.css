@@ -1,13 +1,10 @@
 .pane {
-  --background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50), white 25%),
-    color-mix(in srgb, var(--color-slate-50), black 75%)
-  );
-
   color: var(--color);
   padding: var(--spacing);
   margin-bottom: var(--spacing);
-  background: var(--background-color);
+  background: var(--pane-background-color, var(--background-color));
+  border: var(--border-width) solid
+    var(--pane-border-color, var(--border-color));
 
   > :last-child {
     margin-bottom: 0 !important;

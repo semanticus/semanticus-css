@@ -1,17 +1,21 @@
 [role="status"],
 [role="alert"] {
-  --background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-  --border-color: var(--pane-border-color);
-  --alert-size: var(--border-width);
-
   color: var(--color);
   display: grid;
   grid-template-columns: 1fr;
   gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid
+    var(--alert-border-color, var(--pane-border-color, var(--border-color)));
+  border-inline-start-width: var(--alert-border-width, var(--border-width));
+  border-inline-start-color: var(--pane-border-color);
+  background: var(
+    --alert-background-color,
+    var(--pane-background-color, var(--background-color))
+  );
 
   &:empty {
     display: none;
@@ -33,16 +37,8 @@
     }
   }
 
-  padding: var(--spacing);
-  margin-bottom: var(--spacing);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--border-color);
-  border-inline-start-width: var(--alert-size);
-  border-inline-start-color: var(--pane-border-color);
-  background: var(--background-color);
-
   &:is(.ghost, .subtle) {
-    --alert-size: calc(var(--border-width) * 4);
+    --alert-border-width: calc(var(--border-width) * 4);
   }
 
   > * {
