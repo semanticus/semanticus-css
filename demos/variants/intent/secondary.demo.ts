@@ -1,16 +1,25 @@
-import { ADemo, ButtonDemo, RoleButtonDemo, RoleLinkDemo } from "@demos/semantics";
+import {
+  ADemo,
+  ButtonDemo,
+  RoleButtonDemo,
+  RoleLinkDemo,
+} from "@demos/semantics";
 import { CardDemo } from "@demos/components";
 import { renderElement, classMergeAttributes } from "@scripts/utils";
+import * as DropdownDemo from "@demos/composites/dropdown.demo";
 
 function mergedAttrs(attrs: Record<string, string> = {}) {
-  return classMergeAttributes('secondary', attrs);
+  return classMergeAttributes("secondary", attrs);
 }
 
 export function anchor(attrs: Record<string, string> = {}) {
   return ADemo.main(mergedAttrs(attrs));
 }
 
-export function roleLink(tagName: string = "button", attrs: Record<string, string> = {}) {
+export function roleLink(
+  tagName: string = "button",
+  attrs: Record<string, string> = {},
+) {
   return RoleLinkDemo.main(tagName, mergedAttrs(attrs));
 }
 
@@ -18,23 +27,28 @@ export function button(attrs: Record<string, string> = {}) {
   return ButtonDemo.main(mergedAttrs(attrs));
 }
 
-export function roleButton(tagName: string = "div", attrs: Record<string, string> = {}) {
+export function roleButton(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
   return RoleButtonDemo.main(tagName, mergedAttrs(attrs));
 }
 
 export function dropdown(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.dropdown(mergedAttrs(attrs));
+  return DropdownDemo.asButton(mergedAttrs(attrs));
 }
 
-export function accordion(attrs: Record<string, string> = {}) {
-  return RoleButtonDemo.accordion(mergedAttrs(attrs));
-}
-
-export function card(tagName: string = "div", attrs: Record<string, string> = {}) {
+export function card(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
   return CardDemo.main(tagName, mergedAttrs(attrs));
 }
 
-export function cardWithHeaderAndFooter(tagName: string = "div", attrs: Record<string, string> = {}) {
+export function cardWithHeaderAndFooter(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
   return CardDemo.withHeaderAndFooter(tagName, mergedAttrs(attrs));
 }
 
@@ -47,11 +61,15 @@ ${RoleLinkDemo.overview(mergedAttrs(attrs))}`;
 }
 
 export function overviewButtons(attrs: Record<string, string> = {}) {
-  return renderElement('div', { class: 'auto-grid' }, `${button(attrs)}
+  return renderElement(
+    "div",
+    { class: "auto-grid" },
+    `${button(attrs)}
 
 ${roleButton("div", attrs)}
 
-${dropdown(attrs)}`);
+${dropdown(attrs)}`,
+  );
 }
 
 export function overviewCards() {

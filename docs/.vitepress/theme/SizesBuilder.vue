@@ -43,7 +43,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Before</span>
       <div id="default-content">
-        ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
+        ${OverviewDemo.customizerExample({ class: 'container-fluid' })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">

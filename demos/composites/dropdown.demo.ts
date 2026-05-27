@@ -1,13 +1,17 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("details", attrs, `<summary aria-haspopup="menu">Dropdown</summary>
+  return renderElement(
+    "details",
+    attrs,
+    `<summary aria-haspopup="menu">Dropdown</summary>
 <ul role="menu">
   <li><a role="menuitem" href="#">Solid</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
   <li><a role="menuitem" href="#">Plasma</a></li>
-</ul>`);
+</ul>`,
+  );
 }
 
 export function withRadios() {
@@ -32,7 +36,10 @@ export function withRadios() {
 }
 
 export function withCheckboxes(attrs: Record<string, string> = {}) {
-  return renderElement("details", attrs, `<summary aria-haspopup="menu">Select phases of matter...</summary>
+  return renderElement(
+    "details",
+    attrs,
+    `<summary aria-haspopup="menu">Select phases of matter...</summary>
 <ul role="menu">
   <li>
     <label>
@@ -46,17 +53,22 @@ export function withCheckboxes(attrs: Record<string, string> = {}) {
       Liquid
     </label>
   </li>
-</ul>`);
+</ul>`,
+  );
 }
 
 export function asButton(attrs: Record<string, string> = {}) {
-  return renderElement("details", {}, `${renderElement("summary", { ...attrs, role: 'button', 'aria-haspopup': 'menu' }, "Dropdown as a button")}
+  return renderElement(
+    "details",
+    {},
+    `${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown as a button")}
 <ul role="menu">
   <li><a role="menuitem" href="#">Solid</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
   <li><a role="menuitem" href="#">Plasma</a></li>
-</ul>`);
+</ul>`,
+  );
 }
 
 export function validationStates() {
@@ -107,8 +119,11 @@ export function inNav() {
 `;
 }
 
-export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${asButton(classMergeAttributes(`primary mb-d ${modifier}`.trim(), attrs))}
+export function asButtonIntentVariants(
+  attrs: Record<string, string> = {},
+  modifier: string = "",
+) {
+  return `${asButton(classMergeAttributes(`primary mb-d ${modifier}`.trim(), attrs))}
 ${asButton(classMergeAttributes(`secondary mb-d ${modifier}`.trim(), attrs))}
 ${asButton(classMergeAttributes(`contrast mb-d ${modifier}`.trim(), attrs))}
 ${asButton(classMergeAttributes(`success mb-d ${modifier}`.trim(), attrs))}
@@ -117,24 +132,28 @@ ${asButton(classMergeAttributes(`warning mb-d ${modifier}`.trim(), attrs))}
 ${asButton(classMergeAttributes(`danger mb-d ${modifier}`.trim(), attrs))}`;
 }
 
-export function subtleVariants(attrs: Record<string, string> = {}) {
-  return intentVariants(attrs, 'subtle');
+export function asButtonSubtleVariants(attrs: Record<string, string> = {}) {
+  return asButtonIntentVariants(attrs, "subtle");
 }
 
-export function ghostVariants(attrs: Record<string, string> = {}) {
-  return intentVariants(attrs, 'ghost');
+export function asButtonGhostVariants(attrs: Record<string, string> = {}) {
+  return asButtonIntentVariants(attrs, "ghost");
 }
 
-export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement('section', classMergeAttributes('auto-grid', attrs), `<section>
-  ${intentVariants()}
+export function overviewAsButtonVariants(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "section",
+    classMergeAttributes("auto-grid", attrs),
+    `<section>
+  ${asButtonIntentVariants()}
 </section>
 
 <section>
-  ${subtleVariants()}
+  ${asButtonIntentVariants()}
 </section>
 
 <section>
-  ${ghostVariants()}
-</section>`);
+  ${asButtonIntentVariants()}
+</section>`,
+  );
 }

@@ -7,22 +7,37 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicUsage: StoryObj = {
-  args: { html: ButtonDemo.main() },
+export const overview: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers() },
   render: (args) => args.html,
 };
 
-export const intentVariants: StoryObj = {
-  args: { html: ButtonDemo.intentVariants() },
+export const secondary: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers({ class: "secondary" }) },
   render: (args) => args.html,
 };
 
-export const subtleModifier: StoryObj = {
-  args: { html: ButtonDemo.subtleVariants() },
+export const contrast: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers({ class: "contrast" }) },
   render: (args) => args.html,
 };
 
-export const ghostModifier: StoryObj = {
-  args: { html: ButtonDemo.ghostVariants() },
+export const success: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers({ class: "success" }) },
+  render: (args) => args.html,
+};
+
+export const info: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers({ class: "info" }) },
+  render: (args) => args.html,
+};
+
+export const warning: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers({ class: "warning" }) },
+  render: (args) => args.html,
+};
+
+export const danger: StoryObj = {
+  args: { html: ButtonDemo.overviewStatesAndModifiers({ class: "danger" }) },
   render: (args) => args.html,
 };

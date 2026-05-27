@@ -32,7 +32,7 @@ function htmlTemplate(base, theme) {
   </style>
 </head>
 <body class="px-2">
-  ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
+  ${OverviewDemo.customizerExample({ class: 'container-fluid' })}
 
   <script>
     window.addEventListener('message', function(event) {

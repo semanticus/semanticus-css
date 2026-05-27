@@ -32,19 +32,18 @@ Use the `open` attribute to expand it by default.
 
 To convey **intent** and **importance**, accordions can be styled with different variants:
 
-<HtmlPreviewer :code="RoleButtonDemo.accordionIntentVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DetailsDemo.asButtonIntentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.ghost` creates transparent background accordions with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="RoleButtonDemo.accordionGhostVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DetailsDemo.asButtonGhostVariants()" :codeCollapsed="true" />
 
 `.subtle` creates accordions with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="RoleButtonDemo.accordionSubtleVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DetailsDemo.asButtonSubtleVariants()" :codeCollapsed="true" />
 
 <script setup>
-import { RoleButtonDemo } from "@demos/semantics/attributes";
 import { DetailsDemo } from "@demos/semantics/elements";
 </script>

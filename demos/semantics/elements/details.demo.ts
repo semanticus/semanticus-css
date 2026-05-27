@@ -1,11 +1,15 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("details", attrs, `<summary>Accordion 1</summary>
+  return renderElement(
+    "details",
+    attrs,
+    `<summary>Accordion 1</summary>
 <p>
   This content is hidden by default and revealed when you click the summary.
   Accordions are great for organizing content into collapsible sections.
-</p>`);
+</p>`,
+  );
 }
 
 export function entangledAccordions() {
@@ -28,11 +32,6 @@ export function entangledAccordions() {
     <li>Great for FAQ sections or settings panels.</li>
   </ul>
 </details>`;
-}
-
-export function asButton(attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement("details", {}, `${renderElement("summary", { ...attrs, role: 'button' }, slot || "Button-style Accordion")}
-<p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>`);
 }
 
 export function faqExample() {
@@ -64,4 +63,37 @@ export function faqExample() {
     </div>
   </details>
 </section>`;
+}
+
+export function asButton(
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
+  return renderElement(
+    "details",
+    {},
+    `${renderElement("summary", { ...attrs, role: "button" }, slot || "Button-style Accordion")}
+<p>The <code>summary[role=button]</code> turns the accordion trigger into a full-width button.</p>`,
+  );
+}
+
+export function asButtonIntentVariants(
+  attrs: Record<string, string> = {},
+  modifier: string = "",
+) {
+  return `${asButton(classMergeAttributes(`primary mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`secondary mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`contrast mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`success mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`info mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`warning mb-d ${modifier}`.trim(), attrs))}
+${asButton(classMergeAttributes(`danger mb-d ${modifier}`.trim(), attrs))}`;
+}
+
+export function asButtonSubtleVariants(attrs: Record<string, string> = {}) {
+  return asButtonIntentVariants(attrs, "subtle");
+}
+
+export function asButtonGhostVariants(attrs: Record<string, string> = {}) {
+  return asButtonIntentVariants(attrs, "ghost");
 }

@@ -48,7 +48,7 @@ export function buttons() {
 
 export function links() {
   return `<section id="links">
-  <h2>Links</h2>
+  <a href="#links"><h2>Links</h2></a>
 
   <section class="auto-grid">
     ${ADemo.main()}
@@ -63,7 +63,7 @@ export function links() {
 
 export function inputButtons() {
   return `<section id="input-buttons">
-  <h4>Input buttons (type="button|submit|reset")</h4>
+  <a href="#input-buttons"><h4>Input buttons (type="button|submit|reset")</h4></a>
 
   <section class="auto-grid">
     ${InputDemo.button()}
@@ -76,7 +76,7 @@ export function inputButtons() {
 
 export function disabledState() {
   return `<section id="disabled-state">
-  <h4>Disabled State</h4>
+  <a href="#disabled-state"><h4>Disabled State</h4></a>
 
   <section class="auto-grid">
     ${DisabledDemo.input()}
@@ -98,7 +98,7 @@ export function disabledState() {
 
 export function validState() {
   return `<section id="valid-state">
-  <h4>Valid State (aria-invalid="false")</h4>
+  <a href="#valid-state"><h4>Valid State (aria-invalid="false")</h4></a>
 
   <section class="auto-grid">
     ${InputDemo.main({ "aria-invalid": "false" })}
@@ -116,7 +116,7 @@ export function validState() {
 
 export function invalidState() {
   return `<section id="invalid-state">
-  <h4>Invalid State (aria-invalid="true")</h4>
+  <a href="#invalid-state"><h4>Invalid State (aria-invalid="true")</h4></a>
 
   <section class="auto-grid">
     ${InputDemo.main({ "aria-invalid": "true" })}
@@ -134,7 +134,7 @@ export function invalidState() {
 
 export function inputElements() {
   return `<section id="input-elements">
-  <h2>Input Elements</h2>
+  <a href="#input-elements"><h2>Input Elements</h2></a>
 
   <input type="text" name="text" placeholder="Text" aria-label="Text" />
 
@@ -192,7 +192,7 @@ export function inputElements() {
 function fieldsets() {
   return `<section id="fieldsets">
   <hgroup>
-    <h2>Fieldsets</h2>
+    <a href="#fieldsets"><h2>Fieldsets</h2></a>
     <p>Use fieldsets to group related form elements together.</p>
   </hgroup>
 
@@ -223,7 +223,7 @@ function fieldsets() {
 
 function cards() {
   return `<section id="cards">
-  <h2>Cards</h2>
+  <a href="#cards"><h2>Cards</h2></a>
 
   ${CardDemo.main()}
 
@@ -233,7 +233,7 @@ function cards() {
 
 function loadingStates() {
   return `<section id="loading-states">
-  <h2>Loading States (aria-busy="true")</h2>
+  <a href="#loading-states"><h2>Loading States (aria-busy="true")</h2></a>
 
   <section class="auto-grid">
     <section>
@@ -252,7 +252,7 @@ function loadingStates() {
 function tooltips() {
   return `<section id="tooltips">
   <hgroup>
-    <h2>Tooltips (role="tooltip")</h2>
+    <a href="#tooltips"><h2>Tooltips (role="tooltip")</h2></a>
     <p>Pair a trigger element with <code>aria-describedby</code> and another with <code>[role="tooltip"]</code>.</p>
   </hgroup>
 
@@ -262,7 +262,7 @@ function tooltips() {
 
 function accordions() {
   return `<section id="accordions">
-  <h2>Accordions</h2>
+  <a href="#accordions"><h2>Accordions</h2></a>
 
   <section>
     ${DetailsDemo.entangledAccordions()}
@@ -280,7 +280,7 @@ function accordions() {
 
 function dropdowns() {
   return `<section id="dropdowns">
-  <h2>Dropdowns</h2>
+  <a href="#dropdowns"><h2>Dropdowns</h2></a>
 
   <section>
     ${DropdownDemo.main()}
@@ -296,10 +296,10 @@ function dropdowns() {
 </section>`;
 }
 
-function dialogs() {
-  return `<section id="dialogs">
+function modal() {
+  return `<section id="modal">
   <hgroup>
-    <h2>Modal</h2>
+    <a href="#modal"><h2>Modal</h2></a>
     <p>Click the button below to open a modal dialog</p>
   </hgroup>
 
@@ -309,7 +309,7 @@ function dialogs() {
 
 function tables() {
   return `<section id="tables">
-  <h2>Tables</h2>
+  <a href="#tables"><h2>Tables</h2></a>
 
   ${TableDemo.bigExample()}
 </section>`;
@@ -317,7 +317,7 @@ function tables() {
 
 function progressBars() {
   return `<section id="progressBars">
-  <h2>Progress Bars</h2>
+  <a href="#progressBars"><h2>Progress Bars</h2></a>
 
   ${ProgressDemo.main({ value: "0" })}
   ${ProgressDemo.main({ value: "50" })}
@@ -328,7 +328,7 @@ function progressBars() {
 
 function figures() {
   return `<section id="figures">
-  <h2>Figures</h2>
+  <a href="#figures"><h2>Figures</h2></a>
 
   ${FigureDemo.withoutImage()}
 </section>`;
@@ -336,7 +336,7 @@ function figures() {
 
 function navigation() {
   return `<section id="navigation">
-  <h2>Navigation</h2>
+  <a href="#navigation"><h2>Navigation</h2></a>
 
   <section>
     ${NavDemo.main()}
@@ -360,7 +360,7 @@ function navigation() {
 
 function typography() {
   return `<section id="typography">
-  <h2>Typography</h2>
+  <a href="#typography"><h2>Typography</h2></a>
 
   <section class="auto-grid">
     <section>
@@ -393,7 +393,7 @@ function headingGroup() {
 
 function lists() {
   return `<section id="lists">
-  <h2>Lists</h2>
+  <a href="#lists"><h2>Lists</h2></a>
 
   <section>
     <h4>Group</h4>
@@ -423,7 +423,7 @@ function lists() {
 
 function blockquotes() {
   return `<section id="blockquotes">
-  <h2>Blockquote</h2>
+  <a href="#blockquotes"><h2>Blockquote</h2></a>
 
   <section>
     ${TextDemo.blockquote()}
@@ -433,7 +433,7 @@ function blockquotes() {
 
 function codeBlocks() {
   return `<section id="codeBlocks">
-  <h2>Code Block</h2>
+  <a href="#codeBlocks"><h2>Code Block</h2></a>
 
   <section>
     ${TextDemo.codeBlock()}
@@ -443,7 +443,7 @@ function codeBlocks() {
 
 function address() {
   return `<section id="address">
-  <h2>Address</h2>
+  <a href="#address"><h2>Address</h2></a>
 
   <section>
     ${TextDemo.address()}
@@ -461,66 +461,18 @@ ${buttons()}
 <hr>
 <br>
 
-${links()}
+<section id="links">
+  <h2>Links</h2>
 
-<hr>
-<br>
-
-<section id="input-elements">
-  <h2>Input Elements</h2>
-
-  <fieldset class="auto-grid">
-    <label>
-      Text Input
-      <input type="text" name="text" placeholder="Text" aria-label="Text" />
-    </label>
-
-    <label>
-      Select
-      ${SelectDemo.main()}
-    </label>
-  </fieldset>
-
-  <fieldset>
-    <label class="w-100">
-      Dropdown group
-      ${FieldsetDemo.groupDropdownButton()}
-    </label>
-  </fieldset>
-
-  <fieldset class="auto-grid">
-    ${InputDemo.checkboxBasic()}
-
-    ${InputDemo.radioBasic()}
-
-    ${InputDemo.switchBasic()}
-  </fieldset>
+  <section class="auto-grid">
+    ${ADemo.main()}
+    ${RoleLinkDemo.main("button")}
+    ${RoleLinkDemo.main("div")}
+    ${ADemo.active()}
+    ${RoleLinkDemo.active("button")}
+    ${RoleLinkDemo.active("div")}
+  </section>
 </section>
-
-<hr>
-<br>
-
-<section id="cards">
-  <h2>Cards</h2>
-
-  ${CardDemo.main()}
-
-  ${CardDemo.withHeaderAndFooter()}
-</section>`,
-  );
-}
-
-export function palettesExample(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "main",
-    { class: "container", ...attrs },
-    `<br>
-${buttons()}
-
-<hr>
-<br>
-
-${links()}
 
 <hr>
 <br>
@@ -623,7 +575,7 @@ ${dropdowns()}
 <hr>
 <br>
 
-${dialogs()}
+${modal()}
 
 <hr>
 <br>
@@ -676,23 +628,13 @@ ${address()}`,
   );
 }
 
-export function fullBundleColorsButtons() {
-  return `<section id="buttons">
-  <h2>Buttons</h2>
-
-  ${ButtonDemo.intentVariants()}
-  ${ButtonDemo.subtleVariants()}
-  ${ButtonDemo.ghostVariants()}
-</section>`;
-}
-
 export function fullBundleColors(attrs: Record<string, string> = {}) {
   return renderElement(
     "main",
     { class: "container", ...attrs },
     `<br>
 <section id="typography">
-  <h2>Typography</h2>
+  <a href="#typography"><h2>Typography</h2></a>
 
   ${TypographyDemo.overviewVariants()}
 </section>
@@ -700,13 +642,19 @@ export function fullBundleColors(attrs: Record<string, string> = {}) {
 <hr>
 <br>
 
-${fullBundleColorsButtons()}
+<section id="buttons">
+  <a href="#buttons"><h2>Buttons</h2></a>
+
+  ${ButtonDemo.intentVariants()}
+  ${ButtonDemo.subtleVariants()}
+  ${ButtonDemo.ghostVariants()}
+</section>
 
 <hr>
 <br>
 
 <section id="links">
-  <h2>Links</h2>
+  <a href="#links"><h2>Links</h2></a>
 
   ${LinksDemo.overviewVariants()}
 </section>
@@ -715,16 +663,16 @@ ${fullBundleColorsButtons()}
 <br>
 
 <section id="dropdowns">
-  <h2>Dropdowns (role="button")</h2>
+  <a href="#dropdowns"><h2>Dropdowns (role="button")</h2></a>
 
-  ${DropdownDemo.overviewVariants()}
+  ${DropdownDemo.overviewAsButtonVariants()}
 </section>
 
 <hr>
 <br>
 
 <section id="card-list">
-  <h2>Card List</h2>
+  <a href="#card-list"><h2>Card List</h2></a>
 
   ${CardListDemo.overviewVariants()}
 </section>
@@ -733,7 +681,7 @@ ${fullBundleColorsButtons()}
 <br>
 
 <section id="cards">
-  <h2>Cards</h2>
+  <a href="#cards"><h2>Cards</h2></a>
 
   ${CardDemo.overviewVariants()}
 </section>
@@ -742,7 +690,7 @@ ${fullBundleColorsButtons()}
 <br>
 
 <section id="panes">
-  <h2>Panes</h2>
+  <a href="#panes"><h2>Panes</h2></a>
 
   ${PaneDemo.overviewVariants()}
 </section>
@@ -751,7 +699,7 @@ ${fullBundleColorsButtons()}
 <br>
 
 <section id="role-statuses">
-  <h2>Role Statuses</h2>
+  <a href="#role-statuses"><h2>Role Statuses</h2></a>
 
   ${RoleStatusDemo.overviewVariants()}
 </section>`,

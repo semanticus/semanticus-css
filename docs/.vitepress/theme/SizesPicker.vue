@@ -24,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
+  ${OverviewDemo.customizerExample({ class: 'container-fluid' })}
 
   <script>
     function sendHeight() {
