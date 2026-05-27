@@ -1,107 +1,19 @@
 .subtle {
-  --subtle-opacity: 60%;
-}
+  --button-background-color: var(--background-color);
+  --button-border-color: var(--border-color);
 
-:not([role="link"], a:not([role="button"])) {
-  &.subtle {
-    &.primary {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--primary-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--primary-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
+  --dialog-background-color: var(--background-color);
+  --dialog-border-color: var(--border-color);
 
-    &.secondary {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--secondary-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--secondary-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
-
-    &.contrast {
-      --color: oklch(
-        from light-dark(#fff, #191c20) l c h / var(--color-opacity)
-      );
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--contrast-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--contrast-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
-
-    &.success {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--success-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--success-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
-
-    &.info {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--info-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--info-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
-
-    &.warning {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--warning-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--warning-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
-
-    &.danger {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-      --background-color: oklch(
-        from var(--danger-subtle-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--danger-subtle-background-color) l c h /
-          var(--border-color-opacity)
-      );
-    }
-  }
-}
-
-:is(button, [type="submit"], [type="button"], [role="button"]) {
-  &.subtle {
-    --color: oklch(from #fff l c h / var(--color-opacity));
+  &.primary,
+  &:is(
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [type="file"]::file-selector-button,
+      [role="button"]
+    ):not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
     --background-color: oklch(
       from var(--primary-subtle-background-color) l c h /
         var(--background-color-opacity)
@@ -110,146 +22,71 @@
       from var(--primary-subtle-background-color) l c h /
         var(--border-color-opacity)
     );
-    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color: oklch(from #fff l c h / var(--color-opacity));
-      --background-color: oklch(
-        from var(--primary-background-color) l c h /
-          var(--background-color-opacity)
-      );
-      --border-color: oklch(
-        from var(--primary-background-color) l c h / var(--border-color-opacity)
-      );
-    }
-
-    &.secondary {
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --color: oklch(from #fff l c h / var(--color-opacity));
-        --background-color: oklch(
-          from var(--secondary-background-color) l c h /
-            var(--background-color-opacity)
-        );
-        --border-color: oklch(
-          from var(--secondary-background-color) l c h /
-            var(--border-color-opacity)
-        );
-      }
-    }
-
-    &.contrast {
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --color: oklch(
-          from light-dark(#fff, #191c20) l c h / var(--color-opacity)
-        );
-        --background-color: oklch(
-          from var(--contrast-background-color) l c h /
-            var(--background-color-opacity)
-        );
-        --border-color: oklch(
-          from var(--contrast-background-color) l c h /
-            var(--border-color-opacity)
-        );
-      }
-    }
-
-    &.success {
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --color: oklch(from #fff l c h / var(--color-opacity));
-        --background-color: oklch(
-          from var(--success-background-color) l c h /
-            var(--background-color-opacity)
-        );
-        --border-color: oklch(
-          from var(--success-background-color) l c h /
-            var(--border-color-opacity)
-        );
-      }
-    }
-
-    &.info {
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --color: oklch(from #fff l c h / var(--color-opacity));
-        --background-color: oklch(
-          from var(--info-background-color) l c h /
-            var(--background-color-opacity)
-        );
-        --border-color: oklch(
-          from var(--info-background-color) l c h / var(--border-color-opacity)
-        );
-      }
-    }
-
-    &.warning {
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --color: oklch(from #fff l c h / var(--color-opacity));
-        --background-color: oklch(
-          from var(--warning-background-color) l c h /
-            var(--background-color-opacity)
-        );
-        --border-color: oklch(
-          from var(--warning-background-color) l c h /
-            var(--border-color-opacity)
-        );
-      }
-    }
-
-    &.danger {
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --color: oklch(from #fff l c h / var(--color-opacity));
-        --background-color: oklch(
-          from var(--danger-background-color) l c h /
-            var(--background-color-opacity)
-        );
-        --border-color: oklch(
-          from var(--danger-background-color) l c h /
-            var(--border-color-opacity)
-        );
-      }
-    }
   }
-}
 
-/* Reset buttons */
-[type="reset"].subtle {
-  --color: var(--secondary-color);
-  --background-color: var(--secondary-subtle-background-color);
-  --border-color: var(--secondary-subtle-background-color);
-  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
+  &.secondary {
+    --background-color: oklch(
+      from var(--secondary-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --border-color: oklch(
+      from var(--secondary-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
 
-  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --color: var(--secondary-color);
-    --background-color: var(--secondary-background-color);
-    --border-color: var(--secondary-background-color);
+  &.contrast {
+    --background-color: oklch(
+      from var(--contrast-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --border-color: oklch(
+      from var(--contrast-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.success {
+    --background-color: oklch(
+      from var(--success-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --border-color: oklch(
+      from var(--success-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.info {
+    --background-color: oklch(
+      from var(--info-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --border-color: oklch(
+      from var(--info-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.warning {
+    --background-color: oklch(
+      from var(--warning-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --border-color: oklch(
+      from var(--warning-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.danger {
+    --background-color: oklch(
+      from var(--danger-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --border-color: oklch(
+      from var(--danger-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
   }
 }
