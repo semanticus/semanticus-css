@@ -1,41 +1,33 @@
 .contrast {
-  &:not(a:not([role="button"]), [role="link"]) {
-    --background-color: oklch(
-      from var(--contrast-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --border-color: oklch(
-      from var(--contrast-background-color) l c h / var(--border-color-opacity)
-    );
-    --color: oklch(from light-dark(#fff, #191c20) l c h / var(--color-opacity));
-    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
+  --color: oklch(from light-dark(#fff, #191c20) l c h / var(--color-opacity));
+  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
 
-    --dialog-background-color: oklch(
-      from var(--contrast-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --dialog-border-color: oklch(
-      from var(--contrast-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --dialog-section-background-color: color-mix(
-      in srgb,
-      light-dark(var(--color-slate-50), var(--color-slate-900)),
-      transparent 90%
-    );
-    --dialog-section-border-color: color-mix(
-      in srgb,
-      light-dark(var(--color-slate-50), black),
-      transparent 95%
-    );
-  }
+  --link-color: oklch(from var(--contrast-color) l c h / var(--color-opacity));
+
+  --button-background-color: oklch(
+    from var(--contrast-background-color) l c h /
+      var(--background-color-opacity)
+  );
+  --button-border-color: oklch(
+    from var(--contrast-background-color) l c h / var(--border-color-opacity)
+  );
+
+  --dialog-background-color: var(--button-background-color);
+  --dialog-border-color: var(--button-background-color);
+  --dialog-section-background-color: color-mix(
+    in srgb,
+    light-dark(var(--color-slate-50), var(--color-slate-900)),
+    transparent 90%
+  );
+  --dialog-section-border-color: color-mix(
+    in srgb,
+    light-dark(var(--color-slate-50), black),
+    transparent 95%
+  );
 
   &:is(a:not([role="button"]), [role="link"]) {
-    --color: oklch(from var(--contrast-color) l c h / var(--color-opacity));
-    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color: oklch(
+      --link-color: oklch(
         from var(--contrast-color-hover) l c h / var(--color-opacity)
       );
     }
@@ -45,22 +37,22 @@
       [role="link"]
     ) {
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --background-color: oklch(
+      --button-background-color: oklch(
         from var(--contrast-background-color-hover) l c h /
           var(--background-color-opacity)
       );
-      --border-color: oklch(
+      --button-border-color: oklch(
         from var(--contrast-background-color-hover) l c h /
           var(--border-color-opacity)
       );
-      --color: oklch(
+      --button-color: oklch(
         from light-dark(#fff, #191c20) l c h / var(--color-opacity)
       );
     }
 
     &:focus,
     &:is([aria-current]:not([aria-current="false"])):focus {
-      --box-shadow:
+      --button-box-shadow:
         var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
         0 0 0 var(--outline-width) var(--contrast-focus-ring-color);
     }

@@ -145,15 +145,15 @@ export function overviewAsButtonVariants(attrs: Record<string, string> = {}) {
     "section",
     classMergeAttributes("auto-grid", attrs),
     `<section>
-  ${asButtonIntentVariants()}
+  ${asButtonIntentVariants(attrs)}
 </section>
 
 <section>
-  ${asButtonIntentVariants()}
+  ${asButtonSubtleVariants(attrs)}
 </section>
 
 <section>
-  ${asButtonIntentVariants()}
+  ${asButtonGhostVariants(attrs)}
 </section>`,
   );
 }
