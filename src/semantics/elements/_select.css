@@ -1,0 +1,25 @@
+/* See _input.css for shared styles */
+
+select {
+  text-transform: none;
+
+  &:not([multiple], [size]) {
+    padding-right: calc(var(--input-spacing-horizontal) + 1.5rem);
+    padding-left: var(--input-spacing-horizontal);
+    padding-inline-start: var(--input-spacing-horizontal);
+    padding-inline-end: calc(var(--input-spacing-horizontal) + 1.5rem);
+    background-image: var(--icon-chevron);
+    background-position: center right 0.75rem;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+  }
+
+  &[multiple] option:checked {
+    background: var(--input-background-color-selected);
+    color: var(--input-color);
+  }
+}
+
+[dir="rtl"] select:not([multiple], [size]) {
+  background-position: center left 0.75rem;
+}

@@ -20,6 +20,7 @@
 @import "./elements/_dialog.css";
 @import "./elements/_document.css";
 @import "./elements/_embedded.css";
+@import "./elements/_fieldset.css";
 @import "./elements/_figure.css";
 @import "./elements/_footer.css";
 @import "./elements/_header.css";
@@ -36,11 +37,13 @@
 @import "./elements/_p.css";
 @import "./elements/_progress.css";
 @import "./elements/_section.css";
+@import "./elements/_select.css";
 @import "./elements/_small.css";
 @import "./elements/_strong.css";
 @import "./elements/_sub.css";
 @import "./elements/_sup.css";
 @import "./elements/_table.css";
+@import "./elements/_textarea.css";
 @import "./elements/_type-checkbox-radio.css";
 @import "./elements/_type-color.css";
 @import "./elements/_type-date.css";

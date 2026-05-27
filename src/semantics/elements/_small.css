@@ -2,4 +2,20 @@ small {
   --font-size: var(--small-font-size);
 
   font-size: var(--font-size);
+
+  :where(input, select, textarea, fieldset) + & {
+    display: block;
+    width: 100%;
+    margin-top: calc(var(--spacing) * -0.75);
+    margin-bottom: var(--spacing);
+    color: var(--color-muted);
+  }
+
+  :where(input, select, textarea, fieldset)[aria-invalid="false"] + & {
+    color: var(--success-color);
+  }
+
+  :where(input, select, textarea, fieldset)[aria-invalid="true"] + & {
+    color: var(--danger-color);
+  }
 }

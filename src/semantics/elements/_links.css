@@ -2,6 +2,7 @@
 [role="link"] {
   --border-color: transparent;
   --_link-color: var(--link-color, var(--primary-color));
+
   outline: none;
   padding: 0;
   background-color: transparent;
@@ -26,7 +27,6 @@
       var(--link-color) 70%,
       var(--color-hover-effect)
     );
-    --_button-box-shadow: transparent;
     text-decoration-color: oklch(from var(--_link-color) l c h / 0.85);
   }
 
