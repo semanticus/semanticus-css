@@ -10,7 +10,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Utility composition system |
 | ✅ | Consolidated **Pico CSS** and **Bootstrap** css variables into one unified system |
 | ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
-| ✅ | CSS variables token organization |
+| ✅ | Removed `<article>`'s **card** style |
+| ✅ | Two layer CSS variables token system |
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
 | ✅ | Stack/layout primitives |
 | ✅ | **intent** colors based on **Bootstrap** `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `contrast` (replacing `light` and `dark`) |
@@ -25,17 +26,24 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 
 | Status | Feature |
 | --- | --- |
-| ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
-| ✅ | Removed `<article>` the **card** style |
-| ✅ | `.icon-*` component |
-| ✅ | `.content-grid` component |
-| ✅ | `.auto-grid` component |
-| ✅ | Extended `.card` to implement **card lists** |
-| ✅ | `.pane` component |
-| 🚧 | `.sidebar` component |
-| ⌛ | `.carousel` component |
-| ⌛ | `.badge` component |
-| ⌛ | `.popper` component |
+| ✅ | Accordions |
+| ✅ | Alerts |
+| ✅ | Auto Grid |
+| ✅ | Card List |
+| ✅ | Card, based off **Pico CSS**'s `<article>` semantic style |
+| ✅ | Content Grid |
+| ✅ | Dropdown |
+| ✅ | Loading Indicator |
+| ✅ | Icons |
+| ✅ | Modal |
+| ✅ | Pane |
+| ✅ | Toasts |
+| ✅ | Tooltip |
+| 🚧 | Sidebar |
+| ⌛ | Carousel |
+| ⌛ | Badge |
+| ⌛ | Tabs |
+| ⌛ | Popper |
 
 ## Variants & Utilities
 
@@ -78,8 +86,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Alert hide/show interaction |
 | ✅ | Alert Dialog |
 | ✅ | Anchor Positioning tooltips |
-| ⌛ | Tabs |
 | ⌛ | Carousel |
+| ⌛ | Tabs |
 | ⌛ | Popper |
 
 ## Documentation & Tooling
@@ -138,17 +146,18 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` variant combinations |
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
-| ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | ✅ | Toasts interaction |
 | ✅ | Alert hide/show interaction |
-| ✅ | Include **card lists** in Full & Colors Demo Overview |
+| ✅ | Include Alerts in Full & Colors Demo Overview |
 | ✅ | Include `.pane` in Full Colors Demo Overview |
 | ✅ | Include `<progress>` in Full Colors Demo Overview |
 | ✅ | `.content-grid` Demo Overview |
-| ✅ | Exhaustive combination of button types in all states with all variants |
-| ✅ | Exhaustive combination of link types in all states with all variants |
-| ⌛ | `.sidebar` popover interaction |
+| ✅ | Exhaustive combination of all button types in all states with all variants |
+| ✅ | Exhaustive combination of all link types in all states with all variants |
+| ✅ | Exhaustive combination of all card variations with all variants |
+| ✅ | Exhaustive combination of all card list variations with all variants |
+| ⌛ | Sidebar popover interaction |
 | ⌛ | Grid System Overview |
-| ⌛ | Tab interaction |
+| ⌛ | Tabs interaction |
 | ⌛ | Carousel interaction |
 | ⌛ | Popper interaction |

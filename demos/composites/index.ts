@@ -1,3 +1,4 @@
+export * as AccordionsDemo from "./accordions.demo";
 export * as AlertsDemo from "./alerts.demo";
 export * as ButtonsDemo from "./buttons.demo";
 export * as CardListDemo from "./card-list.demo";

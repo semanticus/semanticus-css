@@ -330,6 +330,7 @@ export default defineConfig({
         {
           text: "Composites",
           items: [
+            { text: "Accordions", link: "/docs/composites/accordions" },
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Buttons", link: "/docs/composites/buttons" },
             { text: "Card List", link: "/docs/composites/card-list" },

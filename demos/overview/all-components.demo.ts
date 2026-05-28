@@ -1,11 +1,15 @@
 import { renderElement } from "@scripts/utils";
 
-import { DropdownDemo, SearchDemo, CardListDemo } from "@demos/composites";
+import {
+  DropdownDemo,
+  SearchDemo,
+  CardListDemo,
+  AccordionsDemo,
+} from "@demos/composites";
 import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
-  DetailsDemo,
   SelectDemo,
   TextareaDemo,
   FieldsetDemo,
@@ -239,7 +243,7 @@ function accordions() {
   <h2>Accordions</h2>
 
   <section>
-    ${DetailsDemo.entangledAccordions()}
+    ${AccordionsDemo.entangledAccordions()}
   </section>
 
   <br>
@@ -247,7 +251,7 @@ function accordions() {
   <section>
     <h4>Button Style (role="button")</h4>
 
-    ${DetailsDemo.asButton()}
+    ${AccordionsDemo.asButton()}
   </section>
 </section>`;
 }

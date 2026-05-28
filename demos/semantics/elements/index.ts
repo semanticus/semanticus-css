@@ -3,7 +3,6 @@ export * as ArticleDemo from "./article.demo";
 export * as AsideDemo from "./aside.demo";
 export * as BodyDemo from "./body.demo";
 export * as ButtonDemo from "./button.demo";
-export * as DetailsDemo from "./details.demo";
 export * as DialogDemo from "./dialog.demo";
 export * as EmbeddedDemo from "./embedded.demo";
 export * as FieldsetDemo from "./fieldset.demo";

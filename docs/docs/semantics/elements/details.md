@@ -4,46 +4,21 @@ title: details
 
 # &lt;details&gt;
 
-The `<details>` element creates a native disclosure widget aka **accordion** — a collapsible section that users can open and close without JavaScript. Its `<summary>` child acts as the visible label and toggle control.
+The `<details>` element creates a native disclosure widget and is used as a building block for **accordions** and **dropdowns**, since it provides a native way to create collapsible content sections with keyboard navigation and screen reader support without the need for JavaScript.
 
-`<details>` is also used as a building block for **dropdowns**, which are described in the [Dropdown section](/docs/composites/dropdown) below.
+## Accordion Example
 
-## Basic Usage
+Check out [Accordion](/docs/composites/accordions) documentation pages for more details and examples.
 
-<HtmlPreviewer :code="DetailsDemo.main()" />
+<HtmlPreviewer :code="AccordionsDemo.entangledAccordions()" />
 
-## Entangled accordions
+## Dropdown Example
 
-Set the same `name` attribute on multiple `<details>` elements to create an exclusive accordion where only one can be open at a time.
+Check out [Dropdown](/docs/composites/dropdown) documentation pages for more details and examples.
 
-Use the `open` attribute to expand it by default.
-
-<HtmlPreviewer :code="DetailsDemo.entangledAccordions()" />
-
-## FAQ Page Example
-
-<HtmlPreviewer :code="DetailsDemo.faqExample()" />
-
-## As a Button
-
-<HtmlPreviewer :code="DetailsDemo.asButton()" />
-
-### Intent Variants
-
-To convey **intent** and **importance**, accordions can be styled with different variants:
-
-<HtmlPreviewer :code="DetailsDemo.asButtonIntentVariants()" :codeCollapsed="true" />
-
-### Modifiers
-
-`.ghost` creates transparent background accordions with colored text and borders, useful for secondary actions where you want minimal visual weight.
-
-<HtmlPreviewer :code="DetailsDemo.asButtonGhostVariants()" :codeCollapsed="true" />
-
-`.subtle` creates accordions with a more muted appearance, often used for less prominent actions.
-
-<HtmlPreviewer :code="DetailsDemo.asButtonSubtleVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.main()" />
 
 <script setup>
-import { DetailsDemo } from "@demos/semantics/elements";
+import { AccordionsDemo } from "@demos/composites";
+import { DropdownDemo } from "@demos/composites";
 </script>
