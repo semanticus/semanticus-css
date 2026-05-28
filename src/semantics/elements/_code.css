@@ -30,7 +30,7 @@ samp {
 }
 
 pre {
-  color: var(--color);
+  color: var(--typography-color);
   display: block;
   font-style: normal;
   font-weight: var(--font-weight);

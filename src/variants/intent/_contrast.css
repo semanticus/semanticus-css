@@ -29,22 +29,28 @@
     [type="file"]::file-selector-button,
     [role="button"]
   ) {
-    --button-color: oklch(
-      from light-dark(#fff, #191c20) l c h / var(--color-opacity)
-    );
-  }
-
-  &:is(.card, .pane, [role="status"], [role="alert"]) {
-    --color: light-dark(#fff, #191c20);
-    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
+    --button-color: light-dark(#fff, #191c20);
   }
 
   &:is(.card) {
+    --card-color: light-dark(#fff, #191c20);
     --marginals-background-color: color-mix(
       in srgb,
       light-dark(var(--color-slate-50), var(--color-slate-900)),
       transparent 90%
     );
+  }
+
+  &.pane {
+    --pane-color: light-dark(#fff, #191c20);
+    --pane-border-color: var(
+      --intent-border-color,
+      var(--border-color)
+    ) !important;
+  }
+
+  &:is([role="status"], [role="alert"]) {
+    --alert-color: light-dark(#fff, #191c20);
   }
 }
 

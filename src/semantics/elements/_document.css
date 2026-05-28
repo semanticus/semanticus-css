@@ -1,7 +1,7 @@
 :where(:root),
 :where(:host) {
   background-color: var(--background-color);
-  color: var(--color);
+  color: var(--typography-color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);

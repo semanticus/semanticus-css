@@ -22,6 +22,6 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--spacing) * 0.375);
-  color: var(--color);
+  color: var(--typography-color);
   font-weight: var(--form-label-font-weight, var(--font-weight));
 }

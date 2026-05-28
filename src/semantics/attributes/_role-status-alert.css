@@ -1,17 +1,25 @@
 :is([role="status"], [role="alert"]) {
-  color: var(--color);
+  --alert-color: var(--color);
+  --alert-background-color: var(--background-color);
+  --alert-spacing: var(--spacing);
+  --alert-border-color: var(--border-color);
+  --alert-border-width: var(--border-width);
+  --alert-border-accent-width: var(--alert-border-width);
+  --alert-border-radius: var(--border-radius);
+  --typography-color: var(--alert-color);
+
+  color: var(--alert-color);
   display: grid;
   grid-template-columns: 1fr;
   gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
-  padding: var(--spacing);
-  margin-bottom: var(--spacing);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid
-    var(--alert-border-color, var(--border-color));
-  border-inline-start-width: var(--alert-border-width, var(--border-width));
-  border-inline-start-color: var(--alert-border-color, var(--border-color));
-  background: var(--alert-background-color, var(--background-color));
+  padding: var(--alert-spacing);
+  margin-bottom: var(--alert-spacing);
+  border-radius: var(--alert-border-radius);
+  border: var(--alert-border-width) solid var(--alert-border-color);
+  border-inline-start-width: var(--alert-border-accent-width);
+  border-inline-start-color: var(--alert-border-color);
+  background: var(--alert-background-color);
 
   &:empty {
     display: none;
@@ -34,7 +42,7 @@
   }
 
   &:is(.ghost, .subtle) {
-    --alert-border-width: calc(var(--border-width) * 4);
+    --alert-border-accent-width: calc(var(--alert-border-width) * 4);
   }
 
   > * {
@@ -63,7 +71,7 @@
     right: 0;
     bottom: 0;
     top: unset;
-    margin: var(--spacing);
+    margin: var(--alert-spacing);
 
     &:popover-open {
       display: grid;

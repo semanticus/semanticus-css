@@ -2,7 +2,7 @@ table {
   border-collapse: collapse;
   border-color: currentcolor; /* modern-normalize */
   border-spacing: 0;
-  color: var(--color);
+  color: var(--typography-color);
   font-style: normal;
   font-weight: var(--font-weight);
   margin-bottom: var(--typography-spacing-vertical);
@@ -16,7 +16,7 @@ td {
   padding: calc(var(--spacing) / 2) var(--spacing);
   border-bottom: var(--border-width) solid var(--border-color);
   background-color: var(--background-color);
-  color: var(--color);
+  color: var(--typography-color);
   font-weight: var(--font-weight);
   text-align: left;
   text-align: start;

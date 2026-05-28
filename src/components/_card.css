@@ -1,17 +1,25 @@
 .card {
-  padding-block: var(--spacing);
-  padding-inline: var(--spacing);
-  margin-bottom: var(--spacing);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid
-    var(--card-border-color, var(--border-color));
-  background: var(--card-background-color, var(--background-color));
+  --card-color: var(--color);
+  --card-background-color: var(--background-color);
+  --card-spacing: var(--spacing);
+  --card-border-color: var(--border-color);
+  --card-border-width: var(--border-width);
+  --card-border-radius: var(--border-radius);
+  --typography-color: var(--card-color);
+
+  color: var(--card-color);
+  padding-block: var(--card-spacing);
+  padding-inline: var(--card-spacing);
+  margin-bottom: var(--card-spacing);
+  border-radius: var(--card-border-radius);
+  border: var(--card-border-width) solid var(--card-border-color);
+  background: var(--card-background-color);
 
   > header,
   > footer {
     width: auto;
-    margin-inline: calc(var(--spacing) * -1);
-    padding-inline: var(--spacing);
+    margin-inline: calc(var(--card-spacing) * -1);
+    padding-inline: var(--card-spacing);
     background-color: var(--marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
@@ -20,19 +28,19 @@
 
   /* Header styling */
   > header {
-    margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-width) solid var(--marginals-border-color);
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    margin-top: calc(var(--card-spacing) * -1);
+    border-bottom: var(--card-border-width) solid var(--marginals-border-color);
+    border-top-right-radius: var(--card-border-radius);
+    border-top-left-radius: var(--card-border-radius);
     justify-content: space-between;
   }
 
   /* Footer styling */
   > footer {
-    margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-width) solid var(--marginals-border-color);
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    margin-bottom: calc(var(--card-spacing) * -1);
+    border-top: var(--card-border-width) solid var(--marginals-border-color);
+    border-bottom-right-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
     justify-content: end;
   }
 
@@ -46,10 +54,7 @@
     background: transparent;
 
     > * {
-      --card-item-background-color: var(
-        --card-background-color,
-        var(--background-color)
-      );
+      --card-item-background-color: var(--card-background-color);
       --card-item-border-color: color-mix(
         in srgb,
         light-dark(var(--color-slate-900), var(--color-zinc-350)),
@@ -57,24 +62,24 @@
       );
 
       background: var(--card-item-background-color);
-      color: var(--color);
+      color: var(--card-color);
       margin: 0;
-      padding: var(--spacing);
+      padding: var(--card-spacing);
       border-radius: 0;
-      border: var(--border-width) solid var(--card-item-border-color);
+      border: var(--card-border-width) solid var(--card-item-border-color);
 
       &:first-child {
-        border-top-left-radius: var(--border-radius);
+        border-top-left-radius: var(--card-border-radius);
       }
 
       &:last-child {
-        border-bottom-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--card-border-radius);
       }
 
       &:is([aria-current]:not([aria-current="false"])) {
         --card-item-background-color: color-mix(
           in srgb,
-          var(--background-color),
+          var(--card-background-color),
           var(--color-hover-effect) 15%
         );
       }
@@ -90,12 +95,12 @@
       list-style: none;
 
       &:first-child {
-        border-top: var(--border-width) solid var(--card-item-border-color);
-        border-top-right-radius: var(--border-radius);
+        border-top: var(--card-border-width) solid var(--card-item-border-color);
+        border-top-right-radius: var(--card-border-radius);
       }
 
       &:last-child {
-        border-bottom-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--card-border-radius);
       }
     }
   }
@@ -105,12 +110,13 @@
       border-left: none;
 
       &:first-child {
-        border-left: var(--border-width) solid var(--card-item-border-color);
-        border-bottom-left-radius: var(--border-radius);
+        border-left: var(--card-border-width) solid
+          var(--card-item-border-color);
+        border-bottom-left-radius: var(--card-border-radius);
       }
 
       &:last-child {
-        border-top-right-radius: var(--border-radius);
+        border-top-right-radius: var(--card-border-radius);
       }
     }
   }

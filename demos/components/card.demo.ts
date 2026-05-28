@@ -64,6 +64,7 @@ export function withHeaderAndFooter(
   <h2>Card title</h2>
 </header>
 <p>Cards support optional header and footer sections that are visually distinct from the main content.</p>
+Text without wrapper
 <footer>
   <button class="secondary">Cancel</button>
   <button>Confirm</button>

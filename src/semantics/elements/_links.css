@@ -1,15 +1,15 @@
 :is(a:not([role="button"]), [role="link"]) {
   --border-color: transparent;
-  --_link-color: var(--link-color, var(--primary-color));
+  --link-color: var(--primary-color);
 
   outline: none;
   padding: 0;
   background-color: transparent;
 
   border-color: transparent;
-  color: var(--_link-color);
+  color: var(--link-color);
   text-decoration: var(--link-text-decoration);
-  text-decoration-color: oklch(from var(--_link-color) l c h / 0.3);
+  text-decoration-color: oklch(from var(--link-color) l c h / 0.3);
   text-underline-offset: 0.125em;
   transition:
     background-color var(--transition),
@@ -26,12 +26,12 @@
       var(--link-color) 70%,
       var(--color-hover-effect)
     );
-    text-decoration-color: oklch(from var(--_link-color) l c h / 0.85);
+    text-decoration-color: oklch(from var(--link-color) l c h / 0.85);
   }
 
   &:is([aria-current]:not([aria-current="false"])) {
     font-weight: 500;
-    text-decoration-color: oklch(from var(--_link-color) l c h / 0.6);
+    text-decoration-color: oklch(from var(--link-color) l c h / 0.6);
   }
 
   &:focus-visible {

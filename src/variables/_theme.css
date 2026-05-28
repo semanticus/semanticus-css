@@ -92,6 +92,7 @@
   --font-size: 97%;
   --text-underline-offset: 0.1rem;
   --typography-spacing-vertical: 1rem;
+  --typography-color: var(--color);
 
   /* --- Borders & Effects --- */
   --border-radius: 0.25rem;

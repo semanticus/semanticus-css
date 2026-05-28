@@ -3,7 +3,7 @@ blockquote {
   border-inline-start: 0.25rem solid var(--border-color);
   border-left: 0.25rem solid var(--border-color);
   border-right: none;
-  color: var(--color);
+  color: var(--typography-color);
   display: block;
   font-style: normal;
   font-weight: var(--font-weight);

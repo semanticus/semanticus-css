@@ -58,22 +58,42 @@ h6 {
 }
 
 h1 {
-  color: var(--color);
+  color: var(--typography-color);
 }
 h2 {
-  color: color-mix(in srgb, var(--color) 90%, light-dark(white, black));
+  color: color-mix(
+    in srgb,
+    var(--typography-color) 90%,
+    light-dark(white, black)
+  );
 }
 h3 {
-  color: color-mix(in srgb, var(--color) 80%, light-dark(white, black));
+  color: color-mix(
+    in srgb,
+    var(--typography-color) 80%,
+    light-dark(white, black)
+  );
 }
 h4 {
-  color: color-mix(in srgb, var(--color) 70%, light-dark(white, black));
+  color: color-mix(
+    in srgb,
+    var(--typography-color) 70%,
+    light-dark(white, black)
+  );
 }
 h5 {
-  color: color-mix(in srgb, var(--color) 60%, light-dark(white, black));
+  color: color-mix(
+    in srgb,
+    var(--typography-color) 60%,
+    light-dark(white, black)
+  );
 }
 h6 {
-  color: color-mix(in srgb, var(--color) 65%, light-dark(white, black));
+  color: color-mix(
+    in srgb,
+    var(--typography-color) 65%,
+    light-dark(white, black)
+  );
 }
 
 :where(

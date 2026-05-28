@@ -98,14 +98,13 @@ select,
 textarea {
   --background-color: var(--input-background-color);
   --border-color: var(--input-border-color);
-  --color: var(--input-color);
 
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--input-box-shadow, none);
-  color: var(--color);
+  color: var(--input-color);
   font-weight: var(--font-weight);
   transition:
     background-color var(--transition),
