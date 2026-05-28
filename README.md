@@ -81,7 +81,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — simply write plain 
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button>Click me</button>
+  <button>Get Started</button>
 </article>
 ```
 
@@ -96,7 +96,7 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button>Click me</button>
+  <button>Get Started</button>
 </article>
 ```
 
@@ -105,13 +105,13 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
 CSS classes that tweak the **Semantic Styling** and **Components** - throw in a [variant](https://semanticus.design/docs/variants/) when you want to add or reduce visual flair.
 
 ```html
-<article class="card secondary">
+<article class="card secondary subtle">
   <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="ghost">Click me</button>
+  <button class="info ghost">Get Started</button>
 </article>
 ```
 
@@ -120,13 +120,13 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
 [Utility](https://semanticus.design/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
 
 ```html
-<article class="card secondary text-center w-75 mx-auto">
+<article class="card secondary subtle text-center w-75 mx-auto">
   <hgroup class="p-3">
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
-
-  <button class="ghost">Click me</button>
+  
+  <button class="info bg-opacity-75">Get Started</button>
 </article>
 ```
 
