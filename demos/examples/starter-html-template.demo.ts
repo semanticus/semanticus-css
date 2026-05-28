@@ -24,7 +24,7 @@ export function main(
 <main class="py-d mb-3">
   <hgroup>
     <h1>Welcome to Semanticus CSS</h1>
-    <p>A lightweight CSS framework for modern web development.</p>
+    <p>ARIA-centric, semantic HTML enhanced by atomic utilities.</p>
   </hgroup>
 
   <button>Get Started</button>
