@@ -2,8 +2,8 @@
   --pane-color: var(--color);
   --pane-background-color: var(--background-color);
   --pane-spacing: var(--spacing);
-  --pane-border-color: transparent;
-  --pane-border-width: var(--border-width);
+  --pane-border-color: var(--background-color);
+  --pane-border-width: 0;
   --typography-color: var(--pane-color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 

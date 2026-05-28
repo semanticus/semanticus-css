@@ -42,7 +42,6 @@
   &.pane {
     --pane-color: #fff;
     --pane-background-color: var(--intent-background-color);
-    --pane-border-color: var(--intent-border-color);
   }
 
   &:is([role="status"], [role="alert"]) {

@@ -86,10 +86,8 @@
 
   &.pane {
     --pane-color: var(--intent-color);
-    --pane-border-color: var(
-      --intent-border-color,
-      var(--border-color)
-    ) !important;
+    --pane-border-color: var(--intent-border-color, var(--border-color));
+    --pane-border-width: var(--border-width);
   }
 
   &:is([role="status"], [role="alert"]) {

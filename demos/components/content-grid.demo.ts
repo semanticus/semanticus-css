@@ -101,6 +101,7 @@ export function nestedFullWidth(
       <p>This inner ".full-width" also spans edge-to-edge within the outer one,
         and its children are still constrained to the content column.</p>
     </hgroup>
+    <p>Unless the parent has padding.</p>
   </div>
 
   <div class="breakout pane contrast">
