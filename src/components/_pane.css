@@ -1,10 +1,10 @@
 .pane {
-  color: var(--color);
-  padding: var(--spacing);
-  margin-bottom: var(--spacing);
   background: var(--pane-background-color, var(--background-color));
   border: var(--border-width) solid
     var(--pane-border-color, var(--border-color));
+  color: var(--color);
+  margin-bottom: var(--spacing);
+  padding: var(--spacing);
 
   > :last-child {
     margin-bottom: 0 !important;
@@ -14,3 +14,8 @@
     padding-inline: 0;
   }
 }
+/*--pane-background-color: light-dark(
+  color-mix(in srgb, var(--color-slate-50), white 25%),
+  color-mix(in srgb, var(--color-slate-50), black 75%)
+);
+--pane-border-color: var(--pane-background-color);*/

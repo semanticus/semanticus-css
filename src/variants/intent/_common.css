@@ -1,0 +1,58 @@
+:is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+  &:is(a:not([role="button"]), [role="link"]) {
+    --link-color: var(--intent-color);
+  }
+
+  &:is(
+    button:not([role="link"]),
+    [type="submit"],
+    [type="reset"],
+    [type="button"],
+    [type="file"]::file-selector-button,
+    [role="button"]
+  ) {
+    --button-background-color: var(--intent-background-color);
+    --button-border-color: var(--intent-border-color);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --button-background-color: var(--intent-background-color-hover);
+      --button-border-color: var(--intent-border-color-hover);
+    }
+
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
+      --button-box-shadow:
+        var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
+        0 0 0 var(--outline-width) var(--intent-focus-ring-color);
+    }
+  }
+
+  &:is(.card, .pane, [role="status"], [role="alert"]) {
+    --color: #fff;
+    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
+  }
+
+  &.card {
+    --card-background-color: var(--intent-background-color);
+    --card-border-color: var(--intent-border-color);
+    --marginals-background-color: color-mix(
+      in srgb,
+      light-dark(var(--color-slate-900), var(--color-slate-50)),
+      transparent 90%
+    );
+  }
+
+  &.pane {
+    --pane-background-color: var(--intent-background-color);
+    --pane-border-color: var(--intent-border-color);
+  }
+
+  &:is([role="status"], [role="alert"]) {
+    --alert-background-color: var(--intent-background-color);
+    --alert-border-color: var(--intent-border-color);
+  }
+
+  &:is(progress) {
+    --progress-background-color: var(--intent-background-color);
+  }
+}

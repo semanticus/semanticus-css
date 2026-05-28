@@ -1,63 +1,20 @@
+/* See _intent.css for shared styles */
+
 .success {
-  --intent-color: var(--success-color);
+  --intent-color: oklch(from var(--success-color) l c h / var(--color-opacity));
   --intent-background-color: oklch(
     from var(--success-background-color) l c h / var(--background-color-opacity)
   );
   --intent-border-color: oklch(
     from var(--success-background-color) l c h / var(--border-color-opacity)
   );
-
-  &:is(a:not([role="button"]), [role="link"]) {
-    --link-color: var(--intent-color);
-  }
-
-  &progress {
-    --progress-background-color: var(--intent-background-color);
-  }
-
-  &:is(
-    button:not([role="link"]),
-    [type="submit"],
-    [type="reset"],
-    [type="button"],
-    [type="file"]::file-selector-button,
-    [role="button"]
-  ) {
-    --button-background-color: var(--intent-background-color);
-    --button-border-color: var(--intent-border-color);
-
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --button-background-color: oklch(
-        from var(--success-background-color-hover) l c h /
-          var(--background-color-opacity)
-      );
-      --button-border-color: oklch(
-        from var(--success-background-color-hover) l c h /
-          var(--border-color-opacity)
-      );
-    }
-
-    &:focus,
-    &:is([aria-current]:not([aria-current="false"])):focus {
-      --button-box-shadow:
-        var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-        0 0 0 var(--outline-width) var(--success-focus-ring-color);
-    }
-  }
-
-  &:is(.card, .pane, [role="status"], [role="alert"]) {
-    --color: #fff;
-    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
-
-    --card-background-color: var(--intent-background-color);
-    --card-border-color: var(--intent-border-color);
-
-    --pane-background-color: var(--intent-background-color);
-    --pane-border-color: var(--intent-border-color);
-    --pane-marginals-background-color: color-mix(
-      in srgb,
-      light-dark(var(--color-slate-900), var(--color-slate-50)),
-      transparent 90%
-    );
-  }
+  --intent-background-color-hover: oklch(
+    from var(--success-background-color-hover) l c h /
+      var(--background-color-opacity)
+  );
+  --intent-border-color-hover: oklch(
+    from var(--success-background-color-hover) l c h /
+      var(--border-color-opacity)
+  );
+  --intent-focus-ring-color: var(--success-focus-ring-color);
 }

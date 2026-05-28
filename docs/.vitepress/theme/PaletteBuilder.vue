@@ -835,9 +835,9 @@ const variableGroups = [
         default: "var(--border-color)",
       },
       {
-        name: "--pane-marginals-background-color",
-        label: "Pane Marginals BG",
-        desc: "Header/footer background for panes, dialogs, and cards.",
+        name: "--marginals-background-color",
+        label: "Marginals BG",
+        desc: "Header/footer background for dialogs, and cards.",
         type: varType(
           "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))",
         ),
@@ -845,9 +845,9 @@ const variableGroups = [
           "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))",
       },
       {
-        name: "--pane-marginals-border-color",
-        label: "Pane Marginals Border",
-        desc: "Header/footer border for panes, dialogs, and cards.",
+        name: "--marginals-border-color",
+        label: "Marginals Border",
+        desc: "Header/footer border for dialogs, and cards.",
         type: varType(
           "color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)",
         ),

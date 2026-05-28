@@ -12,7 +12,7 @@
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--pane-marginals-background-color);
+    background-color: var(--marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -21,7 +21,7 @@
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-width) solid var(--pane-marginals-border-color);
+    border-bottom: var(--border-width) solid var(--marginals-border-color);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
     justify-content: space-between;
@@ -30,7 +30,7 @@
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-width) solid var(--pane-marginals-border-color);
+    border-top: var(--border-width) solid var(--marginals-border-color);
     border-bottom-right-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     justify-content: end;

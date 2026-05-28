@@ -372,17 +372,12 @@
   --details-summary-color-hover: var(--primary-color-hover);
   --details-summary-color-open: var(--color-muted);
 
-  /* --- Panes / Dialogs / Cards / Alerts --- */
-  --pane-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50), white 25%),
-    color-mix(in srgb, var(--color-slate-50), black 75%)
-  );
-  --pane-border-color: var(--pane-background-color);
-  --pane-marginals-background-color: light-dark(
+  /* --- Dialogs / Cards --- */
+  --marginals-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
-  --pane-marginals-border-color: color-mix(
+  --marginals-border-color: color-mix(
     in srgb,
     light-dark(var(--color-slate-900), var(--color-zinc-350)),
     transparent 90%

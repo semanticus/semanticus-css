@@ -172,13 +172,11 @@ h1, h2, h3, h4, h5, h6 {
 
 ## Component Variables
 
-### Dialog, Alerts and Card
+### Dialog, Card
 
 ```css
 :root {
-  --pane-background-color: light-dark(white, #181c25);
-  --pane-border-color: light-dark(var(--border-color), #181c25);
-  --pane-marginals-background-color: light-dark(#fbfcfc, #2a3140);
+  --marginals-background-color: light-dark(#fbfcfc, #2a3140);
 }
 ```
 

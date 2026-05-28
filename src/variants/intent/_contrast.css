@@ -1,3 +1,61 @@
+/* See _intent.css for shared styles */
+
+.contrast {
+  --intent-color: oklch(
+    from var(--contrast-color) l c h / var(--color-opacity)
+  );
+  --intent-background-color: oklch(
+    from var(--contrast-background-color) l c h /
+      var(--background-color-opacity)
+  );
+  --intent-border-color: oklch(
+    from var(--contrast-background-color) l c h / var(--border-color-opacity)
+  );
+  --intent-background-color-hover: oklch(
+    from var(--contrast-background-color-hover) l c h /
+      var(--background-color-opacity)
+  );
+  --intent-border-color-hover: oklch(
+    from var(--contrast-background-color-hover) l c h /
+      var(--border-color-opacity)
+  );
+  --intent-focus-ring-color: var(--contrast-focus-ring-color);
+
+  &:is(
+    button:not([role="link"]),
+    [type="submit"],
+    [type="reset"],
+    [type="button"],
+    [type="file"]::file-selector-button,
+    [role="button"]
+  ) {
+    --button-color: oklch(
+      from light-dark(#fff, #191c20) l c h / var(--color-opacity)
+    );
+  }
+
+  &:is(.card, .pane, [role="status"], [role="alert"]) {
+    --color: light-dark(#fff, #191c20);
+    --color-muted: color-mix(in srgb, var(--color), transparent 40%);
+  }
+
+  &:is(.card) {
+    --marginals-background-color: color-mix(
+      in srgb,
+      light-dark(var(--color-slate-50), var(--color-slate-900)),
+      transparent 90%
+    );
+  }
+}
+
+/* Accordion chevron override */
+details summary[role="button"].contrast::after {
+  @container style(--theme: dark) {
+    filter: brightness(0);
+  }
+}
+
+/*
 .contrast {
   --intent-color: var(--contrast-color);
   --intent-background-color: oklch(
@@ -64,11 +122,4 @@
       transparent 90%
     );
   }
-}
-
-/* Accordion chevron override */
-details summary[role="button"].contrast::after {
-  @container style(--theme: dark) {
-    filter: brightness(0);
-  }
-}
+}*/
