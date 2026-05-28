@@ -220,11 +220,11 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Pico (semantics only) | 10.2 KB |
 | Semanticus (semantics only) | 11.5 KB |
 | Pico (semantics + classes) | 11.5 KB |
-| Semanticus (semantics + components + variants) | 14.5 KB |
+| Semanticus (semantics + components + variants) | 14.2 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
 | Semanticus (utilities + grid) | 10.3 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 24.5 KB |
+| Semanticus (full bundle) | 24.1 KB |
 
 ## License
 

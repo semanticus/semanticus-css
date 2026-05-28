@@ -35,7 +35,7 @@
       filter: none;
     }
 
-    &:is(:hover, :active, :focus)::after {
+    &:is(:hover, :active, :focus):not(.contrast)::after {
       filter: brightness(0) invert();
     }
   }
