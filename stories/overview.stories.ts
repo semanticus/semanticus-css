@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import {
   AllButtonsStatesAndVariantsDemo,
+  AllCardListsAndVariantsDemo,
   AllCardsAndVariantsDemo,
   AllComponentsDemo,
   AllLinksStatesAndVariantsDemo,
@@ -29,6 +30,10 @@ export const allButtonsStatesVariants: StoryObj = {
 
 export const allCardsAndVariants: StoryObj = {
   render: () => AllCardsAndVariantsDemo.main(),
+};
+
+export const allCardListsAndVariants: StoryObj = {
+  render: () => AllCardListsAndVariantsDemo.main(),
 };
 
 export const allLinksStatesVariants: StoryObj = {
