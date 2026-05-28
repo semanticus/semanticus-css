@@ -9,11 +9,11 @@ No memorizing role names — if you know CSS, you know the tokens.
 
 | Instead of | Use | Because |
 | --- | --- | --- |
-| `--color-primary-fill` | `.primary { --background-color: var(--primary-background-color); }` | `background-color` is the property. The variant is the *selector*, not the token name. |
-| `--switch-thumb-glow` | `--switch-thumb-box-shadow` | `box-shadow` is the property that creates the glow. |
-| `--input-border-focus` | `--input-border-color-focus` | `border-color` is the property. No guesswork. |
+| `--color-primary-fill` | `--primary-background-color` | `background-color` is the property, prefixed by the variant. |
+| `--switch-thumb-glow` | `--switch-thumb-box-shadow` | `box-shadow` is the property, prefixed by the component. |
+| `--input-border-focus` | `--input-border-color-focus` | `border-color` is the property, followed by the state. |
 
-Every token name is a CSS property name, optionally prefixed by a component or variant scope.
+Every token name is a CSS property name, optionally prefixed by a component or variant scope and suffixed by an interaction state.
 If you know the CSS property you want to change, you know the token name.
 
 ## Token structure
