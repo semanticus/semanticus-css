@@ -5,6 +5,7 @@
   --pane-border-color: transparent;
   --pane-border-width: var(--border-width);
   --typography-color: var(--pane-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   background: var(--pane-background-color);
   border: var(--pane-border-width) solid var(--pane-border-color);

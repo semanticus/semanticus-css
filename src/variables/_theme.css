@@ -59,7 +59,6 @@
   --background-color-opacity: 100%;
   --color: light-dark(var(--color-zinc-750), var(--color-zinc-200));
   --color-opacity: 100%;
-  --color-muted: color-mix(in srgb, var(--color), transparent 40%);
   --border-color: light-dark(var(--color-slate-100), var(--color-slate-800));
   --border-color-opacity: 100%;
   --backdrop-background-color: light-dark(
@@ -93,6 +92,7 @@
   --text-underline-offset: 0.1rem;
   --typography-spacing-vertical: 1rem;
   --typography-color: var(--color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   /* --- Borders & Effects --- */
   --border-radius: 0.25rem;

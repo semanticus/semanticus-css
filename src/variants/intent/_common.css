@@ -30,7 +30,6 @@
 
   &.card {
     --card-color: #fff;
-    --color-muted: color-mix(in srgb, var(--card-color), transparent 40%);
     --card-background-color: var(--intent-background-color);
     --card-border-color: var(--intent-border-color);
     --marginals-background-color: color-mix(
@@ -42,7 +41,6 @@
 
   &.pane {
     --pane-color: #fff;
-    --color-muted: color-mix(in srgb, var(--pane-color), transparent 40%);
     --pane-background-color: var(--intent-background-color);
     --pane-border-color: var(--intent-border-color);
   }

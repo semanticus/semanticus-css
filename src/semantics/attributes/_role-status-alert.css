@@ -7,6 +7,7 @@
   --alert-border-accent-width: var(--alert-border-width);
   --alert-border-radius: var(--border-radius);
   --typography-color: var(--alert-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--alert-color);
   display: grid;
