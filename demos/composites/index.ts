@@ -8,4 +8,3 @@ export * as LinksDemo from "./links.demo";
 export * as PaginationDemo from "./pagination.demo";
 export * as SearchDemo from "./search.demo";
 export * as ToastsDemo from "./toasts.demo";
-export * as TypographyDemo from "./typography.demo";
