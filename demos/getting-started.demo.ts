@@ -32,8 +32,8 @@ export function variants() {
 }
 
 export function utilities() {
-  return `<article class="card secondary subtle text-center w-75 mx-auto">
-  <hgroup class="p-3">
+  return `<article class="card secondary subtle shadow text-center w-75 mx-auto">
+  <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>

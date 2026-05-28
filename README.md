@@ -120,12 +120,12 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
 [Utility](https://semanticus.design/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
 
 ```html
-<article class="card secondary subtle text-center w-75 mx-auto">
-  <hgroup class="p-3">
+<article class="card secondary subtle shadow text-center w-75 mx-auto">
+  <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
-  
+
   <button class="info bg-opacity-75">Get Started</button>
 </article>
 ```
