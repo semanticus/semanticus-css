@@ -12,10 +12,6 @@
 
   &.secondary {
     --typography-color: light-dark(#191c20, #fff);
-    --button-color: var(--typography-color) !important;
-    --card-color: var(--typography-color) !important;
-    --pane-color: var(--typography-color) !important;
-    --alert-color: var(--typography-color) !important;
     --intent-background-color: light-dark(
       color-mix(in srgb, var(--color-slate-50), white 25%),
       color-mix(in srgb, var(--color-slate-50), black 75%)
@@ -24,6 +20,34 @@
       color-mix(in srgb, var(--color-slate-50), white 25%),
       color-mix(in srgb, var(--color-slate-50), black 75%)
     );
+
+    /* Buttons */
+    &:is(
+      button:not([role="link"]),
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [type="file"]::file-selector-button,
+      [role="button"]
+    ) {
+      --button-color: var(--typography-color);
+    }
+
+    /* Card & Lists */
+    &:is(.card),
+    .card:is(ul, [role="list"]) > & {
+      --card-color: var(--typography-color) !important;
+    }
+
+    /* Panes */
+    &:is(.pane) {
+      --pane-color: var(--typography-color) !important;
+    }
+
+    /* Alerts */
+    &:is([role="status"], [role="alert"]) {
+      --alert-color: var(--typography-color) !important;
+    }
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --button-color: #fff !important;
