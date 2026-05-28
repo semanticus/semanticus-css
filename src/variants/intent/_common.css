@@ -1,8 +1,10 @@
 :is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+  /* Links */
   &:is(a:not([role="button"]), [role="link"]) {
     --link-color: var(--intent-color);
   }
 
+  /* Buttons */
   &:is(
     button:not([role="link"]),
     [type="submit"],
@@ -28,7 +30,8 @@
     }
   }
 
-  &.card {
+  /* Cards */
+  &:is(.card) {
     --card-color: #fff;
     --card-background-color: var(--intent-background-color);
     --card-border-color: var(--intent-border-color);
@@ -39,17 +42,27 @@
     );
   }
 
-  &.pane {
+  /* Card Lists */
+  .card:is(ul, [role="list"]) > & {
+    --card-color: #fff;
+    --card-background-color: var(--intent-background-color);
+    --card-border-color: var(--intent-border-color);
+  }
+
+  /* Panes */
+  &:is(.pane) {
     --pane-color: #fff;
     --pane-background-color: var(--intent-background-color);
   }
 
+  /* Alerts */
   &:is([role="status"], [role="alert"]) {
     --alert-color: #fff;
     --alert-background-color: var(--intent-background-color);
     --alert-border-color: var(--intent-border-color);
   }
 
+  /* Progress Bars */
   &:is(progress) {
     --progress-background-color: var(--intent-background-color);
   }

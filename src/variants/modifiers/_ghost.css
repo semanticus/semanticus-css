@@ -49,6 +49,7 @@
     );
   }
 
+  /* Buttons */
   &:is(
     button,
     [type="submit"],
@@ -76,7 +77,8 @@
     }
   }
 
-  &.card {
+  /* Cards */
+  &:is(.card) {
     --card-color: var(--intent-color, var(--color));
     --marginals-background-color: light-dark(
       color-mix(in srgb, var(--color-slate-50) 25%, white),
@@ -84,12 +86,21 @@
     );
   }
 
-  &.pane {
+  /* Card Lists */
+  .card:is(ul, [role="list"]) > & {
+    --card-color: var(--intent-color, var(--color));
+    --card-background-color: transparent;
+    --card-border-color: var(--intent-border-color);
+  }
+
+  /* Panes */
+  &:is(.pane) {
     --pane-color: var(--intent-color, var(--color));
     --pane-border-color: var(--intent-border-color, var(--border-color));
     --pane-border-width: var(--border-width);
   }
 
+  /* Alerts */
   &:is([role="status"], [role="alert"]) {
     --alert-color: var(--intent-color, var(--color));
   }

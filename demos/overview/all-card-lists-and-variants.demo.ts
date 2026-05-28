@@ -27,7 +27,7 @@ export function defaultAndIntentVariants(modifier: string = "") {
   ${renderElement(
     "section",
     { class: "auto-grid" },
-    `${unorderedList()}
+    `${unorderedList({ class: `${modifier}` })}
   ${unorderedList({ class: `${modifier} primary` })}
   ${unorderedList({ class: `${modifier} secondary` })}
   ${unorderedList({ class: `${modifier} contrast` })}
@@ -75,11 +75,11 @@ ${renderElement(
 )}
 <section class="auto-grid">
   ${CardListDemo.nestedIntentVariants({})}
-  ${CardListDemo.nestedIntentVariants({ class: "subtle" })}
-  ${CardListDemo.nestedIntentVariants({ class: "ghost" })}
-  ${CardListDemo.nestedIntentVariants({ class: "striped" })}
-  ${CardListDemo.nestedIntentVariants({ class: "striped subtle" })}
-  ${CardListDemo.nestedIntentVariants({ class: "striped ghost" })}
+  ${CardListDemo.nestedIntentVariants({}, "subtle")}
+  ${CardListDemo.nestedIntentVariants({}, "ghost")}
+  ${CardListDemo.nestedIntentVariants({}, "striped")}
+  ${CardListDemo.nestedIntentVariants({ class: "striped" }, "subtle")}
+  ${CardListDemo.nestedIntentVariants({ class: "striped" }, "ghost")}
 </section>
 `,
   );

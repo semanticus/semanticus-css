@@ -53,18 +53,17 @@
     padding: 0;
 
     > * {
-      --card-item-background-color: var(--card-background-color);
-      --card-item-border-color: color-mix(
-        in srgb,
-        light-dark(var(--color-slate-900), var(--color-zinc-350)),
-        transparent 90%
-      );
-
-      background: var(--card-item-background-color);
+      background: var(--card-background-color);
       color: var(--card-color);
       margin: 0;
       padding: var(--card-spacing);
       border-radius: 0;
+      border: var(--card-border-width) solid
+        color-mix(
+          in srgb,
+          light-dark(var(--color-slate-900), var(--color-zinc-350)),
+          transparent 90%
+        );
 
       &:first-child {
         border-top-left-radius: var(--card-border-radius);
@@ -75,7 +74,7 @@
       }
 
       &:is([aria-current]:not([aria-current="false"])) {
-        --card-item-background-color: color-mix(
+        background: color-mix(
           in srgb,
           var(--card-background-color),
           var(--color-hover-effect) 15%
@@ -89,10 +88,9 @@
     flex-direction: column;
 
     > * {
-      border-top: none;
       list-style: none;
-      border-bottom: var(--card-border-width) solid
-        var(--card-item-border-color);
+      border-inline: none;
+      border-top: none;
 
       &:first-child {
         border-top-right-radius: var(--card-border-radius);
@@ -107,16 +105,16 @@
 
   &[role="group"] {
     > * {
+      border-block: none;
       border-left: none;
 
       &:first-child {
-        border-left: var(--card-border-width) solid
-          var(--card-item-border-color);
         border-bottom-left-radius: var(--card-border-radius);
       }
 
       &:last-child {
         border-top-right-radius: var(--card-border-radius);
+        border-right: none;
       }
     }
   }

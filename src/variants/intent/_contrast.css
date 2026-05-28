@@ -21,6 +21,7 @@
   );
   --intent-focus-ring-color: var(--contrast-focus-ring-color);
 
+  /* Buttons */
   &:is(
     button:not([role="link"]),
     [type="submit"],
@@ -32,6 +33,7 @@
     --button-color: light-dark(#fff, #191c20);
   }
 
+  /* Cards */
   &:is(.card) {
     --card-color: light-dark(#fff, #191c20);
     --marginals-background-color: color-mix(
@@ -41,7 +43,8 @@
     );
   }
 
-  &.pane {
+  /* Panes */
+  &:is(.pane) {
     --pane-color: light-dark(#fff, #191c20);
     --pane-border-color: var(
       --intent-border-color,
@@ -49,6 +52,7 @@
     ) !important;
   }
 
+  /* Alerts */
   &:is([role="status"], [role="alert"]) {
     --alert-color: light-dark(#fff, #191c20);
   }

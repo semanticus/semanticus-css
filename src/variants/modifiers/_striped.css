@@ -1,21 +1,6 @@
 .striped {
-  &:is(
-      button,
-      [type="submit"],
-      [type="reset"],
-      [type="button"],
-      [type="file"]::file-selector-button,
-      [role="button"]
-    )
-    > :nth-child(odd) {
-    background-color: color-mix(
-      in srgb,
-      var(--button-background-color),
-      var(--color-hover-effect) 15%
-    );
-  }
-
-  &.card > :nth-child(odd) {
+  /* Cards */
+  &:is(.card) > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
       var(--card-background-color),
@@ -23,7 +8,8 @@
     );
   }
 
-  &.pane > :nth-child(odd) {
+  /* Panes */
+  &:is(.pane) > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
       var(--pane-background-color),
@@ -31,6 +17,7 @@
     );
   }
 
+  /* Alerts */
   &:is([role="status"], [role="alert"]) > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
