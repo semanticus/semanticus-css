@@ -11,14 +11,23 @@
   }
 
   &.secondary {
-    --intent-background-color: oklch(
-      from var(--secondary-subtle-background-color) l c h /
-        var(--background-color-opacity)
+    --typography-color: light-dark(#191c20, #fff);
+    --button-color: var(--typography-color) !important;
+    --card-color: var(--typography-color);
+    --pane-color: var(--typography-color);
+    --alert-color: var(--typography-color);
+    --intent-background-color: light-dark(
+      color-mix(in srgb, var(--color-slate-50), white 25%),
+      color-mix(in srgb, var(--color-slate-50), black 75%)
     );
-    --intent-border-color: oklch(
-      from var(--secondary-subtle-background-color) l c h /
-        var(--border-color-opacity)
+    --intent-border-color: light-dark(
+      color-mix(in srgb, var(--color-slate-50), white 25%),
+      color-mix(in srgb, var(--color-slate-50), black 75%)
     );
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --button-color: #fff !important;
+    }
   }
 
   &.contrast {
