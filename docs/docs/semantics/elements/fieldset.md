@@ -38,7 +38,7 @@ For more search examples see [Search](/docs/composites/search) documentation.
 
 Inputs are `width: 100%` by default and match button sizes for consistent layouts. For label placement and helper text, see [&lt;label&gt;](/docs/semantics/elements/label).
 
-<HtmlPreviewer :code="FieldsetDemo.formExample()" />
+<HtmlPreviewer :code="FieldsetDemo.loginFormExample()" />
 
 ## Disabled
 

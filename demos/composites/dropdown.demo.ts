@@ -1,4 +1,8 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
   return renderElement(
@@ -141,9 +145,7 @@ export function asButtonGhostVariants(attrs: Record<string, string> = {}) {
 }
 
 export function overviewAsButtonVariants(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "section",
-    classMergeAttributes("auto-grid", attrs),
+  return renderGrid(
     `<section>
   ${asButtonIntentVariants(attrs)}
 </section>

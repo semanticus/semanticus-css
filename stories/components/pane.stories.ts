@@ -15,8 +15,3 @@ export const basicUsage: StoryObj = {
 export const withHgroup: StoryObj = {
   render: () => PaneDemo.withHgroup("div", { class: "primary" }),
 };
-
-export const variants: StoryObj = {
-  args: { html: PaneDemo.overviewVariants() },
-  render: (args) => args.html,
-};

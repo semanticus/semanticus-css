@@ -1,7 +1,7 @@
 import { renderElement } from "@scripts/utils";
 
 import { DropdownDemo, SearchDemo, CardListDemo } from "@demos/composites";
-import { CardDemo } from "@demos/components";
+import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
   ADemo,
   InputDemo,
@@ -43,7 +43,7 @@ function buttons() {
 
 function links() {
   return `<section id="links">
-  <a href="#links"><h2>Links</h2></a>
+  <h2>Links</h2>
 
   <section class="auto-grid">
     ${ADemo.main()}
@@ -58,7 +58,7 @@ function links() {
 
 function inputButtons() {
   return `<section id="input-buttons">
-  <a href="#input-buttons"><h4>Input buttons (type="button|submit|reset")</h4></a>
+  <h4>Input buttons</h4>
 
   <section class="auto-grid">
     ${InputDemo.button()}
@@ -71,7 +71,7 @@ function inputButtons() {
 
 function disabledState() {
   return `<section id="disabled-state">
-  <a href="#disabled-state"><h4>Disabled State</h4></a>
+  <h4>Disabled State</h4>
 
   <section class="auto-grid">
     ${DisabledDemo.input()}
@@ -93,7 +93,7 @@ function disabledState() {
 
 function validationStates() {
   return `<section id="valid-states">
-  <a href="#valid-states"><h4>Validation States</h4></a>
+  <h4>Validation States</h4>
 
   <section class="auto-grid">
     <div>
@@ -120,30 +120,27 @@ function validationStates() {
 
 function inputElements() {
   return `<section id="input-elements">
-  <a href="#input-elements"><h2>Input Elements</h2></a>
+  <h2>Input Elements</h2>
 
-  <input type="text" name="text" placeholder="Text" aria-label="Text" />
+  ${InputDemo.main()}
 
   ${SelectDemo.main()}
 
-  ${InputDemo.search()}
+  ${InputDemo.main({ type: "search" })}
 
-  <fieldset class="auto-grid">
-    <label>
-      Date
-      ${InputDemo.date()}
-    </label>
+  <section class="auto-grid">
+    <fieldset>
+      ${InputDemo.withLabel({ type: "date" })}
+    </fieldset>
 
-    <label>
-      Time
-      ${InputDemo.time()}
-    </label>
+    <fieldset>
+      ${InputDemo.withLabel({ type: "time" })}
+    </fieldset>
 
-    <label>
-      Color
-      ${InputDemo.color()}
-    </label>
-  </fieldset>
+    <fieldset>
+      ${InputDemo.withLabel({ type: "color", value: "#ff0000" })}
+    </fieldset>
+  </section>
 
   <section class="auto-grid">
     ${InputDemo.checkboxBasic()}
@@ -162,7 +159,7 @@ function inputElements() {
   <section class="auto-grid">
     ${InputDemo.rangeBasic()}
 
-    ${InputDemo.file()}
+    ${InputDemo.main({ type: "file" })}
   </section>
 
   ${inputButtons()}
@@ -176,7 +173,7 @@ function inputElements() {
 function fieldsets() {
   return `<section id="fieldsets">
   <hgroup>
-    <a href="#fieldsets"><h2>Fieldsets</h2></a>
+    <h2>Fieldsets</h2>
     <p>Use fieldsets to group related form elements together.</p>
   </hgroup>
 
@@ -199,7 +196,18 @@ function fieldsets() {
 
     <section>
       ${SearchDemo.main()}
-      ${SearchDemo.withResetButton()}
+    </section>
+  </section>
+
+  <section id="fieldsets-disabled-state">
+    <h4>Disabled State</h4>
+
+    <section>
+      ${FieldsetDemo.formInput({ disabled: "disabled" })}
+      ${FieldsetDemo.groupInputButton({ disabled: "disabled" })}
+      ${FieldsetDemo.groupMultipleInputs({ disabled: "disabled" })}
+      ${FieldsetDemo.groupSelectButton({ disabled: "disabled" })}
+      ${SearchDemo.main({ disabled: "disabled" })}
     </section>
   </section>
 </section>`;
@@ -207,7 +215,7 @@ function fieldsets() {
 
 function cards() {
   return `<section id="cards">
-  <a href="#cards"><h2>Cards</h2></a>
+  <h2>Cards</h2>
 
   ${CardDemo.main()}
 
@@ -218,7 +226,7 @@ function cards() {
 function tooltips() {
   return `<section id="tooltips">
   <hgroup>
-    <a href="#tooltips"><h2>Tooltips (role="tooltip")</h2></a>
+    <h2>Tooltips</h2>
     <p>Pair a trigger element with <code>aria-describedby</code> and another with <code>[role="tooltip"]</code>.</p>
   </hgroup>
 
@@ -228,7 +236,7 @@ function tooltips() {
 
 function accordions() {
   return `<section id="accordions">
-  <a href="#accordions"><h2>Accordions</h2></a>
+  <h2>Accordions</h2>
 
   <section>
     ${DetailsDemo.entangledAccordions()}
@@ -246,7 +254,7 @@ function accordions() {
 
 function dropdowns() {
   return `<section id="dropdowns">
-  <a href="#dropdowns"><h2>Dropdowns</h2></a>
+  <h2>Dropdowns</h2>
 
   <section>
     ${DropdownDemo.main()}
@@ -265,7 +273,7 @@ function dropdowns() {
 function modal() {
   return `<section id="modal">
   <hgroup>
-    <a href="#modal"><h2>Modal</h2></a>
+    <h2>Modal</h2>
     <p>Click the button below to open a modal dialog</p>
   </hgroup>
 
@@ -275,7 +283,7 @@ function modal() {
 
 function tables() {
   return `<section id="tables">
-  <a href="#tables"><h2>Tables</h2></a>
+  <h2>Tables</h2>
 
   ${TableDemo.bigExample()}
 </section>`;
@@ -283,7 +291,7 @@ function tables() {
 
 function progressBars() {
   return `<section id="progressBars">
-  <a href="#progressBars"><h2>Progress Bars</h2></a>
+  <h2>Progress Bars</h2>
 
   ${ProgressDemo.main({ value: "0" })}
   ${ProgressDemo.main({ value: "50" })}
@@ -293,7 +301,7 @@ function progressBars() {
 
 function figures() {
   return `<section id="figures">
-  <a href="#figures"><h2>Figures</h2></a>
+  <h2>Figures</h2>
 
   ${FigureDemo.withoutImage()}
 </section>`;
@@ -301,7 +309,7 @@ function figures() {
 
 function navigation() {
   return `<section id="navigation">
-  <a href="#navigation"><h2>Navigation</h2></a>
+  <h2>Navigation</h2>
 
   <section>
     ${NavDemo.main()}
@@ -325,7 +333,7 @@ function navigation() {
 
 function typography() {
   return `<section id="typography">
-  <a href="#typography"><h2>Typography</h2></a>
+  <h2>Typography</h2>
 
   <section class="auto-grid">
     <section>
@@ -358,7 +366,7 @@ function headingGroup() {
 
 function lists() {
   return `<section id="lists">
-  <a href="#lists"><h2>Lists</h2></a>
+  <h2>Lists</h2>
 
   <section>
     <h4>Group</h4>
@@ -388,7 +396,7 @@ function lists() {
 
 function blockquotes() {
   return `<section id="blockquotes">
-  <a href="#blockquotes"><h2>Blockquote</h2></a>
+  <h2>Blockquote</h2>
 
   <section>
     ${TextDemo.blockquote()}
@@ -398,7 +406,7 @@ function blockquotes() {
 
 function codeBlocks() {
   return `<section id="codeBlocks">
-  <a href="#codeBlocks"><h2>Code Block</h2></a>
+  <h2>Code Block</h2>
 
   <section>
     ${TextDemo.codeBlock()}
@@ -408,7 +416,7 @@ function codeBlocks() {
 
 function address() {
   return `<section id="address">
-  <a href="#address"><h2>Address</h2></a>
+  <h2>Address</h2>
 
   <section>
     ${TextDemo.address()}
@@ -443,6 +451,29 @@ ${fieldsets()}
 <br>
 
 ${cards()}
+
+<hr>
+<br>
+
+<section id="content-grid">
+  <hgroup>
+    <h2>Content Grid</h2>
+    <p>This example is wrapped in <code>.container</code> and has <code>.pane</code> examples</p>
+  </hgroup>
+
+
+  <div class="container">
+    ${ContentGridDemo.nestedFullWidth()}
+  </div>
+</section>
+
+<hr>
+<br>
+
+<section id="icons">
+  <h2>All Icons</h2>
+  ${IconsDemo.allIcons({ testMode: true })}
+</section>
 
 <hr>
 <br>

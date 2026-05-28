@@ -7,7 +7,9 @@ import {
 
 export function overview(attrs: Record<string, string> = {}) {
   return `${main(attrs)}
+
 <hr>
+
 ${active(attrs)}`;
 }
 

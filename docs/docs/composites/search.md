@@ -12,10 +12,6 @@ Screen readers expose it as a "search" landmark, allowing users to jump directly
 
 <HtmlPreviewer :code="SearchDemo.main()" />
 
-## Search with Reset Button
-
-<HtmlPreviewer :code="SearchDemo.withResetButton()" />
-
 ## Filter Search
 
 <HtmlPreviewer :code="SearchDemo.filterSearch()" />

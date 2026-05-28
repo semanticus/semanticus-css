@@ -19,11 +19,17 @@ export function main(
 
 export function overview(attrs: Record<string, string> = {}) {
   return `${main("button", attrs)}
+
 <hr>
+
 ${active("button", attrs)}
+
 <hr>
+
 ${main("div", attrs)}
+
 <hr>
+
 ${active("div", attrs)}`;
 }
 

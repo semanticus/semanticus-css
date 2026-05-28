@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { AllComponentsDemo, ColorsDemo } from "@demos/overview";
+import {
+  AllButtonsStatesAndVariantsDemo,
+  AllComponentsDemo,
+  AllLinksStatesAndVariantsDemo,
+  StatesAndVariantsDemo,
+  UtilitiesColorsDemo,
+} from "@demos/overview";
 
 const meta: Meta = {
   title: "Overview",
@@ -12,6 +18,18 @@ export const allComponents: StoryObj = {
   render: () => AllComponentsDemo.main(),
 };
 
-export const colors: StoryObj = {
-  render: () => ColorsDemo.main(),
+export const statesAndVariants: StoryObj = {
+  render: () => StatesAndVariantsDemo.main(),
+};
+
+export const allButtonsStatesVariants: StoryObj = {
+  render: () => AllButtonsStatesAndVariantsDemo.main(),
+};
+
+export const allLinksStatesVariants: StoryObj = {
+  render: () => AllLinksStatesAndVariantsDemo.main(),
+};
+
+export const utilitiesColors: StoryObj = {
+  render: () => UtilitiesColorsDemo.main(),
 };

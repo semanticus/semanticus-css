@@ -44,10 +44,6 @@ Use `.full-width` on an element that should span edge-to-edge — sections with 
 - Its children are still automatically constrained to the content column
 - `.breakout` and `.full-width` work inside it as well
 
-## Nested full-width with children
-
-<HtmlPreviewer :code="ContentGridDemo.nested()" />
-
 ## Nested full-width inside full-width
 
 A `.full-width` element creates a nested content grid, so you can place another `.full-width` inside it and it will span edge-to-edge within the parent — useful for alternating background bands nested inside a larger section:

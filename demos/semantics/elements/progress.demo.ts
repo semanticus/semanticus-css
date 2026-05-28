@@ -58,14 +58,24 @@ export function ghostVariants(attrs: Record<string, string> = {}) {
   return intentVariants(attrs, "ghost");
 }
 
-export function overviewVariants(attrs: Record<string, string> = {}) {
+export function overviewDefaultAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
   return renderElement(
     "section",
     attrs,
     `${renderGrid(`${main({})}
-${main({ class: "subtle" })}`)}
+${main({ class: "subtle" })}`)}`,
+  );
+}
 
-${renderGrid(`
+export function overviewIntentAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`
 ${intentVariants()}
 
 ${subtleVariants()}`)}`,

@@ -1,4 +1,8 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
 export function main(
   tagName: string = "div",
@@ -26,24 +30,6 @@ export function withHgroup(
   <h2>${title}</h2>
   <p>${description}</p>
 </hgroup>`,
-  );
-}
-
-export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "section",
-    attrs,
-    `<div class="auto-grid">
-  ${withHgroup()}
-  ${withHgroup("div", { class: "subtle" })}
-  ${withHgroup("div", { class: "ghost" })}
-</div>
-
-<div class="auto-grid">
-  ${withHgroupIntentVariants()}
-  ${withHgroupSubtleVariants()}
-  ${withHgroupGhostVariants()}
-</div>`,
   );
 }
 
@@ -95,4 +81,29 @@ export function withHgroupSubtleVariants(attrs: Record<string, string> = {}) {
 
 export function withHgroupGhostVariants(attrs: Record<string, string> = {}) {
   return withHgroupIntentVariants(attrs, "ghost");
+}
+
+export function overviewDefaultAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`${withHgroup()}
+${withHgroup("div", { class: "subtle" })}
+${withHgroup("div", { class: "ghost" })}`)}`,
+  );
+}
+
+export function overviewIntentAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`
+${withHgroupIntentVariants()}
+${withHgroupSubtleVariants()}
+${withHgroupGhostVariants()}`)}`,
+  );
 }
