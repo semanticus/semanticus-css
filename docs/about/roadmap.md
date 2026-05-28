@@ -100,24 +100,24 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Simplified the build process by removing the need for Sass |
 | ✅ | Live code previewer and editor |
 | ✅ | Live code previewer codeCollapsed option |
-| ✅ | Palette and Size picker |
-| ✅ | Theme Builder to help the developer visualize which CSS variable does what |
+| ✅ | Palette and Size builder |
 | ✅ | ARIA pattern documentation |
-| ✅ | Exhaustive HTML elements and attributes documentation |
-| ✅ | Exhaustive Composites documentation |
-| ✅ | Exhaustive variants documentation and their combinations with HTML elements |
-| ✅ | Exhaustive Utility classes documentation |
-| ✅ | Documentation page example |
-| ✅ | Grid system documentation |
-| ✅ | `.icon-*` component documentation |
-| ✅ | Alerts composite documentation |
-| ✅ | Toasts composite documentation |
-| ✅ | Pagination composite documentation |
-| ✅ | Card List composite documentation |
+| ✅ | **Semantic Styling** API exhaustive documentation |
+| ✅ | **Components** API exhaustive documentation |
+| ✅ | **Variants** API exhaustive documentation |
+| ✅ | **Utilities** API exhaustive documentation |
+| ✅ | Documentation Page example |
+| ✅ | Starter HTML template Page example |
+| ✅ | Accordions documentation |
+| ✅ | Alerts documentation |
+| ✅ | Card and Card List documentation |
+| ✅ | Grid System documentation |
+| ✅ | Pagination documentation |
+| ✅ | Toasts documentation |
 | ✅ | Github check to prevent PRs that fail the visual regression tests |
 | 🚧 | Navigation composite documentation |
 | ⌛ | Tabs composite documentation |
-| ⌛ | `.sidebar` component documentation |
+| ⌛ | Sidebar component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
