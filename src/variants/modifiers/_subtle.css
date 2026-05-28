@@ -13,9 +13,9 @@
   &.secondary {
     --typography-color: light-dark(#191c20, #fff);
     --button-color: var(--typography-color) !important;
-    --card-color: var(--typography-color);
-    --pane-color: var(--typography-color);
-    --alert-color: var(--typography-color);
+    --card-color: var(--typography-color) !important;
+    --pane-color: var(--typography-color) !important;
+    --alert-color: var(--typography-color) !important;
     --intent-background-color: light-dark(
       color-mix(in srgb, var(--color-slate-50), white 25%),
       color-mix(in srgb, var(--color-slate-50), black 75%)

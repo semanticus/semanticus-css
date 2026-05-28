@@ -43,6 +43,11 @@
     );
   }
 
+  /* Card Lists */
+  .card:is(ul, [role="list"]) > & {
+    --card-color: light-dark(#fff, #191c20);
+  }
+
   /* Panes */
   &:is(.pane) {
     --pane-color: light-dark(#fff, #191c20);
