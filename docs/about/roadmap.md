@@ -27,6 +27,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | Status | Feature |
 | --- | --- |
 | ✅ | Accordions |
+| 🚧 | Accordion List |
 | ✅ | Alerts |
 | ✅ | Auto Grid |
 | ✅ | Card List |

@@ -1,8 +1,40 @@
 .striped {
-  > :not(table):nth-child(odd) {
+  &:is(
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [type="file"]::file-selector-button,
+      [role="button"]
+    )
+    > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
-      var(--background-color),
+      var(--button-background-color),
+      var(--color-hover-effect) 15%
+    );
+  }
+
+  &.card > :nth-child(odd) {
+    background-color: color-mix(
+      in srgb,
+      var(--card-background-color),
+      var(--color-hover-effect) 15%
+    );
+  }
+
+  &.pane > :nth-child(odd) {
+    background-color: color-mix(
+      in srgb,
+      var(--pane-background-color),
+      var(--color-hover-effect) 15%
+    );
+  }
+
+  &:is([role="status"], [role="alert"]) > :nth-child(odd) {
+    background-color: color-mix(
+      in srgb,
+      var(--alert-background-color),
       var(--color-hover-effect) 15%
     );
   }

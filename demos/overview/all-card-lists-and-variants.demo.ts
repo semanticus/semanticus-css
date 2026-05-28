@@ -5,7 +5,7 @@ export function unorderedList(attrs: Record<string, string> = {}) {
   return CardListDemo.unorderedList(
     attrs,
     `<li>Item 1</li>
-<li>Item 2</li>
+<li aria-current="true">Item 2</li>
 <li>Item 3</li>
 <li>Item 4</li>`,
   );
@@ -27,14 +27,14 @@ export function defaultAndIntentVariants(modifier: string = "") {
   ${renderElement(
     "section",
     { class: "auto-grid" },
-    `${CardListDemo.unorderedList()}
-  ${CardListDemo.unorderedList({ class: `${modifier} primary` })}
-  ${CardListDemo.unorderedList({ class: `${modifier} secondary` })}
-  ${CardListDemo.unorderedList({ class: `${modifier} contrast` })}
-  ${CardListDemo.unorderedList({ class: `${modifier} success` })}
-  ${CardListDemo.unorderedList({ class: `${modifier} info` })}
-  ${CardListDemo.unorderedList({ class: `${modifier} warning` })}
-  ${CardListDemo.unorderedList({ class: `${modifier} danger` })}`,
+    `${unorderedList()}
+  ${unorderedList({ class: `${modifier} primary` })}
+  ${unorderedList({ class: `${modifier} secondary` })}
+  ${unorderedList({ class: `${modifier} contrast` })}
+  ${unorderedList({ class: `${modifier} success` })}
+  ${unorderedList({ class: `${modifier} info` })}
+  ${unorderedList({ class: `${modifier} warning` })}
+  ${unorderedList({ class: `${modifier} danger` })}`,
   )}`;
 }
 
