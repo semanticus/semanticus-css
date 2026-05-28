@@ -70,11 +70,11 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 
 | Status | Feature |
 | --- | --- |
-| ⌛ | Multiple toasts with the same placement overlap |
 | ✅ | When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
-| ⌛ | **shadow** utility classes don't seem to affect `.card` styling |
+| ✅ | **shadow** utility classes don't seem to affect `.card` styling |
 | ✅ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
-| ⌛ | `<button role="link">` seems to have bigger line height than a normal link |
+| ⌛ | Multiple toasts with the same placement overlap |
+| ⌛ | `<button role="link">` seems to behave differently than a normal link |
 
 ## Interactive Patterns
 
