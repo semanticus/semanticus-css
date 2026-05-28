@@ -89,8 +89,8 @@
 
     > * {
       list-style: none;
-      border-inline: none;
       border-top: none;
+      border-inline: none;
 
       &:first-child {
         border-top-right-radius: var(--card-border-radius);
@@ -105,16 +105,16 @@
 
   &[role="group"] {
     > * {
+      border-right: none;
       border-block: none;
-      border-left: none;
 
       &:first-child {
+        border-left: none;
         border-bottom-left-radius: var(--card-border-radius);
       }
 
       &:last-child {
         border-top-right-radius: var(--card-border-radius);
-        border-right: none;
       }
     }
   }
