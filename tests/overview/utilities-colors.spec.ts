@@ -18,26 +18,24 @@ const palettes = [];
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/components/content-grid.demo/nestedFullWidth?theme=${theme} - visual snapshot`, async ({
+  test(`/overview/utilities-colors.demo/main?theme=${theme} - visual snapshot`, async ({
     page,
   }) => {
-    await page.goto(
-      `/components/content-grid.demo/nestedFullWidth?theme=${theme}`,
-    );
-    const main = page.locator(".content-grid:first-of-type");
+    await page.goto(`/overview/utilities-colors.demo/main?theme=${theme}`);
+    const main = page.locator("body > main");
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
   });
 
   palettes.forEach((palette) => {
-    test(`/components/content-grid.demo/nestedFullWidth?theme=${theme}&palette=${palette} - visual snapshot`, async ({
+    test(`/overview/utilities-colors.demo/main?theme=${theme}&palette=${palette} - visual snapshot`, async ({
       page,
     }) => {
       await page.goto(
-        `/components/content-grid.demo/nestedFullWidth?theme=${theme}&palette=${palette}`,
+        `/overview/utilities-colors.demo/main?theme=${theme}&palette=${palette}`,
       );
-      const main = page.locator(".content-grid:first-of-type");
+      const main = page.locator("body > main");
 
       await expect(main).toBeVisible();
       await expect(page).toHaveScreenshot(screenshotOptions);

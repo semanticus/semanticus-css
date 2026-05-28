@@ -1,7 +1,17 @@
-import { test, expect } from "@playwright/test";
+import {
+  test,
+  expect,
+  PageAssertionsToHaveScreenshotOptions,
+} from "@playwright/test";
 import { variations } from "@scripts/utils";
 
 test.use({ viewport: { width: 1024, height: 900 } });
+
+const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
+  animations: "disabled",
+  fullPage: true,
+  // maxDiffPixelRatio: 0.02
+};
 
 // const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default'); // Doesn't seem to add a lot of value and adds a lot of snapshots to maintain, so I'm leaving it out for now. We can always add it back later if we want to test palette variations in the full bundle demo.
 const palettes = [];
@@ -15,11 +25,7 @@ themes.forEach((theme) => {
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();
-    await expect(page).toHaveScreenshot({
-      animations: "disabled",
-      fullPage: true,
-      maxDiffPixelRatio: 0.02,
-    });
+    await expect(page).toHaveScreenshot(screenshotOptions);
   });
 
   palettes.forEach((palette) => {
@@ -32,11 +38,7 @@ themes.forEach((theme) => {
       const main = page.locator("body > main");
 
       await expect(main).toBeVisible();
-      await expect(page).toHaveScreenshot({
-        animations: "disabled",
-        fullPage: true,
-        maxDiffPixelRatio: 0.02,
-      });
+      await expect(page).toHaveScreenshot(screenshotOptions);
     });
   });
 });
