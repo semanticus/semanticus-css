@@ -6,6 +6,7 @@ import {
   AllCardsAndVariantsDemo,
   AllComponentsDemo,
   AllLinksStatesAndVariantsDemo,
+  NestedVariationsDemo,
   StatesAndVariantsDemo,
   UtilitiesColorsDemo,
 } from "@demos/overview";
@@ -23,6 +24,10 @@ export const allComponents: StoryObj = {
 
 export const statesAndVariants: StoryObj = {
   render: () => StatesAndVariantsDemo.main(),
+};
+
+export const nestedVariations: StoryObj = {
+  render: () => NestedVariationsDemo.main(),
 };
 
 export const allButtonsStatesVariants: StoryObj = {
