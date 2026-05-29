@@ -77,7 +77,7 @@ ${content()}
 <hr>
 <br>
 
-<div class="container pane primary">
+<div class="container pane contrast">
   ${content()}
   ${card()}
   ${pane()}
