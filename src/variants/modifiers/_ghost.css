@@ -58,8 +58,12 @@
     [type="file"]::file-selector-button,
     [role="button"]
   ) {
-    --button-color: var(--intent-color, var(--primary-color)) !important;
-    --button-background-color: var(--intent-background-color);
+    --button-color: var(--primary-color);
+    --button-background-color: transparent;
+
+    &:is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+      --button-color: var(--intent-color, var(--primary-color)) !important;
+    }
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       &:not(.contrast) {
@@ -70,10 +74,7 @@
         --button-color: light-dark(#fff, #191c20) !important;
       }
 
-      --button-background-color: var(
-        --intent-background-color-hover,
-        var(--primary-background-color-hover)
-      );
+      --button-background-color: unset;
     }
   }
 
