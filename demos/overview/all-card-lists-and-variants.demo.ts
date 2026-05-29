@@ -1,15 +1,5 @@
 import { renderElement } from "@scripts/utils";
-import { CardListDemo } from "@demos/composites";
-
-export function unorderedList(attrs: Record<string, string> = {}) {
-  return CardListDemo.unorderedList(
-    attrs,
-    `<li>Item 1</li>
-<li aria-current="true">Item 2</li>
-<li>Item 3</li>
-<li>Item 4</li>`,
-  );
-}
+import { UlDemo } from "@demos/semantics";
 
 export function defaultAndIntentVariants(modifier: string = "") {
   return `${renderElement(
@@ -27,14 +17,14 @@ export function defaultAndIntentVariants(modifier: string = "") {
   ${renderElement(
     "section",
     { class: "auto-grid" },
-    `${unorderedList({ class: `${modifier}` })}
-  ${unorderedList({ class: `${modifier} primary` })}
-  ${unorderedList({ class: `${modifier} secondary` })}
-  ${unorderedList({ class: `${modifier} contrast` })}
-  ${unorderedList({ class: `${modifier} success` })}
-  ${unorderedList({ class: `${modifier} info` })}
-  ${unorderedList({ class: `${modifier} warning` })}
-  ${unorderedList({ class: `${modifier} danger` })}`,
+    `${UlDemo.cardList({ class: `${modifier}` })}
+  ${UlDemo.cardList({ class: `${modifier} primary` })}
+  ${UlDemo.cardList({ class: `${modifier} secondary` })}
+  ${UlDemo.cardList({ class: `${modifier} contrast` })}
+  ${UlDemo.cardList({ class: `${modifier} success` })}
+  ${UlDemo.cardList({ class: `${modifier} info` })}
+  ${UlDemo.cardList({ class: `${modifier} warning` })}
+  ${UlDemo.cardList({ class: `${modifier} danger` })}`,
   )}`;
 }
 
@@ -67,19 +57,15 @@ ${renderElement(
   "section",
   { class: "auto-grid mb-0" },
   `<h4>Nested intent</h4>
-<h4>Nested intent subtle</h4>
 <h4>Nested intent ghost</h4>
+<h4>Nested intent subtle</h4>
 <h4>Nested intent striped</h4>
-<h4>Nested intent subtle striped</h4>
-<h4>Nested intent ghost striped</h4>`,
+<h4>Nested intent ghost striped</h4>
+<h4>Nested intent subtle striped</h4>`,
 )}
 <section class="auto-grid">
-  ${CardListDemo.nestedIntentVariants({})}
-  ${CardListDemo.nestedIntentVariants({}, "subtle")}
-  ${CardListDemo.nestedIntentVariants({}, "ghost")}
-  ${CardListDemo.nestedIntentVariants({}, "striped")}
-  ${CardListDemo.nestedIntentVariants({ class: "striped" }, "subtle")}
-  ${CardListDemo.nestedIntentVariants({ class: "striped" }, "ghost")}
+  ${UlDemo.overviewCardListItemIntentVariants({})}
+  ${UlDemo.overviewCardListItemIntentVariants({ class: "striped" })}
 </section>
 `,
   );

@@ -1,8 +1,3 @@
-<script setup>
-import { TableDemo } from "@demos/semantics/elements";
-import { CardListDemo } from "@demos/composites";
-</script>
-
 # Striped Modifier
 
 The `.striped` class adds alternating background colors to rows or child elements, making it easier to scan across data-dense content.
@@ -22,16 +17,14 @@ Apply `.striped` to a `<table>` to add zebra-striping on body rows. Row headers 
 
 `.striped` works on `<ul>` and `<ol>` elements, adding alternating backgrounds to list items. This is especially helpful in card-like lists where rows benefit from visual separation.
 
-<HtmlPreviewer :code="CardListDemo.stripedVariant()" :codeCollapsed="true" />
+<HtmlPreviewer :code="RoleListDemo.cardList('div', { class: 'stiped' })" :codeCollapsed="true" />
 
-## Div-Based Lists
+## Groups
 
 `.striped` also stripes children of `<div>` elements with `role="list"`, useful for card-list layouts where a semantic `<ul>` isn't an option.
 
-<HtmlPreviewer :code="CardListDemo.divs({ class: 'striped' })" :codeCollapsed="true" />
+<HtmlPreviewer :code="RoleGroupDemo.cardGroup('div', { class: 'striped' })" :codeCollapsed="true" />
 
-## Combined with Ghost
-
-`.striped` can be combined with other modifiers like `.ghost` to create transparent-background striped lists — useful when you want the striping effect but with a lighter visual weight.
-
-<HtmlPreviewer :code="CardListDemo.ghostVariants({ class: 'striped' })" :codeCollapsed="true" />
+<script setup>
+import { RoleListDemo, RoleGroupDemo, TableDemo } from "@demos/semantics";
+</script>

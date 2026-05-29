@@ -52,7 +52,6 @@ export function cardList(
 }
 
 export function cardListIntentVariants(
-  tagName: string = "div",
   attrs: Record<string, string> = {},
   modifier: string = "",
 ) {
@@ -103,7 +102,6 @@ function personalizedItems(modifier: string = ""): ItemType[] {
 }
 
 export function overviewCardListItemIntentVariants(
-  tagName: string = "div",
   attrs: Record<string, string> = {},
 ) {
   return renderElement(

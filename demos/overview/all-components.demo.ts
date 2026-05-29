@@ -1,11 +1,6 @@
 import { renderElement } from "@scripts/utils";
 
-import {
-  DropdownDemo,
-  SearchDemo,
-  CardListDemo,
-  AccordionsDemo,
-} from "@demos/composites";
+import { DropdownDemo, SearchDemo, AccordionsDemo } from "@demos/composites";
 import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
   ADemo,
@@ -30,6 +25,8 @@ import {
   DlDemo,
   OlDemo,
   UlDemo,
+  RoleGroupDemo,
+  RoleListDemo,
 } from "@demos/semantics";
 
 function buttons() {
@@ -227,6 +224,16 @@ function cards() {
   ${CardDemo.main()}
 
   ${CardDemo.withHeaderAndFooter()}
+
+  <section>
+    <h3>List</h3>
+    ${RoleListDemo.cardList()}
+  </section>
+
+  <section>
+    <h3>Group</h3>
+    ${RoleGroupDemo.cardGroup()}
+  </section>
 </section>`;
 }
 
@@ -374,11 +381,6 @@ function headingGroup() {
 function lists() {
   return `<section id="lists">
   <h2>Lists</h2>
-
-  <section>
-    <h4>Group</h4>
-    ${CardListDemo.unorderedList()}
-  </section>
 
   <section>
     <h4>Unordered</h4>

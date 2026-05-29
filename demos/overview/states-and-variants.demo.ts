@@ -1,6 +1,6 @@
 import { renderElement, renderGrid } from "@scripts/utils";
 
-import { DropdownDemo, CardListDemo } from "@demos/composites";
+import { DropdownDemo } from "@demos/composites";
 import { CardDemo, PaneDemo } from "@demos/components";
 import {
   ADemo,
@@ -101,15 +101,6 @@ ${DropdownDemo.asButton({ class: "ghost" })}`)}
 
   ${renderGrid(`<h3>Intent Variants</h3><h3>Subtle Modifier</h3><h3>Ghost Modifier</h3>`, { class: "mb-0" })}
   ${CardDemo.overviewIntentAndModifiersVariants()}
-</section>
-
-<hr>
-<br>
-
-<section id="card-list">
-  <h2>Card List</h2>
-
-  ${CardListDemo.overviewVariants()}
 </section>
 
 <hr>

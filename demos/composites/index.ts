@@ -1,7 +1,6 @@
 export * as AccordionsDemo from "./accordions.demo";
 export * as AlertsDemo from "./alerts.demo";
 export * as ButtonsDemo from "./buttons.demo";
-export * as CardListDemo from "./card-list.demo";
 export * as DropdownDemo from "./dropdown.demo";
 export * as GroupsDemo from "./groups.demo";
 export * as LayoutDemo from "./layout.demo";

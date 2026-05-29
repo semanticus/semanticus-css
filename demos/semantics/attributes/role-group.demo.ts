@@ -31,7 +31,8 @@ export function cardGroup(
   tagName: string = "div",
   attrs: Record<string, string> = {},
   items: ItemType[] = [
-    { slot: "Has been processed", tagName: "span", attrs: {} },
+    { slot: "Processed", tagName: "span", attrs: {} },
+    { slot: "Shipped", tagName: "span", attrs: {} },
     { slot: "In route", tagName: "span", attrs: { "aria-current": "true" } },
     { slot: "Delivered", tagName: "span", attrs: { "aria-disabled": "true" } },
   ],
