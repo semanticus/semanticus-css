@@ -92,15 +92,23 @@ function personalizedItems(modifier: string = ""): ItemType[] {
   ];
 }
 
+export function cardGroupPersonalizedItems(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+  modifier: string = "",
+) {
+  return `${cardGroup(tagName, attrs, personalizedItems(modifier))}`;
+}
+
 export function overviewCardGroupItemIntentVariants(
   tagName: string = "div",
   attrs: Record<string, string> = {},
 ) {
-  return `${cardGroup(tagName, attrs, personalizedItems())}
+  return `${cardGroupPersonalizedItems(tagName, attrs)}
 
-${cardGroup(tagName, attrs, personalizedItems("ghost"))}
+${cardGroupPersonalizedItems(tagName, attrs, "ghost")}
 
-${cardGroup(tagName, attrs, personalizedItems("subtle"))}`;
+${cardGroupPersonalizedItems(tagName, attrs, "subtle")}`;
 }
 
 export function inputGroup(attrs: Record<string, string> = {}) {
