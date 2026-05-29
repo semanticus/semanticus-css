@@ -50,13 +50,13 @@ footer: MIT Licensed | Copyright 2024-present
 
 ## Install
 
-Add Semanticus CSS to your project via CDN, manual download, or npm:
+Add **Semanticus CSS** to your project via CDN, manual download, or npm:
 
 <InstallGuide />
 
 ## How It Works
 
-Semanticus CSS is built on four complementary layers:
+**Semanticus CSS** is built on four complementary layers:
 
 ### 1. Semantic Styling
 

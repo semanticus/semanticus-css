@@ -10,7 +10,7 @@ Looking for alternative color palettes or sizing options? Check out the [Palette
 
 ## Usage
 
-Semanticus CSS is built on four complementary layers:
+**Semanticus CSS** is built on four complementary layers:
 
 ### 1. Semantic Styling
 

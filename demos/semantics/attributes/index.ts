@@ -7,5 +7,6 @@ export * as RoleAlertDemo from "./role-alert.demo";
 export * as RoleButtonDemo from "./role-button.demo";
 export * as RoleGroupDemo from "./role-group.demo";
 export * as RoleLinkDemo from "./role-link.demo";
+export * as RoleListDemo from "./role-list.demo";
 export * as RoleStatusDemo from "./role-status.demo";
 export * as RoleTooltipDemo from "./role-tooltip.demo";

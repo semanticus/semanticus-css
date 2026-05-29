@@ -1,10 +1,8 @@
----
-title: 'role="group"'
----
+# Groups
 
-# [role="group"]
+Groups are implemented using the [[role=group]](/docs/semantics/attributes/role-group) attribute, combined with elements like `<div>`, `<section>`.
 
-The `role="group"` is used to semantically associate related UI elements together, for instance:
+Use them to semantically associate related UI elements together, for instance:
 - Grouping buttons together in a menu
 - Group [Pagination](/docs/composites/pagination) controls together
 - Grouping form controls together like a search input and its submit button

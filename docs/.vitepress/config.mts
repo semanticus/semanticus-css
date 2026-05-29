@@ -333,11 +333,13 @@ export default defineConfig({
             { text: "Accordions", link: "/docs/composites/accordions" },
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Buttons", link: "/docs/composites/buttons" },
-            { text: "Card List", link: "/docs/composites/card-list" },
             { text: "Card", link: "/docs/composites/card" },
+            { text: "Card List", link: "/docs/composites/card-list" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
+            { text: "Groups", link: "/docs/composites/groups" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
+            { text: "Lists", link: "/docs/composites/lists" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
@@ -381,6 +383,10 @@ export default defineConfig({
                   link: "/docs/semantics/elements/dialog",
                 },
                 {
+                  text: "&lt;dl&gt;",
+                  link: "/docs/semantics/elements/dl",
+                },
+                {
                   text: "&lt;img&gt; / &lt;video&gt; / &lt;audio&gt;",
                   link: "/docs/semantics/elements/embedded",
                 },
@@ -409,12 +415,12 @@ export default defineConfig({
                   text: "&lt;label&gt;",
                   link: "/docs/semantics/elements/label",
                 },
-                {
-                  text: "&lt;ul&gt; / &lt;ol&gt; / &lt;dl&gt;",
-                  link: "/docs/semantics/elements/lists",
-                },
                 { text: "&lt;main&gt;", link: "/docs/semantics/elements/main" },
                 { text: "&lt;nav&gt;", link: "/docs/semantics/elements/nav" },
+                {
+                  text: "&lt;ol&gt;",
+                  link: "/docs/semantics/elements/ol",
+                },
                 {
                   text: "&lt;progress&gt;",
                   link: "/docs/semantics/elements/progress",
@@ -434,6 +440,10 @@ export default defineConfig({
                 {
                   text: "&lt;textarea&gt;",
                   link: "/docs/semantics/elements/textarea",
+                },
+                {
+                  text: "&lt;ul&gt;",
+                  link: "/docs/semantics/elements/ul",
                 },
               ],
             },
@@ -473,6 +483,10 @@ export default defineConfig({
                 {
                   text: '[role="link"]',
                   link: "/docs/semantics/attributes/role-link",
+                },
+                {
+                  text: '[role="list"]',
+                  link: "/docs/semantics/attributes/role-list",
                 },
                 // {
                 //   text: '[role="search"]',

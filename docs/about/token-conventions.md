@@ -1,6 +1,6 @@
 # Token Naming Conventions
 
-Semanticus CSS tokens map directly to CSS property names whenever possible.
+**Semanticus CSS** tokens map directly to CSS property names whenever possible.
 No memorizing role names — if you know CSS, you know the tokens.
 
 ## Core principle

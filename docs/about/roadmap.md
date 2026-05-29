@@ -63,7 +63,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.subtle` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
 | ✅ | `.striped` modifier variant |
-| ✅ | Extend **intent variants** to stylize **card lists** |
+| ✅ | Extend **intent variants** to stylize **card list** |
 | ✅ | Extend **intent variants** to stylize `<progress>` |
 
 ## Known Issues

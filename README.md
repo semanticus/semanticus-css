@@ -68,7 +68,7 @@ Check out the [Palettes](https://semanticus.design/guide/palettes.html) and [Siz
 
 ## How It Works
 
-Semanticus CSS is built on four complementary layers:
+**Semanticus CSS** is built on four complementary layers:
 
 ### 1. Semantic Styling
 

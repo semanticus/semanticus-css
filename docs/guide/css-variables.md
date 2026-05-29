@@ -1,6 +1,6 @@
 # CSS Variables
 
-Semanticus CSS is built with CSS variables, making it easy to customize colors, spacing, typography, and more.
+**Semanticus CSS** is built with CSS variables, making it easy to customize colors, spacing, typography, and more.
 
 After importing any of semanticus-css's css files, you can further customize it by overriding specific CSS variables defined in the `:root` selector:
 
