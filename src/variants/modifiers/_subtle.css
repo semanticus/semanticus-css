@@ -33,9 +33,9 @@
       --button-color: var(--typography-color);
     }
 
-    /* Card & Lists */
+    /* Card & List & Group */
     &:is(.card),
-    .card:is(ul, [role="list"]) > & {
+    .card:is(ul, [role="list"], [role="group"]) > & {
       --card-color: var(--typography-color) !important;
     }
 

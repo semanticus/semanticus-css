@@ -43,8 +43,8 @@
     );
   }
 
-  /* Card Lists */
-  .card:is(ul, [role="list"]) > & {
+  /* Card List & Group */
+  .card:is(ul, [role="list"], [role="group"]) > & {
     --card-color: light-dark(#fff, #191c20);
   }
 

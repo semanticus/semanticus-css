@@ -86,8 +86,8 @@
     );
   }
 
-  /* Card Lists */
-  .card:is(ul, [role="list"]) > & {
+  /* Card List & Group */
+  .card:is(ul, [role="list"], [role="group"]) > & {
     --card-color: var(--intent-color, var(--color));
     --card-background-color: transparent;
     --card-border-color: var(--intent-border-color);
