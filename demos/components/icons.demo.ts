@@ -41,7 +41,7 @@ export function allIcons(options?: { testMode: boolean }) {
     main("close"),
     main("date"),
     main("invalid"),
-    options.testMode === true ? "" : main("loading"),
+    options?.testMode === true ? "" : main("loading"),
     main("minus"),
     main("search"),
     main("time"),
