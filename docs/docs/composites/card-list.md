@@ -20,15 +20,15 @@ To convey **intent** and **importance**, card lists can be styled with different
 
 `.ghost` creates transparent background card lists with colored text and borders
 
-<HtmlPreviewer :code="UlDemo.cardListIntentVariants('div', {}, 'ghost')" :codeCollapsed="true" />
+<HtmlPreviewer :code="UlDemo.cardListIntentVariants({}, 'ghost')" :codeCollapsed="true" />
 
 `.subtle` creates card lists with a more muted appearance.
 
-<HtmlPreviewer :code="UlDemo.cardListIntentVariants('div', {}, 'subtle')" :codeCollapsed="true" />
+<HtmlPreviewer :code="UlDemo.cardListIntentVariants({}, 'subtle')" :codeCollapsed="true" />
 
 `.striped` creates card lists with alternating background colors for better readability.
 
-<HtmlPreviewer :code="UlDemo.cardListIntentVariants('div', {}, 'subtle striped')" :codeCollapsed="true" />
+<HtmlPreviewer :code="UlDemo.cardListIntentVariants({}, 'subtle striped')" :codeCollapsed="true" />
 
 ### Variants applied individually to an item
 
