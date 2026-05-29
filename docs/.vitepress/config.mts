@@ -334,6 +334,7 @@ export default defineConfig({
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Buttons", link: "/docs/composites/buttons" },
             { text: "Card", link: "/docs/composites/card" },
+            { text: "Card Group", link: "/docs/composites/card-group" },
             { text: "Card List", link: "/docs/composites/card-list" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
             { text: "Groups", link: "/docs/composites/groups" },
