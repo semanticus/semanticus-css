@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { ButtonsDemo } from "@demos/composites";
+import { ButtonDemo, InputDemo, RoleButtonDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Composites/Buttons",
@@ -8,34 +8,18 @@ const meta: Meta = {
 
 export default meta;
 
-export const overview: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers(),
+export const basicUsage: StoryObj = {
+  render: () => ButtonDemo.main(),
 };
 
-export const primary: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("primary"),
+export const intentVariants: StoryObj = {
+  render: () => InputDemo.buttons(),
 };
 
-export const secondary: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("secondary"),
+export const ghostVariants: StoryObj = {
+  render: () => RoleButtonDemo.main(),
 };
 
-export const contrast: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("contrast"),
-};
-
-export const success: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("success"),
-};
-
-export const info: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("info"),
-};
-
-export const warning: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("warning"),
-};
-
-export const danger: StoryObj = {
-  render: () => ButtonsDemo.overviewStatesAndModifiers("danger"),
+export const subtleVariants: StoryObj = {
+  render: () => ButtonDemo.overviewCloseButton(),
 };
