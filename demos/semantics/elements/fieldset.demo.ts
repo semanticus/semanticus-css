@@ -17,18 +17,18 @@ export function searchInputButton(attrs: Record<string, string> = {}) {
 }
 
 export function groupInputButton(attrs: Record<string, string> = {}) {
-  return RoleGroupDemo.main(
+  return renderElement(
     "fieldset",
-    { ...attrs, "aria-label": "Email subscription" },
+    { ...attrs, role: "group", "aria-label": "Email subscription" },
     `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
 <input type="submit" value="Subscribe" />`,
   );
 }
 
 export function groupMultipleInputs(attrs: Record<string, string> = {}) {
-  return RoleGroupDemo.main(
+  return renderElement(
     "fieldset",
-    attrs,
+    { ...attrs, role: "group" },
     `<input type="text" placeholder="First name">
 <input type="text" placeholder="Last name">
 <button>Save</button>`,
@@ -36,9 +36,9 @@ export function groupMultipleInputs(attrs: Record<string, string> = {}) {
 }
 
 export function groupSelectButton(attrs: Record<string, string> = {}) {
-  return RoleGroupDemo.main(
+  return renderElement(
     "fieldset",
-    attrs,
+    { ...attrs, role: "group" },
     `<select>
   <option>Option 1</option>
   <option>Option 2</option>
@@ -49,9 +49,9 @@ export function groupSelectButton(attrs: Record<string, string> = {}) {
 }
 
 export function groupDropdownButton(attrs: Record<string, string> = {}) {
-  return RoleGroupDemo.main(
+  return renderElement(
     "fieldset",
-    attrs,
+    { ...attrs, role: "group" },
     `${DropdownDemo.withCheckboxes({ class: "w-100" })}
 <button>Action</button>`,
   );

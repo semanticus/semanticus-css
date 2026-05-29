@@ -27,6 +27,9 @@ import {
   TextDemo,
   ButtonDemo,
   RoleButtonDemo,
+  DlDemo,
+  OlDemo,
+  UlDemo,
 } from "@demos/semantics";
 
 function buttons() {
@@ -379,21 +382,21 @@ function lists() {
 
   <section>
     <h4>Unordered</h4>
-    ${ListsDemo.unordered()}
+    ${UlDemo.main()}
   </section>
 
   <br>
 
   <section>
     <h4>Ordered</h4>
-    ${ListsDemo.ordered()}
+    ${OlDemo.main()}
   </section>
 
   <br>
 
   <section>
     <h4>Definition</h4>
-    ${ListsDemo.definition()}
+    ${DlDemo.main()}
   </section>
 </section>`;
 }
