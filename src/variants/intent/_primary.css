@@ -1,4 +1,4 @@
-/* See _intent.css for shared styles */
+/* See ./_common.css for shared styles */
 
 .primary {
   --intent-color: oklch(from var(--primary-color) l c h / var(--color-opacity));

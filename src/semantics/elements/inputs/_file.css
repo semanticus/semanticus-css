@@ -1,3 +1,5 @@
+/* See ./_common.css for shared styles */
+
 [type="file"] {
   --color: var(--color-muted);
   margin-left: calc(var(--outline-width) * -1);
