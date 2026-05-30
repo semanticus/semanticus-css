@@ -12,7 +12,7 @@
 [type="checkbox"],
 [type="radio"],
 [type="range"] {
-  accent-color: var(--primary-background-color);
+  accent-color: var(--inputs-accent-color);
 }
 
 label:has([type="checkbox"], [type="radio"]) {
@@ -34,8 +34,8 @@ label:has([type="checkbox"], [type="radio"]) {
   &:checked,
   &:checked:active,
   &:checked:focus {
-    --background-color: var(--primary-background-color);
-    --border-color: var(--primary-background-color);
+    --background-color: var(--inputs-accent-color);
+    --border-color: var(--inputs-accent-color);
     background-image: var(--icon-checkbox);
     background-position: center;
     background-size: 0.75em auto;
@@ -55,8 +55,8 @@ label:has([type="checkbox"], [type="radio"]) {
 
 [type="checkbox"] {
   &:indeterminate {
-    --background-color: var(--primary-background-color);
-    --border-color: var(--primary-background-color);
+    --background-color: var(--inputs-accent-color);
+    --border-color: var(--inputs-accent-color);
     background-image: var(--icon-minus);
     background-position: center;
     background-size: 0.75em auto;
@@ -107,8 +107,8 @@ label:has([type="checkbox"], [type="radio"]) {
   }
 
   &:checked {
-    --background-color: var(--input-switch-background-color-checked);
-    --border-color: var(--input-switch-background-color-checked);
+    --background-color: var(--inputs-accent-color);
+    --border-color: var(--inputs-accent-color);
     background-image: none;
 
     &::before {

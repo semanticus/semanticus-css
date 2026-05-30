@@ -1,7 +1,7 @@
 /* See ./_common.css for shared styles */
 
 [type="range"] {
-  accent-color: var(--primary-background-color);
+  accent-color: var(--inputs-accent-color);
 }
 
 [type="range"] {

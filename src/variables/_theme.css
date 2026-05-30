@@ -364,6 +364,7 @@
   --inputs-border-color-focus: var(--primary-background-color);
   --inputs-opacity-disabled: 0.5;
   --inputs-outline-width: 0.0625rem;
+  --inputs-accent-color: var(--primary-background-color);
 
   /* --- Input Checkbox and Radio --- */
   --input-checkbox-border-width: 0.125rem;
@@ -386,7 +387,6 @@
     var(--color-slate-200),
     var(--color-slate-750)
   );
-  --input-switch-background-color-checked: var(--primary-background-color);
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
   --search-border-radius: 5rem;
