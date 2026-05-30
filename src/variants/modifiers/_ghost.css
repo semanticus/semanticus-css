@@ -26,6 +26,7 @@
 
   /* When .ghost is used in a element that has no intent */
   &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+    --_buttons-color: var(--links-color);
     --_card-border-color: var(--intent-border-color);
     --_buttons-background-color: var(--intent-background-color);
 

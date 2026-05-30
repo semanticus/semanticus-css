@@ -1,8 +1,8 @@
 :where(a:not([role="button"])),
 [role="link"] {
-  --_link-color: var(--link-color);
-  --_link-text-decoration: var(--link-text-decoration);
-  --_link-focus-ring-color: var(--link-focus-ring-color);
+  --_link-color: var(--links-color);
+  --_link-text-decoration: var(--links-text-decoration);
+  --_link-focus-ring-color: var(--links-focus-ring-color);
   --border-color: transparent;
 
   outline: none;

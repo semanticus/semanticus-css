@@ -365,10 +365,10 @@
   --search-border-radius: 5rem;
   --checkbox-border-width: 0.125rem;
 
-  /* --- Link Default Styling --- */
-  --link-color: var(--primary-color);
-  --link-focus-ring-color: var(--primary-focus-ring-color);
-  --link-text-decoration: underline;
+  /* --- Links (anchor and role="link") Default Styling --- */
+  --links-color: var(--primary-color);
+  --links-focus-ring-color: var(--primary-focus-ring-color);
+  --links-text-decoration: underline;
 
   /* --- Header & Footer Styling when inside a component --- */
   --marginals-background-color: light-dark(

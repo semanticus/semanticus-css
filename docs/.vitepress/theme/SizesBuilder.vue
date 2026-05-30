@@ -185,7 +185,7 @@ const variableGroups = [
         default: "0.1rem",
       },
       {
-        name: "--link-text-decoration",
+        name: "--links-text-decoration",
         label: "Link Decoration",
         desc: "Text decoration style for links.",
         default: "underline",
