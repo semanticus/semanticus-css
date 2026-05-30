@@ -1,6 +1,6 @@
 nav {
   --typography-spacing-vertical: 0;
-  --heading-gap-top: 0;
+  --heading-margin-top: 0;
 
   display: flex;
   gap: calc(var(--nav-link-gap) * 1.5);

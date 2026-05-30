@@ -345,22 +345,22 @@
   /* --- Headings --- */
   --heading-font-weight: 700;
   --h1-font-size: 2rem;
-  --h1-gap-top: 3rem;
+  --h1-margin-top: 3rem;
   --h1-line-height: 1.125;
   --h2-font-size: 1.75rem;
-  --h2-gap-top: 2.625rem;
+  --h2-margin-top: 2.625rem;
   --h2-line-height: 1.15;
   --h3-font-size: 1.5rem;
-  --h3-gap-top: 2.25rem;
+  --h3-margin-top: 2.25rem;
   --h3-line-height: 1.175;
   --h4-font-size: 1.25rem;
-  --h4-gap-top: 1.874rem;
+  --h4-margin-top: 1.874rem;
   --h4-line-height: 1.2;
   --h5-font-size: 1.125rem;
-  --h5-gap-top: 1.6875rem;
+  --h5-margin-top: 1.6875rem;
   --h5-line-height: 1.225;
   --h6-font-size: 1rem;
-  --h6-gap-top: 1.5rem;
+  --h6-margin-top: 1.5rem;
   --h6-line-height: 1.25;
 
   /* --- Inputs --- */
