@@ -5,50 +5,7 @@ h4,
 h5,
 h6 {
   --font-weight: var(--heading-font-weight);
-}
 
-h1 {
-  --font-size: var(--h1-font-size);
-  --line-height: var(--h1-line-height);
-  --heading-gap-top: var(--h1-gap-top);
-}
-
-h2 {
-  --font-size: var(--h2-font-size);
-  --line-height: var(--h2-line-height);
-  --heading-gap-top: var(--h2-gap-top);
-}
-
-h3 {
-  --font-size: var(--h3-font-size);
-  --line-height: var(--h3-line-height);
-  --heading-gap-top: var(--h3-gap-top);
-}
-
-h4 {
-  --font-size: var(--h4-font-size);
-  --line-height: var(--h4-line-height);
-  --heading-gap-top: var(--h4-gap-top);
-}
-
-h5 {
-  --font-size: var(--h5-font-size);
-  --line-height: var(--h5-line-height);
-  --heading-gap-top: var(--h5-gap-top);
-}
-
-h6 {
-  --font-size: var(--h6-font-size);
-  --line-height: var(--h6-line-height);
-  --heading-gap-top: var(--h6-gap-top);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   font-weight: var(--font-weight);
@@ -58,37 +15,66 @@ h6 {
 }
 
 h1 {
+  --font-size: var(--h1-font-size);
+  --line-height: var(--h1-line-height);
+  --heading-gap-top: var(--h1-gap-top);
+
   color: var(--typography-color);
 }
+
 h2 {
+  --font-size: var(--h2-font-size);
+  --line-height: var(--h2-line-height);
+  --heading-gap-top: var(--h2-gap-top);
+
   color: color-mix(
     in srgb,
     var(--typography-color) 90%,
     light-dark(white, black)
   );
 }
+
 h3 {
+  --font-size: var(--h3-font-size);
+  --line-height: var(--h3-line-height);
+  --heading-gap-top: var(--h3-gap-top);
+
   color: color-mix(
     in srgb,
     var(--typography-color) 80%,
     light-dark(white, black)
   );
 }
+
 h4 {
+  --font-size: var(--h4-font-size);
+  --line-height: var(--h4-line-height);
+  --heading-gap-top: var(--h4-gap-top);
+
   color: color-mix(
     in srgb,
     var(--typography-color) 70%,
     light-dark(white, black)
   );
 }
+
 h5 {
+  --font-size: var(--h5-font-size);
+  --line-height: var(--h5-line-height);
+  --heading-gap-top: var(--h5-gap-top);
+
   color: color-mix(
     in srgb,
     var(--typography-color) 60%,
     light-dark(white, black)
   );
 }
+
 h6 {
+  --font-size: var(--h6-font-size);
+  --line-height: var(--h6-line-height);
+  --heading-gap-top: var(--h6-gap-top);
+
   color: color-mix(
     in srgb,
     var(--typography-color) 65%,
