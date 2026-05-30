@@ -49,8 +49,6 @@
   --_pane-color: #fff;
   --_pane-background-color: var(--intent-background-color);
 
-  /* Progress Bars */
-  &:is(progress) {
-    --progress-background-color: var(--intent-background-color);
-  }
+  /* --- Progress Bar Individual Styling --- */
+  --_progress-background-color: var(--intent-background-color);
 }
