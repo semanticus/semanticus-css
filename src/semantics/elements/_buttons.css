@@ -53,6 +53,10 @@ button,
       var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
       0 0 0 var(--outline-width) var(--buttons-focus-ring-color);
   }
+
+  [aria-busy="true"] {
+    pointer-events: none;
+  }
 }
 
 [type="reset"],

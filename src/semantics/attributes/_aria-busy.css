@@ -1,4 +1,4 @@
-[aria-busy=true]:not(input, select, textarea, html, form) {
+[aria-busy="true"]:not(input, select, textarea, html, form) {
   white-space: nowrap;
 
   &::before {
@@ -19,13 +19,4 @@
   &:empty {
     text-align: center;
   }
-}
-
-button[aria-busy=true],
-[type=submit][aria-busy=true],
-[type=button][aria-busy=true],
-[type=reset][aria-busy=true],
-[role=button][aria-busy=true],
-a[aria-busy=true] {
-  pointer-events: none;
 }

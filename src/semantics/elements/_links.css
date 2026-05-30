@@ -40,6 +40,10 @@
   &:focus-visible {
     box-shadow: 0 0 0 var(--outline-width) var(--_link-focus-ring-color);
   }
+
+  &[aria-busy="true"] {
+    pointer-events: none;
+  }
 }
 
 [role="link"] {
