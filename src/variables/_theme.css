@@ -278,7 +278,6 @@
   /* ===== COMPONENT TOKENS ===== */
 
   /* --- Typography --- */
-  --link-text-decoration: underline;
   --h1-font-size: 2rem;
   --h2-font-size: 1.75rem;
   --h3-font-size: 1.5rem;
@@ -315,6 +314,18 @@
   --kbd-color: var(--background-color);
   --kbd-font-weight: bolder;
 
+  /* --- Details / Accordion --- */
+  --details-summary-color: var(--color);
+  --details-summary-color-hover: var(--primary-color-hover);
+  --details-summary-color-open: var(--color-muted);
+
+  /* --- Group --- */
+  --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
+    var(--primary-focus-ring-color);
+  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--input-border-color);
+  --group-button-spacing-horizontal: 1rem;
+
   /* --- Input / Form --- */
   --input-spacing-vertical: 0.5rem;
   --input-spacing-horizontal: 0.7rem;
@@ -342,38 +353,12 @@
   --search-border-radius: 5rem;
   --checkbox-border-width: 0.125rem;
 
-  /* --- Switch --- */
-  --switch-background-color: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-750)
-  );
-  --switch-background-color-checked: var(--primary-background-color);
-  --switch-thumb-background-color: white;
-  --switch-border-width: 0.1875rem;
+  /* --- Link Default Styling --- */
+  --link-color: var(--primary-color);
+  --link-focus-ring-color: var(--primary-focus-ring-color);
+  --link-text-decoration: underline;
 
-  /* --- Range --- */
-  --range-track-border-color: light-dark(
-    var(--color-slate-100),
-    var(--color-slate-850)
-  );
-  --range-track-border-color-active: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-800)
-  );
-  --range-thumb-border-color: var(--background-color);
-  --range-thumb-background-color: var(--secondary-background-color);
-  --range-thumb-background-color-active: var(--primary-background-color);
-
-  /* --- Table --- */
-  --table-header-font-weight: 600;
-  --table-header-border-width: 0.1875rem;
-
-  /* --- Details / Accordion --- */
-  --details-summary-color: var(--color);
-  --details-summary-color-hover: var(--primary-color-hover);
-  --details-summary-color-open: var(--color-muted);
-
-  /* --- Dialogs / Cards --- */
+  /* --- Header & Footer Styling when inside a component --- */
   --marginals-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
@@ -396,6 +381,10 @@
     var(--color-slate-850)
   );
 
+  /* --- Navigation --- */
+  --nav-link-gap: calc(var(--spacing) * 0.5);
+  --nav-breadcrumb-divider: ">";
+
   /* --- Progress Bar Default Styling --- */
   --progress-border-radius: var(--border-radius);
   --progress-background-color: var(--primary-background-color);
@@ -404,23 +393,38 @@
     var(--color-slate-850)
   );
 
-  /* --- Tooltip --- */
-  --tooltip-background-color: var(--contrast-background-color);
-  --tooltip-color: light-dark(white, var(--color-zinc-900));
-
-  /* --- Group --- */
-  --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
-    var(--primary-focus-ring-color);
-  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--input-border-color);
-  --group-button-spacing-horizontal: 1rem;
-
-  /* --- Navigation --- */
-  --nav-link-gap: calc(var(--spacing) * 0.5);
-  --nav-breadcrumb-divider: ">";
+  /* --- Range --- */
+  --range-track-border-color: light-dark(
+    var(--color-slate-100),
+    var(--color-slate-850)
+  );
+  --range-track-border-color-active: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-800)
+  );
+  --range-thumb-border-color: var(--background-color);
+  --range-thumb-background-color: var(--secondary-background-color);
+  --range-thumb-background-color-active: var(--primary-background-color);
 
   /* --- Sidebar --- */
   --sidebar-size: 25%;
+
+  /* --- Switch --- */
+  --switch-background-color: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-750)
+  );
+  --switch-background-color-checked: var(--primary-background-color);
+  --switch-thumb-background-color: white;
+  --switch-border-width: 0.1875rem;
+
+  /* --- Table --- */
+  --table-header-font-weight: 600;
+  --table-header-border-width: 0.1875rem;
+
+  /* --- Tooltip --- */
+  --tooltip-background-color: var(--contrast-background-color);
+  --tooltip-color: light-dark(white, var(--color-zinc-900));
 }
 
 /* ===== ICONS ===== */

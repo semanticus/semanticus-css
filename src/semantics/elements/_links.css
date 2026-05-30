@@ -1,15 +1,18 @@
-:is(a:not([role="button"]), [role="link"]) {
+:where(a:not([role="button"])),
+[role="link"] {
+  --_link-color: var(--link-color);
+  --_link-text-decoration: var(--link-text-decoration);
+  --_link-focus-ring-color: var(--link-focus-ring-color);
   --border-color: transparent;
-  --link-color: var(--primary-color);
 
   outline: none;
   padding: 0;
   background-color: transparent;
 
   border-color: transparent;
-  color: var(--link-color);
-  text-decoration: var(--link-text-decoration);
-  text-decoration-color: oklch(from var(--link-color) l c h / 0.3);
+  color: var(--_link-color);
+  text-decoration: var(--_link-text-decoration);
+  text-decoration-color: oklch(from var(--_link-color) l c h / 0.3);
   text-underline-offset: 0.125em;
   transition:
     background-color var(--transition),
@@ -23,19 +26,19 @@
     --border-color: transparent;
     --color: color-mix(
       in srgb,
-      var(--link-color) 70%,
+      var(--_link-color) 70%,
       var(--color-hover-effect)
     );
-    text-decoration-color: oklch(from var(--link-color) l c h / 0.85);
+    text-decoration-color: oklch(from var(--_link-color) l c h / 0.85);
   }
 
   &:is([aria-current]:not([aria-current="false"])) {
     font-weight: 500;
-    text-decoration-color: oklch(from var(--link-color) l c h / 0.6);
+    text-decoration-color: oklch(from var(--_link-color) l c h / 0.6);
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 var(--outline-width) var(--primary-focus-ring-color);
+    box-shadow: 0 0 0 var(--outline-width) var(--_link-focus-ring-color);
   }
 }
 
@@ -65,7 +68,7 @@ nav {
   a:not([role="button"]),
   [role="link"] {
     &:not(:hover) {
-      --link-text-decoration: none;
+      --_link-text-decoration: none;
     }
   }
 }

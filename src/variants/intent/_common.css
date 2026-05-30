@@ -1,9 +1,4 @@
 :is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
-  /* Links */
-  &:is(a:not([role="button"]), [role="link"]) {
-    --link-color: var(--intent-color);
-  }
-
   /* Buttons */
   &:is(
     button:not([role="link"]),
@@ -44,6 +39,9 @@
     light-dark(var(--color-slate-900), var(--color-slate-50)),
     transparent 90%
   );
+
+  /* --- Link Individual Styling --- */
+  --_link-color: var(--intent-color);
 
   /* --- Pane Individual Styling --- */
   --_pane-color: #fff;
