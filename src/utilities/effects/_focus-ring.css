@@ -10,25 +10,25 @@
 }
 
 .focus-ring-secondary {
-  --focus-ring-color: var(--color-secondary-focus-ring);
+  --focus-ring-color: var(--secondary-focus-ring-color);
 }
 
 .focus-ring-success {
-  --focus-ring-color: var(--color-success-focus-ring);
+  --focus-ring-color: var(--success-focus-ring-color);
 }
 
 .focus-ring-info {
-  --focus-ring-color: var(--color-info-focus-ring);
+  --focus-ring-color: var(--info-focus-ring-color);
 }
 
 .focus-ring-warning {
-  --focus-ring-color: var(--color-warning-focus-ring);
+  --focus-ring-color: var(--warning-focus-ring-color);
 }
 
 .focus-ring-danger {
-  --focus-ring-color: var(--color-danger-focus-ring);
+  --focus-ring-color: var(--danger-focus-ring-color);
 }
 
 .focus-ring-contrast {
-  --focus-ring-color: var(--color-contrast-focus-ring);
+  --focus-ring-color: var(--contrast-focus-ring-color);
 }
