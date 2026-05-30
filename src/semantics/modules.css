@@ -1,3 +1,5 @@
+@import "./elements/_root.css";
+
 @import "./attributes/_aria-busy.css";
 @import "./attributes/_aria-disabled.css";
 @import "./attributes/_disabled.css";
@@ -20,7 +22,6 @@
 @import "./elements/_del.css";
 @import "./elements/_details.css";
 @import "./elements/_dialog.css";
-@import "./elements/_document.css";
 @import "./elements/_embedded.css";
 @import "./elements/_fieldset.css";
 @import "./elements/_figure.css";

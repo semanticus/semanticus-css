@@ -1,5 +1,11 @@
-:where(:root),
-:where(:host) {
+/* modern-normalize */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:where(:root, :host) {
   background-color: var(--background-color);
   color: var(--typography-color);
   font-weight: var(--font-weight);
@@ -14,13 +20,6 @@
 
 ::selection {
   background-color: var(--selection-background-color);
-}
-
-/* modern-normalize */
-*,
-::before,
-::after {
-  box-sizing: border-box;
 }
 
 html {
