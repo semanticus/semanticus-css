@@ -33,11 +33,8 @@
       --button-color: var(--typography-color);
     }
 
-    /* Card & List & Group */
-    &:is(.card),
-    .card:is(ul, [role="list"], [role="group"]) > & {
-      --card-color: var(--typography-color) !important;
-    }
+    /* --- Card --- */
+    --_card-color: var(--typography-color) !important;
 
     /* --- Pane --- */
     --_pane-color: var(--typography-color) !important;

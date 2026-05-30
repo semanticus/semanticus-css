@@ -20,7 +20,7 @@
     --intent-border-color: oklch(
       from var(--contrast-background-color) l c h / var(--border-color-opacity)
     );
-    --card-color: light-dark(#fff, #191c20);
+    --_card-color: light-dark(#191c20, #fff);
     --_pane-color: light-dark(#191c20, #fff);
     --alert-color: light-dark(#fff, #191c20);
   }
@@ -78,21 +78,14 @@
     }
   }
 
-  /* Cards */
-  &:is(.card) {
-    --card-color: var(--intent-color, var(--color));
-    --marginals-background-color: light-dark(
-      color-mix(in srgb, var(--color-slate-50) 25%, white),
-      color-mix(in srgb, var(--color-slate-50), transparent 95%)
-    );
-  }
-
-  /* Card List & Group */
-  .card:is(ul, [role="list"], [role="group"]) > & {
-    --card-color: var(--intent-color, var(--color));
-    --card-background-color: transparent;
-    --card-border-color: var(--intent-border-color);
-  }
+  /* --- Card --- */
+  --_card-color: var(--intent-color, var(--color));
+  --_card-background-color: transparent;
+  --_card-border-color: var(--intent-border-color);
+  --_card-marginals-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-50), transparent 95%)
+  );
 
   /* --- Pane --- */
   --_pane-color: var(--intent-color, var(--color));

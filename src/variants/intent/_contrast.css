@@ -33,20 +33,13 @@
     --button-color: light-dark(#fff, #191c20);
   }
 
-  /* Cards */
-  &:is(.card) {
-    --card-color: light-dark(#fff, #191c20);
-    --marginals-background-color: color-mix(
-      in srgb,
-      light-dark(var(--color-slate-50), var(--color-slate-900)),
-      transparent 90%
-    );
-  }
-
-  /* Card List & Group */
-  .card:is(ul, [role="list"], [role="group"]) > & {
-    --card-color: light-dark(#fff, #191c20);
-  }
+  /* --- Card --- */
+  --_card-color: light-dark(#fff, #191c20);
+  --_card-marginals-background-color: color-mix(
+    in srgb,
+    light-dark(var(--color-slate-50), var(--color-slate-900)),
+    transparent 90%
+  );
 
   /* --- Pane --- */
   --_pane-color: light-dark(#fff, #191c20);

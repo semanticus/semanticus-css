@@ -3,7 +3,7 @@
   &:is(.card) > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
-      var(--card-background-color),
+      var(--_card-background-color),
       var(--color-hover-effect) 15%
     );
   }

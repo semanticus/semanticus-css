@@ -30,26 +30,17 @@
     }
   }
 
-  /* Cards */
-  &:is(.card) {
-    --card-color: #fff;
-    --card-background-color: var(--intent-background-color);
-    --card-border-color: var(--intent-border-color);
-    --marginals-background-color: color-mix(
-      in srgb,
-      light-dark(var(--color-slate-900), var(--color-slate-50)),
-      transparent 90%
-    );
-  }
+  /* --- Card --- */
+  --_card-color: #fff;
+  --_card-background-color: var(--intent-background-color);
+  --_card-border-color: var(--intent-border-color);
+  --_card-marginals-background-color: color-mix(
+    in srgb,
+    light-dark(var(--color-slate-900), var(--color-slate-50)),
+    transparent 90%
+  );
 
-  /* Card List & Group */
-  .card:is(ul, [role="list"], [role="group"]) > & {
-    --card-color: #fff;
-    --card-background-color: var(--intent-background-color);
-    --card-border-color: var(--intent-border-color);
-  }
-
-  /* Panes */
+  /* --- Pane --- */
   --_pane-color: #fff;
   --_pane-background-color: var(--intent-background-color);
 
