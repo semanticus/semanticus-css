@@ -304,8 +304,8 @@
   --buttons-font-size: 1rem;
   --buttons-color: white;
   --buttons-color-hover: white;
-  --buttons-spacing-vertical: var(--input-spacing-vertical);
-  --buttons-spacing-horizontal: var(--input-spacing-horizontal);
+  --buttons-spacing-vertical: var(--inputs-spacing-vertical);
+  --buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
   --buttons-background-color: var(--primary-background-color);
   --buttons-background-color-hover: var(--primary-background-color-hover);
   --buttons-border-radius: var(--border-radius);
@@ -335,35 +335,59 @@
   --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
     var(--primary-focus-ring-color);
-  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--input-border-color);
+  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--inputs-border-color);
   --group-button-spacing-horizontal: 1rem;
 
-  /* --- Input / Form --- */
-  --input-spacing-vertical: 0.5rem;
-  --input-spacing-horizontal: 0.7rem;
-  --input-background-color: light-dark(
+  /* --- Inputs (input, select and textarea) Default Styling --- */
+  --inputs-spacing-vertical: 0.5rem;
+  --inputs-spacing-horizontal: 0.7rem;
+  --inputs-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-900), var(--color-slate-850))
   );
-  --input-background-color-selected: light-dark(
+  --inputs-background-color-selected: light-dark(
     var(--color-slate-100),
     var(--color-slate-800)
   );
-  --input-background-color-focus: light-dark(
+  --inputs-background-color-focus: light-dark(
     white,
     color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
   );
-  --input-border-color: light-dark(
+  --inputs-border-color: light-dark(
     var(--color-slate-150),
     var(--color-slate-800)
   );
-  --input-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
-  --input-placeholder-color: var(--color-muted);
-  --input-border-color-focus: var(--primary-background-color);
-  --input-opacity-disabled: 0.5;
-  --input-outline-width: 0.0625rem;
+  --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
+  --inputs-placeholder-color: var(--color-muted);
+  --inputs-border-color-focus: var(--primary-background-color);
+  --inputs-opacity-disabled: 0.5;
+  --inputs-outline-width: 0.0625rem;
+
+  /* --- Checkbox and Radio Input Default Styling --- */
+  --input-checkbox-border-width: 0.125rem;
+
+  /* --- Range Input Default Styling --- */
+  --input-range-track-border-color: light-dark(
+    var(--color-slate-100),
+    var(--color-slate-850)
+  );
+  --input-range-track-border-color-active: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-800)
+  );
+  --input-range-thumb-border-color: var(--background-color);
+  --input-range-thumb-background-color: var(--secondary-background-color);
+  --input-range-thumb-background-color-active: var(--primary-background-color);
+
+  /* --- Switch Input Default Styling --- */
+  --input-switch-background-color: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-750)
+  );
+  --input-switch-background-color-checked: var(--primary-background-color);
+  --input-switch-thumb-background-color: white;
+  --input-switch-border-width: 0.1875rem;
   --search-border-radius: 5rem;
-  --checkbox-border-width: 0.125rem;
 
   /* --- Links (anchor and role="link") Default Styling --- */
   --links-color: var(--primary-color);
@@ -405,30 +429,8 @@
     var(--color-slate-850)
   );
 
-  /* --- Range --- */
-  --range-track-border-color: light-dark(
-    var(--color-slate-100),
-    var(--color-slate-850)
-  );
-  --range-track-border-color-active: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-800)
-  );
-  --range-thumb-border-color: var(--background-color);
-  --range-thumb-background-color: var(--secondary-background-color);
-  --range-thumb-background-color-active: var(--primary-background-color);
-
   /* --- Sidebar --- */
   --sidebar-size: 25%;
-
-  /* --- Switch --- */
-  --switch-background-color: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-750)
-  );
-  --switch-background-color-checked: var(--primary-background-color);
-  --switch-thumb-background-color: white;
-  --switch-border-width: 0.1875rem;
 
   /* --- Table --- */
   --table-header-font-weight: 600;

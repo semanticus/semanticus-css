@@ -31,14 +31,14 @@
   --spacing-scale: 1;
   --spacing: calc(var(--spacing-base) * var(--spacing-scale));
   --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
-  --input-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
-  --input-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
+  --inputs-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
+  --inputs-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
   /* Shadows – used by [role="group"] and [role="search"] button/input combos */
   --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Default (no shadow) */
   --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
     var(--primary-focus-ring-color); /* Focus ring when a button inside the group is focused */
-  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--input-border-color); /* Focus ring when an input inside the group is focused */
+  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--inputs-border-color); /* Focus ring when an input inside the group is focused */
 
   /* Navigation – spacing and breadcrumb configuration */
   --nav-link-gap: calc(var(--spacing) * 0.5); /* padding inside nav links */

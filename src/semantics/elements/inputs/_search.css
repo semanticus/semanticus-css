@@ -15,19 +15,19 @@ input:not(
     [type="range"],
     [type="file"]
   )[type="search"] {
-  padding-inline-start: calc(var(--input-spacing-horizontal) + 1.75rem);
+  padding-inline-start: calc(var(--inputs-spacing-horizontal) + 1.75rem);
   background-image: var(--icon-search);
-  background-position: left calc(var(--input-spacing-horizontal) + 0.125rem)
+  background-position: left calc(var(--inputs-spacing-horizontal) + 0.125rem)
     center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 
   &[aria-invalid] {
-    padding-inline-start: calc(var(--input-spacing-horizontal) + 1.75rem);
+    padding-inline-start: calc(var(--inputs-spacing-horizontal) + 1.75rem);
     /* Using calc with var to workaround LightningCSS minification bug with 3-value syntax */
     background-position:
-      left calc(var(--input-spacing-horizontal) * 0 + 1.125rem) center,
-      right calc(var(--input-spacing-horizontal) * 0 + 0.75rem) center;
+      left calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center,
+      right calc(var(--inputs-spacing-horizontal) * 0 + 0.75rem) center;
   }
 
   &[aria-invalid="false"] {
@@ -47,12 +47,12 @@ input:not(
     [type="file"]
   )[type="search"] {
   background-position: right
-    calc(var(--input-spacing-horizontal) * 0 + 1.125rem) center;
+    calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center;
 
   &[aria-invalid] {
     /* Using calc with var to workaround LightningCSS minification bug with 3-value syntax */
     background-position:
-      right calc(var(--input-spacing-horizontal) * 0 + 1.125rem) center,
-      left calc(var(--input-spacing-horizontal) * 0 + 0.75rem) center;
+      right calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center,
+      left calc(var(--inputs-spacing-horizontal) * 0 + 0.75rem) center;
   }
 }

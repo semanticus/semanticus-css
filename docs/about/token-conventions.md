@@ -10,8 +10,8 @@ No memorizing role names — if you know CSS, you know the tokens.
 | Instead of | Use | Because |
 | --- | --- | --- |
 | `--color-primary-fill` | `--primary-background-color` | `background-color` is the property, prefixed by the variant. |
-| `--switch-thumb-glow` | `--switch-thumb-box-shadow` | `box-shadow` is the property, prefixed by the component. |
-| `--input-border-focus` | `--input-border-color-focus` | `border-color` is the property, followed by the state. |
+| `--input-switch-thumb-glow` | `--input-switch-thumb-box-shadow` | `box-shadow` is the property, prefixed by the component. |
+| `--inputs-border-focus` | `--inputs-border-color-focus` | `border-color` is the property, followed by the state. |
 
 Every token name is a CSS property name, optionally prefixed by a component or variant scope and suffixed by an interaction state.
 If you know the CSS property you want to change, you know the token name.
@@ -127,19 +127,19 @@ These fall back to the global tokens.
   --card-header-background-color
   --card-footer-background-color
 
-  --input-background-color
-  --input-background-color-focus
-  --input-color
-  --input-border-color
-  --input-border-color-focus
-  --input-placeholder-color
-  --input-opacity-disabled
+  --inputs-background-color
+  --inputs-background-color-focus
+  --inputs-color
+  --inputs-border-color
+  --inputs-border-color-focus
+  --inputs-placeholder-color
+  --inputs-opacity-disabled
 
   --marginals-background-color
 
-  --switch-background-color
-  --switch-background-color-checked
-  --switch-thumb-background-color
+  --input-switch-background-color
+  --input-switch-background-color-checked
+  --input-switch-thumb-background-color
 
   --progress-background-color
   --progress-track-background-color
@@ -271,8 +271,8 @@ State always comes last. Multiple states are hyphenated in interaction order:
 :host {
   --buttons-background-color-hover
   --buttons-background-color-active
-  --switch-background-color-checked
-  --switch-thumb-background-color-checked-hover   /* checked AND hovered */
+  --input-switch-background-color-checked
+  --input-switch-thumb-background-color-checked-hover   /* checked AND hovered */
 }
 ```
 
@@ -284,8 +284,8 @@ Some tokens have the same value in both light and dark mode. Define them as plai
 :root,
 :host {
   --buttons-box-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
-  --input-opacity-disabled: 0.5;                 /* always half-opacity */
-  --switch-thumb-background-color: white;        /* thumb always white */
+  --inputs-opacity-disabled: 0.5;                 /* always half-opacity */
+  --input-switch-thumb-background-color: white;        /* thumb always white */
 }
 ```
 
@@ -316,8 +316,8 @@ that don't map to a single CSS property:
 :root,
 :host {
   --spacing                       /* base spacing unit (used in padding, margin, gap) */
-  --input-spacing-vertical        /* input internal vertical padding */
-  --input-spacing-horizontal      /* input internal horizontal padding */
+  --inputs-spacing-vertical        /* input internal vertical padding */
+  --inputs-spacing-horizontal      /* input internal horizontal padding */
   --typography-spacing-vertical   /* vertical margin between typographic blocks */
 }
 ```
@@ -390,5 +390,5 @@ If you're upgrading from an earlier version that used role-based names:
 | `--color-text-muted` | `--color-muted` | Muted text variant |
 | `--color-border` | `--border-color` | Global border color |
 | `--dialog-fill` | `--pane-background-color` | Component + property |
-| `--input-border-focus` | `--input-border-color-focus` | State at end, `border-color` |
-| `--switch-thumb-glow` | `--switch-thumb-box-shadow` | Property name replaces role name |
+| `--inputs-border-focus` | `--inputs-border-color-focus` | State at end, `border-color` |
+| `--input-switch-thumb-glow` | `--input-switch-thumb-box-shadow` | Property name replaces role name |

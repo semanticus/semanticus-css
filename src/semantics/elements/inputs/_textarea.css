@@ -8,7 +8,7 @@ textarea {
 
 :where(textarea[aria-invalid]) {
   --icon-height: calc(
-    1rem * var(--line-height) + var(--input-spacing-vertical) * 2 +
+    1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
       var(--border-width) * 2
   );
   background-position: top right 0.75rem;

@@ -4,10 +4,10 @@ select {
   text-transform: none;
 
   &:not([multiple], [size]) {
-    padding-right: calc(var(--input-spacing-horizontal) + 1.5rem);
-    padding-left: var(--input-spacing-horizontal);
-    padding-inline-start: var(--input-spacing-horizontal);
-    padding-inline-end: calc(var(--input-spacing-horizontal) + 1.5rem);
+    padding-right: calc(var(--inputs-spacing-horizontal) + 1.5rem);
+    padding-left: var(--inputs-spacing-horizontal);
+    padding-inline-start: var(--inputs-spacing-horizontal);
+    padding-inline-end: calc(var(--inputs-spacing-horizontal) + 1.5rem);
     background-image: var(--icon-chevron);
     background-position: center right 0.75rem;
     background-size: 1rem auto;
@@ -15,8 +15,8 @@ select {
   }
 
   &[multiple] option:checked {
-    background: var(--input-background-color-selected);
-    color: var(--input-color);
+    background: var(--inputs-background-color-selected);
+    color: var(--inputs-color);
   }
 }
 

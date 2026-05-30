@@ -50,7 +50,7 @@
   [type="month"],
   [type="time"],
   [type="week"] {
-    padding-right: var(--input-spacing-horizontal);
+    padding-right: var(--inputs-spacing-horizontal);
     background-image: none;
   }
 }

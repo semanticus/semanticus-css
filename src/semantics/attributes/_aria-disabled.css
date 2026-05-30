@@ -37,7 +37,7 @@ fieldset[aria-disabled="true"]
     select,
     textarea
   ) {
-  opacity: var(--input-opacity-disabled);
+  opacity: var(--inputs-opacity-disabled);
   pointer-events: none;
 }
 

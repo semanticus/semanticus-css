@@ -655,7 +655,7 @@ const variableGroups = [
     label: "Form Inputs",
     vars: [
       {
-        name: "--input-background-color",
+        name: "--inputs-background-color",
         label: "Input Background",
         desc: "Default input background.",
         type: varType(
@@ -665,7 +665,7 @@ const variableGroups = [
           "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))",
       },
       {
-        name: "--input-background-color-selected",
+        name: "--inputs-background-color-selected",
         label: "Input Selected BG",
         desc: "Input background when selected.",
         type: varType(
@@ -674,7 +674,7 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-100), var(--color-slate-800))",
       },
       {
-        name: "--input-background-color-focus",
+        name: "--inputs-background-color-focus",
         label: "Input Active BG",
         desc: "Input background when active/focused.",
         type: varType(
@@ -684,7 +684,7 @@ const variableGroups = [
           "light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))",
       },
       {
-        name: "--input-border-color",
+        name: "--inputs-border-color",
         label: "Input Border",
         desc: "Input border color.",
         type: varType(
@@ -693,7 +693,7 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-150), var(--color-slate-800))",
       },
       {
-        name: "--input-color",
+        name: "--inputs-color",
         label: "Input Text",
         desc: "Text color inside inputs.",
         type: varType(
@@ -702,14 +702,14 @@ const variableGroups = [
         default: "light-dark(var(--color-zinc-850), var(--color-zinc-100))",
       },
       {
-        name: "--input-placeholder-color",
+        name: "--inputs-placeholder-color",
         label: "Placeholder Text",
         desc: "Placeholder text color.",
         type: varType("var(--color-muted)"),
         default: "var(--color-muted)",
       },
       {
-        name: "--input-border-color-focus",
+        name: "--inputs-border-color-focus",
         label: "Input Focus Border",
         desc: "Border color when input is focused.",
         type: varType("var(--primary-background-color)"),
@@ -721,7 +721,7 @@ const variableGroups = [
     label: "Switch",
     vars: [
       {
-        name: "--switch-background-color",
+        name: "--input-switch-background-color",
         label: "Switch Track",
         desc: "Switch track background when unchecked.",
         type: varType(
@@ -730,14 +730,14 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
       },
       {
-        name: "--switch-background-color-checked",
+        name: "--input-switch-background-color-checked",
         label: "Switch Track Checked",
         desc: "Switch track background when checked.",
         type: varType("var(--primary-background-color)"),
         default: "var(--primary-background-color)",
       },
       {
-        name: "--switch-thumb-background-color",
+        name: "--input-switch-thumb-background-color",
         label: "Switch Thumb",
         desc: "Switch thumb (knob) color.",
         type: "color",
@@ -749,7 +749,7 @@ const variableGroups = [
     label: "Range",
     vars: [
       {
-        name: "--range-track-border-color",
+        name: "--input-range-track-border-color",
         label: "Range Track Border",
         desc: "Range slider track border.",
         type: varType(
@@ -758,7 +758,7 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-100), var(--color-slate-850))",
       },
       {
-        name: "--range-track-border-color-active",
+        name: "--input-range-track-border-color-active",
         label: "Range Track Active Border",
         desc: "Range slider track border when active.",
         type: varType(
@@ -767,21 +767,21 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-200), var(--color-slate-800))",
       },
       {
-        name: "--range-thumb-border-color",
+        name: "--input-range-thumb-border-color",
         label: "Range Thumb Border",
         desc: "Range slider thumb border.",
         type: varType("var(--background-color)"),
         default: "var(--background-color)",
       },
       {
-        name: "--range-thumb-background-color",
+        name: "--input-range-thumb-background-color",
         label: "Range Thumb Fill",
         desc: "Range slider thumb fill.",
         type: varType("var(--secondary-background-color)"),
         default: "var(--secondary-background-color)",
       },
       {
-        name: "--range-thumb-background-color-active",
+        name: "--input-range-thumb-background-color-active",
         label: "Range Thumb Active",
         desc: "Range slider thumb fill when active.",
         type: varType("var(--primary-background-color)"),

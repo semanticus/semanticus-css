@@ -26,7 +26,7 @@
   --primary-background-color: var(--color-green-550);
 
   /* Component tokens */
-  --switch-thumb-box-shadow: light-dark(
+  --input-switch-thumb-box-shadow: light-dark(
     0 0 0 oklch(0% 0 0deg / 0),
     0 0 0 oklch(0% 0 0deg / 0)
   );

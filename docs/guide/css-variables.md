@@ -139,8 +139,8 @@ h1, h2, h3, h4, h5, h6 {
   --spacing-scale: 1;
   --spacing: calc(var(--spacing-base) * var(--spacing-scale));
   --typography-spacing-vertical: 1rem;
-  --input-spacing-vertical: 0.5rem;
-  --input-spacing-horizontal: 0.7rem;
+  --inputs-spacing-vertical: 0.5rem;
+  --inputs-spacing-horizontal: 0.7rem;
 }
 ```
 
@@ -184,13 +184,13 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --input-background-color: light-dark(#fbfcfc, #1c212c);
-  --input-background-color-focus: light-dark(white, #1a1f28);
-  --input-border-color: light-dark(#cfd5e2, #2a3140);
-  --input-color: light-dark(#23262c, #e0e3e7);
-  --input-placeholder-color: var(--color-muted);
-  --input-border-color-focus: var(--primary-background-color);
-  --input-opacity-disabled: 0.5;
+  --inputs-background-color: light-dark(#fbfcfc, #1c212c);
+  --inputs-background-color-focus: light-dark(white, #1a1f28);
+  --inputs-border-color: light-dark(#cfd5e2, #2a3140);
+  --inputs-color: light-dark(#23262c, #e0e3e7);
+  --inputs-placeholder-color: var(--color-muted);
+  --inputs-border-color-focus: var(--primary-background-color);
+  --inputs-opacity-disabled: 0.5;
 }
 ```
 
@@ -216,9 +216,9 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --switch-background-color: light-dark(#bfc7d9, #333c4e);
-  --switch-background-color-checked: var(--primary-background-color);
-  --switch-thumb-background-color: white;
+  --input-switch-background-color: light-dark(#bfc7d9, #333c4e);
+  --input-switch-background-color-checked: var(--primary-background-color);
+  --input-switch-thumb-background-color: white;
 }
 ```
 

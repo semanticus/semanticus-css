@@ -7,7 +7,7 @@ input:not(
   [type="file"]
 ),
 :where(select, textarea) {
-  --outline-width: var(--input-outline-width);
+  --outline-width: var(--inputs-outline-width);
 }
 
 input,
@@ -70,7 +70,7 @@ input {
 
 input:not([type="checkbox"], [type="radio"], [type="range"]) {
   height: calc(
-    1rem * var(--line-height) + var(--input-spacing-vertical) * 2 +
+    1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
       var(--border-width) * 2
   );
 }
@@ -94,7 +94,7 @@ input:not(
 select,
 textarea {
   appearance: none;
-  padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
+  padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
 }
 
 label > :where(input, select, textarea) {
@@ -104,15 +104,15 @@ label > :where(input, select, textarea) {
 input,
 select,
 textarea {
-  --background-color: var(--input-background-color);
-  --border-color: var(--input-border-color);
+  --background-color: var(--inputs-background-color);
+  --border-color: var(--inputs-border-color);
 
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
   background-color: var(--background-color);
-  box-shadow: var(--input-box-shadow, none);
-  color: var(--input-color);
+  box-shadow: var(--inputs-box-shadow, none);
+  color: var(--inputs-color);
   font-weight: var(--font-weight);
   transition:
     background-color var(--transition),
@@ -130,7 +130,7 @@ input:not(
     [readonly]
   ):is(:active, :focus),
 :where(select, textarea):not([readonly]):is(:active, :focus) {
-  --background-color: var(--input-background-color-focus);
+  --background-color: var(--inputs-background-color-focus);
 }
 
 input:not(
@@ -141,7 +141,7 @@ input:not(
     [readonly]
   ):is(:active, :focus),
 :where(select, textarea):not([readonly]):is(:active, :focus) {
-  --border-color: var(--input-border-color-focus);
+  --border-color: var(--inputs-border-color-focus);
 }
 
 input:not(
@@ -153,7 +153,8 @@ input:not(
     [readonly]
   ):focus,
 :where(select, textarea):not([readonly]):focus {
-  --input-box-shadow: 0 0 0 var(--outline-width) var(--input-border-color-focus);
+  --inputs-box-shadow: 0 0 0 var(--outline-width)
+    var(--inputs-border-color-focus);
 }
 
 input:not([type="submit"], [type="button"], [type="reset"])[disabled],
@@ -166,7 +167,7 @@ label[aria-disabled="true"],
     select,
     textarea
   ) {
-  opacity: var(--input-opacity-disabled);
+  opacity: var(--inputs-opacity-disabled);
   pointer-events: none;
 }
 
@@ -186,10 +187,10 @@ label[aria-disabled="true"] input[disabled] {
       [type="range"]
     )[aria-invalid]
 ) {
-  padding-right: calc(var(--input-spacing-horizontal) + 1.5rem);
-  padding-left: var(--input-spacing-horizontal);
-  padding-inline-start: var(--input-spacing-horizontal);
-  padding-inline-end: calc(var(--input-spacing-horizontal) + 1.5rem);
+  padding-right: calc(var(--inputs-spacing-horizontal) + 1.5rem);
+  padding-left: var(--inputs-spacing-horizontal);
+  padding-inline-start: var(--inputs-spacing-horizontal);
+  padding-inline-end: calc(var(--inputs-spacing-horizontal) + 1.5rem);
   background-position: center right 0.75rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
@@ -241,7 +242,8 @@ input:not([type="checkbox"], [type="radio"])[aria-invalid="false"]:is(
   ),
 select[aria-invalid="false"]:is(:active, :focus),
 textarea[aria-invalid="false"]:is(:active, :focus) {
-  --input-box-shadow: 0 0 0 var(--outline-width) var(--success-background-color);
+  --inputs-box-shadow: 0 0 0 var(--outline-width)
+    var(--success-background-color);
 }
 
 :is(input, select, textarea)[aria-invalid="true"] {
@@ -258,7 +260,7 @@ input:not([type="checkbox"], [type="radio"])[aria-invalid="true"]:is(
   ),
 select[aria-invalid="true"]:is(:active, :focus),
 textarea[aria-invalid="true"]:is(:active, :focus) {
-  --input-box-shadow: 0 0 0 var(--outline-width) var(--danger-background-color);
+  --inputs-box-shadow: 0 0 0 var(--outline-width) var(--danger-background-color);
 }
 
 :where(
@@ -275,7 +277,7 @@ textarea[aria-invalid="true"]:is(:active, :focus) {
 input::placeholder,
 textarea::placeholder,
 select:invalid {
-  color: var(--input-placeholder-color);
+  color: var(--inputs-placeholder-color);
   opacity: 1;
 }
 

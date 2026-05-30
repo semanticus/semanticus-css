@@ -3,7 +3,7 @@
 [type="file"] {
   --color: var(--color-muted);
   margin-left: calc(var(--outline-width) * -1);
-  padding: calc(var(--input-spacing-vertical) * 0.5) 0;
+  padding: calc(var(--inputs-spacing-vertical) * 0.5) 0;
   padding-left: var(--outline-width);
   border: 0;
   border-radius: 0;
@@ -11,8 +11,8 @@
 
   &::file-selector-button {
     margin-right: calc(var(--spacing) / 2);
-    padding: calc(var(--input-spacing-vertical) * 0.5)
-      var(--input-spacing-horizontal);
+    padding: calc(var(--inputs-spacing-vertical) * 0.5)
+      var(--inputs-spacing-horizontal);
   }
 
   &:is(:hover, :active, :focus)::file-selector-button {

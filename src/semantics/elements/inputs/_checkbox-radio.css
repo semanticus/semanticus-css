@@ -2,11 +2,11 @@
 
 [type="checkbox"],
 [type="radio"] {
-  --border-width: var(--checkbox-border-width);
+  --border-width: var(--input-checkbox-border-width);
 }
 
 [type="checkbox"][role="switch"] {
-  --border-width: var(--switch-border-width);
+  --border-width: var(--input-switch-border-width);
 }
 
 [type="checkbox"],
@@ -77,8 +77,8 @@ label:has([type="checkbox"], [type="radio"]) {
 }
 
 [type="checkbox"][role="switch"] {
-  --background-color: var(--switch-background-color);
-  --color: var(--switch-thumb-background-color);
+  --background-color: var(--input-switch-background-color);
+  --color: var(--input-switch-thumb-background-color);
   width: 2.25em;
   height: 1.25em;
   border: var(--border-width) solid var(--border-color);
@@ -87,7 +87,7 @@ label:has([type="checkbox"], [type="radio"]) {
   line-height: 1.25em;
 
   &:not([aria-invalid]) {
-    --border-color: var(--switch-background-color);
+    --border-color: var(--input-switch-background-color);
   }
 
   &:before {
@@ -96,19 +96,19 @@ label:has([type="checkbox"], [type="radio"]) {
     height: 100%;
     border-radius: 50%;
     background-color: var(--color);
-    box-shadow: var(--switch-thumb-box-shadow);
+    box-shadow: var(--input-switch-thumb-box-shadow);
     content: "";
     transition: margin 0.1s ease-in-out;
   }
 
   &:focus {
-    --background-color: var(--switch-background-color);
-    --border-color: var(--switch-background-color);
+    --background-color: var(--input-switch-background-color);
+    --border-color: var(--input-switch-background-color);
   }
 
   &:checked {
-    --background-color: var(--switch-background-color-checked);
-    --border-color: var(--switch-background-color-checked);
+    --background-color: var(--input-switch-background-color-checked);
+    --border-color: var(--input-switch-background-color-checked);
     background-image: none;
 
     &::before {

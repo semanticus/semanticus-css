@@ -350,13 +350,13 @@ const variableGroups = [
         default: "1rem",
       },
       {
-        name: "--input-spacing-vertical",
+        name: "--inputs-spacing-vertical",
         label: "Input Vertical",
         desc: "Vertical padding inside form inputs.",
         default: "0.5rem",
       },
       {
-        name: "--input-spacing-horizontal",
+        name: "--inputs-spacing-horizontal",
         label: "Input Horizontal",
         desc: "Horizontal padding inside form inputs.",
         default: "0.7rem",
@@ -434,7 +434,7 @@ const variableGroups = [
         name: "--group-box-shadow-focus-input",
         label: "Group Input Focus",
         desc: "Focus shadow when an input inside the group is focused.",
-        default: "0 0 0 0.0625rem var(--input-border-color)",
+        default: "0 0 0 0.0625rem var(--inputs-border-color)",
       },
       {
         name: "--group-button-spacing-horizontal",
@@ -465,7 +465,7 @@ const variableGroups = [
     label: "Form Details",
     vars: [
       {
-        name: "--input-outline-width",
+        name: "--inputs-outline-width",
         label: "Input Outline Width",
         desc: "Focus-ring width for text inputs.",
         default: "0.0625rem",
@@ -477,13 +477,13 @@ const variableGroups = [
         default: "5rem",
       },
       {
-        name: "--checkbox-border-width",
+        name: "--input-checkbox-border-width",
         label: "Checkbox Border Width",
         desc: "Border width for checkboxes and radios.",
         default: "0.125rem",
       },
       {
-        name: "--switch-border-width",
+        name: "--input-switch-border-width",
         label: "Switch Border Width",
         desc: "Border width for toggle switches.",
         default: "0.1875rem",
@@ -511,7 +511,7 @@ const variableGroups = [
     label: "Form States & Misc",
     vars: [
       {
-        name: "--input-opacity-disabled",
+        name: "--inputs-opacity-disabled",
         label: "Disabled Opacity",
         desc: "Opacity for disabled form inputs.",
         default: "0.5",
