@@ -906,7 +906,7 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-100), var(--color-slate-850))",
       },
       {
-        name: "--progress-background-color",
+        name: "--progress-color",
         label: "Progress Fill",
         desc: "Progress bar filled portion.",
         type: varType("var(--primary-background-color)"),

@@ -259,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 ```css
 :root {
   --progress-track-background-color: light-dark(#dfe3eb, #202632);
-  --progress-background-color: var(--primary-background-color);
+  --progress-color: var(--primary-background-color);
 }
 ```
 

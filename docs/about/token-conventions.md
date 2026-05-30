@@ -141,7 +141,7 @@ These fall back to the global tokens.
   --input-switch-background-color-checked
   --input-switch-thumb-background-color
 
-  --progress-background-color
+  --progress-color
   --progress-track-background-color
 
   --nav-background-color

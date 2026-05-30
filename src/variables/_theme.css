@@ -413,7 +413,7 @@
 
   /* --- Progress Bar --- */
   --progress-border-radius: var(--border-radius);
-  --progress-background-color: var(--primary-background-color);
+  --progress-color: var(--primary-background-color);
   --progress-track-background-color: light-dark(
     var(--color-slate-100),
     var(--color-slate-850)

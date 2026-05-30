@@ -1,6 +1,6 @@
 progress {
   --_progress-track-background-color: var(--progress-track-background-color);
-  --_progress-background-color: var(--progress-background-color);
+  --_progress-color: var(--progress-color);
   --_progress-border-radius: var(--progress-border-radius);
 
   display: inline-block;
@@ -12,9 +12,9 @@ progress {
   border: 0;
   border-radius: var(--_progress-border-radius);
   background-color: var(--_progress-track-background-color);
-  color: var(--_progress-background-color);
+  color: var(--_progress-color);
   vertical-align: baseline;
-  accent-color: var(--primary-background-color);
+  accent-color: var(--_progress-color);
 
   &::-webkit-progress-bar {
     border-radius: var(--_progress-border-radius);
@@ -22,12 +22,12 @@ progress {
   }
 
   &[value]::-webkit-progress-value {
-    background-color: var(--_progress-background-color);
+    background-color: var(--_progress-color);
     transition: inline-size var(--transition);
   }
 
   &::-moz-progress-bar {
-    background-color: var(--_progress-background-color);
+    background-color: var(--_progress-color);
   }
 }
 
@@ -36,7 +36,7 @@ progress {
     background: var(--_progress-track-background-color)
       linear-gradient(
         to right,
-        var(--_progress-background-color) 30%,
+        var(--_progress-color) 30%,
         var(--_progress-track-background-color) 30%
       )
       top left/150% 150% no-repeat;
