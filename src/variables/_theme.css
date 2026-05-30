@@ -305,13 +305,6 @@
   --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);
   --button-box-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
 
-  /* --- Pane --- */
-  --pane-color: var(--color);
-  --pane-background-color: var(--background-color);
-  --pane-spacing: var(--spacing);
-  --pane-border-color: var(--background-color);
-  --pane-border-width: 0;
-
   /* --- Code --- */
   --code-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 75%, white),
