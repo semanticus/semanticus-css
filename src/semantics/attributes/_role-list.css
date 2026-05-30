@@ -1,4 +1,6 @@
 [role="list"] {
+  --_lists-marker-color: var(--lists-marker-color);
+
   color: var(--typography-color);
   font-style: normal;
   font-weight: var(--font-weight);
@@ -15,7 +17,7 @@
     margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
 
     &::marker {
-      color: var(--primary-color);
+      color: var(--_lists-marker-color);
     }
   }
 }

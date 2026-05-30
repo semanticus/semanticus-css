@@ -13,11 +13,7 @@
 }
 
 ::selection {
-  background-color: color-mix(
-    in srgb,
-    var(--primary-background-color),
-    white 75%
-  );
+  background-color: var(--selection-background-color);
 }
 
 /* modern-normalize */

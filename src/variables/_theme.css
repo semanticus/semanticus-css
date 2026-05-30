@@ -57,6 +57,11 @@
     color-mix(in srgb, var(--color-slate-950), var(--color-slate-900))
   );
   --background-color-opacity: 100%;
+  --selection-background-color: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    white 75%
+  );
   --backdrop-background-color: light-dark(
     oklch(
       from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c
@@ -296,8 +301,9 @@
 
   /* --- Details --- */
   /* Affects accordions and dropdowns */
+  --details-color-focus: var(--primary-color-hover);
+  --details-focus-ring-color: var(--primary-focus-ring-color);
   --details-summary-color: var(--color);
-  --details-summary-color-hover: var(--primary-color-hover);
   --details-summary-color-open: var(--color-muted);
   --details-menu-background-color: light-dark(white, var(--color-slate-900));
   --details-menu-border-color: light-dark(
@@ -313,9 +319,8 @@
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
   --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
+  --group-box-accent-shadow: 0 0 0 var(--outline-width)
     var(--primary-focus-ring-color);
-  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--inputs-border-color);
   --group-button-spacing-horizontal: 1rem;
 
   /* --- Headings --- */
@@ -390,6 +395,9 @@
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
   --search-border-radius: 5rem;
+
+  /* --- Lists (ul, ol, dl and role="list") --- */
+  --lists-marker-color: var(--primary-color);
 
   /* --- Links (anchor and role="link") --- */
   --links-color: var(--primary-color);

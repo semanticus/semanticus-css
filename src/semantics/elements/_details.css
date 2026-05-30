@@ -46,14 +46,14 @@ details {
       outline: none;
 
       &:not([role]) {
-        color: var(--details-summary-color-hover);
+        color: var(--details-color-focus);
       }
     }
 
     &:focus-visible:not([role]) {
-      outline: var(--outline-width) solid var(--primary-focus-ring-color);
+      outline: var(--outline-width) solid var(--details-focus-ring-color);
       outline-offset: calc(var(--spacing, 1rem) * 0.5);
-      color: var(--primary-color);
+      color: var(--details-color-focus);
     }
 
     &[role="button"] {
@@ -61,7 +61,7 @@ details {
       text-align: left;
 
       &:focus-visible {
-        outline: var(--outline-width) solid var(--primary-focus-ring-color);
+        outline: var(--outline-width) solid var(--details-focus-ring-color);
         outline-offset: calc(var(--spacing, 1rem) * 0.5);
       }
 
@@ -286,7 +286,7 @@ nav details:has(> summary[aria-haspopup="menu"]) {
   }
 
   & > :where(summary:not([role]):focus-visible) {
-    box-shadow: 0 0 0 var(--outline-width) var(--primary-focus-ring-color);
+    box-shadow: 0 0 0 var(--outline-width) var(--details-focus-ring-color);
   }
 
   & summary:focus-visible {
