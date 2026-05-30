@@ -317,6 +317,24 @@
     var(--color-slate-850)
   );
 
+  /* --- Dialog --- */
+  --dialog-spacing: var(--spacing);
+  --dialog-border-color: var(--border-color);
+  --dialog-border-width: var(--border-width);
+  --dialog-border-radius: var(--border-radius);
+  --dialog-background-color: var(--background-color);
+  --dialog-box-shadow: var(--box-shadow);
+  /* Affects dialogs and cards's header & footers */
+  --dialog-marginals-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-50), transparent 95%)
+  );
+  --dialog-marginals-border-color: color-mix(
+    in srgb,
+    light-dark(var(--color-slate-900), var(--color-zinc-350)),
+    transparent 90%
+  );
+
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
   --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -404,17 +422,6 @@
   --links-color: var(--primary-color);
   --links-focus-ring-color: var(--primary-focus-ring-color);
   --links-text-decoration: underline;
-
-  /* --- Header & Footer Styling when inside a component --- */
-  --marginals-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-  --marginals-border-color: color-mix(
-    in srgb,
-    light-dark(var(--color-slate-900), var(--color-zinc-350)),
-    transparent 90%
-  );
 
   /* --- Navigation --- */
   --nav-link-gap: calc(var(--spacing) * 0.5);

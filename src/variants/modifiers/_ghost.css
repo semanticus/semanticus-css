@@ -17,7 +17,7 @@
 
   /* --- Card Individual Styling --- */
   --_card-color: var(--intent-color, var(--card-color));
-  --_card-marginals-background-color: var(--marginals-background-color);
+  --_card-marginals-background-color: var(--card-marginals-background-color);
 
   /* --- Pane Individual Styling --- */
   --_pane-color: var(--intent-color, var(--pane-color));

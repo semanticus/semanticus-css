@@ -835,7 +835,7 @@ const variableGroups = [
         default: "var(--border-color)",
       },
       {
-        name: "--marginals-background-color",
+        name: "--dialog-marginals-background-color",
         label: "Marginals BG",
         desc: "Header/footer background for dialogs, and cards.",
         type: varType(
@@ -845,7 +845,7 @@ const variableGroups = [
           "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))",
       },
       {
-        name: "--marginals-border-color",
+        name: "--dialog-marginals-border-color",
         label: "Marginals Border",
         desc: "Header/footer border for dialogs, and cards.",
         type: varType(

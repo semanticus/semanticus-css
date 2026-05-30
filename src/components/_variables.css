@@ -16,8 +16,8 @@
   --card-border-color: var(--border-color);
   --card-border-width: var(--border-width);
   --card-border-radius: var(--border-radius);
-  --card-marginals-background-color: var(--marginals-background-color);
-  --card-marginals-border-color: var(--marginals-border-color);
+  --card-marginals-background-color: var(--dialog-marginals-background-color);
+  --card-marginals-border-color: var(--dialog-marginals-border-color);
 
   /* --- Pane Default Styling --- */
   --pane-color: var(--color);

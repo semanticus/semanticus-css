@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --marginals-background-color: light-dark(#fbfcfc, #2a3140);
+  --dialog-marginals-background-color: light-dark(#fbfcfc, #2a3140);
 }
 ```
 

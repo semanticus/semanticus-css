@@ -4,23 +4,28 @@ body:has(dialog[open]) {
   pointer-events: none;
   touch-action: none;
 
-  & dialog[open],
-  & dialog:target {
+  dialog:is([open], :target) {
     pointer-events: auto;
     touch-action: auto;
   }
 }
 
 dialog {
-  max-height: calc(100vh - var(--spacing) * 2);
+  --_dialog-border-color: var(--dialog-border-color);
+  --_dialog-border-width: var(--dialog-border-width);
+  --_dialog-background-color: var(--dialog-background-color);
+  --_dialog-box-shadow: var(--dialog-box-shadow);
+  --_dialog-border-radius: var(--dialog-border-radius);
+  --_dialog-spacing: var(--dialog-spacing);
+
+  max-height: calc(100vh - var(--_dialog-spacing) * 2);
   margin: auto;
   overflow: auto;
-  padding: var(--spacing);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid
-    var(--dialog-border-color, var(--border-color));
-  background: var(--dialog-background-color, var(--background-color));
-  box-shadow: var(--dialog-box-shadow, var(--box-shadow));
+  padding: var(--_dialog-spacing);
+  border-radius: var(--_dialog-border-radius);
+  border: var(--_dialog-border-width) solid var(--_dialog-border-color);
+  background: var(--_dialog-background-color);
+  box-shadow: var(--_dialog-box-shadow);
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
@@ -45,10 +50,7 @@ dialog {
   /* Backdrop overlay */
   &::backdrop {
     backdrop-filter: blur(0.375rem);
-    background-color: var(
-      --dialog-backdrop-background-color,
-      var(--backdrop-background-color)
-    );
+    background-color: var(--backdrop-background-color);
     transition:
       backdrop-filter 0.2s ease-in-out,
       background-color 0.2s ease-in-out;
@@ -57,9 +59,9 @@ dialog {
   > header,
   > footer {
     width: auto;
-    margin-inline: calc(var(--spacing) * -1);
-    padding-inline: var(--spacing);
-    background-color: var(--marginals-background-color);
+    margin-inline: calc(var(--_dialog-spacing) * -1);
+    padding-inline: var(--_dialog-spacing);
+    background-color: var(--dialog-marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -67,19 +69,21 @@ dialog {
 
   /* Header styling */
   > header {
-    margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-width) solid var(--marginals-border-color);
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    margin-top: calc(var(--_dialog-spacing) * -1);
+    border-bottom: var(--_dialog-border-width) solid
+      var(--dialog-marginals-border-color);
+    border-top-right-radius: var(--_dialog-border-radius);
+    border-top-left-radius: var(--_dialog-border-radius);
     justify-content: space-between;
   }
 
   /* Footer styling */
   > footer {
-    margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-width) solid var(--marginals-border-color);
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    margin-bottom: calc(var(--_dialog-spacing) * -1);
+    border-top: var(--_dialog-border-width) solid
+      var(--dialog-marginals-border-color);
+    border-bottom-right-radius: var(--_dialog-border-radius);
+    border-bottom-left-radius: var(--_dialog-border-radius);
     justify-content: end;
   }
 

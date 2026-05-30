@@ -135,7 +135,7 @@ These fall back to the global tokens.
   --inputs-placeholder-color
   --inputs-opacity-disabled
 
-  --marginals-background-color
+  --dialog-marginals-background-color
 
   --input-switch-background-color
   --input-switch-background-color-checked
