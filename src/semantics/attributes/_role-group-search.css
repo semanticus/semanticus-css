@@ -1,3 +1,17 @@
+[role="search"] {
+  --border-radius: var(--search-border-radius);
+
+  & > :first-child {
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+  }
+
+  & > :last-child {
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+  }
+}
+
 [role="search"],
 [role="group"] {
   --_group-box-shadow: var(--group-box-shadow);
@@ -94,6 +108,7 @@
     button:focus,
     [type="submit"]:focus,
     [type="button"]:focus,
+    [type="reset"]:focus,
     [role="button"]:focus
   ) {
     --_group-box-shadow: var(--group-box-accent-shadow);
