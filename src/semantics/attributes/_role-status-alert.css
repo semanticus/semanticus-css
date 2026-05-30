@@ -1,26 +1,26 @@
 :is([role="status"], [role="alert"]) {
-  --alert-color: var(--color);
-  --alert-background-color: var(--background-color);
-  --alert-spacing: var(--spacing);
-  --alert-border-color: var(--border-color);
-  --alert-border-width: var(--border-width);
-  --alert-border-accent-width: var(--alert-border-width);
-  --alert-border-radius: var(--border-radius);
-  --typography-color: var(--alert-color);
+  --_alert-color: var(--alert-color);
+  --_alert-background-color: var(--alert-background-color);
+  --_alert-spacing: var(--alert-spacing);
+  --_alert-border-color: var(--alert-border-color);
+  --_alert-border-width: var(--alert-border-width);
+  --_alert-border-accent-width: var(--alert-border-accent-width);
+  --_alert-border-radius: var(--alert-border-radius);
+  --typography-color: var(--_alert-color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--alert-color);
+  color: var(--_alert-color);
   display: grid;
   grid-template-columns: 1fr;
   gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
-  padding: var(--alert-spacing);
-  margin-bottom: var(--alert-spacing);
-  border-radius: var(--alert-border-radius);
-  border: var(--alert-border-width) solid var(--alert-border-color);
-  border-inline-start-width: var(--alert-border-accent-width);
-  border-inline-start-color: var(--alert-border-color);
-  background: var(--alert-background-color);
+  padding: var(--_alert-spacing);
+  margin-bottom: var(--_alert-spacing);
+  border-radius: var(--_alert-border-radius);
+  border: var(--_alert-border-width) solid var(--_alert-border-color);
+  border-inline-start-width: var(--_alert-border-accent-width);
+  border-inline-start-color: var(--_alert-border-color);
+  background: var(--_alert-background-color);
 
   &:empty {
     display: none;
@@ -43,7 +43,7 @@
   }
 
   &:is(.ghost, .subtle) {
-    --alert-border-accent-width: calc(var(--alert-border-width) * 4);
+    --_alert-border-accent-width: calc(var(--_alert-border-width) * 4);
   }
 
   > * {
@@ -72,7 +72,7 @@
     right: 0;
     bottom: 0;
     top: unset;
-    margin: var(--alert-spacing);
+    margin: var(--_alert-spacing);
 
     &:popover-open {
       display: grid;

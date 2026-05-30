@@ -33,7 +33,10 @@
     --button-color: light-dark(#fff, #191c20);
   }
 
-  /* --- Card --- */
+  /* --- Alert Individual Styling --- */
+  --_alert-color: light-dark(#fff, #191c20);
+
+  /* --- Card Individual Styling --- */
   --_card-color: light-dark(#fff, #191c20);
   --_card-marginals-background-color: color-mix(
     in srgb,
@@ -44,11 +47,6 @@
   /* --- Pane --- */
   --_pane-color: light-dark(#fff, #191c20);
   --_pane-border-color: var(--intent-border-color, var(--border-color));
-
-  /* Alerts */
-  &:is([role="status"], [role="alert"]) {
-    --alert-color: light-dark(#fff, #191c20);
-  }
 }
 
 /* Accordion chevron override */

@@ -33,16 +33,14 @@
       --button-color: var(--typography-color);
     }
 
-    /* --- Card --- */
+    /* --- Alert Individual Styling --- */
+    --_alert-color: var(--typography-color) !important;
+
+    /* --- Card Individual Styling --- */
     --_card-color: var(--typography-color) !important;
 
-    /* --- Pane --- */
+    /* --- Pane Individual Styling --- */
     --_pane-color: var(--typography-color) !important;
-
-    /* Alerts */
-    &:is([role="status"], [role="alert"]) {
-      --alert-color: var(--typography-color) !important;
-    }
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       --button-color: #fff !important;

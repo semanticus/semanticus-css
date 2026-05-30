@@ -30,7 +30,12 @@
     }
   }
 
-  /* --- Card --- */
+  /* --- Alert Individual Styling --- */
+  --_alert-color: #fff;
+  --_alert-background-color: var(--intent-background-color);
+  --_alert-border-color: var(--intent-border-color);
+
+  /* --- Card Individual Styling --- */
   --_card-color: #fff;
   --_card-background-color: var(--intent-background-color);
   --_card-border-color: var(--intent-border-color);
@@ -40,16 +45,9 @@
     transparent 90%
   );
 
-  /* --- Pane --- */
+  /* --- Pane Individual Styling --- */
   --_pane-color: #fff;
   --_pane-background-color: var(--intent-background-color);
-
-  /* Alerts */
-  &:is([role="status"], [role="alert"]) {
-    --alert-color: #fff;
-    --alert-background-color: var(--intent-background-color);
-    --alert-border-color: var(--intent-border-color);
-  }
 
   /* Progress Bars */
   &:is(progress) {

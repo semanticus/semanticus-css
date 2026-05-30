@@ -20,9 +20,9 @@
     --intent-border-color: oklch(
       from var(--contrast-background-color) l c h / var(--border-color-opacity)
     );
+    --_alert-color: light-dark(#191c20, #fff);
     --_card-color: light-dark(#191c20, #fff);
     --_pane-color: light-dark(#191c20, #fff);
-    --alert-color: light-dark(#fff, #191c20);
   }
 
   &.success {
@@ -78,7 +78,10 @@
     }
   }
 
-  /* --- Card --- */
+  /* --- Alert Individual Styling --- */
+  --_alert-color: var(--intent-color, var(--color));
+
+  /* --- Card Individual Styling --- */
   --_card-color: var(--intent-color, var(--color));
   --_card-background-color: transparent;
   --_card-border-color: var(--intent-border-color);
@@ -87,15 +90,10 @@
     color-mix(in srgb, var(--color-slate-50), transparent 95%)
   );
 
-  /* --- Pane --- */
+  /* --- Pane Individual Styling --- */
   --_pane-color: var(--intent-color, var(--color));
   --_pane-border-color: var(--intent-border-color, var(--border-color));
   --_pane-border-width: var(--border-width);
-
-  /* Alerts */
-  &:is([role="status"], [role="alert"]) {
-    --alert-color: var(--intent-color, var(--color));
-  }
 
   /* Accordion - ghost buttons have transparent backgrounds with colored text,
      so the chevron should remain dark to match the text color */

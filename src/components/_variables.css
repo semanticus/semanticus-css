@@ -1,13 +1,15 @@
 :root,
 :host {
-  /* --- Pane --- */
-  --pane-color: var(--color);
-  --pane-background-color: var(--background-color);
-  --pane-spacing: var(--spacing);
-  --pane-border-color: var(--background-color);
-  --pane-border-width: 0;
+  /* --- Alert Default Styling --- */
+  --alert-color: var(--color);
+  --alert-background-color: var(--background-color);
+  --alert-spacing: var(--spacing);
+  --alert-border-color: var(--border-color);
+  --alert-border-width: var(--border-width);
+  --alert-border-accent-width: var(--alert-border-width);
+  --alert-border-radius: var(--border-radius);
 
-  /* --- Card --- */
+  /* --- Card Default Styling --- */
   --card-color: var(--color);
   --card-background-color: var(--background-color);
   --card-spacing: var(--spacing);
@@ -16,4 +18,11 @@
   --card-border-radius: var(--border-radius);
   --card-marginals-background-color: var(--marginals-background-color);
   --card-marginals-border-color: var(--marginals-border-color);
+
+  /* --- Pane Default Styling --- */
+  --pane-color: var(--color);
+  --pane-background-color: var(--background-color);
+  --pane-spacing: var(--spacing);
+  --pane-border-color: var(--background-color);
+  --pane-border-width: 0;
 }
