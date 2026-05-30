@@ -448,13 +448,13 @@ const variableGroups = [
     label: "Button Shadows",
     vars: [
       {
-        name: "--button-box-shadow",
+        name: "--buttons-box-shadow",
         label: "Button Shadow",
         desc: "Shadow on buttons at rest.",
         default: "0 0 0 rgb(0 0 0 / 0)",
       },
       {
-        name: "--button-box-shadow-hover",
+        name: "--buttons-box-shadow-hover",
         label: "Button Hover Shadow",
         desc: "Shadow on buttons when hovered.",
         default: "0 0 0 rgb(0 0 0 / 0)",

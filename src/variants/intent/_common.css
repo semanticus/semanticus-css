@@ -1,28 +1,19 @@
 :is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
-  /* Buttons */
-  &:is(
-    button:not([role="link"]),
-    [type="submit"],
-    [type="reset"],
-    [type="button"],
-    [type="file"]::file-selector-button,
-    [role="button"]
-  ) {
-    --button-color: #fff;
-    --button-background-color: var(--intent-background-color);
-    --button-border-color: var(--intent-border-color);
+  /* --- Buttons Individual Styling --- */
+  --_buttons-color: #fff;
+  --_buttons-background-color: var(--intent-background-color);
+  --_buttons-border-color: var(--intent-border-color);
 
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --button-background-color: var(--intent-background-color-hover);
-      --button-border-color: var(--intent-border-color-hover);
-    }
+  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    --_buttons-background-color: var(--intent-background-color-hover);
+    --_buttons-border-color: var(--intent-border-color-hover);
+  }
 
-    &:focus,
-    &:is([aria-current]:not([aria-current="false"])):focus {
-      --button-box-shadow:
-        var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-        0 0 0 var(--outline-width) var(--intent-focus-ring-color);
-    }
+  &:focus,
+  &:is([aria-current]:not([aria-current="false"])):focus {
+    --_buttons-box-shadow:
+      var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
+      0 0 0 var(--outline-width) var(--intent-focus-ring-color);
   }
 
   /* --- Alert Individual Styling --- */

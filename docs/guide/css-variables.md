@@ -198,8 +198,8 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);
-  --button-box-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
+  --buttons-box-shadow: 0 0 0 rgb(0 0 0 / 0);
+  --buttons-box-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
 }
 ```
 

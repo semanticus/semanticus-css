@@ -11,7 +11,6 @@
   }
 
   &.secondary {
-    --typography-color: light-dark(#191c20, #fff);
     --intent-background-color: light-dark(
       color-mix(in srgb, var(--color-slate-50), white 25%),
       color-mix(in srgb, var(--color-slate-50), black 75%)
@@ -21,30 +20,21 @@
       color-mix(in srgb, var(--color-slate-50), black 75%)
     );
 
-    /* Buttons */
-    &:is(
-      button:not([role="link"]),
-      [type="submit"],
-      [type="reset"],
-      [type="button"],
-      [type="file"]::file-selector-button,
-      [role="button"]
-    ) {
-      --button-color: var(--typography-color);
+    /* --- Buttons Individual Styling --- */
+    --_buttons-color: light-dark(#191c20, #fff);
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --_buttons-color: #fff !important;
     }
 
     /* --- Alert Individual Styling --- */
-    --_alert-color: var(--typography-color) !important;
+    --_alert-color: light-dark(#191c20, #fff);
 
     /* --- Card Individual Styling --- */
-    --_card-color: var(--typography-color) !important;
+    --_card-color: light-dark(#191c20, #fff);
 
     /* --- Pane Individual Styling --- */
-    --_pane-color: var(--typography-color) !important;
-
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --button-color: #fff !important;
-    }
+    --_pane-color: light-dark(#191c20, #fff);
   }
 
   &.contrast {

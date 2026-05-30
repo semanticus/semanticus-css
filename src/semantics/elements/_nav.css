@@ -16,6 +16,25 @@ nav {
     }
   }
 
+  :where(
+    button,
+    select,
+    input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])
+  ),
+  :is([role="button"], [type="button"], ) {
+    --input-spacing-vertical: calc(
+      var(--nav-link-gap) - var(--_buttons-border-width) * 2
+    );
+    --input-spacing-horizontal: var(--nav-link-gap);
+    --_buttons-spacing-vertical: var(--input-spacing-vertical);
+    --_buttons-spacing-horizontal: var(--input-spacing-horizontal);
+
+    height: auto;
+    margin-right: inherit;
+    margin-bottom: 0;
+    margin-left: inherit;
+  }
+
   &[aria-label="breadcrumb"] {
     align-items: center;
     justify-content: start;

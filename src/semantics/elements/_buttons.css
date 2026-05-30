@@ -18,19 +18,25 @@ button,
 [type="button"],
 [type="file"]::file-selector-button,
 [role="button"] {
-  padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
-  border: var(--border-width) solid
-    var(--button-border-color, var(--primary-background-color));
-  border-radius: var(--border-radius);
+  --_buttons-font-size: var(--buttons-font-size);
+  --_buttons-color: var(--buttons-color);
+  --_buttons-spacing-vertical: var(--buttons-spacing-vertical);
+  --_buttons-spacing-horizontal: var(--buttons-spacing-horizontal);
+  --_buttons-background-color: var(--buttons-background-color);
+  --_buttons-border-radius: var(--buttons-border-radius);
+  --_buttons-border-color: var(--buttons-border-color);
+  --_buttons-border-width: var(--buttons-border-width);
+  --_buttons-box-shadow: var(--buttons-box-shadow);
+
+  padding: var(--_buttons-spacing-vertical) var(--_buttons-spacing-horizontal);
+  border: var(--_buttons-border-width) solid var(--_buttons-border-color);
+  border-radius: var(--_buttons-border-radius);
   outline: none;
-  background-color: var(
-    --button-background-color,
-    var(--primary-background-color)
-  );
-  box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  color: var(--button-color, white);
+  background-color: var(--_buttons-background-color);
+  box-shadow: var(--_buttons-box-shadow);
+  color: var(--_buttons-color, white);
   font-weight: var(--font-weight);
-  font-size: 1rem;
+  font-size: var(--_buttons-font-size);
   line-height: var(--line-height);
   text-align: center;
   text-decoration: none;
@@ -54,10 +60,10 @@ button:is(:hover, :active, :focus),
 [type="file"]::file-selector-button:is(:hover, :active, :focus),
 [role="button"]:is([aria-current]:not([aria-current="false"])),
 [role="button"]:is(:hover, :active, :focus) {
-  --button-background-color: var(--primary-background-color-hover);
-  --button-border-color: var(--primary-background-color-hover);
-  --button-box-shadow: var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0));
-  --button-color: #fff;
+  --_buttons-color: var(--buttons-color-hover);
+  --_buttons-background-color: var(--buttons-background-color-hover);
+  --_buttons-border-color: var(--buttons-border-color-hover);
+  --_buttons-box-shadow: var(--buttons-box-shadow-hover);
 }
 
 button:focus,
@@ -71,9 +77,9 @@ button:is([aria-current]:not([aria-current="false"])):focus,
 [type="file"]::file-selector-button:focus,
 [role="button"]:focus,
 [role="button"]:is([aria-current]:not([aria-current="false"])):focus {
-  --button-box-shadow:
-    var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-    0 0 0 var(--outline-width) var(--primary-focus-ring-color);
+  --_buttons-box-shadow:
+    var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--buttons-focus-ring-color);
 }
 
 [type="submit"],
@@ -84,9 +90,9 @@ button:is([aria-current]:not([aria-current="false"])):focus,
 
 [type="reset"],
 [type="file"]::file-selector-button {
-  --button-background-color: var(--secondary-background-color);
-  --button-border-color: var(--secondary-background-color);
-  --button-color: #fff;
+  --_buttons-background-color: var(--secondary-background-color);
+  --_buttons-border-color: var(--secondary-background-color);
+  --_buttons-color: #fff;
   cursor: pointer;
 }
 
@@ -97,16 +103,16 @@ button:is([aria-current]:not([aria-current="false"])):focus,
   :focus
 ),
 [type="file"]::file-selector-button:is(:hover, :active, :focus) {
-  --button-background-color: var(--secondary-background-color-hover);
-  --button-border-color: var(--secondary-background-color-hover);
-  --button-color: #fff;
+  --_buttons-background-color: var(--secondary-background-color-hover);
+  --_buttons-border-color: var(--secondary-background-color-hover);
+  --_buttons-color: #fff;
 }
 
 [type="reset"]:focus,
 [type="reset"]:is([aria-current]:not([aria-current="false"])):focus,
 [type="file"]::file-selector-button:focus {
-  --button-box-shadow:
-    var(--button-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
+  --_buttons-box-shadow:
+    var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--secondary-focus-ring-color);
 }
 
@@ -146,26 +152,5 @@ aside {
       display: block !important;
       width: 100%;
     }
-  }
-}
-
-nav {
-  :where(
-    button,
-    [role="button"],
-    [type="button"],
-    input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
-    select
-  ) {
-    --input-spacing-vertical: calc(
-      var(--nav-link-gap) - var(--border-width) * 2
-    );
-    --input-spacing-horizontal: var(--nav-link-gap);
-
-    height: auto;
-    margin-right: inherit;
-    margin-bottom: 0;
-    margin-left: inherit;
-    padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
   }
 }

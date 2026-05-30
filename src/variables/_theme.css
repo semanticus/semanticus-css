@@ -300,9 +300,21 @@
   --h5-line-height: 1.225;
   --h6-line-height: 1.25;
 
-  /* --- Button --- */
-  --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);
-  --button-box-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
+  /* --- Buttons (button, input buttons and role="button") --- */
+  --buttons-font-size: 1rem;
+  --buttons-color: white;
+  --buttons-color-hover: white;
+  --buttons-spacing-vertical: var(--input-spacing-vertical);
+  --buttons-spacing-horizontal: var(--input-spacing-horizontal);
+  --buttons-background-color: var(--primary-background-color);
+  --buttons-background-color-hover: var(--primary-background-color-hover);
+  --buttons-border-radius: var(--border-radius);
+  --buttons-border-width: var(--border-width);
+  --buttons-border-color: var(--primary-background-color);
+  --buttons-border-color-hover: var(--primary-background-color-hover);
+  --buttons-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --buttons-box-shadow-hover: 0 0 0 rgba(0, 0, 0, 0);
+  --buttons-focus-ring-color: var(--primary-focus-ring-color);
 
   /* --- Code --- */
   --code-background-color: light-dark(

@@ -40,6 +40,9 @@
   & [type="button"],
   & [role="button"] {
     width: auto;
+
+    /* Buttons inside search/group combos get wider horizontal padding */
+    --_buttons-spacing-horizontal: var(--group-button-spacing-horizontal);
   }
 
   /* Details dropdown inside group */
@@ -84,18 +87,6 @@
   }
 }
 
-/* Buttons inside search/group combos get wider horizontal padding */
-[role="search"] button,
-[role="search"] [type="submit"],
-[role="search"] [type="button"],
-[role="search"] [role="button"],
-[role="group"] button,
-[role="group"] [type="submit"],
-[role="group"] [type="button"],
-[role="group"] [role="button"] {
-  --input-spacing-horizontal: var(--group-button-spacing-horizontal);
-}
-
 @supports selector(:has(*)) {
   [role="search"],
   [role="group"] {
@@ -116,13 +107,14 @@
     &:has(input:not([type="submit"], [type="button"]):focus, select:focus) {
       --group-box-shadow: var(--group-box-shadow-focus-input);
 
+      /* TODO: check if this is needed */
       & button,
       & [type="submit"],
       & [type="button"],
       & [role="button"] {
-        --button-box-shadow: 0 0 0 var(--border-width)
+        --buttons-box-shadow: 0 0 0 var(--border-width)
           var(--primary-background-color);
-        --button-box-shadow-hover: 0 0 0 var(--border-width)
+        --buttons-box-shadow-hover: 0 0 0 var(--border-width)
           var(--primary-background-color-hover);
       }
     }

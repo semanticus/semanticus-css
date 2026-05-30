@@ -1,8 +1,47 @@
 .ghost {
-  --intent-background-color: transparent !important;
+  --intent-background-color: transparent;
   --intent-border-color: oklch(
     from var(--border-color) l c h / var(--border-color-opacity)
   );
+
+  /* --- Buttons Individual Styling --- */
+  --_buttons-color: var(--intent-color, var(--buttons-background-color));
+
+  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    --intent-background-color: unset;
+    --_buttons-color: unset;
+  }
+
+  /* --- Alert Individual Styling --- */
+  --_alert-color: var(--intent-color, var(--alert-color));
+
+  /* --- Card Individual Styling --- */
+  --_card-color: var(--intent-color, var(--card-color));
+  --_card-marginals-background-color: var(--marginals-background-color);
+
+  /* --- Pane Individual Styling --- */
+  --_pane-color: var(--intent-color, var(--pane-color));
+  --_pane-border-color: var(--intent-border-color, var(--pane-border-color));
+  --_pane-border-width: var(--border-width);
+
+  /* When .ghost is used in a element that has no intent */
+  &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+    --_card-border-color: var(--intent-border-color);
+    --_buttons-background-color: var(--intent-background-color);
+
+    &:is([type="reset"]) {
+      --_buttons-color: var(--intent-color, var(--secondary-background-color));
+    }
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      --_buttons-background-color: var(--buttons-background-color-hover);
+
+      &:is([type="reset"]) {
+        --_buttons-color: unset;
+        --_buttons-background-color: var(--secondary-background-color-hover);
+      }
+    }
+  }
 
   &.primary {
     --intent-border-color: oklch(
@@ -48,52 +87,6 @@
       from var(--danger-background-color) l c h / var(--border-color-opacity)
     );
   }
-
-  /* Buttons */
-  &:is(
-    button,
-    [type="submit"],
-    [type="reset"],
-    [type="button"],
-    [type="file"]::file-selector-button,
-    [role="button"]
-  ) {
-    --button-color: var(--primary-color);
-    --button-background-color: transparent;
-
-    &:is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
-      --button-color: var(--intent-color, var(--primary-color)) !important;
-    }
-
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      &:not(.contrast) {
-        --button-color: #fff !important;
-      }
-
-      &.contrast {
-        --button-color: light-dark(#fff, #191c20) !important;
-      }
-
-      --button-background-color: unset;
-    }
-  }
-
-  /* --- Alert Individual Styling --- */
-  --_alert-color: var(--intent-color, var(--color));
-
-  /* --- Card Individual Styling --- */
-  --_card-color: var(--intent-color, var(--color));
-  --_card-background-color: transparent;
-  --_card-border-color: var(--intent-border-color);
-  --_card-marginals-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-
-  /* --- Pane Individual Styling --- */
-  --_pane-color: var(--intent-color, var(--color));
-  --_pane-border-color: var(--intent-border-color, var(--border-color));
-  --_pane-border-width: var(--border-width);
 
   /* Accordion - ghost buttons have transparent backgrounds with colored text,
      so the chevron should remain dark to match the text color */

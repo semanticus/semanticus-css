@@ -21,17 +21,8 @@
   );
   --intent-focus-ring-color: var(--contrast-focus-ring-color);
 
-  /* Buttons */
-  &:is(
-    button:not([role="link"]),
-    [type="submit"],
-    [type="reset"],
-    [type="button"],
-    [type="file"]::file-selector-button,
-    [role="button"]
-  ) {
-    --button-color: light-dark(#fff, #191c20);
-  }
+  /* --- Buttons Individual Styling --- */
+  --_buttons-color: light-dark(#fff, #191c20);
 
   /* --- Alert Individual Styling --- */
   --_alert-color: light-dark(#fff, #191c20);

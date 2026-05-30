@@ -111,16 +111,16 @@ These fall back to the global tokens.
 ```css
 :root,
 :host {
-  --button-background-color
-  --button-background-color-hover
-  --button-color
-  --button-color-hover
-  --button-border-color
-  --button-border-width
-  --button-border-radius
-  --button-box-shadow
-  --button-box-shadow-hover
-  --button-focus-ring-color
+  --buttons-background-color
+  --buttons-background-color-hover
+  --buttons-color
+  --buttons-color-hover
+  --buttons-border-color
+  --buttons-border-width
+  --buttons-border-radius
+  --buttons-box-shadow
+  --buttons-box-shadow-hover
+  --buttons-focus-ring-color
 
   --card-background-color
   --card-border-color
@@ -177,11 +177,11 @@ These fall back to the global tokens.
 
 ```css
 .button, [role="button"] {
-  background-color: var(--button-background-color, var(--background-color));
-  color: var(--button-color, var(--color));
-  border-color: var(--button-border-color, var(--border-color));
-  border-width: var(--button-border-width, var(--border-width));
-  border-radius: var(--button-border-radius, var(--border-radius));
+  background-color: var(--buttons-background-color, var(--background-color));
+  color: var(--buttons-color, var(--color));
+  border-color: var(--buttons-border-color, var(--border-color));
+  border-width: var(--buttons-border-width, var(--border-width));
+  border-radius: var(--buttons-border-radius, var(--border-radius));
 }
 
 .card {
@@ -210,11 +210,11 @@ This means any component can be styled independently.
 
 /* Override just buttons within primary contexts */
 .primary {
-  --button-focus-ring-color: var(--primary-focus-ring-color);
+  --buttons-focus-ring-color: var(--primary-focus-ring-color);
 }
 ```
 
-Because components read `var(--button-background-color, var(--background-color))`,
+Because components read `var(--buttons-background-color, var(--background-color))`,
 setting `--background-color` on `.primary` changes all components equally.
 To differentiate, set the component-scoped variable:
 
@@ -222,7 +222,7 @@ To differentiate, set the component-scoped variable:
 .secondary {
   --background-color: var(--secondary-background-color);
   --color: var(--secondary-color);
-  --button-background-color: black;  /* different for buttons only */
+  --buttons-background-color: black;  /* different for buttons only */
 }
 ```
 
@@ -230,9 +230,9 @@ To differentiate, set the component-scoped variable:
 
 ```css
 .ghost {
-  --button-background-color: transparent;
-  --button-border-color: var(--border-color);   /* inherits whatever variant is active */
-  --button-color: var(--color);                  /* inherits whatever variant is active */
+  --buttons-background-color: transparent;
+  --buttons-border-color: var(--border-color);   /* inherits whatever variant is active */
+  --buttons-color: var(--color);                  /* inherits whatever variant is active */
 }
 ```
 
@@ -269,8 +269,8 @@ State always comes last. Multiple states are hyphenated in interaction order:
 ```css
 :root,
 :host {
-  --button-background-color-hover
-  --button-background-color-active
+  --buttons-background-color-hover
+  --buttons-background-color-active
   --switch-background-color-checked
   --switch-thumb-background-color-checked-hover   /* checked AND hovered */
 }
@@ -283,7 +283,7 @@ Some tokens have the same value in both light and dark mode. Define them as plai
 ```css
 :root,
 :host {
-  --button-box-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
+  --buttons-box-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
   --input-opacity-disabled: 0.5;                 /* always half-opacity */
   --switch-thumb-background-color: white;        /* thumb always white */
 }
