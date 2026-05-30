@@ -406,6 +406,9 @@
   --input-range-thumb-background-color: var(--secondary-background-color);
   --input-range-thumb-background-color-active: var(--primary-background-color);
 
+  /* --- Input Search --- */
+  --input-search-border-radius: 5rem;
+
   /* --- Input Switch --- */
   --input-switch-background-color: light-dark(
     var(--color-slate-200),
@@ -413,7 +416,6 @@
   );
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
-  --search-border-radius: 5rem;
 
   /* --- Lists (ul, ol, dl and role="list") --- */
   --lists-marker-color: var(--primary-color);

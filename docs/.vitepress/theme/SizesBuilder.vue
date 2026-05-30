@@ -471,7 +471,7 @@ const variableGroups = [
         default: "0.0625rem",
       },
       {
-        name: "--search-border-radius",
+        name: "--input-search-border-radius",
         label: "Search Border Radius",
         desc: "Border radius for search inputs and roles.",
         default: "5rem",

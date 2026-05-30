@@ -1,5 +1,5 @@
 [role="search"] {
-  --border-radius: var(--search-border-radius);
+  --border-radius: var(--input-search-border-radius);
 
   & > :first-child {
     border-top-left-radius: 5rem;

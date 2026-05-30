@@ -6,7 +6,7 @@ input:not(
     [type="range"],
     [type="file"]
   )[type="search"] {
-  --border-radius: var(--search-border-radius);
+  --border-radius: var(--input-search-border-radius);
 }
 
 input:not(
