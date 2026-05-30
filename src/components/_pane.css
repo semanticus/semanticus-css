@@ -1,17 +1,17 @@
 .pane {
-  --pane-color: var(--color);
-  --pane-background-color: var(--background-color);
-  --pane-spacing: var(--spacing);
-  --pane-border-color: var(--background-color);
-  --pane-border-width: 0;
-  --typography-color: var(--pane-color);
+  --_pane-color: var(--pane-color);
+  --_pane-background-color: var(--pane-background-color);
+  --_pane-spacing: var(--pane-spacing);
+  --_pane-border-color: var(--pane-border-color);
+  --_pane-border-width: var(--pane-border-width);
+  --typography-color: var(--_pane-color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  background: var(--pane-background-color);
-  border: var(--pane-border-width) solid var(--pane-border-color);
-  color: var(--pane-color);
-  margin-bottom: var(--pane-spacing);
-  padding: var(--pane-spacing);
+  background: var(--_pane-background-color);
+  border: var(--_pane-border-width) solid var(--_pane-border-color);
+  color: var(--_pane-color);
+  margin-bottom: var(--_pane-spacing);
+  padding: var(--_pane-spacing);
 
   > :last-child {
     margin-bottom: 0 !important;

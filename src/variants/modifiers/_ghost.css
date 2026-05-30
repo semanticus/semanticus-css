@@ -21,7 +21,7 @@
       from var(--contrast-background-color) l c h / var(--border-color-opacity)
     );
     --card-color: light-dark(#fff, #191c20);
-    --pane-color: light-dark(#fff, #191c20);
+    --_pane-color: light-dark(#191c20, #fff);
     --alert-color: light-dark(#fff, #191c20);
   }
 
@@ -94,12 +94,10 @@
     --card-border-color: var(--intent-border-color);
   }
 
-  /* Panes */
-  &:is(.pane) {
-    --pane-color: var(--intent-color, var(--color));
-    --pane-border-color: var(--intent-border-color, var(--border-color));
-    --pane-border-width: var(--border-width);
-  }
+  /* --- Pane --- */
+  --_pane-color: var(--intent-color, var(--color));
+  --_pane-border-color: var(--intent-border-color, var(--border-color));
+  --_pane-border-width: var(--border-width);
 
   /* Alerts */
   &:is([role="status"], [role="alert"]) {

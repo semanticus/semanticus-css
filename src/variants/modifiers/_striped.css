@@ -8,11 +8,11 @@
     );
   }
 
-  /* Panes */
+  /* --- Pane --- */
   &:is(.pane) > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
-      var(--pane-background-color),
+      var(--_pane-background-color),
       var(--color-hover-effect) 15%
     );
   }

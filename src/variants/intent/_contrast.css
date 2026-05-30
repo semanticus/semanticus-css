@@ -48,14 +48,9 @@
     --card-color: light-dark(#fff, #191c20);
   }
 
-  /* Panes */
-  &:is(.pane) {
-    --pane-color: light-dark(#fff, #191c20);
-    --pane-border-color: var(
-      --intent-border-color,
-      var(--border-color)
-    ) !important;
-  }
+  /* --- Pane --- */
+  --_pane-color: light-dark(#fff, #191c20);
+  --_pane-border-color: var(--intent-border-color, var(--border-color));
 
   /* Alerts */
   &:is([role="status"], [role="alert"]) {

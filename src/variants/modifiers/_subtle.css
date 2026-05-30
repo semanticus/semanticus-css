@@ -39,10 +39,8 @@
       --card-color: var(--typography-color) !important;
     }
 
-    /* Panes */
-    &:is(.pane) {
-      --pane-color: var(--typography-color) !important;
-    }
+    /* --- Pane --- */
+    --_pane-color: var(--typography-color) !important;
 
     /* Alerts */
     &:is([role="status"], [role="alert"]) {

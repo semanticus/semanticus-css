@@ -50,10 +50,8 @@
   }
 
   /* Panes */
-  &:is(.pane) {
-    --pane-color: #fff;
-    --pane-background-color: var(--intent-background-color);
-  }
+  --_pane-color: #fff;
+  --_pane-background-color: var(--intent-background-color);
 
   /* Alerts */
   &:is([role="status"], [role="alert"]) {
