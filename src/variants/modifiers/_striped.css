@@ -8,24 +8,6 @@
     );
   }
 
-  /* --- Pane --- */
-  &:is(.pane) > :nth-child(odd) {
-    background-color: color-mix(
-      in srgb,
-      var(--_pane-background-color),
-      var(--color-hover-effect) 15%
-    );
-  }
-
-  /* Alerts */
-  &:is([role="status"], [role="alert"]) > :nth-child(odd) {
-    background-color: color-mix(
-      in srgb,
-      var(--alert-background-color),
-      var(--color-hover-effect) 15%
-    );
-  }
-
   > tbody > tr:nth-child(odd) {
     & :is(th, td) {
       background-color: color-mix(
