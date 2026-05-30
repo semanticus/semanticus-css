@@ -178,11 +178,11 @@ details:has(> summary[aria-haspopup="menu"]) {
     margin: 0;
     margin-top: var(--outline-width);
     padding: 0;
-    border: var(--border-width) solid var(--menu-border-color);
+    border: var(--border-width) solid var(--details-menu-border-color);
     border-radius: var(--border-radius);
-    background-color: var(--menu-background-color);
-    box-shadow: var(--menu-box-shadow);
-    color: var(--menu-color);
+    background-color: var(--details-menu-background-color);
+    box-shadow: var(--details-menu-box-shadow);
+    color: var(--details-menu-color);
     white-space: nowrap;
     opacity: 0;
     transition:
@@ -218,7 +218,7 @@ details:has(> summary[aria-haspopup="menu"]) {
         var(--inputs-spacing-horizontal);
       overflow: hidden;
       border-radius: 0;
-      color: var(--menu-color);
+      color: var(--details-menu-color);
       text-decoration: none;
       text-overflow: ellipsis;
 
@@ -227,7 +227,7 @@ details:has(> summary[aria-haspopup="menu"]) {
       &:active,
       &:focus-visible,
       &[aria-current]:not([aria-current="false"]) {
-        background-color: var(--menu-background-color-hover);
+        background-color: var(--details-menu-background-color-hover);
       }
     }
 
@@ -236,7 +236,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     &:has(label):hover {
-      background-color: var(--menu-background-color-hover);
+      background-color: var(--details-menu-background-color-hover);
     }
   }
 

@@ -860,14 +860,14 @@ const variableGroups = [
     label: "Menu / Dropdown",
     vars: [
       {
-        name: "--menu-background-color",
+        name: "--details-menu-background-color",
         label: "Menu Background",
         desc: "Dropdown menu background.",
         type: varType("light-dark(white, var(--color-slate-900))"),
         default: "light-dark(white, var(--color-slate-900))",
       },
       {
-        name: "--menu-border-color",
+        name: "--details-menu-border-color",
         label: "Menu Border",
         desc: "Dropdown menu border.",
         type: varType(
@@ -876,14 +876,14 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-50), var(--color-slate-850))",
       },
       {
-        name: "--menu-color",
+        name: "--details-menu-color",
         label: "Menu Text",
         desc: "Dropdown menu text color.",
         type: varType("var(--color)"),
         default: "var(--color)",
       },
       {
-        name: "--menu-background-color-hover",
+        name: "--details-menu-background-color-hover",
         label: "Menu Hover",
         desc: "Dropdown item hover background.",
         type: varType(

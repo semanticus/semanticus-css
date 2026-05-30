@@ -148,11 +148,11 @@ These fall back to the global tokens.
   --nav-link-gap
   --nav-breadcrumb-divider
 
-  --menu-background-color
-  --menu-border-color
-  --menu-color
-  --menu-background-color-hover
-  --menu-box-shadow
+  --details-menu-background-color
+  --details-menu-border-color
+  --details-menu-color
+  --details-menu-background-color-hover
+  --details-menu-box-shadow
 
   --code-background-color
   --code-color

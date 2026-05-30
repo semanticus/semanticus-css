@@ -247,10 +247,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ```css
 :root {
-  --menu-background-color: light-dark(white, #181c25);
-  --menu-border-color: light-dark(#eff1f4, #202632);
-  --menu-color: var(--color);
-  --menu-background-color-hover: light-dark(#eff1f4, #202632);
+  --details-menu-background-color: light-dark(white, #181c25);
+  --details-menu-border-color: light-dark(#eff1f4, #202632);
+  --details-menu-color: var(--color);
+  --details-menu-background-color-hover: light-dark(#eff1f4, #202632);
 }
 ```
 
