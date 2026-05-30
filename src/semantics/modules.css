@@ -1,5 +1,6 @@
 @import "./attributes/_aria-busy.css";
 @import "./attributes/_aria-disabled.css";
+@import "./attributes/_disabled.css";
 @import "./attributes/_hidden.css";
 @import "./attributes/_popover.css";
 @import "./attributes/_role-group.css";

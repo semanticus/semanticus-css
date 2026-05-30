@@ -116,25 +116,6 @@ button:is([aria-current]:not([aria-current="false"])):focus,
     0 0 0 var(--outline-width) var(--secondary-focus-ring-color);
 }
 
-:is(
-  button,
-  [type="submit"],
-  [type="reset"],
-  [type="button"],
-  [role="button"]
-)[disabled],
-fieldset[disabled]
-  :is(
-    button,
-    [type="submit"],
-    [type="button"],
-    [type="reset"],
-    [role="button"]
-  ) {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
 aside {
   nav {
     :where(

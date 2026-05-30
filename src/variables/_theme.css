@@ -126,6 +126,7 @@
     0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
     0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
   --transition: 0.2s ease-in-out;
+  --disabled-opacity: 0.5;
 
   /* ===== INTENT TOKENS ===== */
 

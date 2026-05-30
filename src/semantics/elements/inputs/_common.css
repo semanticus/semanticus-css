@@ -157,20 +157,6 @@ input:not(
     var(--inputs-border-color-focus);
 }
 
-input:not([type="submit"], [type="button"], [type="reset"])[disabled],
-select[disabled],
-textarea[disabled],
-label[aria-disabled="true"],
-:where(fieldset[disabled])
-  :is(
-    input:not([type="submit"], [type="button"], [type="reset"]),
-    select,
-    textarea
-  ) {
-  opacity: var(--inputs-opacity-disabled);
-  pointer-events: none;
-}
-
 label[aria-disabled="true"] input[disabled] {
   opacity: 1;
 }
