@@ -17,11 +17,11 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overview/all-buttons-states-and-variants.demo/main?theme=${theme} - visual snapshot`, async ({
+  test(`/overview/all-buttons-variations.demo/main?theme=${theme} - visual snapshot`, async ({
     page,
   }) => {
     await page.goto(
-      `/overview/all-buttons-states-and-variants.demo/main?theme=${theme}`,
+      `/overview/all-buttons-variations.demo/main?theme=${theme}`,
     );
     const main = page.locator("body > main");
 
