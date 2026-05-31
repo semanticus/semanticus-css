@@ -9,6 +9,7 @@
   border: 0;
   border-radius: 0;
   background: none;
+  border-radius: var(--border-radius);
 
   &::file-selector-button {
     margin-right: calc(var(--spacing) / 2);

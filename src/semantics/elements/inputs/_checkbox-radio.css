@@ -103,6 +103,19 @@
   cursor: pointer;
   accent-color: var(--inputs-accent-color);
 
+  &:not([readonly]):is(:focus) {
+    &:not([aria-invalid]) {
+      --inputs-box-shadow: 0 0 0 var(--outline-width) var(--inputs-focus-ring-color);
+    }
+
+    &[aria-invalid="false"] {
+      --inputs-box-shadow: 0 0 0 var(--outline-width) var(--success-focus-ring-color);
+    }
+    &[aria-invalid="true"] {
+      --inputs-box-shadow: 0 0 0 var(--outline-width) var(--danger-focus-ring-color);
+    }
+  }
+
   &:is(:checked, :checked:active, :checked:focus) {
     --border-color: var(--inputs-accent-color);
 
