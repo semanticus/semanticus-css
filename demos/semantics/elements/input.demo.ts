@@ -29,7 +29,7 @@ ${main(mergedAttrs)}`;
 
 export function withHelperText(
   attrs: Record<string, string> = {},
-  helperText: string = "We’ll never share your email with anyone else.",
+  helperText: string = "Cannot be empty.",
 ) {
   const mergedAttrs = {
     type: "email",
@@ -38,7 +38,8 @@ export function withHelperText(
   mergedAttrs["id"] ||= `input-${mergedAttrs["type"]}`;
   mergedAttrs["aria-describedby"] ||= `${mergedAttrs["id"]}-helper`;
 
-  return `${withLabel(mergedAttrs)}<small id="${mergedAttrs["aria-describedby"]}">${helperText}</small>`;
+  return `${withLabel(mergedAttrs)}
+<small id="${mergedAttrs["aria-describedby"]}">${helperText}</small>`;
 }
 
 export function validationStatesWithTextHelper() {

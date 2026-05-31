@@ -1,23 +1,16 @@
 import { renderElement } from "@scripts/utils";
 
-export function main(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "select",
-    {
-      ...attrs,
-      name: "favorite-cuisine",
-      "aria-label": "Select your favorite cuisine...",
-      required: "required",
-    },
-    `<option selected disabled value="">
-  Select your favorite cuisine...
+const defaultOptions = `<option selected disabled value="">
+Select your favorite cuisine...
 </option>
 <option>Italian</option>
 <option>Japanese</option>
 <option>Indian</option>
 <option>Thai</option>
-<option>French</option>`,
-  );
+<option>French</option>`;
+
+export function main(attrs: Record<string, string> = {}, slot: string = "") {
+  return renderElement("select", attrs, slot || defaultOptions);
 }
 
 export function multipleSelect(attrs: Record<string, string> = {}) {
@@ -55,32 +48,35 @@ export function withOptgroup(attrs: Record<string, string> = {}) {
   );
 }
 
-export function withLabel() {
-  return `<label for="message">Dish</label>
-${main({ id: "message" })}
-`;
-}
-
-export function withHelperText() {
-  return `<label for="dish-message">Dish</label>
-${main({ id: "dish-message", "aria-describedby": "dish-message-helper" })}
-<small id="dish-message-helper">Subject to availability.</small>
-`;
-}
-
 export function validationStates() {
   return `${main({ "aria-invalid": "false" })}
 
 ${main({ "aria-invalid": "true" })}`;
 }
 
-export function validationStatesWithTextHelper() {
-  return `<label for="valid-select">Valid Select</label>
-${main({ id: "valid-select", "aria-invalid": "false", "aria-describedby": "valid-select-helper" })}
-<small id="valid-select-helper">Looks good!</small>
+export function withLabel(attrs: Record<string, string> = {}) {
+  const mergedAttrs = { name: "dish", ...attrs };
+  mergedAttrs["id"] ||= `select-${mergedAttrs["name"]}`;
+  const label = `${mergedAttrs["name"].charAt(0).toUpperCase()}${mergedAttrs["name"].slice(1)}`;
 
-<label for="invalid-select">Invalid Select</label>
-${main({ id: "invalid-select", "aria-invalid": "true", "aria-describedby": "invalid-select-helper" })}
-<small id="invalid-select-helper">Sorry this dish is not available.</small>
-`;
+  return `<label for="${mergedAttrs["id"]}">${label}</label>
+${main(mergedAttrs)}`;
+}
+
+export function withHelperText(
+  attrs: Record<string, string> = {},
+  helperText: string = "Subject to availability.",
+) {
+  const mergedAttrs = { name: "dish", ...attrs };
+  mergedAttrs["id"] ||= `select-${mergedAttrs["name"]}`;
+  mergedAttrs["aria-describedby"] ||= `${mergedAttrs["id"]}-helper`;
+
+  return `${withLabel(mergedAttrs)}
+<small id="${mergedAttrs["aria-describedby"]}">${helperText}</small>`;
+}
+
+export function validationStatesWithTextHelper() {
+  return `${withHelperText({ "aria-invalid": "false", name: "first-dish" }, "Looks good!")}
+
+${withHelperText({ "aria-invalid": "true", name: "second-dish" }, "Sorry this dish is not available.")}`;
 }

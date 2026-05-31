@@ -3,57 +3,86 @@ import * as SelectDemo from "@demos/semantics/elements/select.demo";
 import * as TextareaDemo from "@demos/semantics/elements/textarea.demo";
 
 export function all(attrs: Record<string, string> = {}, index: number = 0) {
-  return `${InputDemo.main(attrs)}
+  return `${InputDemo.withHelperText(attrs)}
 
-  ${SelectDemo.main(attrs)}
+  ${SelectDemo.withHelperText(attrs)}
 
-  ${InputDemo.main({ ...attrs, type: "search" })}
+  ${InputDemo.withHelperText({ ...attrs, type: "search" })}
 
   <section class="auto-grid">
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "date" })}
+      ${InputDemo.withHelperText({ ...attrs, type: "date" })}
     </fieldset>
 
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "month" })}
+      ${InputDemo.withHelperText({ ...attrs, type: "month" })}
     </fieldset>
 
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "time" })}
+      ${InputDemo.withHelperText({ ...attrs, type: "time" })}
     </fieldset>
 
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "color", value: "#ff0000" })}
+      ${InputDemo.withHelperText({ ...attrs, type: "color", value: "#ff0000" })}
     </fieldset>
   </section>
 
   <section class="auto-grid">
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "checkbox" })}
-      ${InputDemo.main({ ...attrs, type: "checkbox", checked: "true" })}
+      ${InputDemo.withHelperText({ ...attrs, placeholder: "Checkbox", type: "checkbox", checked: "true" })}
     </fieldset>
 
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "radio", name: `radio-group-${index}` })}
-      ${InputDemo.main({ ...attrs, type: "radio", name: `radio-group-${index}`, checked: "true" })}
+      <label>
+        Inline Checkbox
+        ${InputDemo.main({ ...attrs, type: "checkbox" })}
+      </label>
     </fieldset>
 
     <fieldset>
-      ${InputDemo.main({ ...attrs, type: "checkbox", role: "switch" })}
-      ${InputDemo.main({ ...attrs, type: "checkbox", role: "switch", checked: "true" })}
+      ${InputDemo.withHelperText({ ...attrs, placeholder: "Radio", type: "radio", name: `radio-${index}`, checked: "true" })}
+    </fieldset>
+
+    <fieldset>
+      <label>
+        Inline Radio
+        ${InputDemo.main({ ...attrs, type: "radio", name: `inline-radio-${index}` })}
+      </label>
+    </fieldset>
+
+    <fieldset>
+      ${InputDemo.withHelperText({ ...attrs, placeholder: "Switch", type: "checkbox", role: "switch", checked: "true" })}
+    </fieldset>
+
+
+    <fieldset>
+      <label>
+        Inline Switch
+        ${InputDemo.main({ ...attrs, type: "checkbox", role: "switch" })}
+      </label>
     </fieldset>
   </section>
 
   <section class="auto-grid">
-    ${TextareaDemo.main(attrs)}
+    <fieldset>
+      ${TextareaDemo.withHelperText(attrs)}
+    </fieldset>
 
-    ${SelectDemo.multipleSelect(attrs)}
+    <fieldset>
+      <label for="multiple-select">Multiple Select</label>
+      ${SelectDemo.multipleSelect({ ...attrs, id: "multiple-select", "aria-describedby": "multiple-select-helper" })}
+      <small id="multiple-select-helper">Select one or more</small>
+    </fieldset>
   </section>
 
   <section class="auto-grid">
-    ${InputDemo.rangeBasic(attrs)}
+    <fieldset>
+      ${InputDemo.withHelperText({ ...attrs, type: "range" })}
+    </fieldset>
 
-    ${InputDemo.main({ ...attrs, type: "file" })}
+    <fieldset>
+      ${InputDemo.withHelperText({ ...attrs, type: "file" })}
+    </fieldset>
   </section>
 `;
 }
