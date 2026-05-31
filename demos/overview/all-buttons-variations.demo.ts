@@ -38,7 +38,7 @@ export function main() {
 <br>
 
 <h2>Default in all States</h2>
-${allButtonsStates({})}
+${allButtonsStatesModifiers({})}
 
 <hr>
 <h2>Primary Variant</h2>
@@ -52,11 +52,9 @@ ${allButtonsStatesModifiers({ class: "secondary" })}
 <h2>Contrast Variant</h2>
 ${allButtonsStatesModifiers({ class: "contrast" })}
 
-
 <hr>
 <h2>Success Variant</h2>
 ${allButtonsStatesModifiers({ class: "success" })}
-
 
 <hr>
 <h2>Info Variant</h2>
@@ -65,7 +63,6 @@ ${allButtonsStatesModifiers({ class: "info" })}
 <hr>
 <h2>Warning Variant</h2>
 ${allButtonsStatesModifiers({ class: "warning" })}
-
 
 <hr>
 <h2>Danger Variant</h2>
