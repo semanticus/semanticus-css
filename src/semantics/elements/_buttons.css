@@ -59,6 +59,10 @@ button,
   }
 }
 
+[type="submit"] {
+  width: 100%;
+}
+
 [type="reset"],
 [type="file"]::file-selector-button {
   --_buttons-background-color: var(--secondary-background-color);

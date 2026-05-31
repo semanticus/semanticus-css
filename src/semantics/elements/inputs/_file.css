@@ -2,6 +2,7 @@
 
 [type="file"] {
   --color: var(--color-muted);
+
   margin-left: calc(var(--outline-width) * -1);
   padding: calc(var(--inputs-spacing-vertical) * 0.5) 0;
   padding-left: var(--outline-width);

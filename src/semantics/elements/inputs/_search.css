@@ -1,20 +1,14 @@
 /* See ./_common.css for shared styles */
-
-input:not(
-    [type="checkbox"],
-    [type="radio"],
-    [type="range"],
-    [type="file"]
-  )[type="search"] {
+input[type="search"] {
   --border-radius: var(--input-search-border-radius);
-}
 
-input:not(
-    [type="checkbox"],
-    [type="radio"],
-    [type="range"],
-    [type="file"]
-  )[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
   padding-inline-start: calc(var(--inputs-spacing-horizontal) + 1.75rem);
   background-image: var(--icon-search);
   background-position: left calc(var(--inputs-spacing-horizontal) + 0.125rem)
@@ -37,22 +31,16 @@ input:not(
   &[aria-invalid="true"] {
     background-image: var(--icon-search), var(--icon-invalid);
   }
-}
 
-[dir="rtl"]
-  input:not(
-    [type="checkbox"],
-    [type="radio"],
-    [type="range"],
-    [type="file"]
-  )[type="search"] {
-  background-position: right
-    calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center;
-
-  &[aria-invalid] {
+  [dir="rtl"] & {
     /* Using calc with var to workaround LightningCSS minification bug with 3-value syntax */
-    background-position:
-      right calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center,
-      left calc(var(--inputs-spacing-horizontal) * 0 + 0.75rem) center;
+    background-position: right
+      calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center;
+
+    &[aria-invalid] {
+      background-position:
+        right calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center,
+        left calc(var(--inputs-spacing-horizontal) * 0 + 0.75rem) center;
+    }
   }
 }

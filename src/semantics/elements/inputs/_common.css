@@ -1,104 +1,12 @@
-input:not(
-  [type="submit"],
-  [type="button"],
-  [type="reset"],
-  [type="checkbox"],
-  [type="radio"],
-  [type="file"]
-),
-:where(select, textarea) {
-  --outline-width: var(--inputs-outline-width);
-}
-
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  font-size: 1rem;
-  line-height: var(--line-height);
-  font-family: inherit;
-  letter-spacing: inherit;
-}
-
 input {
   overflow: visible;
-}
 
-[type="checkbox"],
-[type="radio"] {
-  padding: 0;
-}
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-
-  &::-webkit-search-decoration {
-    -webkit-appearance: none;
+  &:not([type="checkbox"], [type="radio"], [type="range"]) {
+    height: calc(
+      1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
+        var(--border-width) * 2
+    );
   }
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
-:-moz-focusring {
-  outline: none;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-[type="file"],
-[type="range"] {
-  padding: 0;
-  border-width: 0;
-}
-
-input:not([type="checkbox"], [type="radio"], [type="range"]) {
-  height: calc(
-    1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
-      var(--border-width) * 2
-  );
-}
-
-input:not([type="checkbox"], [type="radio"]),
-button[type="submit"],
-select,
-textarea {
-  width: 100%;
-}
-
-input:not(
-  [type="checkbox"],
-  [type="radio"],
-  [type="range"],
-  [type="file"],
-  [type="button"],
-  [type="submit"],
-  [type="reset"]
-),
-select,
-textarea {
-  appearance: none;
-  padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
-}
-
-label > :where(input, select, textarea) {
-  margin-top: calc(var(--spacing) * 0.25);
 }
 
 input,
@@ -119,6 +27,79 @@ textarea {
     border-color var(--transition),
     color var(--transition),
     box-shadow var(--transition);
+
+  &:not([type="checkbox"], [type="radio"]) {
+    width: 100%;
+  }
+
+  &:not(
+    [type="button"],
+    [type="checkbox"],
+    [type="file"],
+    [type="radio"],
+    [type="range"],
+    [type="reset"],
+    [type="submit"]
+  ) {
+    --outline-width: var(--inputs-outline-width);
+
+    appearance: none;
+    padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
+  }
+
+  &[aria-invalid="false"] {
+    --border-color: var(--success-background-color);
+
+    &:is(:active, :focus) {
+      --border-color: var(--success-background-color-hover);
+    }
+  }
+
+  &[aria-invalid="true"] {
+    --border-color: var(--danger-background-color);
+
+    &:is(:active, :focus) {
+      --border-color: var(--danger-background-color-hover);
+    }
+  }
+}
+
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-size: 1rem;
+  line-height: var(--line-height);
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+:-moz-focusring {
+  outline: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+label > :where(input, select, textarea) {
+  margin-top: calc(var(--spacing) * 0.25);
 }
 
 input:not(
@@ -214,14 +195,6 @@ label[aria-disabled="true"] input[disabled] {
   background-image: var(--icon-invalid);
 }
 
-:is(input, select, textarea)[aria-invalid="false"] {
-  --border-color: var(--success-background-color);
-}
-
-:is(input, select, textarea)[aria-invalid="false"]:is(:active, :focus) {
-  --border-color: var(--success-background-color-hover);
-}
-
 input:not([type="checkbox"], [type="radio"])[aria-invalid="false"]:is(
     :active,
     :focus
@@ -230,14 +203,6 @@ select[aria-invalid="false"]:is(:active, :focus),
 textarea[aria-invalid="false"]:is(:active, :focus) {
   --inputs-box-shadow: 0 0 0 var(--outline-width)
     var(--success-background-color);
-}
-
-:is(input, select, textarea)[aria-invalid="true"] {
-  --border-color: var(--danger-background-color);
-}
-
-:is(input, select, textarea)[aria-invalid="true"]:is(:active, :focus) {
-  --border-color: var(--danger-background-color-hover);
 }
 
 input:not([type="checkbox"], [type="radio"])[aria-invalid="true"]:is(
