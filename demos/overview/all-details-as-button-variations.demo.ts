@@ -50,6 +50,10 @@ export function main() {
 ${allDetailsAsButtonStates({})}
 
 <hr>
+<h2>From Right to Left</h2>
+${renderElement("div", { dir: "rtl" }, allDetailsAsButtonStates({}))}
+
+<hr>
 <h2>Primary Variant</h2>
 ${allDetailsAsButtonStatesModifiers({ class: "primary" })}
 
