@@ -9,9 +9,11 @@ input {
   }
 }
 
-input,
-select,
-textarea {
+:where(
+  input,
+  select,
+  textarea
+) {
   --background-color: var(--inputs-background-color);
   --border-color: var(--inputs-border-color);
 
