@@ -19,7 +19,7 @@ export function main(
 ) {
   const attributes = { href: "#", ...attrs };
 
-  return `<a ${renderAttributes(attributes)}>${slot}</a>`;
+  return `<a${renderAttributes(attributes)}>${slot}</a>`;
 }
 
 export function active(
@@ -28,7 +28,7 @@ export function active(
 ) {
   const attributes = { href: "#", "aria-current": "page", ...attrs };
 
-  return `<a ${renderAttributes(attributes)}>${slot}</a>`;
+  return `<a${renderAttributes(attributes)}>${slot}</a>`;
 }
 
 export function intentVariants(attrs: Record<string, string> = {}) {

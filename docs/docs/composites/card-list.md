@@ -8,7 +8,7 @@ The examples below use the [&lt;ul&gt;](/docs/semantics/elements/ul) approach bu
 
 You can indicate that a certain item is active by using `aria-current="true"`.
 
-<HtmlPreviewer :code="UlDemo.cardList()" />
+<HtmlPreviewer :code="UlDemo.cardList({}, { ariaCurrent: true })" />
 
 ### Intent Variants
 

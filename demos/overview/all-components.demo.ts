@@ -1,12 +1,17 @@
 import { renderElement } from "@scripts/utils";
 
-import { DropdownDemo, SearchDemo, AccordionsDemo } from "@demos/composites";
+import {
+  DropdownDemo,
+  SearchDemo,
+  AccordionsDemo,
+  InputsDemo,
+  LinksDemo,
+  ButtonsDemo,
+  ListsDemo,
+} from "@demos/composites";
 import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
   ADemo,
-  InputDemo,
-  SelectDemo,
-  TextareaDemo,
   FieldsetDemo,
   ProgressDemo,
   TableDemo,
@@ -14,36 +19,11 @@ import {
   FigureDemo,
   NavDemo,
   HgroupDemo,
-  ListsDemo,
-  AriaBusyDemo,
-  DisabledDemo,
   RoleTooltipDemo,
   RoleLinkDemo,
   TextDemo,
-  ButtonDemo,
-  RoleButtonDemo,
-  DlDemo,
-  OlDemo,
-  UlDemo,
   RoleGroupDemo,
-  RoleListDemo,
 } from "@demos/semantics";
-
-function buttons() {
-  return `<section id="buttons">
-  <h2>Buttons</h2>
-
-  <section class="auto-grid">
-    ${ButtonDemo.main()}
-    ${ButtonDemo.main({ "aria-current": "true" }, "Current")}
-    ${ButtonDemo.main({ disabled: "true" }, "Disabled")}
-
-    ${RoleButtonDemo.main("div")}
-    ${RoleButtonDemo.main("div", { "aria-current": "true" }, "Current")}
-    ${RoleButtonDemo.main("div", { disabled: "true" }, "Disabled")}
-  </section>
-`;
-}
 
 function links() {
   return `<section id="links">
@@ -57,120 +37,6 @@ function links() {
     ${RoleLinkDemo.active("button", {}, "Current")}
     ${RoleLinkDemo.main("button", { "aria-disabled": "true" }, "Disabled")}
   </section>
-</section>`;
-}
-
-function inputButtons() {
-  return `<section id="input-buttons">
-  <h4>Input buttons</h4>
-
-  <section class="auto-grid">
-    ${InputDemo.button()}
-    ${InputDemo.submit()}
-    ${InputDemo.reset()}
-  </section>
-</section>
-`;
-}
-
-function disabledState() {
-  return `<section id="disabled-state">
-  <h4>Disabled State</h4>
-
-  <section class="auto-grid">
-    ${DisabledDemo.input()}
-    ${DisabledDemo.select()}
-  </section>
-
-  <section class="auto-grid">
-    ${DisabledDemo.checkbox()}
-    ${DisabledDemo.radio()}
-    ${DisabledDemo.switch_()}
-  </section>
-
-  <section class="auto-grid">
-    ${DisabledDemo.inputButtons()}
-  </section>
-</section>
-`;
-}
-
-function validationStates() {
-  return `<section id="valid-states">
-  <h4>Validation States</h4>
-
-  <section class="auto-grid">
-    <div>
-      ${InputDemo.validationStatesWithTextHelper()}
-    </div>
-    <div>
-      ${SelectDemo.validationStatesWithTextHelper()}
-    </div>
-  </section>
-
-  <section class="auto-grid">
-    ${InputDemo.checkboxBasic({ "aria-invalid": "false" })}
-    ${InputDemo.checkboxBasic({ "aria-invalid": "true" })}
-    ${InputDemo.radioBasic({ "aria-invalid": "false" })}
-    ${InputDemo.radioBasic({ "aria-invalid": "true" })}
-    ${InputDemo.switchBasic({ "aria-invalid": "false" })}
-    ${InputDemo.switchBasic({ "aria-invalid": "true" })}
-  </section>
-
-  ${TextareaDemo.validationStatesWithTextHelper()}
-</section>
-`;
-}
-
-function inputElements() {
-  return `<section id="input-elements">
-  <h2>Input Elements</h2>
-
-  ${InputDemo.main()}
-
-  ${SelectDemo.main()}
-
-  ${InputDemo.main({ type: "search" })}
-
-  <section class="auto-grid">
-    <fieldset>
-      ${InputDemo.withLabel({ type: "date" })}
-    </fieldset>
-
-    <fieldset>
-      ${InputDemo.withLabel({ type: "time" })}
-    </fieldset>
-
-    <fieldset>
-      ${InputDemo.withLabel({ type: "color", value: "#ff0000" })}
-    </fieldset>
-  </section>
-
-  <section class="auto-grid">
-    ${InputDemo.checkboxBasic()}
-
-    ${InputDemo.radioBasic()}
-
-    ${InputDemo.switchBasic()}
-  </section>
-
-  <section class="auto-grid">
-    ${TextareaDemo.main()}
-
-    ${SelectDemo.multipleSelect()}
-  </section>
-
-  <section class="auto-grid">
-    ${InputDemo.rangeBasic()}
-
-    ${InputDemo.main({ type: "file" })}
-  </section>
-
-  ${inputButtons()}
-
-  ${disabledState()}
-
-  ${validationStates()}
 </section>`;
 }
 
@@ -213,26 +79,6 @@ function fieldsets() {
       ${FieldsetDemo.groupSelectButton({ disabled: "disabled" })}
       ${SearchDemo.main({ disabled: "disabled" })}
     </section>
-  </section>
-</section>`;
-}
-
-function cards() {
-  return `<section id="cards">
-  <h2>Cards</h2>
-
-  ${CardDemo.main()}
-
-  ${CardDemo.withHeaderAndFooter()}
-
-  <section>
-    <h3>List</h3>
-    ${RoleListDemo.cardList()}
-  </section>
-
-  <section>
-    <h3>Group</h3>
-    ${RoleGroupDemo.cardGroup()}
   </section>
 </section>`;
 }
@@ -381,25 +227,7 @@ function headingGroup() {
 function lists() {
   return `<section id="lists">
   <h2>Lists</h2>
-
-  <section>
-    <h4>Unordered</h4>
-    ${UlDemo.main()}
-  </section>
-
-  <br>
-
-  <section>
-    <h4>Ordered</h4>
-    ${OlDemo.main()}
-  </section>
-
-  <br>
-
-  <section>
-    <h4>Definition</h4>
-    ${DlDemo.main()}
-  </section>
+  ${ListsDemo.all()}
 </section>`;
 }
 
@@ -433,23 +261,32 @@ function address() {
 </section>`;
 }
 
-export function main(attrs: Record<string, string> = {}, slot: string = "") {
+export function main(attrs: Record<string, string> = {}) {
   return renderElement(
     "main",
     { class: "container", ...attrs },
     `<br>
 
-${buttons()}
+<section id="buttons">
+  <h2>Buttons</h2>
+  ${ButtonsDemo.all()}
+</section>
 
 <hr>
 <br>
 
-${links()}
+<section id="links">
+  <h2>Links</h2>
+  ${LinksDemo.all()}
+</section>
 
 <hr>
 <br>
 
-${inputElements()}
+<section id="buttons">
+  <h2>Inputs</h2>
+  ${InputsDemo.all()}
+</section>
 
 <hr>
 <br>
@@ -459,7 +296,15 @@ ${fieldsets()}
 <hr>
 <br>
 
-${cards()}
+<section id="cards">
+  <h2>Cards</h2>
+  ${CardDemo.all()}
+</section>
+
+<section id="card-group">
+  <h3>Card Group</h3>
+  ${RoleGroupDemo.cardGroup()}
+</section>
 
 <hr>
 <br>

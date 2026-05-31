@@ -22,7 +22,7 @@ Card lists are implemented by adding the `.card` class to a `<div role="list">` 
 
 You can indicate that a certain item is active by using `aria-current="true"`.
 
-<HtmlPreviewer :code="RoleListDemo.cardList()" />
+<HtmlPreviewer :code="RoleListDemo.cardList('div', {}, { ariaCurrent: true })" />
 
 ### Intent Variants
 

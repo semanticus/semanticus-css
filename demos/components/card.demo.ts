@@ -20,6 +20,18 @@ export function main(
   );
 }
 
+export function all(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "section",
+    { class: "row" },
+    `${renderElement("div", { class: "col-3" }, main("div", attrs))}
+${renderElement("div", { class: "col-3" }, withHeader("div", attrs))}
+${renderElement("div", { class: "col-3" }, withFooter("div", attrs))}
+${renderElement("div", { class: "col-3" }, withHeaderAndFooter("div", attrs))}
+`,
+  );
+}
+
 export function withHeader(
   tagName: string = "div",
   attrs: Record<string, string> = {},

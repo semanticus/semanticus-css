@@ -1,44 +1,73 @@
-import { renderElement } from "@scripts/utils";
-import * as LinksDemo from "@demos/composites/links.demo";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
+import { LinksDemo } from "@demos/composites";
+
+export function allLinksStates(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "section",
+    { class: "ms-4" },
+    `<h4>Default State</h4>
+${LinksDemo.all(attrs)}
+<h4>Aria-current State</h4>
+${LinksDemo.all({ ...attrs, "aria-current": "true" })}
+<h4>Aria-disabled</h4>
+${LinksDemo.all({ ...attrs, "aria-disabled": "true" })}
+`,
+  );
+}
+
+export function allLinksStatesModifiers(attrs: Record<string, string> = {}) {
+  return `<h3>No modifier</h3>
+${allLinksStates(classMergeAttributes("", attrs))}
+
+<h3>Ghost modifier</h3>
+${allLinksStates(classMergeAttributes("ghost", attrs))}
+
+<h3>Subtle modifier</h3>
+${allLinksStates(classMergeAttributes("subtle", attrs))}
+`;
+}
 
 export function main() {
   return renderElement(
     "main",
     { class: "container" },
-    `<h1>Links / RoleLinks</h1>
+    `<h1>Anchor and RoleLink Variations</h1>
 
 <br>
 
 <h2>Default in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers())}
+${allLinksStates({})}
 
 <hr>
-<h2>Primary Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("primary"))}
+<h2>Primary Variant</h2>
+${allLinksStatesModifiers({ class: "primary" })}
 
 <hr>
-<h2>Secondary Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("secondary"))}
+<h2>Secondary Variant</h2>
+${allLinksStatesModifiers({ class: "secondary" })}
 
 <hr>
-<h2>Contrast Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("contrast"))}
+<h2>Contrast Variant</h2>
+${allLinksStatesModifiers({ class: "contrast" })}
+
 
 <hr>
-<h2>Success Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("success"))}
+<h2>Success Variant</h2>
+${allLinksStatesModifiers({ class: "success" })}
+
 
 <hr>
-<h2>Info Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("info"))}
+<h2>Info Variant</h2>
+${allLinksStatesModifiers({ class: "info" })}
 
 <hr>
-<h2>Warning Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("warning"))}
+<h2>Warning Variant</h2>
+${allLinksStatesModifiers({ class: "warning" })}
+
 
 <hr>
-<h2>Danger Variant in all States</h2>
-${renderElement("section", {}, LinksDemo.overviewStatesAndModifiers("danger"))}
+<h2>Danger Variant</h2>
+${allLinksStatesModifiers({ class: "danger" })}
 `,
   );
 }

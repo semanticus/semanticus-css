@@ -2,6 +2,17 @@ import { renderElement, classMergeAttributes } from "@scripts/utils";
 import * as ADemo from "@demos/semantics/elements/a.demo";
 import * as RoleLinkDemo from "@demos/semantics/attributes/role-link.demo";
 
+export function all(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "section",
+    { class: "auto-grid" },
+    `${ADemo.main(attrs)}
+${RoleLinkDemo.main("button", attrs)}
+${RoleLinkDemo.main("div", attrs)}
+`,
+  );
+}
+
 export function intentVariants(attrs: Record<string, string> = {}) {
   return `${ADemo.intentVariants(attrs)}
 

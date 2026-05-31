@@ -1,7 +1,7 @@
 import { renderAttributes } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  return `<textarea ${renderAttributes(attrs)}>${slot}</textarea>`;
+  return `<textarea${renderAttributes(attrs)}>${slot}</textarea>`;
 }
 
 export function withRows() {

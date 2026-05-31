@@ -6,14 +6,26 @@ import {
 import * as ButtonDemo from "@demos/semantics/elements/button.demo";
 import * as RoleButtonDemo from "@demos/semantics/attributes/role-button.demo";
 
+export function all(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "section",
+    { class: "auto-grid" },
+    `${ButtonDemo.main(attrs)}
+${RoleButtonDemo.main("div", attrs)}
+${inputType("button", attrs)}
+${inputType("submit", attrs)}
+${inputType("reset", attrs)}
+`,
+  );
+}
+
 export function inputType(
   type: "button" | "submit" | "reset" = "button",
   attrs: Record<string, string> = {},
-  value: string = "Input Button",
 ) {
   return renderElement(
     "input",
-    classMergeAttributes("mb-0", { ...attrs, type, value }),
+    classMergeAttributes("mb-0", { value: `Input ${type}`, ...attrs, type }),
   );
 }
 
@@ -74,24 +86,24 @@ export function inputTypeOverviewStatesAndModifiers(
     : "";
 
   return `${renderGrid(
-    `${inputType(type, { class: intent }, `${namePrefix} Input Type ${type}`)}
-${inputType(type, { class: intent, "aria-current": "false" }, "Not Current")}
-${inputType(type, { class: intent, "aria-current": "true" }, "Current")}
-${inputType(type, { class: intent, disabled: "true" }, "Disabled")}`,
+    `${inputType(type, { class: intent, value: `${namePrefix} Input Type ${type}` })}
+${inputType(type, { class: intent, "aria-current": "false", value: "Not Current" })}
+${inputType(type, { class: intent, "aria-current": "true", value: "Current" })}
+${inputType(type, { class: intent, disabled: "true", value: "Disabled" })}`,
   )}
 
 ${renderGrid(
-  `${inputType(type, classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Input Type ${type}`)}
-${inputType(type, classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
-${inputType(type, classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
-${inputType(type, classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}`,
+  `${inputType(type, classMergeAttributes("subtle", { class: intent, value: `${namePrefix} Subtle Input Type ${type}` }))}
+${inputType(type, classMergeAttributes("subtle", { class: intent, "aria-current": "false", value: "Not Current Subtle" }))}
+${inputType(type, classMergeAttributes("subtle", { class: intent, "aria-current": "true", value: "Current Subtle" }))}
+${inputType(type, classMergeAttributes("subtle", { class: intent, disabled: "true", value: "Disabled Subtle" }))}`,
 )}
 
 ${renderGrid(
-  `${inputType(type, classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Input Type ${type}`)}
-${inputType(type, classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
-${inputType(type, classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
-${inputType(type, classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}`,
+  `${inputType(type, classMergeAttributes("ghost", { class: intent, value: `${namePrefix} Ghost Input Type ${type}` }))}
+${inputType(type, classMergeAttributes("ghost", { class: intent, "aria-current": "false", value: "Not Current Ghost" }))}
+${inputType(type, classMergeAttributes("ghost", { class: intent, "aria-current": "true", value: "Current Ghost" }))}
+${inputType(type, classMergeAttributes("ghost", { class: intent, disabled: "true", value: "Disabled Ghost" }))}`,
 )}
 `;
 }

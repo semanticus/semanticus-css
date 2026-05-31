@@ -10,7 +10,7 @@ The `<ul>` element is used as a building block for composites like [Card List](/
 
 ## Basic Usage
 
-<HtmlPreviewer :code="UlDemo.main()" />
+<HtmlPreviewer :code="UlDemo.main({ ariaCurrent: true })" />
 
 ## Card List
 
@@ -18,7 +18,7 @@ Card lists are implemented by adding the `.card` class to a `<div role="list">` 
 
 You can indicate that a certain item is active by using `aria-current="true"`.
 
-<HtmlPreviewer :code="UlDemo.cardList()" />
+<HtmlPreviewer :code="UlDemo.cardList({}, { ariaCurrent: true })" />
 
 ### Intent Variants
 

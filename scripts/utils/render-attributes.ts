@@ -10,7 +10,8 @@ export function renderAttributes(
   const renderedAttrs = Object.entries(attributes)
     .map(([key, val]) => ((val ?? "") !== "" ? `${key}="${val}"` : undefined))
     .filter((attribute) => attribute !== undefined)
-    .join(" ");
+    .join(" ")
+    .trim();
 
-  return renderedAttrs;
+  return renderedAttrs !== "" ? ` ${renderedAttrs}` : renderedAttrs;
 }

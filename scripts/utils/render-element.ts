@@ -15,14 +15,10 @@ export function renderElement(
 ): string {
   const content = slot?.length > 0 ? sanitizeNewLines(ident(slot, 2)) : slot;
 
-  let renderedAttrs = renderAttributes(attrs);
-
-  if ((renderedAttrs ?? "") !== "") renderedAttrs = ` ${renderedAttrs}`;
-
   // This is necessary for self-closing tags like <img> or <input>. If there is no content, we can render it as a self-closing tag.
   if (content === undefined) {
-    return `<${tagName}${renderedAttrs} />`;
+    return `<${tagName}${renderAttributes(attrs)} />`;
   }
 
-  return `<${tagName}${renderedAttrs}>${content}</${tagName}>`;
+  return `<${tagName}${renderAttributes(attrs)}>${content}</${tagName}>`;
 }

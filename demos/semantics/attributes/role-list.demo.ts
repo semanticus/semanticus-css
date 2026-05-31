@@ -1,14 +1,20 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  ListItemType,
+  ListOptions,
+} from "@scripts/utils";
 
-type ItemType = {
-  slot: string;
-  tagName: string;
-  attrs: Record<string, string>;
-};
-
-const defaultItems: ItemType[] = [
+const defaultItems: ListItemType[] = [
   { slot: "Item 1", tagName: "div", attrs: {} },
   { slot: "Item 2", tagName: "div", attrs: {} },
+  { slot: "Item 3", tagName: "div", attrs: {} },
+  { slot: "Item 4", tagName: "div", attrs: {} },
+];
+
+const ariaCurrentItems = [
+  { slot: "Item 1", tagName: "div", attrs: {} },
+  { slot: "Item 2", tagName: "div", attrs: { "aria-current": "true" } },
   { slot: "Item 3", tagName: "div", attrs: {} },
   { slot: "Item 4", tagName: "div", attrs: {} },
 ];
@@ -16,13 +22,17 @@ const defaultItems: ItemType[] = [
 export function main(
   tagName: string = "div",
   attrs: Record<string, string> = {},
-  items: ItemType[] = defaultItems,
+  options: ListOptions = {},
 ) {
+  let items = options.ariaCurrent ? ariaCurrentItems : defaultItems;
+
+  if (options.items) items = options.items;
+
   return renderElement(
     tagName,
     { ...attrs, role: "list" },
     items
-      .map((item) =>
+      .map((item: ListItemType) =>
         renderElement(
           item.tagName,
           { ...item.attrs, role: "listitem" },
@@ -55,14 +65,9 @@ export function nested(
 export function cardList(
   tagName: string = "div",
   attrs: Record<string, string> = {},
-  items: ItemType[] = [
-    { slot: "Item 1", tagName: "div", attrs: {} },
-    { slot: "Item 2", tagName: "div", attrs: { "aria-current": "true" } },
-    { slot: "Item 3", tagName: "div", attrs: {} },
-    { slot: "Item 4", tagName: "div", attrs: {} },
-  ],
+  options: ListOptions = {},
 ) {
-  return main(tagName, classMergeAttributes("card", attrs), items);
+  return main(tagName, classMergeAttributes("card", attrs), options);
 }
 
 export function cardListIntentVariants(
@@ -89,7 +94,7 @@ ${main(tagName, classMergeAttributes(`card danger ${modifier}`.trim(), attrs))}`
   );
 }
 
-function personalizedItems(modifier: string = ""): ItemType[] {
+export function personalizedItems(modifier: string = ""): ListItemType[] {
   return [
     {
       slot: "Primary",
@@ -128,10 +133,10 @@ export function overviewCardListItemIntentVariants(
   return renderElement(
     "section",
     { class: "auto-grid" },
-    `${cardList(tagName, attrs, personalizedItems())}
+    `${cardList(tagName, attrs, { items: personalizedItems() })}
 
-${cardList(tagName, attrs, personalizedItems("ghost"))}
+${cardList(tagName, attrs, { items: personalizedItems("ghost") })}
 
-${cardList(tagName, attrs, personalizedItems("subtle"))}`,
+${cardList(tagName, attrs, { items: personalizedItems("subtle") })}`,
   );
 }

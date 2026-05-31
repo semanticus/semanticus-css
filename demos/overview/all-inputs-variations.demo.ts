@@ -61,7 +61,7 @@ export function main() {
   return renderElement(
     "main",
     { class: "container" },
-    `<h1>Inputs / Selects / Textareas</h1>
+    `<h1>Input, Select and Textarea Variations</h1>
 
 <br>
 

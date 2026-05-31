@@ -8,7 +8,7 @@ title: ol
 
 ## Basic Usage
 
-<HtmlPreviewer :code="OlDemo.main()" />
+<HtmlPreviewer :code="OlDemo.nested()" />
 
 <script setup>
 import { OlDemo } from "@demos/semantics";

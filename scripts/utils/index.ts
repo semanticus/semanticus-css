@@ -7,4 +7,5 @@ export * from "./render-attributes";
 export * from "./render-element";
 export * from "./render-grid";
 export * from "./render-html-template";
+export * from "./types";
 export * from "./variations";

@@ -40,7 +40,7 @@ export function active(
 ) {
   const attributes = { role: "link", "aria-current": "page", ...attrs };
 
-  return `<${tagName} ${renderAttributes(attributes)}>${slot || `Active ${tagName}`}</${tagName}>`;
+  return `<${tagName}${renderAttributes(attributes)}>${slot || `Active ${tagName}`}</${tagName}>`;
 }
 
 export function intentVariants(
