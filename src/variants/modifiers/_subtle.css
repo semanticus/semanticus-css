@@ -1,4 +1,11 @@
 .subtle {
+  /* When .subtle is used in a element that has no intent */
+  &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+    --_buttons-background-color: var(--intent-background-color);
+    --_buttons-border-color: var(--intent-border-color);
+  }
+
+  &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger),
   &.primary {
     --intent-background-color: oklch(
       from var(--primary-subtle-background-color) l c h /
