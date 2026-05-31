@@ -1,27 +1,26 @@
 /* See ./_common.css for shared styles */
+
 input[type="search"] {
   --border-radius: var(--input-search-border-radius);
 
   -webkit-appearance: textfield;
-  outline-offset: -2px;
 
   &::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 
-  padding-inline-start: calc(var(--inputs-spacing-horizontal) + 1.75rem);
+  outline-offset: -2px;
+  padding-inline-start: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
   background-image: var(--icon-search);
-  background-position: left calc(var(--inputs-spacing-horizontal) + 0.125rem)
-    center;
+  background-position: left var(--icons-background-position-gap) center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 
   &[aria-invalid] {
-    padding-inline-start: calc(var(--inputs-spacing-horizontal) + 1.75rem);
-    /* Using calc with var to workaround LightningCSS minification bug with 3-value syntax */
+    padding-inline-end: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
     background-position:
-      left calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center,
-      right calc(var(--inputs-spacing-horizontal) * 0 + 0.75rem) center;
+      left var(--icons-background-position-gap) center,
+      right var(--icons-background-position-gap) center;
   }
 
   &[aria-invalid="false"] {
@@ -33,14 +32,12 @@ input[type="search"] {
   }
 
   [dir="rtl"] & {
-    /* Using calc with var to workaround LightningCSS minification bug with 3-value syntax */
-    background-position: right
-      calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center;
+    background-position: right var(--icons-background-position-gap) center;
 
     &[aria-invalid] {
       background-position:
-        right calc(var(--inputs-spacing-horizontal) * 0 + 1.125rem) center,
-        left calc(var(--inputs-spacing-horizontal) * 0 + 0.75rem) center;
+        right var(--icons-background-position-gap) center,
+        left var(--icons-background-position-gap) center;
     }
   }
 }

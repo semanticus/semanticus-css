@@ -5,20 +5,17 @@
 [type="month"],
 [type="time"],
 [type="week"] {
-  --icon-position: 0.75rem;
-  --icon-width: 1rem;
-
   padding-left: var(--inputs-spacing-horizontal);
-  padding-right: calc(var(--icon-width) + var(--icon-position));
+  padding-right: calc(var(--icons-width) + var(--icons-background-position-gap));
   background-image: var(--icon-date);
-  background-position: center right var(--icon-position);
-  background-size: var(--icon-width) auto;
+  background-position: center right var(--icons-background-position-gap);
+  background-size: var(--icons-width) auto;
   background-repeat: no-repeat;
 
   &::-webkit-calendar-picker-indicator {
-    width: var(--icon-width);
-    margin-right: calc(var(--icon-width) * -1);
-    margin-left: var(--icon-position);
+    width: var(--icons-width);
+    margin-right: calc(var(--icons-width) * -1);
+    margin-left: var(--icons-background-position-gap);
     opacity: 0;
   }
 
