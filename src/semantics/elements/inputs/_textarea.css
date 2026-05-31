@@ -10,6 +10,11 @@ textarea {
     background-size: var(--icons-width) calc(
       var(--icons-width) * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
         var(--border-width) * 2
-    );;
+    );
+  }
+
+  &[dir="rtl"],
+  [dir="rtl"] & {
+    background-position: top left var(--icons-background-position-gap);
   }
 }

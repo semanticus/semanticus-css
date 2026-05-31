@@ -161,7 +161,7 @@ label[aria-disabled="true"] input[disabled] {
   padding-inline-start: var(--inputs-spacing-horizontal);
   padding-inline-end: calc(var(--inputs-spacing-horizontal) + 1.5rem);
   background-position: center right 0.75rem;
-  background-size: 1rem auto;
+  background-size: var(--icons-width) auto;
   background-repeat: no-repeat;
 }
 

@@ -9,8 +9,8 @@ select {
     padding-inline-start: var(--inputs-spacing-horizontal);
     padding-inline-end: calc(var(--inputs-spacing-horizontal) + 1.5rem);
     background-image: var(--icon-chevron);
-    background-position: center right 0.75rem;
-    background-size: 1rem auto;
+    background-position: center right var(--icons-background-position-gap);
+    background-size: var(--icons-width) auto;
     background-repeat: no-repeat;
   }
 
@@ -18,8 +18,9 @@ select {
     background: var(--inputs-background-color-selected);
     color: var(--inputs-color);
   }
-}
 
-[dir="rtl"] select:not([multiple], [size]) {
-  background-position: center left 0.75rem;
+  &[dir="rtl"],
+  [dir="rtl"] & {
+    background-position: center left var(--icons-background-position-gap);
+  }
 }

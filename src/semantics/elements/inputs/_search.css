@@ -10,11 +10,11 @@ input[type="search"] {
   }
 
   outline-offset: -2px;
-  padding-inline-start: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
   background-image: var(--icon-search);
   background-position: left var(--icons-background-position-gap) center;
-  background-size: 1rem auto;
   background-repeat: no-repeat;
+  background-size: var(--icons-width) auto;
+  padding-inline-start: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
 
   &[aria-invalid] {
     padding-inline-end: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));

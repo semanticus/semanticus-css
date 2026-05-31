@@ -5,12 +5,11 @@
 [type="month"],
 [type="time"],
 [type="week"] {
-  padding-left: var(--inputs-spacing-horizontal);
-  padding-right: calc(var(--icons-width) + var(--icons-background-position-gap));
   background-image: var(--icon-date);
   background-position: center right var(--icons-background-position-gap);
   background-size: var(--icons-width) auto;
   background-repeat: no-repeat;
+  padding-right: calc(var(--icons-width) + var(--icons-background-position-gap));
 
   &::-webkit-calendar-picker-indicator {
     width: var(--icons-width);
@@ -19,6 +18,7 @@
     opacity: 0;
   }
 
+  &[dir="rtl"],
   [dir="rtl"] & {
     text-align: right;
   }
