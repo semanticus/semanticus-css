@@ -2,7 +2,7 @@ import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { ListsDemo } from "@demos/composites";
 import { UlDemo } from "@demos/semantics";
 
-export function allListsStates(attrs: Record<string, string> = {}) {
+function allListsStates(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
     { class: "ms-4" },
@@ -10,7 +10,7 @@ export function allListsStates(attrs: Record<string, string> = {}) {
   );
 }
 
-export function allListsStatesModifiers(attrs: Record<string, string> = {}) {
+function allListsStatesModifiers(attrs: Record<string, string> = {}) {
   return `<h3>No modifier</h3>
 ${allListsStates(classMergeAttributes("", attrs))}
 

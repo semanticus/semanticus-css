@@ -1,7 +1,7 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { CardDemo } from "@demos/components";
 
-export function allCardsStates(attrs: Record<string, string> = {}) {
+function allCardsStates(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
     { class: "ms-4" },
@@ -10,7 +10,7 @@ export function allCardsStates(attrs: Record<string, string> = {}) {
   );
 }
 
-export function allCardsStatesModifiers(attrs: Record<string, string> = {}) {
+function allCardsStatesModifiers(attrs: Record<string, string> = {}) {
   return `<h3>No modifier</h3>
 ${allCardsStates(classMergeAttributes("", attrs))}
 

@@ -16,12 +16,10 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overview/all-card-lists-variations.demo/main?theme=${theme} - visual snapshot`, async ({
+  test(`/overview/all-lists-variations.demo/main?theme=${theme} - visual snapshot`, async ({
     page,
   }) => {
-    await page.goto(
-      `/overview/all-card-lists-variations.demo/main?theme=${theme}`,
-    );
+    await page.goto(`/overview/all-lists-variations.demo/main?theme=${theme}`);
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();

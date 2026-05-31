@@ -1,7 +1,7 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { ButtonsDemo } from "@demos/composites";
 
-export function allButtonsStates(attrs: Record<string, string> = {}) {
+function allButtonsStates(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
     { class: "ms-4" },
@@ -17,7 +17,7 @@ ${ButtonsDemo.all({ ...attrs, disabled: "true" })}
   );
 }
 
-export function allButtonsStatesModifiers(attrs: Record<string, string> = {}) {
+function allButtonsStatesModifiers(attrs: Record<string, string> = {}) {
   return `<h3>No modifier</h3>
 ${allButtonsStates(classMergeAttributes("", attrs))}
 

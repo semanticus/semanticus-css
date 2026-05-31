@@ -1,7 +1,7 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 import { LinksDemo } from "@demos/composites";
 
-export function allLinksStates(attrs: Record<string, string> = {}) {
+function allLinksStates(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
     { class: "ms-4" },
@@ -15,7 +15,7 @@ ${LinksDemo.all({ ...attrs, "aria-disabled": "true" })}
   );
 }
 
-export function allLinksStatesModifiers(attrs: Record<string, string> = {}) {
+function allLinksStatesModifiers(attrs: Record<string, string> = {}) {
   return `<h3>No modifier</h3>
 ${allLinksStates(classMergeAttributes("", attrs))}
 

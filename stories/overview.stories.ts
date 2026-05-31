@@ -10,6 +10,7 @@ import {
   VariantsDemo,
   UtilitiesColorsDemo,
   AllListsVariationsDemo,
+  AllDetailsAsButtonVariationsDemo,
 } from "@demos/overview";
 
 const meta: Meta = {
@@ -41,6 +42,10 @@ export const allInputsVariations: StoryObj = {
 
 export const allCardsVariations: StoryObj = {
   render: () => AllCardsVariationsDemo.main(),
+};
+
+export const allDetailsAsButtonVariations: StoryObj = {
+  render: () => AllDetailsAsButtonVariationsDemo.main(),
 };
 
 export const allCardGroupsVariations: StoryObj = {
