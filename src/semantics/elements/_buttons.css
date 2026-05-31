@@ -54,8 +54,12 @@ button,
       0 0 0 var(--outline-width) var(--buttons-focus-ring-color);
   }
 
-  [aria-busy="true"] {
+  &[aria-busy="true"] {
     pointer-events: none;
+
+    &:before {
+      filter: brightness(0) invert(1);
+    }
   }
 }
 
