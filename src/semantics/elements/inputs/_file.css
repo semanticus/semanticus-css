@@ -3,28 +3,31 @@
 [type="file"] {
   --color: var(--color-muted);
 
-  margin-left: calc(var(--outline-width) * -1);
+  margin-left: calc(var(--focus-ring-width) * -1);
   padding: calc(var(--inputs-spacing-vertical) * 0.5) 0;
   padding-left: var(--outline-width);
   border: 0;
   border-radius: 0;
   background: none;
   border-radius: var(--border-radius);
+  outline: none; /* We are outlining the file-selector-button instead */
+
+  &:is(:active, :focus) {
+    &::file-selector-button {
+      outline: var(--outline-width) solid var(--_buttons-focus-ring-color);
+      box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-focus-ring-color);
+    }
+  }
 
   &::file-selector-button {
+    margin-left: var(--focus-ring-width);
     margin-right: calc(var(--spacing) / 2);
     padding: calc(var(--inputs-spacing-vertical) * 0.5)
       var(--inputs-spacing-horizontal);
-  }
 
-  &:is(:hover, :active, :focus)::file-selector-button {
-    --background-color: var(--secondary-background-color-hover);
-    --border-color: var(--secondary-background-color-hover);
-  }
-
-  &:focus::file-selector-button {
-    --box-shadow:
-      var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--secondary-focus-ring-color);
+    &:is(:hover, :active, :focus) {
+      --background-color: var(--secondary-background-color-hover);
+      --border-color: var(--secondary-background-color-hover);
+    }
   }
 }

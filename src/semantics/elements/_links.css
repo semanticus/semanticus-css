@@ -1,44 +1,42 @@
 :where(a:not([role="button"])),
 [role="link"] {
-  --_link-color: var(--links-color);
-  --_link-text-decoration: var(--links-text-decoration);
-  --_link-focus-ring-color: var(--links-focus-ring-color);
-  --border-color: transparent;
+  --_links-color: var(--links-color);
+  --_links-text-decoration: var(--links-text-decoration);
+  --_links-focus-ring-color: var(--links-focus-ring-color);
 
-  outline: none;
   padding: 0;
   background-color: transparent;
-
   border-color: transparent;
-  color: var(--_link-color);
-  text-decoration: var(--_link-text-decoration);
-  text-decoration-color: oklch(from var(--_link-color) l c h / 0.3);
+  color: var(--_links-color);
+  text-decoration: var(--_links-text-decoration);
+  text-decoration-color: oklch(from var(--_links-color) l c h / 0.3);
   text-underline-offset: 0.125em;
   transition:
     background-color var(--transition),
     color var(--transition),
     text-decoration-color var(--transition),
-    text-decoration var(--transition),
-    box-shadow var(--transition);
+    text-decoration var(--transition);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --background-color: transparent;
     --border-color: transparent;
     --color: color-mix(
       in srgb,
-      var(--_link-color) 70%,
+      var(--_links-color) 70%,
       var(--color-hover-effect)
     );
-    text-decoration-color: oklch(from var(--_link-color) l c h / 0.85);
+    text-decoration-color: oklch(from var(--_links-color) l c h / 0.85);
   }
 
   &:is([aria-current]:not([aria-current="false"])) {
     font-weight: 500;
-    text-decoration-color: oklch(from var(--_link-color) l c h / 0.6);
+    text-decoration-color: oklch(from var(--_links-color) l c h / 0.6);
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 var(--outline-width) var(--_link-focus-ring-color);
+    border-radius: var(--buttons-border-radius);
+    outline: var(--outline-width) solid var(--_links-focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_links-focus-ring-color);
   }
 
   &[aria-busy="true"] {
@@ -72,7 +70,7 @@ nav {
   a:not([role="button"]),
   [role="link"] {
     &:not(:hover) {
-      --_link-text-decoration: none;
+      --_links-text-decoration: none;
     }
   }
 }

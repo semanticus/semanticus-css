@@ -111,7 +111,8 @@
   --border-color-opacity: 100%;
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
-  --outline-width: 0.125rem;
+  --outline-width: 1px;
+  --focus-ring-width: 0.125rem;
   --box-shadow:
     0.0145rem 0.029rem 0.174rem
       light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
@@ -286,8 +287,6 @@
   --buttons-border-width: var(--border-width);
   --buttons-border-color: var(--primary-background-color);
   --buttons-border-color-hover: var(--primary-background-color-hover);
-  --buttons-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --buttons-box-shadow-hover: 0 0 0 rgba(0, 0, 0, 0);
   --buttons-focus-ring-color: var(--primary-focus-ring-color);
 
   /* --- Code --- */
@@ -303,7 +302,6 @@
   /* --- Details --- */
   /* Affects accordions and dropdowns */
   --details-color-focus: var(--primary-color-hover);
-  --details-focus-ring-color: var(--primary-focus-ring-color);
   --details-summary-color: var(--color);
   --details-summary-color-open: var(--color-muted);
   --details-menu-background-color: light-dark(white, var(--color-slate-900));

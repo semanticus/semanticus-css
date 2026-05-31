@@ -3,17 +3,11 @@
   --_buttons-color: #fff;
   --_buttons-background-color: var(--intent-background-color);
   --_buttons-border-color: var(--intent-border-color);
+  --_buttons-focus-ring-color: var(--intent-focus-ring-color);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --_buttons-background-color: var(--intent-background-color-hover);
     --_buttons-border-color: var(--intent-border-color-hover);
-  }
-
-  &:focus,
-  &:is([aria-current]:not([aria-current="false"])):focus {
-    --_buttons-box-shadow:
-      var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--intent-focus-ring-color);
   }
 
   /* --- Alert Individual Styling --- */
@@ -32,7 +26,8 @@
   );
 
   /* --- Link Individual Styling --- */
-  --_link-color: var(--intent-color);
+  --_links-color: var(--intent-color);
+  --_links-focus-ring-color: var(--intent-focus-ring-color);
 
   /* --- Pane Individual Styling --- */
   --_pane-color: #fff;

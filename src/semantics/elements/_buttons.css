@@ -19,14 +19,12 @@ button,
   --_buttons-border-radius: var(--buttons-border-radius);
   --_buttons-border-color: var(--buttons-border-color);
   --_buttons-border-width: var(--buttons-border-width);
-  --_buttons-box-shadow: var(--buttons-box-shadow);
+  --_buttons-focus-ring-color: var(--buttons-focus-ring-color);
 
   padding: var(--_buttons-spacing-vertical) var(--_buttons-spacing-horizontal);
   border: var(--_buttons-border-width) solid var(--_buttons-border-color);
   border-radius: var(--_buttons-border-radius);
-  outline: none;
   background-color: var(--_buttons-background-color);
-  box-shadow: var(--_buttons-box-shadow);
   color: var(--_buttons-color, white);
   font-weight: var(--font-weight);
   font-size: var(--_buttons-font-size);
@@ -38,20 +36,17 @@ button,
   transition:
     background-color var(--transition),
     border-color var(--transition),
-    color var(--transition),
-    box-shadow var(--transition);
+    color var(--transition);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     --_buttons-color: var(--buttons-color-hover);
     --_buttons-background-color: var(--buttons-background-color-hover);
     --_buttons-border-color: var(--buttons-border-color-hover);
-    --_buttons-box-shadow: var(--buttons-box-shadow-hover);
   }
 
-  &:focus {
-    --_buttons-box-shadow:
-      var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--buttons-focus-ring-color);
+  &:is(:active, :focus) {
+    outline: var(--outline-width) solid var(--_buttons-focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-focus-ring-color);
   }
 
   &[aria-busy="true"] {
@@ -72,6 +67,7 @@ button,
   --_buttons-background-color: var(--secondary-background-color);
   --_buttons-border-color: var(--secondary-background-color);
   --_buttons-color: #fff;
+  --_buttons-focus-ring-color: var(--secondary-focus-ring-color);
 
   cursor: pointer;
 
@@ -79,12 +75,6 @@ button,
     --_buttons-background-color: var(--secondary-background-color-hover);
     --_buttons-border-color: var(--secondary-background-color-hover);
     --_buttons-color: #fff;
-  }
-
-  &:focus {
-    --_buttons-box-shadow:
-      var(--buttons-box-shadow-hover, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--secondary-focus-ring-color);
   }
 }
 

@@ -128,8 +128,8 @@
       [type="button"],
       [role="button"]
     ) {
-      --buttons-box-shadow: 0 0 0 var(--border-width)
-        var(--buttons-focus-ring-color);
+      outline: var(--outline-width) solid var(--buttons-focus-ring-color);
+      box-shadow: 0 0 0 var(--outline-width) var(--buttons-focus-ring-color);
     }
   }
 }
