@@ -1,23 +1,51 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  ListOptions,
+  ListItemType,
+} from "@scripts/utils";
 
-type ItemType = {
-  slot?: string;
-  tagName: string;
-  attrs: Record<string, string>;
-};
-
-const defaultItems: ItemType[] = [
+const defaultItems: ListItemType[] = [
   { slot: "Item 1", tagName: "span", attrs: {} },
   { slot: "Item 2", tagName: "span", attrs: {} },
   { slot: "Item 3", tagName: "span", attrs: {} },
   { slot: "Item 4", tagName: "span", attrs: {} },
 ];
 
+const buttonItems: ListItemType[] = [
+  { tagName: "button", attrs: {}, slot: "Bold" },
+  { tagName: "button", attrs: {}, slot: "Italic" },
+  { tagName: "button", attrs: {}, slot: "Strikethrough" },
+  { tagName: "button", attrs: {}, slot: "Underline" },
+];
+
+const ariaCurrentButtonItems: ListItemType[] = [
+  { tagName: "button", attrs: {}, slot: "Bold" },
+  {
+    tagName: "button",
+    attrs: { "aria-current": "true" },
+    slot: "Italic",
+  },
+  { tagName: "button", attrs: {}, slot: "Strikethrough" },
+  { tagName: "button", attrs: {}, slot: "Underline" },
+];
+
+const ariaCurrentItems: ListItemType[] = [
+  { slot: "Processed", tagName: "span", attrs: {} },
+  { slot: "Shipped", tagName: "span", attrs: {} },
+  { slot: "In route", tagName: "span", attrs: { "aria-current": "true" } },
+  { slot: "Delivered", tagName: "span", attrs: { "aria-disabled": "true" } },
+];
+
 export function main(
   tagName: string = "div",
   attrs: Record<string, string> = {},
-  items: ItemType[] = defaultItems,
+  options: ListOptions = {},
 ) {
+  let items = options.ariaCurrent ? ariaCurrentItems : defaultItems;
+
+  if (options.items) items = options.items;
+
   return renderElement(
     tagName,
     { ...attrs, role: "group" },
@@ -27,17 +55,28 @@ export function main(
   );
 }
 
+export function buttonGroup(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+  options: ListOptions = {},
+) {
+  let items = options.ariaCurrent ? ariaCurrentButtonItems : buttonItems;
+
+  if (options.items) items = options.items;
+
+  return main(
+    tagName,
+    { ...attrs, "aria-label": "Text formatting" },
+    { ...options, items },
+  );
+}
+
 export function cardGroup(
   tagName: string = "div",
   attrs: Record<string, string> = {},
-  items: ItemType[] = [
-    { slot: "Processed", tagName: "span", attrs: {} },
-    { slot: "Shipped", tagName: "span", attrs: {} },
-    { slot: "In route", tagName: "span", attrs: { "aria-current": "true" } },
-    { slot: "Delivered", tagName: "span", attrs: { "aria-disabled": "true" } },
-  ],
+  options: ListOptions = {},
 ) {
-  return main(tagName, classMergeAttributes("card", attrs), items);
+  return main(tagName, classMergeAttributes("card", attrs), options);
 }
 
 export function cardGroupIntentVariants(
@@ -60,7 +99,7 @@ ${main(tagName, classMergeAttributes(`card warning ${modifier}`.trim(), attrs))}
 ${main(tagName, classMergeAttributes(`card danger ${modifier}`.trim(), attrs))}`;
 }
 
-function personalizedItems(modifier: string = ""): ItemType[] {
+export function personalizedItems(modifier: string = ""): ListItemType[] {
   return [
     {
       slot: "Primary",
@@ -92,12 +131,48 @@ function personalizedItems(modifier: string = ""): ItemType[] {
   ];
 }
 
+export function personalizedButtonItems(modifier: string = ""): ListItemType[] {
+  return [
+    {
+      slot: "Primary",
+      tagName: "button",
+      attrs: { class: `primary ${modifier}` },
+    },
+    {
+      slot: "Secondary",
+      tagName: "button",
+      attrs: { class: `secondary ${modifier}` },
+    },
+    {
+      slot: "Contrast",
+      tagName: "button",
+      attrs: { class: `contrast ${modifier}` },
+    },
+    {
+      slot: "Success",
+      tagName: "button",
+      attrs: { class: `success ${modifier}` },
+    },
+    { slot: "Info", tagName: "button", attrs: { class: `info ${modifier}` } },
+    {
+      slot: "Warning",
+      tagName: "button",
+      attrs: { class: `warning ${modifier}` },
+    },
+    {
+      slot: "Danger",
+      tagName: "button",
+      attrs: { class: `danger ${modifier}` },
+    },
+  ];
+}
+
 export function cardGroupPersonalizedItems(
   tagName: string = "div",
   attrs: Record<string, string> = {},
   modifier: string = "",
 ) {
-  return `${cardGroup(tagName, attrs, personalizedItems(modifier))}`;
+  return `${cardGroup(tagName, attrs, { items: personalizedItems(modifier) })}`;
 }
 
 export function overviewCardGroupItemIntentVariants(
@@ -112,22 +187,22 @@ ${cardGroupPersonalizedItems(tagName, attrs, "subtle")}`;
 }
 
 export function inputGroup(attrs: Record<string, string> = {}) {
-  return main("fieldset", { ...attrs, "aria-label": "Email subscription" }, [
+  return main(
+    "fieldset",
+    { ...attrs, "aria-label": "Email subscription" },
     {
-      tagName: "input",
-      attrs: { type: "email", placeholder: "Enter your email" },
+      items: [
+        {
+          tagName: "input",
+          attrs: { type: "email", placeholder: "Enter your email" },
+          slot: "",
+        },
+        {
+          tagName: "input",
+          attrs: { type: "submit", value: "Subscribe" },
+          slot: "",
+        },
+      ],
     },
-    { tagName: "input", attrs: { type: "submit", value: "Subscribe" } },
-  ]);
-}
-
-export function buttonGroup(
-  tagName: string = "div",
-  attrs: Record<string, string> = {},
-) {
-  return main(tagName, { ...attrs, "aria-label": "Text formatting" }, [
-    { tagName: "button", attrs: {}, slot: "Bold" },
-    { tagName: "button", attrs: { "aria-current": "true" }, slot: "Italic" },
-    { tagName: "button", attrs: {}, slot: "Underline" },
-  ]);
+  );
 }

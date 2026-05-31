@@ -6,7 +6,7 @@ Card groups are implemented by adding the `.card` class to an element with [[rol
 
 You can indicate that a certain item is active by using `aria-current="true"`.
 
-<HtmlPreviewer :code="RoleGroupDemo.cardGroup()" />
+<HtmlPreviewer :code="RoleGroupDemo.cardGroup('div', {}, { ariaCurrent: true })" />
 
 ### Intent Variants
 

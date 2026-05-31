@@ -8,6 +8,7 @@ import {
   LinksDemo,
   ButtonsDemo,
   ListsDemo,
+  GroupsDemo,
 } from "@demos/composites";
 import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
@@ -283,7 +284,7 @@ export function main(attrs: Record<string, string> = {}) {
 <hr>
 <br>
 
-<section id="buttons">
+<section id="inputs">
   <h2>Inputs</h2>
   ${InputsDemo.all()}
 </section>
@@ -291,7 +292,10 @@ export function main(attrs: Record<string, string> = {}) {
 <hr>
 <br>
 
-${fieldsets()}
+<section id="groups">
+  <h2>Groups</h2>
+  ${GroupsDemo.all()}
+</section>
 
 <hr>
 <br>
@@ -299,11 +303,6 @@ ${fieldsets()}
 <section id="cards">
   <h2>Cards</h2>
   ${CardDemo.all()}
-</section>
-
-<section id="card-group">
-  <h3>Card Group</h3>
-  ${RoleGroupDemo.cardGroup()}
 </section>
 
 <hr>

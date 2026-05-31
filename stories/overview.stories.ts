@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import {
   AllButtonsVariationsDemo,
-  AllCardGroupsVariationsDemo,
   AllCardsVariationsDemo,
   AllComponentsDemo,
   AllInputsVariationsDemo,
@@ -11,6 +10,7 @@ import {
   UtilitiesColorsDemo,
   AllListsVariationsDemo,
   AllDetailsAsButtonVariationsDemo,
+  AllGroupsVariationsDemo,
 } from "@demos/overview";
 
 const meta: Meta = {
@@ -48,8 +48,8 @@ export const allDetailsAsButtonVariations: StoryObj = {
   render: () => AllDetailsAsButtonVariationsDemo.main(),
 };
 
-export const allCardGroupsVariations: StoryObj = {
-  render: () => AllCardGroupsVariationsDemo.main(),
+export const allGroupsVariations: StoryObj = {
+  render: () => AllGroupsVariationsDemo.main(),
 };
 
 export const allLinksVariations: StoryObj = {

@@ -29,7 +29,7 @@ See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of g
 
 When you have a set of related buttons, but they don't fit into a toolbar or menu.
 
-<HtmlPreviewer :code="RoleGroupDemo.buttonGroup()" />
+<HtmlPreviewer :code="RoleGroupDemo.buttonGroup('div', {}, { ariaCurrent: true })" />
 
 See [Pagination](/docs/composites/pagination) for more details.
 
@@ -39,7 +39,7 @@ If you combine the `role="group"` with the `.card` class, you can create a group
 
 Check out [Card Group](/docs/composites/card-group) documentation page for more examples.
 
-<HtmlPreviewer :code="RoleGroupDemo.cardGroup()" />
+<HtmlPreviewer :code="RoleGroupDemo.cardGroup('div', {}, { ariaCurrent: true })" />
 
 <script setup>
 import { RoleGroupDemo } from "@demos/semantics";
