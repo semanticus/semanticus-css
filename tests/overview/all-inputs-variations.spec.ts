@@ -17,21 +17,19 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overview/all-links-states-and-variants.demo/main?theme=${theme} - visual snapshot`, async ({
+  test(`/overview/all-inputs-variations.demo/main?theme=${theme} - visual snapshot`, async ({
     page,
   }) => {
-    await page.goto(
-      `/overview/all-links-states-and-variants.demo/main?theme=${theme}`,
-    );
+    await page.goto(`/overview/all-inputs-variations.demo/main?theme=${theme}`);
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
 
-    await triggerState(page, `a, [role="link"]`, ["hover"]);
+    await triggerState(page, `input, textarea, select`, ["focus"]);
 
     await expect(page).toHaveScreenshot(
-      `all-links-hover-theme-${theme}.png`,
+      `all-inputs-variations-in-focus-state-theme-${theme}.png`,
       screenshotOptions,
     );
   });

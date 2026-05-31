@@ -3,6 +3,7 @@ export * as AllCardListsAndVariantsDemo from "./all-card-lists-and-variants.demo
 export * as AllCardGroupsAndVariantsDemo from "./all-card-groups-and-variants.demo";
 export * as AllCardsAndVariantsDemo from "./all-cards-and-variants.demo";
 export * as AllComponentsDemo from "./all-components.demo";
+export * as AllInputsVariationsDemo from "./all-inputs-variations.demo";
 export * as AllLinksStatesAndVariantsDemo from "./all-links-states-and-variants.demo";
 export * as CustomizerDemo from "./customizer.demo";
 export * as NestedVariationsDemo from "./nested-variations.demo";

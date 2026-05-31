@@ -4,7 +4,7 @@ import {
   PageAssertionsToHaveScreenshotOptions,
 } from "@playwright/test";
 import { variations } from "@scripts/utils";
-import { triggerHoverState } from "@tests/support/utils";
+import { triggerState } from "@tests/support/utils";
 
 test.use({ viewport: { width: 1024, height: 900 } });
 
@@ -28,9 +28,10 @@ themes.forEach((theme) => {
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
 
-    await triggerHoverState(
+    await triggerState(
       page,
       `button, [type="submit"], [type="reset"], [type="button"], [role="button"]`,
+      ["hover"],
     );
 
     await expect(page).toHaveScreenshot(

@@ -5,6 +5,7 @@ import {
   AllCardListsAndVariantsDemo,
   AllCardsAndVariantsDemo,
   AllComponentsDemo,
+  AllInputsVariationsDemo,
   AllLinksStatesAndVariantsDemo,
   NestedVariationsDemo,
   StatesAndVariantsDemo,
@@ -32,6 +33,10 @@ export const nestedVariations: StoryObj = {
 
 export const allButtonsStatesVariants: StoryObj = {
   render: () => AllButtonsStatesAndVariantsDemo.main(),
+};
+
+export const allInputsVariations: StoryObj = {
+  render: () => AllInputsVariationsDemo.main(),
 };
 
 export const allCardsAndVariants: StoryObj = {

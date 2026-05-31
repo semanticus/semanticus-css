@@ -1,6 +1,10 @@
 import { Page } from "@playwright/test";
 
-export async function triggerHoverState(page: Page, selector: string) {
+export async function triggerState(
+  page: Page,
+  selector: string,
+  forcedPseudoClasses: string[],
+) {
   // 1. Establish the direct connection with Chromium DevTools
   const session = await page.context().newCDPSession(page);
   await session.send("DOM.enable");
@@ -19,7 +23,7 @@ export async function triggerHoverState(page: Page, selector: string) {
   for (const nodeId of nodeIds) {
     await session.send("CSS.forcePseudoState", {
       nodeId: nodeId,
-      forcedPseudoClasses: ["hover"], // FIXED: Changed 'forcedPseudoStates' to 'forcedPseudoClasses'
+      forcedPseudoClasses, // FIXED: Changed 'forcedPseudoStates' to 'forcedPseudoClasses'
     });
   }
 
