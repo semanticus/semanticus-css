@@ -4,14 +4,11 @@ select {
   text-transform: none;
 
   &:not([multiple], [size]) {
-    padding-right: calc(var(--inputs-spacing-horizontal) + 1.5rem);
-    padding-left: var(--inputs-spacing-horizontal);
-    padding-inline-start: var(--inputs-spacing-horizontal);
-    padding-inline-end: calc(var(--inputs-spacing-horizontal) + 1.5rem);
     background-image: var(--icon-chevron);
     background-position: center right var(--icons-background-position-gap);
-    background-size: var(--icons-width) auto;
     background-repeat: no-repeat;
+    background-size: var(--icons-width) auto;
+    padding-inline-end: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
   }
 
   &[multiple] option:checked {
