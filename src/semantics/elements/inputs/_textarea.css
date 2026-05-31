@@ -4,13 +4,12 @@ textarea {
   overflow: auto;
   display: block;
   resize: vertical;
-}
 
-:where(textarea[aria-invalid]) {
-  --icon-height: calc(
-    1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
-      var(--border-width) * 2
-  );
-  background-position: top right 0.75rem;
-  background-size: 1rem var(--icon-height);
+  &[aria-invalid] {
+    background-position: top right var(--icons-background-position-gap);
+    background-size: var(--icons-width) calc(
+      var(--icons-width) * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
+        var(--border-width) * 2
+    );;
+  }
 }
