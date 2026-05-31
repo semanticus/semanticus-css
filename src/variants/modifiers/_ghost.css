@@ -4,6 +4,19 @@
     from var(--border-color) l c h / var(--border-color-opacity)
   );
 
+  &:is(
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [type="file"]::file-selector-button,
+      [role="button"]
+    )[aria-busy="true"] {
+    &:before {
+      filter: none;
+    }
+  }
+
   /* --- Buttons Individual Styling --- */
   --_buttons-color: var(--intent-color, var(--buttons-background-color));
 
