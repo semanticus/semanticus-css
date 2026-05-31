@@ -1,3 +1,14 @@
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-size: 1rem;
+  line-height: var(--line-height);
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
 :where(input, select, textarea) {
   --background-color: var(--inputs-background-color);
   --border-color: var(--inputs-border-color);
@@ -78,17 +89,10 @@
   label > & {
     margin-top: calc(var(--spacing) * 0.25);
   }
-}
 
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  font-size: 1rem;
-  line-height: var(--line-height);
-  font-family: inherit;
-  letter-spacing: inherit;
+  &::placeholder {
+    color: var(--inputs-placeholder-color);
+  }
 }
 
 ::-webkit-inner-spin-button,
@@ -112,15 +116,4 @@ textarea {
 
 :-moz-ui-invalid {
   box-shadow: none;
-}
-
-label[aria-disabled="true"] input[disabled] {
-  opacity: 1;
-}
-
-input::placeholder,
-textarea::placeholder,
-select:invalid {
-  color: var(--inputs-placeholder-color);
-  opacity: 1;
 }

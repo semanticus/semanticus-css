@@ -20,4 +20,9 @@ select {
   [dir="rtl"] & {
     background-position: center left var(--icons-background-position-gap);
   }
+
+  &:invalid {
+    color: var(--inputs-placeholder-color);
+    opacity: 1;
+  }
 }
