@@ -7,10 +7,19 @@ textarea {
 
   &[aria-invalid] {
     background-position: top right var(--icons-background-position-gap);
+    background-repeat: no-repeat;
     background-size: var(--icons-width) calc(
       var(--icons-width) * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
         var(--border-width) * 2
     );
+
+    &[aria-invalid="false"] {
+      background-image: var(--icon-valid);
+    }
+
+    &[aria-invalid="true"] {
+      background-image: var(--icon-invalid);
+    }
   }
 
   &[dir="rtl"],
