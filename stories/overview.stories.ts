@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import {
-  AllButtonsStatesAndVariantsDemo,
-  AllCardGroupsAndVariantsDemo,
-  AllCardListsAndVariantsDemo,
-  AllCardsAndVariantsDemo,
+  AllButtonsVariationsDemo,
+  AllCardGroupsVariationsDemo,
+  AllCardListsVariationsDemo,
+  AllCardsVariationsDemo,
   AllComponentsDemo,
   AllInputsVariationsDemo,
-  AllLinksStatesAndVariantsDemo,
+  AllLinksVariationsDemo,
   NestedVariationsDemo,
-  StatesAndVariantsDemo,
+  VariantsDemo,
   UtilitiesColorsDemo,
 } from "@demos/overview";
 
@@ -23,36 +23,36 @@ export const allComponents: StoryObj = {
   render: () => AllComponentsDemo.main(),
 };
 
-export const statesAndVariants: StoryObj = {
-  render: () => StatesAndVariantsDemo.main(),
+export const variants: StoryObj = {
+  render: () => VariantsDemo.main(),
 };
 
 export const nestedVariations: StoryObj = {
   render: () => NestedVariationsDemo.main(),
 };
 
-export const allButtonsStatesVariants: StoryObj = {
-  render: () => AllButtonsStatesAndVariantsDemo.main(),
+export const allButtonsVariations: StoryObj = {
+  render: () => AllButtonsVariationsDemo.main(),
 };
 
 export const allInputsVariations: StoryObj = {
   render: () => AllInputsVariationsDemo.main(),
 };
 
-export const allCardsAndVariants: StoryObj = {
-  render: () => AllCardsAndVariantsDemo.main(),
+export const allCardsVariations: StoryObj = {
+  render: () => AllCardsVariationsDemo.main(),
 };
 
-export const allCardListsAndVariants: StoryObj = {
-  render: () => AllCardListsAndVariantsDemo.main(),
+export const allCardListsVariations: StoryObj = {
+  render: () => AllCardListsVariationsDemo.main(),
 };
 
-export const allCardGroupsAndVariants: StoryObj = {
-  render: () => AllCardGroupsAndVariantsDemo.main(),
+export const allCardGroupsVariations: StoryObj = {
+  render: () => AllCardGroupsVariationsDemo.main(),
 };
 
-export const allLinksStatesVariants: StoryObj = {
-  render: () => AllLinksStatesAndVariantsDemo.main(),
+export const allLinksVariations: StoryObj = {
+  render: () => AllLinksVariationsDemo.main(),
 };
 
 export const utilitiesColors: StoryObj = {

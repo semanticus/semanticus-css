@@ -1,11 +1,11 @@
-export * as AllButtonsStatesAndVariantsDemo from "./all-buttons-states-and-variants.demo";
-export * as AllCardListsAndVariantsDemo from "./all-card-lists-and-variants.demo";
-export * as AllCardGroupsAndVariantsDemo from "./all-card-groups-and-variants.demo";
-export * as AllCardsAndVariantsDemo from "./all-cards-and-variants.demo";
+export * as AllButtonsVariationsDemo from "./all-buttons-variations.demo";
+export * as AllCardGroupsVariationsDemo from "./all-card-groups-variations.demo";
+export * as AllCardListsVariationsDemo from "./all-card-lists-variations.demo";
+export * as AllCardsVariationsDemo from "./all-cards-variations.demo";
 export * as AllComponentsDemo from "./all-components.demo";
 export * as AllInputsVariationsDemo from "./all-inputs-variations.demo";
-export * as AllLinksStatesAndVariantsDemo from "./all-links-states-and-variants.demo";
+export * as AllLinksVariationsDemo from "./all-links-variations.demo";
 export * as CustomizerDemo from "./customizer.demo";
 export * as NestedVariationsDemo from "./nested-variations.demo";
-export * as StatesAndVariantsDemo from "./states-and-variants.demo";
+export * as VariantsDemo from "./variants.demo";
 export * as UtilitiesColorsDemo from "./utilities-colors.demo";
