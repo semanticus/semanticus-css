@@ -338,37 +338,30 @@ Tokens on `:root` that propagate via inheritance use the CSS property name:
 
 ---
 
-## Migration
+## Migration from v2.2.0 to v3.0.0
 
-### v1.x → v2.x (current)
-
-| Old (v1.x) | New (v2.x) | Notes |
-| --- | --- | --- |
-| `--button-*` | `--buttons-*` | Pluralized for consistency |
-| `--input-*` | `--inputs-*` | Pluralized |
-| `--h1-gap-top` | `--h1-margin-top` | Property-mapped name |
-| `--dialog-section-*` | `--dialog-marginals-*` | Renamed |
-| `--dialog-header/footer-*` | `--dialog-marginals-*` | Consolidated |
-| `--loading-spinner-opacity` | removed | Unused |
-| `--menu-*` | `--details-menu-*` | Scoped under details |
-| `--pane-*` | `--dialog-*` | Consolidated under dialog |
-| `--progress-background-color` | `--progress-accent-color` | Property-mapped |
-| `--range-*` | `--input-range-*` | Scoped under inputs |
-| `--switch-*` | `--input-switch-*` | Scoped under inputs |
-| `--search-*` | `--input-search-*` | Scoped under inputs |
-| `--checkbox-*` | `--input-checkbox-*` | Scoped under inputs |
-
-### v0.x → v1.x
-
-| Old (v0.x) | New (v1.x) | Notes |
+| Old (v2.2.0) | New (v3.0.0) | Notes |
 | --- | --- | --- |
 | `--color-primary-fill` | `--primary-background-color` | `fill` → `background-color` |
 | `--color-primary-text` | `--primary-color` | `text` → `color` |
 | `--color-primary-focus-ring` | `--primary-focus-ring-color` | Property-mapped |
-| `--color-background` | `--background-color` | No `--color-` wrapper |
+| `--color-background` | `--background-color` | Global, no `--color-` wrapper |
 | `--color-text` | `--color` | Global text |
 | `--color-text-muted` | `--color-muted` | Muted variant |
 | `--color-border` | `--border-color` | Global border |
 | `--dialog-fill` | `--dialog-background-color` | Component + property |
 | `--input-border-focus` | `--inputs-border-color-focus` | State at end |
 | `--switch-thumb-glow` | `--input-switch-thumb-box-shadow` | Property name |
+| `--loading-spinner-opacity` | removed | Unused |
+| `--shadow` | `--_buttons-box-shadow` / `--_inputs-box-shadow` | Scoped private tokens |
+| `--button-*` | `--buttons-*` | Pluralized |
+| `--input-*` | `--inputs-*` | Pluralized |
+| `--h1-gap-top` | `--h1-margin-top` | Property-mapped |
+| `--dialog-section-*` | `--dialog-marginals-*` | Renamed |
+| `--menu-*` | `--details-menu-*` | Scoped under details |
+| `--pane-*` | `--dialog-*` | Consolidated |
+| `--range-*` | `--input-range-*` | Scoped under inputs |
+| `--switch-*` | `--input-switch-*` | Scoped under inputs |
+| `--search-*` | `--input-search-*` | Scoped under inputs |
+| `--checkbox-*` | `--input-checkbox-*` | Scoped under inputs |
+| `--progress-background-color` | `--progress-accent-color` | Property-mapped |
