@@ -14,9 +14,6 @@ textarea {
   --border-color: var(--inputs-border-color);
   --_inputs-focus-ring-color: var(--inputs-border-color-focus);
 
-  /*outline: none;
-  box-shadow: var(--inputs-box-shadow, none);*/
-
   padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
