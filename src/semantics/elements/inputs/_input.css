@@ -19,13 +19,17 @@ input {
     [type="month"],
     [type="time"],
     [type="week"],
-    [type="search"]
+    [type="search"],
+    [type="file"]
   ) {
     &[aria-invalid] {
       background-position: center right var(--icons-background-position-gap);
       background-repeat: no-repeat;
       background-size: var(--icons-width) auto;
-      padding-inline-end: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
+      padding-inline-end: calc(
+        var(--inputs-spacing-horizontal) + var(--icons-width) +
+          var(--icons-background-position-gap)
+      );
 
       &[aria-invalid="false"] {
         background-image: var(--icon-valid);

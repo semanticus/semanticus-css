@@ -12,7 +12,7 @@ textarea {
 :where(input, select, textarea) {
   --background-color: var(--inputs-background-color);
   --border-color: var(--inputs-border-color);
-  --_inputs-focus-ring-color: var(--inputs-border-color-focus);
+  --_inputs-focus-ring-color: var(--inputs-focus-ring-color);
   --_inputs-accent-color: var(--inputs-accent-color);
 
   padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
@@ -31,6 +31,7 @@ textarea {
     &:is(:active, :focus, :focus-visible) {
       --background-color: var(--inputs-background-color-focus);
 
+      outline-offset: 0;
       outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
       box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-focus-ring-color);
     }

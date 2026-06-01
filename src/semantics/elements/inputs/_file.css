@@ -16,20 +16,20 @@
     box-shadow: none !important;
 
     &::file-selector-button {
+      --_buttons-focus-ring-color: var(--_inputs-focus-ring-color);
+
       outline: var(--outline-width) solid var(--_buttons-focus-ring-color);
       box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-focus-ring-color);
     }
   }
 
   &::file-selector-button {
+    --_buttons-background-color: var(--_inputs-accent-color);
+    --_buttons-border-color: var(--_inputs-accent-color);
+
     margin-left: var(--focus-ring-width);
     margin-right: calc(var(--spacing) / 2);
     padding: calc(var(--inputs-spacing-vertical) * 0.5)
       var(--inputs-spacing-horizontal);
-
-    &:is(:hover, :active, :focus) {
-      --background-color: var(--secondary-background-color-hover);
-      --border-color: var(--secondary-background-color-hover);
-    }
   }
 }

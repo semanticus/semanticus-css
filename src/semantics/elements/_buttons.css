@@ -62,8 +62,7 @@ button,
   width: 100%;
 }
 
-[type="reset"],
-[type="file"]::file-selector-button {
+[type="reset"] {
   --_buttons-background-color: var(--secondary-background-color);
   --_buttons-border-color: var(--secondary-background-color);
   --_buttons-color: #fff;
