@@ -370,10 +370,6 @@
     color-mix(in srgb, var(--color-slate-50) 25%, white),
     color-mix(in srgb, var(--color-slate-900), var(--color-slate-850))
   );
-  --inputs-background-color-selected: light-dark(
-    var(--color-slate-100),
-    var(--color-slate-800)
-  );
   --inputs-background-color-focus: light-dark(
     white,
     color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
@@ -385,7 +381,6 @@
   --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
   --inputs-placeholder-color: var(--color-muted);
   --inputs-border-color-focus: var(--primary-background-color);
-  --inputs-opacity-disabled: 0.5;
   --inputs-accent-color: var(--primary-background-color);
   --inputs-focus-ring-width: 0.0625rem;
   --inputs-focus-ring-color: var(--primary-focus-ring-color);

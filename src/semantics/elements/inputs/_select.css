@@ -16,7 +16,7 @@ select {
   }
 
   &[multiple] option:checked {
-    background: var(--inputs-background-color-selected);
+    background: var(--inputs-border-color);
     color: var(--inputs-color);
   }
 

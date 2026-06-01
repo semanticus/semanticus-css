@@ -3,6 +3,9 @@ summary {
 }
 
 details {
+  --_details-focus-ring-color: var(--inputs-focus-ring-color);
+  --_details-border-color: var(--inputs-border-color);
+
   display: block;
 
   > summary {
@@ -17,8 +20,9 @@ details {
       &:focus {
         color: var(--details-color-focus);
         border-radius: var(--buttons-border-radius);
-        outline: var(--outline-width) solid var(--inputs-border-color-focus);
-        box-shadow: 0 0 0 var(--focus-ring-width) var(--inputs-border-color-focus);
+        outline: var(--outline-width) solid var(--_details-focus-ring-color);
+        box-shadow: 0 0 0 var(--focus-ring-width)
+          var(--_details-focus-ring-color);
       }
     }
 
@@ -114,7 +118,7 @@ details:has(> summary[aria-haspopup="menu"]) {
           var(--border-width) * 2
       );
       padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
-      border: var(--border-width) solid var(--inputs-border-color);
+      border: var(--border-width) solid var(--_details-border-color);
       border-radius: var(--border-radius);
       background-color: var(--inputs-background-color);
       color: var(--inputs-placeholder-color);
@@ -127,13 +131,13 @@ details:has(> summary[aria-haspopup="menu"]) {
         color var(--transition);
 
       &[aria-invalid="false"] {
-        --inputs-border-color: var(--success-background-color);
-        --inputs-border-color-focus: var(--success-background-color-hover);
+        --_details-border-color: var(--success-background-color);
+        --_details-focus-ring-color: var(--success-focus-ring-color);
       }
 
       &[aria-invalid="true"] {
-        --inputs-border-color: var(--danger-background-color);
-        --inputs-border-color-focus: var(--danger-background-color-hover);
+        --_details-border-color: var(--danger-background-color);
+        --_details-focus-ring-color: var(--danger-focus-ring-color);
       }
     }
   }
@@ -192,7 +196,12 @@ details:has(> summary[aria-haspopup="menu"]) {
         text-decoration: none;
         text-overflow: ellipsis;
 
-        &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        &:is(
+          [aria-current]:not([aria-current="false"]),
+          :hover,
+          :active,
+          :focus
+        ) {
           background-color: var(--details-menu-background-color-hover);
         }
       }
