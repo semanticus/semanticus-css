@@ -1,7 +1,7 @@
 /* See ./_common.css for shared styles */
 
 [type="range"] {
-  accent-color: var(--inputs-accent-color);
+  accent-color: var(--_inputs-accent-color);
   appearance: none;
   width: 100%;
   height: 1.25rem;

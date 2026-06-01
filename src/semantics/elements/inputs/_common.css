@@ -13,6 +13,7 @@ textarea {
   --background-color: var(--inputs-background-color);
   --border-color: var(--inputs-border-color);
   --_inputs-focus-ring-color: var(--inputs-border-color-focus);
+  --_inputs-accent-color: var(--inputs-accent-color);
 
   padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
@@ -39,11 +40,13 @@ textarea {
 
     &[aria-invalid="false"] {
       --border-color: var(--success-background-color);
+      --_inputs-accent-color: var(--success-background-color);
       --_inputs-focus-ring-color: var(--success-focus-ring-color);
     }
 
     &[aria-invalid="true"] {
       --border-color: var(--danger-background-color);
+      --_inputs-accent-color: var(--danger-background-color);
       --_inputs-focus-ring-color: var(--danger-focus-ring-color);
     }
   }

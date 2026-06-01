@@ -13,26 +13,16 @@
 
 [type="checkbox"] {
   &:is(:checked, :checked:active, :checked:focus) {
-    --background-color: var(--inputs-accent-color);
-    --border-color: var(--inputs-accent-color);
+    --background-color: var(--_inputs-accent-color);
+    --border-color: var(--_inputs-accent-color);
 
     background-image: var(--icon-checkbox);
     background-position: center;
     background-size: 0.75em auto;
     background-repeat: no-repeat;
-
-    &[aria-invalid="false"] {
-      --background-color: var(--success-background-color);
-    }
-    &[aria-invalid="true"] {
-      --background-color: var(--danger-background-color);
-    }
   }
 
   &:indeterminate {
-    --background-color: var(--inputs-accent-color);
-    --border-color: var(--inputs-accent-color);
-
     background-image: var(--icon-minus);
     background-position: center;
     background-size: 0.75em auto;
@@ -66,15 +56,11 @@
       transition: margin 0.1s ease-in-out;
     }
 
-    &:focus {
+    &:focus:not(:checked) {
       --background-color: var(--input-switch-background-color);
-      --border-color: var(--input-switch-background-color);
     }
 
     &:checked {
-      --background-color: var(--inputs-accent-color);
-      --border-color: var(--inputs-accent-color);
-
       background-image: none;
 
       &::before {
@@ -102,7 +88,7 @@
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
-  accent-color: var(--inputs-accent-color);
+  accent-color: var(--_inputs-accent-color);
 
   &[aria-invalid="false"] {
     --border-color: var(--success-background-color);
@@ -115,7 +101,7 @@
   }
 
   &:is(:checked, :checked:active, :checked:focus) {
-    --border-color: var(--inputs-accent-color);
+    --border-color: var(--_inputs-accent-color);
 
     &[aria-invalid="false"] {
       --border-color: var(--success-background-color);
