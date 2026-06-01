@@ -379,9 +379,8 @@
     var(--color-slate-800)
   );
   --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
-  --inputs-placeholder-color: var(--color-muted);
-  --inputs-border-color-focus: var(--primary-background-color);
   --inputs-accent-color: var(--primary-background-color);
+  --inputs-placeholder-color: var(--color-muted);
   --inputs-focus-ring-width: 0.0625rem;
   --inputs-focus-ring-color: var(--primary-focus-ring-color);
 
