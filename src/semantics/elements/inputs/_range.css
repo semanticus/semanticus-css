@@ -3,7 +3,7 @@
 [type="range"] {
   --_input-range-thumb-border-color: var(--input-range-thumb-border-color);
   --_input-range-track-border-color: var(--input-range-track-border-color);
-  --_inputs-focus-ring-color: var(--inputs-focus-ring-color);
+  --_inputs-focus-ring-color: var(--focus-ring-color);
 
   accent-color: var(--_inputs-accent-color);
   appearance: none;

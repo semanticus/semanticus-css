@@ -19,7 +19,7 @@ button,
   --_buttons-border-radius: var(--buttons-border-radius);
   --_buttons-border-color: var(--buttons-border-color);
   --_buttons-border-width: var(--buttons-border-width);
-  --_buttons-focus-ring-color: var(--buttons-focus-ring-color);
+  --_buttons-focus-ring-color: var(--focus-ring-color);
 
   padding: var(--_buttons-spacing-vertical) var(--_buttons-spacing-horizontal);
   border: var(--_buttons-border-width) solid var(--_buttons-border-color);

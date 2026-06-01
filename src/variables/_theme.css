@@ -73,12 +73,6 @@
   /* --- Color --- */
   --color: light-dark(var(--color-zinc-750), var(--color-zinc-200));
   --color-opacity: 100%;
-  /* --- Hover / Focus helpers --- */
-  --color-hover-effect: light-dark(
-    var(--color-zinc-700),
-    var(--color-zinc-300)
-  );
-  --color-focus-effect: light-dark(white, black);
 
   /* --- Typography --- */
   --typography-spacing-vertical: 1rem;
@@ -110,6 +104,7 @@
   --border-width: 0.0625rem;
   --outline-width: 1px;
   --focus-ring-width: 0.125rem;
+  --focus-ring-color: var(--primary-focus-ring-color);
   --box-shadow:
     0.0145rem 0.029rem 0.174rem
       light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
@@ -128,6 +123,12 @@
 
   /* ===== INTENT TOKENS ===== */
 
+  /* TODO: Replace this internal helper with real colors */
+  --color-hover-effect: light-dark(
+    var(--color-zinc-700),
+    var(--color-zinc-300)
+  );
+
   /* --- Primary --- */
   /* Base values defined by the palette imported in _all.css */
   --primary-color-hover: color-mix(
@@ -143,7 +144,7 @@
   --primary-focus-ring-color: color-mix(
     in srgb,
     var(--primary-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Secondary --- */
@@ -162,7 +163,7 @@
   --secondary-focus-ring-color: color-mix(
     in srgb,
     var(--secondary-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Contrast --- */
@@ -184,7 +185,7 @@
   --contrast-focus-ring-color: color-mix(
     in srgb,
     var(--contrast-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Success --- */
@@ -205,7 +206,7 @@
   --success-focus-ring-color: color-mix(
     in srgb,
     var(--success-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Info --- */
@@ -226,7 +227,7 @@
   --info-focus-ring-color: color-mix(
     in srgb,
     var(--info-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Warning --- */
@@ -247,7 +248,7 @@
   --warning-focus-ring-color: color-mix(
     in srgb,
     var(--warning-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Danger --- */
@@ -268,7 +269,7 @@
   --danger-focus-ring-color: color-mix(
     in srgb,
     var(--danger-color) 70%,
-    var(--color-focus-effect)
+    light-dark(white, black)
   );
 
   /* --- Buttons --- */
@@ -284,7 +285,6 @@
   --buttons-border-width: var(--border-width);
   --buttons-border-color: var(--primary-background-color);
   --buttons-border-color-hover: var(--primary-background-color-hover);
-  --buttons-focus-ring-color: var(--primary-focus-ring-color);
 
   /* --- Code --- */
   --code-background-color: light-dark(
@@ -332,7 +332,6 @@
   --group-border-radius: var(--border-radius);
   --group-button-spacing-horizontal: 1rem;
   --group-margin-bottom: var(--spacing);
-  --group-focus-ring-color: var(--border-color);
 
   /* --- Headings --- */
   --heading-font-weight: 700;
@@ -381,7 +380,6 @@
   --inputs-accent-color: var(--primary-background-color);
   --inputs-placeholder-color: var(--color-muted);
   --inputs-focus-ring-width: 0.0625rem;
-  --inputs-focus-ring-color: var(--primary-focus-ring-color);
 
   /* --- Input Checkbox and Radio --- */
   --input-checkbox-border-width: 0.125rem;
@@ -410,7 +408,6 @@
 
   /* --- Links (anchor and role="link") --- */
   --links-color: var(--primary-color);
-  --links-focus-ring-color: var(--primary-focus-ring-color);
   --links-text-decoration: underline;
 
   /* --- Navigation --- */

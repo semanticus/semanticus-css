@@ -2,7 +2,7 @@
 [role="link"] {
   --_links-color: var(--links-color);
   --_links-text-decoration: var(--links-text-decoration);
-  --_links-focus-ring-color: var(--links-focus-ring-color);
+  --_links-focus-ring-color: var(--focus-ring-color);
 
   padding: 0;
   background-color: transparent;

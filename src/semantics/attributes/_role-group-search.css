@@ -2,7 +2,7 @@
 [role="group"] {
   --_group-border-radius: var(--group-border-radius);
   --_group-margin-bottom: var(--group-margin-bottom);
-  --_group-focus-ring-color: var(--group-focus-ring-color);
+  --_group-focus-ring-color: var(--border-color);
 
   border-radius: var(--_group-border-radius);
   display: inline-flex;

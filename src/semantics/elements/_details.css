@@ -11,7 +11,7 @@ details {
   --_details-summary-border-color: transparent;
   --_details-summary-border-width: 0;
   --_details-summary-spacing: var(--spacing);
-  --_details-summary-focus-ring-color: var(--inputs-focus-ring-color);
+  --_details-summary-focus-ring-color: var(--focus-ring-color);
   --_details-summary-padding-vertical: 0;
   --_details-summary-padding-horizontal: 0;
 
