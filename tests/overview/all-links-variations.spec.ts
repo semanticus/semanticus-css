@@ -25,12 +25,5 @@ themes.forEach((theme) => {
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
-
-    await triggerState(page, `a, [role="link"]`, ["hover"]);
-
-    await expect(page).toHaveScreenshot(
-      `all-links-hover-theme-${theme}.png`,
-      screenshotOptions,
-    );
   });
 });

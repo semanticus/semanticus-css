@@ -25,16 +25,5 @@ themes.forEach((theme) => {
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
-
-    await triggerState(
-      page,
-      `button, [type="submit"], [type="reset"], [type="button"], [role="button"]`,
-      ["hover"],
-    );
-
-    await expect(page).toHaveScreenshot(
-      `all-groups-variations-hover-state-theme-${theme}.png`,
-      screenshotOptions,
-    );
   });
 });

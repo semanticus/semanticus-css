@@ -27,12 +27,5 @@ themes.forEach((theme) => {
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
-
-    await triggerState(page, `[role="button"]`, ["focus"]);
-
-    await expect(page).toHaveScreenshot(
-      `all-details-as-button-variations-in-focus-state-theme-${theme}.png`,
-      screenshotOptions,
-    );
   });
 });

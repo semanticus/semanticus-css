@@ -26,6 +26,11 @@ themes.forEach((theme) => {
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();
+    await triggerState(
+      page,
+      `button, [type="submit"], [type="reset"], [type="button"], [role="button"]`,
+      ["hover"],
+    );
     await expect(page).toHaveScreenshot(screenshotOptions);
   });
 });

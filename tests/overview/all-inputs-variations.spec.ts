@@ -25,12 +25,5 @@ themes.forEach((theme) => {
 
     await expect(main).toBeVisible();
     await expect(page).toHaveScreenshot(screenshotOptions);
-
-    await triggerState(page, `input, textarea, select`, ["focus"]);
-
-    await expect(page).toHaveScreenshot(
-      `all-inputs-variations-in-focus-state-theme-${theme}.png`,
-      screenshotOptions,
-    );
   });
 });

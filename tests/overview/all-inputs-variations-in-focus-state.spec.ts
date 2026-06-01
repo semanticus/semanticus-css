@@ -17,15 +17,14 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
 const themes = variations.themes.map((p) => p.name);
 
 themes.forEach((theme) => {
-  test(`/overview/all-buttons-variations.demo/main?theme=${theme} - visual snapshot`, async ({
+  test(`/overview/all-inputs-variations.demo/main?theme=${theme} - visual snapshot`, async ({
     page,
   }) => {
-    await page.goto(
-      `/overview/all-buttons-variations.demo/main?theme=${theme}`,
-    );
+    await page.goto(`/overview/all-inputs-variations.demo/main?theme=${theme}`);
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();
+    await triggerState(page, `input, textarea, select`, ["focus"]);
     await expect(page).toHaveScreenshot(screenshotOptions);
   });
 });
