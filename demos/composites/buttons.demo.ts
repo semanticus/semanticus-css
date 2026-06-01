@@ -10,8 +10,8 @@ export function all(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
     { class: "auto-grid" },
-    `${ButtonDemo.main(attrs)}
-${RoleButtonDemo.main("div", attrs)}
+    `${ButtonDemo.main(classMergeAttributes("mb-d", attrs))}
+${RoleButtonDemo.main("div", classMergeAttributes("mb-d", attrs))}
 ${inputType("button", attrs)}
 ${inputType("submit", attrs)}
 ${inputType("reset", attrs)}
@@ -25,7 +25,7 @@ export function inputType(
 ) {
   return renderElement(
     "input",
-    classMergeAttributes("mb-0", { value: `Input ${type}`, ...attrs, type }),
+    { value: `Input ${type}`, ...attrs, type },
   );
 }
 

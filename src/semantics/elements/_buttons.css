@@ -85,12 +85,6 @@ button,
   appearance: auto;
 }
 
-[type="submit"],
-[type="reset"],
-[type="button"] {
-  margin-bottom: var(--spacing);
-}
-
 aside {
   nav {
     :where(
