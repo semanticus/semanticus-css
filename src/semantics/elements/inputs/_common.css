@@ -10,7 +10,7 @@ textarea {
 }
 
 :where(input, select, textarea) {
-  --background-color: var(--inputs-background-color);
+  --_inputs-background-color: var(--inputs-background-color);
   --border-color: var(--inputs-border-color);
   --_inputs-focus-ring-color: var(--inputs-focus-ring-color);
   --_inputs-accent-color: var(--inputs-accent-color);
@@ -18,7 +18,7 @@ textarea {
   padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  background-color: var(--background-color);
+  background-color: var(--_inputs-background-color);
   color: var(--inputs-color);
   font-weight: var(--font-weight);
   transition:
@@ -29,7 +29,7 @@ textarea {
   /* Non button inputs */
   &:not([type="button"], [type="submit"], [type="reset"]) {
     &:is(:active, :focus, :focus-visible) {
-      --background-color: var(--inputs-background-color-focus);
+      --_inputs-background-color: var(--inputs-background-color-focus);
 
       outline-offset: 0;
       outline: var(--outline-width) solid var(--_inputs-focus-ring-color);

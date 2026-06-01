@@ -4,7 +4,7 @@
   border-radius: 50%;
 
   &:is(:checked, :checked:active, :checked:focus) {
-    --background-color: #fff;
+    --_inputs-background-color: #fff;
 
     border-width: 0.35em;
     background-image: none;
@@ -13,7 +13,7 @@
 
 [type="checkbox"] {
   &:is(:checked, :checked:active, :checked:focus) {
-    --background-color: var(--_inputs-accent-color);
+    --_inputs-background-color: var(--_inputs-accent-color);
     --border-color: var(--_inputs-accent-color);
 
     background-image: var(--icon-checkbox);
@@ -31,14 +31,13 @@
 
   &[role="switch"] {
     --border-width: var(--input-switch-border-width);
-    --background-color: var(--input-switch-background-color);
+    --_inputs-background-color: var(--input-switch-background-color);
     --color: var(--input-switch-thumb-background-color);
 
     width: 2.25em;
     height: 1.25em;
     border: var(--border-width) solid var(--border-color);
     border-radius: 1.25em;
-    background-color: var(--background-color);
     line-height: 1.25em;
 
     &:not([aria-invalid]) {
@@ -57,7 +56,7 @@
     }
 
     &:focus:not(:checked) {
-      --background-color: var(--input-switch-background-color);
+      --_inputs-background-color: var(--input-switch-background-color);
     }
 
     &:checked {
@@ -69,7 +68,7 @@
     }
 
     &[disabled] {
-      --background-color: var(--border-color);
+      --_inputs-background-color: var(--border-color);
     }
   }
 }
@@ -89,23 +88,8 @@
   cursor: pointer;
   accent-color: var(--_inputs-accent-color);
 
-  &[aria-invalid="false"] {
-    --border-color: var(--success-background-color);
-  }
-
-  &[aria-invalid="true"] {
-    --border-color: var(--danger-background-color);
-  }
-
   &:is(:checked, :checked:active, :checked:focus) {
     --border-color: var(--_inputs-accent-color);
-
-    &[aria-invalid="false"] {
-      --border-color: var(--success-background-color);
-    }
-    &[aria-invalid="true"] {
-      --border-color: var(--danger-background-color);
-    }
   }
 
   & ~ label {
