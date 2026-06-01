@@ -16,9 +16,9 @@ button,
   --_buttons-spacing-vertical: var(--buttons-spacing-vertical);
   --_buttons-spacing-horizontal: var(--buttons-spacing-horizontal);
   --_buttons-background-color: var(--buttons-background-color);
-  --_buttons-border-radius: var(--buttons-border-radius);
+  --_buttons-border-radius: var(--border-radius);
   --_buttons-border-color: var(--buttons-border-color);
-  --_buttons-border-width: var(--buttons-border-width);
+  --_buttons-border-width: var(--border-width);
   --_buttons-focus-ring-color: var(--focus-ring-color);
 
   padding: var(--_buttons-spacing-vertical) var(--_buttons-spacing-horizontal);

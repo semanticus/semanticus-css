@@ -1,13 +1,12 @@
 [role="search"],
 [role="group"] {
-  --_group-border-radius: var(--group-border-radius);
-  --_group-margin-bottom: var(--group-margin-bottom);
+  --_group-border-radius: var(--border-radius);
   --_group-focus-ring-color: var(--border-color);
 
   border-radius: var(--_group-border-radius);
   display: inline-flex;
   gap: 0;
-  margin-bottom: var(--_group-margin-bottom);
+  margin-bottom: var(--spacing);
   position: relative;
   vertical-align: middle;
   width: 100%;

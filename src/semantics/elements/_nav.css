@@ -23,7 +23,7 @@ nav {
   ),
   :is([role="button"], [type="button"]) {
     --inputs-spacing-vertical: calc(
-      var(--nav-link-gap) - var(--buttons-border-width) * 2
+      var(--nav-link-gap) - var(--border-width) * 2
     );
     --inputs-spacing-horizontal: var(--nav-link-gap);
     --_buttons-spacing-vertical: var(--inputs-spacing-vertical);

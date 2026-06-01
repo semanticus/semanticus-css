@@ -281,8 +281,6 @@
   --buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
   --buttons-background-color: var(--primary-background-color);
   --buttons-background-color-hover: var(--primary-background-color-hover);
-  --buttons-border-radius: var(--border-radius);
-  --buttons-border-width: var(--border-width);
   --buttons-border-color: var(--primary-background-color);
   --buttons-border-color-hover: var(--primary-background-color-hover);
 
@@ -312,7 +310,6 @@
   /* --- Dialog --- */
   --dialog-spacing: var(--spacing);
   --dialog-border-color: var(--border-color);
-  --dialog-border-width: var(--border-width);
   --dialog-border-radius: var(--border-radius);
   --dialog-background-color: var(--background-color);
   --dialog-box-shadow: var(--box-shadow);
@@ -329,9 +326,7 @@
 
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
-  --group-border-radius: var(--border-radius);
   --group-button-spacing-horizontal: 1rem;
-  --group-margin-bottom: var(--spacing);
 
   /* --- Headings --- */
   --heading-font-weight: 700;
@@ -374,8 +369,6 @@
     var(--color-slate-150),
     var(--color-slate-800)
   );
-  --inputs-border-radius: var(--border-radius);
-  --inputs-border-width: var(--border-width);
   --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
   --inputs-accent-color: var(--primary-background-color);
   --inputs-placeholder-color: var(--color-muted);
@@ -415,8 +408,7 @@
   --nav-breadcrumb-divider: ">";
 
   /* --- Progress Bar --- */
-  --progress-border-radius: var(--border-radius);
-  --progress-color: var(--primary-background-color);
+  --progress-accent-color: var(--primary-background-color);
   --progress-track-background-color: light-dark(
     var(--color-slate-100),
     var(--color-slate-850)

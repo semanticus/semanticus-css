@@ -130,8 +130,8 @@ details:has(> summary[aria-haspopup="menu"]) {
     &:not([role]) {
       --_details-summary-color: var(--inputs-placeholder-color);
       --_details-summary-border-color: var(--inputs-border-color);
-      --_details-summary-border-radius: var(--inputs-border-radius);
-      --_details-summary-border-width: var(--inputs-border-width);
+      --_details-summary-border-radius: var(--border-radius);
+      --_details-summary-border-width: var(--border-width);
       --_details-summary-padding-vertical: var(--inputs-spacing-vertical);
       --_details-summary-padding-horizontal: var(--inputs-spacing-horizontal);
 

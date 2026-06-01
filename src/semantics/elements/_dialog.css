@@ -12,7 +12,7 @@ body:has(dialog[open]) {
 
 dialog {
   --_dialog-border-color: var(--dialog-border-color);
-  --_dialog-border-width: var(--dialog-border-width);
+  --_dialog-border-width: var(--border-width);
   --_dialog-background-color: var(--dialog-background-color);
   --_dialog-box-shadow: var(--dialog-box-shadow);
   --_dialog-border-radius: var(--dialog-border-radius);
