@@ -381,7 +381,13 @@ const variableGroups = [
       {
         name: "--outline-width",
         label: "Outline Width",
-        desc: "Focus-ring outline width.",
+        desc: "Outline width for focus indicators.",
+        default: "1px",
+      },
+      {
+        name: "--focus-ring-width",
+        label: "Focus Ring Width",
+        desc: "Width of the focus ring shadow.",
         default: "0.125rem",
       },
       {
@@ -419,24 +425,6 @@ const variableGroups = [
     label: "Group",
     vars: [
       {
-        name: "--group-box-shadow",
-        label: "Group Shadow",
-        desc: 'Shadow on [role="group"] and [role="search"] combos.',
-        default: "0 0 0 rgba(0, 0, 0, 0)",
-      },
-      {
-        name: "--group-box-shadow-focus-button",
-        label: "Group Button Focus",
-        desc: "Focus shadow when a button inside the group is focused.",
-        default: "0 0 0 var(--outline-width) var(--primary-focus-ring-color)",
-      },
-      {
-        name: "--group-box-shadow-focus-input",
-        label: "Group Input Focus",
-        desc: "Focus shadow when an input inside the group is focused.",
-        default: "0 0 0 0.0625rem var(--inputs-border-color)",
-      },
-      {
         name: "--group-button-spacing-horizontal",
         label: "Group Button Spacing",
         desc: "Horizontal padding for buttons inside groups.",
@@ -445,19 +433,25 @@ const variableGroups = [
     ],
   },
   {
-    label: "Button Shadows",
+    label: "Buttons",
     vars: [
       {
-        name: "--buttons-box-shadow",
-        label: "Button Shadow",
-        desc: "Shadow on buttons at rest.",
-        default: "0 0 0 rgb(0 0 0 / 0)",
+        name: "--buttons-font-size",
+        label: "Button Font Size",
+        desc: "Font size for buttons.",
+        default: "1rem",
       },
       {
-        name: "--buttons-box-shadow-hover",
-        label: "Button Hover Shadow",
-        desc: "Shadow on buttons when hovered.",
-        default: "0 0 0 rgb(0 0 0 / 0)",
+        name: "--buttons-spacing-vertical",
+        label: "Button Spacing Vertical",
+        desc: "Vertical padding inside buttons.",
+        default: "var(--inputs-spacing-vertical)",
+      },
+      {
+        name: "--buttons-spacing-horizontal",
+        label: "Button Spacing Horizontal",
+        desc: "Horizontal padding inside buttons.",
+        default: "var(--inputs-spacing-horizontal)",
       },
     ],
   },
@@ -511,9 +505,9 @@ const variableGroups = [
     label: "Form States & Misc",
     vars: [
       {
-        name: "--inputs-opacity-disabled",
+        name: "--disabled-opacity",
         label: "Disabled Opacity",
-        desc: "Opacity for disabled form inputs.",
+        desc: "Opacity for disabled form inputs and elements.",
         default: "0.5",
       },
     ],

@@ -166,6 +166,30 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-100), var(--color-slate-800))",
       },
       {
+        name: "--typography-color",
+        label: "Typography Color",
+        desc: "Default text color for typographic elements.",
+        type: varType("var(--color)"),
+        default: "var(--color)",
+      },
+      {
+        name: "--selection-background-color",
+        label: "Selection Background",
+        desc: "Background color for text selections.",
+        type: varType(
+          "color-mix(in srgb, var(--primary-background-color), white 75%)",
+        ),
+        default:
+          "color-mix(in srgb, var(--primary-background-color), white 75%)",
+      },
+      {
+        name: "--focus-ring-color",
+        label: "Focus Ring Color",
+        desc: "Default focus ring color.",
+        type: varType("var(--primary-focus-ring-color)"),
+        default: "var(--primary-focus-ring-color)",
+      },
+      {
         name: "--backdrop-background-color",
         label: "Backdrop",
         desc: "Default backdrop color for modals, dialogs, and other overlays.",
@@ -652,6 +676,53 @@ const variableGroups = [
     ],
   },
   {
+    label: "Buttons",
+    vars: [
+      {
+        name: "--buttons-color",
+        label: "Button Text",
+        desc: "Text color on buttons.",
+        type: "color",
+        default: "white",
+      },
+      {
+        name: "--buttons-color-hover",
+        label: "Button Text Hover",
+        desc: "Text color on buttons when hovered.",
+        type: "color",
+        default: "white",
+      },
+      {
+        name: "--buttons-background-color",
+        label: "Button Background",
+        desc: "Button background color.",
+        type: varType("var(--primary-background-color)"),
+        default: "var(--primary-background-color)",
+      },
+      {
+        name: "--buttons-background-color-hover",
+        label: "Button Background Hover",
+        desc: "Button background on hover.",
+        type: varType("var(--primary-background-color-hover)"),
+        default: "var(--primary-background-color-hover)",
+      },
+      {
+        name: "--buttons-border-color",
+        label: "Button Border",
+        desc: "Button border color.",
+        type: varType("var(--primary-background-color)"),
+        default: "var(--primary-background-color)",
+      },
+      {
+        name: "--buttons-border-color-hover",
+        label: "Button Border Hover",
+        desc: "Button border on hover.",
+        type: varType("var(--primary-background-color-hover)"),
+        default: "var(--primary-background-color-hover)",
+      },
+    ],
+  },
+  {
     label: "Form Inputs",
     vars: [
       {
@@ -709,9 +780,9 @@ const variableGroups = [
         default: "var(--color-muted)",
       },
       {
-        name: "--inputs-border-color-focus",
-        label: "Input Focus Border",
-        desc: "Border color when input is focused.",
+        name: "--inputs-accent-color",
+        label: "Input Accent",
+        desc: "Accent color for checkboxes, radios, and range sliders.",
         type: varType("var(--primary-background-color)"),
         default: "var(--primary-background-color)",
       },
@@ -730,13 +801,6 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
       },
       {
-        name: "--input-switch-background-color-checked",
-        label: "Switch Track Checked",
-        desc: "Switch track background when checked.",
-        type: varType("var(--primary-background-color)"),
-        default: "var(--primary-background-color)",
-      },
-      {
         name: "--input-switch-thumb-background-color",
         label: "Switch Thumb",
         desc: "Switch thumb (knob) color.",
@@ -753,18 +817,9 @@ const variableGroups = [
         label: "Range Track Border",
         desc: "Range slider track border.",
         type: varType(
-          "light-dark(var(--color-slate-100), var(--color-slate-850))",
+          "light-dark(var(--color-slate-200), var(--color-slate-750))",
         ),
-        default: "light-dark(var(--color-slate-100), var(--color-slate-850))",
-      },
-      {
-        name: "--input-range-track-border-color-active",
-        label: "Range Track Active Border",
-        desc: "Range slider track border when active.",
-        type: varType(
-          "light-dark(var(--color-slate-200), var(--color-slate-800))",
-        ),
-        default: "light-dark(var(--color-slate-200), var(--color-slate-800))",
+        default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
       },
       {
         name: "--input-range-thumb-border-color",
@@ -773,25 +828,18 @@ const variableGroups = [
         type: varType("var(--background-color)"),
         default: "var(--background-color)",
       },
-      {
-        name: "--input-range-thumb-background-color",
-        label: "Range Thumb Fill",
-        desc: "Range slider thumb fill.",
-        type: varType("var(--secondary-background-color)"),
-        default: "var(--secondary-background-color)",
-      },
-      {
-        name: "--input-range-thumb-background-color-active",
-        label: "Range Thumb Active",
-        desc: "Range slider thumb fill when active.",
-        type: varType("var(--primary-background-color)"),
-        default: "var(--primary-background-color)",
-      },
     ],
   },
   {
     label: "Details / Accordion",
     vars: [
+      {
+        name: "--details-summary-background-color",
+        label: "Summary Background",
+        desc: "Accordion summary background color.",
+        type: varType("var(--inputs-background-color)"),
+        default: "var(--inputs-background-color)",
+      },
       {
         name: "--details-summary-color",
         label: "Summary Text",
@@ -800,9 +848,9 @@ const variableGroups = [
         default: "var(--color)",
       },
       {
-        name: "--details-summary-color-hover",
-        label: "Summary Hover",
-        desc: "Accordion summary text on hover.",
+        name: "--details-summary-color-focus",
+        label: "Summary Focus",
+        desc: "Accordion summary text on focus.",
         type: varType("var(--primary-color-hover)"),
         default: "var(--primary-color-hover)",
       },
@@ -813,24 +861,57 @@ const variableGroups = [
         type: varType("var(--color-muted)"),
         default: "var(--color-muted)",
       },
+      {
+        name: "--details-dropdown-color",
+        label: "Dropdown Text",
+        desc: "Dropdown trigger text color.",
+        type: varType("var(--inputs-placeholder-color)"),
+        default: "var(--inputs-placeholder-color)",
+      },
+      {
+        name: "--details-dropdown-border-color",
+        label: "Dropdown Border",
+        desc: "Dropdown trigger border color.",
+        type: varType("var(--inputs-border-color)"),
+        default: "var(--inputs-border-color)",
+      },
     ],
   },
   {
-    label: "Pane / Dialog / Alert",
+    label: "Links & Lists",
     vars: [
       {
-        name: "--pane-background-color",
-        label: "Pane Background",
-        desc: "Dialog/card/pane background.",
+        name: "--links-color",
+        label: "Link Color",
+        desc: "Default link text color.",
+        type: varType("var(--primary-color)"),
+        default: "var(--primary-color)",
+      },
+      {
+        name: "--lists-marker-color",
+        label: "List Marker Color",
+        desc: "Color for list item markers (bullets, numbers).",
+        type: varType("var(--primary-color)"),
+        default: "var(--primary-color)",
+      },
+    ],
+  },
+  {
+    label: "Dialog",
+    vars: [
+      {
+        name: "--dialog-background-color",
+        label: "Dialog Background",
+        desc: "Dialog/card background.",
         type: varType(
           "light-dark(var(--background-color), var(--color-slate-900))",
         ),
         default: "light-dark(var(--background-color), var(--color-slate-900))",
       },
       {
-        name: "--pane-border-color",
-        label: "Pane Border",
-        desc: "Dialog/card/pane border color.",
+        name: "--dialog-border-color",
+        label: "Dialog Border",
+        desc: "Dialog/card border color.",
         type: varType("var(--border-color)"),
         default: "var(--border-color)",
       },
@@ -906,7 +987,7 @@ const variableGroups = [
         default: "light-dark(var(--color-slate-100), var(--color-slate-850))",
       },
       {
-        name: "--progress-color",
+        name: "--progress-accent-color",
         label: "Progress Fill",
         desc: "Progress bar filled portion.",
         type: varType("var(--primary-background-color)"),
