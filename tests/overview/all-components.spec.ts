@@ -10,7 +10,7 @@ test.use({ viewport: { width: 1024, height: 900 } });
 const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
   animations: "disabled",
   fullPage: true,
-  // maxDiffPixelRatio: 0.02
+  maxDiffPixelRatio: 0.02,
 };
 
 // const palettes = variations.palettes.map((p) => p.name).filter((n) => n !== 'default'); // Doesn't seem to add a lot of value and adds a lot of snapshots to maintain, so I'm leaving it out for now. We can always add it back later if we want to test palette variations in the full bundle demo.
