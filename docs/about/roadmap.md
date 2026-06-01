@@ -40,7 +40,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Pane |
 | ✅ | Toasts |
 | ✅ | Tooltip |
-| 🚧 | Sidebar |
+| ⌛ | Offcanvas |
 | ⌛ | Carousel |
 | ⌛ | Badge |
 | ⌛ | Tabs |
@@ -119,7 +119,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Github check to prevent PRs that fail the visual regression tests |
 | 🚧 | Navigation composite documentation |
 | ⌛ | Tabs composite documentation |
-| ⌛ | Sidebar component documentation |
+| ⌛ | Offcanvas component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
