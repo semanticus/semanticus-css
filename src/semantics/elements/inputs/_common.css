@@ -71,7 +71,7 @@ textarea {
 }
 
 ::-webkit-file-upload-button {
-  appearance: button;
+  appearance: auto;
   font: inherit;
 }
 
