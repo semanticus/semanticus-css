@@ -3,10 +3,10 @@
 input[type="search"] {
   --_inputs-border-radius: var(--input-search-border-radius);
 
-  -webkit-appearance: textfield;
+  appearance: none;
 
   &::-webkit-search-decoration {
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   background-image: var(--icon-search);
