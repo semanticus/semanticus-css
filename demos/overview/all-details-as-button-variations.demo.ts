@@ -6,7 +6,8 @@ export function allDetailsAsButton(attrs: Record<string, string> = {}) {
     "section",
     { class: "auto-grid" },
     `${AccordionsDemo.asButton(attrs)}
-${DropdownDemo.asButton(attrs)}`,
+${DropdownDemo.asButtonWithLargeItem(attrs)}
+${DropdownDemo.asButtonReversedWithLargeItem(attrs)}`,
   );
 }
 

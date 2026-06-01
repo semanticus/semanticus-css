@@ -118,22 +118,13 @@ details {
  */
 details:has(> summary[aria-haspopup="menu"]) {
   position: relative;
-  border-bottom: none;
 
   > summary[aria-haspopup="menu"] {
     &::after {
-      display: block;
-      width: 1rem;
       height: calc(1rem * var(--line-height, 1.5));
       margin-inline-start: 0.25rem;
       margin-left: auto;
-      float: right;
       transform: rotate(0deg) translateX(0.2rem);
-      background-image: var(--icon-chevron);
-      background-position: right center;
-      background-size: var(--icons-width) auto;
-      background-repeat: no-repeat;
-      content: "";
     }
 
     &:not([role]) {
@@ -164,7 +155,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     display: flex;
     z-index: var(--max-z-index);
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     flex-direction: column;
     width: 100%;
     min-width: fit-content;
@@ -182,9 +173,10 @@ details:has(> summary[aria-haspopup="menu"]) {
       opacity var(--transition),
       transform 0s ease-in-out 1s;
 
-    &[dir="rtl"] {
-      right: 0;
-      left: auto;
+    [dir="rtl"] &[dir="rtl"] {
+      inset-inline-start: unset;
+      inset-inline-end: 0;
+      text-align: left;
     }
 
     & > li {

@@ -75,6 +75,36 @@ export function asButton(attrs: Record<string, string> = {}) {
   );
 }
 
+export function asButtonWithLargeItem(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "details",
+    {},
+    `${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown as a button")}
+<ul role="menu">
+<li><a role="menuitem" href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
+  <li><a role="menuitem" href="#">Liquid</a></li>
+  <li><a role="menuitem" href="#">Gas</a></li>
+  <li><a role="menuitem" href="#">Plasma</a></li>
+</ul>`,
+  );
+}
+
+export function asButtonReversedWithLargeItem(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "details",
+    {},
+    `${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown with reversed menu")}
+<ul role="menu" dir="rtl">
+  <li><a role="menuitem" href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
+  <li><a role="menuitem" href="#">Liquid</a></li>
+  <li><a role="menuitem" href="#">Gas</a></li>
+  <li><a role="menuitem" href="#">Plasma</a></li>
+</ul>`,
+  );
+}
+
 export function validationStates() {
   return `<details>
   <summary aria-haspopup="menu" aria-invalid="false">Valid phase of matter: Solid</summary>
