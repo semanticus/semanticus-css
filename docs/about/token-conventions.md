@@ -1,394 +1,374 @@
 # Token Naming Conventions
 
-**Semanticus CSS** tokens map directly to CSS property names whenever possible.
-No memorizing role names — if you know CSS, you know the tokens.
+**Semanticus CSS** uses a 4-tier token system. Each tier builds on the previous,
+giving you precise control over how broadly or narrowly a style change applies.
 
-## Core principle
-
-**Token names match the CSS property they control.**
-
-| Instead of | Use | Because |
-| --- | --- | --- |
-| `--color-primary-fill` | `--primary-background-color` | `background-color` is the property, prefixed by the variant. |
-| `--input-switch-thumb-glow` | `--input-switch-thumb-box-shadow` | `box-shadow` is the property, prefixed by the component. |
-| `--inputs-border-focus` | `--inputs-border-color-focus` | `border-color` is the property, followed by the state. |
-
-Every token name is a CSS property name, optionally prefixed by a component or variant scope and suffixed by an interaction state.
-If you know the CSS property you want to change, you know the token name.
-
-## Token structure
+## Four Token Tiers
 
 ```
-[--{scope}-]{property}[-{state}]
+Tier 1: System Tokens        --property[-state]              page-level defaults
+Tier 2: Palette Tokens       --{intent}-property[-state]      variant definitions
+Tier 3: Component Tokens     --{component}-property[-state]   component-scoped slots
+Tier 4: Individual Tokens    --_{component}-property[-state]  per-instance overrides
 ```
 
-| Segment | Description | Examples |
-| --- | --- | --- |
-| `scope` *(optional)* | Component, variant, or part name | `button`, `card`, `primary`, `dialog-header` |
-| `property` | A CSS longhand property name | `background-color`, `color`, `border-color`, `border-width`, `font-size`, `box-shadow` |
-| `state` *(optional)* | Interaction or ARIA state | `hover`, `focus`, `active`, `checked`, `disabled`, `open` |
+The flow: System → Palette → Component → Individual (`--_`).
 
-### Three token tiers
+---
 
-#### 1. Global tokens — page-level defaults
+## Tier 1: System Tokens
 
-No scope prefix. These define the document-wide baseline.
-
-```
---{property}[-{state}]
-```
+No scope prefix. These define the document-wide baseline and **must match
+a CSS longhand property name** whenever possible.
 
 ```css
-:root,
-:host {
-  --background-color          /* page background */
-  --color                     /* page text color */
-  --color-muted               /* muted/secondary text */
-  --border-color              /* page border color */
-  --border-width              /* global border thickness */
-  --border-radius             /* global corner radius */
-  --font-family               /* default body font stack */
-  --font-size                 /* root font size */
-  --font-weight               /* root font weight */
-  --line-height               /* root line height */
-  --outline-width             /* focus ring thickness */
-  --focus-ring-color          /* focus ring color (used in box-shadow) */
-  --box-shadow                /* global shadow stack */
-  --transition                /* default transition duration + easing */
-  --backdrop-background-color /* global background for modals, dialogs, and other overlays */
+:root, :host {
+  /* Background */
+  --background-color
+  --background-color-opacity
+  --selection-background-color
+
+  /* Color & Typography */
+  --color
+  --color-opacity
+  --color-muted
+  --typography-color
+  --typography-spacing-vertical
+  --font-family
+  --font-size
+  --font-weight
+  --line-height
+  --text-underline-offset
+
+  /* Spacing */
+  --spacing
+  --spacing-base
+  --spacing-scale
+
+  /* Borders & Effects */
+  --border-color
+  --border-color-opacity
+  --border-radius
+  --border-width
+  --outline-width
+  --focus-ring-width
+  --focus-ring-color
+  --transition
+  --disabled-opacity
+
+  /* Overlays */
+  --backdrop-background-color
 }
 ```
 
-#### 2. Palette tokens — variant-specific definitions
+System Tokens affect the entire page. Setting `--background-color` on a modifier
+class changes the background of every component that reads it.
 
-These are raw color definitions for design variants (`primary`, `secondary`, etc.).
-They are *consumed* by variant classes — users rarely set these directly unless defining a custom palette.
+---
+
+## Tier 2: Palette Tokens
+
+Intent-specific definitions for design variants. These provide the raw color
+values consumed by variant modifier classes. Users override these to define
+custom palettes.
 
 ```
---{variant}-{property}[-{state}]
+--{intent}-{property}[-{state}]
 ```
 
 ```css
-:root,
-:host {
-  --primary-background-color           /* .primary background */
-  --primary-background-color-hover     /* .primary background on hover */
-  --primary-color                      /* .primary text color */
-  --primary-color-hover                /* .primary text color on hover */
-  --primary-border-color               /* .primary border color */
-  --primary-focus-ring-color           /* .primary focus ring color */
+:root, :host {
+  --primary-color
+  --primary-color-hover
+  --primary-background-color
+  --primary-background-color-hover
+  --primary-focus-ring-color
 
-  --secondary-background-color
-  --secondary-background-color-hover
   --secondary-color
   --secondary-color-hover
-  --secondary-border-color
+  --secondary-background-color
+  --secondary-background-color-hover
   --secondary-focus-ring-color
 
-  --contrast-background-color
-  --contrast-background-color-hover
   --contrast-color
   --contrast-color-hover
-  --contrast-border-color
+  --contrast-background-color
+  --contrast-background-color-hover
   --contrast-focus-ring-color
 
-  /* ... same pattern for success, info, warning, danger */
+  --success-color / --success-background-color / --success-focus-ring-color
+  --info-color    / --info-background-color    / --info-focus-ring-color
+  --warning-color / --warning-background-color / --warning-focus-ring-color
+  --danger-color  / --danger-background-color  / --danger-focus-ring-color
+  /* (each with *-hover variants) */
 }
 ```
 
-Note: the variant is part of the token *name* here because multiple palettes coexist in `:root`.
-But when writing styles, the variant is the CSS *class selector* — see the Variants section below.
+Palette Tokens are referenced by variant classes but don't directly style
+elements — they feed into the tiers below.
 
-#### 3. Component tokens — component-scoped overrides
+---
 
-Every component defines its own variable slots with the component name as the scope prefix.
-These fall back to the global tokens.
+## Tier 3: Component Tokens
+
+Scoped to a component type. Setting one of these changes **every instance**
+of that component (e.g., all buttons, all inputs, all dialogs).
 
 ```
 --{component}[-{part}]-{property}[-{state}]
 ```
 
 ```css
-:root,
-:host {
-  --buttons-background-color
-  --buttons-background-color-hover
-  --buttons-color
-  --buttons-color-hover
-  --buttons-border-color
-  --buttons-border-width
-  --buttons-border-radius
-  --buttons-box-shadow
-  --buttons-box-shadow-hover
-  --buttons-focus-ring-color
+:root, :host {
+  /* Buttons — button, input[type=button/submit/reset], [role=button] */
+  --buttons-font-size
+  --buttons-color / --buttons-color-hover
+  --buttons-spacing-vertical / --buttons-spacing-horizontal
+  --buttons-background-color / --buttons-background-color-hover
+  --buttons-border-color / --buttons-border-color-hover
 
-  --card-background-color
-  --card-border-color
-  --card-header-background-color
-  --card-footer-background-color
-
-  --inputs-background-color
-  --inputs-background-color-focus
-  --inputs-color
+  /* Inputs — input, select, textarea, details */
+  --inputs-spacing-vertical / --inputs-spacing-horizontal
+  --inputs-background-color / --inputs-background-color-focus
   --inputs-border-color
-  --inputs-border-color-focus
+  --inputs-color
+  --inputs-accent-color
   --inputs-placeholder-color
-  --inputs-opacity-disabled
+  --inputs-focus-ring-width
 
-  --dialog-marginals-background-color
-
+  /* Input subtypes */
+  --input-checkbox-border-width
+  --input-range-track-border-color
+  --input-range-thumb-border-color
+  --input-search-border-radius
   --input-switch-background-color
-  --input-switch-background-color-checked
   --input-switch-thumb-background-color
+  --input-switch-border-width
+  --input-switch-border-radius
 
-  --progress-color
-  --progress-track-background-color
+  /* Dialog — also affects cards */
+  --dialog-border-color / --dialog-background-color / --dialog-box-shadow
+  --dialog-marginals-background-color / --dialog-marginals-border-color
 
-  --nav-background-color
-  --nav-link-gap
-  --nav-breadcrumb-divider
+  /* Details — accordions and dropdowns */
+  --details-summary-background-color
+  --details-summary-color / --details-summary-color-focus / --details-summary-color-open
+  --details-dropdown-color / --details-dropdown-border-color
+  --details-dropdown-spacing-vertical / --details-dropdown-spacing-horizontal
+  --details-menu-background-color / --details-menu-border-color
+  --details-menu-color / --details-menu-background-color-hover
 
-  --details-menu-background-color
-  --details-menu-border-color
-  --details-menu-color
-  --details-menu-background-color-hover
-  --details-menu-box-shadow
+  /* Links */
+  --links-color / --links-text-decoration
 
-  --code-background-color
-  --code-color
-  --kbd-background-color
-  --kbd-color
+  /* Headings */
+  --heading-font-weight
+  --h1-font-size / --h1-line-height / --h1-margin-top
+  --h2-font-size / --h2-line-height / --h2-margin-top
+  /* ... through h6 */
 
-  --tooltip-background-color
-  --tooltip-color
+  /* Lists */
+  --lists-marker-color
 
-  --details-summary-color
-  --details-summary-color-hover
-  --details-summary-color-open
+  /* Code */
+  --code-background-color / --code-color
+  --kbd-background-color / --kbd-color / --kbd-font-weight
 
-  --table-header-background-color
-  --table-row-background-color-striped
+  /* Table */
+  --table-header-font-weight / --table-header-border-width
+
+  /* Navigation */
+  --nav-link-gap / --nav-breadcrumb-divider
+
+  /* Progress */
+  --progress-accent-color / --progress-track-background-color
+
+  /* Tooltip */
+  --tooltip-background-color / --tooltip-color
+
+  /* Misc */
+  --small-font-size
+  --sidebar-size
+  --group-button-spacing-horizontal
+  --icons-background-position-gap / --icons-width
 }
 ```
 
-## How components, variants, and modifiers compose
+---
 
-### Components set up their own slots
+## Tier 4: Individual Component Tokens
+
+Private tokens prefixed with `--_`. Defined **in each component's CSS file**
+and initialized from the Component Token tier. These are the values the
+component actually consumes for its own styling.
+
+```
+--_{component}[-{part}]-{property}[-{state}]
+```
 
 ```css
-.button, [role="button"] {
-  background-color: var(--buttons-background-color, var(--background-color));
-  color: var(--buttons-color, var(--color));
-  border-color: var(--buttons-border-color, var(--border-color));
-  border-width: var(--buttons-border-width, var(--border-width));
-  border-radius: var(--buttons-border-radius, var(--border-radius));
+/* Inside _buttons.css */
+button, [role="button"] {
+  --_buttons-color: var(--buttons-color);
+  --_buttons-background-color: var(--buttons-background-color);
+  --_buttons-border-color: var(--buttons-border-color);
+  --_buttons-focus-ring-color: var(--focus-ring-color);
+
+  background-color: var(--_buttons-background-color);
+  color: var(--_buttons-color);
+  border-color: var(--_buttons-border-color);
 }
 
-.card {
-  background-color: var(--card-background-color, var(--background-color));
-  border-color: var(--card-border-color, var(--border-color));
+/* Inside inputs/_common.css */
+:where(input, select, textarea) {
+  --_inputs-background-color: var(--inputs-background-color);
+  --_inputs-border-color: var(--inputs-border-color);
+  --_inputs-focus-ring-color: var(--focus-ring-color);
+
+  background-color: var(--_inputs-background-color);
+  border-color: var(--_inputs-border-color);
+}
+
+/* Inside _dialog.css */
+dialog {
+  --_dialog-border-color: var(--dialog-border-color);
+  --_dialog-background-color: var(--dialog-background-color);
+
+  border-color: var(--_dialog-border-color);
+  background: var(--_dialog-background-color);
 }
 ```
 
-Every property uses a component-scoped variable with a fallback to the global token.
-This means any component can be styled independently.
+---
 
-### Variants override generically or per-component
+## How Modifier Classes Work Across Tiers
 
+Modifier classes (`.primary`, `.secondary`, etc.) can target any tier to control
+the scope of their effect:
+
+### Override System Tokens → affects entire page
 ```css
 .primary {
-  --background-color: var(--primary-background-color);
   --color: var(--primary-color);
-  --border-color: var(--primary-border-color);
+  --background-color: var(--primary-background-color);
 }
+```
 
-.primary:hover,
-.primary:focus {
-  --background-color: var(--primary-background-color-hover);
-  --color: var(--primary-color-hover);
-}
-
-/* Override just buttons within primary contexts */
+### Override Component Tokens → affects all instances of that component
+```css
 .primary {
-  --buttons-focus-ring-color: var(--primary-focus-ring-color);
+  --buttons-background-color: var(--primary-background-color);  /* all buttons */
+  --links-color: var(--primary-color);                          /* all links */
 }
 ```
 
-Because components read `var(--buttons-background-color, var(--background-color))`,
-setting `--background-color` on `.primary` changes all components equally.
-To differentiate, set the component-scoped variable:
-
+### Override Individual Tokens → affects only this specific instance
 ```css
-.secondary {
-  --background-color: var(--secondary-background-color);
-  --color: var(--secondary-color);
-  --buttons-background-color: black;  /* different for buttons only */
+/* Inside variants/intent/_common.css */
+.primary {
+  --_buttons-color: #fff;
+  --_buttons-background-color: var(--intent-background-color);
+  --_card-background-color: var(--intent-background-color);
 }
 ```
 
-### Modifiers set explicit values
+The 4-tier cascade means no combinatorial explosion — `.ghost` works with any
+intent class without separate blocks for `.ghost.primary`, `.ghost.secondary`, etc.
 
-```css
-.ghost {
-  --buttons-background-color: transparent;
-  --buttons-border-color: var(--border-color);   /* inherits whatever variant is active */
-  --buttons-color: var(--color);                  /* inherits whatever variant is active */
-}
-```
+---
 
-No combinatorial explosion — `.ghost` doesn't need separate blocks for `.ghost.primary`,
-`.ghost.secondary`, etc. The cascade handles it.
+## Property Name Rules
 
-## Property name rules
-
-### Use CSS longhand property names
+Tokens at Tiers 1-3 must use CSS longhand property names:
 
 | ✓ Do this | ✖ Not this | Because |
 | --- | --- | --- |
-| `--background-color` | `--background` | `background` is a shorthand — it resets `background-image`, `background-position`, etc. |
-| `--border-color` | `--border` | `border` is a shorthand for `border-width`, `border-style`, `border-color` |
-| `--margin-top` | `--margin` | `margin` is a shorthand for all four sides |
-| `--border-radius` | — | fine, `border-radius` is a longhand (the shorthand sets all four corners) |
+| `--background-color` | `--background` | `background` resets image, position, etc. |
+| `--border-color` | `--border` | `border` resets width and style |
 | `--border-width` | `--border-size` | CSS property is `border-width` |
 | `--outline-width` | `--outline-size` | CSS property is `outline-width` |
 
-### Genuine exceptions
+### Genuine Exceptions
 
-A small number of tokens don't map directly to a CSS longhand property name.
-These are the *only* exceptions — every other token follows the rule.
+| Token | Reason |
+| --- | --- |
+| `--spacing` / `--spacing-base` / `--spacing-scale` | Density values used across multiple properties |
+| `--transition` | Composite value — splitting adds tokens without benefit |
+| `--nav-breadcrumb-divider` | Content string, not a CSS property value |
+| `--disabled-opacity` | Generic opacity applied to multiple properties |
 
-| Token | CSS property | Reason |
+### State Ordering
+
+State always comes last:
+```css
+--buttons-background-color-hover
+--input-switch-background-color-checked
+--details-summary-color-open
+```
+
+### Opacity Tokens
+
+Append `-opacity` for use with `oklch(from ... l c h / var(...))`:
+```css
+--background-color-opacity
+--color-opacity
+--border-color-opacity
+```
+
+### Spacing Tokens
+
+Use `spacing` as the property segment:
+```css
+--spacing                       /* global density */
+--typography-spacing-vertical   /* block margins */
+--inputs-spacing-vertical       /* form padding */
+--buttons-spacing-vertical
+--details-dropdown-spacing-vertical
+```
+
+### Cascade-Seed Tokens
+
+Tokens on `:root` that propagate via inheritance use the CSS property name:
+```css
+--font-size      /* seeds rem calculations */
+--line-height    /* inherited by all text */
+--font-weight    /* inherited baseline */
+--text-underline-offset
+```
+
+---
+
+## Migration
+
+### v1.x → v2.x (current)
+
+| Old (v1.x) | New (v2.x) | Notes |
 | --- | --- | --- |
-| `--spacing` | (multiple) | Not a CSS property — a density value used across `padding`, `margin`, `gap`, etc. |
-| `--transition` | `transition` | A shorthand used as a single composite value (`0.2s ease-in-out`). Breaking it into `--transition-duration` and `--transition-timing-function` would add tokens without practical benefit. |
+| `--button-*` | `--buttons-*` | Pluralized for consistency |
+| `--input-*` | `--inputs-*` | Pluralized |
+| `--h1-gap-top` | `--h1-margin-top` | Property-mapped name |
+| `--dialog-section-*` | `--dialog-marginals-*` | Renamed |
+| `--dialog-header/footer-*` | `--dialog-marginals-*` | Consolidated |
+| `--loading-spinner-opacity` | removed | Unused |
+| `--menu-*` | `--details-menu-*` | Scoped under details |
+| `--pane-*` | `--dialog-*` | Consolidated under dialog |
+| `--progress-background-color` | `--progress-accent-color` | Property-mapped |
+| `--range-*` | `--input-range-*` | Scoped under inputs |
+| `--switch-*` | `--input-switch-*` | Scoped under inputs |
+| `--search-*` | `--input-search-*` | Scoped under inputs |
+| `--checkbox-*` | `--input-checkbox-*` | Scoped under inputs |
 
-## State ordering
-
-State always comes last. Multiple states are hyphenated in interaction order:
-
-```css
-:root,
-:host {
-  --buttons-background-color-hover
-  --buttons-background-color-active
-  --input-switch-background-color-checked
-  --input-switch-thumb-background-color-checked-hover   /* checked AND hovered */
-}
-```
-
-## Theme-invariant tokens
-
-Some tokens have the same value in both light and dark mode. Define them as plain values — no `light-dark()` needed:
-
-```css
-:root,
-:host {
-  --buttons-box-shadow: 0 0 0 rgb(0 0 0 / 0);   /* always transparent */
-  --inputs-opacity-disabled: 0.5;                 /* always half-opacity */
-  --input-switch-thumb-background-color: white;        /* thumb always white */
-}
-```
-
-The absence of `light-dark()` is intentional, not an omission.
-
-## Opacity tokens
-
-When a color token needs a separate opacity channel (for `oklch(from ... l c h / var(...))` patterns),
-append `-opacity`:
-
-```css
-:root,
-:host {
-  --background-color-opacity   /* default: 100% */
-  --color-opacity              /* default: 100% */
-  --border-color-opacity       /* default: 100% */
-}
-```
-
-These are property-mapped: the property name + `-opacity`.
-
-## Spacing tokens
-
-Spacing tokens use `spacing` as the property segment for internal padding/gap values
-that don't map to a single CSS property:
-
-```css
-:root,
-:host {
-  --spacing                       /* base spacing unit (used in padding, margin, gap) */
-  --inputs-spacing-vertical        /* input internal vertical padding */
-  --inputs-spacing-horizontal      /* input internal horizontal padding */
-  --typography-spacing-vertical   /* vertical margin between typographic blocks */
-}
-```
-
-## Cascade-seed tokens
-
-Some tokens are set on `:root` or an ancestor and propagate via CSS inheritance
-rather than explicit `var()` references. These use the CSS property name directly:
-
-```css
-:root,
-:host {
-  --font-size                  /* root font-size — seeds rem calculations */
-  --line-height                /* root line-height — inherited by all text */
-  --font-weight                /* root font-weight — inherited baseline */
-  --text-underline-offset      /* root underline offset — inherited by links */
-}
-```
-
-The property name *is* the intent — the inheritance mechanism is the feature.
-
-## Font family tokens
-
-Font family tokens use `font-family` as the base, with an optional variant:
-
-```css
-:root,
-:host {
-  --font-family                /* default body font stack */
-  --font-family-sans-serif     /* sans-serif stack override */
-  --font-family-monospace      /* monospace stack (code, pre, kbd) */
-  --font-family-emoji          /* emoji font stack */
-}
-```
-
-## Internal / calculation helper tokens
-
-Tokens prefixed with `--base-` are **internal helpers** used only inside `calc()` expressions.
-They are not part of the public API:
-
-```css
---spacing-base           /* base unit for the spacing scale */
-```
-
-Do not reference these directly in component or utility CSS; derive via `calc()` only.
-
-## Content / string tokens
-
-Tokens whose value is a CSS `content` string (for `::before` / `::after` pseudo-elements)
-use the `-content` suffix:
-
-```css
---nav-breadcrumb-divider    /* breadcrumb separator content string */
-```
-
-These follow the component token pattern (`{component}[-{part}]-content`) and hold an arbitrary CSS string value, not a colour or size.
-
-## Migration from v0.x (role-based convention)
-
-If you're upgrading from an earlier version that used role-based names:
+### v0.x → v1.x
 
 | Old (v0.x) | New (v1.x) | Notes |
 | --- | --- | --- |
-| `--color-primary-fill` | `--primary-background-color` | `fill` → `background-color`; variant is prefix, no `--color-` wrapper |
+| `--color-primary-fill` | `--primary-background-color` | `fill` → `background-color` |
 | `--color-primary-text` | `--primary-color` | `text` → `color` |
-| `--color-primary-on-fill` | `--primary-color` | Same as text — the "on fill" role is context-dependent and doesn't need a separate token |
-| `--color-primary-focus-ring` | `--primary-focus-ring-color` | `focus-ring` + `color` suffix |
-| `--color-background` | `--background-color` | Global page background |
-| `--color-text` | `--color` | Global page text |
-| `--color-text-muted` | `--color-muted` | Muted text variant |
-| `--color-border` | `--border-color` | Global border color |
-| `--dialog-fill` | `--pane-background-color` | Component + property |
-| `--inputs-border-focus` | `--inputs-border-color-focus` | State at end, `border-color` |
-| `--input-switch-thumb-glow` | `--input-switch-thumb-box-shadow` | Property name replaces role name |
+| `--color-primary-focus-ring` | `--primary-focus-ring-color` | Property-mapped |
+| `--color-background` | `--background-color` | No `--color-` wrapper |
+| `--color-text` | `--color` | Global text |
+| `--color-text-muted` | `--color-muted` | Muted variant |
+| `--color-border` | `--border-color` | Global border |
+| `--dialog-fill` | `--dialog-background-color` | Component + property |
+| `--input-border-focus` | `--inputs-border-color-focus` | State at end |
+| `--switch-thumb-glow` | `--input-switch-thumb-box-shadow` | Property name |
