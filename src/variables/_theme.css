@@ -395,16 +395,10 @@
 
   /* --- Input Range --- */
   --input-range-track-border-color: light-dark(
-    var(--color-slate-100),
-    var(--color-slate-850)
-  );
-  --input-range-track-border-color-active: light-dark(
     var(--color-slate-200),
-    var(--color-slate-800)
+    var(--color-slate-750)
   );
   --input-range-thumb-border-color: var(--background-color);
-  --input-range-thumb-background-color: var(--secondary-background-color);
-  --input-range-thumb-background-color-active: var(--primary-background-color);
 
   /* --- Input Search --- */
   --input-search-border-radius: 5rem;

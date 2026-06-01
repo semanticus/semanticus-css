@@ -10,9 +10,11 @@
   border-radius: 0;
   background: none;
   border-radius: var(--border-radius);
-  outline: none; /* We are outlining the file-selector-button instead */
 
-  &:is(:active, :focus) {
+  &:is(:active, :focus, :focus-visible) {
+    outline: none !important; /* We are outlining the file-selector-button instead */
+    box-shadow: none !important;
+
     &::file-selector-button {
       outline: var(--outline-width) solid var(--_buttons-focus-ring-color);
       box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-focus-ring-color);
