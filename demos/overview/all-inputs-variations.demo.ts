@@ -10,59 +10,59 @@ export function main() {
 <br>
 
 <h2>Default State</h2>
-${InputsDemo.all({}, 0)}
+${InputsDemo.all({})}
 
 <hr>
 <h2>From Right to Left</h2>
-${renderElement("div", { dir: "rtl" }, InputsDemo.all({}, 1))}
+${renderElement("div", { dir: "rtl" }, InputsDemo.all({}))}
 
 <hr>
 <h2>Disabled State</h2>
-${InputsDemo.all({ disabled: "true" }, 2)}
+${InputsDemo.all({ disabled: "true" })}
 
 <hr>
 <h2>Aria-disabled State</h2>
-${InputsDemo.all({ "aria-disabled": "true" }, 3)}
+${InputsDemo.all({ "aria-disabled": "true" })}
 
 <hr>
 <h2>Readonly State</h2>
-${InputsDemo.all({ readonly: "true" }, 4)}
+${InputsDemo.all({ readonly: "true" })}
 
 <hr>
 <h2>Valid State</h2>
-${InputsDemo.all({ "aria-invalid": "false" }, 5)}
+${InputsDemo.all({ "aria-invalid": "false" })}
 
 <hr>
 <h2>Invalid State</h2>
-${InputsDemo.all({ "aria-invalid": "true" }, 6)}
+${InputsDemo.all({ "aria-invalid": "true" })}
 
 <hr>
 <h2>Invalid State - From Right to Left</h2>
-${renderElement("div", { dir: "rtl", "aria-invalid": "true" }, InputsDemo.all({}, 7))}
+${renderElement("div", { dir: "rtl", "aria-invalid": "true" }, InputsDemo.all({}))}
 
 <hr>
 <h2>Disabled & Valid State</h2>
-${InputsDemo.all({ disabled: "true", "aria-invalid": "false" }, 8)}
+${InputsDemo.all({ disabled: "true", "aria-invalid": "false" })}
 
 <hr>
 <h2>Disabled & Invalid State</h2>
-${InputsDemo.all({ disabled: "true", "aria-invalid": "true" }, 9)}
+${InputsDemo.all({ disabled: "true", "aria-invalid": "true" })}
 
 <hr>
 <h2>Aria-disabled & Valid State</h2>
-${InputsDemo.all({ "aria-disabled": "true", "aria-invalid": "false" }, 10)}
+${InputsDemo.all({ "aria-disabled": "true", "aria-invalid": "false" })}
 
 <hr>
 <h2>Aria-disabled & Invalid State</h2>
-${InputsDemo.all({ "aria-disabled": "true", "aria-invalid": "true" }, 11)}
+${InputsDemo.all({ "aria-disabled": "true", "aria-invalid": "true" })}
 
 <hr>
 <h2>Readonly & Valid State</h2>
-${InputsDemo.all({ readonly: "true", "aria-invalid": "false" }, 12)}
+${InputsDemo.all({ readonly: "true", "aria-invalid": "false" })}
 
 <hr>
 <h2>Readonly & Invalid State</h2>
-${InputsDemo.all({ readonly: "true", "aria-invalid": "true" }, 13)}
+${InputsDemo.all({ readonly: "true", "aria-invalid": "true" })}
 `,
   );
 }
