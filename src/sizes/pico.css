@@ -23,7 +23,8 @@
   /* Borders & Effects – global defaults for border-radius, border-width, outline, and transition */
   --border-radius: 0.25rem;
   --border-width: 0.0625rem; /* 1px – base border width used by forms, tables, etc. */
-  --outline-width: 0.125rem; /* 2px – focus-ring width */
+  --outline-width: 1px;
+  --focus-ring-width: 0.125rem; /* 2px – focus-ring width */
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
@@ -34,13 +35,7 @@
   --inputs-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
   --inputs-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
-  /* Shadows – used by [role="group"] and [role="search"] button/input combos */
-  --group-box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Default (no shadow) */
-  --group-box-shadow-focus-button: 0 0 0 var(--outline-width)
-    var(--primary-focus-ring-color); /* Focus ring when a button inside the group is focused */
-  --group-box-shadow-focus-input: 0 0 0 0.0625rem var(--inputs-border-color); /* Focus ring when an input inside the group is focused */
-
-  /* Navigation – spacing and breadcrumb configuration */
+  --group-button-spacing-horizontal: 1rem;
   --nav-link-gap: calc(var(--spacing) * 0.5); /* padding inside nav links */
   --nav-breadcrumb-divider: ">"; /* Character displayed between breadcrumb items */
 
