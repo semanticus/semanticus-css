@@ -1,51 +1,74 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
-import * as DetailsDemo from "@demos/semantics/elements/details.demo";
-import * as DropdownDemo from "@demos/composites/dropdown.demo";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
-export function main(tagName: string = "div", attrs: Record<string, string> = {}, slot: string = '') {
-  return renderElement(tagName, { ...attrs, role: "button" }, slot || `${tagName} as button`);
+export function main(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
+  return renderElement(
+    tagName,
+    { ...attrs, role: "button" },
+    slot || `&lt;${tagName}&gt; as button`,
+  );
 }
 
-export function dropdown(attrs: Record<string, string> = {}) {
-  return DropdownDemo.asButton(attrs);
+export function intentVariants(
+  tagName: string = "section",
+  attrs: Record<string, string> = {},
+  modifier: string = "",
+) {
+  return `${main(tagName, classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+  ${main(tagName, classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+  ${main(tagName, classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+  ${main(tagName, classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${main(tagName, classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`;
 }
 
-export function accordion(attrs: Record<string, string> = {}, slot: string = '') {
-  return DetailsDemo.asButton(attrs);
+export function subtleVariants(
+  tagName: string = "section",
+  attrs: Record<string, string> = {},
+) {
+  return intentVariants(tagName, attrs, "subtle");
 }
 
-export function intentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-    return `${main('section', classMergeAttributes(`primary ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}
-${main('section', classMergeAttributes(`secondary ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}
-${main('section', classMergeAttributes(`contrast ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}
-${main('section', classMergeAttributes(`success ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}
-${main('section', classMergeAttributes(`info ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}
-${main('section', classMergeAttributes(`warning ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}
-${main('section', classMergeAttributes(`danger ${modifier}`.trim(), attrs), '&lt;section&gt; as button')}`;
+export function ghostVariants(
+  tagName: string = "section",
+  attrs: Record<string, string> = {},
+) {
+  return intentVariants(tagName, attrs, "ghost");
 }
 
-export function subtleVariants(attrs: Record<string, string> = {}) {
-  return intentVariants(attrs, 'subtle');
-}
+export function overviewStatesAndModifiers(
+  tagName: string = "div",
+  intent: string = "",
+) {
+  const namePrefix = `&lt;${tagName}&gt; as ${intent ? `${intent[0].toUpperCase() + intent.slice(1)}` : ""}`;
 
-export function ghostVariants(attrs: Record<string, string> = {}) {
-  return intentVariants(attrs, 'ghost');
-}
+  return `${renderGrid(
+    `${main(tagName, { class: intent }, `${namePrefix} Button`)}
+${main(tagName, { class: intent, "aria-current": "false" }, "Not Current")}
+${main(tagName, { class: intent, "aria-current": "true" }, "Current")}
+${main(tagName, { class: intent, disabled: "true" }, "Disabled")}`,
+  )}
 
-export function accordionIntentVariants(attrs: Record<string, string> = {}, modifier: string = '') {
-  return `${accordion(classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${accordion(classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${accordion(classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${accordion(classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${accordion(classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${accordion(classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${accordion(classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`;
-}
+${renderGrid(
+  `${main(tagName, classMergeAttributes("subtle", { class: intent }), `${namePrefix} Subtle Button`)}
+${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-current": "false" }), "Not Current Subtle")}
+${main(tagName, classMergeAttributes("subtle", { class: intent, "aria-current": "true" }), "Current Subtle")}
+${main(tagName, classMergeAttributes("subtle", { class: intent, disabled: "true" }), "Disabled Subtle")}`,
+)}
 
-export function accordionSubtleVariants(attrs: Record<string, string> = {}) {
-  return accordionIntentVariants(attrs, 'subtle');
-}
-
-export function accordionGhostVariants(attrs: Record<string, string> = {}) {
-  return accordionIntentVariants(attrs, 'ghost');
+${renderGrid(
+  `${main(tagName, classMergeAttributes("ghost", { class: intent }), `${namePrefix} Ghost Button`)}
+${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-current": "false" }), "Not Current Ghost")}
+${main(tagName, classMergeAttributes("ghost", { class: intent, "aria-current": "true" }), "Current Ghost")}
+${main(tagName, classMergeAttributes("ghost", { class: intent, disabled: "true" }), "Disabled Ghost")}`,
+)}
+`;
 }

@@ -1,0 +1,48 @@
+/* See ./_common.css for shared styles */
+
+input[type="search"] {
+  --_inputs-border-radius: var(--input-search-border-radius);
+
+  appearance: none;
+
+  &::-webkit-search-decoration {
+    appearance: none;
+  }
+
+  background-image: var(--icon-search);
+  background-position: left var(--icons-background-position-gap) center;
+  background-repeat: no-repeat;
+  background-size: var(--icons-width) auto;
+  padding-inline-start: calc(
+    var(--inputs-spacing-horizontal) + var(--icons-width) +
+      var(--icons-background-position-gap)
+  );
+
+  &[aria-invalid] {
+    padding-inline-end: calc(
+      var(--inputs-spacing-horizontal) + var(--icons-width) +
+        var(--icons-background-position-gap)
+    );
+    background-position:
+      left var(--icons-background-position-gap) center,
+      right var(--icons-background-position-gap) center;
+  }
+
+  &[aria-invalid="false"] {
+    background-image: var(--icon-search), var(--icon-valid);
+  }
+
+  &[aria-invalid="true"] {
+    background-image: var(--icon-search), var(--icon-invalid);
+  }
+
+  [dir="rtl"] & {
+    background-position: right var(--icons-background-position-gap) center;
+
+    &[aria-invalid] {
+      background-position:
+        right var(--icons-background-position-gap) center,
+        left var(--icons-background-position-gap) center;
+    }
+  }
+}

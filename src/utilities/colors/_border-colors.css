@@ -1,47 +1,47 @@
 .border-primary {
-  --color-border: var(--color-primary-fill);
+  --border-color: var(--primary-background-color);
 }
 
 .border-secondary {
-  --color-border: var(--color-secondary-fill);
+  --border-color: var(--secondary-background-color);
 }
 
 .border-success {
-  --color-border: var(--color-success-fill);
+  --border-color: var(--success-background-color);
 }
 
 .border-info {
-  --color-border: var(--color-info-fill);
+  --border-color: var(--info-background-color);
 }
 
 .border-warning {
-  --color-border: var(--color-warning-fill);
+  --border-color: var(--warning-background-color);
 }
 
 .border-danger {
-  --color-border: var(--color-danger-fill);
+  --border-color: var(--danger-background-color);
 }
 
 .border-contrast {
-  --color-border: var(--color-contrast-fill);
+  --border-color: var(--contrast-background-color);
 }
 
 .border-opacity-10 {
-  --color-border-opacity: 10%;
+  --border-color-opacity: 10%;
 }
 
 .border-opacity-25 {
-  --color-border-opacity: 25%;
+  --border-color-opacity: 25%;
 }
 
 .border-opacity-50 {
-  --color-border-opacity: 50%;
+  --border-color-opacity: 50%;
 }
 
 .border-opacity-75 {
-  --color-border-opacity: 75%;
+  --border-color-opacity: 75%;
 }
 
 .border-opacity-100 {
-  --color-border-opacity: 100%;
+  --border-color-opacity: 100%;
 }

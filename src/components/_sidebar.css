@@ -17,8 +17,8 @@ aside.sidebar {
     margin: 0 !important;
     display: flex !important;
     width: 60% !important;
-    box-shadow: var(--shadow);
-    background-color: var(--color-background) !important;
+    box-shadow: var(--menu-box-shadow);
+    background-color: var(--background-color) !important;
     left: 0;
     right: unset;
 
@@ -30,7 +30,7 @@ aside.sidebar {
 
   &::backdrop {
     backdrop-filter: blur(0.375rem);
-    background-color: var(--dialog-overlay);
+    background-color: var(--backdrop-background-color);
     transition:
       backdrop-filter 0.2s ease-in-out,
       background-color 0.2s ease-in-out;

@@ -1,18 +1,27 @@
 # Buttons
 
-Buttons can be displayed using different approaches, such as using the `<button>` element or an `<a>` or `<div>` element with `role="button"` as well as form elements like `<input type="button">` or `<input type="submit">`. The choice of element depends on the context and the desired behavior of the button.
+Buttons are implemented using different approaches:
+- Using the native [&lt;button&gt;](/docs/semantics/elements/button) element
+- Using [Input Buttons](/docs/semantics/elements/input#input-buttons) elements like `<input type="button">` or `<input type="submit">`
+- Combining [[role=button]](/docs/semantics/attributes/role-button) with elements like `<a>`, `<div>`, etc.
+
+The choice of element depends on the context and the desired behavior of the button.
 
 ## Basic Button
 
-See the [Button](/docs/semantics/elements/button) for more details on button variations.
+See the [&lt;button&gt;](/docs/semantics/elements/button) for more details on button variations.
 
 <HtmlPreviewer :code="ButtonDemo.main()" />
 
 ## Input Types
 
+See more at [Input Buttons](/docs/semantics/elements/input#input-buttons)
+
 <HtmlPreviewer :code="InputDemo.buttons()" />
 
 ## Div as Button
+
+See more at [[role=button]](/docs/semantics/attributes/role-button) for more details on button variations.
 
 <HtmlPreviewer :code="RoleButtonDemo.main()" />
 

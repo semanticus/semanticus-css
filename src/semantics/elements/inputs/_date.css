@@ -1,0 +1,53 @@
+/* See ./_common.css for shared styles */
+
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"] {
+  background-image: var(--icon-date);
+  background-position: center right var(--icons-background-position-gap);
+  background-size: var(--icons-width) auto;
+  background-repeat: no-repeat;
+  padding-right: calc(
+    var(--icons-width) + var(--icons-background-position-gap)
+  );
+
+  &::-webkit-calendar-picker-indicator {
+    width: var(--icons-width);
+    margin-right: calc(
+      (var(--icons-width) + (var(--_inputs-border-width) * 2)) * -1
+    );
+    margin-left: var(--icons-background-position-gap);
+
+    /* Attempt at hidding the native icon, without hiding the outline in the process */
+    background: transparent;
+    color: transparent;
+
+    &:is(:active, :focus) {
+      outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
+      outline-offset: 2px;
+      border-radius: var(--_inputs-border-radius);
+    }
+  }
+
+  &[dir="rtl"],
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+[type="time"] {
+  background-image: var(--icon-time);
+}
+
+@-moz-document url-prefix() {
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"] {
+    padding-right: var(--inputs-spacing-horizontal);
+    background-image: none;
+  }
+}

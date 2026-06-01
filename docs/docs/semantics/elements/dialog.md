@@ -30,7 +30,7 @@ ${DialogDemo.withCloseButton({ open: true })}
 
 > **Note:** Inside `<dialog>`, the `<header>` will justify its content to the left and right and `<footer>` will justify its content to the right, allowing you to add a close button or other actions, without needing to use utility classes.
 
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
+<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 275px;&quot;&gt;
 ${DialogDemo.withHeaderAndFooter({ open: true })}
 &lt;/div&gt;`" />
 

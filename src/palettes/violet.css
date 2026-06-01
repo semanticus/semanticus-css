@@ -22,10 +22,6 @@
   /* --color-violet: var(--color-violet-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-violet-550), var(--color-violet-350));
-  --color-primary-fill: var(--color-violet-600);
-  --color-primary-on-fill: white;
-
-  /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
+  --primary-color: light-dark(var(--color-violet-550), var(--color-violet-350));
+  --primary-background-color: var(--color-violet-600);
 }

@@ -1,5 +1,5 @@
 .rounded {
-  border-radius: var(--radius) !important;
+  border-radius: var(--border-radius) !important;
 }
 
 .rounded-0 {
@@ -35,8 +35,8 @@
 }
 
 .rounded-top {
-  border-top-left-radius: var(--radius) !important;
-  border-top-right-radius: var(--radius) !important;
+  border-top-left-radius: var(--border-radius) !important;
+  border-top-right-radius: var(--border-radius) !important;
 }
 
 .rounded-top-0 {
@@ -80,8 +80,8 @@
 }
 
 .rounded-end {
-  border-top-right-radius: var(--radius) !important;
-  border-bottom-right-radius: var(--radius) !important;
+  border-top-right-radius: var(--border-radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
 }
 
 .rounded-end-0 {
@@ -125,8 +125,8 @@
 }
 
 .rounded-bottom {
-  border-bottom-right-radius: var(--radius) !important;
-  border-bottom-left-radius: var(--radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
 }
 
 .rounded-bottom-0 {
@@ -170,8 +170,8 @@
 }
 
 .rounded-start {
-  border-bottom-left-radius: var(--radius) !important;
-  border-top-left-radius: var(--radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
+  border-top-left-radius: var(--border-radius) !important;
 }
 
 .rounded-start-0 {

@@ -11,8 +11,3 @@ export const basicUsage: StoryObj = {
   args: { html: HiddenDemo.main() },
   render: (args) => args.html,
 };
-
-export const toggle: StoryObj = {
-  args: { html: HiddenDemo.toggle() },
-  render: (args) => args.html,
-};

@@ -1,10 +1,10 @@
 # Light & Dark Modes
 
-Semanticus CSS supports light and dark modes out of the box, automatically adapting to your users' system preferences or allowing explicit control via the `data-theme` attribute.
+**Semanticus CSS** supports light and dark modes out of the box, automatically adapting to your users' system preferences or allowing explicit control via the `data-theme` attribute.
 
 ## Automatic System Detection
 
-By default, Semanticus CSS respects the user's OS color scheme preference using the `prefers-color-scheme` media query:
+By default, **Semanticus CSS** respects the user's OS color scheme preference using the `prefers-color-scheme` media query:
 
 ```html
 <!DOCTYPE html>
@@ -59,10 +59,10 @@ Add a theme toggle button to let users switch between light and dark modes:
 
 ## How It Works
 
-Semanticus CSS uses CSS custom properties defined in three layers:
+**Semanticus CSS** uses CSS custom properties defined in three layers:
 
 1. **Light theme (default)** — Applied via `[data-theme="light"]` or `:root:not([data-theme="dark"])`
 2. **Dark theme (system preference)** — Applied via `@media (prefers-color-scheme: dark)` when no `data-theme` is set
 3. **Dark theme (explicit)** — Applied via `[data-theme="dark"]` regardless of OS preference
 
-All semantic color variables (`--color-primary`, `--color-background`, `--color-text`, etc.) are redefined in each theme to ensure optimal contrast and readability.
+All semantic color variables (`--primary-color`, `--background-color`, `--color`, etc.) are redefined in each theme to ensure optimal contrast and readability.

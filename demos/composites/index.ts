@@ -1,9 +1,12 @@
+export * as AccordionsDemo from "./accordions.demo";
 export * as AlertsDemo from "./alerts.demo";
-export * as CardListDemo from "./card-list.demo";
-export * as LinksDemo from "./links.demo";
+export * as ButtonsDemo from "./buttons.demo";
 export * as DropdownDemo from "./dropdown.demo";
+export * as GroupsDemo from "./groups.demo";
+export * as InputsDemo from "./inputs.demo";
 export * as LayoutDemo from "./layout.demo";
+export * as LinksDemo from "./links.demo";
+export * as ListsDemo from "./lists.demo";
 export * as PaginationDemo from "./pagination.demo";
 export * as SearchDemo from "./search.demo";
 export * as ToastsDemo from "./toasts.demo";
-export * as TypographyDemo from "./typography.demo";

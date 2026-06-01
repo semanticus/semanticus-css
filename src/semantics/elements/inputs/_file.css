@@ -1,0 +1,34 @@
+/* See ./_common.css for shared styles */
+
+[type="file"] {
+  --color: var(--color-muted);
+
+  margin-left: calc(var(--focus-ring-width) * -1);
+  padding: calc(var(--inputs-spacing-vertical) * 0.5) 0;
+  padding-left: var(--outline-width);
+  border: 0;
+  border-radius: 0;
+  background: none;
+
+  &:is(:active, :focus, :focus-visible) {
+    outline: none; /* We are outlining the file-selector-button instead */
+    box-shadow: none;
+
+    &::file-selector-button {
+      --_buttons-focus-ring-color: var(--_inputs-focus-ring-color);
+
+      outline: var(--outline-width) solid var(--_buttons-focus-ring-color);
+      box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-focus-ring-color);
+    }
+  }
+
+  &::file-selector-button {
+    --_buttons-background-color: var(--_inputs-accent-color);
+    --_buttons-border-color: var(--_inputs-accent-color);
+
+    margin-left: var(--focus-ring-width);
+    margin-right: calc(var(--spacing) / 2);
+    padding: calc(var(--inputs-spacing-vertical) * 0.5)
+      var(--inputs-spacing-horizontal);
+  }
+}

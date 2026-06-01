@@ -25,11 +25,7 @@ export const roleButtons: StoryObj = {
 };
 
 export const dropdowns: StoryObj = {
-  render: () => DropdownDemo.ghostVariants(),
-};
-
-export const accordions: StoryObj = {
-  render: () => RoleButtonDemo.accordionGhostVariants(),
+  render: () => DropdownDemo.asButtonGhostVariants(),
 };
 
 export const cards: StoryObj = {

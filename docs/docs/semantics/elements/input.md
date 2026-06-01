@@ -38,31 +38,31 @@ Validation states are provided with `aria-invalid`. See more at [[aria-invalid]]
 
 ## Miscellaneous Input Types
 
-<HtmlPreviewer :code="miscellaneousTypes" />
+<HtmlPreviewer :code="InputDemo.miscellaneousTypes()" />
 
 ## Date Inputs
 
 Datetime inputs come with an icon.
 
-<HtmlPreviewer :code="dateUsage" />
+<HtmlPreviewer :code="InputDemo.dateTypes()" />
 
 ## Search Input
 
 `type="search"` comes with a distinctive style.
 
-<HtmlPreviewer :code="InputDemo.search()" />
+<HtmlPreviewer :code="InputDemo.main({ type: 'search' })" />
 
 ## Color Input
 
 `type="color"` is also consistent with the other input types.
 
-<HtmlPreviewer :code="InputDemo.color()" />
+<HtmlPreviewer :code="InputDemo.main({ type: 'color', value: '#ff0000' })" />
 
 ## File Input
 
 Input type file button has a secondary button style.
 
-<HtmlPreviewer :code="InputDemo.file()" />
+<HtmlPreviewer :code="InputDemo.main({ type: 'file' })" />
 
 ## Checkboxes
 
@@ -144,18 +144,5 @@ Reset inputs have the secondary style by default.
 import { GhostDemo, SubtleDemo, IntentDemo } from '@demos/variants';
 
 import { InputDemo } from "@demos/semantics/elements";
-const miscellaneousTypes = [
-  InputDemo.email(),
-  InputDemo.number(),
-  InputDemo.password(),
-  InputDemo.telephone(),
-  InputDemo.url(),
-].join('\n');
-const dateUsage = [
-  InputDemo.date(),
-  InputDemo.datetime(),
-  InputDemo.datetime(),
-  InputDemo.month(),
-  InputDemo.time(),
-].join('\n');
+
 </script>

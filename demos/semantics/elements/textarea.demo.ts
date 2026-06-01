@@ -1,7 +1,13 @@
 import { renderAttributes } from "@scripts/utils";
 
-export function main(attrs: Record<string, string> = {}, slot: string = '') {
-  return `<textarea ${renderAttributes(attrs)}>${slot}</textarea>`;
+function defaultAttrs(attrs: Record<string, string>) {
+  const mergedAttrs = { name: "message", ...attrs };
+  mergedAttrs["placeholder"] ||= `Type your ${mergedAttrs["name"]}`;
+  return mergedAttrs;
+}
+
+export function main(attrs: Record<string, string> = {}, slot: string = "") {
+  return `<textarea${renderAttributes(defaultAttrs(attrs))}>${slot}</textarea>`;
 }
 
 export function withRows() {
@@ -10,32 +16,37 @@ export function withRows() {
 `;
 }
 
-export function withLabel() {
-  return `<label for="message">Message</label>
-${main({ id: 'message', placeholder: 'Enter your message' })}
-`;
-}
-
-export function withHelperText() {
-  return `<label for="post-message">Post</label>
-${main({ id: 'post-message', 'aria-describedby': 'post-message-helper', placeholder: 'What are your thoughts?' })}
-<small id="post-message-helper">Maximum 200 characters.</small>
-`;
-}
-
 export function validationStates() {
-  return `${main({ 'aria-invalid': 'false' }, 'Valid text')}
+  return `${main({ "aria-invalid": "false" }, "Valid text")}
 
-${main({ 'aria-invalid': 'true' }, 'Invalid text')}`;
+${main({ "aria-invalid": "true" }, "Invalid text")}`;
+}
+
+export function withLabel(attrs: Record<string, string> = {}) {
+  const mergedAttrs = defaultAttrs(attrs);
+  mergedAttrs["id"] ||= `textarea-${mergedAttrs["name"]}`;
+  const label =
+    attrs["placeholder"] ||
+    `${mergedAttrs["name"].charAt(0).toUpperCase()}${mergedAttrs["name"].slice(1)}`;
+
+  return `<label for="${mergedAttrs["id"]}">${label}</label>
+${main(mergedAttrs)}`;
+}
+
+export function withHelperText(
+  attrs: Record<string, string> = {},
+  helperText: string = "Maximum 200 characters.",
+) {
+  const mergedAttrs = defaultAttrs(attrs);
+  mergedAttrs["id"] ||= `textarea-${mergedAttrs["name"]}`;
+  mergedAttrs["aria-describedby"] ||= `${mergedAttrs["id"]}-helper`;
+
+  return `${withLabel(mergedAttrs)}
+<small id="${mergedAttrs["aria-describedby"]}">${helperText}</small>`;
 }
 
 export function validationStatesWithTextHelper() {
-  return `${main({ 'aria-invalid': 'false', 'aria-describedby': 'valid-helper' }, 'Valid text')}
-<small id="valid-helper">Looks good!</small>
+  return `${withHelperText({ "aria-invalid": "false", name: "first-story" }, "Looks good!")}
 
-${main({ 'aria-invalid': 'true', 'aria-describedby': 'invalid-helper' }, 'Invalid text')}
-<small id="invalid-helper">
-  Please provide a valid value!
-</small>
-`;
+${withHelperText({ "aria-invalid": "true", name: "second-story" }, "Cannot be bigger than 200 characters.")}`;
 }

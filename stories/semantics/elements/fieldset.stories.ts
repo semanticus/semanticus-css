@@ -32,8 +32,8 @@ export const groupMultipleInputs: StoryObj = {
   render: (args) => args.html,
 };
 
-export const formExample: StoryObj = {
-  args: { html: FieldsetDemo.formExample() },
+export const loginFormExample: StoryObj = {
+  args: { html: FieldsetDemo.loginFormExample() },
   render: (args) => args.html,
 };
 

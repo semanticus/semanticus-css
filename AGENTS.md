@@ -57,7 +57,7 @@ npm run docs:update-size-claims        # Download Pico/Bootstrap, compute gzip s
 
 ## Conventions
 
-- **Token Naming**: CSS custom properties follow a strict naming convention — see [`docs/about/token-conventions.md`](docs/about/token-conventions.md) before adding or renaming any `--*` variable.
+- **Token Naming**: CSS custom properties map to CSS property names — see [`docs/about/token-conventions.md`](docs/about/token-conventions.md). Tokens follow `[--{scope}-]{property}[-{state}]` (e.g., `--buttons-background-color-hover`).
 - **CSS Custom Properties**: All theming uses `--*` variables. Light/dark modes via `data-theme` attribute and `prefers-color-scheme`.
 - **Semantic Selectors**: Target raw elements (`button`, `input`, `nav`) and ARIA roles (`[role=button]`, `[role=tooltip]`).
 - **Utility Classes**: Bootstrap-style naming, always use `!important`.
@@ -137,8 +137,8 @@ This project follows [SemVer](https://semver.org/). When making changes, conside
 ### Breaking Change Checklist
 
 **MAJOR/MINOR bump required if you:**
-- ❌ Remove or rename CSS variables (e.g., `--color-h1`, `--spacing-lg`)
-- ❌ Remove or rename CSS classes (e.g., `.text-primary`, `.bg-secondary`)
+- ❌ Remove or rename CSS variables (e.g., `--buttons-background-color`, `--primary-color`)
+- ❌ Remove or rename CSS classes (e.g., `.primary`, `.ghost`)
 - ❌ Change the visual output of existing classes significantly
 - ❌ Change browser support requirements (e.g., adding `@layer`, `@container`, `@scope`)
 - ❌ Reorganize file structure that affects imports

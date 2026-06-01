@@ -1,0 +1,68 @@
+import { renderElement } from "@scripts/utils";
+import { InputsDemo } from "@demos/composites";
+
+export function main() {
+  return renderElement(
+    "main",
+    { class: "container" },
+    `<h1>Input, Select and Textarea Variations</h1>
+
+<br>
+
+<h2>Default State</h2>
+${InputsDemo.all({})}
+
+<hr>
+<h2>From Right to Left</h2>
+${renderElement("div", { dir: "rtl" }, InputsDemo.all({}))}
+
+<hr>
+<h2>Disabled State</h2>
+${InputsDemo.all({ disabled: "true" })}
+
+<hr>
+<h2>Aria-disabled State</h2>
+${InputsDemo.all({ "aria-disabled": "true" })}
+
+<hr>
+<h2>Readonly State</h2>
+${InputsDemo.all({ readonly: "true" })}
+
+<hr>
+<h2>Valid State</h2>
+${InputsDemo.all({ "aria-invalid": "false" })}
+
+<hr>
+<h2>Invalid State</h2>
+${InputsDemo.all({ "aria-invalid": "true" })}
+
+<hr>
+<h2>Invalid State - From Right to Left</h2>
+${renderElement("div", { dir: "rtl", "aria-invalid": "true" }, InputsDemo.all({}))}
+
+<hr>
+<h2>Disabled & Valid State</h2>
+${InputsDemo.all({ disabled: "true", "aria-invalid": "false" })}
+
+<hr>
+<h2>Disabled & Invalid State</h2>
+${InputsDemo.all({ disabled: "true", "aria-invalid": "true" })}
+
+<hr>
+<h2>Aria-disabled & Valid State</h2>
+${InputsDemo.all({ "aria-disabled": "true", "aria-invalid": "false" })}
+
+<hr>
+<h2>Aria-disabled & Invalid State</h2>
+${InputsDemo.all({ "aria-disabled": "true", "aria-invalid": "true" })}
+
+<hr>
+<h2>Readonly & Valid State</h2>
+${InputsDemo.all({ readonly: "true", "aria-invalid": "false" })}
+
+<hr>
+<h2>Readonly & Invalid State</h2>
+${InputsDemo.all({ readonly: "true", "aria-invalid": "true" })}
+`,
+  );
+}

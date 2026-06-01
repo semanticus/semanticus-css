@@ -1,12 +1,6 @@
 @import "./_variables.css";
 
-@import "./intent/_contrast.css";
-@import "./intent/_danger.css";
-@import "./intent/_info.css";
-@import "./intent/_primary.css";
-@import "./intent/_secondary.css";
-@import "./intent/_success.css";
-@import "./intent/_warning.css";
+@import "./_intent.css";
 
 @import "./modifiers/_ghost.css";
 @import "./modifiers/_striped.css";

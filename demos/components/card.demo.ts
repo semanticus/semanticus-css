@@ -1,4 +1,8 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
 export function main(
   tagName: string = "div",
@@ -13,6 +17,18 @@ export function main(
   <p>This is the subtitle</p>
 </hgroup>
 <p>This is the main content of the card.</p>`,
+  );
+}
+
+export function all(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "section",
+    { class: "row" },
+    `${renderElement("div", { class: "col-3" }, main("div", attrs))}
+${renderElement("div", { class: "col-3" }, withHeader("div", attrs))}
+${renderElement("div", { class: "col-3" }, withFooter("div", attrs))}
+${renderElement("div", { class: "col-3" }, withHeaderAndFooter("div", attrs))}
+`,
   );
 }
 
@@ -85,24 +101,6 @@ export function htmlElements() {
 `;
 }
 
-export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "section",
-    attrs,
-    `<div class="auto-grid">
-  ${withHeaderAndFooter()}
-  ${withHeaderAndFooter("div", { class: "subtle" })}
-  ${withHeaderAndFooter("div", { class: "ghost" })}
-</div>
-
-<div class="auto-grid">
-  ${withHeaderAndFooterIntentVariants()}
-  ${withHeaderAndFooterSubtleVariants()}
-  ${withHeaderAndFooterGhostVariants()}
-</div>`,
-  );
-}
-
 export function intentVariants(
   attrs: Record<string, string> = {},
   modifier: string = "",
@@ -155,4 +153,29 @@ export function withHeaderAndFooterGhostVariants(
   attrs: Record<string, string> = {},
 ) {
   return withHeaderAndFooterIntentVariants(attrs, "ghost");
+}
+
+export function overviewDefaultAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`${withHeaderAndFooter()}
+${withHeaderAndFooter("div", { class: "subtle" })}
+${withHeaderAndFooter("div", { class: "ghost" })}`)}`,
+  );
+}
+
+export function overviewIntentAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`
+${withHeaderAndFooterIntentVariants()}
+${withHeaderAndFooterSubtleVariants()}
+${withHeaderAndFooterGhostVariants()}`)}`,
+  );
 }

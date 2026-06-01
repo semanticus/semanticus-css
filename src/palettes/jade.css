@@ -22,10 +22,6 @@
   /* --color-jade: var(--color-jade-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-jade-550), var(--color-jade-350));
-  --color-primary-fill: var(--color-jade-550);
-  --color-primary-on-fill: white;
-
-  /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
+  --primary-color: light-dark(var(--color-jade-550), var(--color-jade-350));
+  --primary-background-color: var(--color-jade-550);
 }

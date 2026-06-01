@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 import { LinksDemo } from "@demos/composites";
-import { ADemo, RoleLinkDemo } from '@demos/semantics';
+import { ADemo, RoleLinkDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Composites/Links",
@@ -9,14 +9,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicUsage: StoryObj = {
+export const anchors: StoryObj = {
   render: () => ADemo.overview(),
 };
 
-export const elementsRenderedAsALink: StoryObj = {
+export const roleLinks: StoryObj = {
   render: () => RoleLinkDemo.overview(),
 };
 
 export const variants: StoryObj = {
-  render: () => LinksDemo.overviewVariants(),
+  render: () => LinksDemo.intentVariants(),
 };

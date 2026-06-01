@@ -4,21 +4,22 @@ title: 'role="group"'
 
 # [role="group"]
 
-The `role="group"` is used to semantically associate related UI elements together like grouping buttons together in a menu, or grouping tree items together in a tree structure, but typically the normal use cases are in combination with `<fieldset>` and `<div>` elements, as seen below.
+The `role="group"` is used to semantically associate related UI elements together, and its used as a building block for grouping:
+- Buttons together in a menu, or [Pagination](/docs/composites/pagination) area;
+- Form controls together like a [Search](/docs/composites/search) input and its submit button;
+- Items together in a [Card Group](/docs/composites/card-group), to indicate the status or progress of a resource.
 
-> [!CAUTION]
-> Even though Semanticus CSS provides styling to `[role="group"]`, use it with caution, as it is not meant to be used as a generic container for styling purposes, but rather to semantically group related elements together.
->
-> Especially in combination with `<main>`, `<header>`, `<footer>`, `<nav>` or `<aside>`, as they are already announced as landmarks and have implicit roles, adding `role="group"` would override that semantic meaning and can cause screen readers to miss or skip important information.
+> **Accessibility:** Keep in mind that if an element with `role="group"` is not labeled (meaning, that it doesn't have `aria-label` or `aria-labelledby` attribute), it will be ignored by screen readers and this may result in users not receiving a clear indication of the purpose of the group.
 
+> **Important:** Best not to mix `role="group"` elements that have an implicit role, like `<ul>`, `<ol>`, and landmark elements like `<main>`, `<header>`, etc. it may lead to unexpected or confusing anouncements.
 
-## Grouping related form controls
+## Input Group
 
 This is the **ARIA** equivalent of saying:
 
 > "These controls/content belong together as a logical set."
 
-<HtmlPreviewer :code="RoleGroupDemo.relatedControls()" />
+<HtmlPreviewer :code="RoleGroupDemo.inputGroup()" />
 
 Screen readers may announce:
 
@@ -26,13 +27,21 @@ Screen readers may announce:
 
 See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
 
-## Grouping buttons visually and semantically
+## Button Group
 
 When you have a set of related buttons, but they don't fit into a toolbar or menu.
 
-<HtmlPreviewer :code="RoleGroupDemo.textFormattingButtons()" />
+<HtmlPreviewer :code="RoleGroupDemo.buttonGroup('div', {}, { ariaCurrent: true })" />
 
 See [Pagination](/docs/composites/pagination) for more details.
+
+## Card Group
+
+If you combine the `role="group"` with the `.card` class, you can create a group of related items, to indicate the status or progress of a resource.
+
+Check out [Card Group](/docs/composites/card-group) documentation page for more examples.
+
+<HtmlPreviewer :code="RoleGroupDemo.cardGroup('div', {}, { ariaCurrent: true })" />
 
 <script setup>
 import { RoleGroupDemo } from "@demos/semantics";

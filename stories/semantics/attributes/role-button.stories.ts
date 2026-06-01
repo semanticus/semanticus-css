@@ -8,32 +8,35 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicUsage: StoryObj = {
-  args: { html: RoleButtonDemo.main() },
+export const overview: StoryObj = {
+  args: { html: RoleButtonDemo.overviewStatesAndModifiers() },
   render: (args) => args.html,
 };
 
-export const accordion: StoryObj = {
-  args: { html: RoleButtonDemo.accordion() },
-  render: (args) => args.html,
+export const primary: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "primary"),
 };
 
-export const dropdown: StoryObj = {
-  args: { html: RoleButtonDemo.dropdown() },
-  render: (args) => args.html,
+export const secondary: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "secondary"),
 };
 
-export const intentVariants: StoryObj = {
-  args: { html: RoleButtonDemo.intentVariants() },
-  render: (args) => args.html,
+export const contrast: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "contrast"),
 };
 
-export const subtleModifier: StoryObj = {
-  args: { html: RoleButtonDemo.subtleVariants() },
-  render: (args) => args.html,
+export const success: StoryObj = {
+  render: (args) => RoleButtonDemo.overviewStatesAndModifiers("div", "success"),
 };
 
-export const ghostModifier: StoryObj = {
-  args: { html: RoleButtonDemo.ghostVariants() },
-  render: (args) => args.html,
+export const info: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "info"),
+};
+
+export const warning: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "warning"),
+};
+
+export const danger: StoryObj = {
+  render: () => RoleButtonDemo.overviewStatesAndModifiers("div", "danger"),
 };

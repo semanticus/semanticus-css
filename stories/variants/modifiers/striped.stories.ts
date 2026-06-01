@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { TableDemo } from "@demos/semantics/elements";
-import { CardListDemo } from "@demos/composites";
+import { RoleListDemo, RoleGroupDemo, TableDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Variants/Modifiers/Striped",
@@ -14,13 +13,9 @@ export const bigTableExample: StoryObj = {
 };
 
 export const listExample: StoryObj = {
-  render: () => CardListDemo.stripedVariant(),
+  render: () => RoleListDemo.cardList("div", { class: "stiped" }),
 };
 
-export const divsExample: StoryObj = {
-  render: () => CardListDemo.divs({ class: "striped" }),
-};
-
-export const ghostExample: StoryObj = {
-  render: () => CardListDemo.ghostVariants({ class: "striped" }),
+export const groupsExample: StoryObj = {
+  render: () => RoleGroupDemo.cardGroup("div", { class: "striped" }),
 };

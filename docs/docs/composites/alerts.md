@@ -12,6 +12,8 @@ Check the [Toasts](/docs/composites/toasts) page for instructions on how to crea
 
 Simply add `role="status"` or `role="alert"` to any HTML element in combination with **variant** classes to create an alert message.
 
+Check out the [[role="status"]](/docs/semantics/attributes/role-status#intent-variants) documentation page for all the different variants and modifier combinations.
+
 > **Note:** Alerts without content will be hidden, this way you can add the element to the DOM from the start and it will only be shown and announced when you update its content, without the need to worry about adding/removing it from the DOM.
 
 <HtmlPreviewer :code="AlertsDemo.overview()"/>

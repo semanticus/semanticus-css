@@ -7,17 +7,34 @@ const meta: Meta = {
 
 export default meta;
 
-export const basicUsage: StoryObj = {
-  args: { html: ADemo.main() },
-  render: (args) => args.html,
+export const overview: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers(),
 };
 
-export const active: StoryObj = {
-  args: { html: ADemo.active() },
-  render: (args) => args.html,
+export const primary: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("primary"),
 };
 
-export const intentVariants: StoryObj = {
-  args: { html: ADemo.intentVariants() },
-  render: (args) => args.html,
+export const secondary: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("secondary"),
+};
+
+export const contrast: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("contrast"),
+};
+
+export const success: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("success"),
+};
+
+export const info: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("info"),
+};
+
+export const warning: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("warning"),
+};
+
+export const danger: StoryObj = {
+  render: () => ADemo.overviewStatesAndModifiers("danger"),
 };

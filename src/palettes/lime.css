@@ -22,10 +22,6 @@
   /* --color-lime: var(--color-lime-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-lime-550), var(--color-lime-350));
-  --color-primary-fill: var(--color-lime-200);
-  --color-primary-on-fill: black;
-
-  /* System tokens */
-  --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));
+  --primary-color: light-dark(var(--color-lime-550), var(--color-lime-350));
+  --primary-background-color: var(--color-lime-200);
 }

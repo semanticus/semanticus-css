@@ -3,16 +3,32 @@ summary {
 }
 
 details {
+  --_details-summary-background-color: var(--details-summary-background-color);
+  --_details-summary-color: var(--details-summary-color);
+  --_details-summary-color-focus: var(--details-summary-color-focus);
+  --_details-summary-color-open: var(--details-summary-color-open);
+  --_details-summary-focus-ring-color: var(--focus-ring-color);
+
   display: block;
 
-  & summary {
+  > summary {
     line-height: 1rem;
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
 
+    color: var(--_details-summary-color);
+    background-color: var(--_details-summary-background-color);
+
     &:not([role]) {
-      color: var(--details-summary-text);
+      &:focus {
+        --_details-summary-color: var(--_details-summary-color-focus);
+
+        outline: var(--outline-width) solid
+          var(--_details-summary-focus-ring-color);
+        box-shadow: 0 0 0 var(--focus-ring-width)
+          var(--_details-summary-focus-ring-color);
+      }
     }
 
     &::-webkit-details-marker {
@@ -31,43 +47,34 @@ details {
       display: block;
       width: 1rem;
       height: 1rem;
-      margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
       float: right;
       transform: rotate(-90deg);
-      background-image: var(--icon-chevron);
-      background-position: right center;
-      background-size: 1rem auto;
-      background-repeat: no-repeat;
       content: "";
       transition: transform var(--transition);
+      background-image: var(--icon-chevron);
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: var(--icons-width) auto;
     }
 
-    &:focus {
-      outline: none;
-
-      &:not([role]) {
-        color: var(--details-summary-text-hover);
-      }
-    }
-
-    &:focus-visible:not([role]) {
-      outline: var(--outline-size) solid var(--color-primary-focus-ring);
-      outline-offset: calc(var(--spacing, 1rem) * 0.5);
-      color: var(--color-primary-text);
-    }
-
-    &[role=button] {
+    &[role="button"] {
       width: 100%;
       text-align: left;
-
-      &:focus-visible {
-        outline: var(--outline-size) solid var(--color-primary-focus-ring);
-        outline-offset: calc(var(--spacing, 1rem) * 0.5);
-      }
 
       &::after {
         height: calc(1rem * var(--line-height, 1.5));
         filter: brightness(0) invert(1);
+      }
+    }
+
+    &[dir="rtl"],
+    [dir="rtl"] & {
+      text-align: right;
+
+      &::after {
+        float: left;
+        transform: rotate(90deg);
+        background-position: left center;
       }
     }
   }
@@ -76,7 +83,7 @@ details {
     margin-bottom: var(--spacing);
 
     &:not([role]):not(:focus) {
-        color: var(--details-summary-text-open);
+      --_details-summary-color: var(--_details-summary-color-open);
     }
 
     &::after {
@@ -85,146 +92,133 @@ details {
   }
 }
 
-[dir=rtl] details summary {
-  text-align: right;
-
-  &::after {
-    float: left;
-    background-position: left center;
-  }
-}
-
 /**
  * Dropdown (details with summary[aria-haspopup="menu"])
  */
 details:has(> summary[aria-haspopup="menu"]) {
   position: relative;
-  border-bottom: none;
 
-  & > summary::after,
-  & > button::after,
-  & > a::after {
-    display: block;
-    width: 1rem;
-    height: calc(1rem * var(--line-height, 1.5));
-    margin-inline-start: 0.25rem;
-    margin-left: auto;
-    float: right;
-    transform: rotate(0deg) translateX(0.2rem);
-    background-image: var(--icon-chevron);
-    background-position: right center;
-    background-size: 1rem auto;
-    background-repeat: no-repeat;
-    content: "";
-  }
+  > summary[aria-haspopup="menu"] {
+    --_details-dropdown-color: var(--details-dropdown-color);
+    --_details-dropdown-border-color: var(--details-dropdown-border-color);
+    --_details-dropdown-spacing-vertical: var(
+      --details-dropdown-spacing-vertical
+    );
+    --_details-dropdown-spacing-horizontal: var(
+      --details-dropdown-spacing-horizontal
+    );
+    --_details-summary-color: var(--_details-dropdown-color);
 
-  & summary:not([role="button"]) {
-    --outline-size: 0.0625rem;
-  }
+    &::after {
+      height: calc(1rem * var(--line-height, 1.5));
+      margin-inline-start: 0.25rem;
+      margin-left: auto;
+      transform: rotate(0deg) translateX(0.2rem);
+    }
 
-  & > :where(summary:not([role])) {
-    display: flex;
-    align-items: center;
-    height: calc(1rem * var(--line-height) + var(--input-spacing-vertical) * 2 + var(--border-size) * 2);
-    padding: var(--input-spacing-vertical) var(--input-spacing-horizontal);
-    border: var(--border-size) solid var(--input-border);
-    border-radius: var(--radius);
-    background-color: var(--input-fill);
-    color: var(--input-placeholder-text);
-    line-height: inherit;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-  }
+    &:not([role]) {
+      border: var(--border-width) solid var(--_details-dropdown-border-color);
+      border-radius: var(--border-radius);
+      padding: var(--_details-dropdown-spacing-vertical)
+        var(--_details-dropdown-spacing-horizontal);
+      display: flex;
+      align-items: center;
+      height: calc(
+        1rem * var(--line-height) + var(--_details-dropdown-spacing-vertical) *
+          2 + var(--border-width) * 2
+      );
+      line-height: inherit;
+      cursor: pointer;
+      user-select: none;
+      transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition);
 
-  & > :where(summary:not([role]):active, summary:not([role]):focus) {
-    border-color: var(--input-border-focus);
-    background-color: var(--input-fill-active);
-  }
+      &[aria-invalid="false"] {
+        --_details-dropdown-border-color: var(--success-background-color);
+        --_details-summary-focus-ring-color: var(--success-focus-ring-color);
+      }
 
-  & > :where(summary:not([role]):focus) {
-    box-shadow: 0 0 0 var(--outline-size) var(--input-border-focus);
-  }
-
-  & > :where(summary:not([role]):focus-visible) {
-    outline: none;
-  }
-
-  & > :where(summary:not([role])[aria-invalid=false]) {
-    --input-border: var(--color-success-fill);
-    --input-border-focus: var(--color-success-fill-hover);
-  }
-
-  & > :where(summary:not([role])[aria-invalid=true]) {
-    --input-border: var(--color-danger-fill);
-    --input-border-focus: var(--color-danger-fill-hover);
+      &[aria-invalid="true"] {
+        --_details-dropdown-border-color: var(--danger-background-color);
+        --_details-summary-focus-ring-color: var(--danger-focus-ring-color);
+      }
+    }
   }
 
   & > :where(summary + ul[role="menu"]) {
     display: flex;
     z-index: var(--max-z-index);
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     flex-direction: column;
     width: 100%;
     min-width: fit-content;
     margin: 0;
-    margin-top: var(--outline-size);
+    margin-top: var(--focus-ring-width);
     padding: 0;
-    border: var(--border-size) solid var(--menu-border);
-    border-radius: var(--radius);
-    background-color: var(--menu-fill);
-    box-shadow: var(--menu-shadow);
-    color: var(--menu-text);
+    border: var(--border-width) solid var(--details-menu-border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--details-menu-background-color);
+    box-shadow: var(--menu-box-shadow);
+    color: var(--details-menu-color);
     white-space: nowrap;
     opacity: 0;
-    transition: opacity var(--transition), transform 0s ease-in-out 1s;
-  }
+    transition:
+      opacity var(--transition),
+      transform 0s ease-in-out 1s;
 
-  & > :where(summary + ul[role="menu"][dir=rtl]) {
-    right: 0;
-    left: auto;
-  }
-
-  & > summary + ul[role="menu"] li {
-    width: 100%;
-    margin-bottom: 0;
-    padding: calc(var(--input-spacing-vertical) * 0.5) var(--input-spacing-horizontal);
-    list-style: none;
-
-    &:first-of-type {
-      margin-top: calc(var(--input-spacing-vertical) * 0.5);
+    [dir="rtl"] &[dir="rtl"] {
+      inset-inline-start: unset;
+      inset-inline-end: 0;
+      text-align: left;
     }
 
-    &:last-of-type {
-      margin-bottom: calc(var(--input-spacing-vertical) * 0.5);
-    }
-
-    & a {
-      display: block;
-      margin: calc(var(--input-spacing-vertical) * -0.5) calc(var(--input-spacing-horizontal) * -1);
-      padding: calc(var(--input-spacing-vertical) * 0.5) var(--input-spacing-horizontal);
-      overflow: hidden;
-      border-radius: 0;
-      color: var(--menu-text);
-      text-decoration: none;
-      text-overflow: ellipsis;
-
-      &:hover,
-      &:focus,
-      &:active,
-      &:focus-visible,
-      &[aria-current]:not([aria-current=false]) {
-        background-color: var(--menu-fill-hover);
-      }
-    }
-
-    & label {
+    & > li {
       width: 100%;
-    }
+      margin-bottom: 0;
+      padding: calc(var(--inputs-spacing-vertical) * 0.5)
+        var(--inputs-spacing-horizontal);
+      list-style: none;
 
-    &:has(label):hover {
-      background-color: var(--menu-fill-hover);
+      &:first-of-type {
+        margin-top: calc(var(--inputs-spacing-vertical) * 0.5);
+      }
+
+      &:last-of-type {
+        margin-bottom: calc(var(--inputs-spacing-vertical) * 0.5);
+      }
+
+      & a {
+        display: block;
+        margin: calc(var(--inputs-spacing-vertical) * -0.5)
+          calc(var(--inputs-spacing-horizontal) * -1);
+        padding: calc(var(--inputs-spacing-vertical) * 0.5)
+          var(--inputs-spacing-horizontal);
+        overflow: hidden;
+        border-radius: 0;
+        color: var(--details-menu-color);
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        &:is(
+          [aria-current]:not([aria-current="false"]),
+          :hover,
+          :active,
+          :focus
+        ) {
+          background-color: var(--details-menu-background-color-hover);
+        }
+      }
+
+      & label {
+        width: 100%;
+      }
+
+      &:has(label):hover {
+        background-color: var(--details-menu-background-color-hover);
+      }
     }
   }
 
@@ -235,7 +229,9 @@ details:has(> summary[aria-haspopup="menu"]) {
   &[open] > summary + ul[role="menu"] {
     transform: scaleY(1);
     opacity: 1;
-    transition: opacity var(--transition), transform 0s ease-in-out 0s;
+    transition:
+      opacity var(--transition),
+      transform 0s ease-in-out 0s;
   }
 
   &[open] > summary::before {
@@ -259,31 +255,20 @@ nav details:has(> summary[aria-haspopup="menu"]) {
   margin-bottom: 0;
   display: inline;
 
-  & > summary::after {
-    transform: rotate(0deg) translateX(0rem);
-  }
+  > summary {
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
+    padding: calc(var(--nav-link-gap) - var(--border-width) * 2)
+      var(--nav-link-gap) !important;
 
-  & > :where(summary:not([role])) {
-    display: flex;
-    align-items: center;
-    height: auto;
-    padding: calc(var(--nav-link-gap) - var(--border-size) * 2) var(--nav-link-gap);
-  }
+    &::after {
+      transform: rotate(0deg) translateX(0rem);
+    }
 
-  & > :where(summary:not([role]):focus-visible) {
-    box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
-  }
-
-  & summary:focus-visible {
-    --outline-size: 0.125rem;
-  }
-
-  /* Styles for dropdowns with role="button" inside nav */
-  & > summary[role="button"] {
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: auto;
-    padding: calc(var(--nav-link-gap) - var(--border-size) * 2) var(--nav-link-gap);
+    /* Styles for dropdowns with role="button" inside nav */
+    &:is([role="button"]) {
+      width: auto;
+    }
   }
 }

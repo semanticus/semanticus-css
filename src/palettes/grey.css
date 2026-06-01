@@ -22,10 +22,6 @@
   /* --color-grey: var(--color-grey-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-grey-550), var(--color-grey-350));
-  --color-primary-fill: var(--color-grey-300);
-  --color-primary-on-fill: black;
-
-  /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0.5rem oklch(0% 0 0deg / 0.25), 0 0 0.5rem oklch(0% 0 0deg / 0.25));
+  --primary-color: light-dark(var(--color-grey-550), var(--color-grey-350));
+  --primary-background-color: var(--color-grey-300);
 }

@@ -1,7 +1,15 @@
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 
-export function main(iconName: string, tagName: string = "span", attrs: Record<string, string> = { "aria-hidden": "true" }) {
-  return renderElement(tagName, classMergeAttributes(`icon-${iconName}`, attrs), '');
+export function main(
+  iconName: string,
+  tagName: string = "span",
+  attrs: Record<string, string> = { "aria-hidden": "true" },
+) {
+  return renderElement(
+    tagName,
+    classMergeAttributes(`icon-${iconName}`, attrs),
+    "",
+  );
 }
 
 export function overview() {
@@ -26,17 +34,21 @@ export function overview() {
 </nav>`;
 }
 
-export function allIcons() {
-  return `<nav>
-  ${main("checkbox")}
-  ${main("chevron")}
-  ${main("close")}
-  ${main("date")}
-  ${main("invalid")}
-  ${main("loading")}
-  ${main("minus")}
-  ${main("search")}
-  ${main("time")}
-  ${main("valid")}
-</nav>`;
+export function allIcons(options?: { testMode: boolean }) {
+  const content = [
+    main("checkbox"),
+    main("chevron"),
+    main("close"),
+    main("date"),
+    main("invalid"),
+    options?.testMode === true ? "" : main("loading"),
+    main("minus"),
+    main("search"),
+    main("time"),
+    main("valid"),
+  ]
+    .filter(Boolean)
+    .join(`\n`);
+
+  return renderElement("nav", {}, content);
 }

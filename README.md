@@ -68,7 +68,7 @@ Check out the [Palettes](https://semanticus.design/guide/palettes.html) and [Siz
 
 ## How It Works
 
-Semanticus CSS is built on four complementary layers:
+**Semanticus CSS** is built on four complementary layers:
 
 ### 1. Semantic Styling
 
@@ -81,7 +81,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — simply write plain 
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button>Click me</button>
+  <button>Get Started</button>
 </article>
 ```
 
@@ -96,7 +96,7 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button>Click me</button>
+  <button>Get Started</button>
 </article>
 ```
 
@@ -105,13 +105,13 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
 CSS classes that tweak the **Semantic Styling** and **Components** - throw in a [variant](https://semanticus.design/docs/variants/) when you want to add or reduce visual flair.
 
 ```html
-<article class="card secondary">
+<article class="card secondary subtle">
   <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="ghost">Click me</button>
+  <button class="info ghost">Get Started</button>
 </article>
 ```
 
@@ -120,13 +120,13 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
 [Utility](https://semanticus.design/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
 
 ```html
-<article class="card secondary text-center w-75 mx-auto">
-  <hgroup class="p-3">
+<article class="card secondary subtle shadow text-center w-75 mx-auto">
+  <hgroup>
     <h1>Hello World</h1>
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="ghost">Click me</button>
+  <button class="info bg-opacity-75">Get Started</button>
 </article>
 ```
 
@@ -158,7 +158,7 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
   <main class="py-d mb-3">
     <hgroup>
       <h1>Welcome to Semanticus CSS</h1>
-      <p>A lightweight CSS framework for modern web development.</p>
+      <p>ARIA-centric, semantic HTML enhanced by atomic utilities.</p>
     </hgroup>
 
     <button>Get Started</button>
@@ -180,7 +180,8 @@ You can override its variables to create your own themes and styles. For example
 
 ```css
 :root {
-  --color-primary: #4f46e5;
+  --primary-background-color: #4f46e5;
+  --primary-color: white;
   --border-radius: 0.75rem;
   --font-family: "Inter", sans-serif;
 }
@@ -217,13 +218,13 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Bundle | Gzip |
 | --- | --- |
 | Pico (semantics only) | 10.2 KB |
-| Semanticus (semantics only) | 11.4 KB |
+| Semanticus (semantics only) | 11.1 KB |
 | Pico (semantics + classes) | 11.5 KB |
-| Semanticus (semantics + components + variants) | 14.3 KB |
+| Semanticus (semantics + components + variants) | 14.0 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
-| Semanticus (utilities + grid) | 10.5 KB |
+| Semanticus (utilities + grid) | 10.3 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 24.4 KB |
+| Semanticus (full bundle) | 23.9 KB |
 
 ## License
 

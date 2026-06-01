@@ -1,24 +1,54 @@
-:root, :host {
+:root,
+:host {
+  --subtle-opacity: 60%;
   --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
 
   /* Primary subtle colors */
-  --color-primary-subtle-fill: color-mix(in srgb, var(--color-primary-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --primary-subtle-background-color: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 
   /* Secondary subtle colors */
-  --color-secondary-subtle-fill: color-mix(in srgb, var(--color-secondary-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --secondary-subtle-background-color: color-mix(
+    in srgb,
+    var(--secondary-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 
   /* Contrast subtle colors */
-  --color-contrast-subtle-fill: color-mix(in srgb, var(--color-contrast-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --contrast-subtle-background-color: color-mix(
+    in srgb,
+    var(--contrast-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 
   /* Success subtle colors */
-  --color-success-subtle-fill: color-mix(in srgb, var(--color-success-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --success-subtle-background-color: color-mix(
+    in srgb,
+    var(--success-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 
   /* Info subtle colors */
-  --color-info-subtle-fill: color-mix(in srgb, var(--color-info-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --info-subtle-background-color: color-mix(
+    in srgb,
+    var(--info-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 
   /* Warning subtle colors */
-  --color-warning-subtle-fill: color-mix(in srgb, var(--color-warning-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --warning-subtle-background-color: color-mix(
+    in srgb,
+    var(--warning-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 
   /* Danger subtle colors */
-  --color-danger-subtle-fill: color-mix(in srgb, var(--color-danger-fill), var(--subtle-shade) var(--subtle-opacity, 60%));
+  --danger-subtle-background-color: color-mix(
+    in srgb,
+    var(--danger-background-color),
+    var(--subtle-shade) var(--subtle-opacity, 60%)
+  );
 }

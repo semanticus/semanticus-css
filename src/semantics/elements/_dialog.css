@@ -4,26 +4,30 @@ body:has(dialog[open]) {
   pointer-events: none;
   touch-action: none;
 
-  & dialog[open],
-  & dialog:target {
+  dialog:is([open], :target) {
     pointer-events: auto;
     touch-action: auto;
   }
 }
 
 dialog {
+  --_dialog-border-color: var(--dialog-border-color);
+  --_dialog-background-color: var(--dialog-background-color);
+
   max-height: calc(100vh - var(--spacing) * 2);
   margin: auto;
   overflow: auto;
   padding: var(--spacing);
-  border-radius: var(--radius);
-  background: var(--dialog-fill);
-  box-shadow: var(--dialog-shadow);
-  border: var(--border-size) solid var(--border-color);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--_dialog-border-color);
+  background: var(--_dialog-background-color);
+  box-shadow: var(--menu-box-shadow);
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 
   @media (--breakpoint-sm) {
     max-width: 510px;
@@ -35,15 +39,17 @@ dialog {
 
   /* Hidden state */
   &:not([open]),
-  &[open=false] {
+  &[open="false"] {
     display: none;
   }
 
   /* Backdrop overlay */
   &::backdrop {
     backdrop-filter: blur(0.375rem);
-    background-color: var(--dialog-overlay);
-    transition: backdrop-filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    background-color: var(--backdrop-background-color);
+    transition:
+      backdrop-filter 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
   }
 
   > header,
@@ -51,7 +57,7 @@ dialog {
     width: auto;
     margin-inline: calc(var(--spacing) * -1);
     padding-inline: var(--spacing);
-    background-color: var(--dialog-section-fill);
+    background-color: var(--dialog-marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -60,18 +66,19 @@ dialog {
   /* Header styling */
   > header {
     margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-size) solid var(--dialog-section-border);
-    border-top-right-radius: var(--radius);
-    border-top-left-radius: var(--radius);
+    border-bottom: var(--border-width) solid
+      var(--dialog-marginals-border-color);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
     justify-content: space-between;
   }
 
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-size) solid var(--dialog-section-border);
-    border-bottom-right-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
+    border-top: var(--border-width) solid var(--dialog-marginals-border-color);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
     justify-content: end;
   }
 

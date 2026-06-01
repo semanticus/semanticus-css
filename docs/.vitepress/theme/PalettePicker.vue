@@ -1,12 +1,12 @@
 <script setup>
-import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
-import { useData } from 'vitepress'
-import hljs from 'highlight.js/lib/core'
-import html from 'highlight.js/lib/languages/xml'
-import bash from 'highlight.js/lib/languages/bash'
-import javascript from 'highlight.js/lib/languages/javascript'
-import { OverviewDemo } from '@demos/index';
-import { cdnBaseUrl, npmRegistryTarballUrl, variations } from '@scripts/utils';
+import { ref, onMounted, onUnmounted, watch, computed } from "vue";
+import { useData } from "vitepress";
+import hljs from "highlight.js/lib/core";
+import html from "highlight.js/lib/languages/xml";
+import bash from "highlight.js/lib/languages/bash";
+import javascript from "highlight.js/lib/languages/javascript";
+import { CustomizerDemo } from "@demos/overview";
+import { cdnBaseUrl, npmRegistryTarballUrl, variations } from "@scripts/utils";
 
 function htmlTemplate(style, theme) {
   return `<!DOCTYPE html>
@@ -24,7 +24,7 @@ function htmlTemplate(style, theme) {
   </style>
 </head>
 <body>
-  ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
+  ${CustomizerDemo.main({ class: "container-fluid" })}
 
   <script>
     function sendHeight() {
@@ -44,143 +44,147 @@ function htmlTemplate(style, theme) {
 </html>`;
 }
 
-hljs.registerLanguage('html', html)
-hljs.registerLanguage('bash', bash)
-hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage("html", html);
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("javascript", javascript);
 
 const { isDark, site } = useData();
 
-const basePath = computed(() => site.value.base || '/');
+const basePath = computed(() => site.value.base || "/");
 
 const palettes = variations.palettes.map((p) => ({
   name: p.name,
   label: p.label,
   color: p.color,
-  description: p.description || ''
-}))
+  description: p.description || "",
+}));
 
-const currentPalette = ref('azure')
-const previewFrame = ref(null)
-const showInstallModal = ref(false)
-const installMode = ref('cdn')
-const copiedFeedback = ref(null)
-const previewTheme = ref(isDark.value ? 'dark' : 'light')
+const currentPalette = ref("azure");
+const previewFrame = ref(null);
+const showInstallModal = ref(false);
+const installMode = ref("cdn");
+const copiedFeedback = ref(null);
+const previewTheme = ref(isDark.value ? "dark" : "light");
 
 const previewHtml = computed(() => {
-  const paletteName = currentPalette.value
-  const dataTheme = previewTheme.value
+  const paletteName = currentPalette.value;
+  const dataTheme = previewTheme.value;
 
   const style = `
     @import url('${basePath.value}semanticus.css');
-    ${paletteName !== 'azure' ? `@import url('${basePath.value}semanticus.palette.${paletteName}.css');` : ''}
-  `
+    ${paletteName !== "azure" ? `@import url('${basePath.value}semanticus.palette.${paletteName}.css');` : ""}
+  `;
 
   return htmlTemplate(style, dataTheme);
-})
+});
 
 watch([currentPalette, previewTheme], () => {
   if (previewFrame.value) {
-    previewFrame.value.srcdoc = previewHtml.value
+    previewFrame.value.srcdoc = previewHtml.value;
   }
-})
+});
 
 function togglePreviewTheme() {
-  previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
+  previewTheme.value = previewTheme.value === "light" ? "dark" : "light";
 }
 
 function selectPalette(paletteName) {
-  currentPalette.value = paletteName
+  currentPalette.value = paletteName;
 }
 
 function openInstallModal() {
-  showInstallModal.value = true
+  showInstallModal.value = true;
 }
 
 function closeInstallModal() {
-  showInstallModal.value = false
+  showInstallModal.value = false;
 }
 
 async function copyToClipboard(text, type) {
   try {
-    await navigator.clipboard.writeText(text)
-    copiedFeedback.value = type
-    setTimeout(() => copiedFeedback.value = null, 2000)
+    await navigator.clipboard.writeText(text);
+    copiedFeedback.value = type;
+    setTimeout(() => (copiedFeedback.value = null), 2000);
   } catch (err) {
-    console.error('Failed to copy:', err)
+    console.error("Failed to copy:", err);
   }
 }
 
 const manualSnippet = computed(() => {
-  const paletteName = currentPalette.value
-  let snippet = '<link rel="stylesheet" href="/css/semanticus.css">'
-  if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="/css/semanticus.palette.${paletteName}.css">`
+  const paletteName = currentPalette.value;
+  let snippet = '<link rel="stylesheet" href="/css/semanticus.css">';
+  if (paletteName !== "azure") {
+    snippet += `\n<link rel="stylesheet" href="/css/semanticus.palette.${paletteName}.css">`;
   }
-  return snippet
-})
+  return snippet;
+});
 
 const cdnSnippet = computed(() => {
-  const paletteName = currentPalette.value
-  let snippet = `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">`
-  if (paletteName !== 'azure') {
-    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${paletteName}.css`)}">`
+  const paletteName = currentPalette.value;
+  let snippet = `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">`;
+  if (paletteName !== "azure") {
+    snippet += `\n<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.${paletteName}.css`)}">`;
   }
-  return snippet
-})
+  return snippet;
+});
 
 const npmInstallSnippet = computed(() => {
-  return 'npm install @semanticus/semanticus-css'
-})
+  return "npm install @semanticus/semanticus-css";
+});
 
 const tarballUrl = npmRegistryTarballUrl();
 
 const npmImportSnippet = computed(() => {
-  const paletteName = currentPalette.value
-  let snippet = "import '@semanticus/semanticus-css';"
-  if (paletteName !== 'azure') {
-    snippet += `\nimport '@semanticus/semanticus-css/palettes/${paletteName}';`
+  const paletteName = currentPalette.value;
+  let snippet = "import '@semanticus/semanticus-css';";
+  if (paletteName !== "azure") {
+    snippet += `\nimport '@semanticus/semanticus-css/palettes/${paletteName}';`;
   }
-  return snippet
-})
+  return snippet;
+});
 
 const highlightedManualSnippet = computed(() => {
-  return hljs.highlight(manualSnippet.value, { language: 'html' }).value
-})
+  return hljs.highlight(manualSnippet.value, { language: "html" }).value;
+});
 
 const highlightedCdnSnippet = computed(() => {
-  return hljs.highlight(cdnSnippet.value, { language: 'html' }).value
-})
+  return hljs.highlight(cdnSnippet.value, { language: "html" }).value;
+});
 
 const highlightedNpmInstallSnippet = computed(() => {
-  return hljs.highlight(npmInstallSnippet.value, { language: 'bash' }).value
-})
+  return hljs.highlight(npmInstallSnippet.value, { language: "bash" }).value;
+});
 
 const highlightedNpmImportSnippet = computed(() => {
-  return hljs.highlight(npmImportSnippet.value, { language: 'javascript' }).value
-})
+  return hljs.highlight(npmImportSnippet.value, { language: "javascript" })
+    .value;
+});
 
-const iframeHeight = ref(600)
-const uid = `customizer-preview-${Math.random().toString(36).substr(2, 9)}`
+const iframeHeight = ref(600);
+const uid = `customizer-preview-${Math.random().toString(36).substr(2, 9)}`;
 
 function handleMessage(event) {
-  if (event.data?.type === 'customizer-iframe-resize' && event.data.id === uid) {
-    iframeHeight.value = Math.max(event.data.height, 200)
+  if (
+    event.data?.type === "customizer-iframe-resize" &&
+    event.data.id === uid
+  ) {
+    iframeHeight.value = Math.max(event.data.height, 200);
   }
 }
 
 onMounted(() => {
-  window.addEventListener('message', handleMessage)
-})
+  window.addEventListener("message", handleMessage);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('message', handleMessage)
-})
+  window.removeEventListener("message", handleMessage);
+});
 
 defineExpose({
   openInstallModal,
   previewTheme,
   togglePreviewTheme,
-})
+});
 </script>
 
 <template>
@@ -193,7 +197,10 @@ defineExpose({
             <li
               v-for="palette in palettes"
               :key="palette.name"
-              :class="['option-item', { active: currentPalette === palette.name }]"
+              :class="[
+                'option-item',
+                { active: currentPalette === palette.name },
+              ]"
               @click="selectPalette(palette.name)"
             >
               <span
@@ -202,7 +209,9 @@ defineExpose({
               ></span>
               <div class="option-info">
                 <span class="option-label">{{ palette.label }}</span>
-                <span class="option-description">{{ palette.description }}</span>
+                <span class="option-description">{{
+                  palette.description
+                }}</span>
               </div>
             </li>
           </ul>
@@ -230,7 +239,11 @@ defineExpose({
     </div>
 
     <!-- Install Modal -->
-    <div v-if="showInstallModal" class="install-overlay" @click="closeInstallModal">
+    <div
+      v-if="showInstallModal"
+      class="install-overlay"
+      @click="closeInstallModal"
+    >
       <div class="install-modal" @click.stop>
         <div class="install-header">
           <h3 class="install-title">How to Install</h3>
@@ -239,24 +252,83 @@ defineExpose({
         <div class="install-content">
           <!-- Install Mode Toggle -->
           <div class="install-mode-toggle">
-            <label class="install-mode-option" :class="{ active: installMode === 'cdn' }">
-              <input type="radio" v-model="installMode" value="cdn" class="install-mode-input">
+            <label
+              class="install-mode-option"
+              :class="{ active: installMode === 'cdn' }"
+            >
+              <input
+                type="radio"
+                v-model="installMode"
+                value="cdn"
+                class="install-mode-input"
+              />
               <span class="install-mode-label">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
                 CDN
               </span>
             </label>
-            <label class="install-mode-option" :class="{ active: installMode === 'manual' }">
-              <input type="radio" v-model="installMode" value="manual" class="install-mode-input">
+            <label
+              class="install-mode-option"
+              :class="{ active: installMode === 'manual' }"
+            >
+              <input
+                type="radio"
+                v-model="installMode"
+                value="manual"
+                class="install-mode-input"
+              />
               <span class="install-mode-label">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                  />
+                  <polyline points="13 2 13 9 20 9" />
+                </svg>
                 Manual Download
               </span>
             </label>
-            <label class="install-mode-option" :class="{ active: installMode === 'npm' }">
-              <input type="radio" v-model="installMode" value="npm" class="install-mode-input">
+            <label
+              class="install-mode-option"
+              :class="{ active: installMode === 'npm' }"
+            >
+              <input
+                type="radio"
+                v-model="installMode"
+                value="npm"
+                class="install-mode-input"
+              />
               <span class="install-mode-label">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
                 Node Import
               </span>
             </label>
@@ -264,22 +336,36 @@ defineExpose({
 
           <!-- Manual Mode -->
           <div v-if="installMode === 'manual'">
-            <p class="install-description">Download the <a :href="tarballUrl" target="_blank">distribution files</a>, move the ones you need to your <strong>stylesheets</strong> folder and include them in your HTML <code>&lt;head&gt;</code>:</p>
+            <p class="install-description">
+              Download the
+              <a :href="tarballUrl" target="_blank">distribution files</a>, move
+              the ones you need to your <strong>stylesheets</strong> folder and
+              include them in your HTML <code>&lt;head&gt;</code>:
+            </p>
             <div class="install-code-block">
               <pre><code class="language-html" v-html="highlightedManualSnippet"></code></pre>
-              <button class="copy-snippet-btn" @click="copyToClipboard(manualSnippet, 'manual')">
-                {{ copiedFeedback === 'manual' ? 'Copied!' : 'Copy' }}
+              <button
+                class="copy-snippet-btn"
+                @click="copyToClipboard(manualSnippet, 'manual')"
+              >
+                {{ copiedFeedback === "manual" ? "Copied!" : "Copy" }}
               </button>
             </div>
           </div>
 
           <!-- CDN Mode -->
           <div v-else-if="installMode === 'cdn'">
-            <p class="install-description">Include these lines directly from a CDN in your HTML <code>&lt;head&gt;</code>:</p>
+            <p class="install-description">
+              Include these lines directly from a CDN in your HTML
+              <code>&lt;head&gt;</code>:
+            </p>
             <div class="install-code-block">
               <pre><code class="language-html" v-html="highlightedCdnSnippet"></code></pre>
-              <button class="copy-snippet-btn" @click="copyToClipboard(cdnSnippet, 'cdn')">
-                {{ copiedFeedback === 'cdn' ? 'Copied!' : 'Copy' }}
+              <button
+                class="copy-snippet-btn"
+                @click="copyToClipboard(cdnSnippet, 'cdn')"
+              >
+                {{ copiedFeedback === "cdn" ? "Copied!" : "Copy" }}
               </button>
             </div>
           </div>
@@ -289,21 +375,31 @@ defineExpose({
             <p class="install-description">Install the package via npm:</p>
             <div class="install-code-block">
               <pre><code class="language-bash" v-html="highlightedNpmInstallSnippet"></code></pre>
-              <button class="copy-snippet-btn" @click="copyToClipboard(npmInstallSnippet, 'npmInstall')">
-                {{ copiedFeedback === 'npmInstall' ? 'Copied!' : 'Copy' }}
+              <button
+                class="copy-snippet-btn"
+                @click="copyToClipboard(npmInstallSnippet, 'npmInstall')"
+              >
+                {{ copiedFeedback === "npmInstall" ? "Copied!" : "Copy" }}
               </button>
             </div>
-            <p class="install-description" style="margin-top: 1rem;">Then import the styles in your JavaScript entry file:</p>
+            <p class="install-description" style="margin-top: 1rem">
+              Then import the styles in your JavaScript entry file:
+            </p>
             <div class="install-code-block">
               <pre><code class="language-javascript" v-html="highlightedNpmImportSnippet"></code></pre>
-              <button class="copy-snippet-btn" @click="copyToClipboard(npmImportSnippet, 'npmImport')">
-                {{ copiedFeedback === 'npmImport' ? 'Copied!' : 'Copy' }}
+              <button
+                class="copy-snippet-btn"
+                @click="copyToClipboard(npmImportSnippet, 'npmImport')"
+              >
+                {{ copiedFeedback === "npmImport" ? "Copied!" : "Copy" }}
               </button>
             </div>
           </div>
         </div>
         <div class="install-footer">
-          <button class="install-btn-secondary" @click="closeInstallModal">Close</button>
+          <button class="install-btn-secondary" @click="closeInstallModal">
+            Close
+          </button>
         </div>
       </div>
     </div>
@@ -592,7 +688,7 @@ defineExpose({
 
 .install-code-block pre {
   margin: 0;
-  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
   font-size: 0.8125rem;
   line-height: 1.6;
   color: var(--vp-c-text-1);

@@ -2,8 +2,8 @@
 [class^="icon-"],
 [class*=" icon-"] {
   display: inline-block;
-  min-width: 1em;
-  min-height: 1em;
+  min-width: var(--icons-width);
+  min-height: var(--icons-width);
   margin: 0;
   padding: 0;
   border: none;

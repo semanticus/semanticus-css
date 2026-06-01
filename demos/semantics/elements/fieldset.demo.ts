@@ -9,14 +9,7 @@ export function main(attrs: Record<string, string> = {}, slot: string = "") {
 }
 
 export function formInput(attrs: Record<string, string> = {}) {
-  return main(
-    attrs,
-    `<label for="email">Email</label>
-${InputDemo.email({ id: "email", "aria-describedby": "email-helper" })}
-<small id="email-helper">
-  We'll never share your email with anyone else.
-</small>`,
-  );
+  return main(attrs, `${InputDemo.withHelperText()}`);
 }
 
 export function searchInputButton(attrs: Record<string, string> = {}) {
@@ -24,20 +17,18 @@ export function searchInputButton(attrs: Record<string, string> = {}) {
 }
 
 export function groupInputButton(attrs: Record<string, string> = {}) {
-  return RoleGroupDemo.main(
-    'fieldset',
-    { ...attrs, 'aria-label': 'Email subscription' },
+  return renderElement(
+    "fieldset",
+    { ...attrs, role: "group", "aria-label": "Email subscription" },
     `<input type="email" name="email" placeholder="Enter your email" autocomplete="email" />
 <input type="submit" value="Subscribe" />`,
   );
 }
 
-export function groupMultipleInputs(
-  attrs: Record<string, string> = {},
-) {
-  return RoleGroupDemo.main(
-    'fieldset',
-    attrs,
+export function groupMultipleInputs(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "fieldset",
+    { ...attrs, role: "group" },
     `<input type="text" placeholder="First name">
 <input type="text" placeholder="Last name">
 <button>Save</button>`,
@@ -45,9 +36,9 @@ export function groupMultipleInputs(
 }
 
 export function groupSelectButton(attrs: Record<string, string> = {}) {
-  return RoleGroupDemo.main(
-    'fieldset',
-    attrs,
+  return renderElement(
+    "fieldset",
+    { ...attrs, role: "group" },
     `<select>
   <option>Option 1</option>
   <option>Option 2</option>
@@ -57,48 +48,41 @@ export function groupSelectButton(attrs: Record<string, string> = {}) {
   );
 }
 
-export function groupDropdownButton(
-  attrs: Record<string, string> = {},
-) {
-  return RoleGroupDemo.main(
-    'fieldset',
-    attrs,
+export function groupDropdownButton(attrs: Record<string, string> = {}) {
+  return renderElement(
+    "fieldset",
+    { ...attrs, role: "group" },
     `${DropdownDemo.withCheckboxes({ class: "w-100" })}
 <button>Action</button>`,
   );
 }
 
-export function formExample() {
-  return `<form>
-  <fieldset>
-    <label>
-      First name
-      <input name="first_name" placeholder="First name" autocomplete="given-name" />
-    </label>
-    <label>
-      Email
-      <input type="email" name="email" placeholder="Email" autocomplete="email" />
-    </label>
-  </fieldset>
-  <input type="submit" value="Subscribe" />
-</form>
-`;
+export function loginFormExample(attrs: Record<string, string> = {}) {
+  const fieldsetContent = main(
+    attrs,
+    `${InputDemo.withLabel()}
+
+${InputDemo.withLabel({ type: "password", id: "password" })}`,
+  );
+
+  return renderElement(
+    "form",
+    {},
+    `${fieldsetContent}
+
+${InputDemo.submit({}, "Sign In")}`,
+  );
 }
 
 export function disabled() {
-  return `<fieldset disabled>
-  <legend>Disabled fieldset</legend>
-  <label>
-    Username
-    <input name="username" placeholder="Username" />
-  </label>
-  <label>
-    Password
-    <input type="password" name="password" placeholder="Password" />
-  </label>
-  <input type="submit" value="Sign in" />
-</fieldset>
-`;
+  return main(
+    { disabled: "disabled" },
+    `${InputDemo.withLabel()}
+
+${InputDemo.withLabel({ type: "password", id: "password" })}
+
+${InputDemo.submit({}, "Sign In")}`,
+  );
 }
 
 export function section() {

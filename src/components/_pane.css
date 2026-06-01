@@ -1,15 +1,23 @@
 .pane {
-  --color-background: light-dark(
-    color-mix(in srgb, var(--color-slate-50), white 25%),
-    color-mix(in srgb, var(--color-slate-50), black 75%)
-  );
+  --_pane-color: var(--pane-color);
+  --_pane-background-color: var(--pane-background-color);
+  --_pane-spacing: var(--pane-spacing);
+  --_pane-border-color: var(--pane-border-color);
+  --_pane-border-width: var(--pane-border-width);
+  --typography-color: var(--_pane-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text);
-  padding: var(--spacing);
-  margin-bottom: var(--spacing);
-  background: var(--color-background);
+  background: var(--_pane-background-color);
+  border: var(--_pane-border-width) solid var(--_pane-border-color);
+  color: var(--_pane-color);
+  margin-bottom: var(--_pane-spacing);
+  padding: var(--_pane-spacing);
 
   > :last-child {
     margin-bottom: 0 !important;
+  }
+
+  &:is(.content-grid, .full-width) {
+    padding-inline: 0;
   }
 }

@@ -12,6 +12,34 @@ export const basicUsage: StoryObj = {
   render: () => DropdownDemo.main(),
 };
 
-export const variants: StoryObj = {
-  render: () => DropdownDemo.overviewVariants(),
+export const withCheckboxes: StoryObj = {
+  render: () => DropdownDemo.withCheckboxes(),
+};
+
+export const withRadios: StoryObj = {
+  render: () => DropdownDemo.withRadios(),
+};
+
+export const inNav: StoryObj = {
+  render: () => DropdownDemo.inNav(),
+};
+
+export const validationStates: StoryObj = {
+  render: () => DropdownDemo.validationStates(),
+};
+
+export const asButton: StoryObj = {
+  render: () => DropdownDemo.asButton(),
+};
+
+export const asButtonIntentVariants: StoryObj = {
+  render: () => DropdownDemo.asButtonIntentVariants(),
+};
+
+export const asButtonGhostVariants: StoryObj = {
+  render: () => DropdownDemo.asButtonGhostVariants(),
+};
+
+export const asButtonSubtleVariants: StoryObj = {
+  render: () => DropdownDemo.asButtonSubtleVariants(),
 };

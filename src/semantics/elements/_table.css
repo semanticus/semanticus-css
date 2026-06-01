@@ -2,7 +2,7 @@ table {
   border-collapse: collapse;
   border-color: currentcolor; /* modern-normalize */
   border-spacing: 0;
-  color: var(--color-text);
+  color: var(--typography-color);
   font-style: normal;
   font-weight: var(--font-weight);
   margin-bottom: var(--typography-spacing-vertical);
@@ -14,18 +14,32 @@ table {
 th,
 td {
   padding: calc(var(--spacing) / 2) var(--spacing);
-  border-bottom: var(--border-size) solid var(--color-border);
-  background-color: var(--color-background);
-  color: var(--color-text);
+  border-bottom: var(--border-width) solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--typography-color);
   font-weight: var(--font-weight);
   text-align: left;
   text-align: start;
 }
 
+thead {
+  & th,
+  & td {
+    --font-weight: var(--table-header-font-weight);
+    --border-width: var(--table-header-border-width);
+  }
+}
+
 tfoot {
   & th,
   & td {
-    border-top: var(--border-size) solid var(--color-border);
+    --font-weight: var(--table-header-font-weight);
+    --border-width: var(--table-header-border-width);
+  }
+
+  & th,
+  & td {
+    border-top: var(--border-width) solid var(--border-color);
     border-bottom: 0;
   }
 }

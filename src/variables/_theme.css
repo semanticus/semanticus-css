@@ -10,9 +10,9 @@
     color-scheme: dark;
   }
 
-  /* === COLORS === */
+  /* ===== COLORS ===== */
 
-  /* Slate shades */
+  /* --- Slate --- */
   --color-slate-950: #0e1118;
   --color-slate-900: #181c25;
   --color-slate-850: #202632;
@@ -30,7 +30,7 @@
   --color-slate-100: #dfe3eb;
   --color-slate-50: #eff1f4;
 
-  /* Zinc shades */
+  /* --- Zinc --- */
   --color-zinc-950: #0f1114;
   --color-zinc-900: #191c20;
   --color-zinc-850: #23262c;
@@ -49,221 +49,399 @@
   --color-zinc-100: #e0e3e7;
   --color-zinc-50: #f0f1f3;
 
-  /* === GLOBAL SYSTEM TOKENS === */
+  /* ===== SYSTEM TOKENS ===== */
 
-  --color-background: light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)));
-  --color-background-opacity: 100%;
-  --color-text: light-dark(var(--color-zinc-750), var(--color-zinc-200));
-  --color-text-opacity: 100%;
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-  --color-border: light-dark(var(--color-slate-100), var(--color-slate-800));
-  --color-border-opacity: 100%;
+  /* --- Background --- */
+  --background-color: light-dark(
+    white,
+    color-mix(in srgb, var(--color-slate-950), var(--color-slate-900))
+  );
+  --background-color-opacity: 100%;
+  --selection-background-color: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    white 75%
+  );
 
-  /* Spacing - shared base unit */
-  --base-spacing: 0.75rem;
-  --spacing: var(--base-spacing);
+  /* --- Color --- */
+  --color: light-dark(var(--color-zinc-750), var(--color-zinc-200));
+  --color-opacity: 100%;
 
-  /* Font Families */
-  --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--font-family-emoji);
-  --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
-  --font-family: var(--font-family-sans-serif);
-
-  /* Typography - base defaults */
+  /* --- Typography --- */
+  --typography-spacing-vertical: 1rem;
+  --typography-color: var(--color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 97%;
   --text-underline-offset: 0.1rem;
-  --typography-spacing-vertical: 1rem;
+  --font-family-emoji:
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif:
+    system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial,
+    "Helvetica Neue", sans-serif, var(--font-family-emoji);
+  --font-family-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace, var(--font-family-emoji);
+  --font-family: var(--font-family-sans-serif);
 
-  /* Borders & Effects */
-  --radius: 0.25rem;
-  --border-size: 0.0625rem;
-  --outline-size: 0.125rem;
+  /* --- Spacing --- */
+  --spacing-base: 0.75rem;
+  --spacing-scale: 1;
+  --spacing: calc(var(--spacing-base) * var(--spacing-scale));
+
+  /* --- Borders & Effects --- */
+  --border-color: light-dark(var(--color-slate-100), var(--color-slate-800));
+  --border-color-opacity: 100%;
+  --border-radius: 0.25rem;
+  --border-width: 0.0625rem;
+  --outline-width: 1px;
+  --focus-ring-width: 0.125rem;
+  --focus-ring-color: var(--primary-focus-ring-color);
   --transition: 0.2s ease-in-out;
+  --disabled-opacity: 0.5;
 
-  --shadow:
-    0.0145rem 0.029rem 0.174rem light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
-    0.0335rem 0.067rem 0.402rem light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)),
-    0.0625rem 0.125rem 0.75rem light-dark(rgb(129 145 181 / 0.03), rgb(7 9 12 / 0.03)),
-    0.1125rem 0.225rem 1.35rem light-dark(rgb(129 145 181 / 0.036), rgb(7 9 12 / 0.036)),
-    0.2085rem 0.417rem 2.502rem light-dark(rgb(129 145 181 / 0.04302), rgb(7 9 12 / 0.04302)),
-    0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
-    0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
+  /* ===== INTENT TOKENS ===== */
 
-  /* Intent Colors */
+  /* TODO: Replace this internal helper with real colors */
+  --color-hover-effect: light-dark(
+    var(--color-zinc-700),
+    var(--color-zinc-300)
+  );
 
-  /* helpers to add/remove shade to hover states */
-  --color-hover-effect: light-dark(var(--color-zinc-700), var(--color-zinc-300));
-  --color-focus-effect: light-dark(var(--color-zinc-300), var(--color-slate-700));
+  /* --- Primary --- */
+  /* Base values defined by the palette imported in _all.css */
+  --primary-color-hover: color-mix(
+    in srgb,
+    var(--primary-color) 70%,
+    var(--color-hover-effect)
+  );
+  --primary-background-color-hover: color-mix(
+    in srgb,
+    var(--primary-background-color) 70%,
+    var(--color-hover-effect)
+  );
+  --primary-focus-ring-color: color-mix(
+    in srgb,
+    var(--primary-color) 70%,
+    light-dark(white, black)
+  );
 
-  /* Primary colors - rest of the variables are defined by the palette that gets imported by the _all.css file */
-  --color-primary-text-hover: color-mix(in srgb, var(--color-primary-text) 70%, var(--color-hover-effect));
-  --color-primary-fill-hover: color-mix(in srgb, var(--color-primary-fill) 70%, var(--color-hover-effect));
-  --color-primary-focus-ring: color-mix(in srgb, var(--color-primary-text) 70%, var(--color-focus-effect));
+  /* --- Secondary --- */
+  --secondary-color: light-dark(var(--color-slate-550), var(--color-zinc-350));
+  --secondary-background-color: var(--color-slate-550);
+  --secondary-color-hover: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    var(--color-hover-effect)
+  );
+  --secondary-background-color-hover: color-mix(
+    in srgb,
+    var(--secondary-background-color) 70%,
+    var(--color-hover-effect)
+  );
+  --secondary-focus-ring-color: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    light-dark(white, black)
+  );
 
-  /* Secondary colors */
-  --color-secondary-text: light-dark(var(--color-slate-550), var(--color-zinc-350));
-  --color-secondary-fill: var(--color-slate-550);
-  --color-secondary-on-fill: white;
-  --color-secondary-text-hover: color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-hover-effect));
-  --color-secondary-fill-hover: color-mix(in srgb, var(--color-secondary-fill) 70%, var(--color-hover-effect));
-  --color-secondary-focus-ring: color-mix(in srgb, var(--color-secondary-text) 70%, var(--color-focus-effect));
+  /* --- Contrast --- */
+  --contrast-color: light-dark(var(--color-slate-900), var(--color-slate-100));
+  --contrast-background-color: light-dark(
+    var(--color-slate-900),
+    var(--color-slate-50)
+  );
+  --contrast-color-hover: color-mix(
+    in srgb,
+    var(--contrast-color) 70%,
+    var(--color-hover-effect)
+  );
+  --contrast-background-color-hover: color-mix(
+    in srgb,
+    var(--contrast-background-color) 70%,
+    var(--color-hover-effect)
+  );
+  --contrast-focus-ring-color: color-mix(
+    in srgb,
+    var(--contrast-color) 70%,
+    light-dark(white, black)
+  );
 
-  /* Contrast colors */
-  --color-contrast-text: light-dark(var(--color-slate-900), var(--color-slate-100));
-  --color-contrast-fill: light-dark(var(--color-slate-900), var(--color-slate-50));
-  --color-contrast-on-fill: light-dark(white, var(--color-zinc-900));
-  --color-contrast-text-hover: color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-hover-effect));
-  --color-contrast-fill-hover: color-mix(in srgb, var(--color-contrast-fill) 70%, var(--color-hover-effect));
-  --color-contrast-focus-ring: color-mix(in srgb, var(--color-contrast-text) 70%, var(--color-focus-effect));
-
-  /* Success colors */
+  /* --- Success --- */
   --color-jade-450: #029764;
   --color-jade-250: #00cc88;
-  --color-success-text: light-dark(var(--color-jade-450), var(--color-jade-250));
-  --color-success-fill: var(--color-jade-450);
-  --color-success-on-fill: white;
-  --color-success-text-hover: color-mix(in srgb, var(--color-success-text) 70%, var(--color-hover-effect));
-  --color-success-fill-hover: color-mix(in srgb, var(--color-success-fill) 70%, var(--color-hover-effect));
-  --color-success-focus-ring: color-mix(in srgb, var(--color-success-text) 70%, var(--color-focus-effect));
+  --success-color: light-dark(var(--color-jade-450), var(--color-jade-250));
+  --success-background-color: var(--color-jade-450);
+  --success-color-hover: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    var(--color-hover-effect)
+  );
+  --success-background-color-hover: color-mix(
+    in srgb,
+    var(--success-background-color) 70%,
+    var(--color-hover-effect)
+  );
+  --success-focus-ring-color: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    light-dark(white, black)
+  );
 
-  /* Info colors */
+  /* --- Info --- */
   --color-azure-450: #018cd4;
   --color-azure-250: #79c0ff;
-  --color-info-text: light-dark(var(--color-azure-450), var(--color-azure-250));
-  --color-info-fill: var(--color-azure-450);
-  --color-info-on-fill: white;
-  --color-info-text-hover: color-mix(in srgb, var(--color-info-text) 70%, var(--color-hover-effect));
-  --color-info-fill-hover: color-mix(in srgb, var(--color-info-fill) 70%, var(--color-hover-effect));
-  --color-info-focus-ring: color-mix(in srgb, var(--color-info-text) 70%, var(--color-focus-effect));
+  --info-color: light-dark(var(--color-azure-450), var(--color-azure-250));
+  --info-background-color: var(--color-azure-450);
+  --info-color-hover: color-mix(
+    in srgb,
+    var(--info-color) 70%,
+    var(--color-hover-effect)
+  );
+  --info-background-color-hover: color-mix(
+    in srgb,
+    var(--info-background-color) 70%,
+    var(--color-hover-effect)
+  );
+  --info-focus-ring-color: color-mix(
+    in srgb,
+    var(--info-color) 70%,
+    light-dark(white, black)
+  );
 
-  /* Warning colors */
+  /* --- Warning --- */
   --color-amber-350: #c79400;
   --color-amber-250: #e8ae01;
-  --color-warning-text: light-dark(var(--color-amber-350), var(--color-amber-250));
-  --color-warning-fill: var(--color-amber-350);
-  --color-warning-on-fill: white;
-  --color-warning-text-hover: color-mix(in srgb, var(--color-warning-text) 70%, var(--color-hover-effect));
-  --color-warning-fill-hover: color-mix(in srgb, var(--color-warning-fill) 70%, var(--color-hover-effect));
-  --color-warning-focus-ring: color-mix(in srgb, var(--color-warning-text) 70%, var(--color-focus-effect));
+  --warning-color: light-dark(var(--color-amber-350), var(--color-amber-250));
+  --warning-background-color: var(--color-amber-350);
+  --warning-color-hover: color-mix(
+    in srgb,
+    var(--warning-color) 70%,
+    var(--color-hover-effect)
+  );
+  --warning-background-color-hover: color-mix(
+    in srgb,
+    var(--warning-background-color) 70%,
+    var(--color-hover-effect)
+  );
+  --warning-focus-ring-color: color-mix(
+    in srgb,
+    var(--warning-color) 70%,
+    light-dark(white, black)
+  );
 
-  /* Danger colors */
+  /* --- Danger --- */
   --color-red-450: #ee402e;
   --color-red-250: #f5a390;
-  --color-danger-text: light-dark(var(--color-red-450), var(--color-red-250));
-  --color-danger-fill: var(--color-red-450);
-  --color-danger-on-fill: white;
-  --color-danger-text-hover: color-mix(in srgb, var(--color-danger-text) 70%, var(--color-hover-effect));
-  --color-danger-fill-hover: color-mix(in srgb, var(--color-danger-fill) 70%, var(--color-hover-effect));
-  --color-danger-focus-ring: color-mix(in srgb, var(--color-danger-text) 70%, var(--color-focus-effect));
-
-  /* === COMPONENT TOKENS === */
-
-  --a-decoration: underline;
-
-  /* === Typography tokens === */
-  --h1-size: 2rem;
-  --h2-size: 1.75rem;
-  --h3-size: 1.5rem;
-  --h4-size: 1.25rem;
-  --h5-size: 1.125rem;
-  --h6-size: 1rem;
-
-  /* === Button tokens === */
-  --button-shadow: 0 0 0 rgb(0 0 0 / 0);
-  --button-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
-
-  /* === Code tokens === */
-  --code-fill: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 75%, white),
-    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  --danger-color: light-dark(var(--color-red-450), var(--color-red-250));
+  --danger-background-color: var(--color-red-450);
+  --danger-color-hover: color-mix(
+    in srgb,
+    var(--danger-color) 70%,
+    var(--color-hover-effect)
   );
-  --code-text: light-dark(var(--color-zinc-550), var(--color-zinc-400));
-  --kbd-fill: var(--color-text);
-  --kbd-text: var(--color-background);
-
-  /* === Input / Form tokens === */
-  --input-spacing-vertical: 0.5rem;
-  --input-spacing-horizontal: 0.7rem;
-  --input-fill: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-900), var(--color-slate-850))
+  --danger-background-color-hover: color-mix(
+    in srgb,
+    var(--danger-background-color) 70%,
+    var(--color-hover-effect)
   );
-  --input-fill-selected: light-dark(var(--color-slate-100), var(--color-slate-800));
-  --input-fill-active: light-dark(
-    white,
-    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  --danger-focus-ring-color: color-mix(
+    in srgb,
+    var(--danger-color) 70%,
+    light-dark(white, black)
   );
-  --input-border: light-dark(var(--color-slate-150), var(--color-slate-800));
-  --input-text: light-dark(var(--color-zinc-850), var(--color-zinc-100));
-  --input-placeholder-text: var(--color-text-muted);
-  --input-border-focus: var(--color-primary-fill);
-  --input-opacity-disabled: 0.5;
 
-  /* === Switch tokens === */
-  --switch-fill: light-dark(var(--color-slate-200), var(--color-slate-750));
-  --switch-fill-checked: var(--color-primary-fill);
-  --switch-thumb-fill: white;
+  /* ===== COMPONENT TOKENS ===== */
 
-  /* === Range tokens === */
-  --range-track-border: light-dark(var(--color-slate-100), var(--color-slate-850));
-  --range-track-border-active: light-dark(var(--color-slate-200), var(--color-slate-800));
-  --range-thumb-border: var(--color-background);
-  --range-thumb-fill: var(--color-secondary-fill);
-  --range-thumb-fill-active: var(--color-primary-fill);
-
-  /* === Details / Accordion tokens === */
-  --details-summary-text: var(--color-text);
-  --details-summary-text-hover: var(--color-primary-text-hover);
-  --details-summary-text-open: var(--color-text-muted);
-
-  /* === Dialog / Alert tokens === */
-  --dialog-fill: light-dark(var(--color-background), var(--color-slate-900));
-  --dialog-border: var(--color-border);
-  --dialog-shadow: var(--shadow);
-  --dialog-section-fill: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-  --dialog-section-border: color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%);
-  --dialog-overlay: light-dark(
-    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
+  /* --- Components Building Blocks --- */
+  --menu-box-shadow:
+    0.0145rem 0.029rem 0.174rem
+      light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
+    0.0335rem 0.067rem 0.402rem
+      light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)),
+    0.0625rem 0.125rem 0.75rem
+      light-dark(rgb(129 145 181 / 0.03), rgb(7 9 12 / 0.03)),
+    0.1125rem 0.225rem 1.35rem
+      light-dark(rgb(129 145 181 / 0.036), rgb(7 9 12 / 0.036)),
+    0.2085rem 0.417rem 2.502rem
+      light-dark(rgb(129 145 181 / 0.04302), rgb(7 9 12 / 0.04302)),
+    0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
+    0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
+  --backdrop-background-color: light-dark(
+    oklch(
+      from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c
+        h / 0.75
+    ),
     oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
   );
 
-  /* === Menu / Dropdown tokens === */
-  --menu-fill: light-dark(white, var(--color-slate-900));
-  --menu-border: light-dark(var(--color-slate-50), var(--color-slate-850));
-  --menu-shadow: var(--shadow);
-  --menu-text: var(--color-text);
-  --menu-fill-hover: light-dark(var(--color-slate-50), var(--color-slate-850));
+  /* --- Buttons --- */
+  /* Affects button, input[type="button"], input[type="submit"], input[type="reset"], and elements with role="button" */
+  --buttons-font-size: 1rem;
+  --buttons-color: white;
+  --buttons-color-hover: white;
+  --buttons-spacing-vertical: var(--inputs-spacing-vertical);
+  --buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
+  --buttons-background-color: var(--primary-background-color);
+  --buttons-background-color-hover: var(--primary-background-color-hover);
+  --buttons-border-color: var(--primary-background-color);
+  --buttons-border-color-hover: var(--primary-background-color-hover);
 
-  /* === Loading tokens === */
-  --loading-spinner-opacity: 0.5;
+  /* --- Code --- */
+  --code-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 75%, white),
+    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  );
+  --code-color: light-dark(var(--color-zinc-550), var(--color-zinc-400));
+  --kbd-background-color: var(--color);
+  --kbd-color: var(--background-color);
+  --kbd-font-weight: bolder;
 
-  /* === Progress tokens === */
-  --progress-track-fill: light-dark(var(--color-slate-100), var(--color-slate-850));
-  --progress-fill: var(--color-primary-fill);
+  /* --- Details --- */
+  /* Affects accordions and dropdowns */
+  --details-summary-background-color: var(--inputs-background-color);
+  --details-summary-color: var(--color);
+  --details-summary-color-focus: var(--primary-color-hover);
+  --details-summary-color-open: var(--color-muted);
 
-  /* === Tooltip tokens === */
-  --tooltip-fill: var(--color-contrast-fill);
-  --tooltip-text: var(--color-contrast-on-fill);
+  --details-dropdown-color: var(--inputs-placeholder-color);
+  --details-dropdown-border-color: var(--inputs-border-color);
+  --details-dropdown-spacing-vertical: var(--inputs-spacing-vertical);
+  --details-dropdown-spacing-horizontal: var(--inputs-spacing-horizontal);
 
-  /* Group Shadows */
-  --group-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --group-shadow-focus-button: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
-  --group-shadow-focus-input: 0 0 0 0.0625rem var(--input-border);
+  --details-menu-background-color: light-dark(white, var(--color-slate-900));
+  --details-menu-border-color: light-dark(
+    var(--color-slate-50),
+    var(--color-slate-850)
+  );
+  --details-menu-color: var(--color);
+  --details-menu-background-color-hover: light-dark(
+    var(--color-slate-50),
+    var(--color-slate-850)
+  );
 
-  /* Navigation */
+  /* --- Dialog --- */
+  --dialog-border-color: var(--border-color);
+  --dialog-background-color: var(--background-color);
+  --dialog-box-shadow: var(--box-shadow);
+  /* Affects dialogs and cards's header & footers */
+  --dialog-marginals-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-50), transparent 95%)
+  );
+  --dialog-marginals-border-color: color-mix(
+    in srgb,
+    light-dark(var(--color-slate-900), var(--color-zinc-350)),
+    transparent 90%
+  );
+
+  /* --- Group --- */
+  /* Affects elements with role="group" and its children */
+  --group-button-spacing-horizontal: 1rem;
+
+  /* --- Headings --- */
+  --heading-font-weight: 700;
+  --h1-font-size: 2rem;
+  --h1-margin-top: 3rem;
+  --h1-line-height: 1.125;
+  --h2-font-size: 1.75rem;
+  --h2-margin-top: 2.625rem;
+  --h2-line-height: 1.15;
+  --h3-font-size: 1.5rem;
+  --h3-margin-top: 2.25rem;
+  --h3-line-height: 1.175;
+  --h4-font-size: 1.25rem;
+  --h4-margin-top: 1.874rem;
+  --h4-line-height: 1.2;
+  --h5-font-size: 1.125rem;
+  --h5-margin-top: 1.6875rem;
+  --h5-line-height: 1.225;
+  --h6-font-size: 1rem;
+  --h6-margin-top: 1.5rem;
+  --h6-line-height: 1.25;
+
+  /* --- Icons --- */
+  --icons-background-position-gap: 0.75rem;
+  --icons-width: 1em;
+
+  /* --- Inputs --- */
+  /* Affects input, select, textarea and details elements */
+  --inputs-spacing-vertical: 0.5rem;
+  --inputs-spacing-horizontal: 0.7rem;
+  --inputs-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50) 25%, white),
+    color-mix(in srgb, var(--color-slate-900), var(--color-slate-850))
+  );
+  --inputs-background-color-focus: light-dark(
+    white,
+    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+  );
+  --inputs-border-color: light-dark(
+    var(--color-slate-150),
+    var(--color-slate-800)
+  );
+  --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
+  --inputs-accent-color: var(--primary-background-color);
+  --inputs-placeholder-color: var(--color-muted);
+  --inputs-focus-ring-width: 0.0625rem;
+
+  /* --- Input Checkbox and Radio --- */
+  --input-checkbox-border-width: 0.125rem;
+
+  /* --- Input Range --- */
+  --input-range-track-border-color: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-750)
+  );
+  --input-range-thumb-border-color: var(--background-color);
+
+  /* --- Input Search --- */
+  --input-search-border-radius: 5rem;
+
+  /* --- Input Switch --- */
+  --input-switch-background-color: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-750)
+  );
+  --input-switch-thumb-background-color: white;
+  --input-switch-border-width: 0.1875rem;
+  --input-switch-border-radius: 1.25em;
+
+  /* --- Lists (ul, ol, dl and role="list") --- */
+  --lists-marker-color: var(--primary-color);
+
+  /* --- Links (anchor and role="link") --- */
+  --links-color: var(--primary-color);
+  --links-text-decoration: underline;
+
+  /* --- Navigation --- */
   --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
 
-  /* Sidebar */
+  /* --- Progress Bar --- */
+  --progress-accent-color: var(--primary-background-color);
+  --progress-track-background-color: light-dark(
+    var(--color-slate-100),
+    var(--color-slate-850)
+  );
+
+  /* --- Small --- */
+  --small-font-size: 80%;
+
+  /* --- Sidebar --- */
   --sidebar-size: 25%;
+
+  /* --- Table --- */
+  --table-header-font-weight: 600;
+  --table-header-border-width: 0.1875rem;
+
+  /* --- Tooltip --- */
+  --tooltip-background-color: var(--contrast-background-color);
+  --tooltip-color: light-dark(white, var(--color-zinc-900));
 }
 
-/* === ICONS === */
+/* ===== ICONS ===== */
 body {
   --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -294,43 +472,48 @@ body {
   color-scheme: dark;
 }
 
-/* === RESPONSIVE ADJUSTMENTS === */
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (--breakpoint-sm) {
-  :root, :host {
+  :root,
+  :host {
     --font-size: 98%;
     --sidebar-size: max(25%, 150px);
-    --spacing: calc(var(--base-spacing) * 1.1);
+    --spacing-scale: 1.1;
   }
 }
 
 @media (--breakpoint-md) {
-  :root, :host {
+  :root,
+  :host {
     --font-size: 99%;
     --sidebar-size: max(22%, 180px);
-    --spacing: calc(var(--base-spacing) * 1.2);
+    --spacing-scale: 1.2;
   }
 }
 
 @media (--breakpoint-lg) {
-  :root, :host {
+  :root,
+  :host {
     --font-size: 100%;
     --sidebar-size: max(20%, 200px);
-    --spacing: calc(var(--base-spacing) * 1.3);
+    --spacing-scale: 1.3;
   }
 }
 
 @media (--breakpoint-xl) {
-  :root, :host {
+  :root,
+  :host {
     --font-size: 101%;
     --sidebar-size: max(18%, 220px);
-    --spacing: calc(var(--base-spacing) * 1.4);
+    --spacing-scale: 1.4;
   }
 }
 
 @media (--breakpoint-xxl) {
-  :root, :host {
+  :root,
+  :host {
     --font-size: 102%;
     --sidebar-size: clamp(240px, 16%, 300px);
-    --spacing: calc(var(--base-spacing) * 1.5);
+    --spacing-scale: 1.5;
   }
 }

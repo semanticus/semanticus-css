@@ -10,7 +10,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Utility composition system |
 | ✅ | Consolidated **Pico CSS** and **Bootstrap** css variables into one unified system |
 | ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
-| ✅ | CSS variables token organization |
+| ✅ | Removed `<article>`'s **card** style |
+| ✅ | Two layer CSS variables token system |
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
 | ✅ | Stack/layout primitives |
 | ✅ | **intent** colors based on **Bootstrap** `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `contrast` (replacing `light` and `dark`) |
@@ -25,17 +26,25 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 
 | Status | Feature |
 | --- | --- |
-| ✅ | `.card` component, based off **Pico CSS**'s `<article>` semantic style |
-| ✅ | Removed `<article>` the **card** style |
-| ✅ | `.icon-*` component |
-| ✅ | `.content-grid` component |
-| ✅ | `.auto-grid` component |
-| ✅ | Extended `.card` to implement **card lists** |
-| ✅ | `.pane` component |
-| 🚧 | `.sidebar` component |
-| ⌛ | `.carousel` component |
-| ⌛ | `.badge` component |
-| ⌛ | `.popper` component |
+| ✅ | Accordions |
+| 🚧 | Accordion List |
+| ✅ | Alerts |
+| ✅ | Auto Grid |
+| ✅ | Card List |
+| ✅ | Card, based off **Pico CSS**'s `<article>` semantic style |
+| ✅ | Content Grid |
+| ✅ | Dropdown |
+| ✅ | Loading Indicator |
+| ✅ | Icons |
+| ✅ | Modal |
+| ✅ | Pane |
+| ✅ | Toasts |
+| ✅ | Tooltip |
+| ⌛ | Offcanvas |
+| ⌛ | Carousel |
+| ⌛ | Badge |
+| ⌛ | Tabs |
+| ⌛ | Popper |
 
 ## Variants & Utilities
 
@@ -54,18 +63,19 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.subtle` modifier variant |
 | ✅ | Minimalist 12 grid system aligned with **Semantic Styling** spacing and breakpoints |
 | ✅ | `.striped` modifier variant |
-| ✅ | Extend **intent variants** to stylize **card lists** |
-| ⌛ | Extend **intent variants** to stylize `<progress>` |
+| ✅ | Extend **intent variants** to stylize **card list** |
+| ✅ | Extend **intent variants** to stylize `<progress>` |
 
 ## Known Issues
 
 | Status | Feature |
 | --- | --- |
+| ✅ | When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
+| ✅ | **shadow** utility classes don't seem to affect `.card` styling |
+| ✅ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
 | ⌛ | Multiple toasts with the same placement overlap |
-| ⌛ | When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
-| ⌛ | **shadow** utility classes don't seem to affect `.card` styling |
-| ⌛ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
-| ⌛ | `<button role="link">` seems to have bigger line height than a normal link |
+| ⌛ | `<button role="link">` seems to behave differently than a normal link |
+| ⌛ | Groups are not prepared for dir="rtl" |
 
 ## Interactive Patterns
 
@@ -78,8 +88,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Alert hide/show interaction |
 | ✅ | Alert Dialog |
 | ✅ | Anchor Positioning tooltips |
-| ⌛ | Tabs |
 | ⌛ | Carousel |
+| ⌛ | Tabs |
 | ⌛ | Popper |
 
 ## Documentation & Tooling
@@ -92,24 +102,24 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Simplified the build process by removing the need for Sass |
 | ✅ | Live code previewer and editor |
 | ✅ | Live code previewer codeCollapsed option |
-| ✅ | Palette and Size picker |
-| ✅ | Theme Builder to help the developer visualize which CSS variable does what |
+| ✅ | Palette and Size builder |
 | ✅ | ARIA pattern documentation |
-| ✅ | Exhaustive HTML elements and attributes documentation |
-| ✅ | Exhaustive Composites documentation |
-| ✅ | Exhaustive variants documentation and their combinations with HTML elements |
-| ✅ | Exhaustive Utility classes documentation |
-| ✅ | Documentation page example |
-| ✅ | Grid system documentation |
-| ✅ | `.icon-*` component documentation |
-| ✅ | Alerts composite documentation |
-| ✅ | Toasts composite documentation |
-| ✅ | Pagination composite documentation |
-| ✅ | Card List composite documentation |
+| ✅ | **Semantic Styling** API exhaustive documentation |
+| ✅ | **Components** API exhaustive documentation |
+| ✅ | **Variants** API exhaustive documentation |
+| ✅ | **Utilities** API exhaustive documentation |
+| ✅ | Documentation Page example |
+| ✅ | Starter HTML template Page example |
+| ✅ | Accordions documentation |
+| ✅ | Alerts documentation |
+| ✅ | Card and Card List documentation |
+| ✅ | Grid System documentation |
+| ✅ | Pagination documentation |
+| ✅ | Toasts documentation |
+| ✅ | Github check to prevent PRs that fail the visual regression tests |
 | 🚧 | Navigation composite documentation |
-| ⌛ | Github check to prevent PRs that fail the visual regression tests |
 | ⌛ | Tabs composite documentation |
-| ⌛ | `.sidebar` component documentation |
+| ⌛ | Offcanvas component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
@@ -138,14 +148,18 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | `.info` variant combinations |
 | ✅ | `.warning` variant combinations |
 | ✅ | `.danger` variant combinations |
-| ✅ | Include `[role="status"]` in Full & Colors Demo Overview |
 | ✅ | Toasts interaction |
 | ✅ | Alert hide/show interaction |
-| ✅ | Include **card lists** in Full & Colors Demo Overview |
+| ✅ | Include Alerts in Full & Colors Demo Overview |
 | ✅ | Include `.pane` in Full Colors Demo Overview |
+| ✅ | Include `<progress>` in Full Colors Demo Overview |
 | ✅ | `.content-grid` Demo Overview |
-| ⌛ | `.sidebar` popover interaction |
+| ✅ | Exhaustive combination of all button types in all states with all variants |
+| ✅ | Exhaustive combination of all link types in all states with all variants |
+| ✅ | Exhaustive combination of all card variations with all variants |
+| ✅ | Exhaustive combination of all card list variations with all variants |
+| ⌛ | Sidebar popover interaction |
 | ⌛ | Grid System Overview |
-| ⌛ | Tab interaction |
+| ⌛ | Tabs interaction |
 | ⌛ | Carousel interaction |
 | ⌛ | Popper interaction |

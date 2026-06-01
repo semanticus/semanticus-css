@@ -1,133 +1,101 @@
 .subtle {
-  --subtle-opacity: 60%;
-}
-
-:not([role="link"], a:not([role="button"])) {
-  &.subtle {
-    &.primary {
-      --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
-    }
-
-    &.secondary {
-      --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-border-opacity));
-    }
-
-    &.contrast {
-      --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-border-opacity));
-    }
-
-    &.success {
-      --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--color-border-opacity));
-    }
-
-    &.info {
-      --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--color-border-opacity));
-    }
-
-    &.warning {
-      --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-border-opacity));
-    }
-
-    &.danger {
-      --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
-      --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
-      --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-border-opacity));
-    }
+  /* When .subtle is used in a element that has no intent */
+  &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
+    --_buttons-background-color: var(--intent-background-color);
+    --_buttons-border-color: var(--intent-border-color);
   }
-}
 
-:is(button, [type="submit"], [type="button"], [role="button"]) {
-  &.subtle {
-    --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-    --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
-    --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
-    --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger),
+  &.primary {
+    --intent-background-color: oklch(
+      from var(--primary-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --intent-border-color: oklch(
+      from var(--primary-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.secondary {
+    --intent-background-color: light-dark(
+      color-mix(in srgb, var(--color-slate-50), white 25%),
+      color-mix(in srgb, var(--color-slate-50), black 75%)
+    );
+    --intent-border-color: light-dark(
+      color-mix(in srgb, var(--color-slate-50), white 25%),
+      color-mix(in srgb, var(--color-slate-50), black 75%)
+    );
+
+    /* --- Buttons Individual Styling --- */
+    --_buttons-color: light-dark(#191c20, #fff);
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-      --color-background: oklch(from var(--color-primary-fill) l c h / var(--color-background-opacity));
-      --border-color: oklch(from var(--color-primary-fill) l c h / var(--color-border-opacity));
+      --_buttons-color: #fff !important;
     }
 
-    &.secondary {
-      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
-        --color-background: oklch(from var(--color-secondary-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-secondary-fill) l c h / var(--color-border-opacity));
-      }
-    }
+    /* --- Alert Individual Styling --- */
+    --_alert-color: light-dark(#191c20, #fff);
 
-    &.contrast {
-      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-        --color-background: oklch(from var(--color-contrast-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-contrast-fill) l c h / var(--color-border-opacity));
-      }
-    }
+    /* --- Card Individual Styling --- */
+    --_card-color: light-dark(#191c20, #fff);
 
-    &.success {
-      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-        --color-background: oklch(from var(--color-success-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-success-fill) l c h / var(--color-border-opacity));
-      }
-    }
-
-    &.info {
-      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
-        --color-background: oklch(from var(--color-info-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-info-fill) l c h / var(--color-border-opacity));
-      }
-    }
-
-    &.warning {
-      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
-        --color-background: oklch(from var(--color-warning-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-warning-fill) l c h / var(--color-border-opacity));
-      }
-    }
-
-    &.danger {
-      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
-        --color-background: oklch(from var(--color-danger-fill) l c h / var(--color-background-opacity));
-        --border-color: oklch(from var(--color-danger-fill) l c h / var(--color-border-opacity));
-      }
-    }
+    /* --- Pane Individual Styling --- */
+    --_pane-color: light-dark(#191c20, #fff);
   }
-}
 
-/* Reset buttons */
-[type="reset"].subtle {
-  --color-text: var(--color-secondary-on-fill);
-  --color-background: var(--color-secondary-subtle-fill);
-  --border-color: var(--color-secondary-subtle-fill);
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  &.contrast {
+    --intent-background-color: oklch(
+      from var(--contrast-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --intent-border-color: oklch(
+      from var(--contrast-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
 
-  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --color-text: var(--color-secondary-on-fill);
-    --color-background: var(--color-secondary-fill);
-    --border-color: var(--color-secondary-fill);
+  &.success {
+    --intent-background-color: oklch(
+      from var(--success-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --intent-border-color: oklch(
+      from var(--success-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.info {
+    --intent-background-color: oklch(
+      from var(--info-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --intent-border-color: oklch(
+      from var(--info-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.warning {
+    --intent-background-color: oklch(
+      from var(--warning-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --intent-border-color: oklch(
+      from var(--warning-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
+  }
+
+  &.danger {
+    --intent-background-color: oklch(
+      from var(--danger-subtle-background-color) l c h /
+        var(--background-color-opacity)
+    );
+    --intent-border-color: oklch(
+      from var(--danger-subtle-background-color) l c h /
+        var(--border-color-opacity)
+    );
   }
 }

@@ -14,7 +14,7 @@ export function main(
       "div",
       { class: "flow-h container" },
       `${leftSidebar({
-        class: "pane d-none d-md-flex",
+        class: "pane secondary subtle d-none d-md-flex",
         popover: "auto",
         id: "left-sidebar",
       })}
