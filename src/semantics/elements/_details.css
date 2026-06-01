@@ -161,7 +161,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     border: var(--border-width) solid var(--details-menu-border-color);
     border-radius: var(--border-radius);
     background-color: var(--details-menu-background-color);
-    box-shadow: var(--details-menu-box-shadow);
+    box-shadow: var(--menu-box-shadow);
     color: var(--details-menu-color);
     white-space: nowrap;
     opacity: 0;

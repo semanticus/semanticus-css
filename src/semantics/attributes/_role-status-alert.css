@@ -67,7 +67,7 @@
 
   &[popover] {
     display: none;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--menu-box-shadow);
     left: unset;
     right: 0;
     bottom: 0;
