@@ -1,14 +1,13 @@
 /* See ./_common.css for shared styles */
 
 [type="checkbox"][role="switch"] {
-  --border-width: var(--input-switch-border-width);
+  --_inputs-border-width: var(--input-switch-border-width);
   --_inputs-background-color: var(--input-switch-background-color);
   --color: var(--input-switch-thumb-background-color);
+  --_inputs-border-radius: var(--input-switch-border-radius);
 
   width: 2.25em;
   height: 1.25em;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: 1.25em;
   line-height: 1.25em;
 
   &:before {
@@ -24,7 +23,7 @@
 
   &:not(:checked) {
     &:not([aria-invalid]) {
-      --border-color: var(--input-switch-background-color);
+      --_inputs-border-color: var(--input-switch-background-color);
     }
 
     &:focus {
@@ -41,6 +40,6 @@
   }
 
   &[disabled] {
-    --_inputs-background-color: var(--border-color);
+    --_inputs-background-color: var(--_inputs-border-color);
   }
 }

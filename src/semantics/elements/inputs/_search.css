@@ -1,7 +1,7 @@
 /* See ./_common.css for shared styles */
 
 input[type="search"] {
-  --border-radius: var(--input-search-border-radius);
+  --_inputs-border-radius: var(--input-search-border-radius);
 
   -webkit-appearance: textfield;
 

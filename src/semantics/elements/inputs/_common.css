@@ -11,13 +11,15 @@ textarea {
 
 :where(input, select, textarea) {
   --_inputs-background-color: var(--inputs-background-color);
-  --border-color: var(--inputs-border-color);
+  --_inputs-border-color: var(--inputs-border-color);
   --_inputs-focus-ring-color: var(--inputs-focus-ring-color);
   --_inputs-accent-color: var(--inputs-accent-color);
+  --_inputs-border-width: var(--inputs-border-width);
+  --_inputs-border-radius: var(--inputs-border-radius);
 
   padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  border: var(--_inputs-border-width) solid var(--_inputs-border-color);
+  border-radius: var(--_inputs-border-radius);
   background-color: var(--_inputs-background-color);
   color: var(--inputs-color);
   font-weight: var(--font-weight);
@@ -37,13 +39,13 @@ textarea {
     }
 
     &[aria-invalid="false"] {
-      --border-color: var(--success-background-color);
+      --_inputs-border-color: var(--success-background-color);
       --_inputs-accent-color: var(--success-background-color);
       --_inputs-focus-ring-color: var(--success-focus-ring-color);
     }
 
     &[aria-invalid="true"] {
-      --border-color: var(--danger-background-color);
+      --_inputs-border-color: var(--danger-background-color);
       --_inputs-accent-color: var(--danger-background-color);
       --_inputs-focus-ring-color: var(--danger-focus-ring-color);
     }

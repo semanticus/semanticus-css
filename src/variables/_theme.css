@@ -378,6 +378,8 @@
     var(--color-slate-150),
     var(--color-slate-800)
   );
+  --inputs-border-radius: var(--border-radius);
+  --inputs-border-width: var(--border-width);
   --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
   --inputs-accent-color: var(--primary-background-color);
   --inputs-placeholder-color: var(--color-muted);
@@ -404,6 +406,7 @@
   );
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
+  --input-switch-border-radius: 1.25em;
 
   /* --- Lists (ul, ol, dl and role="list") --- */
   --lists-marker-color: var(--primary-color);

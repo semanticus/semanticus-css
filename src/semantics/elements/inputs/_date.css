@@ -15,7 +15,9 @@
 
   &::-webkit-calendar-picker-indicator {
     width: var(--icons-width);
-    margin-right: calc((var(--icons-width) + (var(--border-width) * 2)) * -1);
+    margin-right: calc(
+      (var(--icons-width) + (var(--_inputs-border-width) * 2)) * -1
+    );
     margin-left: var(--icons-background-position-gap);
 
     /* Attempt at hidding the native icon, without hiding the outline in the process */
@@ -25,7 +27,7 @@
     &:is(:active, :focus) {
       outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
       outline-offset: 2px;
-      border-radius: var(--border-radius);
+      border-radius: var(--_inputs-border-radius);
     }
   }
 
