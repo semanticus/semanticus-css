@@ -27,10 +27,4 @@
     var(--color-pumpkin-350)
   );
   --primary-background-color: var(--color-pumpkin-300);
-
-  /* Component tokens */
-  --input-switch-thumb-box-shadow: light-dark(
-    0 0 0.5rem oklch(0% 0 0deg / 0.25),
-    0 0 0.5rem oklch(0% 0 0deg / 0.25)
-  );
 }

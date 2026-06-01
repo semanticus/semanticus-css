@@ -24,10 +24,4 @@
   /* System tokens */
   --primary-color: light-dark(var(--color-yellow-550), var(--color-yellow-350));
   --primary-background-color: var(--color-yellow-100);
-
-  /* Component tokens */
-  --input-switch-thumb-box-shadow: light-dark(
-    0 0 0.5rem oklch(0% 0 0deg / 0.25),
-    0 0 0.5rem oklch(0% 0 0deg / 0.25)
-  );
 }

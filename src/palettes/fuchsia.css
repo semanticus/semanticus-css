@@ -27,10 +27,4 @@
     var(--color-fuchsia-350)
   );
   --primary-background-color: var(--color-fuchsia-550);
-
-  /* Component tokens */
-  --input-switch-thumb-box-shadow: light-dark(
-    0 0 0 oklch(0% 0 0deg / 0),
-    0 0 0 oklch(0% 0 0deg / 0)
-  );
 }
