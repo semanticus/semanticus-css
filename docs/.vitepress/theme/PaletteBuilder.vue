@@ -1153,12 +1153,26 @@ function toHex(color) {
     }
     return s.slice(0, 7);
   }
-  // rgb/rgba with commas or spaces
-  const m = s.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)/);
+  // rgb/rgba with commas or spaces (0-255 range)
+  let m = s.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)/);
   if (m) {
     const r = Math.round(parseFloat(m[1])).toString(16).padStart(2, "0");
     const g = Math.round(parseFloat(m[2])).toString(16).padStart(2, "0");
     const b = Math.round(parseFloat(m[3])).toString(16).padStart(2, "0");
+    return `#${r}${g}${b}`;
+  }
+  // color(srgb r g b) — CSS Color Level 4 (0-1 range)
+  m = s.match(/color\(srgb\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)/);
+  if (m) {
+    const r = Math.round(parseFloat(m[1]) * 255)
+      .toString(16)
+      .padStart(2, "0");
+    const g = Math.round(parseFloat(m[2]) * 255)
+      .toString(16)
+      .padStart(2, "0");
+    const b = Math.round(parseFloat(m[3]) * 255)
+      .toString(16)
+      .padStart(2, "0");
     return `#${r}${g}${b}`;
   }
   if (s === "white") return "#ffffff";
