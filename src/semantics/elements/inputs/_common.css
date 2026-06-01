@@ -12,77 +12,47 @@ textarea {
 :where(input, select, textarea) {
   --background-color: var(--inputs-background-color);
   --border-color: var(--inputs-border-color);
+  --_inputs-focus-ring-color: var(--inputs-border-color-focus);
 
+  /*outline: none;
+  box-shadow: var(--inputs-box-shadow, none);*/
+
+  padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  outline: none;
   background-color: var(--background-color);
-  box-shadow: var(--inputs-box-shadow, none);
   color: var(--inputs-color);
   font-weight: var(--font-weight);
   transition:
     background-color var(--transition),
     border-color var(--transition),
-    color var(--transition),
-    box-shadow var(--transition);
+    color var(--transition);
+
+  /* Non button inputs */
+  &:not([type="button"], [type="submit"], [type="reset"]) {
+    &:not([readonly]) {
+      &:is(:active, :focus, :focus-visible) {
+        --background-color: var(--inputs-background-color-focus);
+
+        outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
+        box-shadow: 0 0 0 var(--focus-ring-width)
+          var(--_inputs-focus-ring-color);
+      }
+    }
+
+    &[aria-invalid="false"] {
+      --border-color: var(--success-background-color);
+      --_inputs-focus-ring-color: var(--success-focus-ring-color);
+    }
+
+    &[aria-invalid="true"] {
+      --border-color: var(--danger-background-color);
+      --_inputs-focus-ring-color: var(--danger-focus-ring-color);
+    }
+  }
 
   &:not([type="checkbox"], [type="radio"]) {
     width: 100%;
-  }
-
-  &:not(
-    [type="button"],
-    [type="submit"],
-    [type="reset"],
-    [type="file"],
-    [type="range"],
-    [type="checkbox"],
-    [type="radio"]
-  ) {
-    --outline-width: var(--inputs-outline-width);
-
-    appearance: none;
-    padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
-
-    &:not([readonly]) {
-      &:is(:active, :focus) {
-        &:not([aria-invalid]) {
-          --border-color: var(--inputs-border-color-focus);
-          --background-color: var(--inputs-background-color-focus);
-          --inputs-box-shadow: 0 0 0 var(--outline-width)
-            var(--inputs-border-color-focus);
-        }
-
-        &[aria-invalid="false"] {
-          --inputs-box-shadow: 0 0 0 var(--outline-width)
-            var(--success-focus-ring-color);
-        }
-
-        &[aria-invalid="true"] {
-          --inputs-box-shadow: 0 0 0 var(--outline-width)
-            var(--danger-focus-ring-color);
-        }
-      }
-    }
-  }
-
-  &[aria-invalid="false"] {
-    --border-color: var(--success-background-color);
-
-    &:is(:active, :focus) {
-      --border-color: var(--success-background-color-hover);
-    }
-  }
-
-  &[aria-invalid="true"] {
-    --border-color: var(--danger-background-color);
-
-    &:is(:active, :focus) {
-      --border-color: var(--danger-background-color-hover);
-    }
-  }
-
-  &:not([type="checkbox"], [type="radio"]) {
     margin-bottom: var(--spacing);
   }
 
@@ -108,10 +78,6 @@ textarea {
 ::-moz-focus-inner {
   padding: 0;
   border-style: none;
-}
-
-:-moz-focusring {
-  outline: none;
 }
 
 :-moz-ui-invalid {

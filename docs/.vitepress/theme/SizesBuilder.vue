@@ -465,7 +465,7 @@ const variableGroups = [
     label: "Form Details",
     vars: [
       {
-        name: "--inputs-outline-width",
+        name: "--inputs-focus-ring-width",
         label: "Input Outline Width",
         desc: "Focus-ring width for text inputs.",
         default: "0.0625rem",

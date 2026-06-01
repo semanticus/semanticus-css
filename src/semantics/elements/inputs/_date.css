@@ -9,13 +9,24 @@
   background-position: center right var(--icons-background-position-gap);
   background-size: var(--icons-width) auto;
   background-repeat: no-repeat;
-  padding-right: calc(var(--icons-width) + var(--icons-background-position-gap));
+  padding-right: calc(
+    var(--icons-width) + var(--icons-background-position-gap)
+  );
 
   &::-webkit-calendar-picker-indicator {
     width: var(--icons-width);
-    margin-right: calc(var(--icons-width) * -1);
+    margin-right: calc((var(--icons-width) + (var(--border-width) * 2)) * -1);
     margin-left: var(--icons-background-position-gap);
-    opacity: 0;
+
+    /* Attempt at hidding the native icon, without hiding the outline in the process */
+    background: transparent;
+    color: transparent;
+
+    &:is(:active, :focus) {
+      outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
+      outline-offset: 2px;
+      border-radius: var(--border-radius);
+    }
   }
 
   &[dir="rtl"],

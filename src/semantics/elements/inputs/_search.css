@@ -9,15 +9,20 @@ input[type="search"] {
     -webkit-appearance: none;
   }
 
-  outline-offset: -2px;
   background-image: var(--icon-search);
   background-position: left var(--icons-background-position-gap) center;
   background-repeat: no-repeat;
   background-size: var(--icons-width) auto;
-  padding-inline-start: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
+  padding-inline-start: calc(
+    var(--inputs-spacing-horizontal) + var(--icons-width) +
+      var(--icons-background-position-gap)
+  );
 
   &[aria-invalid] {
-    padding-inline-end: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
+    padding-inline-end: calc(
+      var(--inputs-spacing-horizontal) + var(--icons-width) +
+        var(--icons-background-position-gap)
+    );
     background-position:
       left var(--icons-background-position-gap) center,
       right var(--icons-background-position-gap) center;

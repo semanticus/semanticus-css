@@ -78,10 +78,7 @@
     var(--color-zinc-700),
     var(--color-zinc-300)
   );
-  --color-focus-effect: light-dark(
-    white,
-    black
-  );
+  --color-focus-effect: light-dark(white, black);
 
   /* --- Typography --- */
   --typography-spacing-vertical: 1rem;
@@ -389,8 +386,8 @@
   --inputs-placeholder-color: var(--color-muted);
   --inputs-border-color-focus: var(--primary-background-color);
   --inputs-opacity-disabled: 0.5;
-  --inputs-outline-width: 0.0625rem;
   --inputs-accent-color: var(--primary-background-color);
+  --inputs-focus-ring-width: 0.0625rem;
   --inputs-focus-ring-color: var(--primary-focus-ring-color);
 
   /* --- Input Checkbox and Radio --- */

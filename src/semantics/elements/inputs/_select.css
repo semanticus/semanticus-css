@@ -2,13 +2,17 @@
 
 select {
   text-transform: none;
+  appearance: none;
 
   &:not([multiple], [size]) {
     background-image: var(--icon-chevron);
     background-position: center right var(--icons-background-position-gap);
     background-repeat: no-repeat;
     background-size: var(--icons-width) auto;
-    padding-inline-end: calc(var(--inputs-spacing-horizontal) + var(--icons-width) + var(--icons-background-position-gap));
+    padding-inline-end: calc(
+      var(--inputs-spacing-horizontal) + var(--icons-width) +
+        var(--icons-background-position-gap)
+    );
   }
 
   &[multiple] option:checked {
