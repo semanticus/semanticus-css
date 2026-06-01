@@ -12,8 +12,8 @@
   border-radius: var(--border-radius);
 
   &:is(:active, :focus, :focus-visible) {
-    outline: none !important; /* We are outlining the file-selector-button instead */
-    box-shadow: none !important;
+    outline: none; /* We are outlining the file-selector-button instead */
+    box-shadow: none;
 
     &::file-selector-button {
       --_buttons-focus-ring-color: var(--_inputs-focus-ring-color);
