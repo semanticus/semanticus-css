@@ -1,11 +1,14 @@
 @import "./inputs/_common.css";
 
 @import "./inputs/_checkbox-radio.css";
+@import "./inputs/_checkbox.css";
 @import "./inputs/_color.css";
 @import "./inputs/_date.css";
 @import "./inputs/_file.css";
 @import "./inputs/_input.css";
+@import "./inputs/_radio.css";
 @import "./inputs/_range.css";
 @import "./inputs/_search.css";
 @import "./inputs/_select.css";
+@import "./inputs/_switch.css";
 @import "./inputs/_textarea.css";

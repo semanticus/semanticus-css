@@ -1,0 +1,19 @@
+/* See ./_common.css for shared styles */
+
+[type="checkbox"] {
+  &:is(:checked, :checked:active, :checked:focus) {
+    --_inputs-background-color: var(--_inputs-accent-color);
+
+    background-image: var(--icon-checkbox);
+    background-position: center;
+    background-size: 0.75em auto;
+    background-repeat: no-repeat;
+  }
+
+  &:indeterminate {
+    background-image: var(--icon-minus);
+    background-position: center;
+    background-size: 0.75em auto;
+    background-repeat: no-repeat;
+  }
+}
