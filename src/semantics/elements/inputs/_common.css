@@ -28,14 +28,11 @@ textarea {
 
   /* Non button inputs */
   &:not([type="button"], [type="submit"], [type="reset"]) {
-    &:not([readonly]) {
-      &:is(:active, :focus, :focus-visible) {
-        --background-color: var(--inputs-background-color-focus);
+    &:is(:active, :focus, :focus-visible) {
+      --background-color: var(--inputs-background-color-focus);
 
-        outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
-        box-shadow: 0 0 0 var(--focus-ring-width)
-          var(--_inputs-focus-ring-color);
-      }
+      outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
+      box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-focus-ring-color);
     }
 
     &[aria-invalid="false"] {
