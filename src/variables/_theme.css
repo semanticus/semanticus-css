@@ -298,9 +298,6 @@
 
   /* --- Details --- */
   /* Affects accordions and dropdowns */
-  --details-color-focus: var(--primary-color-hover);
-  --details-summary-color: var(--color);
-  --details-summary-color-open: var(--color-muted);
   --details-menu-background-color: light-dark(white, var(--color-slate-900));
   --details-menu-border-color: light-dark(
     var(--color-slate-50),
@@ -363,7 +360,7 @@
   --icons-width: 1em;
 
   /* --- Inputs --- */
-  /* Affects input, select, and textarea elements */
+  /* Affects input, select, textarea and details elements */
   --inputs-spacing-vertical: 0.5rem;
   --inputs-spacing-horizontal: 0.7rem;
   --inputs-background-color: light-dark(

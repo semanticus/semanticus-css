@@ -3,8 +3,17 @@ summary {
 }
 
 details {
-  --_details-focus-ring-color: var(--inputs-focus-ring-color);
-  --_details-border-color: var(--inputs-border-color);
+  --_details-summary-background-color: var(--inputs-background-color);
+  --_details-summary-color: var(--color);
+  --_details-summary-color-focus: var(--primary-color-hover);
+  --_details-summary-color-open: var(--color-muted);
+  --_details-summary-border-radius: 0;
+  --_details-summary-border-color: transparent;
+  --_details-summary-border-width: 0;
+  --_details-summary-spacing: var(--spacing);
+  --_details-summary-focus-ring-color: var(--inputs-focus-ring-color);
+  --_details-summary-padding-vertical: 0;
+  --_details-summary-padding-horizontal: 0;
 
   display: block;
 
@@ -14,15 +23,32 @@ details {
     cursor: pointer;
     transition: color var(--transition);
 
-    &:not([role]) {
-      color: var(--details-summary-color);
+    color: var(--_details-summary-color);
+    border: var(--_details-summary-border-width) solid
+      var(--_details-summary-border-color);
+    border-radius: var(--_details-summary-border-radius);
+    background-color: var(--_details-summary-background-color);
+    padding: var(--_details-summary-padding-vertical)
+      var(--_details-summary-padding-horizontal);
 
+    &:not([role]) {
       &:focus {
-        color: var(--details-color-focus);
-        border-radius: var(--buttons-border-radius);
-        outline: var(--outline-width) solid var(--_details-focus-ring-color);
+        --_details-summary-color: var(--_details-summary-color-focus);
+
+        outline: var(--outline-width) solid
+          var(--_details-summary-focus-ring-color);
         box-shadow: 0 0 0 var(--focus-ring-width)
-          var(--_details-focus-ring-color);
+          var(--_details-summary-focus-ring-color);
+      }
+
+      &[aria-invalid="false"] {
+        --_details-summary-border-color: var(--success-background-color);
+        --_details-summary-focus-ring-color: var(--success-focus-ring-color);
+      }
+
+      &[aria-invalid="true"] {
+        --_details-summary-border-color: var(--danger-background-color);
+        --_details-summary-focus-ring-color: var(--danger-focus-ring-color);
       }
     }
 
@@ -75,10 +101,10 @@ details {
   }
 
   &[open] > summary {
-    margin-bottom: var(--spacing);
+    margin-bottom: var(--_details-summary-spacing);
 
     &:not([role]):not(:focus) {
-      color: var(--details-summary-color-open);
+      --_details-summary-color: var(--_details-summary-color-open);
     }
 
     &::after {
@@ -111,17 +137,19 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     &:not([role]) {
+      --_details-summary-color: var(--inputs-placeholder-color);
+      --_details-summary-border-color: var(--inputs-border-color);
+      --_details-summary-border-radius: var(--inputs-border-radius);
+      --_details-summary-border-width: var(--inputs-border-width);
+      --_details-summary-padding-vertical: var(--inputs-spacing-vertical);
+      --_details-summary-padding-horizontal: var(--inputs-spacing-horizontal);
+
       display: flex;
       align-items: center;
       height: calc(
-        1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
-          var(--border-width) * 2
+        1rem * var(--line-height) + var(--_details-summary-padding-vertical) *
+          2 + var(--_details-summary-border-width) * 2
       );
-      padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
-      border: var(--border-width) solid var(--_details-border-color);
-      border-radius: var(--border-radius);
-      background-color: var(--inputs-background-color);
-      color: var(--inputs-placeholder-color);
       line-height: inherit;
       cursor: pointer;
       user-select: none;
@@ -129,16 +157,6 @@ details:has(> summary[aria-haspopup="menu"]) {
         background-color var(--transition),
         border-color var(--transition),
         color var(--transition);
-
-      &[aria-invalid="false"] {
-        --_details-border-color: var(--success-background-color);
-        --_details-focus-ring-color: var(--success-focus-ring-color);
-      }
-
-      &[aria-invalid="true"] {
-        --_details-border-color: var(--danger-background-color);
-        --_details-focus-ring-color: var(--danger-focus-ring-color);
-      }
     }
   }
 
@@ -242,7 +260,7 @@ details:has(> summary[aria-haspopup="menu"]) {
 }
 
 label > details:has(> summary[aria-haspopup="menu"]) {
-  margin-top: calc(var(--spacing) * 0.25);
+  margin-top: calc(var(--_details-summary-spacing) * 0.25);
 }
 
 nav details:has(> summary[aria-haspopup="menu"]) {
@@ -253,7 +271,9 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex !important;
     align-items: center !important;
     height: auto !important;
-    padding: calc(var(--nav-link-gap) - var(--border-width) * 2)
+    padding: calc(
+        var(--nav-link-gap) - var(--_details-summary-border-width) * 2
+      )
       var(--nav-link-gap) !important;
 
     &::after {
