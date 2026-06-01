@@ -75,6 +75,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
 | ⌛ | Multiple toasts with the same placement overlap |
 | ⌛ | `<button role="link">` seems to behave differently than a normal link |
+| ⌛ | Groups are not prepared for dir="rtl" |
 
 ## Interactive Patterns
 

@@ -1,28 +1,14 @@
-[role="search"] {
-  --border-radius: var(--input-search-border-radius);
-
-  & > :first-child {
-    border-top-left-radius: 5rem;
-    border-bottom-left-radius: 5rem;
-  }
-
-  & > :last-child {
-    border-top-right-radius: 5rem;
-    border-bottom-right-radius: 5rem;
-  }
-}
-
 [role="search"],
 [role="group"] {
-  --_group-box-shadow: var(--group-box-shadow);
+  --_group-border-radius: var(--group-border-radius);
+  --_group-margin-bottom: var(--group-margin-bottom);
+  --_group-focus-ring-color: var(--group-focus-ring-color);
 
-  border-radius: var(--border-radius);
-  box-shadow: var(--_group-box-shadow);
+  border-radius: var(--_group-border-radius);
   display: inline-flex;
   gap: 0;
-  margin-bottom: var(--spacing);
+  margin-bottom: var(--_group-margin-bottom);
   position: relative;
-  transition: box-shadow var(--transition);
   vertical-align: middle;
   width: 100%;
 
@@ -34,7 +20,7 @@
     margin-bottom: 0;
 
     &:not(:first-child) {
-      /* when a button is next to an input that has a border */
+      /* Pico's attempt at preventing a double sized border between elements */
       margin-left: calc(var(--border-width) * -1);
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
@@ -111,16 +97,17 @@
     [type="reset"]:focus,
     [role="button"]:focus
   ) {
-    --_group-box-shadow: var(--group-box-accent-shadow);
-
-    & input:not([type="checkbox"], [type="radio"]),
-    & select {
-      border-color: transparent;
-    }
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-focus-ring-color);
   }
 
   /* when an input is focused, we set the button styling to "focus" also */
-  &:has(input:not([type="submit"], [type="button"]):focus, select:focus) {
+  &:has(
+    input:not([type="submit"], [type="reset"], [type="button"]):focus,
+    summary:focus,
+    select:focus
+  ) {
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-focus-ring-color);
+
     :is(
       button,
       [type="submit"],
@@ -128,8 +115,22 @@
       [type="button"],
       [role="button"]
     ) {
-      outline: var(--outline-width) solid var(--buttons-focus-ring-color);
-      box-shadow: 0 0 0 var(--outline-width) var(--buttons-focus-ring-color);
+      outline: var(--outline-width) solid var(--buttons-background-color);
+      box-shadow: 0 0 0 var(--focus-ring-width) var(--buttons-background-color);
     }
+  }
+}
+
+[role="search"] {
+  --_group-border-radius: var(--input-search-border-radius);
+
+  & > :first-child {
+    border-top-left-radius: var(--_group-border-radius);
+    border-bottom-left-radius: var(--_group-border-radius);
+  }
+
+  & > :last-child {
+    border-top-right-radius: var(--_group-border-radius);
+    border-bottom-right-radius: var(--_group-border-radius);
   }
 }
