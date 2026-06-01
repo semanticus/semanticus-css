@@ -3,17 +3,11 @@ summary {
 }
 
 details {
-  --_details-summary-background-color: var(--inputs-background-color);
-  --_details-summary-color: var(--color);
-  --_details-summary-color-focus: var(--primary-color-hover);
-  --_details-summary-color-open: var(--color-muted);
-  --_details-summary-border-radius: 0;
-  --_details-summary-border-color: transparent;
-  --_details-summary-border-width: 0;
-  --_details-summary-spacing: var(--spacing);
+  --_details-summary-background-color: var(--details-summary-background-color);
+  --_details-summary-color: var(--details-summary-color);
+  --_details-summary-color-focus: var(--details-summary-color-focus);
+  --_details-summary-color-open: var(--details-summary-color-open);
   --_details-summary-focus-ring-color: var(--focus-ring-color);
-  --_details-summary-padding-vertical: 0;
-  --_details-summary-padding-horizontal: 0;
 
   display: block;
 
@@ -24,12 +18,7 @@ details {
     transition: color var(--transition);
 
     color: var(--_details-summary-color);
-    border: var(--_details-summary-border-width) solid
-      var(--_details-summary-border-color);
-    border-radius: var(--_details-summary-border-radius);
     background-color: var(--_details-summary-background-color);
-    padding: var(--_details-summary-padding-vertical)
-      var(--_details-summary-padding-horizontal);
 
     &:not([role]) {
       &:focus {
@@ -39,16 +28,6 @@ details {
           var(--_details-summary-focus-ring-color);
         box-shadow: 0 0 0 var(--focus-ring-width)
           var(--_details-summary-focus-ring-color);
-      }
-
-      &[aria-invalid="false"] {
-        --_details-summary-border-color: var(--success-background-color);
-        --_details-summary-focus-ring-color: var(--success-focus-ring-color);
-      }
-
-      &[aria-invalid="true"] {
-        --_details-summary-border-color: var(--danger-background-color);
-        --_details-summary-focus-ring-color: var(--danger-focus-ring-color);
       }
     }
 
@@ -101,7 +80,7 @@ details {
   }
 
   &[open] > summary {
-    margin-bottom: var(--_details-summary-spacing);
+    margin-bottom: var(--spacing);
 
     &:not([role]):not(:focus) {
       --_details-summary-color: var(--_details-summary-color-open);
@@ -120,6 +99,16 @@ details:has(> summary[aria-haspopup="menu"]) {
   position: relative;
 
   > summary[aria-haspopup="menu"] {
+    --_details-dropdown-color: var(--details-dropdown-color);
+    --_details-dropdown-border-color: var(--details-dropdown-border-color);
+    --_details-dropdown-spacing-vertical: var(
+      --details-dropdown-spacing-vertical
+    );
+    --_details-dropdown-spacing-horizontal: var(
+      --details-dropdown-spacing-horizontal
+    );
+    --_details-summary-color: var(--_details-dropdown-color);
+
     &::after {
       height: calc(1rem * var(--line-height, 1.5));
       margin-inline-start: 0.25rem;
@@ -128,18 +117,15 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     &:not([role]) {
-      --_details-summary-color: var(--inputs-placeholder-color);
-      --_details-summary-border-color: var(--inputs-border-color);
-      --_details-summary-border-radius: var(--border-radius);
-      --_details-summary-border-width: var(--border-width);
-      --_details-summary-padding-vertical: var(--inputs-spacing-vertical);
-      --_details-summary-padding-horizontal: var(--inputs-spacing-horizontal);
-
+      border: var(--border-width) solid var(--_details-dropdown-border-color);
+      border-radius: var(--border-radius);
+      padding: var(--_details-dropdown-spacing-vertical)
+        var(--_details-dropdown-spacing-horizontal);
       display: flex;
       align-items: center;
       height: calc(
-        1rem * var(--line-height) + var(--_details-summary-padding-vertical) *
-          2 + var(--_details-summary-border-width) * 2
+        1rem * var(--line-height) + var(--_details-dropdown-spacing-vertical) *
+          2 + var(--border-width) * 2
       );
       line-height: inherit;
       cursor: pointer;
@@ -148,6 +134,16 @@ details:has(> summary[aria-haspopup="menu"]) {
         background-color var(--transition),
         border-color var(--transition),
         color var(--transition);
+
+      &[aria-invalid="false"] {
+        --_details-dropdown-border-color: var(--success-background-color);
+        --_details-summary-focus-ring-color: var(--success-focus-ring-color);
+      }
+
+      &[aria-invalid="true"] {
+        --_details-dropdown-border-color: var(--danger-background-color);
+        --_details-summary-focus-ring-color: var(--danger-focus-ring-color);
+      }
     }
   }
 
@@ -252,7 +248,7 @@ details:has(> summary[aria-haspopup="menu"]) {
 }
 
 label > details:has(> summary[aria-haspopup="menu"]) {
-  margin-top: calc(var(--_details-summary-spacing) * 0.25);
+  margin-top: calc(var(--spacing) * 0.25);
 }
 
 nav details:has(> summary[aria-haspopup="menu"]) {
@@ -263,9 +259,7 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex !important;
     align-items: center !important;
     height: auto !important;
-    padding: calc(
-        var(--nav-link-gap) - var(--_details-summary-border-width) * 2
-      )
+    padding: calc(var(--nav-link-gap) - var(--border-width) * 2)
       var(--nav-link-gap) !important;
 
     &::after {

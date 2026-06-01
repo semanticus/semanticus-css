@@ -12,18 +12,15 @@ body:has(dialog[open]) {
 
 dialog {
   --_dialog-border-color: var(--dialog-border-color);
-  --_dialog-border-width: var(--border-width);
   --_dialog-background-color: var(--dialog-background-color);
   --_dialog-box-shadow: var(--dialog-box-shadow);
-  --_dialog-border-radius: var(--dialog-border-radius);
-  --_dialog-spacing: var(--dialog-spacing);
 
-  max-height: calc(100vh - var(--_dialog-spacing) * 2);
+  max-height: calc(100vh - var(--spacing) * 2);
   margin: auto;
   overflow: auto;
-  padding: var(--_dialog-spacing);
-  border-radius: var(--_dialog-border-radius);
-  border: var(--_dialog-border-width) solid var(--_dialog-border-color);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--_dialog-border-color);
   background: var(--_dialog-background-color);
   box-shadow: var(--_dialog-box-shadow);
 
@@ -59,8 +56,8 @@ dialog {
   > header,
   > footer {
     width: auto;
-    margin-inline: calc(var(--_dialog-spacing) * -1);
-    padding-inline: var(--_dialog-spacing);
+    margin-inline: calc(var(--spacing) * -1);
+    padding-inline: var(--spacing);
     background-color: var(--dialog-marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
@@ -69,21 +66,20 @@ dialog {
 
   /* Header styling */
   > header {
-    margin-top: calc(var(--_dialog-spacing) * -1);
-    border-bottom: var(--_dialog-border-width) solid
+    margin-top: calc(var(--spacing) * -1);
+    border-bottom: var(--border-width) solid
       var(--dialog-marginals-border-color);
-    border-top-right-radius: var(--_dialog-border-radius);
-    border-top-left-radius: var(--_dialog-border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
     justify-content: space-between;
   }
 
   /* Footer styling */
   > footer {
-    margin-bottom: calc(var(--_dialog-spacing) * -1);
-    border-top: var(--_dialog-border-width) solid
-      var(--dialog-marginals-border-color);
-    border-bottom-right-radius: var(--_dialog-border-radius);
-    border-bottom-left-radius: var(--_dialog-border-radius);
+    margin-bottom: calc(var(--spacing) * -1);
+    border-top: var(--border-width) solid var(--dialog-marginals-border-color);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
     justify-content: end;
   }
 

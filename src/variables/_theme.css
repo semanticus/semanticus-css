@@ -296,6 +296,16 @@
 
   /* --- Details --- */
   /* Affects accordions and dropdowns */
+  --details-summary-background-color: var(--inputs-background-color);
+  --details-summary-color: var(--color);
+  --details-summary-color-focus: var(--primary-color-hover);
+  --details-summary-color-open: var(--color-muted);
+
+  --details-dropdown-color: var(--inputs-placeholder-color);
+  --details-dropdown-border-color: var(--inputs-border-color);
+  --details-dropdown-spacing-vertical: var(--inputs-spacing-vertical);
+  --details-dropdown-spacing-horizontal: var(--inputs-spacing-horizontal);
+
   --details-menu-background-color: light-dark(white, var(--color-slate-900));
   --details-menu-border-color: light-dark(
     var(--color-slate-50),
@@ -308,9 +318,7 @@
   );
 
   /* --- Dialog --- */
-  --dialog-spacing: var(--spacing);
   --dialog-border-color: var(--border-color);
-  --dialog-border-radius: var(--border-radius);
   --dialog-background-color: var(--background-color);
   --dialog-box-shadow: var(--box-shadow);
   /* Affects dialogs and cards's header & footers */

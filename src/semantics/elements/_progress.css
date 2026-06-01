@@ -1,7 +1,6 @@
 progress {
   --_progress-track-background-color: var(--progress-track-background-color);
   --_progress-accent-color: var(--progress-accent-color);
-  --_progress-border-radius: var(--border-radius);
 
   display: inline-block;
   appearance: none;
@@ -10,14 +9,14 @@ progress {
   margin-bottom: calc(var(--spacing) * 0.5);
   overflow: hidden;
   border: 0;
-  border-radius: var(--_progress-border-radius);
+  border-radius: var(--border-radius);
   background-color: var(--_progress-track-background-color);
   color: var(--_progress-accent-color);
   vertical-align: baseline;
   accent-color: var(--_progress-accent-color);
 
   &::-webkit-progress-bar {
-    border-radius: var(--_progress-border-radius);
+    border-radius: var(--border-radius);
     background: none;
   }
 

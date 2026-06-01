@@ -34,5 +34,5 @@
   --_pane-background-color: var(--intent-background-color);
 
   /* --- Progress Bar Individual Styling --- */
-  --_progress-color: var(--intent-background-color);
+  --_progress-accent-color: var(--intent-background-color);
 }

@@ -16,14 +16,12 @@ button,
   --_buttons-spacing-vertical: var(--buttons-spacing-vertical);
   --_buttons-spacing-horizontal: var(--buttons-spacing-horizontal);
   --_buttons-background-color: var(--buttons-background-color);
-  --_buttons-border-radius: var(--border-radius);
   --_buttons-border-color: var(--buttons-border-color);
-  --_buttons-border-width: var(--border-width);
   --_buttons-focus-ring-color: var(--focus-ring-color);
 
   padding: var(--_buttons-spacing-vertical) var(--_buttons-spacing-horizontal);
-  border: var(--_buttons-border-width) solid var(--_buttons-border-color);
-  border-radius: var(--_buttons-border-radius);
+  border: var(--border-width) solid var(--_buttons-border-color);
+  border-radius: var(--border-radius);
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color, white);
   font-weight: var(--font-weight);
