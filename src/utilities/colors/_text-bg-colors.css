@@ -18,7 +18,7 @@
 
 .text-bg-contrast {
   --_background-color: var(--contrast-background-color);
-  --typography-color: white;
+  --typography-color: light-dark(#fff, #191c20);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
