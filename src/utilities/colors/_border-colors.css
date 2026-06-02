@@ -1,27 +1,41 @@
 .border-primary {
   --_border-color: var(--primary-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-secondary {
   --_border-color: var(--secondary-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-success {
   --_border-color: var(--success-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-info {
   --_border-color: var(--info-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-warning {
   --_border-color: var(--warning-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-danger {
   --_border-color: var(--danger-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-contrast {
   --_border-color: var(--contrast-background-color);
+
+  border-color: var(--_border-color) !important;
 }

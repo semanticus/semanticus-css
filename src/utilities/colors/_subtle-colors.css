@@ -98,28 +98,42 @@
 
 .border-primary-subtle {
   --_border-color: var(--primary-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-secondary-subtle {
   --_border-color: var(--secondary-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-contrast-subtle {
   --_border-color: var(--contrast-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-success-subtle {
   --_border-color: var(--success-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-info-subtle {
   --_border-color: var(--info-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-warning-subtle {
   --_border-color: var(--warning-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-danger-subtle {
   --_border-color: var(--danger-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
