@@ -1,5 +1,99 @@
 :root,
 :host {
+  /* ===== INTENT TOKENS ===== */
+
+  /* --- Primary --- */
+  --primary-background-color: var(--background-color-vibrant);
+  --primary-background-color-hover: var(--background-color-vibrant-hover);
+  --primary-color: var(--color-vibrant);
+  --primary-color-hover: var(--color-vibrant-hover);
+  --primary-outline-color: var(--outline-color-vibrant);
+
+  /* --- Secondary --- */
+  --secondary-background-color: var(--background-color-subdued);
+  --secondary-background-color-hover: var(--background-color-subdued-hover);
+  --secondary-color: var(--color-subdued);
+  --secondary-color-hover: var(--color-subdued-hover);
+  --secondary-outline-color: var(--outline-color-subdued);
+
+  /* --- Contrast --- */
+  --contrast-background-color: light-dark(
+    var(--color-slate-900),
+    var(--color-slate-50)
+  );
+  --contrast-background-color-hover: color-mix(
+    in srgb,
+    var(--contrast-background-color),
+    var(--color-hover-effect) 30%
+  );
+  --contrast-color: light-dark(var(--color-slate-900), var(--color-slate-100));
+  --contrast-color-hover: color-mix(
+    in srgb,
+    var(--contrast-color),
+    var(--color-hover-effect) 30%
+  );
+  --contrast-outline-color: color-mix(
+    in srgb,
+    var(--contrast-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Success --- */
+  --success-background-color: var(--background-color-valid);
+  --success-background-color-hover: var(--background-color-valid-hover);
+  --success-color: var(--color-valid);
+  --success-color-hover: var(--color-valid-hover);
+  --success-outline-color: var(--outline-color-valid);
+
+  /* --- Info --- */
+  --color-azure-450: #018cd4;
+  --color-azure-250: #79c0ff;
+  --info-background-color: var(--color-azure-450);
+  --info-background-color-hover: color-mix(
+    in srgb,
+    var(--info-background-color),
+    var(--color-hover-effect) 30%
+  );
+  --info-color: light-dark(var(--color-azure-450), var(--color-azure-250));
+  --info-color-hover: color-mix(
+    in srgb,
+    var(--info-color),
+    var(--color-hover-effect) 30%
+  );
+  --info-outline-color: color-mix(
+    in srgb,
+    var(--info-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Warning --- */
+  --color-amber-350: #c79400;
+  --color-amber-250: #e8ae01;
+  --warning-background-color: var(--color-amber-350);
+  --warning-background-color-hover: color-mix(
+    in srgb,
+    var(--warning-background-color),
+    var(--color-hover-effect) 30%
+  );
+  --warning-color: light-dark(var(--color-amber-350), var(--color-amber-250));
+  --warning-color-hover: color-mix(
+    in srgb,
+    var(--warning-color),
+    var(--color-hover-effect) 30%
+  );
+  --warning-outline-color: color-mix(
+    in srgb,
+    var(--warning-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Danger --- */
+  --danger-background-color: var(--background-color-invalid);
+  --danger-background-color-hover: var(--background-color-invalid-hover);
+  --danger-color: var(--color-invalid);
+  --danger-color-hover: var(--color-invalid-hover);
+  --danger-outline-color: var(--outline-color-invalid);
+
   --subtle-opacity: 60%;
   --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
 
@@ -11,10 +105,9 @@
   );
 
   /* Secondary subtle colors */
-  --secondary-subtle-background-color: color-mix(
-    in srgb,
-    var(--secondary-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+  --secondary-subtle-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50), white 25%),
+    color-mix(in srgb, var(--color-slate-50), black 75%)
   );
 
   /* Contrast subtle colors */

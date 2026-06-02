@@ -1,6 +1,6 @@
 mark {
   padding: 0.125rem 0.25rem;
-  background-color: var(--warning-background-color);
+  background-color: var(--mark-background-color);
   color: #fff;
   vertical-align: baseline;
 }

@@ -25,7 +25,7 @@
     color: transparent;
 
     &:is(:active, :focus) {
-      outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
+      outline: var(--outline-width) solid var(--_inputs-outline-color);
       outline-offset: 2px;
       border-radius: var(--_inputs-border-radius);
     }

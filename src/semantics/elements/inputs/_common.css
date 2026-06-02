@@ -12,8 +12,8 @@ textarea {
 :where(input, select, textarea) {
   --_inputs-background-color: var(--inputs-background-color);
   --_inputs-border-color: var(--inputs-border-color);
-  --_inputs-focus-ring-color: var(--focus-ring-color);
-  --_inputs-accent-color: var(--inputs-accent-color);
+  --_inputs-outline-color: var(--outline-color-vibrant);
+  --_inputs-accent-color: var(--background-color-vibrant);
   --_inputs-border-width: var(--border-width);
   --_inputs-border-radius: var(--border-radius);
 
@@ -34,20 +34,20 @@ textarea {
       --_inputs-background-color: var(--inputs-background-color-focus);
 
       outline-offset: 0;
-      outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
-      box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-focus-ring-color);
+      outline: var(--outline-width) solid var(--_inputs-outline-color);
+      box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-outline-color);
     }
 
     &[aria-invalid="false"] {
-      --_inputs-border-color: var(--success-background-color);
-      --_inputs-accent-color: var(--success-background-color);
-      --_inputs-focus-ring-color: var(--success-focus-ring-color);
+      --_inputs-border-color: var(--background-color-valid);
+      --_inputs-accent-color: var(--background-color-valid);
+      --_inputs-outline-color: var(--outline-color-valid);
     }
 
     &[aria-invalid="true"] {
-      --_inputs-border-color: var(--danger-background-color);
-      --_inputs-accent-color: var(--danger-background-color);
-      --_inputs-focus-ring-color: var(--danger-focus-ring-color);
+      --_inputs-border-color: var(--background-color-invalid);
+      --_inputs-accent-color: var(--background-color-invalid);
+      --_inputs-outline-color: var(--outline-color-invalid);
     }
   }
 

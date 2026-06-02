@@ -22,6 +22,6 @@
   /* --color-azure: var(--color-azure-550); */
 
   /* System tokens */
-  --primary-color: light-dark(var(--color-azure-550), var(--color-azure-350));
-  --primary-background-color: var(--color-azure-550);
+  --color-vibrant: light-dark(var(--color-azure-550), var(--color-azure-350));
+  --background-color-vibrant: var(--color-azure-550);
 }

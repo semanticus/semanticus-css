@@ -1,33 +1,28 @@
 :is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
   /* --- Buttons Individual Styling --- */
-  --_buttons-color: #fff;
-  --_buttons-background-color: var(--intent-background-color);
-  --_buttons-border-color: var(--intent-border-color);
-  --_buttons-focus-ring-color: var(--intent-focus-ring-color);
-
-  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --_buttons-background-color: var(--intent-background-color-hover);
-    --_buttons-border-color: var(--intent-border-color-hover);
-  }
+  --_buttons-accent-color: var(--intent-background-color);
+  --_buttons-accent-color-hover: var(--intent-background-color-hover);
+  --_buttons-outline-color: var(--intent-outline-color);
 
   /* --- Alert Individual Styling --- */
   --_alert-color: #fff;
   --_alert-background-color: var(--intent-background-color);
-  --_alert-border-color: var(--intent-border-color);
+  --_alert-border-color: var(--intent-background-color);
 
   /* --- Card Individual Styling --- */
   --_card-color: #fff;
   --_card-background-color: var(--intent-background-color);
-  --_card-border-color: var(--intent-border-color);
   --_card-marginals-background-color: color-mix(
     in srgb,
     light-dark(var(--color-slate-900), var(--color-slate-50)),
     transparent 90%
   );
+  --_card-border-color: var(--_card-marginals-background-color);
 
   /* --- Link Individual Styling --- */
-  --_links-color: var(--intent-color);
-  --_links-focus-ring-color: var(--intent-focus-ring-color);
+  --_links-accent-color: var(--intent-color);
+  --_links-accent-color-hover: var(--intent-color-hover);
+  --_links-outline-color: var(--intent-outline-color);
 
   /* --- Pane Individual Styling --- */
   --_pane-color: #fff;

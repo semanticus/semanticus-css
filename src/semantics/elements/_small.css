@@ -21,10 +21,10 @@ small {
   }
 
   :where(input, select, textarea, fieldset)[aria-invalid="false"] + & {
-    color: var(--success-color);
+    color: var(--color-valid);
   }
 
   :where(input, select, textarea, fieldset)[aria-invalid="true"] + & {
-    color: var(--danger-color);
+    color: var(--color-invalid);
   }
 }

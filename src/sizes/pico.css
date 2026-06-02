@@ -35,7 +35,7 @@
   --inputs-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
   --inputs-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
-  --group-button-spacing-horizontal: 1rem;
+  --group-buttons-padding-inline: 1rem;
   --nav-link-gap: calc(var(--spacing) * 0.5); /* padding inside nav links */
   --nav-breadcrumb-divider: ">"; /* Character displayed between breadcrumb items */
 

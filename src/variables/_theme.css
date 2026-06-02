@@ -51,21 +51,101 @@
 
   /* ===== SYSTEM TOKENS ===== */
 
-  /* --- Background --- */
+  --color-hover-effect: light-dark(
+    var(--color-zinc-700),
+    var(--color-zinc-300)
+  );
+
+  /* --- Background Color for different states --- */
   --background-color: light-dark(
     white,
     color-mix(in srgb, var(--color-slate-950), var(--color-slate-900))
   );
   --background-color-opacity: 100%;
-  --selection-background-color: color-mix(
+  /* Vibrant state */
+  --background-color-vibrant-hover: color-mix(
     in srgb,
-    var(--primary-background-color),
-    white 75%
+    var(--background-color-vibrant),
+    light-dark(var(--color-zinc-700), var(--color-zinc-300)) 30%
+  );
+  /* Subdued state */
+  --background-color-subdued: var(--color-slate-550);
+  --background-color-subdued-hover: color-mix(
+    in srgb,
+    var(--background-color-subdued),
+    var(--color-hover-effect) 30%
+  );
+  /* Valid state */
+  --background-color-valid: #029764;
+  --background-color-valid-hover: color-mix(
+    in srgb,
+    var(--background-color-valid),
+    var(--color-hover-effect) 30%
+  );
+  /* Invalid state */
+  --background-color-invalid: #ee402e;
+  --background-color-invalid-hover: color-mix(
+    in srgb,
+    var(--background-color-invalid),
+    var(--color-hover-effect) 30%
   );
 
-  /* --- Color --- */
+  /* --- Color for different states --- */
   --color: light-dark(var(--color-zinc-750), var(--color-zinc-200));
   --color-opacity: 100%;
+  /* Vibrant state */
+  --color-vibrant-hover: color-mix(
+    in srgb,
+    var(--color-vibrant),
+    light-dark(var(--color-zinc-700), var(--color-zinc-300)) 30%
+  );
+  /* Subdued state */
+  --color-subdued: light-dark(var(--color-slate-550), var(--color-zinc-350));
+  --color-subdued-hover: color-mix(
+    in srgb,
+    var(--color-subdued),
+    var(--color-hover-effect) 30%
+  );
+  /* Valid state */
+  --color-valid: light-dark(#029764, #00cc88);
+  --color-valid-hover: color-mix(
+    in srgb,
+    var(--color-valid),
+    var(--color-hover-effect) 30%
+  );
+  /* Invalid state */
+  --color-invalid: light-dark(#ee402e, #f5a390);
+  --color-invalid-hover: color-mix(
+    in srgb,
+    var(--color-invalid),
+    var(--color-hover-effect) 30%
+  );
+
+  /* --- Outline Color for different states --- */
+  /* Vibrant state */
+  --outline-color-vibrant: color-mix(
+    in srgb,
+    var(--color-vibrant),
+    light-dark(white, black) 30%
+  );
+  /* Subdued state */
+  --outline-color-subdued: color-mix(
+    in srgb,
+    var(--color-subdued) 70%,
+    light-dark(white, black)
+  );
+  /* Valid state */
+  --outline-color-valid: color-mix(
+    in srgb,
+    var(--color-valid) 70%,
+    light-dark(white, black)
+  );
+  /* Invalid state */
+  --outline-color-invalid: color-mix(
+    in srgb,
+    var(--color-invalid) 70%,
+    light-dark(white, black)
+  );
 
   /* --- Typography --- */
   --typography-spacing-vertical: 1rem;
@@ -97,162 +177,16 @@
   --border-width: 0.0625rem;
   --outline-width: 1px;
   --focus-ring-width: 0.125rem;
-  --focus-ring-color: var(--primary-focus-ring-color);
   --transition: 0.2s ease-in-out;
   --disabled-opacity: 0.5;
 
-  /* ===== INTENT TOKENS ===== */
-
-  /* TODO: Replace this internal helper with real colors */
-  --color-hover-effect: light-dark(
-    var(--color-zinc-700),
-    var(--color-zinc-300)
-  );
-
-  /* --- Primary --- */
-  /* Base values defined by the palette imported in _all.css */
-  --primary-color-hover: color-mix(
-    in srgb,
-    var(--primary-color) 70%,
-    var(--color-hover-effect)
-  );
-  --primary-background-color-hover: color-mix(
-    in srgb,
-    var(--primary-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --primary-focus-ring-color: color-mix(
-    in srgb,
-    var(--primary-color) 70%,
-    light-dark(white, black)
-  );
-
-  /* --- Secondary --- */
-  --secondary-color: light-dark(var(--color-slate-550), var(--color-zinc-350));
-  --secondary-background-color: var(--color-slate-550);
-  --secondary-color-hover: color-mix(
-    in srgb,
-    var(--secondary-color) 70%,
-    var(--color-hover-effect)
-  );
-  --secondary-background-color-hover: color-mix(
-    in srgb,
-    var(--secondary-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --secondary-focus-ring-color: color-mix(
-    in srgb,
-    var(--secondary-color) 70%,
-    light-dark(white, black)
-  );
-
-  /* --- Contrast --- */
-  --contrast-color: light-dark(var(--color-slate-900), var(--color-slate-100));
-  --contrast-background-color: light-dark(
-    var(--color-slate-900),
-    var(--color-slate-50)
-  );
-  --contrast-color-hover: color-mix(
-    in srgb,
-    var(--contrast-color) 70%,
-    var(--color-hover-effect)
-  );
-  --contrast-background-color-hover: color-mix(
-    in srgb,
-    var(--contrast-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --contrast-focus-ring-color: color-mix(
-    in srgb,
-    var(--contrast-color) 70%,
-    light-dark(white, black)
-  );
-
-  /* --- Success --- */
-  --color-jade-450: #029764;
-  --color-jade-250: #00cc88;
-  --success-color: light-dark(var(--color-jade-450), var(--color-jade-250));
-  --success-background-color: var(--color-jade-450);
-  --success-color-hover: color-mix(
-    in srgb,
-    var(--success-color) 70%,
-    var(--color-hover-effect)
-  );
-  --success-background-color-hover: color-mix(
-    in srgb,
-    var(--success-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --success-focus-ring-color: color-mix(
-    in srgb,
-    var(--success-color) 70%,
-    light-dark(white, black)
-  );
-
-  /* --- Info --- */
-  --color-azure-450: #018cd4;
-  --color-azure-250: #79c0ff;
-  --info-color: light-dark(var(--color-azure-450), var(--color-azure-250));
-  --info-background-color: var(--color-azure-450);
-  --info-color-hover: color-mix(
-    in srgb,
-    var(--info-color) 70%,
-    var(--color-hover-effect)
-  );
-  --info-background-color-hover: color-mix(
-    in srgb,
-    var(--info-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --info-focus-ring-color: color-mix(
-    in srgb,
-    var(--info-color) 70%,
-    light-dark(white, black)
-  );
-
-  /* --- Warning --- */
-  --color-amber-350: #c79400;
-  --color-amber-250: #e8ae01;
-  --warning-color: light-dark(var(--color-amber-350), var(--color-amber-250));
-  --warning-background-color: var(--color-amber-350);
-  --warning-color-hover: color-mix(
-    in srgb,
-    var(--warning-color) 70%,
-    var(--color-hover-effect)
-  );
-  --warning-background-color-hover: color-mix(
-    in srgb,
-    var(--warning-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --warning-focus-ring-color: color-mix(
-    in srgb,
-    var(--warning-color) 70%,
-    light-dark(white, black)
-  );
-
-  /* --- Danger --- */
-  --color-red-450: #ee402e;
-  --color-red-250: #f5a390;
-  --danger-color: light-dark(var(--color-red-450), var(--color-red-250));
-  --danger-background-color: var(--color-red-450);
-  --danger-color-hover: color-mix(
-    in srgb,
-    var(--danger-color) 70%,
-    var(--color-hover-effect)
-  );
-  --danger-background-color-hover: color-mix(
-    in srgb,
-    var(--danger-background-color) 70%,
-    var(--color-hover-effect)
-  );
-  --danger-focus-ring-color: color-mix(
-    in srgb,
-    var(--danger-color) 70%,
-    light-dark(white, black)
-  );
-
   /* ===== COMPONENT TOKENS ===== */
+
+  --selection-background-color: color-mix(
+    in srgb,
+    var(--color-vibrant),
+    white 75%
+  );
 
   /* --- Components Building Blocks --- */
   --menu-box-shadow:
@@ -278,15 +212,10 @@
 
   /* --- Buttons --- */
   /* Affects button, input[type="button"], input[type="submit"], input[type="reset"], and elements with role="button" */
-  --buttons-font-size: 1rem;
   --buttons-color: white;
   --buttons-color-hover: white;
-  --buttons-spacing-vertical: var(--inputs-spacing-vertical);
-  --buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
-  --buttons-background-color: var(--primary-background-color);
-  --buttons-background-color-hover: var(--primary-background-color-hover);
-  --buttons-border-color: var(--primary-background-color);
-  --buttons-border-color-hover: var(--primary-background-color-hover);
+  --buttons-padding-block: var(--inputs-spacing-vertical);
+  --buttons-padding-inline: var(--inputs-spacing-horizontal);
 
   /* --- Code --- */
   --code-background-color: light-dark(
@@ -302,7 +231,6 @@
   /* Affects accordions and dropdowns */
   --details-summary-background-color: var(--inputs-background-color);
   --details-summary-color: var(--color);
-  --details-summary-color-focus: var(--primary-color-hover);
   --details-summary-color-open: var(--color-muted);
 
   --details-dropdown-color: var(--inputs-placeholder-color);
@@ -338,7 +266,7 @@
 
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
-  --group-button-spacing-horizontal: 1rem;
+  --group-buttons-padding-inline: 1rem;
 
   /* --- Headings --- */
   --heading-font-weight: 700;
@@ -382,7 +310,6 @@
     var(--color-slate-800)
   );
   --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
-  --inputs-accent-color: var(--primary-background-color);
   --inputs-placeholder-color: var(--color-muted);
   --inputs-focus-ring-width: 0.0625rem;
 
@@ -408,19 +335,17 @@
   --input-switch-border-width: 0.1875rem;
   --input-switch-border-radius: 1.25em;
 
-  /* --- Lists (ul, ol, dl and role="list") --- */
-  --lists-marker-color: var(--primary-color);
-
   /* --- Links (anchor and role="link") --- */
-  --links-color: var(--primary-color);
   --links-text-decoration: underline;
+
+  /* --- Mark --- */
+  --mark-background-color: light-dark(#c79400, #e8ae01);
 
   /* --- Navigation --- */
   --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
 
   /* --- Progress Bar --- */
-  --progress-accent-color: var(--primary-background-color);
   --progress-track-background-color: light-dark(
     var(--color-slate-100),
     var(--color-slate-850)

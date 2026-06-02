@@ -1,6 +1,6 @@
 progress {
+  --_progress-accent-color: var(--background-color-vibrant);
   --_progress-track-background-color: var(--progress-track-background-color);
-  --_progress-accent-color: var(--progress-accent-color);
 
   display: inline-block;
   appearance: none;

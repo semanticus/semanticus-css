@@ -11,21 +11,26 @@ button,
 [type="button"],
 [type="file"]::file-selector-button,
 [role="button"] {
-  --_buttons-font-size: var(--buttons-font-size);
-  --_buttons-color: var(--buttons-color);
-  --_buttons-spacing-vertical: var(--buttons-spacing-vertical);
-  --_buttons-spacing-horizontal: var(--buttons-spacing-horizontal);
-  --_buttons-background-color: var(--buttons-background-color);
-  --_buttons-border-color: var(--buttons-border-color);
-  --_buttons-focus-ring-color: var(--focus-ring-color);
+  --_buttons-accent-color: var(--background-color-vibrant);
+  --_buttons-accent-color-hover: var(--background-color-vibrant-hover);
+  --_buttons-outline-color: var(--outline-color-vibrant);
 
-  padding: var(--_buttons-spacing-vertical) var(--_buttons-spacing-horizontal);
+  --_buttons-color: var(--buttons-color);
+  --_buttons-color-hover: var(--buttons-color);
+
+  --_buttons-background-color: var(--_buttons-accent-color);
+  --_buttons-border-color: var(--_buttons-accent-color);
+  --_buttons-padding-block: var(--buttons-padding-block);
+  --_buttons-padding-inline: var(--buttons-padding-inline);
+
+  padding-block: var(--_buttons-padding-block);
+  padding-inline: var(--_buttons-padding-inline);
   border: var(--border-width) solid var(--_buttons-border-color);
   border-radius: var(--border-radius);
   background-color: var(--_buttons-background-color);
-  color: var(--_buttons-color, white);
+  color: var(--_buttons-color);
   font-weight: var(--font-weight);
-  font-size: var(--_buttons-font-size);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   text-decoration: none;
@@ -37,14 +42,14 @@ button,
     color var(--transition);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --_buttons-color: var(--buttons-color-hover);
-    --_buttons-background-color: var(--buttons-background-color-hover);
-    --_buttons-border-color: var(--buttons-border-color-hover);
+    --_buttons-color: var(--_buttons-color-hover);
+    --_buttons-background-color: var(--_buttons-accent-color-hover);
+    --_buttons-border-color: var(--_buttons-accent-color-hover);
   }
 
   &:is(:active, :focus) {
-    outline: var(--outline-width) solid var(--_buttons-focus-ring-color);
-    box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-focus-ring-color);
+    outline: var(--outline-width) solid var(--_buttons-outline-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-outline-color);
   }
 
   &[aria-busy="true"] {
@@ -60,19 +65,13 @@ button,
   width: 100%;
 }
 
-[type="reset"] {
-  --_buttons-background-color: var(--secondary-background-color);
-  --_buttons-border-color: var(--secondary-background-color);
-  --_buttons-color: #fff;
-  --_buttons-focus-ring-color: var(--secondary-focus-ring-color);
+[type="reset"],
+[type="file"]::file-selector-button {
+  --_buttons-accent-color: var(--background-color-subdued);
+  --_buttons-accent-color-hover: var(--background-color-subdued-hover);
+  --_buttons-outline-color: var(--outline-color-subdued);
 
   cursor: pointer;
-
-  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --_buttons-background-color: var(--secondary-background-color-hover);
-    --_buttons-border-color: var(--secondary-background-color-hover);
-    --_buttons-color: #fff;
-  }
 }
 
 button,

@@ -3,7 +3,6 @@
 [type="range"] {
   --_input-range-thumb-border-color: var(--input-range-thumb-border-color);
   --_input-range-track-border-color: var(--input-range-track-border-color);
-  --_inputs-focus-ring-color: var(--focus-ring-color);
 
   accent-color: var(--_inputs-accent-color);
   appearance: none;
@@ -62,14 +61,14 @@
   }
 
   &:is(:active, :focus, :focus-visible) {
-    --_input-range-thumb-border-color: var(--_inputs-focus-ring-color);
+    --_input-range-thumb-border-color: var(--_inputs-outline-color);
 
     outline: none !important; /* We are outlining the file-selector-button instead */
     box-shadow: none !important;
 
     &:is(::-webkit-slider-thumb, ::-moz-range-thum) {
-      outline: var(--outline-width) solid var(--_inputs-focus-ring-color);
-      box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-focus-ring-color);
+      outline: var(--outline-width) solid var(--_inputs-outline-color);
+      box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-outline-color);
     }
   }
 

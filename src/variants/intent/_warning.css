@@ -1,20 +1,11 @@
 /* See ./_common.css for shared styles */
 
 .warning {
-  --intent-color: oklch(from var(--warning-color) l c h / var(--color-opacity));
-  --intent-background-color: oklch(
-    from var(--warning-background-color) l c h / var(--background-color-opacity)
-  );
-  --intent-border-color: oklch(
-    from var(--warning-background-color) l c h / var(--border-color-opacity)
-  );
-  --intent-background-color-hover: oklch(
-    from var(--warning-background-color-hover) l c h /
-      var(--background-color-opacity)
-  );
-  --intent-border-color-hover: oklch(
-    from var(--warning-background-color-hover) l c h /
-      var(--border-color-opacity)
-  );
-  --intent-focus-ring-color: var(--warning-focus-ring-color);
+  --intent-background-color: var(--warning-background-color);
+  --intent-background-color-hover: var(--warning-background-color-hover);
+
+  --intent-color: var(--warning-color);
+  --intent-color-hover: var(--warning-color-hover);
+
+  --intent-outline-color: var(--warning-outline-color);
 }
