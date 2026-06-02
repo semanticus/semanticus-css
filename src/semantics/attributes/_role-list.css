@@ -1,5 +1,5 @@
 [role="list"] {
-  --_lists-marker-color: var(--color-vibrant);
+  --_lists-marker-color: var(--primary-color);
 
   color: var(--typography-color);
   font-style: normal;

@@ -5,9 +5,9 @@ summary {
 details {
   --_details-summary-background-color: var(--details-summary-background-color);
   --_details-summary-color: var(--details-summary-color);
-  --_details-summary-color-focus: var(--color-vibrant-hover);
+  --_details-summary-color-focus: var(--primary-color-hover);
   --_details-summary-color-open: var(--details-summary-color-open);
-  --_details-summary-outline-color: var(--outline-color-vibrant);
+  --_details-summary-outline-color: var(--primary-outline-color);
 
   display: block;
 
@@ -136,13 +136,13 @@ details:has(> summary[aria-haspopup="menu"]) {
         color var(--transition);
 
       &[aria-invalid="false"] {
-        --_details-dropdown-border-color: var(--background-color-valid);
-        --_details-summary-outline-color: var(--outline-color-valid);
+        --_details-dropdown-border-color: var(--success-background-color);
+        --_details-summary-outline-color: var(--success-outline-color);
       }
 
       &[aria-invalid="true"] {
-        --_details-dropdown-border-color: var(--background-color-invalid);
-        --_details-summary-outline-color: var(--outline-color-invalid);
+        --_details-dropdown-border-color: var(--danger-background-color);
+        --_details-summary-outline-color: var(--danger-outline-color);
       }
     }
   }

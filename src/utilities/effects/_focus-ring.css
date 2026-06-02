@@ -1,5 +1,5 @@
 .focus-ring {
-  --_focus-ring-color: var(--background-color-vibrant);
+  --_focus-ring-color: var(--primary-background-color);
 
   &:focus {
     outline: var(--outline-width) solid var(--_focus-ring-color);

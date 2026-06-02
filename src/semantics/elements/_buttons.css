@@ -65,9 +65,9 @@ button,
 
 [type="reset"],
 [type="file"]::file-selector-button {
-  --_buttons-background-color: var(--background-color-subdued);
-  --_buttons-background-color-hover: var(--background-color-subdued-hover);
-  --_buttons-outline-color: var(--outline-color-subdued);
+  --_buttons-background-color: var(--secondary-background-color);
+  --_buttons-background-color-hover: var(--secondary-background-color-hover);
+  --_buttons-outline-color: var(--secondary-outline-color);
 
   cursor: pointer;
 }

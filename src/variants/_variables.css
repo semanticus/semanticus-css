@@ -1,20 +1,6 @@
 :root,
 :host {
-  /* ===== INTENT TOKENS ===== */
-
-  /* --- Primary --- */
-  --primary-background-color: var(--background-color-vibrant);
-  --primary-background-color-hover: var(--background-color-vibrant-hover);
-  --primary-color: var(--color-vibrant);
-  --primary-color-hover: var(--color-vibrant-hover);
-  --primary-outline-color: var(--outline-color-vibrant);
-
-  /* --- Secondary --- */
-  --secondary-background-color: var(--background-color-subdued);
-  --secondary-background-color-hover: var(--background-color-subdued-hover);
-  --secondary-color: var(--color-subdued);
-  --secondary-color-hover: var(--color-subdued-hover);
-  --secondary-outline-color: var(--outline-color-subdued);
+  /* ===== MISSING VARIANT TOKENS ===== */
 
   /* --- Contrast --- */
   --contrast-background-color: light-dark(
@@ -37,13 +23,6 @@
     var(--contrast-color) 70%,
     light-dark(white, black)
   );
-
-  /* --- Success --- */
-  --success-background-color: var(--background-color-valid);
-  --success-background-color-hover: var(--background-color-valid-hover);
-  --success-color: var(--color-valid);
-  --success-color-hover: var(--color-valid-hover);
-  --success-outline-color: var(--outline-color-valid);
 
   /* --- Info --- */
   --color-azure-450: #018cd4;
@@ -86,13 +65,6 @@
     var(--warning-color) 70%,
     light-dark(white, black)
   );
-
-  /* --- Danger --- */
-  --danger-background-color: var(--background-color-invalid);
-  --danger-background-color-hover: var(--background-color-invalid-hover);
-  --danger-color: var(--color-invalid);
-  --danger-color-hover: var(--color-invalid-hover);
-  --danger-outline-color: var(--outline-color-invalid);
 
   /* Primary subtle colors */
   --primary-subtle-background-color: color-mix(

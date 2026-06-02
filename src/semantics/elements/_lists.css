@@ -1,7 +1,7 @@
 dl,
 ol,
 ul {
-  --_lists-marker-color: var(--color-vibrant);
+  --_lists-marker-color: var(--primary-color);
 
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
