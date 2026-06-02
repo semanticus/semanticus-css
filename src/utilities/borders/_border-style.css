@@ -1,6 +1,7 @@
 .border {
-  border: var(--border-width) var(--border-style)
-    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
+  --_border-color: var(--border-color);
+
+  border: var(--border-width) var(--border-style) var(--_border-color) !important;
 }
 
 .border-0 {
@@ -8,8 +9,9 @@
 }
 
 .border-top {
-  border-top: var(--border-width) var(--border-style)
-    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
+  --_border-color: var(--border-color);
+
+  border-top: var(--border-width) var(--border-style) var(--_border-color) !important;
 }
 
 .border-top-0 {
@@ -17,8 +19,9 @@
 }
 
 .border-end {
-  border-right: var(--border-width) var(--border-style)
-    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
+  --_border-color: var(--border-color);
+
+  border-right: var(--border-width) var(--border-style) var(--_border-color) !important;
 }
 
 .border-end-0 {
@@ -26,8 +29,9 @@
 }
 
 .border-bottom {
-  border-bottom: var(--border-width) var(--border-style)
-    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
+  --_border-color: var(--border-color);
+
+  border-bottom: var(--border-width) var(--border-style) var(--_border-color) !important;
 }
 
 .border-bottom-0 {
@@ -35,8 +39,9 @@
 }
 
 .border-start {
-  border-left: var(--border-width) var(--border-style)
-    oklch(from var(--border-color) l c h / var(--border-color-opacity)) !important;
+  --_border-color: var(--border-color);
+
+  border-left: var(--border-width) var(--border-style) var(--_border-color) !important;
 }
 
 .border-start-0 {

@@ -61,7 +61,6 @@
     white,
     color-mix(in srgb, var(--color-slate-950), var(--color-slate-900))
   );
-  --background-color-opacity: 100%;
   /* Vibrant state */
   --background-color-vibrant-hover: color-mix(
     in srgb,
@@ -92,7 +91,6 @@
 
   /* --- Color for different states --- */
   --color: light-dark(var(--color-zinc-750), var(--color-zinc-200));
-  --color-opacity: 100%;
   /* Vibrant state */
   --color-vibrant-hover: color-mix(
     in srgb,
@@ -172,7 +170,6 @@
 
   /* --- Borders & Effects --- */
   --border-color: light-dark(var(--color-slate-100), var(--color-slate-800));
-  --border-color-opacity: 100%;
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 1px;

@@ -94,14 +94,11 @@
   --danger-color-hover: var(--color-invalid-hover);
   --danger-outline-color: var(--outline-color-invalid);
 
-  --subtle-opacity: 60%;
-  --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
-
   /* Primary subtle colors */
   --primary-subtle-background-color: color-mix(
     in srgb,
     var(--primary-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Secondary subtle colors */
@@ -114,34 +111,34 @@
   --contrast-subtle-background-color: color-mix(
     in srgb,
     var(--contrast-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Success subtle colors */
   --success-subtle-background-color: color-mix(
     in srgb,
     var(--success-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Info subtle colors */
   --info-subtle-background-color: color-mix(
     in srgb,
     var(--info-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Warning subtle colors */
   --warning-subtle-background-color: color-mix(
     in srgb,
     var(--warning-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Danger subtle colors */
   --danger-subtle-background-color: color-mix(
     in srgb,
     var(--danger-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 }

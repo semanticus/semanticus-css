@@ -25,12 +25,10 @@ a CSS longhand property name** whenever possible.
 :root, :host {
   /* Background */
   --background-color
-  --background-color-opacity
   --selection-background-color
 
   /* Color & Typography */
   --color
-  --color-opacity
   --color-muted
   --typography-color
   --typography-spacing-vertical
@@ -47,7 +45,6 @@ a CSS longhand property name** whenever possible.
 
   /* Borders & Effects */
   --border-color
-  --border-color-opacity
   --border-radius
   --border-width
   --outline-width
@@ -308,12 +305,9 @@ State always comes last:
 
 ### Opacity Tokens
 
-Append `-opacity` for use with `oklch(from ... l c h / var(...))`:
-```css
---background-color-opacity
---color-opacity
---border-color-opacity
-```
+The only opacity token is `--disabled-opacity`, which is listed under
+[Genuine Exceptions](#genuine-exceptions) since it applies across multiple
+properties rather than mapping to a single CSS property.
 
 ### Spacing Tokens
 

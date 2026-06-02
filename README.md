@@ -111,7 +111,7 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="info ghost">Get Started</button>
+  <button class="contrast">Get Started</button>
 </article>
 ```
 
@@ -126,7 +126,7 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="info bg-opacity-75">Get Started</button>
+  <button class="info ghost">Get Started</button>
 </article>
 ```
 
