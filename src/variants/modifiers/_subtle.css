@@ -1,22 +1,13 @@
 .subtle {
   /* When .subtle is used in an element that has no intent */
   &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
-    --_buttons-accent-color: var(--primary-subtle-background-color);
-    --_buttons-accent-color-hover: var(--primary-background-color);
+    --_buttons-background-color: var(--primary-subtle-background-color);
+    --_buttons-background-color-hover: var(--primary-background-color);
 
     &[type="reset"] {
-      --_buttons-accent-color: var(--secondary-subtle-background-color);
-      --_buttons-accent-color-hover: var(--secondary-background-color);
-      --_buttons-color: light-dark(#191c20, #fff);
-
-      &:is(
-        [aria-current]:not([aria-current="false"]),
-        :hover,
-        :active,
-        :focus
-      ) {
-        --_buttons-color: #fff;
-      }
+      --_buttons-background-color: var(--secondary-subtle-background-color);
+      --_buttons-background-color-hover: var(--secondary-background-color);
+      --_buttons-color: light-dark(#191c20, white);
     }
 
     --_links-color: var(--primary-subtle-background-color);
@@ -35,11 +26,11 @@
     --intent-background-color-hover: var(--secondary-background-color);
 
     /* Readability adjustments */
-    --_alert-color: light-dark(#191c20, #fff);
-    --_card-color: light-dark(#191c20, #fff);
-    --_pane-color: light-dark(#191c20, #fff);
-    --_buttons-color: light-dark(#191c20, #fff);
-    --_buttons-color-hover: #fff;
+    --_alert-color: light-dark(#191c20, white);
+    --_card-color: light-dark(#191c20, white);
+    --_pane-color: light-dark(#191c20, white);
+    --_buttons-color: light-dark(#191c20, white);
+    --_buttons-color-hover: white;
   }
 
   &.contrast {

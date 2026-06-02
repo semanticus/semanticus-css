@@ -1,7 +1,7 @@
 :is(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
   /* --- Buttons Individual Styling --- */
-  --_buttons-accent-color: var(--intent-background-color);
-  --_buttons-accent-color-hover: var(--intent-background-color-hover);
+  --_buttons-background-color: var(--intent-background-color);
+  --_buttons-background-color-hover: var(--intent-background-color-hover);
   --_buttons-outline-color: var(--intent-outline-color);
 
   /* --- Alert Individual Styling --- */

@@ -209,8 +209,11 @@
 
   /* --- Buttons --- */
   /* Affects button, input[type="button"], input[type="submit"], input[type="reset"], and elements with role="button" */
-  --buttons-color: white;
+  --buttons-background-color-hover: var(--background-color-vibrant-hover);
+  --buttons-background-color: var(--background-color-vibrant);
   --buttons-color-hover: white;
+  --buttons-color: white;
+  --buttons-outline-color: var(--outline-color-vibrant);
   --buttons-padding-block: var(--inputs-spacing-vertical);
   --buttons-padding-inline: var(--inputs-spacing-horizontal);
 

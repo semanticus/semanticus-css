@@ -11,6 +11,7 @@
 
   /* Readability adjustments */
   --_buttons-color: light-dark(#fff, #191c20);
+  --_buttons-color-hover: light-dark(#fff, #191c20);
 
   --_alert-color: light-dark(#fff, #191c20);
 

@@ -11,17 +11,15 @@ button,
 [type="button"],
 [type="file"]::file-selector-button,
 [role="button"] {
-  --_buttons-accent-color: var(--background-color-vibrant);
-  --_buttons-accent-color-hover: var(--background-color-vibrant-hover);
-  --_buttons-outline-color: var(--outline-color-vibrant);
-
+  --_buttons-background-color-hover: var(--buttons-background-color-hover);
+  --_buttons-background-color: var(--buttons-background-color);
+  --_buttons-color-hover: var(--buttons-color-hover);
   --_buttons-color: var(--buttons-color);
-  --_buttons-color-hover: var(--buttons-color);
-
-  --_buttons-background-color: var(--_buttons-accent-color);
-  --_buttons-border-color: var(--_buttons-accent-color);
+  --_buttons-outline-color: var(--buttons-outline-color);
   --_buttons-padding-block: var(--buttons-padding-block);
   --_buttons-padding-inline: var(--buttons-padding-inline);
+  --_buttons-border-color: var(--_buttons-background-color);
+  --_buttons-border-color-hover: var(--_buttons-background-color-hover);
 
   padding-block: var(--_buttons-padding-block);
   padding-inline: var(--_buttons-padding-inline);
@@ -42,9 +40,9 @@ button,
     color var(--transition);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --_buttons-color: var(--_buttons-color-hover);
-    --_buttons-background-color: var(--_buttons-accent-color-hover);
-    --_buttons-border-color: var(--_buttons-accent-color-hover);
+    color: var(--_buttons-color-hover);
+    border: var(--border-width) solid var(--_buttons-border-color-hover);
+    background-color: var(--_buttons-background-color-hover);
   }
 
   &:is(:active, :focus) {
@@ -67,8 +65,8 @@ button,
 
 [type="reset"],
 [type="file"]::file-selector-button {
-  --_buttons-accent-color: var(--background-color-subdued);
-  --_buttons-accent-color-hover: var(--background-color-subdued-hover);
+  --_buttons-background-color: var(--background-color-subdued);
+  --_buttons-background-color-hover: var(--background-color-subdued-hover);
   --_buttons-outline-color: var(--outline-color-subdued);
 
   cursor: pointer;
