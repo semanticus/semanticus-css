@@ -20,8 +20,8 @@
   --_card-border-color: var(--_card-marginals-background-color);
 
   /* --- Link Individual Styling --- */
-  --_links-accent-color: var(--intent-color);
-  --_links-accent-color-hover: var(--intent-color-hover);
+  --_links-color: var(--intent-color);
+  --_links-color-hover: var(--intent-color-hover);
   --_links-outline-color: var(--intent-outline-color);
 
   /* --- Pane Individual Styling --- */

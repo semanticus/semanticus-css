@@ -336,6 +336,9 @@
   --input-switch-border-radius: 1.25em;
 
   /* --- Links (anchor and role="link") --- */
+  --links-color: var(--color-vibrant);
+  --links-color-hover: var(--color-vibrant-hover);
+  --links-outline-color: var(--outline-color-vibrant);
   --links-text-decoration: underline;
 
   /* --- Mark --- */

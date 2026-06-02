@@ -1,10 +1,8 @@
 :where(a:not([role="button"])),
 [role="link"] {
-  --_links-accent-color: var(--color-vibrant);
-  --_links-accent-color-hover: var(--color-vibrant-hover);
-  --_links-outline-color: var(--outline-color-vibrant);
-
-  --_links-color: var(--_links-accent-color);
+  --_links-color: var(--links-color);
+  --_links-color-hover: var(--links-color-hover);
+  --_links-outline-color: var(--links-outline-color);
   --_links-text-decoration: var(--links-text-decoration);
 
   padding: 0;
@@ -21,11 +19,11 @@
     text-decoration var(--transition);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --background-color: transparent;
-    --border-color: transparent;
-    --_links-color: var(--_links-accent-color-hover);
+    background-color: transparent;
+    border-color: transparent;
 
-    text-decoration-color: var(--_links-color);
+    color: var(--_links-color-hover);
+    text-decoration-color: var(--_links-color-hover);
   }
 
   &:is([aria-current]:not([aria-current="false"])) {
