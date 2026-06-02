@@ -17,19 +17,19 @@ textarea {
   --_inputs-border-width: var(--border-width);
   --_inputs-border-radius: var(--border-radius);
 
-  padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
-  border: var(--_inputs-border-width) solid var(--_inputs-border-color);
-  border-radius: var(--_inputs-border-radius);
-  background-color: var(--_inputs-background-color);
-  color: var(--inputs-color);
-  font-weight: var(--font-weight);
-  transition:
-    background-color var(--transition),
-    border-color var(--transition),
-    color var(--transition);
-
   /* Non button inputs */
-  &:not([type="button"], [type="submit"], [type="reset"]) {
+  &:not([type="button"], [type="submit"], [type="reset"], [type="file"]) {
+    padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
+    border: var(--_inputs-border-width) solid var(--_inputs-border-color);
+    border-radius: var(--_inputs-border-radius);
+    background-color: var(--_inputs-background-color);
+    color: var(--inputs-color);
+    font-weight: var(--font-weight);
+    transition:
+      background-color var(--transition),
+      border-color var(--transition),
+      color var(--transition);
+
     &:is(:active, :focus, :focus-visible) {
       --_inputs-background-color: var(--inputs-background-color-focus);
 

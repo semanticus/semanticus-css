@@ -1,8 +1,6 @@
 /* See ./_common.css for shared styles */
 
 [type="file"] {
-  --color: var(--color-muted);
-
   margin-left: calc(var(--focus-ring-width) * -1);
   padding: calc(var(--inputs-spacing-vertical) * 0.5) 0;
   padding-left: var(--outline-width);
@@ -15,20 +13,23 @@
     box-shadow: none;
 
     &::file-selector-button {
-      --_buttons-outline-color: var(--_inputs-outline-color);
-
       outline: var(--outline-width) solid var(--_buttons-outline-color);
       box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-outline-color);
     }
   }
 
   &::file-selector-button {
-    --_buttons-background-color: var(--_inputs-accent-color);
-    --_buttons-border-color: var(--_inputs-accent-color);
-
     margin-left: var(--focus-ring-width);
     margin-right: calc(var(--spacing) / 2);
     padding: calc(var(--inputs-spacing-vertical) * 0.5)
       var(--inputs-spacing-horizontal);
+  }
+
+  &[aria-invalid="false"] {
+    color: var(--success-color);
+  }
+
+  &[aria-invalid="true"] {
+    color: var(--danger-color);
   }
 }
