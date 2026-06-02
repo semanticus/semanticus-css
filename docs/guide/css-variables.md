@@ -150,8 +150,7 @@ Scoped to a component type. Change one of these and every instance updates.
   --buttons-padding-inline: var(--inputs-spacing-horizontal);
   --buttons-background-color: var(--primary-background-color);
   --buttons-background-color-hover: var(--primary-background-color-hover);
-  --buttons-border-color: var(--primary-background-color);
-  --buttons-border-color-hover: var(--primary-background-color-hover);
+  --buttons-outline-color: var(--primary-outline-color);
 }
 ```
 
@@ -323,7 +322,8 @@ the Component Token tier and are the values the component actually consumes.
 button, [role="button"] {
   --_buttons-color: var(--buttons-color);
   --_buttons-background-color: var(--buttons-background-color);
-  --_buttons-border-color: var(--buttons-border-color);
+  --_buttons-border-color: var(--_buttons-background-color);
+  --_buttons-outline-color: var(--buttons-outline-color);
 
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);
@@ -333,6 +333,7 @@ button, [role="button"] {
 :where(input, select, textarea) {
   --_inputs-background-color: var(--inputs-background-color);
   --_inputs-border-color: var(--inputs-border-color);
+  --_inputs-outline-color: var(--primary-outline-color);
 
   background-color: var(--_inputs-background-color);
   border-color: var(--_inputs-border-color);

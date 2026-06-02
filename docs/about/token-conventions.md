@@ -119,7 +119,6 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --buttons-color / --buttons-color-hover
   --buttons-padding-block / --buttons-padding-inline
   --buttons-background-color / --buttons-background-color-hover
-  --buttons-border-color / --buttons-border-color-hover
   --buttons-outline-color
 
   /* Inputs — input, select, textarea, details */
@@ -209,7 +208,7 @@ component actually consumes for its own styling.
 button, [role="button"] {
   --_buttons-color: var(--buttons-color);
   --_buttons-background-color: var(--buttons-background-color);
-  --_buttons-border-color: var(--buttons-border-color);
+  --_buttons-border-color: var(--_buttons-background-color);
   --_buttons-outline-color: var(--buttons-outline-color);
 
   background-color: var(--_buttons-background-color);
