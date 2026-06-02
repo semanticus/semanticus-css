@@ -98,7 +98,7 @@ Modern browsers only (last 2 versions, Firefox ESR, no dead browsers). Configure
 
 The following modern CSS features are already in active use in the source — they are **not** browser support additions:
 - `color-mix(in srgb, ...)` — used throughout for hover/focus/subtle color derivation
-- `oklch()` with relative color syntax (`oklch(from <color> l c h / alpha)`) — used for backdrop transparency
+- `oklch()` with relative color syntax (`oklch(from <color> l c h / alpha)`) — used for backdrop transparency and other alpha derivations (e.g. link underline/decoration colors)
 - `light-dark()` — used for automatic light/dark theme color switching
 - `:has()`, `:is()`, `:where()` — used extensively in semantic selectors
 - CSS nesting (`&`) — used throughout all source files
