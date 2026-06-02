@@ -23,7 +23,6 @@
   );
 
   --_pane-color: light-dark(#fff, #191c20);
-  --_pane-border-color: var(--intent-border-color, var(--border-color));
 }
 
 /* Accordion chevron override */
