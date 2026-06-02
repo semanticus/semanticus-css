@@ -150,7 +150,6 @@ Scoped to a component type. Change one of these and every instance updates.
   --buttons-padding-inline: var(--inputs-spacing-horizontal);
   --buttons-background-color: var(--primary-background-color);
   --buttons-background-color-hover: var(--primary-background-color-hover);
-  --buttons-outline-color: var(--primary-outline-color);
 }
 ```
 
@@ -180,7 +179,7 @@ Scoped to a component type. Change one of these and every instance updates.
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
   --input-switch-border-radius: 1.25em;
-  --input-range-track-border-color: light-dark(#bfc7d9, #333c4e);
+  --input-range-track-background-color: light-dark(#bfc7d9, #333c4e);
   --input-range-thumb-border-color: var(--background-color);
 }
 ```
@@ -323,7 +322,7 @@ button, [role="button"] {
   --_buttons-color: var(--buttons-color);
   --_buttons-background-color: var(--buttons-background-color);
   --_buttons-border-color: var(--_buttons-background-color);
-  --_buttons-outline-color: var(--buttons-outline-color);
+  --_buttons-outline-color: var(--primary-outline-color);
 
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);

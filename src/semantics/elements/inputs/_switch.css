@@ -2,7 +2,7 @@
 
 [type="checkbox"][role="switch"] {
   --_inputs-border-width: var(--input-switch-border-width);
-  --_inputs-background-color: var(--input-switch-background-color);
+  --_inputs-background-color: var(--_inputs-accent-color-muted);
   --color: var(--input-switch-thumb-background-color);
   --_inputs-border-radius: var(--input-switch-border-radius);
 
@@ -22,11 +22,11 @@
 
   &:not(:checked) {
     &:not([aria-invalid]) {
-      --_inputs-border-color: var(--input-switch-background-color);
+      --_inputs-border-color: var(--_inputs-accent-color-muted);
     }
 
     &:focus {
-      --_inputs-background-color: var(--input-switch-background-color);
+      --_inputs-background-color: var(--_inputs-accent-color-muted);
     }
   }
 

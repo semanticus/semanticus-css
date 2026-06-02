@@ -15,7 +15,7 @@ button,
   --_buttons-background-color: var(--buttons-background-color);
   --_buttons-color-hover: var(--buttons-color-hover);
   --_buttons-color: var(--buttons-color);
-  --_buttons-outline-color: var(--buttons-outline-color);
+  --_buttons-outline-color: var(--primary-outline-color);
   --_buttons-padding-block: var(--buttons-padding-block);
   --_buttons-padding-inline: var(--buttons-padding-inline);
   --_buttons-border-color: var(--_buttons-background-color);

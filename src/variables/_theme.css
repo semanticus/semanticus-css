@@ -213,7 +213,6 @@
   --buttons-background-color: var(--primary-background-color);
   --buttons-color-hover: white;
   --buttons-color: white;
-  --buttons-outline-color: var(--primary-outline-color);
   --buttons-padding-block: var(--inputs-spacing-vertical);
   --buttons-padding-inline: var(--inputs-spacing-horizontal);
 
@@ -295,6 +294,11 @@
 
   /* --- Inputs --- */
   /* Affects input, select, textarea and details elements */
+  --inputs-accent-color: var(--primary-background-color);
+  --inputs-accent-color-muted: light-dark(
+    var(--color-slate-200),
+    var(--color-slate-750)
+  );
   --inputs-spacing-vertical: 0.5rem;
   --inputs-spacing-horizontal: 0.7rem;
   --inputs-background-color: light-dark(
@@ -317,28 +321,19 @@
   --input-checkbox-border-width: 0.125rem;
 
   /* --- Input Range --- */
-  --input-range-track-border-color: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-750)
-  );
-  --input-range-thumb-border-color: var(--background-color);
+  --input-range-track-background-color: var(--inputs-border-color);
 
   /* --- Input Search --- */
   --input-search-border-radius: 5rem;
 
   /* --- Input Switch --- */
-  --input-switch-background-color: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-750)
-  );
-  --input-switch-thumb-background-color: white;
+  --input-switch-thumb-background-color: var(--background-color);
   --input-switch-border-width: 0.1875rem;
   --input-switch-border-radius: 1.25em;
 
   /* --- Links (anchor and role="link") --- */
   --links-color: var(--primary-color);
   --links-color-hover: var(--primary-color-hover);
-  --links-outline-color: var(--primary-outline-color);
   --links-text-decoration: underline;
 
   /* --- Mark --- */

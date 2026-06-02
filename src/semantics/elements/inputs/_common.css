@@ -10,12 +10,14 @@ textarea {
 }
 
 :where(input, select, textarea) {
+  --_inputs-color: var(--inputs-color);
   --_inputs-background-color: var(--inputs-background-color);
   --_inputs-border-color: var(--inputs-border-color);
-  --_inputs-outline-color: var(--primary-outline-color);
-  --_inputs-accent-color: var(--primary-background-color);
+  --_inputs-accent-color: var(--inputs-accent-color);
+  --_inputs-accent-color-muted: var(--inputs-accent-color-muted);
   --_inputs-border-width: var(--border-width);
   --_inputs-border-radius: var(--border-radius);
+  --_inputs-outline-color: var(--primary-outline-color);
 
   /* Non button inputs */
   &:not([type="button"], [type="submit"], [type="reset"], [type="file"]) {
@@ -23,7 +25,7 @@ textarea {
     border: var(--_inputs-border-width) solid var(--_inputs-border-color);
     border-radius: var(--_inputs-border-radius);
     background-color: var(--_inputs-background-color);
-    color: var(--inputs-color);
+    color: var(--_inputs-color);
     font-weight: var(--font-weight);
     transition:
       background-color var(--transition),
@@ -37,18 +39,18 @@ textarea {
       outline: var(--outline-width) solid var(--_inputs-outline-color);
       box-shadow: 0 0 0 var(--focus-ring-width) var(--_inputs-outline-color);
     }
+  }
 
-    &[aria-invalid="false"] {
-      --_inputs-border-color: var(--success-background-color);
-      --_inputs-accent-color: var(--success-background-color);
-      --_inputs-outline-color: var(--success-outline-color);
-    }
+  &[aria-invalid="false"] {
+    --_inputs-border-color: var(--success-background-color);
+    --_inputs-accent-color: var(--success-background-color);
+    --_inputs-outline-color: var(--success-outline-color);
+  }
 
-    &[aria-invalid="true"] {
-      --_inputs-border-color: var(--danger-background-color);
-      --_inputs-accent-color: var(--danger-background-color);
-      --_inputs-outline-color: var(--danger-outline-color);
-    }
+  &[aria-invalid="true"] {
+    --_inputs-border-color: var(--danger-background-color);
+    --_inputs-accent-color: var(--danger-background-color);
+    --_inputs-outline-color: var(--danger-outline-color);
   }
 
   &:not([type="checkbox"], [type="radio"]) {

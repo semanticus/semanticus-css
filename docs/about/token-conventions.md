@@ -119,7 +119,6 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --buttons-color / --buttons-color-hover
   --buttons-padding-block / --buttons-padding-inline
   --buttons-background-color / --buttons-background-color-hover
-  --buttons-outline-color
 
   /* Inputs — input, select, textarea, details */
   --inputs-spacing-vertical / --inputs-spacing-horizontal
@@ -132,7 +131,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
 
   /* Input subtypes */
   --input-checkbox-border-width
-  --input-range-track-border-color
+  --input-range-track-background-color
   --input-range-thumb-border-color
   --input-search-border-radius
   --input-switch-background-color
@@ -153,7 +152,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --details-menu-color / --details-menu-background-color-hover
 
   /* Links */
-  --links-color / --links-color-hover / --links-outline-color / --links-text-decoration
+  --links-color / --links-color-hover / --links-text-decoration
 
   /* Headings */
   --heading-font-weight
@@ -206,10 +205,9 @@ component actually consumes for its own styling.
 ```css
 /* Inside _buttons.css */
 button, [role="button"] {
-  --_buttons-color: var(--buttons-color);
   --_buttons-background-color: var(--buttons-background-color);
+  --_buttons-color: var(--buttons-color);
   --_buttons-border-color: var(--_buttons-background-color);
-  --_buttons-outline-color: var(--buttons-outline-color);
 
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);
@@ -220,7 +218,6 @@ button, [role="button"] {
 :where(input, select, textarea) {
   --_inputs-background-color: var(--inputs-background-color);
   --_inputs-border-color: var(--inputs-border-color);
-  --_inputs-outline-color: var(--primary-outline-color);
 
   background-color: var(--_inputs-background-color);
   border-color: var(--_inputs-border-color);
@@ -228,11 +225,11 @@ button, [role="button"] {
 
 /* Inside _dialog.css */
 dialog {
-  --_dialog-border-color: var(--dialog-border-color);
   --_dialog-background-color: var(--dialog-background-color);
+  --_dialog-border-color: var(--dialog-border-color);
 
-  border-color: var(--_dialog-border-color);
   background: var(--_dialog-background-color);
+  border-color: var(--_dialog-border-color);
 }
 ```
 

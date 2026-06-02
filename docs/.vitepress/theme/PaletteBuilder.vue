@@ -744,7 +744,7 @@ const variableGroups = [
     label: "Range",
     vars: [
       {
-        name: "--input-range-track-border-color",
+        name: "--input-range-track-background-color",
         label: "Range Track Border",
         desc: "Range slider track border.",
         type: varType(

@@ -2,8 +2,8 @@
 [role="link"] {
   --_links-color: var(--links-color);
   --_links-color-hover: var(--links-color-hover);
-  --_links-outline-color: var(--links-outline-color);
   --_links-text-decoration: var(--links-text-decoration);
+  --_links-outline-color: var(--primary-outline-color);
 
   padding: 0;
   background-color: transparent;

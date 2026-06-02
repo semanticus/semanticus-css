@@ -4,7 +4,7 @@
   --_inputs-border-radius: 50%;
 
   &:is(:checked, :checked:active, :checked:focus) {
-    --_inputs-background-color: #fff;
+    --_inputs-background-color: var(--background-color);
 
     border-width: 0.35em;
   }
