@@ -55,7 +55,7 @@
 }
 
 .text-bg-secondary-subtle {
-  --typography-color: black;
+  --typography-color: light-dark(#191c20, #fff);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
