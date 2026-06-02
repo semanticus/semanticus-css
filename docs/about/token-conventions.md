@@ -49,7 +49,6 @@ a CSS longhand property name** whenever possible.
   --border-width
   --outline-width
   --focus-ring-width
-  --focus-ring-color
   --transition
   --disabled-opacity
 
@@ -78,24 +77,24 @@ custom palettes.
   --primary-color-hover
   --primary-background-color
   --primary-background-color-hover
-  --primary-focus-ring-color
+  --primary-outline-color
 
   --secondary-color
   --secondary-color-hover
   --secondary-background-color
   --secondary-background-color-hover
-  --secondary-focus-ring-color
+  --secondary-outline-color
 
   --contrast-color
   --contrast-color-hover
   --contrast-background-color
   --contrast-background-color-hover
-  --contrast-focus-ring-color
+  --contrast-outline-color
 
-  --success-color / --success-background-color / --success-focus-ring-color
-  --info-color    / --info-background-color    / --info-focus-ring-color
-  --warning-color / --warning-background-color / --warning-focus-ring-color
-  --danger-color  / --danger-background-color  / --danger-focus-ring-color
+  --success-color / --success-background-color / --success-outline-color
+  --info-color    / --info-background-color    / --info-outline-color
+  --warning-color / --warning-background-color / --warning-outline-color
+  --danger-color  / --danger-background-color  / --danger-outline-color
   /* (each with *-hover variants) */
 }
 ```
@@ -117,11 +116,11 @@ of that component (e.g., all buttons, all inputs, all dialogs).
 ```css
 :root, :host {
   /* Buttons — button, input[type=button/submit/reset], [role=button] */
-  --buttons-font-size
   --buttons-color / --buttons-color-hover
-  --buttons-spacing-vertical / --buttons-spacing-horizontal
+  --buttons-padding-block / --buttons-padding-inline
   --buttons-background-color / --buttons-background-color-hover
   --buttons-border-color / --buttons-border-color-hover
+  --buttons-outline-color
 
   /* Inputs — input, select, textarea, details */
   --inputs-spacing-vertical / --inputs-spacing-horizontal
@@ -155,7 +154,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --details-menu-color / --details-menu-background-color-hover
 
   /* Links */
-  --links-color / --links-text-decoration
+  --links-color / --links-color-hover / --links-outline-color / --links-text-decoration
 
   /* Headings */
   --heading-font-weight
@@ -170,6 +169,9 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --code-background-color / --code-color
   --kbd-background-color / --kbd-color / --kbd-font-weight
 
+  /* Mark */
+  --mark-background-color
+
   /* Table */
   --table-header-font-weight / --table-header-border-width
 
@@ -177,7 +179,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --nav-link-gap / --nav-breadcrumb-divider
 
   /* Progress */
-  --progress-accent-color / --progress-track-background-color
+  --progress-track-background-color
 
   /* Tooltip */
   --tooltip-background-color / --tooltip-color
@@ -185,7 +187,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   /* Misc */
   --small-font-size
   --sidebar-size
-  --group-button-spacing-horizontal
+  --group-buttons-padding-inline
   --icons-background-position-gap / --icons-width
 }
 ```
@@ -208,7 +210,7 @@ button, [role="button"] {
   --_buttons-color: var(--buttons-color);
   --_buttons-background-color: var(--buttons-background-color);
   --_buttons-border-color: var(--buttons-border-color);
-  --_buttons-focus-ring-color: var(--focus-ring-color);
+  --_buttons-outline-color: var(--buttons-outline-color);
 
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);
@@ -219,7 +221,7 @@ button, [role="button"] {
 :where(input, select, textarea) {
   --_inputs-background-color: var(--inputs-background-color);
   --_inputs-border-color: var(--inputs-border-color);
-  --_inputs-focus-ring-color: var(--focus-ring-color);
+  --_inputs-outline-color: var(--primary-outline-color);
 
   background-color: var(--_inputs-background-color);
   border-color: var(--_inputs-border-color);
@@ -313,7 +315,7 @@ Use `spacing` as the property segment:
 --spacing                       /* global density */
 --typography-spacing-vertical   /* block margins */
 --inputs-spacing-vertical       /* form padding */
---buttons-spacing-vertical
+--buttons-padding-block
 --details-dropdown-spacing-vertical
 ```
 
@@ -335,7 +337,7 @@ Tokens on `:root` that propagate via inheritance use the CSS property name:
 | --- | --- | --- |
 | `--color-primary-fill` | `--primary-background-color` | `fill` → `background-color` |
 | `--color-primary-text` | `--primary-color` | `text` → `color` |
-| `--color-primary-focus-ring` | `--primary-focus-ring-color` | Property-mapped |
+| `--color-primary-focus-ring` | `--primary-outline-color` | Property-mapped |
 | `--color-background` | `--background-color` | Global, no `--color-` wrapper |
 | `--color-text` | `--color` | Global text |
 | `--color-text-muted` | `--color-muted` | Muted variant |
@@ -355,4 +357,4 @@ Tokens on `:root` that propagate via inheritance use the CSS property name:
 | `--switch-*` | `--input-switch-*` | Scoped under inputs |
 | `--search-*` | `--input-search-*` | Scoped under inputs |
 | `--checkbox-*` | `--input-checkbox-*` | Scoped under inputs |
-| `--progress-background-color` | `--progress-accent-color` | Property-mapped |
+| `--progress-background-color` | `--progress-track-background-color` | Property-mapped |

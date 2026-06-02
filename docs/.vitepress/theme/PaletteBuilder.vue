@@ -183,13 +183,6 @@ const variableGroups = [
           "color-mix(in srgb, var(--primary-background-color), white 75%)",
       },
       {
-        name: "--focus-ring-color",
-        label: "Focus Ring Color",
-        desc: "Default focus ring color.",
-        type: varType("var(--primary-focus-ring-color)"),
-        default: "var(--primary-focus-ring-color)",
-      },
-      {
         name: "--backdrop-background-color",
         label: "Backdrop",
         desc: "Default backdrop color for modals, dialogs, and other overlays.",
@@ -212,15 +205,6 @@ const variableGroups = [
           "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
         ),
         default: "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
-      },
-      {
-        name: "--color-focus-effect",
-        label: "Focus Effect",
-        desc: "Color mixed into focus ring states.",
-        type: varType(
-          "light-dark(var(--color-zinc-300), var(--color-slate-700))",
-        ),
-        default: "light-dark(var(--color-zinc-300), var(--color-slate-700))",
       },
     ],
   },
@@ -264,14 +248,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--primary-focus-ring-color",
-        label: "Primary Focus Ring",
-        desc: "Focus ring for primary elements.",
+        name: "--primary-outline-color",
+        label: "Primary Outline",
+        desc: "Outline color for primary elements.",
         type: varType(
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--primary-color), light-dark(white, black) 30%)",
         ),
         default:
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--primary-color), light-dark(white, black) 30%)",
       },
     ],
   },
@@ -315,14 +299,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--secondary-focus-ring-color",
-        label: "Secondary Focus Ring",
-        desc: "Focus ring for secondary elements.",
+        name: "--secondary-outline-color",
+        label: "Secondary Outline",
+        desc: "Outline color for secondary elements.",
         type: varType(
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -368,14 +352,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--contrast-focus-ring-color",
-        label: "Contrast Focus Ring",
-        desc: "Focus ring for contrast elements.",
+        name: "--contrast-outline-color",
+        label: "Contrast Outline",
+        desc: "Outline color for contrast elements.",
         type: varType(
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -433,14 +417,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--success-focus-ring-color",
-        label: "Success Focus Ring",
-        desc: "Focus ring for success elements.",
+        name: "--success-outline-color",
+        label: "Success Outline",
+        desc: "Outline color for success elements.",
         type: varType(
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -498,14 +482,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--info-focus-ring-color",
-        label: "Info Focus Ring",
-        desc: "Focus ring for info elements.",
+        name: "--info-outline-color",
+        label: "Info Outline",
+        desc: "Outline color for info elements.",
         type: varType(
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -563,14 +547,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--warning-focus-ring-color",
-        label: "Warning Focus Ring",
-        desc: "Focus ring for warning elements.",
+        name: "--warning-outline-color",
+        label: "Warning Outline",
+        desc: "Outline color for warning elements.",
         type: varType(
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -626,14 +610,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--danger-focus-ring-color",
-        label: "Danger Focus Ring",
-        desc: "Focus ring for danger elements.",
+        name: "--danger-outline-color",
+        label: "Danger Outline",
+        desc: "Outline color for danger elements.",
         type: varType(
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -734,15 +718,6 @@ const variableGroups = [
         ),
         default:
           "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))",
-      },
-      {
-        name: "--inputs-background-color-selected",
-        label: "Input Selected BG",
-        desc: "Input background when selected.",
-        type: varType(
-          "light-dark(var(--color-slate-100), var(--color-slate-800))",
-        ),
-        default: "light-dark(var(--color-slate-100), var(--color-slate-800))",
       },
       {
         name: "--inputs-background-color-focus",
@@ -846,13 +821,6 @@ const variableGroups = [
         desc: "Accordion summary text color.",
         type: varType("var(--color)"),
         default: "var(--color)",
-      },
-      {
-        name: "--details-summary-color-focus",
-        label: "Summary Focus",
-        desc: "Accordion summary text on focus.",
-        type: varType("var(--primary-color-hover)"),
-        default: "var(--primary-color-hover)",
       },
       {
         name: "--details-summary-color-open",
@@ -985,13 +953,6 @@ const variableGroups = [
           "light-dark(var(--color-slate-100), var(--color-slate-850))",
         ),
         default: "light-dark(var(--color-slate-100), var(--color-slate-850))",
-      },
-      {
-        name: "--progress-accent-color",
-        label: "Progress Fill",
-        desc: "Progress bar filled portion.",
-        type: varType("var(--primary-background-color)"),
-        default: "var(--primary-background-color)",
       },
     ],
   },

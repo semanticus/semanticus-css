@@ -86,7 +86,6 @@ These set the document-wide baseline. They use the CSS property name directly.
   --border-width: 0.0625rem;
   --outline-width: 1px;
   --focus-ring-width: 0.125rem;
-  --focus-ring-color: var(--primary-focus-ring-color);
   --transition: 0.2s ease-in-out;
   --disabled-opacity: 0.5;
 }
@@ -104,7 +103,7 @@ Defined by palette files. Override these to create custom color themes.
   --primary-color-hover: white;
   --primary-background-color: #0172ad;
   --primary-background-color-hover: light-dark(#02659a, #017fc0);
-  --primary-focus-ring-color: light-dark(
+  --primary-outline-color: light-dark(
     oklch(from #029ae8 l c h / 0.5),
     oklch(from #01aaff l c h / 0.375)
   );
@@ -112,26 +111,26 @@ Defined by palette files. Override these to create custom color themes.
   --secondary-color: white;
   --secondary-background-color: #525f7a;
   --secondary-background-color-hover: light-dark(#48536b, #5d6b89);
-  --secondary-focus-ring-color: light-dark(
+  --secondary-outline-color: light-dark(
     oklch(from #5d6b89 l c h / 0.25),
     oklch(from #909ebe l c h / 0.25)
   );
 
   --contrast-color: light-dark(white, black);
   --contrast-background-color: light-dark(#181c25, #eff1f4);
-  --contrast-focus-ring-color: light-dark(
+  --contrast-outline-color: light-dark(
     oklch(from #5d6b89 l c h / 0.25),
     oklch(from #cfd5e2 l c h / 0.25)
   );
 
   --success-color: light-dark(#029764, #00cc88);
   --success-background-color: #029764;
-  --success-focus-ring-color: /* ... */;
+  --success-outline-color: /* ... */;
 
   --info-color: /* ... */;
   --warning-color: /* ... */;
   --danger-color: /* ... */;
-  /* (each with *-background-color, *-focus-ring-color, and *-hover variants) */
+  /* (each with *-background-color, *-outline-color, and *-hover variants) */
 }
 ```
 
@@ -145,11 +144,10 @@ Scoped to a component type. Change one of these and every instance updates.
 
 ```css
 :root {
-  --buttons-font-size: 1rem;
   --buttons-color: white;
   --buttons-color-hover: white;
-  --buttons-spacing-vertical: var(--inputs-spacing-vertical);
-  --buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
+  --buttons-padding-block: var(--inputs-spacing-vertical);
+  --buttons-padding-inline: var(--inputs-spacing-horizontal);
   --buttons-background-color: var(--primary-background-color);
   --buttons-background-color-hover: var(--primary-background-color-hover);
   --buttons-border-color: var(--primary-background-color);
@@ -307,7 +305,7 @@ Scoped to a component type. Change one of these and every instance updates.
 :root {
   --small-font-size: 80%;
   --sidebar-size: 25%;
-  --group-button-spacing-horizontal: 1rem;
+  --group-buttons-padding-inline: 1rem;
   --icons-background-position-gap: 0.75rem;
   --icons-width: 1em;
 }
@@ -364,7 +362,7 @@ component instance**:
   --primary-background-color: #6366f1;
   --primary-background-color-hover: light-dark(#4f46e5, #818cf8);
   --primary-color: white;
-  --primary-focus-ring-color: light-dark(
+  --primary-outline-color: light-dark(
     oklch(from #6366f1 l c h / 0.5),
     oklch(from #818cf8 l c h / 0.375)
   );
@@ -374,8 +372,8 @@ component instance**:
   --line-height: 1.7;
 
   /* Tier 3: Component overrides — all buttons get custom spacing */
-  --buttons-spacing-vertical: 0.75rem;
-  --buttons-spacing-horizontal: 1.25rem;
+  --buttons-padding-block: 0.75rem;
+  --buttons-padding-inline: 1.25rem;
 }
 ```
 
