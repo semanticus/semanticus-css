@@ -242,29 +242,27 @@ dialog {
 Modifier classes (`.primary`, `.secondary`, etc.) can target any tier to control
 the scope of their effect:
 
-### Override System Tokens → affects entire page
+### Override System Tokens → affects all children of the element
 ```css
 .primary {
-  --color: var(--primary-color);
+  /* Affects all children */
   --background-color: var(--primary-background-color);
 }
 ```
 
-### Override Component Tokens → affects all instances of that component
+### Override Component Tokens → affects all children, instances of a component
 ```css
 .primary {
-  --buttons-background-color: var(--primary-background-color);  /* all buttons */
-  --links-color: var(--primary-color);                          /* all links */
+  /* Affects all children that are a Card component */
+  --cards-background-color: var(--primary-background-color);
 }
 ```
 
-### Override Individual Tokens → affects only this specific instance
+### Override Individual Tokens → affects the specific element itself
 ```css
-/* Inside variants/intent/_common.css */
 .primary {
-  --_buttons-color: #fff;
-  --_buttons-background-color: var(--intent-background-color);
-  --_card-background-color: var(--intent-background-color);
+  /* Affects the element itself if it is a Card component */
+  --_card-background-color: var(--primary-background-color);
 }
 ```
 
