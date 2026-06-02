@@ -7,12 +7,12 @@ giving you precise control over how broadly or narrowly a style change applies.
 
 ```
 Tier 1: System Tokens        --property[-state]              page-level defaults
-Tier 2: Palette Tokens       --{intent}-property[-state]      variant definitions
+Tier 2: Variant Tokens       --{variant}-property[-state]     variant definitions
 Tier 3: Component Tokens     --{component}-property[-state]   component-scoped slots
 Tier 4: Individual Tokens    --_{component}-property[-state]  per-instance overrides
 ```
 
-The flow: System → Palette → Component → Individual (`--_`).
+The flow: System → Variant → Component → Individual (`--_`).
 
 ---
 
@@ -63,14 +63,13 @@ class changes the background of every component that reads it.
 
 ---
 
-## Tier 2: Palette Tokens
+## Tier 2: Variant Tokens
 
-Intent-specific definitions for design variants. These provide the raw color
-values consumed by variant modifier classes. Users override these to define
+These provide the raw color values consumed by variant modifier classes. Users override these to define
 custom palettes.
 
 ```
---{intent}-{property}[-{state}]
+--{variant}-{property}[-{state}]
 ```
 
 ```css
@@ -101,7 +100,7 @@ custom palettes.
 }
 ```
 
-Palette Tokens are referenced by variant classes but don't directly style
+Variant Tokens are referenced by variant classes but don't directly style
 elements — they feed into the tiers below.
 
 ---
