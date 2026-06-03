@@ -341,6 +341,9 @@
   --links-color-hover: var(--primary-color-hover);
   --links-text-decoration: underline;
 
+  /* --- Lists (ul, ol and role="list") --- */
+  --lists-marker-color: var(--primary-color);
+
   /* --- Mark --- */
   --mark-background-color: light-dark(#c79400, #e8ae01);
 
