@@ -65,7 +65,7 @@
   --primary-background-color-hover: color-mix(
     in srgb,
     var(--primary-background-color),
-    light-dark(var(--color-zinc-700), var(--color-zinc-300)) 30%
+    var(--color-hover-effect) 30%
   );
   /* Subdued state */
   --secondary-background-color: var(--color-slate-550);
@@ -95,7 +95,7 @@
   --primary-color-hover: color-mix(
     in srgb,
     var(--primary-color),
-    light-dark(var(--color-zinc-700), var(--color-zinc-300)) 30%
+    var(--color-hover-effect) 30%
   );
   /* Subdued state */
   --secondary-color: light-dark(var(--color-slate-550), var(--color-zinc-350));
@@ -317,17 +317,22 @@
   --inputs-placeholder-color: var(--color-muted);
   --inputs-focus-ring-width: 0.0625rem;
 
-  /* --- Input Checkbox and Radio --- */
+  /* --- Input Checkbox --- */
   --input-checkbox-border-width: 0.125rem;
 
+  /* --- Input Radio --- */
+  --input-radio-background-color: white;
+
   /* --- Input Range --- */
+  --input-range-thumb-size: 1.25rem;
+  --input-range-thumb-border-color: var(--background-color);
   --input-range-track-background-color: var(--inputs-border-color);
 
   /* --- Input Search --- */
   --input-search-border-radius: 5rem;
 
   /* --- Input Switch --- */
-  --input-switch-thumb-background-color: var(--background-color);
+  --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
   --input-switch-border-radius: 1.25em;
 

@@ -1,6 +1,9 @@
 /* See ./_common.css for shared styles */
 
 [type="range"] {
+  --_input-range-thumb-size: var(--input-range-thumb-size);
+  --_input-range-thumb-background-color: var(--_inputs-accent-color);
+  --_input-range-thumb-border-color: var(--input-range-thumb-border-color);
   --_input-range-track-background-color: var(
     --input-range-track-background-color
   );
@@ -8,7 +11,7 @@
   accent-color: var(--_inputs-accent-color);
   appearance: none;
   width: 100%;
-  height: 1.25rem;
+  height: var(--_input-range-thumb-size);
   background: none;
   padding: 0;
   border-width: 0;
@@ -18,9 +21,6 @@
     height: 0.375rem;
     border-radius: var(--_inputs-border-radius);
     background-color: var(--_input-range-track-background-color);
-    transition:
-      background-color var(--transition),
-      box-shadow var(--transition);
   }
 
   &::-moz-range-track {
@@ -28,47 +28,42 @@
     height: 0.375rem;
     border-radius: var(--_inputs-border-radius);
     background-color: var(--_input-range-track-background-color);
-    transition:
-      background-color var(--transition),
-      box-shadow var(--transition);
   }
 
   &::-webkit-slider-thumb {
     appearance: none;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: var(--_input-range-thumb-size);
+    height: var(--_input-range-thumb-size);
     margin-top: -0.4375rem;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--_input-range-thumb-border-color);
     border-radius: 50%;
-    background-color: var(--_inputs-accent-color);
+    background-color: var(--_input-range-thumb-background-color);
     cursor: pointer;
-    transition:
-      background-color var(--transition),
-      transform var(--transition);
+    transition: transform var(--transition);
   }
 
   &::-moz-range-thumb {
     appearance: none;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: var(--_input-range-thumb-size);
+    height: var(--_input-range-thumb-size);
     margin-top: -0.4375rem;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--_input-range-thumb-border-color);
     border-radius: 50%;
-    background-color: var(--_inputs-accent-color);
+    background-color: var(--_input-range-thumb-background-color);
     cursor: pointer;
-    transition:
-      background-color var(--transition),
-      transform var(--transition);
+    transition: transform var(--transition);
   }
 
   &:is(:active, :focus, :focus-visible) {
+    --_input-range-thumb-border-color: var(--_inputs-outline-color);
+
     outline: none !important; /* We are outlining the file-selector-button instead */
     box-shadow: none !important;
 
     &::-webkit-slider-thumb,
     &::-moz-range-thumb {
-      outline: var(--focus-ring-width) solid var(--_inputs-outline-color);
-      outline-offset: -3px;
+      outline: var(--outline-width) solid var(--_inputs-outline-color);
+      outline-offset: calc((var(--focus-ring-width) * -1));
     }
   }
 
