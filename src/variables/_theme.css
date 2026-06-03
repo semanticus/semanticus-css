@@ -57,102 +57,19 @@
   --_color-red-250: #f5a390;
   --_color-red-450: #ee402e;
 
-  /* Scale factor that changes according to a given breakpoint, making the --spacing var responsive */
+  /* Scale factor that changes according to a given breakpoint, helping make `--spacing` responsive */
   --_spacing-scale: 1;
 
-  /* ===== SYSTEM TOKENS ===== */
+  /* ===== TIER 1: SYSTEM TOKENS ===== */
 
-  /* --- Background Color and its variants --- */
+  /* --- Background Color --- */
   --background-color: light-dark(
     white,
     color-mix(in srgb, var(--_color-slate-950), var(--_color-slate-900))
   );
-  /* Actionable state */
-  --primary-background-color-hover: color-mix(
-    in srgb,
-    var(--primary-background-color),
-    var(--color-hover-shade) 30%
-  );
-  /* Subdued state */
-  --secondary-background-color: var(--_color-slate-550);
-  --secondary-background-color-hover: color-mix(
-    in srgb,
-    var(--secondary-background-color),
-    var(--color-hover-shade) 30%
-  );
-  /* Valid state */
-  --success-background-color: var(--_color-jade-450);
-  --success-background-color-hover: color-mix(
-    in srgb,
-    var(--success-background-color),
-    var(--color-hover-shade) 30%
-  );
-  /* Invalid state */
-  --danger-background-color: var(--_color-red-450);
-  --danger-background-color-hover: color-mix(
-    in srgb,
-    var(--danger-background-color),
-    var(--color-hover-shade) 30%
-  );
 
-  /* --- Color and its variants --- */
+  /* --- Color --- */
   --color: light-dark(var(--_color-zinc-750), var(--_color-zinc-200));
-  /* Actionable state */
-  --primary-color-hover: color-mix(
-    in srgb,
-    var(--primary-color),
-    var(--color-hover-shade) 30%
-  );
-  /* Subdued state */
-  --secondary-color: light-dark(
-    var(--_color-slate-550),
-    var(--_color-zinc-350)
-  );
-  --secondary-color-hover: color-mix(
-    in srgb,
-    var(--secondary-color),
-    var(--color-hover-shade) 30%
-  );
-  /* Valid state */
-  --success-color: light-dark(var(--_color-jade-450), var(--_color-jade-250));
-  --success-color-hover: color-mix(
-    in srgb,
-    var(--success-color),
-    var(--color-hover-shade) 30%
-  );
-  /* Invalid state */
-  --danger-color: light-dark(var(--_color-red-450), var(--_color-red-250));
-  --danger-color-hover: color-mix(
-    in srgb,
-    var(--danger-color),
-    var(--color-hover-shade) 30%
-  );
-
-  /* --- Outline Color and its variants --- */
-  /* Actionable state */
-  --primary-outline-color: color-mix(
-    in srgb,
-    var(--primary-color),
-    light-dark(white, black) 30%
-  );
-  /* Subdued state */
-  --secondary-outline-color: color-mix(
-    in srgb,
-    var(--secondary-color) 70%,
-    light-dark(white, black)
-  );
-  /* Valid state */
-  --success-outline-color: color-mix(
-    in srgb,
-    var(--success-color) 70%,
-    light-dark(white, black)
-  );
-  /* Invalid state */
-  --danger-outline-color: color-mix(
-    in srgb,
-    var(--danger-color) 70%,
-    light-dark(white, black)
-  );
 
   /* --- Typography --- */
   --typography-spacing-vertical: 1rem;
@@ -172,16 +89,21 @@
     monospace, var(--font-family-emoji);
   --font-family: var(--font-family-sans-serif);
 
-  /* --- Borders & Effects --- */
+  /* --- Border --- */
   --border-color: light-dark(var(--_color-slate-100), var(--_color-slate-800));
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
+
+  /* --- Outline --- */
   --outline-width: 1px;
-  --transition: 0.2s ease-in-out;
+
+  /* --- Opacity --- */
   --opacity-disabled: 0.5;
 
-  /* --- Internal Helpers --- */
-  /* Used for margins and padding throughout the components */
+  /* --- Exceptions --- */
+  --transition: 0.2s ease-in-out;
+
+  /* Used for margins and padding throughout the page */
   --spacing: calc(0.75rem * var(--_spacing-scale));
 
   /* Used to derive colors representing the hover state */
@@ -190,7 +112,86 @@
     var(--_color-zinc-300)
   );
 
-  /* ===== COMPONENT TOKENS ===== */
+  /* ===== TIER 2: VARIANT TOKENS ===== */
+
+  /* --- Primary Intent --- */
+  --primary-background-color-hover: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-color-hover: color-mix(
+    in srgb,
+    var(--primary-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-outline-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    light-dark(white, black) 30%
+  );
+
+  /* --- Secondary Intent --- */
+  --secondary-background-color: var(--_color-slate-550);
+  --secondary-background-color-hover: color-mix(
+    in srgb,
+    var(--secondary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-color: light-dark(
+    var(--_color-slate-550),
+    var(--_color-zinc-350)
+  );
+  --secondary-color-hover: color-mix(
+    in srgb,
+    var(--secondary-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-outline-color: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Success Intent --- */
+  --success-background-color: var(--_color-jade-450);
+  --success-background-color-hover: color-mix(
+    in srgb,
+    var(--success-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-color: light-dark(var(--_color-jade-450), var(--_color-jade-250));
+  --success-color-hover: color-mix(
+    in srgb,
+    var(--success-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-outline-color: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Danger Intent --- */
+  --danger-background-color: var(--_color-red-450);
+  --danger-background-color-hover: color-mix(
+    in srgb,
+    var(--danger-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-color: light-dark(var(--_color-red-450), var(--_color-red-250));
+  --danger-color-hover: color-mix(
+    in srgb,
+    var(--danger-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-outline-color: color-mix(
+    in srgb,
+    var(--danger-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* ===== TIER 3: COMPONENT TOKENS ===== */
 
   /* --- Building Blocks --- */
   /* All purpose shadow, used by dialog, dropdown and toast components */
@@ -207,6 +208,8 @@
       light-dark(rgb(129 145 181 / 0.04302), rgb(7 9 12 / 0.04302)),
     0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)),
     0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
+
+  /* All overlay background, used by dialog */
   --backdrop-background-color: light-dark(
     oklch(
       from color-mix(in srgb, var(--_color-zinc-100), var(--_color-zinc-50)) l c
@@ -244,11 +247,13 @@
   --details-summary-color: var(--color);
   --details-summary-color-open: var(--color-muted);
 
+  /* --- Dropdown styling applied to the summary element --- */
   --details-dropdown-color: var(--inputs-placeholder-color);
   --details-dropdown-border-color: var(--inputs-border-color);
   --details-dropdown-spacing-vertical: var(--inputs-spacing-vertical);
   --details-dropdown-spacing-horizontal: var(--inputs-spacing-horizontal);
 
+  /* --- Menu styling applied to the ul[role="menu"] element --- */
   --details-menu-background-color: light-dark(white, var(--_color-slate-900));
   --details-menu-border-color: light-dark(
     var(--_color-slate-50),
@@ -263,7 +268,8 @@
   /* --- Dialog --- */
   --dialog-border-color: var(--border-color);
   --dialog-background-color: var(--background-color);
-  /* Affects dialogs and cards's header & footers */
+
+  /* Shade styling, applied to header & footer elements */
   --dialog-marginals-background-color: light-dark(
     color-mix(in srgb, var(--_color-slate-50) 25%, white),
     color-mix(in srgb, var(--_color-slate-50), transparent 95%)
