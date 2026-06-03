@@ -164,6 +164,7 @@ Scoped to a component type. Change one of these and every instance updates.
   --inputs-border-color: light-dark(#cfd5e2, #2a3140);
   --inputs-color: light-dark(#23262c, #e0e3e7);
   --inputs-accent-color: var(--primary-background-color);
+  --inputs-accent-color-muted: light-dark(#bfc7d9, #333c4e);
   --inputs-placeholder-color: var(--color-muted);
   --inputs-focus-ring-width: 0.0625rem;
 }
@@ -174,13 +175,14 @@ Scoped to a component type. Change one of these and every instance updates.
 ```css
 :root {
   --input-checkbox-border-width: 0.125rem;
+  --input-radio-background-color: white;
+  --input-range-thumb-size: 1.25rem;
+  --input-range-track-background-color: var(--inputs-border-color);
+  --input-range-thumb-border-color: var(--background-color);
   --input-search-border-radius: 5rem;
-  --input-switch-background-color: light-dark(#bfc7d9, #333c4e);
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
   --input-switch-border-radius: 1.25em;
-  --input-range-track-background-color: light-dark(#bfc7d9, #333c4e);
-  --input-range-thumb-border-color: var(--background-color);
 }
 ```
 
@@ -204,7 +206,6 @@ Scoped to a component type. Change one of these and every instance updates.
 :root {
   --details-summary-background-color: var(--inputs-background-color);
   --details-summary-color: var(--color);
-  --details-summary-color-focus: var(--primary-color-hover);
   --details-summary-color-open: var(--color-muted);
   --details-dropdown-color: var(--inputs-placeholder-color);
   --details-dropdown-border-color: var(--inputs-border-color);

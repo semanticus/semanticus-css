@@ -126,15 +126,17 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --inputs-border-color
   --inputs-color
   --inputs-accent-color
+  --inputs-accent-color-muted
   --inputs-placeholder-color
   --inputs-focus-ring-width
 
   /* Input subtypes */
   --input-checkbox-border-width
+  --input-radio-background-color
+  --input-range-thumb-size
   --input-range-track-background-color
   --input-range-thumb-border-color
   --input-search-border-radius
-  --input-switch-background-color
   --input-switch-thumb-background-color
   --input-switch-border-width
   --input-switch-border-radius
@@ -145,7 +147,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
 
   /* Details — accordions and dropdowns */
   --details-summary-background-color
-  --details-summary-color / --details-summary-color-focus / --details-summary-color-open
+  --details-summary-color / --details-summary-color-open
   --details-dropdown-color / --details-dropdown-border-color
   --details-dropdown-spacing-vertical / --details-dropdown-spacing-horizontal
   --details-menu-background-color / --details-menu-border-color

@@ -717,20 +717,20 @@ const variableGroups = [
         type: varType("var(--primary-background-color)"),
         default: "var(--primary-background-color)",
       },
-    ],
-  },
-  {
-    label: "Switch",
-    vars: [
       {
-        name: "--input-switch-background-color",
-        label: "Switch Track",
-        desc: "Switch track background when unchecked.",
+        name: "--inputs-accent-color-muted",
+        label: "Input Accent Muted",
+        desc: "Muted accent color for unchecked/inactive states.",
         type: varType(
           "light-dark(var(--color-slate-200), var(--color-slate-750))",
         ),
         default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
       },
+    ],
+  },
+  {
+    label: "Switch",
+    vars: [
       {
         name: "--input-switch-thumb-background-color",
         label: "Switch Thumb",
@@ -741,16 +741,33 @@ const variableGroups = [
     ],
   },
   {
+    label: "Radio",
+    vars: [
+      {
+        name: "--input-radio-background-color",
+        label: "Radio Background",
+        desc: "Radio button background color.",
+        type: "color",
+        default: "#ffffff",
+      },
+    ],
+  },
+  {
     label: "Range",
     vars: [
       {
+        name: "--input-range-thumb-size",
+        label: "Range Thumb Size",
+        desc: "Range slider thumb (knob) size.",
+        type: "text",
+        default: "1.25rem",
+      },
+      {
         name: "--input-range-track-background-color",
-        label: "Range Track Border",
-        desc: "Range slider track border.",
-        type: varType(
-          "light-dark(var(--color-slate-200), var(--color-slate-750))",
-        ),
-        default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
+        label: "Range Track Background",
+        desc: "Range slider track background.",
+        type: varType("var(--inputs-border-color)"),
+        default: "var(--inputs-border-color)",
       },
       {
         name: "--input-range-thumb-border-color",
