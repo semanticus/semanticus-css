@@ -31,7 +31,7 @@ affects more of the page; changing it at a lower tier gives more precision.
 
 These set the document-wide baseline.
 
-To avoid having to memorize arbitrary token names, these type of tokens (with only 2 exceptions) always start with a  **CSS longhand property** name.
+To avoid having to memorize arbitrary token names, these tokens (with only a few documented exceptions) include a **CSS longhand property** name segment.
 
 ```css
 :root {
