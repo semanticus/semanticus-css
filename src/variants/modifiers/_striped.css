@@ -4,7 +4,7 @@
     background-color: color-mix(
       in srgb,
       var(--_card-background-color),
-      var(--color-hover-effect) 15%
+      var(--color-hover-shade) 15%
     );
   }
 
@@ -13,7 +13,7 @@
       background-color: color-mix(
         in srgb,
         var(--background-color),
-        var(--color-hover-effect) 15%
+        var(--color-hover-shade) 15%
       );
     }
   }

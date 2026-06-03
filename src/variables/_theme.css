@@ -51,7 +51,7 @@
 
   /* ===== SYSTEM TOKENS ===== */
 
-  --color-hover-effect: light-dark(
+  --color-hover-shade: light-dark(
     var(--color-zinc-700),
     var(--color-zinc-300)
   );
@@ -65,28 +65,28 @@
   --primary-background-color-hover: color-mix(
     in srgb,
     var(--primary-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   /* Subdued state */
   --secondary-background-color: var(--color-slate-550);
   --secondary-background-color-hover: color-mix(
     in srgb,
     var(--secondary-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   /* Valid state */
   --success-background-color: #029764;
   --success-background-color-hover: color-mix(
     in srgb,
     var(--success-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   /* Invalid state */
   --danger-background-color: #ee402e;
   --danger-background-color-hover: color-mix(
     in srgb,
     var(--danger-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
 
   /* --- Color and its variants --- */
@@ -95,28 +95,28 @@
   --primary-color-hover: color-mix(
     in srgb,
     var(--primary-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   /* Subdued state */
   --secondary-color: light-dark(var(--color-slate-550), var(--color-zinc-350));
   --secondary-color-hover: color-mix(
     in srgb,
     var(--secondary-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   /* Valid state */
   --success-color: light-dark(#029764, #00cc88);
   --success-color-hover: color-mix(
     in srgb,
     var(--success-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   /* Invalid state */
   --danger-color: light-dark(#ee402e, #f5a390);
   --danger-color-hover: color-mix(
     in srgb,
     var(--danger-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
 
   /* --- Outline Color and its variants --- */

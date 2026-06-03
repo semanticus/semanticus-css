@@ -58,7 +58,7 @@ These set the document-wide baseline. They use the CSS property name directly.
 :root {
   --background-color: light-dark(white, #0e1118);
   --color: light-dark(#373c44, #c2c7d0);
-  --color-hover-effect: light-dark(#424751, #a4acba);
+  --color-hover-shade: light-dark(#424751, #a4acba);
   --border-color: light-dark(#dfe3eb, #202632);
 }
 ```

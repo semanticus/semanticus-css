@@ -26,7 +26,7 @@ a CSS longhand property name** whenever possible.
 
   /* Color & Typography */
   --color
-  --color-hover-effect
+  --color-hover-shade
   --color-muted
   --typography-color
   --typography-spacing-vertical
@@ -282,7 +282,7 @@ Tokens at Tiers 1-3 must use CSS longhand property names:
 | `--spacing` / `--spacing-base` / `--spacing-scale` | Density values used across multiple properties |
 | `--transition` | Composite value — splitting adds tokens without benefit |
 | `--nav-breadcrumb-divider` | Content string, not a CSS property value |
-| `--opacity-disabled` | Generic opacity value used to indicate disabled state |
+| `--color-hover-shade` | Internal helper color mixed into base colors via `color-mix()` to derive hover-state variants — not a standalone property value |
 
 ### State Ordering
 

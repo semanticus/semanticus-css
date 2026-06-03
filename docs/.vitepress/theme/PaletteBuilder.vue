@@ -205,9 +205,9 @@ const variableGroups = [
     label: "Hover & Focus Effects",
     vars: [
       {
-        name: "--color-hover-effect",
-        label: "Hover Effect",
-        desc: "Color mixed into hover states.",
+        name: "--color-hover-shade",
+        label: "Hover Shade",
+        desc: "Color mixed into base colors via color-mix() to derive hover-state variants.",
         type: varType(
           "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
         ),
@@ -239,20 +239,20 @@ const variableGroups = [
         label: "Primary Text Hover",
         desc: "Primary text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--primary-background-color-hover",
         label: "Primary Fill Hover",
         desc: "Primary fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--primary-outline-color",
@@ -290,20 +290,20 @@ const variableGroups = [
         label: "Secondary Text Hover",
         desc: "Secondary text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--secondary-background-color-hover",
         label: "Secondary Fill Hover",
         desc: "Secondary fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--secondary-outline-color",
@@ -343,20 +343,20 @@ const variableGroups = [
         label: "Contrast Text Hover",
         desc: "Contrast text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--contrast-background-color-hover",
         label: "Contrast Fill Hover",
         desc: "Contrast fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--contrast-outline-color",
@@ -392,20 +392,20 @@ const variableGroups = [
         label: "Success Text Hover",
         desc: "Success text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--success-background-color-hover",
         label: "Success Fill Hover",
         desc: "Success fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--success-outline-color",
@@ -457,20 +457,20 @@ const variableGroups = [
         label: "Info Text Hover",
         desc: "Info text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--info-background-color-hover",
         label: "Info Fill Hover",
         desc: "Info fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--info-outline-color",
@@ -522,20 +522,20 @@ const variableGroups = [
         label: "Warning Text Hover",
         desc: "Warning text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--warning-background-color-hover",
         label: "Warning Fill Hover",
         desc: "Warning fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--warning-outline-color",
@@ -571,20 +571,20 @@ const variableGroups = [
         label: "Danger Text Hover",
         desc: "Danger text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--danger-background-color-hover",
         label: "Danger Fill Hover",
         desc: "Danger fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--danger-outline-color",
