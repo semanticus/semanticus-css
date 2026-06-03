@@ -1,7 +1,7 @@
 [role="search"],
 [role="group"] {
   --_group-border-radius: var(--border-radius);
-  --_group-focus-ring-color: var(--border-color);
+  --_group-outline-color: var(--border-color);
 
   border-radius: var(--_group-border-radius);
   display: inline-flex;
@@ -43,7 +43,7 @@
     [role="button"]
   ) {
     /* Buttons inside search/group combos get wider horizontal padding */
-    --_buttons-spacing-horizontal: var(--group-button-spacing-horizontal);
+    --_buttons-padding-inline: var(--group-buttons-padding-inline);
 
     width: auto;
   }
@@ -96,7 +96,7 @@
     [type="reset"]:focus,
     [role="button"]:focus
   ) {
-    box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-outline-color);
   }
 
   /* when an input is focused, we set the button styling to "focus" also */
@@ -105,7 +105,7 @@
     summary:focus,
     select:focus
   ) {
-    box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-focus-ring-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-outline-color);
 
     :is(
       button,

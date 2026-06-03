@@ -26,8 +26,8 @@ nav {
       var(--nav-link-gap) - var(--border-width) * 2
     );
     --inputs-spacing-horizontal: var(--nav-link-gap);
-    --_buttons-spacing-vertical: var(--inputs-spacing-vertical);
-    --_buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
+    --_buttons-padding-block: var(--inputs-spacing-vertical);
+    --_buttons-padding-inline: var(--inputs-spacing-horizontal);
 
     height: auto;
     margin-right: inherit;

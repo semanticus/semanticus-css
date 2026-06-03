@@ -1,20 +1,11 @@
 /* See ./_common.css for shared styles */
 
 .success {
-  --intent-color: oklch(from var(--success-color) l c h / var(--color-opacity));
-  --intent-background-color: oklch(
-    from var(--success-background-color) l c h / var(--background-color-opacity)
-  );
-  --intent-border-color: oklch(
-    from var(--success-background-color) l c h / var(--border-color-opacity)
-  );
-  --intent-background-color-hover: oklch(
-    from var(--success-background-color-hover) l c h /
-      var(--background-color-opacity)
-  );
-  --intent-border-color-hover: oklch(
-    from var(--success-background-color-hover) l c h /
-      var(--border-color-opacity)
-  );
-  --intent-focus-ring-color: var(--success-focus-ring-color);
+  --intent-background-color: var(--success-background-color);
+  --intent-background-color-hover: var(--success-background-color-hover);
+
+  --intent-color: var(--success-color);
+  --intent-color-hover: var(--success-color-hover);
+
+  --intent-outline-color: var(--success-outline-color);
 }

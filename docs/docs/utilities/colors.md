@@ -31,12 +31,6 @@ const bgOnlyHtml = `<div class="bg-primary p-3 mb-2">.bg-primary</div>
 <div class="bg-body p-3 mb-2 border">.bg-body</div>
 <div class="bg-transparent p-3 mb-2 border">.bg-transparent</div>
 `;
-const bgOpacityHtml = `<div class="bg-primary p-2 mb-2">Default primary background</div>
-<div class="bg-primary bg-opacity-75 p-2 mb-2">75% opacity</div>
-<div class="bg-primary bg-opacity-50 p-2 mb-2">50% opacity</div>
-<div class="bg-primary bg-opacity-25 p-2 mb-2">25% opacity</div>
-<div class="bg-primary bg-opacity-10 p-2">10% opacity</div>
-`;
 const bgGradientHtml = `<div class="text-bg-primary bg-gradient p-3 mb-2">.bg-primary.bg-gradient</div>
 <div class="text-bg-secondary bg-gradient p-3 mb-2">.bg-secondary.bg-gradient</div>
 <div class="text-bg-contrast bg-gradient p-3 mb-2">.bg-contrast.bg-gradient</div>
@@ -54,14 +48,6 @@ const textColorsHtml = `<p class="text-primary">.text-primary</p>
 <p class="text-danger">.text-danger</p>
 <p class="text-muted">.text-muted</p>
 <p class="text-reset">.text-reset</p>
-`;
-const textOpacityHtml = `<div class="vstack gap-d">
-<div class="text-primary">Default primary text</div>
-<div class="text-primary text-opacity-75">75% opacity primary text</div>
-<div class="text-primary text-opacity-50">50% opacity primary text</div>
-<div class="text-primary text-opacity-25">25% opacity primary text</div>
-<div class="text-primary text-opacity-10">10% opacity primary text</div>
-</div>
 `;
 const typographyExample = `<section class="text-primary">
   <hgroup>
@@ -101,12 +87,6 @@ Use `.bg-*` to set just the background color.
 
 <HtmlPreviewer :code="bgOnlyHtml" />
 
-### Background Opacity
-
-Control background opacity with `.bg-opacity-*` utilities.
-
-<HtmlPreviewer :code="bgOpacityHtml" />
-
 ### Background Gradient
 
 Add a `.bg-gradient` class to apply a subtle gradient overlay.
@@ -118,11 +98,6 @@ Add a `.bg-gradient` class to apply a subtle gradient overlay.
 Colorize text with `.text-*` utilities.
 
 <HtmlPreviewer :code="textColorsHtml" />
-
-
-### Text Opacity
-
-<HtmlPreviewer :code="textOpacityHtml" />
 
 ## Examples
 

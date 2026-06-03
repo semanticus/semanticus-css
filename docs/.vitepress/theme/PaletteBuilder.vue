@@ -172,27 +172,27 @@ const variableGroups = [
         type: varType("var(--color)"),
         default: "var(--color)",
       },
+    ],
+  },
+  {
+    label: "Selection",
+    vars: [
       {
         name: "--selection-background-color",
         label: "Selection Background",
-        desc: "Background color for text selections.",
-        type: varType(
-          "color-mix(in srgb, var(--primary-background-color), white 75%)",
-        ),
-        default:
-          "color-mix(in srgb, var(--primary-background-color), white 75%)",
+        desc: "Background color for ::selection text highlights.",
+        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
+        default: "color-mix(in srgb, var(--primary-color), white 75%)",
       },
-      {
-        name: "--focus-ring-color",
-        label: "Focus Ring Color",
-        desc: "Default focus ring color.",
-        type: varType("var(--primary-focus-ring-color)"),
-        default: "var(--primary-focus-ring-color)",
-      },
+    ],
+  },
+  {
+    label: "Backdrop",
+    vars: [
       {
         name: "--backdrop-background-color",
         label: "Backdrop",
-        desc: "Default backdrop color for modals, dialogs, and other overlays.",
+        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
         type: varType(
           "light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))",
         ),
@@ -212,15 +212,6 @@ const variableGroups = [
           "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
         ),
         default: "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
-      },
-      {
-        name: "--color-focus-effect",
-        label: "Focus Effect",
-        desc: "Color mixed into focus ring states.",
-        type: varType(
-          "light-dark(var(--color-zinc-300), var(--color-slate-700))",
-        ),
-        default: "light-dark(var(--color-zinc-300), var(--color-slate-700))",
       },
     ],
   },
@@ -264,14 +255,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--primary-focus-ring-color",
-        label: "Primary Focus Ring",
-        desc: "Focus ring for primary elements.",
+        name: "--primary-outline-color",
+        label: "Primary Outline",
+        desc: "Outline color for primary elements.",
         type: varType(
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--primary-color), light-dark(white, black) 30%)",
         ),
         default:
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--primary-color), light-dark(white, black) 30%)",
       },
     ],
   },
@@ -315,14 +306,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--secondary-focus-ring-color",
-        label: "Secondary Focus Ring",
-        desc: "Focus ring for secondary elements.",
+        name: "--secondary-outline-color",
+        label: "Secondary Outline",
+        desc: "Outline color for secondary elements.",
         type: varType(
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -368,14 +359,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--contrast-focus-ring-color",
-        label: "Contrast Focus Ring",
-        desc: "Focus ring for contrast elements.",
+        name: "--contrast-outline-color",
+        label: "Contrast Outline",
+        desc: "Outline color for contrast elements.",
         type: varType(
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -383,34 +374,18 @@ const variableGroups = [
     label: "Success Intent",
     vars: [
       {
-        name: "--color-jade-450",
-        label: "Jade 450",
-        desc: "Success base shade.",
-        type: "color",
-        default: "#029764",
-      },
-      {
-        name: "--color-jade-250",
-        label: "Jade 250",
-        desc: "Success light shade.",
-        type: "color",
-        default: "#00cc88",
-      },
-      {
         name: "--success-color",
         label: "Success Text",
         desc: "Success text color.",
-        type: varType(
-          "light-dark(var(--color-jade-450), var(--color-jade-250))",
-        ),
-        default: "light-dark(var(--color-jade-450), var(--color-jade-250))",
+        type: varType("light-dark(#029764, #00cc88)"),
+        default: "light-dark(#029764, #00cc88)",
       },
       {
         name: "--success-background-color",
         label: "Success Fill",
         desc: "Success button fill.",
-        type: varType("var(--color-jade-450)"),
-        default: "var(--color-jade-450)",
+        type: "color",
+        default: "#029764",
       },
       {
         name: "--success-color-hover",
@@ -433,14 +408,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--success-focus-ring-color",
-        label: "Success Focus Ring",
-        desc: "Focus ring for success elements.",
+        name: "--success-outline-color",
+        label: "Success Outline",
+        desc: "Outline color for success elements.",
         type: varType(
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -498,14 +473,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--info-focus-ring-color",
-        label: "Info Focus Ring",
-        desc: "Focus ring for info elements.",
+        name: "--info-outline-color",
+        label: "Info Outline",
+        desc: "Outline color for info elements.",
         type: varType(
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -563,14 +538,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--warning-focus-ring-color",
-        label: "Warning Focus Ring",
-        desc: "Focus ring for warning elements.",
+        name: "--warning-outline-color",
+        label: "Warning Outline",
+        desc: "Outline color for warning elements.",
         type: varType(
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -578,32 +553,18 @@ const variableGroups = [
     label: "Danger Intent",
     vars: [
       {
-        name: "--color-red-450",
-        label: "Red 450",
-        desc: "Danger base shade.",
-        type: "color",
-        default: "#ee402e",
-      },
-      {
-        name: "--color-red-250",
-        label: "Red 250",
-        desc: "Danger light shade.",
-        type: "color",
-        default: "#f5a390",
-      },
-      {
         name: "--danger-color",
         label: "Danger Text",
         desc: "Danger text color.",
-        type: varType("light-dark(var(--color-red-450), var(--color-red-250))"),
-        default: "light-dark(var(--color-red-450), var(--color-red-250))",
+        type: varType("light-dark(#ee402e, #f5a390)"),
+        default: "light-dark(#ee402e, #f5a390)",
       },
       {
         name: "--danger-background-color",
         label: "Danger Fill",
         desc: "Danger button fill.",
-        type: varType("var(--color-red-450)"),
-        default: "var(--color-red-450)",
+        type: "color",
+        default: "#ee402e",
       },
       {
         name: "--danger-color-hover",
@@ -626,14 +587,14 @@ const variableGroups = [
           "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))",
       },
       {
-        name: "--danger-focus-ring-color",
-        label: "Danger Focus Ring",
-        desc: "Focus ring for danger elements.",
+        name: "--danger-outline-color",
+        label: "Danger Outline",
+        desc: "Outline color for danger elements.",
         type: varType(
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, light-dark(white, black))",
         ),
         default:
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-focus-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, light-dark(white, black))",
       },
     ],
   },
@@ -706,20 +667,6 @@ const variableGroups = [
         type: varType("var(--primary-background-color-hover)"),
         default: "var(--primary-background-color-hover)",
       },
-      {
-        name: "--buttons-border-color",
-        label: "Button Border",
-        desc: "Button border color.",
-        type: varType("var(--primary-background-color)"),
-        default: "var(--primary-background-color)",
-      },
-      {
-        name: "--buttons-border-color-hover",
-        label: "Button Border Hover",
-        desc: "Button border on hover.",
-        type: varType("var(--primary-background-color-hover)"),
-        default: "var(--primary-background-color-hover)",
-      },
     ],
   },
   {
@@ -734,15 +681,6 @@ const variableGroups = [
         ),
         default:
           "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))",
-      },
-      {
-        name: "--inputs-background-color-selected",
-        label: "Input Selected BG",
-        desc: "Input background when selected.",
-        type: varType(
-          "light-dark(var(--color-slate-100), var(--color-slate-800))",
-        ),
-        default: "light-dark(var(--color-slate-100), var(--color-slate-800))",
       },
       {
         name: "--inputs-background-color-focus",
@@ -786,20 +724,20 @@ const variableGroups = [
         type: varType("var(--primary-background-color)"),
         default: "var(--primary-background-color)",
       },
-    ],
-  },
-  {
-    label: "Switch",
-    vars: [
       {
-        name: "--input-switch-background-color",
-        label: "Switch Track",
-        desc: "Switch track background when unchecked.",
+        name: "--inputs-accent-color-muted",
+        label: "Input Accent Muted",
+        desc: "Muted accent color for unchecked/inactive states.",
         type: varType(
           "light-dark(var(--color-slate-200), var(--color-slate-750))",
         ),
         default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
       },
+    ],
+  },
+  {
+    label: "Switch",
+    vars: [
       {
         name: "--input-switch-thumb-background-color",
         label: "Switch Thumb",
@@ -810,16 +748,54 @@ const variableGroups = [
     ],
   },
   {
+    label: "Radio",
+    vars: [
+      {
+        name: "--input-radio-background-color",
+        label: "Radio Background",
+        desc: "Radio button background color.",
+        type: "color",
+        default: "#ffffff",
+      },
+    ],
+  },
+  {
     label: "Range",
     vars: [
       {
-        name: "--input-range-track-border-color",
-        label: "Range Track Border",
-        desc: "Range slider track border.",
-        type: varType(
-          "light-dark(var(--color-slate-200), var(--color-slate-750))",
-        ),
-        default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
+        name: "--input-range-thumb-size",
+        label: "Range Thumb Size",
+        desc: "Range slider thumb (knob) size.",
+        type: "text",
+        default: "1.25rem",
+      },
+      {
+        name: "--input-range-thumb-margin-top",
+        label: "Range Thumb Margin Top",
+        desc: "Range slider thumb vertical offset for centering.",
+        type: "text",
+        default: "-0.4375rem",
+      },
+      {
+        name: "--input-range-thumb-border-width",
+        label: "Range Thumb Border Width",
+        desc: "Range slider thumb border thickness.",
+        type: varType("var(--focus-ring-width)"),
+        default: "var(--focus-ring-width)",
+      },
+      {
+        name: "--input-range-track-background-color",
+        label: "Range Track Background",
+        desc: "Range slider track background.",
+        type: varType("var(--inputs-border-color)"),
+        default: "var(--inputs-border-color)",
+      },
+      {
+        name: "--input-range-track-height",
+        label: "Range Track Height",
+        desc: "Range slider track height.",
+        type: "text",
+        default: "0.375rem",
       },
       {
         name: "--input-range-thumb-border-color",
@@ -846,13 +822,6 @@ const variableGroups = [
         desc: "Accordion summary text color.",
         type: varType("var(--color)"),
         default: "var(--color)",
-      },
-      {
-        name: "--details-summary-color-focus",
-        label: "Summary Focus",
-        desc: "Accordion summary text on focus.",
-        type: varType("var(--primary-color-hover)"),
-        default: "var(--primary-color-hover)",
       },
       {
         name: "--details-summary-color-open",
@@ -886,6 +855,13 @@ const variableGroups = [
         desc: "Default link text color.",
         type: varType("var(--primary-color)"),
         default: "var(--primary-color)",
+      },
+      {
+        name: "--links-color-hover",
+        label: "Link Color Hover",
+        desc: "Link text color on hover.",
+        type: varType("var(--primary-color-hover)"),
+        default: "var(--primary-color-hover)",
       },
       {
         name: "--lists-marker-color",

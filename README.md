@@ -111,7 +111,7 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="info ghost">Get Started</button>
+  <button class="contrast">Get Started</button>
 </article>
 ```
 
@@ -126,7 +126,7 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
     <p>Look at me, I'm <strong>bold</strong> and <em>stylish!</em></p>
   </hgroup>
 
-  <button class="info bg-opacity-75">Get Started</button>
+  <button class="info ghost">Get Started</button>
 </article>
 ```
 
@@ -218,13 +218,13 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Bundle | Gzip |
 | --- | --- |
 | Pico (semantics only) | 10.2 KB |
-| Semanticus (semantics only) | 11.1 KB |
+| Semanticus (semantics only) | 10.8 KB |
 | Pico (semantics + classes) | 11.5 KB |
-| Semanticus (semantics + components + variants) | 14.0 KB |
+| Semanticus (semantics + components + variants) | 13.8 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
-| Semanticus (utilities + grid) | 10.3 KB |
+| Semanticus (utilities + grid) | 10.2 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 23.9 KB |
+| Semanticus (full bundle) | 23.6 KB |
 
 ## License
 

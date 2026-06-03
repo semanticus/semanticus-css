@@ -1,8 +1,9 @@
 :where(a:not([role="button"])),
 [role="link"] {
   --_links-color: var(--links-color);
+  --_links-color-hover: var(--links-color-hover);
   --_links-text-decoration: var(--links-text-decoration);
-  --_links-focus-ring-color: var(--focus-ring-color);
+  --_links-outline-color: var(--primary-outline-color);
 
   padding: 0;
   background-color: transparent;
@@ -18,25 +19,21 @@
     text-decoration var(--transition);
 
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-    --background-color: transparent;
-    --border-color: transparent;
-    --color: color-mix(
-      in srgb,
-      var(--_links-color) 70%,
-      var(--color-hover-effect)
-    );
-    text-decoration-color: oklch(from var(--_links-color) l c h / 0.85);
+    background-color: transparent;
+    border-color: transparent;
+
+    color: var(--_links-color-hover);
+    text-decoration-color: var(--_links-color-hover);
   }
 
   &:is([aria-current]:not([aria-current="false"])) {
     font-weight: 500;
-    text-decoration-color: oklch(from var(--_links-color) l c h / 0.6);
   }
 
   &:focus-visible {
     border-radius: var(--border-radius);
-    outline: var(--outline-width) solid var(--_links-focus-ring-color);
-    box-shadow: 0 0 0 var(--focus-ring-width) var(--_links-focus-ring-color);
+    outline: var(--outline-width) solid var(--_links-outline-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_links-outline-color);
   }
 
   &[aria-busy="true"] {

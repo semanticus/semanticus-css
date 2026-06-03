@@ -1,54 +1,116 @@
 :root,
 :host {
-  --subtle-opacity: 60%;
-  --subtle-shade: light-dark(var(--color-zinc-250), var(--color-slate-750));
+  /* ===== MISSING VARIANT TOKENS ===== */
+
+  /* --- Contrast --- */
+  --contrast-background-color: light-dark(
+    var(--color-slate-900),
+    var(--color-slate-50)
+  );
+  --contrast-background-color-hover: color-mix(
+    in srgb,
+    var(--contrast-background-color),
+    var(--color-hover-effect) 30%
+  );
+  --contrast-color: light-dark(var(--color-slate-900), var(--color-slate-100));
+  --contrast-color-hover: color-mix(
+    in srgb,
+    var(--contrast-color),
+    var(--color-hover-effect) 30%
+  );
+  --contrast-outline-color: color-mix(
+    in srgb,
+    var(--contrast-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Info --- */
+  --color-azure-450: #018cd4;
+  --color-azure-250: #79c0ff;
+  --info-background-color: var(--color-azure-450);
+  --info-background-color-hover: color-mix(
+    in srgb,
+    var(--info-background-color),
+    var(--color-hover-effect) 30%
+  );
+  --info-color: light-dark(var(--color-azure-450), var(--color-azure-250));
+  --info-color-hover: color-mix(
+    in srgb,
+    var(--info-color),
+    var(--color-hover-effect) 30%
+  );
+  --info-outline-color: color-mix(
+    in srgb,
+    var(--info-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Warning --- */
+  --color-amber-350: #c79400;
+  --color-amber-250: #e8ae01;
+  --warning-background-color: var(--color-amber-350);
+  --warning-background-color-hover: color-mix(
+    in srgb,
+    var(--warning-background-color),
+    var(--color-hover-effect) 30%
+  );
+  --warning-color: light-dark(var(--color-amber-350), var(--color-amber-250));
+  --warning-color-hover: color-mix(
+    in srgb,
+    var(--warning-color),
+    var(--color-hover-effect) 30%
+  );
+  --warning-outline-color: color-mix(
+    in srgb,
+    var(--warning-color) 70%,
+    light-dark(white, black)
+  );
 
   /* Primary subtle colors */
   --primary-subtle-background-color: color-mix(
     in srgb,
     var(--primary-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Secondary subtle colors */
-  --secondary-subtle-background-color: color-mix(
-    in srgb,
-    var(--secondary-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+  --secondary-subtle-background-color: light-dark(
+    color-mix(in srgb, var(--color-slate-50), white 25%),
+    color-mix(in srgb, var(--color-slate-50), black 75%)
   );
 
   /* Contrast subtle colors */
   --contrast-subtle-background-color: color-mix(
     in srgb,
     var(--contrast-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Success subtle colors */
   --success-subtle-background-color: color-mix(
     in srgb,
     var(--success-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Info subtle colors */
   --info-subtle-background-color: color-mix(
     in srgb,
     var(--info-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Warning subtle colors */
   --warning-subtle-background-color: color-mix(
     in srgb,
     var(--warning-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 
   /* Danger subtle colors */
   --danger-subtle-background-color: color-mix(
     in srgb,
     var(--danger-background-color),
-    var(--subtle-shade) var(--subtle-opacity, 60%)
+    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
   );
 }

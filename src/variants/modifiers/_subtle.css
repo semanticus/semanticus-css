@@ -1,101 +1,75 @@
 .subtle {
-  /* When .subtle is used in a element that has no intent */
+  /* When .subtle is used in an element that has no intent */
   &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger) {
-    --_buttons-background-color: var(--intent-background-color);
-    --_buttons-border-color: var(--intent-border-color);
+    --_buttons-background-color: var(--primary-subtle-background-color);
+    --_buttons-background-color-hover: var(--primary-background-color);
+
+    &[type="reset"] {
+      --_buttons-background-color: var(--secondary-subtle-background-color);
+      --_buttons-background-color-hover: var(--secondary-background-color);
+      --_buttons-color: light-dark(#191c20, white);
+    }
+
+    --_links-color: var(--primary-subtle-background-color);
+    --_links-color-hover: var(--primary-background-color);
+
+    --_progress-accent-color: var(--primary-subtle-background-color);
   }
 
-  &:not(.primary, .secondary, .contrast, .success, .info, .warning, .danger),
   &.primary {
-    --intent-background-color: oklch(
-      from var(--primary-subtle-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --intent-border-color: oklch(
-      from var(--primary-subtle-background-color) l c h /
-        var(--border-color-opacity)
-    );
+    --intent-background-color: var(--primary-subtle-background-color);
+    --intent-background-color-hover: var(--primary-background-color);
   }
 
   &.secondary {
-    --intent-background-color: light-dark(
-      color-mix(in srgb, var(--color-slate-50), white 25%),
-      color-mix(in srgb, var(--color-slate-50), black 75%)
-    );
-    --intent-border-color: light-dark(
-      color-mix(in srgb, var(--color-slate-50), white 25%),
-      color-mix(in srgb, var(--color-slate-50), black 75%)
-    );
+    --intent-background-color: var(--secondary-subtle-background-color);
+    --intent-background-color-hover: var(--secondary-background-color);
 
-    /* --- Buttons Individual Styling --- */
-    --_buttons-color: light-dark(#191c20, #fff);
-
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      --_buttons-color: #fff !important;
-    }
-
-    /* --- Alert Individual Styling --- */
-    --_alert-color: light-dark(#191c20, #fff);
-
-    /* --- Card Individual Styling --- */
-    --_card-color: light-dark(#191c20, #fff);
-
-    /* --- Pane Individual Styling --- */
-    --_pane-color: light-dark(#191c20, #fff);
+    /* Readability adjustments */
+    --_alert-color: light-dark(#191c20, white);
+    --_card-color: light-dark(#191c20, white);
+    --_pane-color: light-dark(#191c20, white);
+    --_buttons-color: light-dark(#191c20, white);
+    --_buttons-color-hover: white;
   }
 
   &.contrast {
-    --intent-background-color: oklch(
-      from var(--contrast-subtle-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --intent-border-color: oklch(
-      from var(--contrast-subtle-background-color) l c h /
-        var(--border-color-opacity)
-    );
+    --intent-background-color: var(--contrast-subtle-background-color);
+    --intent-background-color-hover: var(--contrast-background-color);
   }
 
   &.success {
-    --intent-background-color: oklch(
-      from var(--success-subtle-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --intent-border-color: oklch(
-      from var(--success-subtle-background-color) l c h /
-        var(--border-color-opacity)
-    );
+    --intent-background-color: var(--success-subtle-background-color);
+    --intent-background-color-hover: var(--success-background-color);
   }
 
   &.info {
-    --intent-background-color: oklch(
-      from var(--info-subtle-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --intent-border-color: oklch(
-      from var(--info-subtle-background-color) l c h /
-        var(--border-color-opacity)
-    );
+    --intent-background-color: var(--info-subtle-background-color);
+    --intent-background-color-hover: var(--info-background-color);
   }
 
   &.warning {
-    --intent-background-color: oklch(
-      from var(--warning-subtle-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --intent-border-color: oklch(
-      from var(--warning-subtle-background-color) l c h /
-        var(--border-color-opacity)
-    );
+    --intent-background-color: var(--warning-subtle-background-color);
+    --intent-background-color-hover: var(--warning-background-color);
   }
 
   &.danger {
-    --intent-background-color: oklch(
-      from var(--danger-subtle-background-color) l c h /
-        var(--background-color-opacity)
-    );
-    --intent-border-color: oklch(
-      from var(--danger-subtle-background-color) l c h /
-        var(--border-color-opacity)
-    );
+    --intent-background-color: var(--danger-subtle-background-color);
+    --intent-background-color-hover: var(--danger-background-color);
+  }
+}
+
+/* Accordion chevron override */
+details summary[role="button"].subtle.secondary {
+  @container style(--theme: light) {
+    &::after {
+      filter: brightness(0);
+    }
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+      &::after {
+        filter: brightness(0) invert(1);
+      }
+    }
   }
 }

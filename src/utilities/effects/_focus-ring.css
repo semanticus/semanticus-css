@@ -1,5 +1,5 @@
 .focus-ring {
-  --_focus-ring-color: var(--focus-ring-color);
+  --_focus-ring-color: var(--primary-outline-color);
 
   &:focus {
     outline: var(--outline-width) solid var(--_focus-ring-color);
@@ -8,29 +8,29 @@
 }
 
 .focus-ring-primary {
-  --_focus-ring-color: var(--primary-focus-ring-color);
+  --_focus-ring-color: var(--primary-outline-color);
 }
 
 .focus-ring-secondary {
-  --_focus-ring-color: var(--secondary-focus-ring-color);
+  --_focus-ring-color: var(--secondary-outline-color);
 }
 
 .focus-ring-success {
-  --_focus-ring-color: var(--success-focus-ring-color);
+  --_focus-ring-color: var(--success-outline-color);
 }
 
 .focus-ring-info {
-  --_focus-ring-color: var(--info-focus-ring-color);
+  --_focus-ring-color: var(--info-outline-color);
 }
 
 .focus-ring-warning {
-  --_focus-ring-color: var(--warning-focus-ring-color);
+  --_focus-ring-color: var(--warning-outline-color);
 }
 
 .focus-ring-danger {
-  --_focus-ring-color: var(--danger-focus-ring-color);
+  --_focus-ring-color: var(--danger-outline-color);
 }
 
 .focus-ring-contrast {
-  --_focus-ring-color: var(--contrast-focus-ring-color);
+  --_focus-ring-color: var(--contrast-outline-color);
 }

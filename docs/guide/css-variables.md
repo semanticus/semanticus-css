@@ -58,12 +58,8 @@ These set the document-wide baseline. They use the CSS property name directly.
 :root {
   --background-color: light-dark(white, #0e1118);
   --color: light-dark(#373c44, #c2c7d0);
+  --color-hover-effect: light-dark(#424751, #a4acba);
   --border-color: light-dark(#dfe3eb, #202632);
-  --selection-background-color: color-mix(in srgb, var(--primary-background-color), white 75%);
-  --backdrop-background-color: light-dark(
-    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
-    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
-  );
 }
 ```
 
@@ -85,10 +81,8 @@ These set the document-wide baseline. They use the CSS property name directly.
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 1px;
-  --focus-ring-width: 0.125rem;
-  --focus-ring-color: var(--primary-focus-ring-color);
   --transition: 0.2s ease-in-out;
-  --disabled-opacity: 0.5;
+  --opacity-disabled: 0.5;
 }
 ```
 
@@ -104,7 +98,7 @@ Defined by palette files. Override these to create custom color themes.
   --primary-color-hover: white;
   --primary-background-color: #0172ad;
   --primary-background-color-hover: light-dark(#02659a, #017fc0);
-  --primary-focus-ring-color: light-dark(
+  --primary-outline-color: light-dark(
     oklch(from #029ae8 l c h / 0.5),
     oklch(from #01aaff l c h / 0.375)
   );
@@ -112,26 +106,26 @@ Defined by palette files. Override these to create custom color themes.
   --secondary-color: white;
   --secondary-background-color: #525f7a;
   --secondary-background-color-hover: light-dark(#48536b, #5d6b89);
-  --secondary-focus-ring-color: light-dark(
+  --secondary-outline-color: light-dark(
     oklch(from #5d6b89 l c h / 0.25),
     oklch(from #909ebe l c h / 0.25)
   );
 
   --contrast-color: light-dark(white, black);
   --contrast-background-color: light-dark(#181c25, #eff1f4);
-  --contrast-focus-ring-color: light-dark(
+  --contrast-outline-color: light-dark(
     oklch(from #5d6b89 l c h / 0.25),
     oklch(from #cfd5e2 l c h / 0.25)
   );
 
   --success-color: light-dark(#029764, #00cc88);
   --success-background-color: #029764;
-  --success-focus-ring-color: /* ... */;
+  --success-outline-color: /* ... */;
 
   --info-color: /* ... */;
   --warning-color: /* ... */;
   --danger-color: /* ... */;
-  /* (each with *-background-color, *-focus-ring-color, and *-hover variants) */
+  /* (each with *-background-color, *-outline-color, and *-hover variants) */
 }
 ```
 
@@ -141,19 +135,44 @@ Defined by palette files. Override these to create custom color themes.
 
 Scoped to a component type. Change one of these and every instance updates.
 
+### Selection
+
+```css
+:root {
+  --selection-background-color: color-mix(in srgb, var(--primary-color), white 75%);
+}
+```
+
+### Backdrop
+
+```css
+:root {
+  --backdrop-background-color: light-dark(
+    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
+    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
+  );
+}
+```
+
+### Building Blocks
+
+```css
+:root {
+  --focus-ring-width: 0.125rem;
+  --menu-box-shadow: /* layered shadow with border */;
+}
+```
+
 ### Buttons
 
 ```css
 :root {
-  --buttons-font-size: 1rem;
   --buttons-color: white;
   --buttons-color-hover: white;
-  --buttons-spacing-vertical: var(--inputs-spacing-vertical);
-  --buttons-spacing-horizontal: var(--inputs-spacing-horizontal);
+  --buttons-padding-block: var(--inputs-spacing-vertical);
+  --buttons-padding-inline: var(--inputs-spacing-horizontal);
   --buttons-background-color: var(--primary-background-color);
   --buttons-background-color-hover: var(--primary-background-color-hover);
-  --buttons-border-color: var(--primary-background-color);
-  --buttons-border-color-hover: var(--primary-background-color-hover);
 }
 ```
 
@@ -168,8 +187,8 @@ Scoped to a component type. Change one of these and every instance updates.
   --inputs-border-color: light-dark(#cfd5e2, #2a3140);
   --inputs-color: light-dark(#23262c, #e0e3e7);
   --inputs-accent-color: var(--primary-background-color);
+  --inputs-accent-color-muted: light-dark(#bfc7d9, #333c4e);
   --inputs-placeholder-color: var(--color-muted);
-  --inputs-focus-ring-width: 0.0625rem;
 }
 ```
 
@@ -178,13 +197,14 @@ Scoped to a component type. Change one of these and every instance updates.
 ```css
 :root {
   --input-checkbox-border-width: 0.125rem;
+  --input-radio-background-color: white;
+  --input-range-thumb-size: 1.25rem;
+  --input-range-track-background-color: var(--inputs-border-color);
+  --input-range-thumb-border-color: var(--background-color);
   --input-search-border-radius: 5rem;
-  --input-switch-background-color: light-dark(#bfc7d9, #333c4e);
   --input-switch-thumb-background-color: white;
   --input-switch-border-width: 0.1875rem;
   --input-switch-border-radius: 1.25em;
-  --input-range-track-border-color: light-dark(#bfc7d9, #333c4e);
-  --input-range-thumb-border-color: var(--background-color);
 }
 ```
 
@@ -194,7 +214,6 @@ Scoped to a component type. Change one of these and every instance updates.
 :root {
   --dialog-border-color: var(--border-color);
   --dialog-background-color: var(--background-color);
-  --dialog-box-shadow: var(--menu-box-shadow);
   --dialog-marginals-background-color: light-dark(#fbfcfc, #2a3140);
   --dialog-marginals-border-color: color-mix(
     in srgb, light-dark(#181c25, #a4acba), transparent 90%
@@ -208,7 +227,6 @@ Scoped to a component type. Change one of these and every instance updates.
 :root {
   --details-summary-background-color: var(--inputs-background-color);
   --details-summary-color: var(--color);
-  --details-summary-color-focus: var(--primary-color-hover);
   --details-summary-color-open: var(--color-muted);
   --details-dropdown-color: var(--inputs-placeholder-color);
   --details-dropdown-border-color: var(--inputs-border-color);
@@ -226,6 +244,7 @@ Scoped to a component type. Change one of these and every instance updates.
 ```css
 :root {
   --links-color: var(--primary-color);
+  --links-color-hover: var(--primary-color-hover);
   --links-text-decoration: underline;
 }
 ```
@@ -307,7 +326,7 @@ Scoped to a component type. Change one of these and every instance updates.
 :root {
   --small-font-size: 80%;
   --sidebar-size: 25%;
-  --group-button-spacing-horizontal: 1rem;
+  --group-buttons-padding-inline: 1rem;
   --icons-background-position-gap: 0.75rem;
   --icons-width: 1em;
 }
@@ -325,7 +344,8 @@ the Component Token tier and are the values the component actually consumes.
 button, [role="button"] {
   --_buttons-color: var(--buttons-color);
   --_buttons-background-color: var(--buttons-background-color);
-  --_buttons-border-color: var(--buttons-border-color);
+  --_buttons-border-color: var(--_buttons-background-color);
+  --_buttons-outline-color: var(--primary-outline-color);
 
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);
@@ -335,6 +355,7 @@ button, [role="button"] {
 :where(input, select, textarea) {
   --_inputs-background-color: var(--inputs-background-color);
   --_inputs-border-color: var(--inputs-border-color);
+  --_inputs-outline-color: var(--primary-outline-color);
 
   background-color: var(--_inputs-background-color);
   border-color: var(--_inputs-border-color);
@@ -364,7 +385,7 @@ component instance**:
   --primary-background-color: #6366f1;
   --primary-background-color-hover: light-dark(#4f46e5, #818cf8);
   --primary-color: white;
-  --primary-focus-ring-color: light-dark(
+  --primary-outline-color: light-dark(
     oklch(from #6366f1 l c h / 0.5),
     oklch(from #818cf8 l c h / 0.375)
   );
@@ -374,8 +395,8 @@ component instance**:
   --line-height: 1.7;
 
   /* Tier 3: Component overrides — all buttons get custom spacing */
-  --buttons-spacing-vertical: 0.75rem;
-  --buttons-spacing-horizontal: 1.25rem;
+  --buttons-padding-block: 0.75rem;
+  --buttons-padding-inline: 1.25rem;
 }
 ```
 

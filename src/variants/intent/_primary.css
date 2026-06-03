@@ -1,20 +1,11 @@
 /* See ./_common.css for shared styles */
 
 .primary {
-  --intent-color: oklch(from var(--primary-color) l c h / var(--color-opacity));
-  --intent-background-color: oklch(
-    from var(--primary-background-color) l c h / var(--background-color-opacity)
-  );
-  --intent-border-color: oklch(
-    from var(--primary-background-color) l c h / var(--border-color-opacity)
-  );
-  --intent-background-color-hover: oklch(
-    from var(--primary-background-color-hover) l c h /
-      var(--background-color-opacity)
-  );
-  --intent-border-color-hover: oklch(
-    from var(--primary-background-color-hover) l c h /
-      var(--border-color-opacity)
-  );
-  --intent-focus-ring-color: var(--primary-focus-ring-color);
+  --intent-background-color: var(--primary-background-color);
+  --intent-background-color-hover: var(--primary-background-color-hover);
+
+  --intent-color: var(--primary-color);
+  --intent-color-hover: var(--primary-color-hover);
+
+  --intent-outline-color: var(--primary-outline-color);
 }

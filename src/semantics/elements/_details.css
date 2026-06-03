@@ -5,9 +5,9 @@ summary {
 details {
   --_details-summary-background-color: var(--details-summary-background-color);
   --_details-summary-color: var(--details-summary-color);
-  --_details-summary-color-focus: var(--details-summary-color-focus);
+  --_details-summary-color-focus: var(--primary-color-hover);
   --_details-summary-color-open: var(--details-summary-color-open);
-  --_details-summary-focus-ring-color: var(--focus-ring-color);
+  --_details-summary-outline-color: var(--primary-outline-color);
 
   display: block;
 
@@ -25,9 +25,9 @@ details {
         --_details-summary-color: var(--_details-summary-color-focus);
 
         outline: var(--outline-width) solid
-          var(--_details-summary-focus-ring-color);
+          var(--_details-summary-outline-color);
         box-shadow: 0 0 0 var(--focus-ring-width)
-          var(--_details-summary-focus-ring-color);
+          var(--_details-summary-outline-color);
       }
     }
 
@@ -137,12 +137,12 @@ details:has(> summary[aria-haspopup="menu"]) {
 
       &[aria-invalid="false"] {
         --_details-dropdown-border-color: var(--success-background-color);
-        --_details-summary-focus-ring-color: var(--success-focus-ring-color);
+        --_details-summary-outline-color: var(--success-outline-color);
       }
 
       &[aria-invalid="true"] {
         --_details-dropdown-border-color: var(--danger-background-color);
-        --_details-summary-focus-ring-color: var(--danger-focus-ring-color);
+        --_details-summary-outline-color: var(--danger-outline-color);
       }
     }
   }

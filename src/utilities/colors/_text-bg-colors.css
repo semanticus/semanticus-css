@@ -1,78 +1,62 @@
 .text-bg-primary {
-  --background-color: oklch(
-    from var(--primary-background-color) l c h / var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--primary-background-color);
+  --typography-color: white;
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-secondary {
-  --background-color: oklch(
-    from var(--secondary-background-color) l c h /
-      var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--secondary-background-color);
+  --typography-color: white;
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-contrast {
-  --background-color: oklch(
-    from var(--contrast-background-color) l c h /
-      var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--contrast-background-color);
+  --typography-color: light-dark(#fff, #191c20);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-success {
-  --background-color: oklch(
-    from var(--success-background-color) l c h / var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--success-background-color);
+  --typography-color: white;
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-info {
-  --background-color: oklch(
-    from var(--info-background-color) l c h / var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--info-background-color);
+  --typography-color: white;
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-warning {
-  --background-color: oklch(
-    from var(--warning-background-color) l c h / var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--warning-background-color);
+  --typography-color: white;
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-danger {
-  --background-color: oklch(
-    from var(--danger-background-color) l c h / var(--background-color-opacity)
-  );
-  --typography-color: oklch(from #fff l c h / var(--color-opacity));
+  --_background-color: var(--danger-background-color);
+  --typography-color: white;
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
   color: var(--typography-color) !important;
-  background-color: var(--background-color) !important;
+  background-color: var(--_background-color) !important;
 }

@@ -1,23 +1,11 @@
 /* See ./_common.css for shared styles */
 
 .secondary {
-  --intent-color: oklch(
-    from var(--secondary-color) l c h / var(--color-opacity)
-  );
-  --intent-background-color: oklch(
-    from var(--secondary-background-color) l c h /
-      var(--background-color-opacity)
-  );
-  --intent-border-color: oklch(
-    from var(--secondary-background-color) l c h / var(--border-color-opacity)
-  );
-  --intent-background-color-hover: oklch(
-    from var(--secondary-background-color-hover) l c h /
-      var(--background-color-opacity)
-  );
-  --intent-border-color-hover: oklch(
-    from var(--secondary-background-color-hover) l c h /
-      var(--border-color-opacity)
-  );
-  --intent-focus-ring-color: var(--secondary-focus-ring-color);
+  --intent-background-color: var(--secondary-background-color);
+  --intent-background-color-hover: var(--secondary-background-color-hover);
+
+  --intent-color: var(--secondary-color);
+  --intent-color-hover: var(--secondary-color-hover);
+
+  --intent-outline-color: var(--secondary-outline-color);
 }

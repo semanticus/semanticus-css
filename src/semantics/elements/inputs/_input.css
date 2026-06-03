@@ -19,8 +19,7 @@ input {
     [type="month"],
     [type="time"],
     [type="week"],
-    [type="search"],
-    [type="file"]
+    [type="search"]
   ) {
     &[aria-invalid] {
       background-position: center right var(--icons-background-position-gap);
