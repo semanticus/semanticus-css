@@ -14,8 +14,6 @@ Tier 4: Individual Tokens    --_{component}-property[-state]  per-instance overr
 
 The flow: System → Variant → Component → Individual (`--_`).
 
----
-
 ## Tier 1: System Tokens
 
 No scope prefix. These define the document-wide baseline and **must match
@@ -49,14 +47,11 @@ a CSS longhand property name** whenever possible.
   --outline-width
   --transition
   --opacity-disabled
-
-  /* Overlays */
-
+}
+```
 
 System Tokens affect the entire page. Setting `--background-color` on a modifier
 class changes the background of every component that reads it.
-
----
 
 ## Tier 2: Variant Tokens
 
@@ -97,8 +92,6 @@ custom palettes.
 
 Variant Tokens are referenced by variant classes but don't directly style
 elements — they feed into the tiers below.
-
----
 
 ## Tier 3: Component Tokens
 
@@ -198,8 +191,6 @@ of that component (e.g., all buttons, all inputs, all dialogs).
 }
 ```
 
----
-
 ## Tier 4: Individual Component Tokens
 
 Private tokens prefixed with `--_`. Defined **in each component's CSS file**
@@ -241,8 +232,6 @@ dialog {
 }
 ```
 
----
-
 ## How Modifier Classes Work Across Tiers
 
 Modifier classes (`.primary`, `.secondary`, etc.) can target any tier to control
@@ -274,8 +263,6 @@ the scope of their effect:
 
 The 4-tier cascade means no combinatorial explosion — `.ghost` works with any
 intent class without separate blocks for `.ghost.primary`, `.ghost.secondary`, etc.
-
----
 
 ## Property Name Rules
 
@@ -325,8 +312,6 @@ Tokens on `:root` that propagate via inheritance use the CSS property name:
 --font-weight    /* inherited baseline */
 --text-underline-offset
 ```
-
----
 
 ## Migration from v2.2.0 to v3.0.0
 
