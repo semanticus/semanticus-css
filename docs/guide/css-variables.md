@@ -15,8 +15,6 @@ After importing any semanticus-css bundle, override CSS variables defined on `:r
 To help you create your own custom styles, check out the [Palettes](/guide/palettes)
 or [Sizes](/guide/sizes) builder tools.
 
----
-
 ## The 4-Tier Token System
 
 Every token belongs to one of four tiers. Changing a token at a higher tier
@@ -25,90 +23,73 @@ affects more of the page; changing it at a lower tier gives more precision.
 | Tier | Prefix | Scope |
 |------|--------|-------|
 | 1. System | `--property` | Entire page |
-| 2. Palette | `--{intent}-property` | Variant definitions |
+| 2. Variant | `--{variant}-property[-state]` | Variant definitions |
 | 3. Component | `--{component}-property` | All instances of a component |
 | 4. Individual | `--_{component}-property` | A single component instance |
 
----
-
 ## Tier 1: System Tokens
 
-These set the document-wide baseline. They use the CSS property name directly.
+These set the document-wide baseline.
 
-### Background Color
-
-```css
-:root {
-  --background-color: light-dark(white, #0e1118);
-}
-```
-
-### Color
+To avoid having to memorize arbitrary token names, these type of tokens (with only 2 exceptions) always start with a  **CSS longhand property** name.
 
 ```css
 :root {
-  --color: light-dark(#373c44, #c2c7d0);
-}
-```
+  /* --- Background Color --- */
+  --background-color: light-dark(
+    white,
+    color-mix(in srgb, var(--_color-slate-950), var(--_color-slate-900))
+  );
 
-### Typography
+  /* --- Color --- */
+  --color: light-dark(var(--_color-zinc-750), var(--_color-zinc-200));
 
-```css
-:root {
-  --font-family: var(--font-family-sans-serif);
-  --font-family-sans-serif: system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  --font-size: 97%;          /* scales with breakpoints: 98%@sm … 102%@xxl */
-  --font-weight: 400;
-  --line-height: 1.5;
-  --text-underline-offset: 0.1rem;
+  /* --- Typography --- */
+  --typography-spacing-vertical: 1rem;
   --typography-color: var(--color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
-  --typography-spacing-vertical: 1rem;
-}
-```
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 97%;
+  --text-underline-offset: 0.1rem;
+  --font-family-emoji:
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif:
+    system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial,
+    "Helvetica Neue", sans-serif, var(--font-family-emoji);
+  --font-family-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace, var(--font-family-emoji);
+  --font-family: var(--font-family-sans-serif);
 
-### Border
-
-```css
-:root {
-  --border-color: light-dark(#dfe3eb, #202632);
+  /* --- Border --- */
+  --border-color: light-dark(var(--_color-slate-100), var(--_color-slate-800));
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
-}
-```
 
-### Outline
-
-```css
-:root {
+  /* --- Outline --- */
   --outline-width: 1px;
-}
-```
 
-### Opacity
-
-```css
-:root {
+  /* --- Opacity --- */
   --opacity-disabled: 0.5;
-}
-```
 
-### Exceptions
-
-```css
-:root {
+  /* --- Exceptions --- */
   --transition: 0.2s ease-in-out;
+
+  /* Used for margins and padding throughout the page */
   --spacing: calc(0.75rem * var(--_spacing-scale));
-  --color-hover-shade: light-dark(#424751, #a4acba);
+
+  /* Used to derive colors representing the hover state */
+  --color-hover-shade: light-dark(
+    var(--_color-zinc-700),
+    var(--_color-zinc-300)
+  );
 }
 ```
 
----
+## Tier 2: Variant Tokens
 
-## Tier 2: Palette Tokens
-
-Defined by palette files. Override these to create custom color themes.
+Define the color values for each intent variant. Override these to create custom color themes.
 
 ```css
 :root {
@@ -146,8 +127,6 @@ Defined by palette files. Override these to create custom color themes.
   /* (each with *-background-color, *-outline-color, and *-hover variants) */
 }
 ```
-
----
 
 ## Tier 3: Component Tokens
 
@@ -290,6 +269,14 @@ Scoped to a component type. Change one of these and every instance updates.
 }
 ```
 
+### Mark
+
+```css
+:root {
+  --mark-background-color: light-dark(#c79400, #e8ae01);
+}
+```
+
 ### Code
 
 ```css
@@ -350,8 +337,6 @@ Scoped to a component type. Change one of these and every instance updates.
 }
 ```
 
----
-
 ## Tier 4: Individual Component Tokens
 
 Private `--_` tokens defined inside component CSS files. These initialize from
@@ -390,8 +375,6 @@ component instance**:
 }
 ```
 
----
-
 ## How Tiers Compose: A Complete Example
 
 ```css
@@ -399,7 +382,7 @@ component instance**:
 @import "semanticus-css";
 
 :root {
-  /* Tier 2: Custom palette colors */
+  /* Tier 2: Custom variant colors */
   --primary-background-color: #6366f1;
   --primary-background-color-hover: light-dark(#4f46e5, #818cf8);
   --primary-color: white;
