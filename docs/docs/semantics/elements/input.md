@@ -8,7 +8,7 @@ The `<input>` element accepts user data in many formats defined by its `type` at
 
 For validation states see [[aria-invalid]](/docs/semantics/attributes/aria-invalid).
 
-For helper text below inputs see [&lt;small&gt;](/docs/semantics/elements/small).
+For helper text below inputs see [&lt;small&gt;](/docs/utilities/typography#font-size).
 
 ## Basic Usage
 

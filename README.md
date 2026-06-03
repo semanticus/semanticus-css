@@ -199,7 +199,7 @@ Semanticus CSS targets modern browsers based on the following [Browserslist](htt
 
 ## Development
 
-Check out this [How to setup the project](docs/about/contributing.md#how-to-setup-the-project) inside the contributing guide.
+Check out this [How to setup the project](docs/guide/contributing.md#how-to-setup-the-project) inside the contributing guide.
 
 ## About
 

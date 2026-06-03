@@ -27,7 +27,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | Status | Feature |
 | --- | --- |
 | ✅ | Accordions |
-| 🚧 | Accordion List |
 | ✅ | Alerts |
 | ✅ | Auto Grid |
 | ✅ | Card List |
@@ -40,6 +39,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Pane |
 | ✅ | Toasts |
 | ✅ | Tooltip |
+| ⌛ | Accordion List |
 | ⌛ | Offcanvas |
 | ⌛ | Carousel |
 | ⌛ | Badge |
@@ -121,7 +121,6 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ⌛ | Tabs composite documentation |
 | ⌛ | Offcanvas component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
-| ⌛ | Different layouts examples |
 | ⌛ | Landing page example |
 | ⌛ | Login page example |
 | ⌛ | CRUD pages examples |

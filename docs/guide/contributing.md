@@ -6,9 +6,9 @@ Thank you for considering contributing to **Semanticus CSS**!
 
 Hopefully this will change and your name gets added to the list of contributors as well.
 
-The [roadmap](/about/roadmap), bug fixes and keeping up to date with new emerging patterns is a daunting task for one person alone and I'd love for you to be part of shaping the future of this project.
+The [roadmap](/guide/roadmap), bug fixes and keeping up to date with new emerging patterns is a daunting task for one person alone and I'd love for you to be part of shaping the future of this project.
 
-When contributing, please keep the [Core Principles](/about/vision.html#core-principles) in mind.
+When contributing, please keep the [Core Principles](/guide/vision) in mind.
 
 ## Code Guidelines
 
@@ -22,7 +22,7 @@ When contributing, please keep the [Core Principles](/about/vision.html#core-pri
 
 ### Code Style
 
-- Follow the existing CSS conventions — see [Token Conventions](/about/token-conventions) for the naming rules applied to CSS custom properties
+- Follow the existing CSS conventions — see [Token Conventions](/guide/token-convention) for the naming rules applied to CSS custom properties
 - Use CSS custom properties (`--*`) for theming rather than hard-coded values
 - Before submitting:
   - Run the linter:

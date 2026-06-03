@@ -10,6 +10,6 @@ Components provide reusable structure and presentation for common UI patterns th
 
 | Component | Description | Elements |
 |-----------|-------------|----------|
-| [`.card`](./card.md) | Visual container with background, shadow, and optional header/footer | Any block element |
-| [`.container`](./container.md) | Responsive width wrapper with horizontal padding | Any block element |
-| [`.striped`](./striped.md) | Alternating row background colors | `<table>` |
+| [`.card`](./card) | Visual container with background, shadow, and optional header/footer | Any block element |
+| [`.container`](./container) | Responsive width wrapper with horizontal padding | Any block element |
+| [`.striped`](/docs/variants/modifiers/striped) | Alternating row background colors | `<table>` |

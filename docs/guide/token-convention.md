@@ -1,4 +1,4 @@
-# Token Naming Conventions
+# Token Naming Convention
 
 **Semanticus CSS** uses a 4-tier token system. Each tier builds on the previous,
 giving you precise control over how broadly or narrowly a style change applies.

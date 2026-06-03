@@ -24,4 +24,4 @@ Wrapping an input inside a label implicitly associates them.
 
 <HtmlPreviewer :code="LabelDemo.inputInside()" />
 
-For helper text using `<small>`, see [&lt;small&gt;](/docs/semantics/elements/small).
+For helper text using `<small>`, see [&lt;small&gt;](/docs/utilities/typography#font-size).
