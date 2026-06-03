@@ -128,7 +128,8 @@ function varType(defaultValue) {
 
 const variableGroups = [
   {
-    label: "Core Colors",
+    tier: "Tier 1: System Tokens",
+    label: "Background & Text",
     vars: [
       {
         name: "--background-color",
@@ -170,33 +171,7 @@ const variableGroups = [
     ],
   },
   {
-    label: "Selection",
-    vars: [
-      {
-        name: "--selection-background-color",
-        label: "Selection Background",
-        desc: "Background color for ::selection text highlights.",
-        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
-        default: "color-mix(in srgb, var(--primary-color), white 75%)",
-      },
-    ],
-  },
-  {
-    label: "Backdrop",
-    vars: [
-      {
-        name: "--backdrop-background-color",
-        label: "Backdrop",
-        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
-        type: varType(
-          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
-        ),
-        default:
-          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
-      },
-    ],
-  },
-  {
+    tier: "Tier 1: System Tokens",
     label: "Hover & Focus Effects",
     vars: [
       {
@@ -209,6 +184,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Primary Intent",
     vars: [
       {
@@ -258,6 +234,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Secondary Intent",
     vars: [
       {
@@ -307,6 +284,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Contrast Intent",
     vars: [
       {
@@ -356,6 +334,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Success Intent",
     vars: [
       {
@@ -405,6 +384,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Info Intent",
     vars: [
       {
@@ -454,6 +434,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Warning Intent",
     vars: [
       {
@@ -503,6 +484,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Danger Intent",
     vars: [
       {
@@ -552,6 +534,36 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
+    label: "Selection",
+    vars: [
+      {
+        name: "--selection-background-color",
+        label: "Selection Background",
+        desc: "Background color for ::selection text highlights.",
+        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
+        default: "color-mix(in srgb, var(--primary-color), white 75%)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Backdrop",
+    vars: [
+      {
+        name: "--backdrop-background-color",
+        label: "Backdrop",
+        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
+        type: varType(
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
+        ),
+        default:
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
     label: "Code",
     vars: [
       {
@@ -588,6 +600,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Buttons",
     vars: [
       {
@@ -621,6 +634,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Form Inputs",
     vars: [
       {
@@ -680,6 +694,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Switch",
     vars: [
       {
@@ -692,6 +707,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Radio",
     vars: [
       {
@@ -704,6 +720,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Range",
     vars: [
       {
@@ -751,6 +768,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Details / Accordion",
     vars: [
       {
@@ -774,23 +792,10 @@ const variableGroups = [
         type: varType("var(--color-muted)"),
         default: "var(--color-muted)",
       },
-      {
-        name: "--details-dropdown-color",
-        label: "Dropdown Text",
-        desc: "Dropdown trigger text color.",
-        type: varType("var(--inputs-placeholder-color)"),
-        default: "var(--inputs-placeholder-color)",
-      },
-      {
-        name: "--details-dropdown-border-color",
-        label: "Dropdown Border",
-        desc: "Dropdown trigger border color.",
-        type: varType("var(--inputs-border-color)"),
-        default: "var(--inputs-border-color)",
-      },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Links & Lists",
     vars: [
       {
@@ -817,6 +822,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Dialog",
     vars: [
       {
@@ -856,8 +862,23 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Menu / Dropdown",
     vars: [
+      {
+        name: "--details-dropdown-color",
+        label: "Dropdown Trigger Text",
+        desc: "Dropdown trigger text color.",
+        type: varType("var(--inputs-placeholder-color)"),
+        default: "var(--inputs-placeholder-color)",
+      },
+      {
+        name: "--details-dropdown-border-color",
+        label: "Dropdown Trigger Border",
+        desc: "Dropdown trigger border color.",
+        type: varType("var(--inputs-border-color)"),
+        default: "var(--inputs-border-color)",
+      },
       {
         name: "--details-menu-background-color",
         label: "Menu Background",
@@ -889,6 +910,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Progress",
     vars: [
       {
@@ -908,6 +930,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Tooltip",
     vars: [
       {
@@ -1407,167 +1430,184 @@ defineExpose({
         </div>
 
         <div class="var-groups">
-          <div
-            v-for="group in filteredGroups"
-            :key="group.label"
-            class="var-group"
-          >
-            <button class="group-header" @click="toggleGroup(group.label)">
-              <svg
-                :class="['chevron', { expanded: expandedGroups[group.label] }]"
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-              <span class="group-label">{{ group.label }}</span>
-              <span class="group-count">{{ group.vars.length }}</span>
-            </button>
+          <template v-for="(group, index) in filteredGroups" :key="group.label">
+            <div
+              v-if="
+                index === 0 || group.tier !== filteredGroups[index - 1].tier
+              "
+              class="tier-header"
+            >
+              {{ group.tier }}
+            </div>
+            <div class="var-group">
+              <button class="group-header" @click="toggleGroup(group.label)">
+                <svg
+                  :class="[
+                    'chevron',
+                    { expanded: expandedGroups[group.label] },
+                  ]"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+                <span class="group-label">{{ group.label }}</span>
+                <span class="group-count">{{ group.vars.length }}</span>
+              </button>
 
-            <div v-show="expandedGroups[group.label]" class="group-vars">
-              <div
-                v-for="v in group.vars"
-                :key="v.name"
-                :class="['var-row', { changed: isChanged(v) }]"
-              >
-                <div class="var-label-row">
-                  <label class="var-label" :for="'input-' + v.name">
-                    <code
-                      class="var-name-label"
-                      v-html="highlightMatch(v.name, searchQuery)"
-                    ></code>
-                  </label>
-                  <div class="popover-container">
-                    <button
-                      type="button"
-                      class="help-trigger"
-                      :aria-expanded="activePopover === v.name"
-                      @click.stop="togglePopover(v.name)"
-                      title="Show details"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+              <div v-show="expandedGroups[group.label]" class="group-vars">
+                <div
+                  v-for="v in group.vars"
+                  :key="v.name"
+                  :class="['var-row', { changed: isChanged(v) }]"
+                >
+                  <div class="var-label-row">
+                    <label class="var-label" :for="'input-' + v.name">
+                      <code
+                        class="var-name-label"
+                        v-html="highlightMatch(v.name, searchQuery)"
+                      ></code>
+                    </label>
+                    <div class="popover-container">
+                      <button
+                        type="button"
+                        class="help-trigger"
+                        :aria-expanded="activePopover === v.name"
+                        @click.stop="togglePopover(v.name)"
+                        title="Show details"
                       >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                        <line x1="12" y1="17" x2="12.01" y2="17" />
-                      </svg>
-                    </button>
-                    <div
-                      v-if="activePopover === v.name"
-                      class="help-popover"
-                      @click.stop
-                    >
-                      <div class="popover-header">
-                        <code class="var-name-popover">{{ v.name }}</code>
-                        <button
-                          type="button"
-                          class="popover-close"
-                          @click.stop="closePopover"
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="14"
+                          height="14"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          ✕
-                        </button>
-                      </div>
-                      <div class="popover-content">
-                        <p
-                          class="popover-short-label"
-                          v-html="highlightMatch(v.label, searchQuery)"
-                        ></p>
-                        <p
-                          class="popover-desc"
-                          v-html="highlightMatch(v.desc, searchQuery)"
-                        ></p>
-                        <div class="popover-default">
-                          <span class="default-label">Default:</span>
-                          <code class="default-value">{{ getDefault(v) }}</code>
-                        </div>
-                        <div class="popover-copy-css">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                          <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                      </button>
+                      <div
+                        v-if="activePopover === v.name"
+                        class="help-popover"
+                        @click.stop
+                      >
+                        <div class="popover-header">
+                          <code class="var-name-popover">{{ v.name }}</code>
                           <button
                             type="button"
-                            class="copy-css-btn"
-                            @click.stop="
-                              copyToClipboard(
-                                `${v.name}: ${getDisplayValue(v)};`,
-                                'cssRule',
-                              )
-                            "
+                            class="popover-close"
+                            @click.stop="closePopover"
                           >
-                            <svg
-                              viewBox="0 0 24 24"
-                              width="12"
-                              height="12"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                            >
-                              <rect x="9" y="9" width="13" height="13" rx="2" />
-                              <path
-                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                              />
-                            </svg>
-                            {{
-                              copiedFeedback === "cssRule"
-                                ? "Copied CSS!"
-                                : "Copy CSS Rule"
-                            }}
+                            ✕
                           </button>
+                        </div>
+                        <div class="popover-content">
+                          <p
+                            class="popover-short-label"
+                            v-html="highlightMatch(v.label, searchQuery)"
+                          ></p>
+                          <p
+                            class="popover-desc"
+                            v-html="highlightMatch(v.desc, searchQuery)"
+                          ></p>
+                          <div class="popover-default">
+                            <span class="default-label">Default:</span>
+                            <code class="default-value">{{
+                              getDefault(v)
+                            }}</code>
+                          </div>
+                          <div class="popover-copy-css">
+                            <button
+                              type="button"
+                              class="copy-css-btn"
+                              @click.stop="
+                                copyToClipboard(
+                                  `${v.name}: ${getDisplayValue(v)};`,
+                                  'cssRule',
+                                )
+                              "
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="12"
+                                height="12"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <rect
+                                  x="9"
+                                  y="9"
+                                  width="13"
+                                  height="13"
+                                  rx="2"
+                                />
+                                <path
+                                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                />
+                              </svg>
+                              {{
+                                copiedFeedback === "cssRule"
+                                  ? "Copied CSS!"
+                                  : "Copy CSS Rule"
+                              }}
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <button
+                      v-if="isChanged(v)"
+                      class="reset-var-btn"
+                      @click="resetVar(v)"
+                      title="Reset to default"
+                    >
+                      ✕
+                    </button>
                   </div>
-                  <button
-                    v-if="isChanged(v)"
-                    class="reset-var-btn"
-                    @click="resetVar(v)"
-                    title="Reset to default"
-                  >
-                    ✕
-                  </button>
-                </div>
 
-                <div class="var-input-row">
-                  <template v-if="v.type === 'color'">
-                    <input
-                      v-if="computedReady"
-                      type="color"
-                      class="color-picker"
-                      :value="toHex(getDisplayValue(v))"
-                      @input="setCurrentValue(v, $event.target.value)"
-                    />
-                    <input
-                      type="text"
-                      class="text-input color-text"
-                      :id="'input-' + v.name"
-                      :value="getDisplayValue(v)"
-                      :placeholder="getDefault(v)"
-                      @change="setCurrentValue(v, $event.target.value)"
-                    />
-                  </template>
-                  <template v-else>
-                    <input
-                      type="text"
-                      class="text-input"
-                      :id="'input-' + v.name"
-                      :value="getDisplayValue(v)"
-                      :placeholder="getDefault(v)"
-                      @change="setCurrentValue(v, $event.target.value)"
-                    />
-                  </template>
+                  <div class="var-input-row">
+                    <template v-if="v.type === 'color'">
+                      <input
+                        v-if="computedReady"
+                        type="color"
+                        class="color-picker"
+                        :value="toHex(getDisplayValue(v))"
+                        @input="setCurrentValue(v, $event.target.value)"
+                      />
+                      <input
+                        type="text"
+                        class="text-input color-text"
+                        :id="'input-' + v.name"
+                        :value="getDisplayValue(v)"
+                        :placeholder="getDefault(v)"
+                        @change="setCurrentValue(v, $event.target.value)"
+                      />
+                    </template>
+                    <template v-else>
+                      <input
+                        type="text"
+                        class="text-input"
+                        :id="'input-' + v.name"
+                        :value="getDisplayValue(v)"
+                        :placeholder="getDefault(v)"
+                        @change="setCurrentValue(v, $event.target.value)"
+                      />
+                    </template>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
       </aside>
 
@@ -1857,6 +1897,16 @@ defineExpose({
 
 .var-group {
   border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.tier-header {
+  padding: 0.625rem 0.75rem 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vp-c-brand);
+  border-bottom: 1px solid var(--vp-c-brand);
 }
 
 .group-header {
