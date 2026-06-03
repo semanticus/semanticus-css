@@ -425,7 +425,7 @@ const variableGroups = [
     label: "Group",
     vars: [
       {
-        name: "--group-button-spacing-horizontal",
+        name: "--group-buttons-padding-inline",
         label: "Group Button Spacing",
         desc: "Horizontal padding for buttons inside groups.",
         default: "1rem",
@@ -436,20 +436,14 @@ const variableGroups = [
     label: "Buttons",
     vars: [
       {
-        name: "--buttons-font-size",
-        label: "Button Font Size",
-        desc: "Font size for buttons.",
-        default: "1rem",
-      },
-      {
-        name: "--buttons-spacing-vertical",
-        label: "Button Spacing Vertical",
+        name: "--buttons-padding-block",
+        label: "Button Padding Block",
         desc: "Vertical padding inside buttons.",
         default: "var(--inputs-spacing-vertical)",
       },
       {
-        name: "--buttons-spacing-horizontal",
-        label: "Button Spacing Horizontal",
+        name: "--buttons-padding-inline",
+        label: "Button Padding Inline",
         desc: "Horizontal padding inside buttons.",
         default: "var(--inputs-spacing-horizontal)",
       },
