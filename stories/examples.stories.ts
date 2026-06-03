@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { DocumentationPageDemo } from "@demos/examples";
 import { StarterHtmlTemplateDemo } from "@demos/examples";
+import demoPageHtml from "../docs/public/examples/demo-page.html?raw";
 
 const meta: Meta = {
   title: "Examples",
@@ -9,8 +9,8 @@ const meta: Meta = {
 
 export default meta;
 
-export const documentationPage: StoryObj = {
-  render: () => DocumentationPageDemo.main("div"),
+export const demoPage: StoryObj = {
+  render: () => demoPageHtml,
 };
 
 export const starterHtmlTemplate: StoryObj = {
