@@ -48,8 +48,10 @@ a CSS longhand property name** whenever possible.
   /* Opacity */
   --opacity-disabled
 
-  /* Exceptions */
+  /* Transition */
   --transition
+
+  /* Exceptions */
   --spacing
   --color-hover-shade
 }

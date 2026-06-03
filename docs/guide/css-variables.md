@@ -73,13 +73,15 @@ To avoid having to memorize arbitrary token names, these type of tokens (with on
   /* --- Opacity --- */
   --opacity-disabled: 0.5;
 
-  /* --- Exceptions --- */
+  /* --- Transition --- */
   --transition: 0.2s ease-in-out;
+
+  /* --- Exceptions --- */
 
   /* Used for margins and padding throughout the page */
   --spacing: calc(0.75rem * var(--_spacing-scale));
 
-  /* Used to derive colors representing the hover state */
+  /* Internal helper used to derive colors representing the hover state */
   --color-hover-shade: light-dark(
     var(--_color-zinc-700),
     var(--_color-zinc-300)
