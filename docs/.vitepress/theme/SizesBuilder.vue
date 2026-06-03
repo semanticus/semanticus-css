@@ -186,12 +186,6 @@ const variableGroups = [
         desc: "Offset for underlined text.",
         default: "0.1rem",
       },
-      {
-        name: "--links-text-decoration",
-        label: "Link Decoration",
-        desc: "Text decoration style for links.",
-        default: "underline",
-      },
     ],
   },
   {
@@ -209,18 +203,6 @@ const variableGroups = [
         label: "Typography Vertical",
         desc: "Vertical margin below typographic elements.",
         default: "1rem",
-      },
-      {
-        name: "--inputs-spacing-vertical",
-        label: "Input Vertical",
-        desc: "Vertical padding inside form inputs.",
-        default: "0.5rem",
-      },
-      {
-        name: "--inputs-spacing-horizontal",
-        label: "Input Horizontal",
-        desc: "Horizontal padding inside form inputs.",
-        default: "0.7rem",
       },
     ],
   },
@@ -480,6 +462,30 @@ const variableGroups = [
         desc: "Border width for toggle switches.",
         default: "0.1875rem",
       },
+      {
+        name: "--input-switch-border-radius",
+        label: "Switch Border Radius",
+        desc: "Border radius for toggle switches.",
+        default: "1.25em",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Icons",
+    vars: [
+      {
+        name: "--icons-background-position-gap",
+        label: "Icon Gap",
+        desc: "Gap between icon and adjacent text.",
+        default: "0.75rem",
+      },
+      {
+        name: "--icons-width",
+        label: "Icon Width",
+        desc: "Default width for icon elements.",
+        default: "1em",
+      },
     ],
   },
   {
@@ -497,6 +503,48 @@ const variableGroups = [
         label: "Table Header Border",
         desc: "Border width for table header/footer rows.",
         default: "0.1875rem",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Input Spacing",
+    vars: [
+      {
+        name: "--inputs-spacing-vertical",
+        label: "Input Vertical",
+        desc: "Vertical padding inside form inputs.",
+        default: "0.5rem",
+      },
+      {
+        name: "--inputs-spacing-horizontal",
+        label: "Input Horizontal",
+        desc: "Horizontal padding inside form inputs.",
+        default: "0.7rem",
+      },
+      {
+        name: "--details-dropdown-spacing-vertical",
+        label: "Dropdown Spacing Vertical",
+        desc: "Vertical padding for dropdown triggers.",
+        default: "var(--inputs-spacing-vertical)",
+      },
+      {
+        name: "--details-dropdown-spacing-horizontal",
+        label: "Dropdown Spacing Horizontal",
+        desc: "Horizontal padding for dropdown triggers.",
+        default: "var(--inputs-spacing-horizontal)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Links",
+    vars: [
+      {
+        name: "--links-text-decoration",
+        label: "Link Decoration",
+        desc: "Text decoration style for links.",
+        default: "underline",
       },
     ],
   },
