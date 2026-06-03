@@ -250,7 +250,7 @@ the scope of their effect:
 ```css
 .primary {
   /* Affects all children that are a Card component */
-  --cards-background-color: var(--primary-background-color);
+  --card-background-color: var(--primary-background-color);
 }
 ```
 
