@@ -146,8 +146,8 @@ Scoped to a component type. Change one of these and every instance updates.
 ```css
 :root {
   --backdrop-background-color: light-dark(
-    oklch(from color-mix(in srgb, var(--_color-zinc-100), var(--_color-zinc-50)) l c h / 0.75),
-    oklch(from color-mix(in srgb, black, var(--_color-zinc-950)) l c h / 0.75)
+    oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75),
+    oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75)
   );
 }
 ```

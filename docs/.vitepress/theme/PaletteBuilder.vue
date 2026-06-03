@@ -135,19 +135,19 @@ const variableGroups = [
         label: "Background",
         desc: "Main page background.",
         type: varType(
-          "light-dark(white, color-mix(in srgb, var(--_color-slate-950), var(--_color-slate-900)))",
+          "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
         ),
         default:
-          "light-dark(white, color-mix(in srgb, var(--_color-slate-950), var(--_color-slate-900)))",
+          "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
       },
       {
         name: "--color",
         label: "Text",
         desc: "Default body text color.",
         type: varType(
-          "light-dark(var(--_color-zinc-750), var(--_color-zinc-200))",
+          "light-dark(#373c44, #c2c7d0)",
         ),
-        default: "light-dark(var(--_color-zinc-750), var(--_color-zinc-200))",
+        default: "light-dark(#373c44, #c2c7d0)",
       },
       {
         name: "--color-muted",
@@ -161,9 +161,9 @@ const variableGroups = [
         label: "Border",
         desc: "Default border color.",
         type: varType(
-          "light-dark(var(--_color-slate-100), var(--_color-slate-800))",
+          "light-dark(#dfe3eb, #2a3140)",
         ),
-        default: "light-dark(var(--_color-slate-100), var(--_color-slate-800))",
+        default: "light-dark(#dfe3eb, #2a3140)",
       },
       {
         name: "--typography-color",
@@ -194,10 +194,10 @@ const variableGroups = [
         label: "Backdrop",
         desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
         type: varType(
-          "light-dark(oklch(from color-mix(in srgb, var(--_color-zinc-100), var(--_color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--_color-zinc-950)) l c h / 0.75))",
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
         ),
         default:
-          "light-dark(oklch(from color-mix(in srgb, var(--_color-zinc-100), var(--_color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--_color-zinc-950)) l c h / 0.75))",
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
       },
     ],
   },
@@ -209,9 +209,9 @@ const variableGroups = [
         label: "Hover Shade",
         desc: "Color mixed into base colors via color-mix() to derive hover-state variants.",
         type: varType(
-          "light-dark(var(--_color-zinc-700), var(--_color-zinc-300))",
+          "light-dark(#424751, #a4acba)",
         ),
-        default: "light-dark(var(--_color-zinc-700), var(--_color-zinc-300))",
+        default: "light-dark(#424751, #a4acba)",
       },
     ],
   },
@@ -223,16 +223,16 @@ const variableGroups = [
         label: "Primary Text",
         desc: "Primary text/link color.",
         type: varType(
-          "light-dark(var(--_color-azure-550), var(--_color-azure-350))",
+          "light-dark(#0172ad, #01aaff)",
         ),
-        default: "light-dark(var(--_color-azure-550), var(--_color-azure-350))",
+        default: "light-dark(#0172ad, #01aaff)",
       },
       {
         name: "--primary-background-color",
         label: "Primary Fill",
         desc: "Primary button/input fill.",
-        type: varType("var(--_color-azure-550)"),
-        default: "var(--_color-azure-550)",
+        type: varType("#0172ad"),
+        default: "#0172ad",
       },
       {
         name: "--primary-color-hover",
@@ -274,16 +274,16 @@ const variableGroups = [
         label: "Secondary Text",
         desc: "Secondary text color.",
         type: varType(
-          "light-dark(var(--_color-slate-550), var(--_color-zinc-350))",
+          "light-dark(#5d6b89, #969eaf)",
         ),
-        default: "light-dark(var(--_color-slate-550), var(--_color-zinc-350))",
+        default: "light-dark(#5d6b89, #969eaf)",
       },
       {
         name: "--secondary-background-color",
         label: "Secondary Fill",
         desc: "Secondary button fill.",
-        type: varType("var(--_color-slate-550)"),
-        default: "var(--_color-slate-550)",
+        type: varType("#5d6b89"),
+        default: "#5d6b89",
       },
       {
         name: "--secondary-color-hover",
@@ -325,18 +325,18 @@ const variableGroups = [
         label: "Contrast Text",
         desc: "Contrast text color.",
         type: varType(
-          "light-dark(var(--_color-slate-900), var(--_color-slate-100))",
+          "light-dark(#181c25, #dfe3eb)",
         ),
-        default: "light-dark(var(--_color-slate-900), var(--_color-slate-100))",
+        default: "light-dark(#181c25, #dfe3eb)",
       },
       {
         name: "--contrast-background-color",
         label: "Contrast Fill",
         desc: "Contrast button fill.",
         type: varType(
-          "light-dark(var(--_color-slate-900), var(--_color-slate-50))",
+          "light-dark(#181c25, #eff1f4)",
         ),
-        default: "light-dark(var(--_color-slate-900), var(--_color-slate-50))",
+        default: "light-dark(#181c25, #eff1f4)",
       },
       {
         name: "--contrast-color-hover",
@@ -441,16 +441,16 @@ const variableGroups = [
         label: "Info Text",
         desc: "Info text color.",
         type: varType(
-          "light-dark(var(--_color-azure-450), var(--_color-azure-250))",
+          "light-dark(#018cd4, #79c0ff)",
         ),
-        default: "light-dark(var(--_color-azure-450), var(--_color-azure-250))",
+        default: "light-dark(#018cd4, #79c0ff)",
       },
       {
         name: "--info-background-color",
         label: "Info Fill",
         desc: "Info button fill.",
-        type: varType("var(--_color-azure-450)"),
-        default: "var(--_color-azure-450)",
+        type: varType("#018cd4"),
+        default: "#018cd4",
       },
       {
         name: "--info-color-hover",
@@ -506,16 +506,16 @@ const variableGroups = [
         label: "Warning Text",
         desc: "Warning text color.",
         type: varType(
-          "light-dark(var(--_color-amber-350), var(--_color-amber-250))",
+          "light-dark(#c79400, #e8ae01)",
         ),
-        default: "light-dark(var(--_color-amber-350), var(--_color-amber-250))",
+        default: "light-dark(#c79400, #e8ae01)",
       },
       {
         name: "--warning-background-color",
         label: "Warning Fill",
         desc: "Warning button fill.",
-        type: varType("var(--_color-amber-350)"),
-        default: "var(--_color-amber-350)",
+        type: varType("#c79400"),
+        default: "#c79400",
       },
       {
         name: "--warning-color-hover",
@@ -606,19 +606,19 @@ const variableGroups = [
         label: "Code Background",
         desc: "Background for code blocks.",
         type: varType(
-          "light-dark(color-mix(in srgb, var(--_color-slate-50) 75%, white), color-mix(in srgb, var(--_color-slate-900) 75%, var(--_color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 75%, white), color-mix(in srgb, #181c25 75%, #202632))",
         ),
         default:
-          "light-dark(color-mix(in srgb, var(--_color-slate-50) 75%, white), color-mix(in srgb, var(--_color-slate-900) 75%, var(--_color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 75%, white), color-mix(in srgb, #181c25 75%, #202632))",
       },
       {
         name: "--code-color",
         label: "Code Text",
         desc: "Text color inside code blocks.",
         type: varType(
-          "light-dark(var(--_color-zinc-550), var(--_color-zinc-400))",
+          "light-dark(#646b79, #8891a4)",
         ),
-        default: "light-dark(var(--_color-zinc-550), var(--_color-zinc-400))",
+        default: "light-dark(#646b79, #8891a4)",
       },
       {
         name: "--kbd-background-color",
@@ -677,38 +677,38 @@ const variableGroups = [
         label: "Input Background",
         desc: "Default input background.",
         type: varType(
-          "light-dark(color-mix(in srgb, var(--_color-slate-50) 25%, white), color-mix(in srgb, var(--_color-slate-900), var(--_color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #181c25, #202632))",
         ),
         default:
-          "light-dark(color-mix(in srgb, var(--_color-slate-50) 25%, white), color-mix(in srgb, var(--_color-slate-900), var(--_color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #181c25, #202632))",
       },
       {
         name: "--inputs-background-color-focus",
         label: "Input Active BG",
         desc: "Input background when active/focused.",
         type: varType(
-          "light-dark(white, color-mix(in srgb, var(--_color-slate-900) 75%, var(--_color-slate-850)))",
+          "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
         ),
         default:
-          "light-dark(white, color-mix(in srgb, var(--_color-slate-900) 75%, var(--_color-slate-850)))",
+          "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
       },
       {
         name: "--inputs-border-color",
         label: "Input Border",
         desc: "Input border color.",
         type: varType(
-          "light-dark(var(--_color-slate-150), var(--_color-slate-800))",
+          "light-dark(#cfd5e2, #2a3140)",
         ),
-        default: "light-dark(var(--_color-slate-150), var(--_color-slate-800))",
+        default: "light-dark(#cfd5e2, #2a3140)",
       },
       {
         name: "--inputs-color",
         label: "Input Text",
         desc: "Text color inside inputs.",
         type: varType(
-          "light-dark(var(--_color-zinc-850), var(--_color-zinc-100))",
+          "light-dark(#23262c, #e0e3e7)",
         ),
-        default: "light-dark(var(--_color-zinc-850), var(--_color-zinc-100))",
+        default: "light-dark(#23262c, #e0e3e7)",
       },
       {
         name: "--inputs-placeholder-color",
@@ -729,9 +729,9 @@ const variableGroups = [
         label: "Input Accent Muted",
         desc: "Muted accent color for unchecked/inactive states.",
         type: varType(
-          "light-dark(var(--_color-slate-200), var(--_color-slate-750))",
+          "light-dark(#bfc7d9, #333c4e)",
         ),
-        default: "light-dark(var(--_color-slate-200), var(--_color-slate-750))",
+        default: "light-dark(#bfc7d9, #333c4e)",
       },
     ],
   },
@@ -880,9 +880,9 @@ const variableGroups = [
         label: "Dialog Background",
         desc: "Dialog/card background.",
         type: varType(
-          "light-dark(var(--background-color), var(--_color-slate-900))",
+          "light-dark(var(--background-color), #181c25)",
         ),
-        default: "light-dark(var(--background-color), var(--_color-slate-900))",
+        default: "light-dark(var(--background-color), #181c25)",
       },
       {
         name: "--dialog-border-color",
@@ -896,20 +896,20 @@ const variableGroups = [
         label: "Marginals BG",
         desc: "Header/footer background for dialogs, and cards.",
         type: varType(
-          "light-dark(color-mix(in srgb, var(--_color-slate-50) 25%, white), color-mix(in srgb, var(--_color-slate-50), transparent 95%))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #eff1f4, transparent 95%))",
         ),
         default:
-          "light-dark(color-mix(in srgb, var(--_color-slate-50) 25%, white), color-mix(in srgb, var(--_color-slate-50), transparent 95%))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #eff1f4, transparent 95%))",
       },
       {
         name: "--dialog-marginals-border-color",
         label: "Marginals Border",
         desc: "Header/footer border for dialogs, and cards.",
         type: varType(
-          "color-mix(in srgb, light-dark(var(--_color-slate-900), var(--_color-zinc-350)), transparent 90%)",
+          "color-mix(in srgb, light-dark(#181c25, #969eaf), transparent 90%)",
         ),
         default:
-          "color-mix(in srgb, light-dark(var(--_color-slate-900), var(--_color-zinc-350)), transparent 90%)",
+          "color-mix(in srgb, light-dark(#181c25, #969eaf), transparent 90%)",
       },
     ],
   },
@@ -920,17 +920,17 @@ const variableGroups = [
         name: "--details-menu-background-color",
         label: "Menu Background",
         desc: "Dropdown menu background.",
-        type: varType("light-dark(white, var(--_color-slate-900))"),
-        default: "light-dark(white, var(--_color-slate-900))",
+        type: varType("light-dark(white, #181c25)"),
+        default: "light-dark(white, #181c25)",
       },
       {
         name: "--details-menu-border-color",
         label: "Menu Border",
         desc: "Dropdown menu border.",
         type: varType(
-          "light-dark(var(--_color-slate-50), var(--_color-slate-850))",
+          "light-dark(#eff1f4, #202632)",
         ),
-        default: "light-dark(var(--_color-slate-50), var(--_color-slate-850))",
+        default: "light-dark(#eff1f4, #202632)",
       },
       {
         name: "--details-menu-color",
@@ -944,9 +944,9 @@ const variableGroups = [
         label: "Menu Hover",
         desc: "Dropdown item hover background.",
         type: varType(
-          "light-dark(var(--_color-slate-50), var(--_color-slate-850))",
+          "light-dark(#eff1f4, #202632)",
         ),
-        default: "light-dark(var(--_color-slate-50), var(--_color-slate-850))",
+        default: "light-dark(#eff1f4, #202632)",
       },
     ],
   },
@@ -958,9 +958,9 @@ const variableGroups = [
         label: "Progress Track",
         desc: "Progress bar track (empty portion).",
         type: varType(
-          "light-dark(var(--_color-slate-100), var(--_color-slate-850))",
+          "light-dark(#dfe3eb, #202632)",
         ),
-        default: "light-dark(var(--_color-slate-100), var(--_color-slate-850))",
+        default: "light-dark(#dfe3eb, #202632)",
       },
       {
         name: "--progress-accent-color",
@@ -985,8 +985,8 @@ const variableGroups = [
         name: "--tooltip-color",
         label: "Tooltip Text",
         desc: "Tooltip text color.",
-        type: varType("light-dark(white, var(--_color-zinc-900))"),
-        default: "light-dark(white, var(--_color-zinc-900))",
+        type: varType("light-dark(white, #191c20)"),
+        default: "light-dark(white, #191c20)",
       },
     ],
   },
