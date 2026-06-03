@@ -47,7 +47,7 @@
   [type="month"],
   [type="time"],
   [type="week"] {
-    padding-right: var(--inputs-spacing-horizontal);
+    padding-right: var(--inputs-padding-inline);
     background-image: none;
   }
 }

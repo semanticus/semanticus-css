@@ -21,7 +21,7 @@ textarea {
 
   /* Non button inputs */
   &:not([type="button"], [type="submit"], [type="reset"], [type="file"]) {
-    padding: var(--inputs-spacing-vertical) var(--inputs-spacing-horizontal);
+    padding: var(--inputs-padding-block) var(--inputs-padding-inline);
     border: var(--_inputs-border-width) solid var(--_inputs-border-color);
     border-radius: var(--_inputs-border-radius);
     background-color: var(--_inputs-background-color);

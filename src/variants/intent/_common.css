@@ -14,7 +14,7 @@
   --_card-background-color: var(--intent-background-color);
   --_card-marginals-background-color: color-mix(
     in srgb,
-    light-dark(var(--color-slate-900), var(--color-slate-50)),
+    light-dark(var(--_color-slate-900), var(--_color-slate-50)),
     transparent 90%
   );
   --_card-border-color: var(--_card-marginals-background-color);

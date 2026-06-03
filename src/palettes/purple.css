@@ -1,27 +1,27 @@
 :root,
 :host {
-  /* --color-purple-950: #1e0820; */
-  /* --color-purple-900: #2d0f33; */
-  /* --color-purple-850: #3d1545; */
-  /* --color-purple-800: #4d1a57; */
-  /* --color-purple-750: #5e206b; */
-  /* --color-purple-700: #6f277d; */
-  /* --color-purple-650: #802e90; */
-  --color-purple-600: #9236a4;
-  --color-purple-550: #aa40bf;
-  /* --color-purple-500: #b645cd; */
-  /* --color-purple-450: #c652dc; */
-  /* --color-purple-400: #cd68e0; */
-  --color-purple-350: #d47de4;
-  /* --color-purple-300: #db90e8; */
-  /* --color-purple-250: #e2a3eb; */
-  /* --color-purple-200: #e7b6ee; */
-  /* --color-purple-150: #edc9f1; */
-  /* --color-purple-100: #f2dcf4; */
-  /* --color-purple-50: #f8eef9; */
-  /* --color-purple: var(--color-purple-550); */
+  /* --_color-purple-950: #1e0820; */
+  /* --_color-purple-900: #2d0f33; */
+  /* --_color-purple-850: #3d1545; */
+  /* --_color-purple-800: #4d1a57; */
+  /* --_color-purple-750: #5e206b; */
+  /* --_color-purple-700: #6f277d; */
+  /* --_color-purple-650: #802e90; */
+  --_color-purple-600: #9236a4;
+  --_color-purple-550: #aa40bf;
+  /* --_color-purple-500: #b645cd; */
+  /* --_color-purple-450: #c652dc; */
+  /* --_color-purple-400: #cd68e0; */
+  --_color-purple-350: #d47de4;
+  /* --_color-purple-300: #db90e8; */
+  /* --_color-purple-250: #e2a3eb; */
+  /* --_color-purple-200: #e7b6ee; */
+  /* --_color-purple-150: #edc9f1; */
+  /* --_color-purple-100: #f2dcf4; */
+  /* --_color-purple-50: #f8eef9; */
+  /* --color-purple: var(--_color-purple-550); */
 
   /* System tokens */
-  --primary-color: light-dark(var(--color-purple-550), var(--color-purple-350));
-  --primary-background-color: var(--color-purple-600);
+  --primary-color: light-dark(var(--_color-purple-550), var(--_color-purple-350));
+  --primary-background-color: var(--_color-purple-600);
 }

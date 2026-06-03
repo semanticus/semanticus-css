@@ -5,7 +5,7 @@ table {
   color: var(--typography-color);
   font-style: normal;
   font-weight: var(--font-weight);
-  margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-margin-block);
   margin-top: 0;
   text-indent: 0;
   width: 100%;

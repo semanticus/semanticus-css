@@ -1,5 +1,5 @@
 nav {
-  --typography-spacing-vertical: 0;
+  --typography-margin-block: 0;
   --heading-margin-top: 0;
 
   display: flex;
@@ -22,12 +22,12 @@ nav {
     input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])
   ),
   :is([role="button"], [type="button"]) {
-    --inputs-spacing-vertical: calc(
+    --inputs-padding-block: calc(
       var(--nav-link-gap) - var(--border-width) * 2
     );
-    --inputs-spacing-horizontal: var(--nav-link-gap);
-    --_buttons-padding-block: var(--inputs-spacing-vertical);
-    --_buttons-padding-inline: var(--inputs-spacing-horizontal);
+    --inputs-padding-inline: var(--nav-link-gap);
+    --_buttons-padding-block: var(--inputs-padding-block);
+    --_buttons-padding-inline: var(--inputs-padding-inline);
 
     height: auto;
     margin-right: inherit;

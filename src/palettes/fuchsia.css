@@ -1,30 +1,30 @@
 :root,
 :host {
-  /* --color-fuchsia-950: #230518; */
-  /* --color-fuchsia-900: #360925; */
-  /* --color-fuchsia-850: #480b33; */
-  /* --color-fuchsia-800: #5c0d41; */
-  /* --color-fuchsia-750: #700e4f; */
-  /* --color-fuchsia-700: #84135e; */
-  /* --color-fuchsia-650: #98176d; */
-  /* --color-fuchsia-600: #ac1c7c; */
-  --color-fuchsia-550: #c1208b;
-  /* --color-fuchsia-500: #d9269d; */
-  /* --color-fuchsia-450: #ed2aac; */
-  /* --color-fuchsia-400: #f748b7; */
-  --color-fuchsia-350: #f869bf;
-  /* --color-fuchsia-300: #f983c7; */
-  /* --color-fuchsia-250: #fa9acf; */
-  /* --color-fuchsia-200: #f9b1d8; */
-  /* --color-fuchsia-150: #f9c6e1; */
-  /* --color-fuchsia-100: #f9daea; */
-  /* --color-fuchsia-50: #fbedf4; */
-  /* --color-fuchsia: var(--color-fuchsia-550); */
+  /* --_color-fuchsia-950: #230518; */
+  /* --_color-fuchsia-900: #360925; */
+  /* --_color-fuchsia-850: #480b33; */
+  /* --_color-fuchsia-800: #5c0d41; */
+  /* --_color-fuchsia-750: #700e4f; */
+  /* --_color-fuchsia-700: #84135e; */
+  /* --_color-fuchsia-650: #98176d; */
+  /* --_color-fuchsia-600: #ac1c7c; */
+  --_color-fuchsia-550: #c1208b;
+  /* --_color-fuchsia-500: #d9269d; */
+  /* --_color-fuchsia-450: #ed2aac; */
+  /* --_color-fuchsia-400: #f748b7; */
+  --_color-fuchsia-350: #f869bf;
+  /* --_color-fuchsia-300: #f983c7; */
+  /* --_color-fuchsia-250: #fa9acf; */
+  /* --_color-fuchsia-200: #f9b1d8; */
+  /* --_color-fuchsia-150: #f9c6e1; */
+  /* --_color-fuchsia-100: #f9daea; */
+  /* --_color-fuchsia-50: #fbedf4; */
+  /* --color-fuchsia: var(--_color-fuchsia-550); */
 
   /* System tokens */
   --primary-color: light-dark(
-    var(--color-fuchsia-550),
-    var(--color-fuchsia-350)
+    var(--_color-fuchsia-550),
+    var(--_color-fuchsia-350)
   );
-  --primary-background-color: var(--color-fuchsia-550);
+  --primary-background-color: var(--_color-fuchsia-550);
 }

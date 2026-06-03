@@ -101,11 +101,11 @@ details:has(> summary[aria-haspopup="menu"]) {
   > summary[aria-haspopup="menu"] {
     --_details-dropdown-color: var(--details-dropdown-color);
     --_details-dropdown-border-color: var(--details-dropdown-border-color);
-    --_details-dropdown-spacing-vertical: var(
-      --details-dropdown-spacing-vertical
+    --_details-dropdown-padding-block: var(
+      --details-dropdown-padding-block
     );
-    --_details-dropdown-spacing-horizontal: var(
-      --details-dropdown-spacing-horizontal
+    --_details-dropdown-padding-inline: var(
+      --details-dropdown-padding-inline
     );
     --_details-summary-color: var(--_details-dropdown-color);
 
@@ -119,12 +119,12 @@ details:has(> summary[aria-haspopup="menu"]) {
     &:not([role]) {
       border: var(--border-width) solid var(--_details-dropdown-border-color);
       border-radius: var(--border-radius);
-      padding: var(--_details-dropdown-spacing-vertical)
-        var(--_details-dropdown-spacing-horizontal);
+      padding: var(--_details-dropdown-padding-block)
+        var(--_details-dropdown-padding-inline);
       display: flex;
       align-items: center;
       height: calc(
-        1rem * var(--line-height) + var(--_details-dropdown-spacing-vertical) *
+        1rem * var(--line-height) + var(--_details-dropdown-padding-block) *
           2 + var(--border-width) * 2
       );
       line-height: inherit;
@@ -178,24 +178,24 @@ details:has(> summary[aria-haspopup="menu"]) {
     & > li {
       width: 100%;
       margin-bottom: 0;
-      padding: calc(var(--inputs-spacing-vertical) * 0.5)
-        var(--inputs-spacing-horizontal);
+      padding: calc(var(--inputs-padding-block) * 0.5)
+        var(--inputs-padding-inline);
       list-style: none;
 
       &:first-of-type {
-        margin-top: calc(var(--inputs-spacing-vertical) * 0.5);
+        margin-top: calc(var(--inputs-padding-block) * 0.5);
       }
 
       &:last-of-type {
-        margin-bottom: calc(var(--inputs-spacing-vertical) * 0.5);
+        margin-bottom: calc(var(--inputs-padding-block) * 0.5);
       }
 
       & a {
         display: block;
-        margin: calc(var(--inputs-spacing-vertical) * -0.5)
-          calc(var(--inputs-spacing-horizontal) * -1);
-        padding: calc(var(--inputs-spacing-vertical) * 0.5)
-          var(--inputs-spacing-horizontal);
+        margin: calc(var(--inputs-padding-block) * -0.5)
+          calc(var(--inputs-padding-inline) * -1);
+        padding: calc(var(--inputs-padding-block) * 0.5)
+          var(--inputs-padding-inline);
         overflow: hidden;
         border-radius: 0;
         color: var(--details-menu-color);

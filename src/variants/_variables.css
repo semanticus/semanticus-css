@@ -4,19 +4,19 @@
 
   /* --- Contrast --- */
   --contrast-background-color: light-dark(
-    var(--color-slate-900),
-    var(--color-slate-50)
+    var(--_color-slate-900),
+    var(--_color-slate-50)
   );
   --contrast-background-color-hover: color-mix(
     in srgb,
     var(--contrast-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
-  --contrast-color: light-dark(var(--color-slate-900), var(--color-slate-100));
+  --contrast-color: light-dark(var(--_color-slate-900), var(--_color-slate-100));
   --contrast-color-hover: color-mix(
     in srgb,
     var(--contrast-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   --contrast-outline-color: color-mix(
     in srgb,
@@ -25,19 +25,19 @@
   );
 
   /* --- Info --- */
-  --color-azure-450: #018cd4;
-  --color-azure-250: #79c0ff;
-  --info-background-color: var(--color-azure-450);
+  --_color-azure-450: #018cd4;
+  --_color-azure-250: #79c0ff;
+  --info-background-color: var(--_color-azure-450);
   --info-background-color-hover: color-mix(
     in srgb,
     var(--info-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
-  --info-color: light-dark(var(--color-azure-450), var(--color-azure-250));
+  --info-color: light-dark(var(--_color-azure-450), var(--_color-azure-250));
   --info-color-hover: color-mix(
     in srgb,
     var(--info-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   --info-outline-color: color-mix(
     in srgb,
@@ -46,19 +46,19 @@
   );
 
   /* --- Warning --- */
-  --color-amber-350: #c79400;
-  --color-amber-250: #e8ae01;
-  --warning-background-color: var(--color-amber-350);
+  --_color-amber-350: #c79400;
+  --_color-amber-250: #e8ae01;
+  --warning-background-color: var(--_color-amber-350);
   --warning-background-color-hover: color-mix(
     in srgb,
     var(--warning-background-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
-  --warning-color: light-dark(var(--color-amber-350), var(--color-amber-250));
+  --warning-color: light-dark(var(--_color-amber-350), var(--_color-amber-250));
   --warning-color-hover: color-mix(
     in srgb,
     var(--warning-color),
-    var(--color-hover-effect) 30%
+    var(--color-hover-shade) 30%
   );
   --warning-outline-color: color-mix(
     in srgb,
@@ -66,51 +66,59 @@
     light-dark(white, black)
   );
 
+  /* Subtle colors */
+
+  /* Private helper to derive subtle color variants from the base colors */
+  --_subtle-color-shade: light-dark(
+    var(--_color-zinc-250),
+    var(--_color-slate-750)
+  );
+
   /* Primary subtle colors */
   --primary-subtle-background-color: color-mix(
     in srgb,
     var(--primary-background-color),
-    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
+    var(--_subtle-color-shade) 60%
   );
 
   /* Secondary subtle colors */
   --secondary-subtle-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50), white 25%),
-    color-mix(in srgb, var(--color-slate-50), black 75%)
+    color-mix(in srgb, var(--_color-slate-50), white 25%),
+    color-mix(in srgb, var(--_color-slate-50), black 75%)
   );
 
   /* Contrast subtle colors */
   --contrast-subtle-background-color: color-mix(
     in srgb,
     var(--contrast-background-color),
-    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
+    var(--_subtle-color-shade) 60%
   );
 
   /* Success subtle colors */
   --success-subtle-background-color: color-mix(
     in srgb,
     var(--success-background-color),
-    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
+    var(--_subtle-color-shade) 60%
   );
 
   /* Info subtle colors */
   --info-subtle-background-color: color-mix(
     in srgb,
     var(--info-background-color),
-    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
+    var(--_subtle-color-shade) 60%
   );
 
   /* Warning subtle colors */
   --warning-subtle-background-color: color-mix(
     in srgb,
     var(--warning-background-color),
-    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
+    var(--_subtle-color-shade) 60%
   );
 
   /* Danger subtle colors */
   --danger-subtle-background-color: color-mix(
     in srgb,
     var(--danger-background-color),
-    light-dark(var(--color-zinc-250), var(--color-slate-750)) 60%
+    var(--_subtle-color-shade) 60%
   );
 }

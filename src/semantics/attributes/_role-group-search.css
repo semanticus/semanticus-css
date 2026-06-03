@@ -54,7 +54,7 @@
     margin-bottom: 0;
     /* Constrain details height to just the button, not the dropdown menu */
     height: calc(
-      1rem * var(--line-height) + var(--inputs-spacing-vertical) * 2 +
+      1rem * var(--line-height) + var(--inputs-padding-block) * 2 +
         var(--border-width) * 2
     );
     overflow: visible;

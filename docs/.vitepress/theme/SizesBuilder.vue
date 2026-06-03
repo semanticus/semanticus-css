@@ -126,6 +126,7 @@ function togglePreviewTheme() {
 
 const variableGroups = [
   {
+    tier: "Tier 1: System Tokens",
     label: "Font Families",
     vars: [
       {
@@ -158,6 +159,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 1: System Tokens",
     label: "Typography",
     vars: [
       {
@@ -184,15 +186,76 @@ const variableGroups = [
         desc: "Offset for underlined text.",
         default: "0.1rem",
       },
+    ],
+  },
+  {
+    tier: "Tier 1: System Tokens",
+    label: "Spacing",
+    vars: [
       {
-        name: "--links-text-decoration",
-        label: "Link Decoration",
-        desc: "Text decoration style for links.",
-        default: "underline",
+        name: "--spacing",
+        label: "Spacing",
+        desc: "Applied spacing; product of 0.75rem × spacing scale.",
+        default: "calc(0.75rem * var(--_spacing-scale))",
+      },
+      {
+        name: "--typography-margin-block",
+        label: "Typography Margin",
+        desc: "Vertical margin for typographic elements (p, headings, lists, etc.).",
+        default: "1rem",
       },
     ],
   },
   {
+    tier: "Tier 1: System Tokens",
+    label: "Borders & Effects",
+    vars: [
+      {
+        name: "--border-radius",
+        label: "Border Radius",
+        desc: "Default border-radius for elements.",
+        default: "0.25rem",
+      },
+      {
+        name: "--border-width",
+        label: "Border Width",
+        desc: "Default border width.",
+        default: "0.0625rem",
+      },
+      {
+        name: "--outline-width",
+        label: "Outline Width",
+        desc: "Outline width for focus indicators.",
+        default: "1px",
+      },
+      {
+        name: "--focus-ring-width",
+        label: "Focus Ring Width",
+        desc: "Width of the focus ring shadow.",
+        default: "0.125rem",
+      },
+      {
+        name: "--transition",
+        label: "Transition",
+        desc: "Default transition timing for interactive states.",
+        default: "0.2s ease-in-out",
+      },
+    ],
+  },
+  {
+    tier: "Tier 1: System Tokens",
+    label: "Form States & Misc",
+    vars: [
+      {
+        name: "--opacity-disabled",
+        label: "Disabled Opacity",
+        desc: "Opacity for disabled form inputs and elements.",
+        default: "0.5",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
     label: "Heading Sizes",
     vars: [
       {
@@ -234,6 +297,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Heading Typography",
     vars: [
       {
@@ -323,82 +387,7 @@ const variableGroups = [
     ],
   },
   {
-    label: "Spacing",
-    vars: [
-      {
-        name: "--spacing-base",
-        label: "Spacing Base",
-        desc: "Base spacing unit.",
-        default: "0.75rem",
-      },
-      {
-        name: "--spacing-scale",
-        label: "Spacing Scale",
-        desc: "Responsive spacing multiplier.",
-        default: "1",
-      },
-      {
-        name: "--spacing",
-        label: "Spacing",
-        desc: "Applied spacing; product of spacing-base × spacing-scale.",
-        default: "calc(var(--spacing-base) * var(--spacing-scale))",
-      },
-      {
-        name: "--typography-spacing-vertical",
-        label: "Typography Vertical",
-        desc: "Vertical margin below typographic elements.",
-        default: "1rem",
-      },
-      {
-        name: "--inputs-spacing-vertical",
-        label: "Input Vertical",
-        desc: "Vertical padding inside form inputs.",
-        default: "0.5rem",
-      },
-      {
-        name: "--inputs-spacing-horizontal",
-        label: "Input Horizontal",
-        desc: "Horizontal padding inside form inputs.",
-        default: "0.7rem",
-      },
-    ],
-  },
-  {
-    label: "Borders & Effects",
-    vars: [
-      {
-        name: "--border-radius",
-        label: "Border Radius",
-        desc: "Default border-radius for elements.",
-        default: "0.25rem",
-      },
-      {
-        name: "--border-width",
-        label: "Border Width",
-        desc: "Default border width.",
-        default: "0.0625rem",
-      },
-      {
-        name: "--outline-width",
-        label: "Outline Width",
-        desc: "Outline width for focus indicators.",
-        default: "1px",
-      },
-      {
-        name: "--focus-ring-width",
-        label: "Focus Ring Width",
-        desc: "Width of the focus ring shadow.",
-        default: "0.125rem",
-      },
-      {
-        name: "--transition",
-        label: "Transition",
-        desc: "Default transition timing for interactive states.",
-        default: "0.2s ease-in-out",
-      },
-    ],
-  },
-  {
+    tier: "Tier 3: Component Tokens",
     label: "Navigation",
     vars: [
       {
@@ -422,6 +411,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Group",
     vars: [
       {
@@ -433,23 +423,25 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Buttons",
     vars: [
       {
         name: "--buttons-padding-block",
         label: "Button Padding Block",
         desc: "Vertical padding inside buttons.",
-        default: "var(--inputs-spacing-vertical)",
+        default: "var(--inputs-padding-block)",
       },
       {
         name: "--buttons-padding-inline",
         label: "Button Padding Inline",
         desc: "Horizontal padding inside buttons.",
-        default: "var(--inputs-spacing-horizontal)",
+        default: "var(--inputs-padding-inline)",
       },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Form Details",
     vars: [
       {
@@ -470,9 +462,34 @@ const variableGroups = [
         desc: "Border width for toggle switches.",
         default: "0.1875rem",
       },
+      {
+        name: "--input-switch-border-radius",
+        label: "Switch Border Radius",
+        desc: "Border radius for toggle switches.",
+        default: "1.25em",
+      },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
+    label: "Icons",
+    vars: [
+      {
+        name: "--icons-background-position-gap",
+        label: "Icon Gap",
+        desc: "Gap between icon and adjacent text.",
+        default: "0.75rem",
+      },
+      {
+        name: "--icons-width",
+        label: "Icon Width",
+        desc: "Default width for icon elements.",
+        default: "1em",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
     label: "Table",
     vars: [
       {
@@ -490,13 +507,44 @@ const variableGroups = [
     ],
   },
   {
-    label: "Form States & Misc",
+    tier: "Tier 3: Component Tokens",
+    label: "Input Spacing",
     vars: [
       {
-        name: "--opacity-disabled",
-        label: "Disabled Opacity",
-        desc: "Opacity for disabled form inputs and elements.",
-        default: "0.5",
+        name: "--inputs-padding-block",
+        label: "Input Padding Block",
+        desc: "Block-axis (vertical) padding inside form inputs.",
+        default: "0.5rem",
+      },
+      {
+        name: "--inputs-padding-inline",
+        label: "Input Padding Inline",
+        desc: "Inline-axis (horizontal) padding inside form inputs.",
+        default: "0.7rem",
+      },
+      {
+        name: "--details-dropdown-padding-block",
+        label: "Dropdown Padding Block",
+        desc: "Block-axis padding for dropdown triggers.",
+        default: "var(--inputs-padding-block)",
+      },
+      {
+        name: "--details-dropdown-padding-inline",
+        label: "Dropdown Padding Inline",
+        desc: "Inline-axis padding for dropdown triggers.",
+        default: "var(--inputs-padding-inline)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Links",
+    vars: [
+      {
+        name: "--links-text-decoration",
+        label: "Link Decoration",
+        desc: "Text decoration style for links.",
+        default: "underline",
       },
     ],
   },
@@ -884,148 +932,165 @@ defineExpose({
         </div>
 
         <div class="var-groups">
-          <div
-            v-for="group in filteredGroups"
-            :key="group.label"
-            class="var-group"
-          >
-            <button class="group-header" @click="toggleGroup(group.label)">
-              <svg
-                :class="['chevron', { expanded: expandedGroups[group.label] }]"
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-              <span class="group-label">{{ group.label }}</span>
-              <span class="group-count">{{ group.vars.length }}</span>
-            </button>
+          <template v-for="(group, index) in filteredGroups" :key="group.label">
+            <div
+              v-if="
+                index === 0 || group.tier !== filteredGroups[index - 1].tier
+              "
+              class="tier-header"
+            >
+              {{ group.tier }}
+            </div>
+            <div class="var-group">
+              <button class="group-header" @click="toggleGroup(group.label)">
+                <svg
+                  :class="[
+                    'chevron',
+                    { expanded: expandedGroups[group.label] },
+                  ]"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+                <span class="group-label">{{ group.label }}</span>
+                <span class="group-count">{{ group.vars.length }}</span>
+              </button>
 
-            <div v-show="expandedGroups[group.label]" class="group-vars">
-              <div
-                v-for="v in group.vars"
-                :key="v.name"
-                :class="['var-row', { changed: isChanged(v) }]"
-              >
-                <div class="var-label-row">
-                  <label class="var-label" :for="'input-' + v.name">
-                    <code
-                      class="var-name-label"
-                      v-html="highlightMatch(v.name, searchQuery)"
-                    ></code>
-                  </label>
-                  <div class="popover-container">
-                    <button
-                      type="button"
-                      class="help-trigger"
-                      :aria-expanded="activePopover === v.name"
-                      @click.stop="togglePopover(v.name)"
-                      title="Show details"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+              <div v-show="expandedGroups[group.label]" class="group-vars">
+                <div
+                  v-for="v in group.vars"
+                  :key="v.name"
+                  :class="['var-row', { changed: isChanged(v) }]"
+                >
+                  <div class="var-label-row">
+                    <label class="var-label" :for="'input-' + v.name">
+                      <code
+                        class="var-name-label"
+                        v-html="highlightMatch(v.name, searchQuery)"
+                      ></code>
+                    </label>
+                    <div class="popover-container">
+                      <button
+                        type="button"
+                        class="help-trigger"
+                        :aria-expanded="activePopover === v.name"
+                        @click.stop="togglePopover(v.name)"
+                        title="Show details"
                       >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                        <line x1="12" y1="17" x2="12.01" y2="17" />
-                      </svg>
-                    </button>
-                    <div
-                      v-if="activePopover === v.name"
-                      class="help-popover"
-                      @click.stop
-                    >
-                      <div class="popover-header">
-                        <code class="var-name-popover">{{ v.name }}</code>
-                        <button
-                          type="button"
-                          class="popover-close"
-                          @click.stop="closePopover"
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="14"
+                          height="14"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          ✕
-                        </button>
-                      </div>
-                      <div class="popover-content">
-                        <p
-                          class="popover-short-label"
-                          v-html="highlightMatch(v.label, searchQuery)"
-                        ></p>
-                        <p
-                          class="popover-desc"
-                          v-html="highlightMatch(v.desc, searchQuery)"
-                        ></p>
-                        <div class="popover-default">
-                          <span class="default-label">Default:</span>
-                          <code class="default-value">{{ getDefault(v) }}</code>
-                        </div>
-                        <div class="popover-copy-css">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                          <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                      </button>
+                      <div
+                        v-if="activePopover === v.name"
+                        class="help-popover"
+                        @click.stop
+                      >
+                        <div class="popover-header">
+                          <code class="var-name-popover">{{ v.name }}</code>
                           <button
                             type="button"
-                            class="copy-css-btn"
-                            @click.stop="
-                              copyToClipboard(
-                                `${v.name}: ${getDisplayValue(v)};`,
-                                'cssRule',
-                              )
-                            "
+                            class="popover-close"
+                            @click.stop="closePopover"
                           >
-                            <svg
-                              viewBox="0 0 24 24"
-                              width="12"
-                              height="12"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                            >
-                              <rect x="9" y="9" width="13" height="13" rx="2" />
-                              <path
-                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                              />
-                            </svg>
-                            {{
-                              copiedFeedback === "cssRule"
-                                ? "Copied CSS!"
-                                : "Copy CSS Rule"
-                            }}
+                            ✕
                           </button>
+                        </div>
+                        <div class="popover-content">
+                          <p
+                            class="popover-short-label"
+                            v-html="highlightMatch(v.label, searchQuery)"
+                          ></p>
+                          <p
+                            class="popover-desc"
+                            v-html="highlightMatch(v.desc, searchQuery)"
+                          ></p>
+                          <div class="popover-default">
+                            <span class="default-label">Default:</span>
+                            <code class="default-value">{{
+                              getDefault(v)
+                            }}</code>
+                          </div>
+                          <div class="popover-copy-css">
+                            <button
+                              type="button"
+                              class="copy-css-btn"
+                              @click.stop="
+                                copyToClipboard(
+                                  `${v.name}: ${getDisplayValue(v)};`,
+                                  'cssRule',
+                                )
+                              "
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="12"
+                                height="12"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <rect
+                                  x="9"
+                                  y="9"
+                                  width="13"
+                                  height="13"
+                                  rx="2"
+                                />
+                                <path
+                                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                />
+                              </svg>
+                              {{
+                                copiedFeedback === "cssRule"
+                                  ? "Copied CSS!"
+                                  : "Copy CSS Rule"
+                              }}
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <button
+                      v-if="isChanged(v)"
+                      class="reset-var-btn"
+                      @click="resetVar(v)"
+                      title="Reset to default"
+                    >
+                      ✕
+                    </button>
                   </div>
-                  <button
-                    v-if="isChanged(v)"
-                    class="reset-var-btn"
-                    @click="resetVar(v)"
-                    title="Reset to default"
-                  >
-                    ✕
-                  </button>
-                </div>
 
-                <div class="var-input-row">
-                  <input
-                    type="text"
-                    class="text-input"
-                    :id="'input-' + v.name"
-                    :value="getDisplayValue(v)"
-                    :placeholder="getDefault(v)"
-                    @change="setCurrentValue(v, $event.target.value)"
-                  />
+                  <div class="var-input-row">
+                    <input
+                      type="text"
+                      class="text-input"
+                      :id="'input-' + v.name"
+                      :value="getDisplayValue(v)"
+                      :placeholder="getDefault(v)"
+                      @change="setCurrentValue(v, $event.target.value)"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
       </aside>
 
@@ -1315,6 +1380,16 @@ defineExpose({
 
 .var-group {
   border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.tier-header {
+  padding: 0.625rem 0.75rem 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vp-c-brand);
+  border-bottom: 1px solid var(--vp-c-brand);
 }
 
 .group-header {

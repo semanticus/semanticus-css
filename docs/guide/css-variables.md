@@ -15,8 +15,6 @@ After importing any semanticus-css bundle, override CSS variables defined on `:r
 To help you create your own custom styles, check out the [Palettes](/guide/palettes)
 or [Sizes](/guide/sizes) builder tools.
 
----
-
 ## The 4-Tier Token System
 
 Every token belongs to one of four tiers. Changing a token at a higher tier
@@ -25,111 +23,160 @@ affects more of the page; changing it at a lower tier gives more precision.
 | Tier | Prefix | Scope |
 |------|--------|-------|
 | 1. System | `--property` | Entire page |
-| 2. Palette | `--{intent}-property` | Variant definitions |
+| 2. Variant | `--{variant}-{property}[-{state}]` | Variant definitions |
 | 3. Component | `--{component}-property` | All instances of a component |
 | 4. Individual | `--_{component}-property` | A single component instance |
 
----
-
 ## Tier 1: System Tokens
 
-These set the document-wide baseline. They use the CSS property name directly.
+These set the document-wide baseline.
 
-### Typography
+To avoid having to memorize arbitrary token names, these tokens (with only a few documented exceptions) include a **CSS longhand property** name segment.
 
 ```css
 :root {
-  --font-family: var(--font-family-sans-serif);
-  --font-family-sans-serif: system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-  --font-size: 97%;          /* scales with breakpoints: 98%@sm … 102%@xxl */
-  --font-weight: 400;
-  --line-height: 1.5;
-  --text-underline-offset: 0.1rem;
+  /* --- Background Color --- */
+  --background-color: light-dark(
+    white,
+    color-mix(in srgb, #0e1118, #181c25)
+  );
+
+  /* --- Color --- */
+  --color: light-dark(#373c44, #c2c7d0);
+
+  /* --- Typography --- */
+  --typography-margin-block: 1rem;
   --typography-color: var(--color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
-  --typography-spacing-vertical: 1rem;
-}
-```
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 97%;
+  --text-underline-offset: 0.1rem;
+  --font-family-emoji:
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif:
+    system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial,
+    "Helvetica Neue", sans-serif, var(--font-family-emoji);
+  --font-family-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace, var(--font-family-emoji);
+  --font-family: var(--font-family-sans-serif);
 
-### Colors
-
-```css
-:root {
-  --background-color: light-dark(white, #0e1118);
-  --color: light-dark(#373c44, #c2c7d0);
-  --color-hover-effect: light-dark(#424751, #a4acba);
-  --border-color: light-dark(#dfe3eb, #202632);
-}
-```
-
-### Spacing
-
-```css
-:root {
-  --spacing-base: 0.75rem;
-  --spacing-scale: 1;
-  --spacing: calc(var(--spacing-base) * var(--spacing-scale));
-  --typography-spacing-vertical: 1rem;
-}
-```
-
-### Borders & Effects
-
-```css
-:root {
+  /* --- Border --- */
+  --border-color: light-dark(#dfe3eb, #2a3140);
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
+
+  /* --- Outline --- */
   --outline-width: 1px;
-  --transition: 0.2s ease-in-out;
+
+  /* --- Opacity --- */
   --opacity-disabled: 0.5;
+
+  /* --- Transition --- */
+  --transition: 0.2s ease-in-out;
+
+  /* --- Exceptions --- */
+
+  /* Responsive value used for margins and padding throughout the page */
+  --spacing: calc(0.75rem * var(--_spacing-scale));
+
+  /* Internal helper used to derive colors representing the hover state */
+  --color-hover-shade: light-dark(
+    #424751,
+    #a4acba
+  );
 }
 ```
 
----
+## Tier 2: Variant Tokens
 
-## Tier 2: Palette Tokens
-
-Defined by palette files. Override these to create custom color themes.
+Define the color values for each intent variant. Override these to create custom color themes.
 
 ```css
 :root {
-  --primary-color: white;
-  --primary-color-hover: white;
-  --primary-background-color: #0172ad;
-  --primary-background-color-hover: light-dark(#02659a, #017fc0);
-  --primary-outline-color: light-dark(
-    oklch(from #029ae8 l c h / 0.5),
-    oklch(from #01aaff l c h / 0.375)
+  /* --- Primary Intent --- */
+  --primary-background-color-hover: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-color-hover: color-mix(
+    in srgb,
+    var(--primary-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-outline-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    light-dark(white, black) 30%
   );
 
-  --secondary-color: white;
-  --secondary-background-color: #525f7a;
-  --secondary-background-color-hover: light-dark(#48536b, #5d6b89);
-  --secondary-outline-color: light-dark(
-    oklch(from #5d6b89 l c h / 0.25),
-    oklch(from #909ebe l c h / 0.25)
+  /* --- Secondary Intent --- */
+  --secondary-background-color: #5d6b89;
+  --secondary-background-color-hover: color-mix(
+    in srgb,
+    var(--secondary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-color: light-dark(
+    #5d6b89,
+    #969eaf
+  );
+  --secondary-color-hover: color-mix(
+    in srgb,
+    var(--secondary-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-outline-color: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    light-dark(white, black)
   );
 
-  --contrast-color: light-dark(white, black);
-  --contrast-background-color: light-dark(#181c25, #eff1f4);
-  --contrast-outline-color: light-dark(
-    oklch(from #5d6b89 l c h / 0.25),
-    oklch(from #cfd5e2 l c h / 0.25)
-  );
-
-  --success-color: light-dark(#029764, #00cc88);
+  /* --- Success Intent --- */
   --success-background-color: #029764;
-  --success-outline-color: /* ... */;
+  --success-background-color-hover: color-mix(
+    in srgb,
+    var(--success-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-color: light-dark(#029764, #00cc88);
+  --success-color-hover: color-mix(
+    in srgb,
+    var(--success-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-outline-color: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    light-dark(white, black)
+  );
 
+  /* --- Danger Intent --- */
+  --danger-background-color: #ee402e;
+  --danger-background-color-hover: color-mix(
+    in srgb,
+    var(--danger-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-color: light-dark(#ee402e, #f5a390);
+  --danger-color-hover: color-mix(
+    in srgb,
+    var(--danger-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-outline-color: color-mix(
+    in srgb,
+    var(--danger-color) 70%,
+    light-dark(white, black)
+  );
+
+  --contrast-color: /* ... */;
   --info-color: /* ... */;
   --warning-color: /* ... */;
-  --danger-color: /* ... */;
-  /* (each with *-background-color, *-outline-color, and *-hover variants) */
 }
 ```
-
----
 
 ## Tier 3: Component Tokens
 
@@ -139,200 +186,183 @@ Scoped to a component type. Change one of these and every instance updates.
 
 ```css
 :root {
-  --selection-background-color: color-mix(in srgb, var(--primary-color), white 75%);
-}
-```
-
-### Backdrop
-
-```css
-:root {
-  --backdrop-background-color: light-dark(
-    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
-    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
-  );
-}
-```
-
-### Building Blocks
-
-```css
-:root {
-  --focus-ring-width: 0.125rem;
-  --menu-box-shadow: /* layered shadow with border */;
-}
-```
-
-### Buttons
-
-```css
-:root {
-  --buttons-color: white;
-  --buttons-color-hover: white;
-  --buttons-padding-block: var(--inputs-spacing-vertical);
-  --buttons-padding-inline: var(--inputs-spacing-horizontal);
-  --buttons-background-color: var(--primary-background-color);
+  /* --- Buttons --- */
+  /* Affects button, input[type="button"], input[type="submit"], input[type="reset"], and elements with role="button" */
   --buttons-background-color-hover: var(--primary-background-color-hover);
-}
-```
+  --buttons-background-color: var(--primary-background-color);
+  --buttons-color-hover: white;
+  --buttons-color: white;
+  --buttons-padding-block: var(--inputs-padding-block);
+  --buttons-padding-inline: var(--inputs-padding-inline);
 
-### Inputs
-
-```css
-:root {
-  --inputs-spacing-vertical: 0.5rem;
-  --inputs-spacing-horizontal: 0.7rem;
-  --inputs-background-color: light-dark(#fbfcfc, #1c212c);
-  --inputs-background-color-focus: light-dark(white, #1a1f28);
-  --inputs-border-color: light-dark(#cfd5e2, #2a3140);
-  --inputs-color: light-dark(#23262c, #e0e3e7);
-  --inputs-accent-color: var(--primary-background-color);
-  --inputs-accent-color-muted: light-dark(#bfc7d9, #333c4e);
-  --inputs-placeholder-color: var(--color-muted);
-}
-```
-
-### Input Subtypes
-
-```css
-:root {
-  --input-checkbox-border-width: 0.125rem;
-  --input-radio-background-color: white;
-  --input-range-thumb-size: 1.25rem;
-  --input-range-track-background-color: var(--inputs-border-color);
-  --input-range-thumb-border-color: var(--background-color);
-  --input-search-border-radius: 5rem;
-  --input-switch-thumb-background-color: white;
-  --input-switch-border-width: 0.1875rem;
-  --input-switch-border-radius: 1.25em;
-}
-```
-
-### Dialog & Card
-
-```css
-:root {
-  --dialog-border-color: var(--border-color);
-  --dialog-background-color: var(--background-color);
-  --dialog-marginals-background-color: light-dark(#fbfcfc, #2a3140);
-  --dialog-marginals-border-color: color-mix(
-    in srgb, light-dark(#181c25, #a4acba), transparent 90%
+  /* --- Code --- */
+  --code-background-color: light-dark(
+    color-mix(in srgb, #eff1f4 75%, white),
+    color-mix(in srgb, #181c25 75%, #202632)
   );
-}
-```
-
-### Details (Accordions & Dropdowns)
-
-```css
-:root {
-  --details-summary-background-color: var(--inputs-background-color);
-  --details-summary-color: var(--color);
-  --details-summary-color-open: var(--color-muted);
-  --details-dropdown-color: var(--inputs-placeholder-color);
-  --details-dropdown-border-color: var(--inputs-border-color);
-  --details-dropdown-spacing-vertical: var(--inputs-spacing-vertical);
-  --details-dropdown-spacing-horizontal: var(--inputs-spacing-horizontal);
-  --details-menu-background-color: light-dark(white, #181c25);
-  --details-menu-border-color: light-dark(#eff1f4, #202632);
-  --details-menu-color: var(--color);
-  --details-menu-background-color-hover: light-dark(#eff1f4, #202632);
-}
-```
-
-### Links
-
-```css
-:root {
-  --links-color: var(--primary-color);
-  --links-color-hover: var(--primary-color-hover);
-  --links-text-decoration: underline;
-}
-```
-
-### Headings
-
-```css
-:root {
-  --heading-font-weight: 700;
-  --h1-font-size: 2rem;
-  --h1-line-height: 1.125;
-  --h1-margin-top: 3rem;
-  --h2-font-size: 1.75rem;
-  --h2-line-height: 1.15;
-  --h2-margin-top: 2.625rem;
-  /* ... through h6 */
-}
-```
-
-### Lists
-
-```css
-:root {
-  --lists-marker-color: var(--primary-color);
-}
-```
-
-### Code
-
-```css
-:root {
-  --code-background-color: light-dark(#f3f5f7, #1a1f28);
   --code-color: light-dark(#646b79, #8891a4);
   --kbd-background-color: var(--color);
   --kbd-color: var(--background-color);
   --kbd-font-weight: bolder;
-}
-```
 
-### Table
+  /* --- Details --- */
+  /* Affects accordions and dropdowns */
+  --details-summary-background-color: var(--inputs-background-color);
+  --details-summary-color: var(--color);
+  --details-summary-color-open: var(--color-muted);
 
-```css
-:root {
-  --table-header-font-weight: 600;
-  --table-header-border-width: 0.1875rem;
-}
-```
+  /* --- Dropdown styling applied to the summary element --- */
+  --details-dropdown-color: var(--inputs-placeholder-color);
+  --details-dropdown-border-color: var(--inputs-border-color);
+  --details-dropdown-padding-block: var(--inputs-padding-block);
+  --details-dropdown-padding-inline: var(--inputs-padding-inline);
 
-### Navigation
+  /* --- Menu styling applied to the ul[role="menu"] element --- */
+  --details-menu-background-color: light-dark(white, #181c25);
+  --details-menu-border-color: light-dark(
+    #eff1f4,
+    #202632
+  );
+  --details-menu-color: var(--color);
+  --details-menu-background-color-hover: light-dark(
+    #eff1f4,
+    #202632
+  );
 
-```css
-:root {
+  /* --- Dialog --- */
+  --dialog-border-color: var(--border-color);
+  --dialog-background-color: var(--background-color);
+
+  /* Shade styling, applied to header & footer elements */
+  --dialog-marginals-background-color: light-dark(
+    color-mix(in srgb, #eff1f4 25%, white),
+    color-mix(in srgb, #eff1f4, transparent 95%)
+  );
+  --dialog-marginals-border-color: color-mix(
+    in srgb,
+    light-dark(#181c25, #969eaf),
+    transparent 90%
+  );
+
+  /* --- Group --- */
+  /* Affects elements with role="group" and its children */
+  --group-buttons-padding-inline: 1rem;
+
+  /* --- Headings --- */
+  --heading-font-weight: 700;
+  --h1-font-size: 2rem;
+  --h1-margin-top: 3rem;
+  --h1-line-height: 1.125;
+  --h2-font-size: 1.75rem;
+  --h2-margin-top: 2.625rem;
+  --h2-line-height: 1.15;
+  --h3-font-size: 1.5rem;
+  --h3-margin-top: 2.25rem;
+  --h3-line-height: 1.175;
+  --h4-font-size: 1.25rem;
+  --h4-margin-top: 1.874rem;
+  --h4-line-height: 1.2;
+  --h5-font-size: 1.125rem;
+  --h5-margin-top: 1.6875rem;
+  --h5-line-height: 1.225;
+  --h6-font-size: 1rem;
+  --h6-margin-top: 1.5rem;
+  --h6-line-height: 1.25;
+
+  /* --- Icons --- */
+  --icons-background-position-gap: 0.75rem;
+  --icons-width: 1em;
+
+  /* --- Inputs --- */
+  /* Affects input, select, textarea and details elements */
+  --inputs-accent-color: var(--primary-background-color);
+  --inputs-accent-color-muted: light-dark(
+    #bfc7d9,
+    #333c4e
+  );
+  --inputs-padding-block: 0.5rem;
+  --inputs-padding-inline: 0.7rem;
+  --inputs-background-color: light-dark(
+    color-mix(in srgb, #eff1f4 25%, white),
+    color-mix(in srgb, #181c25, #202632)
+  );
+  --inputs-background-color-focus: light-dark(
+    white,
+    color-mix(in srgb, #181c25 75%, #202632)
+  );
+  --inputs-border-color: light-dark(
+    #cfd5e2,
+    #2a3140
+  );
+  --inputs-color: light-dark(#23262c, #e0e3e7);
+  --inputs-placeholder-color: var(--color-muted);
+
+  /* --- Input Checkbox --- */
+  --input-checkbox-border-width: 0.125rem;
+
+  /* --- Input Radio --- */
+  --input-radio-background-color: white;
+
+  /* --- Input Range --- */
+  --input-range-thumb-size: 1.25rem;
+  --input-range-thumb-margin-top: -0.4375rem;
+  --input-range-thumb-border-color: var(--background-color);
+  --input-range-thumb-border-width: var(--focus-ring-width);
+  --input-range-track-background-color: var(--inputs-border-color);
+  --input-range-track-height: 0.375rem;
+
+  /* --- Input Search --- */
+  --input-search-border-radius: 5rem;
+
+  /* --- Input Switch --- */
+  --input-switch-thumb-background-color: white;
+  --input-switch-border-width: 0.1875rem;
+  --input-switch-border-radius: 1.25em;
+
+  /* --- Links (anchor and role="link") --- */
+  --links-color: var(--primary-color);
+  --links-color-hover: var(--primary-color-hover);
+  --links-text-decoration: underline;
+
+  /* --- Lists (ul, ol and role="list") --- */
+  --lists-marker-color: var(--primary-color);
+
+  /* --- Mark --- */
+  --mark-background-color: light-dark(#c79400, #e8ae01);
+
+  /* --- Navigation --- */
   --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
-}
-```
 
-### Progress
-
-```css
-:root {
+  /* --- Progress Bar --- */
   --progress-accent-color: var(--primary-background-color);
-  --progress-track-background-color: light-dark(#dfe3eb, #202632);
-}
-```
+  --progress-track-background-color: light-dark(
+    #dfe3eb,
+    #202632
+  );
 
-### Tooltip
+  /* --- Selection of text --- */
+  --selection-background-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    white 75%
+  );
 
-```css
-:root {
+  /* --- Sidebar --- */
+  --sidebar-size: 25%;
+
+  /* --- Small --- */
+  --small-font-size: 80%;
+
+  /* --- Table --- */
+  --table-header-font-weight: 600;
+  --table-header-border-width: 0.1875rem;
+
+  /* --- Tooltip --- */
   --tooltip-background-color: var(--contrast-background-color);
   --tooltip-color: light-dark(white, #191c20);
 }
 ```
-
-### Misc
-
-```css
-:root {
-  --small-font-size: 80%;
-  --sidebar-size: 25%;
-  --group-buttons-padding-inline: 1rem;
-  --icons-background-position-gap: 0.75rem;
-  --icons-width: 1em;
-}
-```
-
----
 
 ## Tier 4: Individual Component Tokens
 
@@ -372,8 +402,6 @@ component instance**:
 }
 ```
 
----
-
 ## How Tiers Compose: A Complete Example
 
 ```css
@@ -381,7 +409,7 @@ component instance**:
 @import "semanticus-css";
 
 :root {
-  /* Tier 2: Custom palette colors */
+  /* Tier 2: Custom variant colors */
   --primary-background-color: #6366f1;
   --primary-background-color-hover: light-dark(#4f46e5, #818cf8);
   --primary-color: white;

@@ -128,26 +128,24 @@ function varType(defaultValue) {
 
 const variableGroups = [
   {
-    label: "Core Colors",
+    tier: "Tier 1: System Tokens",
+    label: "Background & Text",
     vars: [
       {
         name: "--background-color",
         label: "Background",
         desc: "Main page background.",
         type: varType(
-          "light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)))",
+          "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
         ),
-        default:
-          "light-dark(white, color-mix(in srgb, var(--color-slate-950), var(--color-slate-900)))",
+        default: "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
       },
       {
         name: "--color",
         label: "Text",
         desc: "Default body text color.",
-        type: varType(
-          "light-dark(var(--color-zinc-750), var(--color-zinc-200))",
-        ),
-        default: "light-dark(var(--color-zinc-750), var(--color-zinc-200))",
+        type: varType("light-dark(#373c44, #c2c7d0)"),
+        default: "light-dark(#373c44, #c2c7d0)",
       },
       {
         name: "--color-muted",
@@ -160,10 +158,8 @@ const variableGroups = [
         name: "--border-color",
         label: "Border",
         desc: "Default border color.",
-        type: varType(
-          "light-dark(var(--color-slate-100), var(--color-slate-800))",
-        ),
-        default: "light-dark(var(--color-slate-100), var(--color-slate-800))",
+        type: varType("light-dark(#dfe3eb, #2a3140)"),
+        default: "light-dark(#dfe3eb, #2a3140)",
       },
       {
         name: "--typography-color",
@@ -175,84 +171,55 @@ const variableGroups = [
     ],
   },
   {
-    label: "Selection",
-    vars: [
-      {
-        name: "--selection-background-color",
-        label: "Selection Background",
-        desc: "Background color for ::selection text highlights.",
-        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
-        default: "color-mix(in srgb, var(--primary-color), white 75%)",
-      },
-    ],
-  },
-  {
-    label: "Backdrop",
-    vars: [
-      {
-        name: "--backdrop-background-color",
-        label: "Backdrop",
-        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
-        type: varType(
-          "light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))",
-        ),
-        default:
-          "light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))",
-      },
-    ],
-  },
-  {
+    tier: "Tier 1: System Tokens",
     label: "Hover & Focus Effects",
     vars: [
       {
-        name: "--color-hover-effect",
-        label: "Hover Effect",
-        desc: "Color mixed into hover states.",
-        type: varType(
-          "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
-        ),
-        default: "light-dark(var(--color-zinc-700), var(--color-zinc-300))",
+        name: "--color-hover-shade",
+        label: "Hover Shade",
+        desc: "Color mixed into base colors via color-mix() to derive hover-state variants.",
+        type: varType("light-dark(#424751, #a4acba)"),
+        default: "light-dark(#424751, #a4acba)",
       },
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Primary Intent",
     vars: [
       {
         name: "--primary-color",
         label: "Primary Text",
         desc: "Primary text/link color.",
-        type: varType(
-          "light-dark(var(--color-azure-550), var(--color-azure-350))",
-        ),
-        default: "light-dark(var(--color-azure-550), var(--color-azure-350))",
+        type: varType("light-dark(#0172ad, #01aaff)"),
+        default: "light-dark(#0172ad, #01aaff)",
       },
       {
         name: "--primary-background-color",
         label: "Primary Fill",
         desc: "Primary button/input fill.",
-        type: varType("var(--color-azure-550)"),
-        default: "var(--color-azure-550)",
+        type: varType("#0172ad"),
+        default: "#0172ad",
       },
       {
         name: "--primary-color-hover",
         label: "Primary Text Hover",
         desc: "Primary text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--primary-background-color-hover",
         label: "Primary Fill Hover",
         desc: "Primary fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--primary-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--primary-outline-color",
@@ -267,43 +234,42 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Secondary Intent",
     vars: [
       {
         name: "--secondary-color",
         label: "Secondary Text",
         desc: "Secondary text color.",
-        type: varType(
-          "light-dark(var(--color-slate-550), var(--color-zinc-350))",
-        ),
-        default: "light-dark(var(--color-slate-550), var(--color-zinc-350))",
+        type: varType("light-dark(#5d6b89, #969eaf)"),
+        default: "light-dark(#5d6b89, #969eaf)",
       },
       {
         name: "--secondary-background-color",
         label: "Secondary Fill",
         desc: "Secondary button fill.",
-        type: varType("var(--color-slate-550)"),
-        default: "var(--color-slate-550)",
+        type: varType("#5d6b89"),
+        default: "#5d6b89",
       },
       {
         name: "--secondary-color-hover",
         label: "Secondary Text Hover",
         desc: "Secondary text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--secondary-background-color-hover",
         label: "Secondary Fill Hover",
         desc: "Secondary fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--secondary-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--secondary-outline-color",
@@ -318,45 +284,42 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Contrast Intent",
     vars: [
       {
         name: "--contrast-color",
         label: "Contrast Text",
         desc: "Contrast text color.",
-        type: varType(
-          "light-dark(var(--color-slate-900), var(--color-slate-100))",
-        ),
-        default: "light-dark(var(--color-slate-900), var(--color-slate-100))",
+        type: varType("light-dark(#181c25, #dfe3eb)"),
+        default: "light-dark(#181c25, #dfe3eb)",
       },
       {
         name: "--contrast-background-color",
         label: "Contrast Fill",
         desc: "Contrast button fill.",
-        type: varType(
-          "light-dark(var(--color-slate-900), var(--color-slate-50))",
-        ),
-        default: "light-dark(var(--color-slate-900), var(--color-slate-50))",
+        type: varType("light-dark(#181c25, #eff1f4)"),
+        default: "light-dark(#181c25, #eff1f4)",
       },
       {
         name: "--contrast-color-hover",
         label: "Contrast Text Hover",
         desc: "Contrast text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--contrast-background-color-hover",
         label: "Contrast Fill Hover",
         desc: "Contrast fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--contrast-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--contrast-outline-color",
@@ -371,6 +334,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Success Intent",
     vars: [
       {
@@ -392,20 +356,20 @@ const variableGroups = [
         label: "Success Text Hover",
         desc: "Success text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--success-background-color-hover",
         label: "Success Fill Hover",
         desc: "Success fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--success-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--success-outline-color",
@@ -420,57 +384,42 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Info Intent",
     vars: [
-      {
-        name: "--color-azure-450",
-        label: "Azure 450",
-        desc: "Info base shade.",
-        type: "color",
-        default: "#018cd4",
-      },
-      {
-        name: "--color-azure-250",
-        label: "Azure 250",
-        desc: "Info light shade.",
-        type: "color",
-        default: "#79c0ff",
-      },
       {
         name: "--info-color",
         label: "Info Text",
         desc: "Info text color.",
-        type: varType(
-          "light-dark(var(--color-azure-450), var(--color-azure-250))",
-        ),
-        default: "light-dark(var(--color-azure-450), var(--color-azure-250))",
+        type: varType("light-dark(#018cd4, #79c0ff)"),
+        default: "light-dark(#018cd4, #79c0ff)",
       },
       {
         name: "--info-background-color",
         label: "Info Fill",
         desc: "Info button fill.",
-        type: varType("var(--color-azure-450)"),
-        default: "var(--color-azure-450)",
+        type: varType("#018cd4"),
+        default: "#018cd4",
       },
       {
         name: "--info-color-hover",
         label: "Info Text Hover",
         desc: "Info text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--info-background-color-hover",
         label: "Info Fill Hover",
         desc: "Info fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--info-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--info-outline-color",
@@ -485,57 +434,42 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Warning Intent",
     vars: [
-      {
-        name: "--color-amber-350",
-        label: "Amber 350",
-        desc: "Warning base shade.",
-        type: "color",
-        default: "#c79400",
-      },
-      {
-        name: "--color-amber-250",
-        label: "Amber 250",
-        desc: "Warning light shade.",
-        type: "color",
-        default: "#e8ae01",
-      },
       {
         name: "--warning-color",
         label: "Warning Text",
         desc: "Warning text color.",
-        type: varType(
-          "light-dark(var(--color-amber-350), var(--color-amber-250))",
-        ),
-        default: "light-dark(var(--color-amber-350), var(--color-amber-250))",
+        type: varType("light-dark(#c79400, #e8ae01)"),
+        default: "light-dark(#c79400, #e8ae01)",
       },
       {
         name: "--warning-background-color",
         label: "Warning Fill",
         desc: "Warning button fill.",
-        type: varType("var(--color-amber-350)"),
-        default: "var(--color-amber-350)",
+        type: varType("#c79400"),
+        default: "#c79400",
       },
       {
         name: "--warning-color-hover",
         label: "Warning Text Hover",
         desc: "Warning text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--warning-background-color-hover",
         label: "Warning Fill Hover",
         desc: "Warning fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--warning-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--warning-outline-color",
@@ -550,6 +484,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 2: Variant Tokens",
     label: "Danger Intent",
     vars: [
       {
@@ -571,20 +506,20 @@ const variableGroups = [
         label: "Danger Text Hover",
         desc: "Danger text on hover.",
         type: varType(
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--danger-background-color-hover",
         label: "Danger Fill Hover",
         desc: "Danger fill on hover.",
         type: varType(
-          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-shade))",
         ),
         default:
-          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-effect))",
+          "color-mix(in srgb, var(--danger-background-color) 70%, var(--color-hover-shade))",
       },
       {
         name: "--danger-outline-color",
@@ -599,6 +534,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Code",
     vars: [
       {
@@ -606,19 +542,17 @@ const variableGroups = [
         label: "Code Background",
         desc: "Background for code blocks.",
         type: varType(
-          "light-dark(color-mix(in srgb, var(--color-slate-50) 75%, white), color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 75%, white), color-mix(in srgb, #181c25 75%, #202632))",
         ),
         default:
-          "light-dark(color-mix(in srgb, var(--color-slate-50) 75%, white), color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 75%, white), color-mix(in srgb, #181c25 75%, #202632))",
       },
       {
         name: "--code-color",
         label: "Code Text",
         desc: "Text color inside code blocks.",
-        type: varType(
-          "light-dark(var(--color-zinc-550), var(--color-zinc-400))",
-        ),
-        default: "light-dark(var(--color-zinc-550), var(--color-zinc-400))",
+        type: varType("light-dark(#646b79, #8891a4)"),
+        default: "light-dark(#646b79, #8891a4)",
       },
       {
         name: "--kbd-background-color",
@@ -634,9 +568,30 @@ const variableGroups = [
         type: varType("var(--background-color)"),
         default: "var(--background-color)",
       },
+      {
+        name: "--kbd-font-weight",
+        label: "Kbd Weight",
+        desc: "Font weight for keyboard elements.",
+        type: "text",
+        default: "bolder",
+      },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
+    label: "Mark",
+    vars: [
+      {
+        name: "--mark-background-color",
+        label: "Mark Background",
+        desc: "Background color for <mark> highlighted text.",
+        type: varType("light-dark(#c79400, #e8ae01)"),
+        default: "light-dark(#c79400, #e8ae01)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
     label: "Buttons",
     vars: [
       {
@@ -670,6 +625,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Form Inputs",
     vars: [
       {
@@ -677,38 +633,33 @@ const variableGroups = [
         label: "Input Background",
         desc: "Default input background.",
         type: varType(
-          "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #181c25, #202632))",
         ),
         default:
-          "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-900), var(--color-slate-850)))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #181c25, #202632))",
       },
       {
         name: "--inputs-background-color-focus",
         label: "Input Active BG",
         desc: "Input background when active/focused.",
         type: varType(
-          "light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))",
+          "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
         ),
-        default:
-          "light-dark(white, color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850)))",
+        default: "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
       },
       {
         name: "--inputs-border-color",
         label: "Input Border",
         desc: "Input border color.",
-        type: varType(
-          "light-dark(var(--color-slate-150), var(--color-slate-800))",
-        ),
-        default: "light-dark(var(--color-slate-150), var(--color-slate-800))",
+        type: varType("light-dark(#cfd5e2, #2a3140)"),
+        default: "light-dark(#cfd5e2, #2a3140)",
       },
       {
         name: "--inputs-color",
         label: "Input Text",
         desc: "Text color inside inputs.",
-        type: varType(
-          "light-dark(var(--color-zinc-850), var(--color-zinc-100))",
-        ),
-        default: "light-dark(var(--color-zinc-850), var(--color-zinc-100))",
+        type: varType("light-dark(#23262c, #e0e3e7)"),
+        default: "light-dark(#23262c, #e0e3e7)",
       },
       {
         name: "--inputs-placeholder-color",
@@ -728,14 +679,13 @@ const variableGroups = [
         name: "--inputs-accent-color-muted",
         label: "Input Accent Muted",
         desc: "Muted accent color for unchecked/inactive states.",
-        type: varType(
-          "light-dark(var(--color-slate-200), var(--color-slate-750))",
-        ),
-        default: "light-dark(var(--color-slate-200), var(--color-slate-750))",
+        type: varType("light-dark(#bfc7d9, #333c4e)"),
+        default: "light-dark(#bfc7d9, #333c4e)",
       },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Switch",
     vars: [
       {
@@ -748,6 +698,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Radio",
     vars: [
       {
@@ -760,6 +711,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Range",
     vars: [
       {
@@ -807,6 +759,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Details / Accordion",
     vars: [
       {
@@ -847,6 +800,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Links & Lists",
     vars: [
       {
@@ -873,16 +827,15 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Dialog",
     vars: [
       {
         name: "--dialog-background-color",
         label: "Dialog Background",
         desc: "Dialog/card background.",
-        type: varType(
-          "light-dark(var(--background-color), var(--color-slate-900))",
-        ),
-        default: "light-dark(var(--background-color), var(--color-slate-900))",
+        type: varType("light-dark(var(--background-color), #181c25)"),
+        default: "light-dark(var(--background-color), #181c25)",
       },
       {
         name: "--dialog-border-color",
@@ -896,41 +849,40 @@ const variableGroups = [
         label: "Marginals BG",
         desc: "Header/footer background for dialogs, and cards.",
         type: varType(
-          "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #eff1f4, transparent 95%))",
         ),
         default:
-          "light-dark(color-mix(in srgb, var(--color-slate-50) 25%, white), color-mix(in srgb, var(--color-slate-50), transparent 95%))",
+          "light-dark(color-mix(in srgb, #eff1f4 25%, white), color-mix(in srgb, #eff1f4, transparent 95%))",
       },
       {
         name: "--dialog-marginals-border-color",
         label: "Marginals Border",
         desc: "Header/footer border for dialogs, and cards.",
         type: varType(
-          "color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)",
+          "color-mix(in srgb, light-dark(#181c25, #969eaf), transparent 90%)",
         ),
         default:
-          "color-mix(in srgb, light-dark(var(--color-slate-900), var(--color-zinc-350)), transparent 90%)",
+          "color-mix(in srgb, light-dark(#181c25, #969eaf), transparent 90%)",
       },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Menu / Dropdown",
     vars: [
       {
         name: "--details-menu-background-color",
         label: "Menu Background",
         desc: "Dropdown menu background.",
-        type: varType("light-dark(white, var(--color-slate-900))"),
-        default: "light-dark(white, var(--color-slate-900))",
+        type: varType("light-dark(white, #181c25)"),
+        default: "light-dark(white, #181c25)",
       },
       {
         name: "--details-menu-border-color",
         label: "Menu Border",
         desc: "Dropdown menu border.",
-        type: varType(
-          "light-dark(var(--color-slate-50), var(--color-slate-850))",
-        ),
-        default: "light-dark(var(--color-slate-50), var(--color-slate-850))",
+        type: varType("light-dark(#eff1f4, #202632)"),
+        default: "light-dark(#eff1f4, #202632)",
       },
       {
         name: "--details-menu-color",
@@ -943,24 +895,29 @@ const variableGroups = [
         name: "--details-menu-background-color-hover",
         label: "Menu Hover",
         desc: "Dropdown item hover background.",
-        type: varType(
-          "light-dark(var(--color-slate-50), var(--color-slate-850))",
-        ),
-        default: "light-dark(var(--color-slate-50), var(--color-slate-850))",
+        type: varType("light-dark(#eff1f4, #202632)"),
+        default: "light-dark(#eff1f4, #202632)",
+      },
+      {
+        name: "--menu-box-shadow",
+        label: "Menu Shadow",
+        desc: "Layered box-shadow for dropdown menus and dialogs.",
+        type: "text",
+        default:
+          "0.0145rem 0.029rem 0.174rem light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)), 0.0335rem 0.067rem 0.402rem light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)), 0.0625rem 0.125rem 0.75rem light-dark(rgb(129 145 181 / 0.03), rgb(7 9 12 / 0.03)), 0.1125rem 0.225rem 1.35rem light-dark(rgb(129 145 181 / 0.036), rgb(7 9 12 / 0.036)), 0.2085rem 0.417rem 2.502rem light-dark(rgb(129 145 181 / 0.04302), rgb(7 9 12 / 0.04302)), 0.5rem 1rem 6rem light-dark(rgb(129 145 181 / 0.06), rgb(7 9 12 / 0.06)), 0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015))",
       },
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Progress",
     vars: [
       {
         name: "--progress-track-background-color",
         label: "Progress Track",
         desc: "Progress bar track (empty portion).",
-        type: varType(
-          "light-dark(var(--color-slate-100), var(--color-slate-850))",
-        ),
-        default: "light-dark(var(--color-slate-100), var(--color-slate-850))",
+        type: varType("light-dark(#dfe3eb, #202632)"),
+        default: "light-dark(#dfe3eb, #202632)",
       },
       {
         name: "--progress-accent-color",
@@ -972,6 +929,7 @@ const variableGroups = [
     ],
   },
   {
+    tier: "Tier 3: Component Tokens",
     label: "Tooltip",
     vars: [
       {
@@ -985,8 +943,37 @@ const variableGroups = [
         name: "--tooltip-color",
         label: "Tooltip Text",
         desc: "Tooltip text color.",
-        type: varType("light-dark(white, var(--color-zinc-900))"),
-        default: "light-dark(white, var(--color-zinc-900))",
+        type: varType("light-dark(white, #191c20)"),
+        default: "light-dark(white, #191c20)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Selection",
+    vars: [
+      {
+        name: "--selection-background-color",
+        label: "Selection Background",
+        desc: "Background color for ::selection text highlights.",
+        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
+        default: "color-mix(in srgb, var(--primary-color), white 75%)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Backdrop",
+    vars: [
+      {
+        name: "--backdrop-background-color",
+        label: "Backdrop",
+        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
+        type: varType(
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
+        ),
+        default:
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
       },
     ],
   },
@@ -1471,167 +1458,184 @@ defineExpose({
         </div>
 
         <div class="var-groups">
-          <div
-            v-for="group in filteredGroups"
-            :key="group.label"
-            class="var-group"
-          >
-            <button class="group-header" @click="toggleGroup(group.label)">
-              <svg
-                :class="['chevron', { expanded: expandedGroups[group.label] }]"
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-              <span class="group-label">{{ group.label }}</span>
-              <span class="group-count">{{ group.vars.length }}</span>
-            </button>
+          <template v-for="(group, index) in filteredGroups" :key="group.label">
+            <div
+              v-if="
+                index === 0 || group.tier !== filteredGroups[index - 1].tier
+              "
+              class="tier-header"
+            >
+              {{ group.tier }}
+            </div>
+            <div class="var-group">
+              <button class="group-header" @click="toggleGroup(group.label)">
+                <svg
+                  :class="[
+                    'chevron',
+                    { expanded: expandedGroups[group.label] },
+                  ]"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+                <span class="group-label">{{ group.label }}</span>
+                <span class="group-count">{{ group.vars.length }}</span>
+              </button>
 
-            <div v-show="expandedGroups[group.label]" class="group-vars">
-              <div
-                v-for="v in group.vars"
-                :key="v.name"
-                :class="['var-row', { changed: isChanged(v) }]"
-              >
-                <div class="var-label-row">
-                  <label class="var-label" :for="'input-' + v.name">
-                    <code
-                      class="var-name-label"
-                      v-html="highlightMatch(v.name, searchQuery)"
-                    ></code>
-                  </label>
-                  <div class="popover-container">
-                    <button
-                      type="button"
-                      class="help-trigger"
-                      :aria-expanded="activePopover === v.name"
-                      @click.stop="togglePopover(v.name)"
-                      title="Show details"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+              <div v-show="expandedGroups[group.label]" class="group-vars">
+                <div
+                  v-for="v in group.vars"
+                  :key="v.name"
+                  :class="['var-row', { changed: isChanged(v) }]"
+                >
+                  <div class="var-label-row">
+                    <label class="var-label" :for="'input-' + v.name">
+                      <code
+                        class="var-name-label"
+                        v-html="highlightMatch(v.name, searchQuery)"
+                      ></code>
+                    </label>
+                    <div class="popover-container">
+                      <button
+                        type="button"
+                        class="help-trigger"
+                        :aria-expanded="activePopover === v.name"
+                        @click.stop="togglePopover(v.name)"
+                        title="Show details"
                       >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                        <line x1="12" y1="17" x2="12.01" y2="17" />
-                      </svg>
-                    </button>
-                    <div
-                      v-if="activePopover === v.name"
-                      class="help-popover"
-                      @click.stop
-                    >
-                      <div class="popover-header">
-                        <code class="var-name-popover">{{ v.name }}</code>
-                        <button
-                          type="button"
-                          class="popover-close"
-                          @click.stop="closePopover"
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="14"
+                          height="14"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          ✕
-                        </button>
-                      </div>
-                      <div class="popover-content">
-                        <p
-                          class="popover-short-label"
-                          v-html="highlightMatch(v.label, searchQuery)"
-                        ></p>
-                        <p
-                          class="popover-desc"
-                          v-html="highlightMatch(v.desc, searchQuery)"
-                        ></p>
-                        <div class="popover-default">
-                          <span class="default-label">Default:</span>
-                          <code class="default-value">{{ getDefault(v) }}</code>
-                        </div>
-                        <div class="popover-copy-css">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                          <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                      </button>
+                      <div
+                        v-if="activePopover === v.name"
+                        class="help-popover"
+                        @click.stop
+                      >
+                        <div class="popover-header">
+                          <code class="var-name-popover">{{ v.name }}</code>
                           <button
                             type="button"
-                            class="copy-css-btn"
-                            @click.stop="
-                              copyToClipboard(
-                                `${v.name}: ${getDisplayValue(v)};`,
-                                'cssRule',
-                              )
-                            "
+                            class="popover-close"
+                            @click.stop="closePopover"
                           >
-                            <svg
-                              viewBox="0 0 24 24"
-                              width="12"
-                              height="12"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                            >
-                              <rect x="9" y="9" width="13" height="13" rx="2" />
-                              <path
-                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                              />
-                            </svg>
-                            {{
-                              copiedFeedback === "cssRule"
-                                ? "Copied CSS!"
-                                : "Copy CSS Rule"
-                            }}
+                            ✕
                           </button>
+                        </div>
+                        <div class="popover-content">
+                          <p
+                            class="popover-short-label"
+                            v-html="highlightMatch(v.label, searchQuery)"
+                          ></p>
+                          <p
+                            class="popover-desc"
+                            v-html="highlightMatch(v.desc, searchQuery)"
+                          ></p>
+                          <div class="popover-default">
+                            <span class="default-label">Default:</span>
+                            <code class="default-value">{{
+                              getDefault(v)
+                            }}</code>
+                          </div>
+                          <div class="popover-copy-css">
+                            <button
+                              type="button"
+                              class="copy-css-btn"
+                              @click.stop="
+                                copyToClipboard(
+                                  `${v.name}: ${getDisplayValue(v)};`,
+                                  'cssRule',
+                                )
+                              "
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="12"
+                                height="12"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <rect
+                                  x="9"
+                                  y="9"
+                                  width="13"
+                                  height="13"
+                                  rx="2"
+                                />
+                                <path
+                                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                />
+                              </svg>
+                              {{
+                                copiedFeedback === "cssRule"
+                                  ? "Copied CSS!"
+                                  : "Copy CSS Rule"
+                              }}
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <button
+                      v-if="isChanged(v)"
+                      class="reset-var-btn"
+                      @click="resetVar(v)"
+                      title="Reset to default"
+                    >
+                      ✕
+                    </button>
                   </div>
-                  <button
-                    v-if="isChanged(v)"
-                    class="reset-var-btn"
-                    @click="resetVar(v)"
-                    title="Reset to default"
-                  >
-                    ✕
-                  </button>
-                </div>
 
-                <div class="var-input-row">
-                  <template v-if="v.type === 'color'">
-                    <input
-                      v-if="computedReady"
-                      type="color"
-                      class="color-picker"
-                      :value="toHex(getDisplayValue(v))"
-                      @input="setCurrentValue(v, $event.target.value)"
-                    />
-                    <input
-                      type="text"
-                      class="text-input color-text"
-                      :id="'input-' + v.name"
-                      :value="getDisplayValue(v)"
-                      :placeholder="getDefault(v)"
-                      @change="setCurrentValue(v, $event.target.value)"
-                    />
-                  </template>
-                  <template v-else>
-                    <input
-                      type="text"
-                      class="text-input"
-                      :id="'input-' + v.name"
-                      :value="getDisplayValue(v)"
-                      :placeholder="getDefault(v)"
-                      @change="setCurrentValue(v, $event.target.value)"
-                    />
-                  </template>
+                  <div class="var-input-row">
+                    <template v-if="v.type === 'color'">
+                      <input
+                        v-if="computedReady"
+                        type="color"
+                        class="color-picker"
+                        :value="toHex(getDisplayValue(v))"
+                        @input="setCurrentValue(v, $event.target.value)"
+                      />
+                      <input
+                        type="text"
+                        class="text-input color-text"
+                        :id="'input-' + v.name"
+                        :value="getDisplayValue(v)"
+                        :placeholder="getDefault(v)"
+                        @change="setCurrentValue(v, $event.target.value)"
+                      />
+                    </template>
+                    <template v-else>
+                      <input
+                        type="text"
+                        class="text-input"
+                        :id="'input-' + v.name"
+                        :value="getDisplayValue(v)"
+                        :placeholder="getDefault(v)"
+                        @change="setCurrentValue(v, $event.target.value)"
+                      />
+                    </template>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
       </aside>
 
@@ -1921,6 +1925,16 @@ defineExpose({
 
 .var-group {
   border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.tier-header {
+  padding: 0.625rem 0.75rem 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vp-c-brand);
+  border-bottom: 1px solid var(--vp-c-brand);
 }
 
 .group-header {

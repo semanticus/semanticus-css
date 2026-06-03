@@ -1,27 +1,27 @@
 :root,
 :host {
-  /* --color-azure-950: #04121d; */
-  /* --color-azure-900: #061e2f; */
-  /* --color-azure-850: #052940; */
-  /* --color-azure-800: #033452; */
-  /* --color-azure-750: #014063; */
-  /* --color-azure-700: #014c75; */
-  /* --color-azure-650: #015887; */
-  /* --color-azure-600: #02659a; */
-  --color-azure-550: #0172ad;
-  /* --color-azure-500: #017fc0; */
-  /* --color-azure-450: #018cd4; */
-  /* --color-azure-400: #029ae8; */
-  --color-azure-350: #01aaff;
-  /* --color-azure-300: #51b4ff; */
-  /* --color-azure-250: #79c0ff; */
-  /* --color-azure-200: #9bccfd; */
-  /* --color-azure-150: #b7d9fc; */
-  /* --color-azure-100: #d1e5fb; */
-  /* --color-azure-50: #e9f2fc; */
-  /* --color-azure: var(--color-azure-550); */
+  /* --_color-azure-950: #04121d; */
+  /* --_color-azure-900: #061e2f; */
+  /* --_color-azure-850: #052940; */
+  /* --_color-azure-800: #033452; */
+  /* --_color-azure-750: #014063; */
+  /* --_color-azure-700: #014c75; */
+  /* --_color-azure-650: #015887; */
+  /* --_color-azure-600: #02659a; */
+  --_color-azure-550: #0172ad;
+  /* --_color-azure-500: #017fc0; */
+  /* --_color-azure-450: #018cd4; */
+  /* --_color-azure-400: #029ae8; */
+  --_color-azure-350: #01aaff;
+  /* --_color-azure-300: #51b4ff; */
+  /* --_color-azure-250: #79c0ff; */
+  /* --_color-azure-200: #9bccfd; */
+  /* --_color-azure-150: #b7d9fc; */
+  /* --_color-azure-100: #d1e5fb; */
+  /* --_color-azure-50: #e9f2fc; */
+  /* --color-azure: var(--_color-azure-550); */
 
   /* System tokens */
-  --primary-color: light-dark(var(--color-azure-550), var(--color-azure-350));
-  --primary-background-color: var(--color-azure-550);
+  --primary-color: light-dark(var(--_color-azure-550), var(--_color-azure-350));
+  --primary-background-color: var(--_color-azure-550);
 }

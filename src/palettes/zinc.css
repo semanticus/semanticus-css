@@ -1,27 +1,27 @@
 :root,
 :host {
-  /* --color-zinc-950: #0f1114; */
-  /* --color-zinc-900: #191c20; */
-  /* --color-zinc-850: #23262c; */
-  /* --color-zinc-800: #2d3138; */
-  /* --color-zinc-750: #373c44; */
-  /* --color-zinc-700: #424751; */
-  /* --color-zinc-650: #4d535e; */
-  /* --color-zinc-600: #5c6370; */
-  --color-zinc-550: #646b79;
-  /* --color-zinc-500: #6f7887; */
-  /* --color-zinc-450: #7b8495; */
-  /* --color-zinc-400: #8891a4; */
-  --color-zinc-350: #969eaf;
-  /* --color-zinc-300: #a4acba; */
-  /* --color-zinc-250: #b3b9c5; */
-  /* --color-zinc-200: #c2c7d0; */
-  /* --color-zinc-150: #d1d5db; */
-  /* --color-zinc-100: #e0e3e7; */
-  /* --color-zinc-50: #f0f1f3; */
-  /* --color-zinc: var(--color-zinc-550); */
+  /* --_color-zinc-950: #0f1114; */
+  /* --_color-zinc-900: #191c20; */
+  /* --_color-zinc-850: #23262c; */
+  /* --_color-zinc-800: #2d3138; */
+  /* --_color-zinc-750: #373c44; */
+  /* --_color-zinc-700: #424751; */
+  /* --_color-zinc-650: #4d535e; */
+  /* --_color-zinc-600: #5c6370; */
+  --_color-zinc-550: #646b79;
+  /* --_color-zinc-500: #6f7887; */
+  /* --_color-zinc-450: #7b8495; */
+  /* --_color-zinc-400: #8891a4; */
+  --_color-zinc-350: #969eaf;
+  /* --_color-zinc-300: #a4acba; */
+  /* --_color-zinc-250: #b3b9c5; */
+  /* --_color-zinc-200: #c2c7d0; */
+  /* --_color-zinc-150: #d1d5db; */
+  /* --_color-zinc-100: #e0e3e7; */
+  /* --_color-zinc-50: #f0f1f3; */
+  /* --color-zinc: var(--_color-zinc-550); */
 
   /* System tokens */
-  --primary-color: light-dark(var(--color-zinc-550), var(--color-zinc-350));
-  --primary-background-color: var(--color-zinc-550);
+  --primary-color: light-dark(var(--_color-zinc-550), var(--_color-zinc-350));
+  --primary-background-color: var(--_color-zinc-550);
 }

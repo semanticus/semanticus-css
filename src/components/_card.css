@@ -63,11 +63,7 @@
       padding: var(--_card-spacing);
       border-radius: 0;
       border: var(--_card-border-width) solid
-        color-mix(
-          in srgb,
-          light-dark(var(--color-slate-900), var(--color-zinc-350)),
-          transparent 90%
-        );
+        var(--_card-marginals-border-color);
 
       &:first-child {
         border-top-left-radius: var(--_card-border-radius);
@@ -81,7 +77,7 @@
         background: color-mix(
           in srgb,
           var(--_card-background-color),
-          var(--color-hover-effect) 15%
+          var(--color-hover-shade) 15%
         );
       }
     }
