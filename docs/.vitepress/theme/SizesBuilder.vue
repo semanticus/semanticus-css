@@ -459,12 +459,6 @@ const variableGroups = [
     label: "Form Details",
     vars: [
       {
-        name: "--inputs-focus-ring-width",
-        label: "Input Outline Width",
-        desc: "Focus-ring width for text inputs.",
-        default: "0.0625rem",
-      },
-      {
         name: "--input-search-border-radius",
         label: "Search Border Radius",
         desc: "Border radius for search inputs and roles.",

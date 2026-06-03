@@ -128,7 +128,6 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --inputs-accent-color
   --inputs-accent-color-muted
   --inputs-placeholder-color
-  --inputs-focus-ring-width
 
   /* Input subtypes */
   --input-checkbox-border-width

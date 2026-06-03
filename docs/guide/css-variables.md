@@ -189,7 +189,6 @@ Scoped to a component type. Change one of these and every instance updates.
   --inputs-accent-color: var(--primary-background-color);
   --inputs-accent-color-muted: light-dark(#bfc7d9, #333c4e);
   --inputs-placeholder-color: var(--color-muted);
-  --inputs-focus-ring-width: 0.0625rem;
 }
 ```
 

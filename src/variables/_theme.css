@@ -312,7 +312,6 @@
   );
   --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
   --inputs-placeholder-color: var(--color-muted);
-  --inputs-focus-ring-width: 0.0625rem;
 
   /* --- Input Checkbox --- */
   --input-checkbox-border-width: 0.125rem;
