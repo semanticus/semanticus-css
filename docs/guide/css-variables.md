@@ -87,7 +87,7 @@ These set the document-wide baseline. They use the CSS property name directly.
   --outline-width: 1px;
   --focus-ring-width: 0.125rem;
   --transition: 0.2s ease-in-out;
-  --disabled-opacity: 0.5;
+  --opacity-disabled: 0.5;
 }
 ```
 

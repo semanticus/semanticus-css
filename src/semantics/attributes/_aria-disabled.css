@@ -1,4 +1,4 @@
 [aria-disabled="true"] {
-  opacity: var(--disabled-opacity);
+  opacity: var(--opacity-disabled);
   pointer-events: none;
 }

@@ -505,7 +505,7 @@ const variableGroups = [
     label: "Form States & Misc",
     vars: [
       {
-        name: "--disabled-opacity",
+        name: "--opacity-disabled",
         label: "Disabled Opacity",
         desc: "Opacity for disabled form inputs and elements.",
         default: "0.5",

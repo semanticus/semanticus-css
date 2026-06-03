@@ -50,7 +50,7 @@ a CSS longhand property name** whenever possible.
   --outline-width
   --focus-ring-width
   --transition
-  --disabled-opacity
+  --opacity-disabled
 
   /* Overlays */
   --backdrop-background-color
@@ -289,7 +289,6 @@ Tokens at Tiers 1-3 must use CSS longhand property names:
 | `--spacing` / `--spacing-base` / `--spacing-scale` | Density values used across multiple properties |
 | `--transition` | Composite value — splitting adds tokens without benefit |
 | `--nav-breadcrumb-divider` | Content string, not a CSS property value |
-| `--disabled-opacity` | Generic opacity applied to multiple properties |
 
 ### State Ordering
 
@@ -299,12 +298,6 @@ State always comes last:
 --input-switch-background-color-checked
 --details-summary-color-open
 ```
-
-### Opacity Tokens
-
-The only opacity token is `--disabled-opacity`, which is listed under
-[Genuine Exceptions](#genuine-exceptions) since it applies across multiple
-properties rather than mapping to a single CSS property.
 
 ### Spacing Tokens
 
