@@ -192,8 +192,8 @@ Scoped to a component type. Change one of these and every instance updates.
   --buttons-background-color: var(--primary-background-color);
   --buttons-color-hover: white;
   --buttons-color: white;
-  --buttons-padding-block: var(--inputs-spacing-vertical);
-  --buttons-padding-inline: var(--inputs-spacing-horizontal);
+  --buttons-padding-block: var(--inputs-padding-block);
+  --buttons-padding-inline: var(--inputs-padding-inline);
 
   /* --- Code --- */
   --code-background-color: light-dark(
@@ -214,8 +214,8 @@ Scoped to a component type. Change one of these and every instance updates.
   /* --- Dropdown styling applied to the summary element --- */
   --details-dropdown-color: var(--inputs-placeholder-color);
   --details-dropdown-border-color: var(--inputs-border-color);
-  --details-dropdown-spacing-vertical: var(--inputs-spacing-vertical);
-  --details-dropdown-spacing-horizontal: var(--inputs-spacing-horizontal);
+  --details-dropdown-padding-block: var(--inputs-padding-block);
+  --details-dropdown-padding-inline: var(--inputs-padding-inline);
 
   /* --- Menu styling applied to the ul[role="menu"] element --- */
   --details-menu-background-color: light-dark(white, #181c25);
@@ -280,8 +280,8 @@ Scoped to a component type. Change one of these and every instance updates.
     #bfc7d9,
     #333c4e
   );
-  --inputs-spacing-vertical: 0.5rem;
-  --inputs-spacing-horizontal: 0.7rem;
+  --inputs-padding-block: 0.5rem;
+  --inputs-padding-inline: 0.7rem;
   --inputs-background-color: light-dark(
     color-mix(in srgb, #eff1f4 25%, white),
     color-mix(in srgb, #181c25, #202632)

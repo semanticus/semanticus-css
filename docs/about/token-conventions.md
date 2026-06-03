@@ -217,9 +217,9 @@ Use `spacing` as the property segment:
 ```css
 --spacing                       /* global density */
 --typography-margin-block   /* block margins */
---inputs-spacing-vertical       /* form padding */
+--inputs-padding-block       /* form padding */
 --buttons-padding-block
---details-dropdown-spacing-vertical
+--details-dropdown-padding-block
 ```
 
 ### Cascade-Seed Tokens

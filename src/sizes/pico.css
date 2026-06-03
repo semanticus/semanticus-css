@@ -31,8 +31,8 @@
   --_spacing-scale: 1;
   --spacing: calc(1rem * var(--_spacing-scale));
   --typography-margin-block: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
-  --inputs-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
-  --inputs-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
+  --inputs-padding-block: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
+  --inputs-padding-inline: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
   --group-buttons-padding-inline: 1rem;
   --nav-link-gap: calc(var(--spacing) * 0.5); /* padding inside nav links */

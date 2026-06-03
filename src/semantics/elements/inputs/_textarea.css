@@ -11,7 +11,7 @@ textarea {
     background-size: var(--icons-width)
       calc(
         var(--icons-width) * var(--line-height) +
-          var(--inputs-spacing-vertical) * 2 + var(--_inputs-border-width) * 2
+          var(--inputs-padding-block) * 2 + var(--_inputs-border-width) * 2
       );
 
     &[aria-invalid="false"] {

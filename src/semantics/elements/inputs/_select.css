@@ -10,7 +10,7 @@ select {
     background-repeat: no-repeat;
     background-size: var(--icons-width) auto;
     padding-inline-end: calc(
-      var(--inputs-spacing-horizontal) + var(--icons-width) +
+      var(--inputs-padding-inline) + var(--icons-width) +
         var(--icons-background-position-gap)
     );
   }
