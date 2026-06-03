@@ -23,7 +23,7 @@ affects more of the page; changing it at a lower tier gives more precision.
 | Tier | Prefix | Scope |
 |------|--------|-------|
 | 1. System | `--property` | Entire page |
-| 2. Variant | `--{variant}-property[-state]` | Variant definitions |
+| 2. Variant | `--{variant}-{property}[-{state}]` | Variant definitions |
 | 3. Component | `--{component}-property` | All instances of a component |
 | 4. Individual | `--_{component}-property` | A single component instance |
 
