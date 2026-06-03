@@ -535,35 +535,6 @@ const variableGroups = [
   },
   {
     tier: "Tier 3: Component Tokens",
-    label: "Selection",
-    vars: [
-      {
-        name: "--selection-background-color",
-        label: "Selection Background",
-        desc: "Background color for ::selection text highlights.",
-        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
-        default: "color-mix(in srgb, var(--primary-color), white 75%)",
-      },
-    ],
-  },
-  {
-    tier: "Tier 3: Component Tokens",
-    label: "Backdrop",
-    vars: [
-      {
-        name: "--backdrop-background-color",
-        label: "Backdrop",
-        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
-        type: varType(
-          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
-        ),
-        default:
-          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
-      },
-    ],
-  },
-  {
-    tier: "Tier 3: Component Tokens",
     label: "Code",
     vars: [
       {
@@ -792,6 +763,20 @@ const variableGroups = [
         type: varType("var(--color-muted)"),
         default: "var(--color-muted)",
       },
+      {
+        name: "--details-dropdown-color",
+        label: "Dropdown Text",
+        desc: "Dropdown trigger text color.",
+        type: varType("var(--inputs-placeholder-color)"),
+        default: "var(--inputs-placeholder-color)",
+      },
+      {
+        name: "--details-dropdown-border-color",
+        label: "Dropdown Border",
+        desc: "Dropdown trigger border color.",
+        type: varType("var(--inputs-border-color)"),
+        default: "var(--inputs-border-color)",
+      },
     ],
   },
   {
@@ -866,20 +851,6 @@ const variableGroups = [
     label: "Menu / Dropdown",
     vars: [
       {
-        name: "--details-dropdown-color",
-        label: "Dropdown Trigger Text",
-        desc: "Dropdown trigger text color.",
-        type: varType("var(--inputs-placeholder-color)"),
-        default: "var(--inputs-placeholder-color)",
-      },
-      {
-        name: "--details-dropdown-border-color",
-        label: "Dropdown Trigger Border",
-        desc: "Dropdown trigger border color.",
-        type: varType("var(--inputs-border-color)"),
-        default: "var(--inputs-border-color)",
-      },
-      {
         name: "--details-menu-background-color",
         label: "Menu Background",
         desc: "Dropdown menu background.",
@@ -946,6 +917,35 @@ const variableGroups = [
         desc: "Tooltip text color.",
         type: varType("light-dark(white, #191c20)"),
         default: "light-dark(white, #191c20)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Selection",
+    vars: [
+      {
+        name: "--selection-background-color",
+        label: "Selection Background",
+        desc: "Background color for ::selection text highlights.",
+        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
+        default: "color-mix(in srgb, var(--primary-color), white 75%)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Backdrop",
+    vars: [
+      {
+        name: "--backdrop-background-color",
+        label: "Backdrop",
+        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
+        type: varType(
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
+        ),
+        default:
+          "light-dark(oklch(from color-mix(in srgb, #e0e3e7, #f0f1f3) l c h / 0.75), oklch(from color-mix(in srgb, black, #0f1114) l c h / 0.75))",
       },
     ],
   },
