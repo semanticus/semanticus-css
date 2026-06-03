@@ -1,10 +1,10 @@
 [popover] {
-  overflow: auto;
+  overflow: unset;
   border: 0;
   padding: 0;
   color: var(--typography-color);
-  background-color: var(--background-color);
   height: unset;
   margin: 0;
   inset: auto;
+  background-color: unset;
 }
