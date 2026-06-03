@@ -1,0 +1,23 @@
+// import {
+//   test,
+//   expect,
+//   PageAssertionsToHaveScreenshotOptions,
+// } from "@playwright/test";
+
+// test.use({ viewport: { width: 1024, height: 900 } });
+
+// const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
+//   animations: "disabled",
+//   fullPage: true,
+//   // maxDiffPixelRatio: 0.02
+// };
+
+// test("/examples/demo-page.demo/main - visual snapshot", async ({
+//   page,
+// }) => {
+//   await page.goto("/examples/demo-page.demo/main");
+//   const main = page.locator("main");
+
+//   await expect(main).toBeVisible();
+//   await expect(page).toHaveScreenshot(screenshotOptions);
+// });
