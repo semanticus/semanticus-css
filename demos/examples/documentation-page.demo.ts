@@ -1,4 +1,4 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(
   tagName: string = "body",
@@ -6,22 +6,19 @@ export function main(
 ) {
   return renderElement(
     tagName,
-    {
-      ...attrs,
-      class: ["flow-v", ...(attrs.class ? [attrs.class] : [])].join(" "),
-    },
+    classMergeAttributes("container", attrs),
     renderElement(
       "div",
-      { class: "flow-h container" },
+      { class: "row" },
       `${leftSidebar({
-        class: "pane secondary subtle d-none d-md-flex",
+        class: "pane secondary subtle d-none d-md-flex col-3 col-xl-2",
         popover: "auto",
         id: "left-sidebar",
       })}
 
 ${renderElement(
   "main",
-  { class: "flex-grow-1" },
+  { class: "col-9 col-xl-10" },
   `${withSearchDropdownAndLinks({ class: "border-bottom ps-0 ps-md-d bg-body" })}
 
 <nav class="d-flex d-xl-none border-bottom pb-d mb-d ps-0 ps-md-d">
@@ -38,10 +35,10 @@ ${renderElement(
 
 ${renderElement(
   "div",
-  { class: "flow-h pt-d" },
+  { class: "row pt-d" },
   `${renderElement(
     "div",
-    { class: "content-grid" },
+    { class: "content-grid col-12 col-xl-10" },
     `${multipleParagraphs({ class: "full-width pb-d" })}
 
 ${renderElement(
@@ -58,7 +55,7 @@ ${renderElement(
   )}
 
 ${rightSidebar({
-  class: "border-start d-none d-xl-flex",
+  class: "border-start d-none d-xl-block col-2",
   popover: "auto",
   id: "right-sidebar",
   "data-placement": "right",

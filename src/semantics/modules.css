@@ -12,7 +12,6 @@
 
 @import "./elements/_abbr.css";
 @import "./elements/_address.css";
-@import "./elements/_article.css";
 @import "./elements/_aside.css";
 @import "./elements/_blockquote.css";
 @import "./elements/_body.css";
@@ -34,7 +33,6 @@
 @import "./elements/_label.css";
 @import "./elements/_links.css";
 @import "./elements/_lists.css";
-@import "./elements/_main.css";
 @import "./elements/_mark.css";
 @import "./elements/_nav.css";
 @import "./elements/_p.css";
