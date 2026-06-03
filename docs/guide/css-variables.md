@@ -35,6 +35,22 @@ affects more of the page; changing it at a lower tier gives more precision.
 
 These set the document-wide baseline. They use the CSS property name directly.
 
+### Background Color
+
+```css
+:root {
+  --background-color: light-dark(white, #0e1118);
+}
+```
+
+### Color
+
+```css
+:root {
+  --color: light-dark(#373c44, #c2c7d0);
+}
+```
+
 ### Typography
 
 ```css
@@ -52,35 +68,39 @@ These set the document-wide baseline. They use the CSS property name directly.
 }
 ```
 
-### Colors
+### Border
 
 ```css
 :root {
-  --background-color: light-dark(white, #0e1118);
-  --color: light-dark(#373c44, #c2c7d0);
-  --color-hover-shade: light-dark(#424751, #a4acba);
   --border-color: light-dark(#dfe3eb, #202632);
-}
-```
-
-### Spacing
-
-```css
-:root {
-  --spacing: calc(0.75rem * var(--_spacing-scale));
-  --typography-spacing-vertical: 1rem;
-}
-```
-
-### Borders & Effects
-
-```css
-:root {
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
+}
+```
+
+### Outline
+
+```css
+:root {
   --outline-width: 1px;
-  --transition: 0.2s ease-in-out;
+}
+```
+
+### Opacity
+
+```css
+:root {
   --opacity-disabled: 0.5;
+}
+```
+
+### Exceptions
+
+```css
+:root {
+  --transition: 0.2s ease-in-out;
+  --spacing: calc(0.75rem * var(--_spacing-scale));
+  --color-hover-shade: light-dark(#424751, #a4acba);
 }
 ```
 

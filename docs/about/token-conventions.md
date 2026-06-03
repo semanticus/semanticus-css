@@ -21,31 +21,37 @@ a CSS longhand property name** whenever possible.
 
 ```css
 :root, :host {
-  /* Background */
+  /* Background Color */
   --background-color
 
-  /* Color & Typography */
+  /* Color */
   --color
-  --color-hover-shade
-  --color-muted
-  --typography-color
+
+  /* Typography */
   --typography-spacing-vertical
-  --font-family
-  --font-size
-  --font-weight
+  --typography-color
+  --color-muted
   --line-height
+  --font-weight
+  --font-size
   --text-underline-offset
+  --font-family
 
-  /* Spacing */
-  --spacing
-
-  /* Borders & Effects */
+  /* Border */
   --border-color
   --border-radius
   --border-width
+
+  /* Outline */
   --outline-width
-  --transition
+
+  /* Opacity */
   --opacity-disabled
+
+  /* Exceptions */
+  --transition
+  --spacing
+  --color-hover-shade
 }
 ```
 

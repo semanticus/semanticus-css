@@ -137,16 +137,13 @@ const variableGroups = [
         type: varType(
           "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
         ),
-        default:
-          "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
+        default: "light-dark(white, color-mix(in srgb, #0e1118, #181c25))",
       },
       {
         name: "--color",
         label: "Text",
         desc: "Default body text color.",
-        type: varType(
-          "light-dark(#373c44, #c2c7d0)",
-        ),
+        type: varType("light-dark(#373c44, #c2c7d0)"),
         default: "light-dark(#373c44, #c2c7d0)",
       },
       {
@@ -160,9 +157,7 @@ const variableGroups = [
         name: "--border-color",
         label: "Border",
         desc: "Default border color.",
-        type: varType(
-          "light-dark(#dfe3eb, #2a3140)",
-        ),
+        type: varType("light-dark(#dfe3eb, #2a3140)"),
         default: "light-dark(#dfe3eb, #2a3140)",
       },
       {
@@ -208,9 +203,7 @@ const variableGroups = [
         name: "--color-hover-shade",
         label: "Hover Shade",
         desc: "Color mixed into base colors via color-mix() to derive hover-state variants.",
-        type: varType(
-          "light-dark(#424751, #a4acba)",
-        ),
+        type: varType("light-dark(#424751, #a4acba)"),
         default: "light-dark(#424751, #a4acba)",
       },
     ],
@@ -222,9 +215,7 @@ const variableGroups = [
         name: "--primary-color",
         label: "Primary Text",
         desc: "Primary text/link color.",
-        type: varType(
-          "light-dark(#0172ad, #01aaff)",
-        ),
+        type: varType("light-dark(#0172ad, #01aaff)"),
         default: "light-dark(#0172ad, #01aaff)",
       },
       {
@@ -273,9 +264,7 @@ const variableGroups = [
         name: "--secondary-color",
         label: "Secondary Text",
         desc: "Secondary text color.",
-        type: varType(
-          "light-dark(#5d6b89, #969eaf)",
-        ),
+        type: varType("light-dark(#5d6b89, #969eaf)"),
         default: "light-dark(#5d6b89, #969eaf)",
       },
       {
@@ -324,18 +313,14 @@ const variableGroups = [
         name: "--contrast-color",
         label: "Contrast Text",
         desc: "Contrast text color.",
-        type: varType(
-          "light-dark(#181c25, #dfe3eb)",
-        ),
+        type: varType("light-dark(#181c25, #dfe3eb)"),
         default: "light-dark(#181c25, #dfe3eb)",
       },
       {
         name: "--contrast-background-color",
         label: "Contrast Fill",
         desc: "Contrast button fill.",
-        type: varType(
-          "light-dark(#181c25, #eff1f4)",
-        ),
+        type: varType("light-dark(#181c25, #eff1f4)"),
         default: "light-dark(#181c25, #eff1f4)",
       },
       {
@@ -423,26 +408,10 @@ const variableGroups = [
     label: "Info Intent",
     vars: [
       {
-        name: "--_color-azure-450",
-        label: "Azure 450",
-        desc: "Info base shade.",
-        type: "color",
-        default: "#018cd4",
-      },
-      {
-        name: "--_color-azure-250",
-        label: "Azure 250",
-        desc: "Info light shade.",
-        type: "color",
-        default: "#79c0ff",
-      },
-      {
         name: "--info-color",
         label: "Info Text",
         desc: "Info text color.",
-        type: varType(
-          "light-dark(#018cd4, #79c0ff)",
-        ),
+        type: varType("light-dark(#018cd4, #79c0ff)"),
         default: "light-dark(#018cd4, #79c0ff)",
       },
       {
@@ -488,26 +457,10 @@ const variableGroups = [
     label: "Warning Intent",
     vars: [
       {
-        name: "--_color-amber-350",
-        label: "Amber 350",
-        desc: "Warning base shade.",
-        type: "color",
-        default: "#c79400",
-      },
-      {
-        name: "--_color-amber-250",
-        label: "Amber 250",
-        desc: "Warning light shade.",
-        type: "color",
-        default: "#e8ae01",
-      },
-      {
         name: "--warning-color",
         label: "Warning Text",
         desc: "Warning text color.",
-        type: varType(
-          "light-dark(#c79400, #e8ae01)",
-        ),
+        type: varType("light-dark(#c79400, #e8ae01)"),
         default: "light-dark(#c79400, #e8ae01)",
       },
       {
@@ -615,9 +568,7 @@ const variableGroups = [
         name: "--code-color",
         label: "Code Text",
         desc: "Text color inside code blocks.",
-        type: varType(
-          "light-dark(#646b79, #8891a4)",
-        ),
+        type: varType("light-dark(#646b79, #8891a4)"),
         default: "light-dark(#646b79, #8891a4)",
       },
       {
@@ -689,25 +640,20 @@ const variableGroups = [
         type: varType(
           "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
         ),
-        default:
-          "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
+        default: "light-dark(white, color-mix(in srgb, #181c25 75%, #202632))",
       },
       {
         name: "--inputs-border-color",
         label: "Input Border",
         desc: "Input border color.",
-        type: varType(
-          "light-dark(#cfd5e2, #2a3140)",
-        ),
+        type: varType("light-dark(#cfd5e2, #2a3140)"),
         default: "light-dark(#cfd5e2, #2a3140)",
       },
       {
         name: "--inputs-color",
         label: "Input Text",
         desc: "Text color inside inputs.",
-        type: varType(
-          "light-dark(#23262c, #e0e3e7)",
-        ),
+        type: varType("light-dark(#23262c, #e0e3e7)"),
         default: "light-dark(#23262c, #e0e3e7)",
       },
       {
@@ -728,9 +674,7 @@ const variableGroups = [
         name: "--inputs-accent-color-muted",
         label: "Input Accent Muted",
         desc: "Muted accent color for unchecked/inactive states.",
-        type: varType(
-          "light-dark(#bfc7d9, #333c4e)",
-        ),
+        type: varType("light-dark(#bfc7d9, #333c4e)"),
         default: "light-dark(#bfc7d9, #333c4e)",
       },
     ],
@@ -879,9 +823,7 @@ const variableGroups = [
         name: "--dialog-background-color",
         label: "Dialog Background",
         desc: "Dialog/card background.",
-        type: varType(
-          "light-dark(var(--background-color), #181c25)",
-        ),
+        type: varType("light-dark(var(--background-color), #181c25)"),
         default: "light-dark(var(--background-color), #181c25)",
       },
       {
@@ -927,9 +869,7 @@ const variableGroups = [
         name: "--details-menu-border-color",
         label: "Menu Border",
         desc: "Dropdown menu border.",
-        type: varType(
-          "light-dark(#eff1f4, #202632)",
-        ),
+        type: varType("light-dark(#eff1f4, #202632)"),
         default: "light-dark(#eff1f4, #202632)",
       },
       {
@@ -943,9 +883,7 @@ const variableGroups = [
         name: "--details-menu-background-color-hover",
         label: "Menu Hover",
         desc: "Dropdown item hover background.",
-        type: varType(
-          "light-dark(#eff1f4, #202632)",
-        ),
+        type: varType("light-dark(#eff1f4, #202632)"),
         default: "light-dark(#eff1f4, #202632)",
       },
     ],
@@ -957,9 +895,7 @@ const variableGroups = [
         name: "--progress-track-background-color",
         label: "Progress Track",
         desc: "Progress bar track (empty portion).",
-        type: varType(
-          "light-dark(#dfe3eb, #202632)",
-        ),
+        type: varType("light-dark(#dfe3eb, #202632)"),
         default: "light-dark(#dfe3eb, #202632)",
       },
       {
