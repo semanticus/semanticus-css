@@ -1,0 +1,47 @@
+/* See ./_common.css for shared styles */
+
+input {
+  overflow: visible;
+
+  &:not([type="checkbox"], [type="radio"], [type="range"]) {
+    height: calc(
+      1rem * var(--line-height) + var(--inputs-padding-block) * 2 +
+        var(--_inputs-border-width) * 2
+    );
+  }
+
+  &:not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"],
+    [type="search"]
+  ) {
+    &[aria-invalid] {
+      background-position: center right var(--icons-background-position-gap);
+      background-repeat: no-repeat;
+      background-size: var(--icons-width) auto;
+      padding-inline-end: calc(
+        var(--inputs-padding-inline) + var(--icons-width) +
+          var(--icons-background-position-gap)
+      );
+
+      &[aria-invalid="false"] {
+        background-image: var(--icon-valid);
+      }
+
+      &[aria-invalid="true"] {
+        background-image: var(--icon-invalid);
+      }
+    }
+
+    &[dir="rtl"],
+    [dir="rtl"] & {
+      background-position: center left var(--icons-background-position-gap);
+    }
+  }
+}

@@ -1,4 +1,8 @@
-import { renderElement, classMergeAttributes } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+  renderGrid,
+} from "@scripts/utils";
 
 export function main(
   tagName: string = "div",
@@ -29,24 +33,6 @@ export function withHgroup(
   );
 }
 
-export function overviewVariants(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "section",
-    attrs,
-    `<div class="auto-grid">
-  ${withHgroup()}
-  ${withHgroup("div", { class: "subtle" })}
-  ${withHgroup("div", { class: "ghost" })}
-</div>
-
-<div class="auto-grid">
-  ${withHgroupIntentVariants()}
-  ${withHgroupSubtleVariants()}
-  ${withHgroupGhostVariants()}
-</div>`,
-  );
-}
-
 export function intentVariants(
   attrs: Record<string, string> = {},
   modifier: string = "",
@@ -54,13 +40,13 @@ export function intentVariants(
   return renderElement(
     "section",
     {},
-    `${main("div", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
+    `${main("section", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
   );
 }
 
@@ -79,13 +65,13 @@ export function withHgroupIntentVariants(
   return renderElement(
     "section",
     {},
-    `${withHgroup("div", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
+    `${withHgroup("section", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
   );
 }
 
@@ -95,4 +81,29 @@ export function withHgroupSubtleVariants(attrs: Record<string, string> = {}) {
 
 export function withHgroupGhostVariants(attrs: Record<string, string> = {}) {
   return withHgroupIntentVariants(attrs, "ghost");
+}
+
+export function overviewDefaultAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`${withHgroup()}
+${withHgroup("section", { class: "subtle" })}
+${withHgroup("section", { class: "ghost" })}`)}`,
+  );
+}
+
+export function overviewIntentAndModifiersVariants(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    "section",
+    attrs,
+    `${renderGrid(`
+${withHgroupIntentVariants()}
+${withHgroupSubtleVariants()}
+${withHgroupGhostVariants()}`)}`,
+  );
 }

@@ -1,0 +1,46 @@
+/* See ./_common.css for shared styles */
+
+[type="checkbox"][role="switch"] {
+  --_inputs-border-width: var(--input-switch-border-width);
+  --_inputs-background-color: var(--_inputs-accent-color-muted);
+  --_input-switch-thumb-background-color: var(
+    --input-switch-thumb-background-color
+  );
+  --_inputs-border-radius: var(--input-switch-border-radius);
+
+  width: 2.25em;
+  height: 1.25em;
+  line-height: 1.25em;
+
+  &:before {
+    display: block;
+    aspect-ratio: 1;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--_input-switch-thumb-background-color);
+    content: "";
+    transition: margin 0.1s ease-in-out;
+  }
+
+  &:not(:checked) {
+    &:not([aria-invalid]) {
+      --_inputs-border-color: var(--_inputs-accent-color-muted);
+    }
+
+    &:focus {
+      --_inputs-background-color: var(--_inputs-accent-color-muted);
+    }
+  }
+
+  &:checked {
+    background-image: none;
+
+    &::before {
+      margin-inline-start: calc(2.25em - 1.25em);
+    }
+  }
+
+  &[disabled] {
+    --_inputs-background-color: var(--_inputs-border-color);
+  }
+}

@@ -1,6 +1,6 @@
 # Dropdown
 
-Dropdowns are implemented using the [ARIA: menu pattern](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role), which consists of a trigger element with `aria-haspopup="menu"` pointing to another element with `role="menu"`, in combination with `<details>` and `<summary>` for the disclosure behavior.
+Dropdowns are implemented using the [&lt;details&gt;](/docs/semantics/elements/details) and `<summary>` elements, in combination with [ARIA: menu pattern](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role), which consists of a trigger element with `aria-haspopup="menu"` pointing to another element with `role="menu"`, in combination with `<details>` and `<summary>` for the disclosure behavior.
 
 Unless they are in a `<nav>`, dropdowns are `width: 100%;` by default.
 
@@ -48,17 +48,17 @@ Just like any form elements, validation states are provided with `aria-invalid`.
 
 To convey **intent** and **importance**, dropdowns can be styled with different variants:
 
-<HtmlPreviewer :code="DropdownDemo.intentVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.asButtonIntentVariants()" :codeCollapsed="true" />
 
 ### Modifiers
 
 `.ghost` creates transparent background dropdowns with colored text and borders, useful for secondary actions where you want minimal visual weight.
 
-<HtmlPreviewer :code="DropdownDemo.ghostVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.asButtonGhostVariants()" :codeCollapsed="true" />
 
 `.subtle` creates dropdowns with a more muted appearance, often used for less prominent actions.
 
-<HtmlPreviewer :code="DropdownDemo.subtleVariants()" :codeCollapsed="true" />
+<HtmlPreviewer :code="DropdownDemo.asButtonSubtleVariants()" :codeCollapsed="true" />
 
 <script setup>
 import { DropdownDemo } from "@demos/composites";

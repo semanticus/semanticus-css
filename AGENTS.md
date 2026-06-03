@@ -44,7 +44,7 @@ The framework is organized into 6 layers, all in `src/`:
 ### Key Scripts
 
 ```bash
-npm start              # Build + Storybook
+npm start              # Build + Docs dev server
 npm test               # Playwright visual regression
 npm run build          # Build all bundles + palettes + sizes (CI-safe, no network calls)
 npm run build:css      # Build minified CSS bundles
@@ -57,7 +57,7 @@ npm run docs:update-size-claims        # Download Pico/Bootstrap, compute gzip s
 
 ## Conventions
 
-- **Token Naming**: CSS custom properties follow a strict naming convention — see [`docs/about/token-conventions.md`](docs/about/token-conventions.md) before adding or renaming any `--*` variable.
+- **Token Naming**: CSS custom properties map to CSS property names — see [`docs/guide/token-convention.md`](docs/guide/token-convention.md). Tokens follow `[--{scope}-]{property}[-{state}]` (e.g., `--buttons-background-color-hover`).
 - **CSS Custom Properties**: All theming uses `--*` variables. Light/dark modes via `data-theme` attribute and `prefers-color-scheme`.
 - **Semantic Selectors**: Target raw elements (`button`, `input`, `nav`) and ARIA roles (`[role=button]`, `[role=tooltip]`).
 - **Utility Classes**: Bootstrap-style naming, always use `!important`.
@@ -98,7 +98,7 @@ Modern browsers only (last 2 versions, Firefox ESR, no dead browsers). Configure
 
 The following modern CSS features are already in active use in the source — they are **not** browser support additions:
 - `color-mix(in srgb, ...)` — used throughout for hover/focus/subtle color derivation
-- `oklch()` with relative color syntax (`oklch(from <color> l c h / alpha)`) — used for border and background opacity variants
+- `oklch()` with relative color syntax (`oklch(from <color> l c h / alpha)`) — used for backdrop transparency and other alpha derivations (e.g. link underline/decoration colors)
 - `light-dark()` — used for automatic light/dark theme color switching
 - `:has()`, `:is()`, `:where()` — used extensively in semantic selectors
 - CSS nesting (`&`) — used throughout all source files
@@ -114,12 +114,12 @@ Features **not** currently used (and therefore still considered browser-support 
 1. **Semantic component** → add `src/semantics/_<element>.css` and import it in `src/semantics/modules.css`
 2. **Utility class** → add to the appropriate `src/utilities/<category>/_<file>.css`
 3. **Variant class** → add to `src/variants/_<file>.css` and import in `src/variants/modules.css`
-4. **Palette** → add `src/palettes/<name>.css` and register it in `scripts/build-palettes.js`
-5. **Size** → add `src/sizes/<name>.css` and register it in `scripts/build-sizes.js`
+4. **Palette** → add `src/palettes/<name>.css` and register it in `scripts/build-palettes.ts`
+5. **Size** → add `src/sizes/<name>.css` and register it in `scripts/build-sizes.ts`
 6. **Rebuild** with `npm run build`
 7. **Lint** with `npm run lint`
 8. **Update docs** in `docs/` if user-facing
-9. **Update visual snapshots** with `npm run test:snapshot` if applicable
+9. **Update visual snapshots** with `npm run test:update-snapshots` if applicable
 10. **Consider version bump** → see Semantic Versioning section below
 
 ## Semantic Versioning
@@ -128,17 +128,15 @@ This project follows [SemVer](https://semver.org/). When making changes, conside
 
 | Change Type | Examples | Version Bump |
 |-------------|----------|--------------|
-| **PATCH** | Bug fixes, typo corrections, non-visual refactors | 0.7.0 → 0.7.1 |
-| **MINOR** | New utility classes, new semantic elements, additive features | 0.7.0 → 0.8.0 |
-| **MAJOR** | Removing CSS variables, changing class behavior, browser support changes | 0.7.0 → 0.8.0* or 1.0.0 |
-
-*For pre-1.0 releases, MINOR bumps can include breaking changes per SemVer spec.*
+| **PATCH** | Bug fixes, typo corrections, non-visual refactors | 3.0.0 → 3.0.1 |
+| **MINOR** | New utility classes, new semantic elements, additive features | 3.0.0 → 3.1.0 |
+| **MAJOR** | Removing CSS variables, changing class behavior, browser support changes | 3.0.0 → 3.1.0* or 4.0.0 |
 
 ### Breaking Change Checklist
 
 **MAJOR/MINOR bump required if you:**
-- ❌ Remove or rename CSS variables (e.g., `--color-h1`, `--spacing-lg`)
-- ❌ Remove or rename CSS classes (e.g., `.text-primary`, `.bg-secondary`)
+- ❌ Remove or rename CSS variables (e.g., `--buttons-background-color`, `--primary-color`)
+- ❌ Remove or rename CSS classes (e.g., `.primary`, `.ghost`)
 - ❌ Change the visual output of existing classes significantly
 - ❌ Change browser support requirements (e.g., adding `@layer`, `@container`, `@scope`)
 - ❌ Reorganize file structure that affects imports

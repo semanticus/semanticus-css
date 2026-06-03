@@ -1,11 +1,11 @@
 hgroup {
-  margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-margin-block);
 
   & > * {
     margin-block: 0 !important;
 
     &:not(:first-child):last-child {
-      color: var(--color-text-muted);
+      color: var(--color-muted);
       --font-weight: unset;
       font-size: 1rem;
     }

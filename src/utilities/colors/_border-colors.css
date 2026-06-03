@@ -1,47 +1,41 @@
 .border-primary {
-  --color-border: var(--color-primary-fill);
+  --_border-color: var(--primary-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-secondary {
-  --color-border: var(--color-secondary-fill);
+  --_border-color: var(--secondary-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-success {
-  --color-border: var(--color-success-fill);
+  --_border-color: var(--success-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-info {
-  --color-border: var(--color-info-fill);
+  --_border-color: var(--info-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-warning {
-  --color-border: var(--color-warning-fill);
+  --_border-color: var(--warning-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-danger {
-  --color-border: var(--color-danger-fill);
+  --_border-color: var(--danger-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-contrast {
-  --color-border: var(--color-contrast-fill);
-}
+  --_border-color: var(--contrast-background-color);
 
-.border-opacity-10 {
-  --color-border-opacity: 10%;
-}
-
-.border-opacity-25 {
-  --color-border-opacity: 25%;
-}
-
-.border-opacity-50 {
-  --color-border-opacity: 50%;
-}
-
-.border-opacity-75 {
-  --color-border-opacity: 75%;
-}
-
-.border-opacity-100 {
-  --color-border-opacity: 100%;
+  border-color: var(--_border-color) !important;
 }

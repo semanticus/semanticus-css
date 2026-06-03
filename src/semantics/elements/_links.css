@@ -1,37 +1,47 @@
-:where(a:not([role=button])),
-[role=link] {
-  --color-background: transparent;
-  --border-color: transparent;
-  --color-text: var(--color-primary-text);
-  --shadow: transparent;
-  outline: none;
-  padding: 0;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  text-decoration: var(--a-decoration);
-  text-decoration-color: oklch(from var(--color-text) l c h / 0.3);
-  text-underline-offset: 0.125em;
-  transition: background-color var(--transition), color var(--transition), text-decoration-color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
+:where(a:not([role="button"])),
+[role="link"] {
+  --_links-color: var(--links-color);
+  --_links-color-hover: var(--links-color-hover);
+  --_links-text-decoration: var(--links-text-decoration);
+  --_links-outline-color: var(--primary-outline-color);
 
-  &:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-    --color-background: transparent;
-    --border-color: transparent;
-    --color-text: var(--color-primary-text-hover);
-    --shadow: transparent;
-    text-decoration-color: oklch(from var(--color-text) l c h / 0.85);
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--_links-color);
+  text-decoration: var(--_links-text-decoration);
+  text-decoration-color: oklch(from var(--_links-color) l c h / 0.3);
+  text-underline-offset: 0.125em;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    text-decoration-color var(--transition),
+    text-decoration var(--transition);
+
+  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    background-color: transparent;
+    border-color: transparent;
+
+    color: var(--_links-color-hover);
+    text-decoration-color: var(--_links-color-hover);
   }
 
-  &:is([aria-current]:not([aria-current=false])) {
+  &:is([aria-current]:not([aria-current="false"])) {
     font-weight: 500;
-    text-decoration-color: oklch(from var(--color-text) l c h / 0.6);
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 var(--outline-size) var(--color-primary-focus-ring);
+    border-radius: var(--border-radius);
+    outline: var(--outline-width) solid var(--_links-outline-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_links-outline-color);
+  }
+
+  &[aria-busy="true"] {
+    pointer-events: none;
   }
 }
 
-[role=link] {
+[role="link"] {
   cursor: pointer;
 
   &button {
@@ -39,13 +49,14 @@
   }
 }
 
-a[role=button] {
+a[role="button"] {
   display: inline-block;
 }
 
 aside {
   nav {
-    a:not([role=button]), [role=link] {
+    a:not([role="button"]),
+    [role="link"] {
       display: block !important;
       width: 100%;
     }
@@ -53,9 +64,10 @@ aside {
 }
 
 nav {
-  a:not([role=button]), [role=link] {
+  a:not([role="button"]),
+  [role="link"] {
     &:not(:hover) {
-      --a-decoration: none;
+      --_links-text-decoration: none;
     }
   }
 }

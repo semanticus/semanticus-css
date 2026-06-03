@@ -4,15 +4,3 @@ export function main() {
 <p>This content is also visible</p>
 `;
 }
-
-export function toggle() {
-  return `<div>
-  <button onclick="document.getElementById('toggle-content').toggleAttribute('hidden')">
-    Toggle Content
-  </button>
-  <p id="toggle-content" hidden>
-    This content can be toggled visible and hidden!
-  </p>
-</div>
-`;
-}

@@ -27,7 +27,7 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 
 ## Accessibility Considerations
 
-- Always include an `aria-label` on the `<nav>` element to identify the pagination region
+- Always include an `aria-label` on the `<nav>` element to identify the pagination region, as well as avoiding the need to label the `[role="group"]` element.
 - Use `aria-current="page"` to indicate the current page to assistive technologies
 - Disable (don't hide) navigation buttons when they are unavailable (e.g., "Previous" on page 1)
 - Ensure keyboard users can navigate between page controls using Tab/Shift+Tab
@@ -38,8 +38,9 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 - [&lt;a&gt;](/docs/semantics/elements/a) - Anchor element styling and active state semantics
 - [&lt;button&gt;](/docs/semantics/elements/button) - Button element styling
 - [&lt;nav&gt;](/docs/semantics/elements/nav) - Navigation element semantics
-- [disabled](/docs/semantics/attributes/disabled) - Disabled state semantics
-- [role="group"](/docs/semantics/attributes/role-group) - For grouping related controls
+- [[aria-disabled]](/docs/semantics/attributes/aria-disabled) - Disabled state semantics
+- [[disabled]](/docs/semantics/attributes/disabled) - Disabled state semantics
+- [[role="group"]](/docs/semantics/attributes/role-group) - For grouping related controls
 
 <script setup>
 import { PaginationDemo } from "@demos/composites";

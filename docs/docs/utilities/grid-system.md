@@ -107,4 +107,3 @@ The scale maps to the project spacing scale:
 | `5` | `--spacing-5` (× 3) |
 
 <HtmlPreviewer :code="GridDemo.gutterClasses()" />
-

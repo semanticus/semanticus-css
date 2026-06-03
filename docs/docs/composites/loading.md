@@ -4,7 +4,7 @@ Loading indicators are implemented using the [ARIA: aria-busy attribute](https:/
 
 Or with the `<progress>` element for operations with measurable progress.
 
-See [progress](/docs/semantics/elements/progress) for more details and examples.
+See [&lt;progress&gt;](/docs/semantics/elements/progress) documentation page for more details and examples.
 
 ## Loading indicator
 

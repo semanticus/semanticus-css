@@ -1,145 +1,139 @@
 .bg-primary-subtle,
 .text-bg-primary-subtle {
-  --color-background: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--primary-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .bg-secondary-subtle,
 .text-bg-secondary-subtle {
-  --color-background: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--secondary-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .bg-contrast-subtle,
 .text-bg-contrast-subtle {
-  --color-background: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--contrast-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .bg-success-subtle,
 .text-bg-success-subtle {
-  --color-background: oklch(from var(--color-success-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--success-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .bg-info-subtle,
 .text-bg-info-subtle {
-  --color-background: oklch(from var(--color-info-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--info-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .bg-warning-subtle,
 .text-bg-warning-subtle {
-  --color-background: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--warning-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .bg-danger-subtle,
 .text-bg-danger-subtle {
-  --color-background: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-background-opacity));
+  --_background-color: var(--danger-subtle-background-color);
 
-  background-color: var(--color-background) !important;
+  background-color: var(--_background-color) !important;
 }
 
 .text-bg-primary-subtle {
-  --color-text: oklch(from var(--color-primary-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: white;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-bg-secondary-subtle {
-  --color-text: oklch(from var(--color-secondary-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: light-dark(#191c20, #fff);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-bg-contrast-subtle {
-  --color-text: oklch(from var(--color-contrast-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: white;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-bg-success-subtle {
-  --color-text: oklch(from var(--color-success-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: white;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-bg-info-subtle {
-  --color-text: oklch(from var(--color-info-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: white;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-bg-warning-subtle {
-  --color-text: oklch(from var(--color-warning-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: white;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-bg-danger-subtle {
-  --color-text: oklch(from var(--color-danger-on-fill) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: white;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .border-primary-subtle {
-  --border-color: oklch(from var(--color-primary-subtle-fill) l c h / var(--color-border-opacity));
+  --_border-color: var(--primary-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-secondary-subtle {
-  --border-color: oklch(from var(--color-secondary-subtle-fill) l c h / var(--color-border-opacity));
+  --_border-color: var(--secondary-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-contrast-subtle {
-  --border-color: oklch(from var(--color-contrast-subtle-fill) l c h / var(--color-border-opacity));
+  --_border-color: var(--contrast-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-success-subtle {
-  --border-color: oklch(from var(--color-success-subtle-fill) l c h / var(--color-border-opacity));
+  --_border-color: var(--success-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-info-subtle {
-  --border-color: oklch(from var(--color-info-subtle-fill) l c h / var(--color-border-opacity));
+  --_border-color: var(--info-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-warning-subtle {
-  --border-color: oklch(from var(--color-warning-subtle-fill) l c h / var(--color-border-opacity));
+  --_border-color: var(--warning-subtle-background-color);
+
+  border-color: var(--_border-color) !important;
 }
 
 .border-danger-subtle {
-  --border-color: oklch(from var(--color-danger-subtle-fill) l c h / var(--color-border-opacity));
-}
+  --_border-color: var(--danger-subtle-background-color);
 
-.subtle-opacity-10 {
-  --subtle-opacity: 10%;
-}
-
-.subtle-opacity-25 {
-  --subtle-opacity: 25%;
-}
-
-.subtle-opacity-50 {
-  --subtle-opacity: 50%;
-}
-
-.subtle-opacity-75 {
-  --subtle-opacity: 75%;
-}
-
-.subtle-opacity-100 {
-  --subtle-opacity: 100%;
+  border-color: var(--_border-color) !important;
 }

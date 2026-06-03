@@ -1,0 +1,27 @@
+/* See _input.css for shared styles */
+
+fieldset {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  max-width: 100%;
+  padding: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+fieldset legend {
+  margin-bottom: calc(var(--spacing) * 0.5);
+}
+
+label,
+fieldset legend {
+  display: block;
+  margin-bottom: calc(var(--spacing) * 0.375);
+  color: var(--typography-color);
+  font-weight: var(--form-label-font-weight, var(--font-weight));
+}

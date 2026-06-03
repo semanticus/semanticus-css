@@ -1,20 +1,29 @@
 .card {
-  --color-background: var(--dialog-fill);
-  --border-color: var(--dialog-border);
+  --_card-color: var(--card-color);
+  --_card-background-color: var(--card-background-color);
+  --_card-spacing: var(--card-spacing);
+  --_card-border-color: var(--card-border-color);
+  --_card-border-width: var(--card-border-width);
+  --_card-border-radius: var(--card-border-radius);
+  --_card-marginals-background-color: var(--card-marginals-background-color);
+  --_card-marginals-border-color: var(--card-marginals-border-color);
+  --typography-color: var(--_card-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  padding-block: var(--spacing);
-  padding-inline: var(--spacing);
-  margin-bottom: var(--spacing);
-  border-radius: var(--radius);
-  border: var(--border-size) solid var(--border-color);
-  background: var(--color-background);
+  color: var(--_card-color);
+  padding-block: var(--_card-spacing);
+  padding-inline: var(--_card-spacing);
+  margin-bottom: var(--_card-spacing);
+  border-radius: var(--_card-border-radius);
+  border: var(--_card-border-width) solid var(--_card-border-color);
+  background: var(--_card-background-color);
 
   > header,
   > footer {
     width: auto;
-    margin-inline: calc(var(--spacing) * -1);
-    padding-inline: var(--spacing);
-    background-color: var(--dialog-section-fill);
+    margin-inline: calc(var(--_card-spacing) * -1);
+    padding-inline: var(--_card-spacing);
+    background-color: var(--_card-marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
     align-items: center;
@@ -22,19 +31,21 @@
 
   /* Header styling */
   > header {
-    margin-top: calc(var(--spacing) * -1);
-    border-bottom: var(--border-size) solid var(--dialog-section-border);
-    border-top-right-radius: var(--radius);
-    border-top-left-radius: var(--radius);
+    margin-top: calc(var(--_card-spacing) * -1);
+    border-bottom: var(--_card-border-width) solid
+      var(--_card-marginals-border-color);
+    border-top-right-radius: var(--_card-border-radius);
+    border-top-left-radius: var(--_card-border-radius);
     justify-content: space-between;
   }
 
   /* Footer styling */
   > footer {
-    margin-bottom: calc(var(--spacing) * -1);
-    border-top: var(--border-size) solid var(--dialog-section-border);
-    border-bottom-right-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
+    margin-bottom: calc(var(--_card-spacing) * -1);
+    border-top: var(--_card-border-width) solid
+      var(--_card-marginals-border-color);
+    border-bottom-right-radius: var(--_card-border-radius);
+    border-bottom-left-radius: var(--_card-border-radius);
     justify-content: end;
   }
 
@@ -44,37 +55,33 @@
 
   &:is(ul, [role="list"], [role="group"]) {
     padding: 0;
-    border: none;
 
     > * {
-      --color-background: transparent;
-      --card-item-fill: var(--color-background);
-      --border-color: color-mix(
-        in srgb,
-        light-dark(var(--color-slate-900), var(--color-zinc-350)),
-        transparent 90%
-      );
-
-      background: var(--card-item-fill);
-      color: var(--color-text);
+      background: var(--_card-background-color);
+      color: var(--_card-color);
       margin: 0;
-      padding: var(--spacing);
+      padding: var(--_card-spacing);
       border-radius: 0;
-      border: var(--border-size) solid var(--border-color);
+      border: var(--_card-border-width) solid
+        var(--_card-marginals-border-color);
 
       &:first-child {
-        border-top-left-radius: var(--radius);
+        border-top-left-radius: var(--_card-border-radius);
       }
 
       &:last-child {
-        border-bottom-right-radius: var(--radius);
+        border-bottom-right-radius: var(--_card-border-radius);
+      }
+
+      > :last-child {
+        margin-bottom: 0;
       }
 
       &:is([aria-current]:not([aria-current="false"])) {
-        --card-item-fill: color-mix(
+        background: color-mix(
           in srgb,
-          var(--color-background),
-          var(--color-hover-effect) 15%
+          var(--_card-background-color),
+          var(--color-hover-shade) 15%
         );
       }
     }
@@ -85,31 +92,33 @@
     flex-direction: column;
 
     > * {
-      border-top: none;
       list-style: none;
+      border-top: none;
+      border-inline: none;
 
       &:first-child {
-        border-top: var(--border-size) solid var(--border-color);
-        border-top-right-radius: var(--radius);
+        border-top-right-radius: var(--_card-border-radius);
       }
 
       &:last-child {
-        border-bottom-left-radius: var(--radius);
+        border-bottom-left-radius: var(--_card-border-radius);
+        border-bottom: none;
       }
     }
   }
 
   &[role="group"] {
     > * {
-      border-left: none;
+      border-right: none;
+      border-block: none;
 
       &:first-child {
-        border-left: var(--border-size) solid var(--border-color);
-        border-bottom-left-radius: var(--radius);
+        border-left: none;
+        border-bottom-left-radius: var(--_card-border-radius);
       }
 
       &:last-child {
-        border-top-right-radius: var(--radius);
+        border-top-right-radius: var(--_card-border-radius);
       }
     }
   }

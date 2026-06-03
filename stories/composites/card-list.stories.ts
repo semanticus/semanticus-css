@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { CardListDemo } from "@demos/composites";
+import { UlDemo } from "@demos/semantics";
 
 const meta: Meta = {
   title: "Composites/Card List",
@@ -9,13 +9,20 @@ const meta: Meta = {
 export default meta;
 
 export const basicUsage: StoryObj = {
-  render: () => CardListDemo.overview(),
+  render: () => UlDemo.cardList(),
 };
-
-export const horizontalStack: StoryObj = {
-  render: () => CardListDemo.overviewHorizontalStack(),
+export const intentVariants: StoryObj = {
+  render: () => UlDemo.cardListIntentVariants(),
 };
-
-export const variants: StoryObj = {
-  render: () => CardListDemo.overviewVariants(),
+export const ghostIntentVariants: StoryObj = {
+  render: () => UlDemo.cardListIntentVariants({}, "ghost"),
+};
+export const subtleIntentVariants: StoryObj = {
+  render: () => UlDemo.cardListIntentVariants({}, "subtle"),
+};
+export const stripedSubtleIntentVariants: StoryObj = {
+  render: () => UlDemo.cardListIntentVariants({}, "subtle striped"),
+};
+export const overviewCardListItemIntentVariants: StoryObj = {
+  render: () => UlDemo.overviewCardListItemIntentVariants(),
 };

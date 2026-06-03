@@ -1,31 +1,27 @@
 :root,
 :host {
-  /* --color-pink-950: #25060c; */
-  /* --color-pink-900: #380916; */
-  /* --color-pink-850: #4b0c1f; */
-  /* --color-pink-800: #5f0e28; */
-  /* --color-pink-750: #740f31; */
-  /* --color-pink-700: #88143b; */
-  /* --color-pink-650: #9d1945; */
-  /* --color-pink-600: #b21e4f; */
-  --color-pink-550: #c72259;
-  --color-pink-500: #d92662;
-  /* --color-pink-450: #f42c6f; */
-  /* --color-pink-400: #f6547e; */
-  --color-pink-350: #f7708e;
-  /* --color-pink-300: #f8889e; */
-  /* --color-pink-250: #f99eae; */
-  /* --color-pink-200: #f9b4be; */
-  /* --color-pink-150: #f9c8ce; */
-  /* --color-pink-100: #f9dbdf; */
-  /* --color-pink-50: #fbedef; */
-  /* --color-pink: var(--color-pink-550); */
+  /* --_color-pink-950: #25060c; */
+  /* --_color-pink-900: #380916; */
+  /* --_color-pink-850: #4b0c1f; */
+  /* --_color-pink-800: #5f0e28; */
+  /* --_color-pink-750: #740f31; */
+  /* --_color-pink-700: #88143b; */
+  /* --_color-pink-650: #9d1945; */
+  /* --_color-pink-600: #b21e4f; */
+  --_color-pink-550: #c72259;
+  --_color-pink-500: #d92662;
+  /* --_color-pink-450: #f42c6f; */
+  /* --_color-pink-400: #f6547e; */
+  --_color-pink-350: #f7708e;
+  /* --_color-pink-300: #f8889e; */
+  /* --_color-pink-250: #f99eae; */
+  /* --_color-pink-200: #f9b4be; */
+  /* --_color-pink-150: #f9c8ce; */
+  /* --_color-pink-100: #f9dbdf; */
+  /* --_color-pink-50: #fbedef; */
+  /* --color-pink: var(--_color-pink-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-pink-550), var(--color-pink-350));
-  --color-primary-fill: var(--color-pink-500);
-  --color-primary-on-fill: white;
-
-  /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
+  --primary-color: light-dark(var(--_color-pink-550), var(--_color-pink-350));
+  --primary-background-color: var(--_color-pink-500);
 }

@@ -1,316 +1,431 @@
 # CSS Variables
 
-Semanticus CSS is built with CSS variables, making it easy to customize colors, spacing, typography, and more.
+**Semanticus CSS** uses a 4-tier token system for maximum customization control.
 
-After importing any of semanticus-css's css files, you can further customize it by overriding specific CSS variables defined in the `:root` selector:
+After importing any semanticus-css bundle, override CSS variables defined on `:root`:
 
 ```css
 :root {
-  --color-primary-fill: #0172ad;
-  --color-primary-fill-hover: #02659a;
+  --primary-background-color: #0172ad;
+  --primary-background-color-hover: #02659a;
   --spacing: 1rem;
 }
 ```
 
-To help you create your own custom styles, check out the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) builder tools.
+To help you create your own custom styles, check out the [Palettes](/guide/palettes)
+or [Sizes](/guide/sizes) builder tools.
 
-## Color Variables List
+## The 4-Tier Token System
 
-Colors use the `light-dark()` CSS function so a single declaration covers both themes automatically.
+Every token belongs to one of four tiers. Changing a token at a higher tier
+affects more of the page; changing it at a lower tier gives more precision.
 
-```css
-:root {
-  /* Primary colors (defined by the active palette) */
-  --color-primary-fill: #0172ad;
-  --color-primary-fill-hover: light-dark(#02659a, #017fc0);
-  --color-primary-on-fill: white;
-  --color-primary-text: light-dark(#0172ad, #01aaff);
-  --color-primary-text-hover: light-dark(#015887, #79c0ff);
-  --color-primary-focus-ring: light-dark(oklch(from #029ae8 l c h / 0.5), oklch(from #01aaff l c h / 0.375));
+| Tier | Prefix | Scope |
+|------|--------|-------|
+| 1. System | `--property` | Entire page |
+| 2. Variant | `--{variant}-{property}[-{state}]` | Variant definitions |
+| 3. Component | `--{component}-property` | All instances of a component |
+| 4. Individual | `--_{component}-property` | A single component instance |
 
-  /* Secondary colors */
-  --color-secondary-fill: #525f7a;
-  --color-secondary-fill-hover: light-dark(#48536b, #5d6b89);
-  --color-secondary-on-fill: white;
-  --color-secondary-text: light-dark(#5d6b89, #969eaf);
-  --color-secondary-text-hover: light-dark(#48536b, #b3b9c5);
-  --color-secondary-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #909ebe l c h / 0.25));
+## Tier 1: System Tokens
 
-  /* Contrast colors */
-  --color-contrast-fill: light-dark(#181c25, #eff1f4);
-  --color-contrast-fill-hover: light-dark(black, white);
-  --color-contrast-on-fill: light-dark(white, black);
-  --color-contrast-text: light-dark(#181c25, #dfe3eb);
-  --color-contrast-text-hover: light-dark(black, white);
-  --color-contrast-focus-ring: light-dark(oklch(from #5d6b89 l c h / 0.25), oklch(from #cfd5e2 l c h / 0.25));
+These set the document-wide baseline.
 
-  /* Text colors */
-  --color-text: light-dark(#373c44, #c2c7d0);
-  --color-text-muted: light-dark(#8891a4, #7b8495);
-
-  /* Background / surface */
-  --color-background: light-dark(white, #0e1118);
-  --color-border: light-dark(#dfe3eb, #202632);
-}
-```
-
-## Palette Variables
-
-Each palette defines these CSS custom properties:
-
-| Variable | Description |
-|----------|-------------|
-| `--color-primary-fill` | Fill color for primary buttons and active controls |
-| `--color-primary-fill-hover` | Fill color on hover |
-| `--color-primary-on-fill` | Text color on top of primary fill |
-| `--color-primary-text` | Primary text / link color |
-| `--color-primary-text-hover` | Primary text / link color on hover |
-| `--color-primary-focus-ring` | Primary focus ring color |
-
-All palettes automatically adapt to light and dark modes via the `light-dark()` CSS function.
-
-## Typography Customization
-
-### Font Family
+To avoid having to memorize arbitrary token names, these tokens (with only a few documented exceptions) include a **CSS longhand property** name segment.
 
 ```css
 :root {
-  --font-family: var(--font-family-sans-serif);
-  --font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--font-family-emoji);
-  --font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji);
-  --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-```
+  /* --- Background Color --- */
+  --background-color: light-dark(
+    white,
+    color-mix(in srgb, #0e1118, #181c25)
+  );
 
-### Font Sizes
+  /* --- Color --- */
+  --color: light-dark(#373c44, #c2c7d0);
 
-```css
-:root {
-  --font-size: 97%; /* Base size - responsive: 98%@sm, 99%@md, 100%@lg, 101%@xl, 102%@xxl */
-
-  /* Font size scale for headings */
-  --h1-size: 2rem;
-  --h2-size: 1.75rem;
-  --h3-size: 1.5rem;
-  --h4-size: 1.25rem;
-  --h5-size: 1.125rem;
-  --h6-size: 1rem;
-}
-```
-
-For smaller text, use the scoped variable:
-
-```css
-small {
-  --font-size: 0.875em;
-}
-```
-
-### Line Height
-
-```css
-:root {
+  /* --- Typography --- */
+  --typography-margin-block: 1rem;
+  --typography-color: var(--color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
   --line-height: 1.5;
-}
-
-/* Headings have scoped line heights */
-h1 { --line-height: 1.125; }
-h2 { --line-height: 1.15; }
-h3 { --line-height: 1.175; }
-h4 { --line-height: 1.2; }
-h5 { --line-height: 1.225; }
-h6 { --line-height: 1.25; }
-```
-
-### Font Weight
-
-```css
-:root {
   --font-weight: 400;
-}
+  --font-size: 97%;
+  --text-underline-offset: 0.1rem;
+  --font-family-emoji:
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif:
+    system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial,
+    "Helvetica Neue", sans-serif, var(--font-family-emoji);
+  --font-family-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace, var(--font-family-emoji);
+  --font-family: var(--font-family-sans-serif);
 
-/* Headings have scoped font weights */
-h1, h2, h3, h4, h5, h6 {
-  --font-weight: 700;
-}
-```
+  /* --- Border --- */
+  --border-color: light-dark(#dfe3eb, #2a3140);
+  --border-radius: 0.25rem;
+  --border-width: 0.0625rem;
 
-## Spacing Customization
+  /* --- Outline --- */
+  --outline-width: 1px;
 
-```css
-:root {
-  --base-spacing: 0.75rem;
-  --spacing: var(--base-spacing); /* scales with each breakpoint */
-  --typography-spacing-vertical: 1rem;
-  --input-spacing-vertical: 0.5rem;
-  --input-spacing-horizontal: 0.7rem;
-}
-```
+  /* --- Opacity --- */
+  --opacity-disabled: 0.5;
 
-## Borders & Effects
-
-```css
-:root {
-  --radius: 0.25rem;
-  --border-size: 0.0625rem;
-  --outline-size: 0.125rem;
+  /* --- Transition --- */
   --transition: 0.2s ease-in-out;
+
+  /* --- Exceptions --- */
+
+  /* Responsive value used for margins and padding throughout the page */
+  --spacing: calc(0.75rem * var(--_spacing-scale));
+
+  /* Internal helper used to derive colors representing the hover state */
+  --color-hover-shade: light-dark(
+    #424751,
+    #a4acba
+  );
 }
 ```
 
-## Shadows
+## Tier 2: Variant Tokens
+
+Define the color values for each intent variant. Override these to create custom color themes.
 
 ```css
 :root {
-  --shadow:
-    0.0145rem 0.029rem 0.174rem light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
-    0.0335rem 0.067rem 0.402rem light-dark(rgb(129 145 181 / 0.024), rgb(7 9 12 / 0.024)),
-    0.0625rem 0.125rem 0.75rem  light-dark(rgb(129 145 181 / 0.03),   rgb(7 9 12 / 0.03)),
-    0.1125rem 0.225rem 1.35rem  light-dark(rgb(129 145 181 / 0.036),  rgb(7 9 12 / 0.036)),
-    0.2085rem 0.417rem 2.502rem light-dark(rgb(129 145 181 / 0.04302),rgb(7 9 12 / 0.04302)),
-    0.5rem    1rem     6rem     light-dark(rgb(129 145 181 / 0.06),   rgb(7 9 12 / 0.06)),
-    0 0 0 0.0625rem             light-dark(rgb(129 145 181 / 0.015),  rgb(7 9 12 / 0.015));
+  /* --- Primary Intent --- */
+  --primary-background-color-hover: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-color-hover: color-mix(
+    in srgb,
+    var(--primary-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-outline-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    light-dark(white, black) 30%
+  );
+
+  /* --- Secondary Intent --- */
+  --secondary-background-color: #5d6b89;
+  --secondary-background-color-hover: color-mix(
+    in srgb,
+    var(--secondary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-color: light-dark(
+    #5d6b89,
+    #969eaf
+  );
+  --secondary-color-hover: color-mix(
+    in srgb,
+    var(--secondary-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-outline-color: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Success Intent --- */
+  --success-background-color: #029764;
+  --success-background-color-hover: color-mix(
+    in srgb,
+    var(--success-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-color: light-dark(#029764, #00cc88);
+  --success-color-hover: color-mix(
+    in srgb,
+    var(--success-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-outline-color: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Danger Intent --- */
+  --danger-background-color: #ee402e;
+  --danger-background-color-hover: color-mix(
+    in srgb,
+    var(--danger-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-color: light-dark(#ee402e, #f5a390);
+  --danger-color-hover: color-mix(
+    in srgb,
+    var(--danger-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-outline-color: color-mix(
+    in srgb,
+    var(--danger-color) 70%,
+    light-dark(white, black)
+  );
+
+  --contrast-color: /* ... */;
+  --info-color: /* ... */;
+  --warning-color: /* ... */;
 }
 ```
 
-## Component Variables
+## Tier 3: Component Tokens
 
-### Dialog, Alerts and Card
+Scoped to a component type. Change one of these and every instance updates.
 
-```css
-:root {
-  --dialog-fill: light-dark(white, #181c25);
-  --dialog-border: light-dark(var(--color-border), #181c25);
-  --dialog-section-fill: light-dark(#fbfcfc, #2a3140);
-  --dialog-shadow: var(--shadow);
-  --dialog-overlay: light-dark(oklch(from #e8eaed l c h / 0.75), oklch(from #07090c l c h / 0.75));
-}
-```
-
-### Forms & Inputs
+### Selection
 
 ```css
 :root {
-  --input-fill: light-dark(#fbfcfc, #1c212c);
-  --input-fill-active: light-dark(white, #1a1f28);
-  --input-border: light-dark(#cfd5e2, #2a3140);
-  --input-text: light-dark(#23262c, #e0e3e7);
-  --input-placeholder-text: var(--color-text-muted);
-  --input-border-focus: var(--color-primary-fill);
-  --input-opacity-disabled: 0.5;
-}
-```
+  /* --- Buttons --- */
+  /* Affects button, input[type="button"], input[type="submit"], input[type="reset"], and elements with role="button" */
+  --buttons-background-color-hover: var(--primary-background-color-hover);
+  --buttons-background-color: var(--primary-background-color);
+  --buttons-color-hover: white;
+  --buttons-color: white;
+  --buttons-padding-block: var(--inputs-padding-block);
+  --buttons-padding-inline: var(--inputs-padding-inline);
 
-### Buttons
+  /* --- Code --- */
+  --code-background-color: light-dark(
+    color-mix(in srgb, #eff1f4 75%, white),
+    color-mix(in srgb, #181c25 75%, #202632)
+  );
+  --code-color: light-dark(#646b79, #8891a4);
+  --kbd-background-color: var(--color);
+  --kbd-color: var(--background-color);
+  --kbd-font-weight: bolder;
 
-```css
-:root {
-  --button-shadow: 0 0 0 rgb(0 0 0 / 0);
-  --button-shadow-hover: 0 0 0 rgb(0 0 0 / 0);
-}
-```
+  /* --- Details --- */
+  /* Affects accordions and dropdowns */
+  --details-summary-background-color: var(--inputs-background-color);
+  --details-summary-color: var(--color);
+  --details-summary-color-open: var(--color-muted);
 
-### Navigation
+  /* --- Dropdown styling applied to the summary element --- */
+  --details-dropdown-color: var(--inputs-placeholder-color);
+  --details-dropdown-border-color: var(--inputs-border-color);
+  --details-dropdown-padding-block: var(--inputs-padding-block);
+  --details-dropdown-padding-inline: var(--inputs-padding-inline);
 
-```css
-:root {
+  /* --- Menu styling applied to the ul[role="menu"] element --- */
+  --details-menu-background-color: light-dark(white, #181c25);
+  --details-menu-border-color: light-dark(
+    #eff1f4,
+    #202632
+  );
+  --details-menu-color: var(--color);
+  --details-menu-background-color-hover: light-dark(
+    #eff1f4,
+    #202632
+  );
+
+  /* --- Dialog --- */
+  --dialog-border-color: var(--border-color);
+  --dialog-background-color: var(--background-color);
+
+  /* Shade styling, applied to header & footer elements */
+  --dialog-marginals-background-color: light-dark(
+    color-mix(in srgb, #eff1f4 25%, white),
+    color-mix(in srgb, #eff1f4, transparent 95%)
+  );
+  --dialog-marginals-border-color: color-mix(
+    in srgb,
+    light-dark(#181c25, #969eaf),
+    transparent 90%
+  );
+
+  /* --- Group --- */
+  /* Affects elements with role="group" and its children */
+  --group-buttons-padding-inline: 1rem;
+
+  /* --- Headings --- */
+  --heading-font-weight: 700;
+  --h1-font-size: 2rem;
+  --h1-margin-top: 3rem;
+  --h1-line-height: 1.125;
+  --h2-font-size: 1.75rem;
+  --h2-margin-top: 2.625rem;
+  --h2-line-height: 1.15;
+  --h3-font-size: 1.5rem;
+  --h3-margin-top: 2.25rem;
+  --h3-line-height: 1.175;
+  --h4-font-size: 1.25rem;
+  --h4-margin-top: 1.874rem;
+  --h4-line-height: 1.2;
+  --h5-font-size: 1.125rem;
+  --h5-margin-top: 1.6875rem;
+  --h5-line-height: 1.225;
+  --h6-font-size: 1rem;
+  --h6-margin-top: 1.5rem;
+  --h6-line-height: 1.25;
+
+  /* --- Icons --- */
+  --icons-background-position-gap: 0.75rem;
+  --icons-width: 1em;
+
+  /* --- Inputs --- */
+  /* Affects input, select, textarea and details elements */
+  --inputs-accent-color: var(--primary-background-color);
+  --inputs-accent-color-muted: light-dark(
+    #bfc7d9,
+    #333c4e
+  );
+  --inputs-padding-block: 0.5rem;
+  --inputs-padding-inline: 0.7rem;
+  --inputs-background-color: light-dark(
+    color-mix(in srgb, #eff1f4 25%, white),
+    color-mix(in srgb, #181c25, #202632)
+  );
+  --inputs-background-color-focus: light-dark(
+    white,
+    color-mix(in srgb, #181c25 75%, #202632)
+  );
+  --inputs-border-color: light-dark(
+    #cfd5e2,
+    #2a3140
+  );
+  --inputs-color: light-dark(#23262c, #e0e3e7);
+  --inputs-placeholder-color: var(--color-muted);
+
+  /* --- Input Checkbox --- */
+  --input-checkbox-border-width: 0.125rem;
+
+  /* --- Input Radio --- */
+  --input-radio-background-color: white;
+
+  /* --- Input Range --- */
+  --input-range-thumb-size: 1.25rem;
+  --input-range-thumb-margin-top: -0.4375rem;
+  --input-range-thumb-border-color: var(--background-color);
+  --input-range-thumb-border-width: var(--focus-ring-width);
+  --input-range-track-background-color: var(--inputs-border-color);
+  --input-range-track-height: 0.375rem;
+
+  /* --- Input Search --- */
+  --input-search-border-radius: 5rem;
+
+  /* --- Input Switch --- */
+  --input-switch-thumb-background-color: white;
+  --input-switch-border-width: 0.1875rem;
+  --input-switch-border-radius: 1.25em;
+
+  /* --- Links (anchor and role="link") --- */
+  --links-color: var(--primary-color);
+  --links-color-hover: var(--primary-color-hover);
+  --links-text-decoration: underline;
+
+  /* --- Lists (ul, ol and role="list") --- */
+  --lists-marker-color: var(--primary-color);
+
+  /* --- Mark --- */
+  --mark-background-color: light-dark(#c79400, #e8ae01);
+
+  /* --- Navigation --- */
   --nav-link-gap: calc(var(--spacing) * 0.5);
   --nav-breadcrumb-divider: ">";
+
+  /* --- Progress Bar --- */
+  --progress-accent-color: var(--primary-background-color);
+  --progress-track-background-color: light-dark(
+    #dfe3eb,
+    #202632
+  );
+
+  /* --- Selection of text --- */
+  --selection-background-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    white 75%
+  );
+
+  /* --- Sidebar --- */
+  --sidebar-size: 25%;
+
+  /* --- Small --- */
+  --small-font-size: 80%;
+
+  /* --- Table --- */
+  --table-header-font-weight: 600;
+  --table-header-border-width: 0.1875rem;
+
+  /* --- Tooltip --- */
+  --tooltip-background-color: var(--contrast-background-color);
+  --tooltip-color: light-dark(white, #191c20);
 }
 ```
 
-### Switch
+## Tier 4: Individual Component Tokens
+
+Private `--_` tokens defined inside component CSS files. These initialize from
+the Component Token tier and are the values the component actually consumes.
 
 ```css
-:root {
-  --switch-fill: light-dark(#bfc7d9, #333c4e);
-  --switch-fill-checked: var(--color-primary-fill);
-  --switch-thumb-fill: white;
+/* Inside _buttons.css */
+button, [role="button"] {
+  --_buttons-color: var(--buttons-color);
+  --_buttons-background-color: var(--buttons-background-color);
+  --_buttons-border-color: var(--_buttons-background-color);
+  --_buttons-outline-color: var(--primary-outline-color);
+
+  background-color: var(--_buttons-background-color);
+  color: var(--_buttons-color);
+}
+
+/* Inside inputs/_common.css */
+:where(input, select, textarea) {
+  --_inputs-background-color: var(--inputs-background-color);
+  --_inputs-border-color: var(--inputs-border-color);
+  --_inputs-outline-color: var(--primary-outline-color);
+
+  background-color: var(--_inputs-background-color);
+  border-color: var(--_inputs-border-color);
 }
 ```
 
-### Code
+Modifier classes override Individual Tokens to affect **only that specific
+component instance**:
 
 ```css
-:root {
-  --code-fill: light-dark(#f3f5f7, #1a1f28);
-  --code-text: light-dark(#646b79, #8891a4);
-  --kbd-fill: var(--color-text);
-  --kbd-text: var(--color-background);
+.primary {
+  --_buttons-color: #fff;
+  --_buttons-background-color: var(--primary-background-color);
 }
 ```
 
-### Accordion (Details)
+## How Tiers Compose: A Complete Example
 
 ```css
-:root {
-  --details-summary-text: var(--color-text);
-  --details-summary-text-hover: var(--color-primary-text-hover);
-  --details-summary-text-open: var(--color-text-muted);
-}
-```
-
-### Menus & Dropdowns
-
-```css
-:root {
-  --menu-fill: light-dark(white, #181c25);
-  --menu-border: light-dark(#eff1f4, #202632);
-  --menu-shadow: var(--shadow);
-  --menu-text: var(--color-text);
-  --menu-fill-hover: light-dark(#eff1f4, #202632);
-}
-```
-
-### Progress
-
-```css
-:root {
-  --progress-track-fill: light-dark(#dfe3eb, #202632);
-  --progress-fill: var(--color-primary-fill);
-}
-```
-
-### Tooltip
-
-```css
-:root {
-  --tooltip-fill: var(--color-contrast-fill);
-  --tooltip-text: var(--color-contrast-on-fill);
-}
-```
-
-## Variable File Organization
-
-CSS variables are organized into separate files for maintainability:
-
-| File | Contents |
-|------|----------|
-| `_breakpoints.css` | Responsive breakpoint custom media queries |
-| `_theme.css` | Colors, typography, spacing, effects, component tokens, and icons |
-| `_elements.css` | Element-scoped variable overrides (headings, forms, etc.) |
-
-## Complete Example
-
-Here is a complete customization file:
-
-```css
-/* custom.css */
+/* custom.css — import after semanticus-css */
 @import "semanticus-css";
 
 :root {
-  /* Primary brand color (via palette override) */
-  --color-primary-fill: #6366f1;
-  --color-primary-fill-hover: light-dark(#4f46e5, #818cf8);
-  --color-primary-focus-ring: light-dark(oklch(from #6366f1 l c h / 0.5), oklch(from #818cf8 l c h / 0.375));
+  /* Tier 2: Custom variant colors */
+  --primary-background-color: #6366f1;
+  --primary-background-color-hover: light-dark(#4f46e5, #818cf8);
+  --primary-color: white;
+  --primary-outline-color: light-dark(
+    oklch(from #6366f1 l c h / 0.5),
+    oklch(from #818cf8 l c h / 0.375)
+  );
 
-  /* Typography */
-  --font-family-sans-serif: "Inter", system-ui, sans-serif;
+  /* Tier 1: System overrides */
+  --border-radius: 0.5rem;
   --line-height: 1.7;
 
-  /* Borders */
-  --radius: 0.5rem;
+  /* Tier 3: Component overrides — all buttons get custom spacing */
+  --buttons-padding-block: 0.75rem;
+  --buttons-padding-inline: 1.25rem;
 }
 ```
 
-To help you create your own custom styles, check out the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) builder tools.
+For interactive builders, use the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) tools.

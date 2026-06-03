@@ -55,37 +55,30 @@
 }
 
 .column-gap-0 {
-  -moz-column-gap: 0 !important;
   column-gap: 0 !important;
 }
 
 .column-gap-d {
-  -moz-column-gap: var(--spacing) !important;
   column-gap: var(--spacing) !important;
 }
 
 .column-gap-1 {
-  -moz-column-gap: var(--spacing-1) !important;
   column-gap: var(--spacing-1) !important;
 }
 
 .column-gap-2 {
-  -moz-column-gap: var(--spacing-2) !important;
   column-gap: var(--spacing-2) !important;
 }
 
 .column-gap-3 {
-  -moz-column-gap: var(--spacing-3) !important;
   column-gap: var(--spacing-3) !important;
 }
 
 .column-gap-4 {
-  -moz-column-gap: var(--spacing-4) !important;
   column-gap: var(--spacing-4) !important;
 }
 
 .column-gap-5 {
-  -moz-column-gap: var(--spacing-5) !important;
   column-gap: var(--spacing-5) !important;
 }
 
@@ -133,31 +126,24 @@
     row-gap: var(--spacing-5) !important;
   }
   .column-gap-sm-0 {
-    -moz-column-gap: 0 !important;
     column-gap: 0 !important;
   }
   .column-gap-sm-d {
-    -moz-column-gap: var(--spacing) !important;
     column-gap: var(--spacing) !important;
   }
   .column-gap-sm-1 {
-    -moz-column-gap: var(--spacing-1) !important;
     column-gap: var(--spacing-1) !important;
   }
   .column-gap-sm-2 {
-    -moz-column-gap: var(--spacing-2) !important;
     column-gap: var(--spacing-2) !important;
   }
   .column-gap-sm-3 {
-    -moz-column-gap: var(--spacing-3) !important;
     column-gap: var(--spacing-3) !important;
   }
   .column-gap-sm-4 {
-    -moz-column-gap: var(--spacing-4) !important;
     column-gap: var(--spacing-4) !important;
   }
   .column-gap-sm-5 {
-    -moz-column-gap: var(--spacing-5) !important;
     column-gap: var(--spacing-5) !important;
   }
 }
@@ -206,31 +192,24 @@
     row-gap: var(--spacing-5) !important;
   }
   .column-gap-md-0 {
-    -moz-column-gap: 0 !important;
     column-gap: 0 !important;
   }
   .column-gap-md-d {
-    -moz-column-gap: var(--spacing) !important;
     column-gap: var(--spacing) !important;
   }
   .column-gap-md-1 {
-    -moz-column-gap: var(--spacing-1) !important;
     column-gap: var(--spacing-1) !important;
   }
   .column-gap-md-2 {
-    -moz-column-gap: var(--spacing-2) !important;
     column-gap: var(--spacing-2) !important;
   }
   .column-gap-md-3 {
-    -moz-column-gap: var(--spacing-3) !important;
     column-gap: var(--spacing-3) !important;
   }
   .column-gap-md-4 {
-    -moz-column-gap: var(--spacing-4) !important;
     column-gap: var(--spacing-4) !important;
   }
   .column-gap-md-5 {
-    -moz-column-gap: var(--spacing-5) !important;
     column-gap: var(--spacing-5) !important;
   }
 }
@@ -279,31 +258,24 @@
     row-gap: var(--spacing-5) !important;
   }
   .column-gap-lg-0 {
-    -moz-column-gap: 0 !important;
     column-gap: 0 !important;
   }
   .column-gap-lg-d {
-    -moz-column-gap: var(--spacing) !important;
     column-gap: var(--spacing) !important;
   }
   .column-gap-lg-1 {
-    -moz-column-gap: var(--spacing-1) !important;
     column-gap: var(--spacing-1) !important;
   }
   .column-gap-lg-2 {
-    -moz-column-gap: var(--spacing-2) !important;
     column-gap: var(--spacing-2) !important;
   }
   .column-gap-lg-3 {
-    -moz-column-gap: var(--spacing-3) !important;
     column-gap: var(--spacing-3) !important;
   }
   .column-gap-lg-4 {
-    -moz-column-gap: var(--spacing-4) !important;
     column-gap: var(--spacing-4) !important;
   }
   .column-gap-lg-5 {
-    -moz-column-gap: var(--spacing-5) !important;
     column-gap: var(--spacing-5) !important;
   }
 }
@@ -352,31 +324,24 @@
     row-gap: var(--spacing-5) !important;
   }
   .column-gap-xl-0 {
-    -moz-column-gap: 0 !important;
     column-gap: 0 !important;
   }
   .column-gap-xl-d {
-    -moz-column-gap: var(--spacing) !important;
     column-gap: var(--spacing) !important;
   }
   .column-gap-xl-1 {
-    -moz-column-gap: var(--spacing-1) !important;
     column-gap: var(--spacing-1) !important;
   }
   .column-gap-xl-2 {
-    -moz-column-gap: var(--spacing-2) !important;
     column-gap: var(--spacing-2) !important;
   }
   .column-gap-xl-3 {
-    -moz-column-gap: var(--spacing-3) !important;
     column-gap: var(--spacing-3) !important;
   }
   .column-gap-xl-4 {
-    -moz-column-gap: var(--spacing-4) !important;
     column-gap: var(--spacing-4) !important;
   }
   .column-gap-xl-5 {
-    -moz-column-gap: var(--spacing-5) !important;
     column-gap: var(--spacing-5) !important;
   }
 }
@@ -425,32 +390,24 @@
     row-gap: var(--spacing-5) !important;
   }
   .column-gap-xxl-0 {
-    -moz-column-gap: 0 !important;
     column-gap: 0 !important;
   }
   .column-gap-xxl-d {
-    -moz-column-gap: var(--spacing) !important;
     column-gap: var(--spacing) !important;
   }
   .column-gap-xxl-1 {
-    -moz-column-gap: var(--spacing-1) !important;
     column-gap: var(--spacing-1) !important;
   }
   .column-gap-xxl-2 {
-    -moz-column-gap: var(--spacing-2) !important;
     column-gap: var(--spacing-2) !important;
   }
   .column-gap-xxl-3 {
-    -moz-column-gap: var(--spacing-3) !important;
     column-gap: var(--spacing-3) !important;
   }
   .column-gap-xxl-4 {
-    -moz-column-gap: var(--spacing-4) !important;
     column-gap: var(--spacing-4) !important;
   }
   .column-gap-xxl-5 {
-    -moz-column-gap: var(--spacing-5) !important;
     column-gap: var(--spacing-5) !important;
   }
 }
-

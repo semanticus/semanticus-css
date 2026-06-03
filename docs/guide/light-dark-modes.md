@@ -1,10 +1,10 @@
 # Light & Dark Modes
 
-Semanticus CSS supports light and dark modes out of the box, automatically adapting to your users' system preferences or allowing explicit control via the `data-theme` attribute.
+**Semanticus CSS** supports light and dark modes out of the box, automatically adapting to your users' system preferences or allowing explicit control via the `data-theme` attribute.
 
 ## Automatic System Detection
 
-By default, Semanticus CSS respects the user's OS color scheme preference using the `prefers-color-scheme` media query:
+By default, **Semanticus CSS** respects the user's OS color scheme preference using the `prefers-color-scheme` media query:
 
 ```html
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ By default, Semanticus CSS respects the user's OS color scheme preference using 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@1.1.0/dist/semanticus.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@2.2.0/dist/semanticus.css">
 </head>
 <body>
   <!-- Content automatically adapts to system theme -->
@@ -57,12 +57,39 @@ Add a theme toggle button to let users switch between light and dark modes:
 </script>
 ```
 
+## Element-Level Theme Contrast
+
+Apply `data-theme="contrast"` to any element to flip it to the **opposite** color scheme from the rest of the page. When the page is in light mode, the element renders in dark mode, and vice versa. This is useful for sidebars, hero sections, or any UI area you want to visually separate from the main content.
+
+```html
+<body>
+  <!-- Page in light mode -->
+  <main>
+    <h1>Main Content</h1>
+    <p>This area follows the light theme.</p>
+  </main>
+
+  <!-- Sidebar automatically flips to dark mode -->
+  <aside data-theme="contrast">
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+      </ul>
+    </nav>
+  </aside>
+</body>
+```
+
+This works at any nesting depth — you can place a `data-theme="contrast"` element inside another `data-theme="contrast"` container to flip back to the original theme.
+
 ## How It Works
 
-Semanticus CSS uses CSS custom properties defined in three layers:
+**Semanticus CSS** uses CSS custom properties and container style queries to manage themes:
 
 1. **Light theme (default)** — Applied via `[data-theme="light"]` or `:root:not([data-theme="dark"])`
 2. **Dark theme (system preference)** — Applied via `@media (prefers-color-scheme: dark)` when no `data-theme` is set
 3. **Dark theme (explicit)** — Applied via `[data-theme="dark"]` regardless of OS preference
+4. **Element-level contrast** — Applied via `[data-theme="contrast"]` using `@container style()` queries to invert the current theme
 
-All semantic color variables (`--color-primary`, `--color-background`, `--color-text`, etc.) are redefined in each theme to ensure optimal contrast and readability.
+All semantic color variables (`--primary-color`, `--background-color`, `--color`, etc.) are redefined in each theme to ensure optimal contrast and readability.

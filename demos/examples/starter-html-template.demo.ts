@@ -24,13 +24,13 @@ export function main(
 <main class="py-d mb-3">
   <hgroup>
     <h1>Welcome to Semanticus CSS</h1>
-    <p>A lightweight CSS framework for modern web development.</p>
+    <p>ARIA-centric, semantic HTML enhanced by atomic utilities.</p>
   </hgroup>
 
   <button>Get Started</button>
 </main>
 
-<footer class="full-width pane">
+<footer class="full-width pane secondary subtle">
   <nav>
     <p>Acme Corp &copy; 2026</p>
     <a href="#">Contact Us</a>

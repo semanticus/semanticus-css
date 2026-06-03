@@ -1,9 +1,10 @@
 .striped {
-  > :not(table):nth-child(odd) {
+  /* Cards */
+  &:is(.card) > :nth-child(odd) {
     background-color: color-mix(
       in srgb,
-      var(--color-background),
-      var(--color-hover-effect) 15%
+      var(--_card-background-color),
+      var(--color-hover-shade) 15%
     );
   }
 
@@ -11,8 +12,8 @@
     & :is(th, td) {
       background-color: color-mix(
         in srgb,
-        var(--color-background),
-        var(--color-hover-effect) 15%
+        var(--background-color),
+        var(--color-hover-shade) 15%
       );
     }
   }

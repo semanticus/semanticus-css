@@ -1,0 +1,100 @@
+button {
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  text-transform: none;
+}
+
+button,
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="file"]::file-selector-button,
+[role="button"] {
+  --_buttons-background-color-hover: var(--buttons-background-color-hover);
+  --_buttons-background-color: var(--buttons-background-color);
+  --_buttons-color-hover: var(--buttons-color-hover);
+  --_buttons-color: var(--buttons-color);
+  --_buttons-outline-color: var(--primary-outline-color);
+  --_buttons-padding-block: var(--buttons-padding-block);
+  --_buttons-padding-inline: var(--buttons-padding-inline);
+  --_buttons-border-color: var(--_buttons-background-color);
+  --_buttons-border-color-hover: var(--_buttons-background-color-hover);
+
+  padding-block: var(--_buttons-padding-block);
+  padding-inline: var(--_buttons-padding-inline);
+  border: var(--border-width) solid var(--_buttons-border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--_buttons-background-color);
+  color: var(--_buttons-color);
+  font-weight: var(--font-weight);
+  font-size: 1rem;
+  line-height: var(--line-height);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+
+  &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    color: var(--_buttons-color-hover);
+    border: var(--border-width) solid var(--_buttons-border-color-hover);
+    background-color: var(--_buttons-background-color-hover);
+  }
+
+  &:is(:active, :focus) {
+    outline: var(--outline-width) solid var(--_buttons-outline-color);
+    box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-outline-color);
+  }
+
+  &[aria-busy="true"] {
+    pointer-events: none;
+
+    &:before {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+[type="submit"] {
+  width: 100%;
+}
+
+[type="reset"],
+[type="file"]::file-selector-button {
+  --_buttons-background-color: var(--secondary-background-color);
+  --_buttons-background-color-hover: var(--secondary-background-color-hover);
+  --_buttons-outline-color: var(--secondary-outline-color);
+
+  cursor: pointer;
+}
+
+button,
+[type="submit"],
+[type="reset"],
+[type="button"] {
+  appearance: auto;
+}
+
+aside {
+  nav {
+    :where(
+      button,
+      [role="button"],
+      [type="button"],
+      input:not(
+        [type="checkbox"],
+        [type="radio"],
+        [type="range"],
+        [type="file"]
+      ),
+      select
+    ) {
+      display: block !important;
+      width: 100%;
+    }
+  }
+}

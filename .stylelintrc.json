@@ -1,14 +1,11 @@
 {
-  "extends": [
-    "stylelint-config-standard"
-  ],
+  "extends": ["stylelint-config-standard"],
   "rules": {
+    "custom-property-pattern": "^_?[a-z][a-z0-9]*(-[a-z0-9]+)*$",
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": [
-          "custom-media"
-        ]
+        "ignoreAtRules": ["custom-media"]
       }
     ],
     "at-rule-empty-line-before": null,
@@ -39,9 +36,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "src/semantics/**/*.css"
-      ],
+      "files": ["src/semantics/**/*.css"],
       "rules": {
         "at-rule-no-vendor-prefix": null,
         "at-rule-prelude-no-invalid": null,

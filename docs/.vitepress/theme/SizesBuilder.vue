@@ -1,18 +1,18 @@
 <script setup>
-import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
-import { useData } from 'vitepress'
-import { OverviewDemo } from '@demos/index';
-import hljs from 'highlight.js/lib/core'
-import html from 'highlight.js/lib/languages/xml'
-import githubLight from 'highlight.js/styles/github.css?raw'
-import githubDark from 'highlight.js/styles/github-dark.css?raw'
-import { cdnBaseUrl } from '@scripts/utils';
+import { ref, reactive, computed, onMounted, onUnmounted } from "vue";
+import { useData } from "vitepress";
+import { CustomizerDemo } from "@demos/overview";
+import hljs from "highlight.js/lib/core";
+import html from "highlight.js/lib/languages/xml";
+import githubLight from "highlight.js/styles/github.css?raw";
+import githubDark from "highlight.js/styles/github-dark.css?raw";
+import { cdnBaseUrl } from "@scripts/utils";
 
-hljs.registerLanguage('html', html)
+hljs.registerLanguage("html", html);
 
 const { isDark, site } = useData();
 
-const basePath = computed(() => site.value.base || '/');
+const basePath = computed(() => site.value.base || "/");
 
 const cssStyles = computed(() => {
   return isDark.value ? githubDark : githubLight;
@@ -43,7 +43,7 @@ function htmlTemplate(base, theme) {
     <div class="default-mode w-100 py-3 my-4">
       <span class="compare-side-label d-none">Before</span>
       <div id="default-content">
-        ${OverviewDemo.palettesExample({ class: 'container-fluid' })}
+        ${CustomizerDemo.main({ class: "container-fluid" })}
       </div>
     </div>
     <div class="custom-mode d-none w-100 py-3 my-4">
@@ -110,420 +110,779 @@ function htmlTemplate(base, theme) {
 </html>`;
 }
 
-const previewTheme = ref(isDark.value ? 'dark' : 'light')
+const previewTheme = ref(isDark.value ? "dark" : "light");
 
 const iframeContent = computed(() => {
-  return htmlTemplate(basePath.value, previewTheme.value)
-})
+  return htmlTemplate(basePath.value, previewTheme.value);
+});
 
 function togglePreviewTheme() {
-  previewTheme.value = previewTheme.value === 'light' ? 'dark' : 'light'
-  computedReady.value = false
-  Object.keys(computedValues).forEach(k => delete computedValues[k])
+  previewTheme.value = previewTheme.value === "light" ? "dark" : "light";
+  computedReady.value = false;
+  Object.keys(computedValues).forEach((k) => delete computedValues[k]);
 }
 
 // ── Variable definitions (non-color size variables from src/sizes/pico.css) ──
 
 const variableGroups = [
   {
-    label: 'Font Families',
+    tier: "Tier 1: System Tokens",
+    label: "Font Families",
     vars: [
-      { name: '--font-family', label: 'Font Family', desc: 'Primary font family for body text.', default: 'var(--font-family-sans-serif)' },
-      { name: '--font-family-sans-serif', label: 'Sans-serif Family', desc: 'System sans-serif font stack.', default: 'system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--font-family-emoji)' },
-      { name: '--font-family-monospace', label: 'Monospace Family', desc: 'Monospace font stack for code elements.', default: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji)' },
-      { name: '--font-family-emoji', label: 'Emoji Family', desc: 'Font fallback for emoji characters.', default: '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"' },
-    ]
+      {
+        name: "--font-family",
+        label: "Font Family",
+        desc: "Primary font family for body text.",
+        default: "var(--font-family-sans-serif)",
+      },
+      {
+        name: "--font-family-sans-serif",
+        label: "Sans-serif Family",
+        desc: "System sans-serif font stack.",
+        default:
+          'system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--font-family-emoji)',
+      },
+      {
+        name: "--font-family-monospace",
+        label: "Monospace Family",
+        desc: "Monospace font stack for code elements.",
+        default:
+          'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--font-family-emoji)',
+      },
+      {
+        name: "--font-family-emoji",
+        label: "Emoji Family",
+        desc: "Font fallback for emoji characters.",
+        default:
+          '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      },
+    ],
   },
   {
-    label: 'Typography',
+    tier: "Tier 1: System Tokens",
+    label: "Typography",
     vars: [
-      { name: '--font-size', label: 'Root Font Size', desc: 'Root font-size; scales with breakpoints.', default: '100%' },
-      { name: '--line-height', label: 'Line Height', desc: 'Default line-height for body text.', default: '1.5' },
-      { name: '--font-weight', label: 'Font Weight', desc: 'Default font weight for body text.', default: '400' },
-      { name: '--text-underline-offset', label: 'Underline Offset', desc: 'Offset for underlined text.', default: '0.1rem' },
-      { name: '--a-decoration', label: 'Link Decoration', desc: 'Text decoration style for links.', default: 'underline' },
-    ]
+      {
+        name: "--font-size",
+        label: "Root Font Size",
+        desc: "Root font-size; scales with breakpoints.",
+        default: "100%",
+      },
+      {
+        name: "--line-height",
+        label: "Line Height",
+        desc: "Default line-height for body text.",
+        default: "1.5",
+      },
+      {
+        name: "--font-weight",
+        label: "Font Weight",
+        desc: "Default font weight for body text.",
+        default: "400",
+      },
+      {
+        name: "--text-underline-offset",
+        label: "Underline Offset",
+        desc: "Offset for underlined text.",
+        default: "0.1rem",
+      },
+    ],
   },
   {
-    label: 'Heading Sizes',
+    tier: "Tier 1: System Tokens",
+    label: "Spacing",
     vars: [
-      { name: '--h1-size', label: 'H1 Size', desc: 'Font size for <h1> elements.', default: '2rem' },
-      { name: '--h2-size', label: 'H2 Size', desc: 'Font size for <h2> elements.', default: '1.75rem' },
-      { name: '--h3-size', label: 'H3 Size', desc: 'Font size for <h3> elements.', default: '1.5rem' },
-      { name: '--h4-size', label: 'H4 Size', desc: 'Font size for <h4> elements.', default: '1.25rem' },
-      { name: '--h5-size', label: 'H5 Size', desc: 'Font size for <h5> elements.', default: '1.125rem' },
-      { name: '--h6-size', label: 'H6 Size', desc: 'Font size for <h6> elements.', default: '1rem' },
-    ]
+      {
+        name: "--spacing",
+        label: "Spacing",
+        desc: "Applied spacing; product of 0.75rem × spacing scale.",
+        default: "calc(0.75rem * var(--_spacing-scale))",
+      },
+      {
+        name: "--typography-margin-block",
+        label: "Typography Margin",
+        desc: "Vertical margin for typographic elements (p, headings, lists, etc.).",
+        default: "1rem",
+      },
+    ],
   },
   {
-    label: 'Spacing',
+    tier: "Tier 1: System Tokens",
+    label: "Borders & Effects",
     vars: [
-      { name: '--spacing', label: 'Spacing', desc: 'Applied spacing; scales with base-spacing and breakpoints.', default: 'var(--base-spacing)' },
-      { name: '--typography-spacing-vertical', label: 'Typography Vertical', desc: 'Vertical margin below typographic elements.', default: '1rem' },
-      { name: '--input-spacing-vertical', label: 'Input Vertical', desc: 'Vertical padding inside form inputs.', default: '0.75rem' },
-      { name: '--input-spacing-horizontal', label: 'Input Horizontal', desc: 'Horizontal padding inside form inputs.', default: '1rem' },
-    ]
+      {
+        name: "--border-radius",
+        label: "Border Radius",
+        desc: "Default border-radius for elements.",
+        default: "0.25rem",
+      },
+      {
+        name: "--border-width",
+        label: "Border Width",
+        desc: "Default border width.",
+        default: "0.0625rem",
+      },
+      {
+        name: "--outline-width",
+        label: "Outline Width",
+        desc: "Outline width for focus indicators.",
+        default: "1px",
+      },
+      {
+        name: "--focus-ring-width",
+        label: "Focus Ring Width",
+        desc: "Width of the focus ring shadow.",
+        default: "0.125rem",
+      },
+      {
+        name: "--transition",
+        label: "Transition",
+        desc: "Default transition timing for interactive states.",
+        default: "0.2s ease-in-out",
+      },
+    ],
   },
   {
-    label: 'Borders & Effects',
+    tier: "Tier 1: System Tokens",
+    label: "Form States & Misc",
     vars: [
-      { name: '--radius', label: 'Border Radius', desc: 'Default border-radius for elements.', default: '0.25rem' },
-      { name: '--border-size', label: 'Border Size', desc: 'Default border width.', default: '0.0625rem' },
-      { name: '--outline-size', label: 'Outline Size', desc: 'Focus-ring outline width.', default: '0.125rem' },
-      { name: '--transition', label: 'Transition', desc: 'Default transition timing for interactive states.', default: '0.2s ease-in-out' },
-    ]
+      {
+        name: "--opacity-disabled",
+        label: "Disabled Opacity",
+        desc: "Opacity for disabled form inputs and elements.",
+        default: "0.5",
+      },
+    ],
   },
   {
-    label: 'Navigation',
+    tier: "Tier 3: Component Tokens",
+    label: "Heading Sizes",
     vars: [
-      { name: '--nav-link-gap', label: 'Nav Link Gap', desc: 'Spacing inside nav links.', default: 'calc(var(--spacing) * 0.5)' },
-      { name: '--nav-breadcrumb-divider', label: 'Breadcrumb Divider', desc: 'Character between breadcrumb items.', default: '">"' },
-      { name: '--sidebar-size', label: 'Sidebar Width', desc: 'Sidebar width; scales with breakpoints.', default: '25%' },
-    ]
+      {
+        name: "--h1-font-size",
+        label: "H1 Size",
+        desc: "Font size for <h1> elements.",
+        default: "2rem",
+      },
+      {
+        name: "--h2-font-size",
+        label: "H2 Size",
+        desc: "Font size for <h2> elements.",
+        default: "1.75rem",
+      },
+      {
+        name: "--h3-font-size",
+        label: "H3 Size",
+        desc: "Font size for <h3> elements.",
+        default: "1.5rem",
+      },
+      {
+        name: "--h4-font-size",
+        label: "H4 Size",
+        desc: "Font size for <h4> elements.",
+        default: "1.25rem",
+      },
+      {
+        name: "--h5-font-size",
+        label: "H5 Size",
+        desc: "Font size for <h5> elements.",
+        default: "1.125rem",
+      },
+      {
+        name: "--h6-font-size",
+        label: "H6 Size",
+        desc: "Font size for <h6> elements.",
+        default: "1rem",
+      },
+    ],
   },
   {
-    label: 'Group Shadows',
+    tier: "Tier 3: Component Tokens",
+    label: "Heading Typography",
     vars: [
-      { name: '--group-shadow', label: 'Group Shadow', desc: 'Shadow on [role="group"] and [role="search"] combos.', default: '0 0 0 rgba(0, 0, 0, 0)' },
-      { name: '--group-shadow-focus-button', label: 'Group Button Focus', desc: 'Focus shadow when a button inside the group is focused.', default: '0 0 0 var(--outline-size) var(--color-primary-focus-ring)' },
-      { name: '--group-shadow-focus-input', label: 'Group Input Focus', desc: 'Focus shadow when an input inside the group is focused.', default: '0 0 0 0.0625rem var(--input-border)' },
-    ]
+      {
+        name: "--heading-font-weight",
+        label: "Heading Weight",
+        desc: "Font weight for all headings.",
+        default: "700",
+      },
+      {
+        name: "--h1-line-height",
+        label: "H1 Line Height",
+        desc: "Line height for <h1>.",
+        default: "1.125",
+      },
+      {
+        name: "--h2-line-height",
+        label: "H2 Line Height",
+        desc: "Line height for <h2>.",
+        default: "1.15",
+      },
+      {
+        name: "--h3-line-height",
+        label: "H3 Line Height",
+        desc: "Line height for <h3>.",
+        default: "1.175",
+      },
+      {
+        name: "--h4-line-height",
+        label: "H4 Line Height",
+        desc: "Line height for <h4>.",
+        default: "1.2",
+      },
+      {
+        name: "--h5-line-height",
+        label: "H5 Line Height",
+        desc: "Line height for <h5>.",
+        default: "1.225",
+      },
+      {
+        name: "--h6-line-height",
+        label: "H6 Line Height",
+        desc: "Line height for <h6>.",
+        default: "1.25",
+      },
+      {
+        name: "--h1-margin-top",
+        label: "H1 Gap Top",
+        desc: "Top margin gap before <h1>.",
+        default: "3rem",
+      },
+      {
+        name: "--h2-margin-top",
+        label: "H2 Gap Top",
+        desc: "Top margin gap before <h2>.",
+        default: "2.625rem",
+      },
+      {
+        name: "--h3-margin-top",
+        label: "H3 Gap Top",
+        desc: "Top margin gap before <h3>.",
+        default: "2.25rem",
+      },
+      {
+        name: "--h4-margin-top",
+        label: "H4 Gap Top",
+        desc: "Top margin gap before <h4>.",
+        default: "1.874rem",
+      },
+      {
+        name: "--h5-margin-top",
+        label: "H5 Gap Top",
+        desc: "Top margin gap before <h5>.",
+        default: "1.6875rem",
+      },
+      {
+        name: "--h6-margin-top",
+        label: "H6 Gap Top",
+        desc: "Top margin gap before <h6>.",
+        default: "1.5rem",
+      },
+      {
+        name: "--small-font-size",
+        label: "Small Font Size",
+        desc: "Font size for <small> text.",
+        default: "80%",
+      },
+    ],
   },
   {
-    label: 'Button Shadows',
+    tier: "Tier 3: Component Tokens",
+    label: "Navigation",
     vars: [
-      { name: '--button-shadow', label: 'Button Shadow', desc: 'Shadow on buttons at rest.', default: '0 0 0 rgb(0 0 0 / 0)' },
-      { name: '--button-shadow-hover', label: 'Button Hover Shadow', desc: 'Shadow on buttons when hovered.', default: '0 0 0 rgb(0 0 0 / 0)' },
-    ]
+      {
+        name: "--nav-link-gap",
+        label: "Nav Link Gap",
+        desc: "Spacing inside nav links.",
+        default: "calc(var(--spacing) * 0.5)",
+      },
+      {
+        name: "--nav-breadcrumb-divider",
+        label: "Breadcrumb Divider",
+        desc: "Character between breadcrumb items.",
+        default: '">"',
+      },
+      {
+        name: "--sidebar-size",
+        label: "Sidebar Width",
+        desc: "Sidebar width; scales with breakpoints.",
+        default: "25%",
+      },
+    ],
   },
   {
-    label: 'Form States & Misc',
+    tier: "Tier 3: Component Tokens",
+    label: "Group",
     vars: [
-      { name: '--input-opacity-disabled', label: 'Disabled Opacity', desc: 'Opacity for disabled form inputs.', default: '0.5' },
-      { name: '--loading-spinner-opacity', label: 'Loading Opacity', desc: 'Opacity for the loading spinner overlay.', default: '0.5' },
-    ]
+      {
+        name: "--group-buttons-padding-inline",
+        label: "Group Button Spacing",
+        desc: "Horizontal padding for buttons inside groups.",
+        default: "1rem",
+      },
+    ],
   },
-]
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Buttons",
+    vars: [
+      {
+        name: "--buttons-padding-block",
+        label: "Button Padding Block",
+        desc: "Vertical padding inside buttons.",
+        default: "var(--inputs-padding-block)",
+      },
+      {
+        name: "--buttons-padding-inline",
+        label: "Button Padding Inline",
+        desc: "Horizontal padding inside buttons.",
+        default: "var(--inputs-padding-inline)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Form Details",
+    vars: [
+      {
+        name: "--input-search-border-radius",
+        label: "Search Border Radius",
+        desc: "Border radius for search inputs and roles.",
+        default: "5rem",
+      },
+      {
+        name: "--input-checkbox-border-width",
+        label: "Checkbox Border Width",
+        desc: "Border width for checkboxes and radios.",
+        default: "0.125rem",
+      },
+      {
+        name: "--input-switch-border-width",
+        label: "Switch Border Width",
+        desc: "Border width for toggle switches.",
+        default: "0.1875rem",
+      },
+      {
+        name: "--input-switch-border-radius",
+        label: "Switch Border Radius",
+        desc: "Border radius for toggle switches.",
+        default: "1.25em",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Icons",
+    vars: [
+      {
+        name: "--icons-background-position-gap",
+        label: "Icon Gap",
+        desc: "Gap between icon and adjacent text.",
+        default: "0.75rem",
+      },
+      {
+        name: "--icons-width",
+        label: "Icon Width",
+        desc: "Default width for icon elements.",
+        default: "1em",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Table",
+    vars: [
+      {
+        name: "--table-header-font-weight",
+        label: "Table Header Weight",
+        desc: "Font weight for table headers.",
+        default: "600",
+      },
+      {
+        name: "--table-header-border-width",
+        label: "Table Header Border",
+        desc: "Border width for table header/footer rows.",
+        default: "0.1875rem",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Input Spacing",
+    vars: [
+      {
+        name: "--inputs-padding-block",
+        label: "Input Padding Block",
+        desc: "Block-axis (vertical) padding inside form inputs.",
+        default: "0.5rem",
+      },
+      {
+        name: "--inputs-padding-inline",
+        label: "Input Padding Inline",
+        desc: "Inline-axis (horizontal) padding inside form inputs.",
+        default: "0.7rem",
+      },
+      {
+        name: "--details-dropdown-padding-block",
+        label: "Dropdown Padding Block",
+        desc: "Block-axis padding for dropdown triggers.",
+        default: "var(--inputs-padding-block)",
+      },
+      {
+        name: "--details-dropdown-padding-inline",
+        label: "Dropdown Padding Inline",
+        desc: "Inline-axis padding for dropdown triggers.",
+        default: "var(--inputs-padding-inline)",
+      },
+    ],
+  },
+  {
+    tier: "Tier 3: Component Tokens",
+    label: "Links",
+    vars: [
+      {
+        name: "--links-text-decoration",
+        label: "Link Decoration",
+        desc: "Text decoration style for links.",
+        default: "underline",
+      },
+    ],
+  },
+];
 
 // ── State ───────────────────────────────────────────────────────────────────
 
-const customValues = reactive({})
-const searchQuery = ref('')
-const expandedGroups = reactive({})
-const iframeRef = ref(null)
-const sidebarCollapsed = ref(false)
-const showExportModal = ref(false)
-const exportMode = ref('inline')
-const copiedFeedback = ref(null)
-const activePopover = ref(null)
-const compareMode = ref(false)
-const computedValues = reactive({})
-const computedReady = ref(false)
-const pendingRequestId = ref(null)
-const fileInputRef = ref(null)
+const customValues = reactive({});
+const searchQuery = ref("");
+const expandedGroups = reactive({});
+const iframeRef = ref(null);
+const sidebarCollapsed = ref(false);
+const showExportModal = ref(false);
+const exportMode = ref("inline");
+const copiedFeedback = ref(null);
+const activePopover = ref(null);
+const compareMode = ref(false);
+const computedValues = reactive({});
+const computedReady = ref(false);
+const pendingRequestId = ref(null);
+const fileInputRef = ref(null);
 
 // Build a lookup from variable name to its default for import
-const varDefaults = {}
-variableGroups.forEach(g => {
-  g.vars.forEach(v => {
-    varDefaults[v.name] = v.default
-  })
-})
+const varDefaults = {};
+variableGroups.forEach((g) => {
+  g.vars.forEach((v) => {
+    varDefaults[v.name] = v.default;
+  });
+});
 
 // Initialize all groups as collapsed except the first
 variableGroups.forEach((g, i) => {
-  expandedGroups[g.label] = i === 0
-})
+  expandedGroups[g.label] = i === 0;
+});
 
 // ── Computed ────────────────────────────────────────────────────────────────
 
 const filteredGroups = computed(() => {
-  const q = searchQuery.value.toLowerCase().trim()
-  if (!q) return variableGroups
+  const q = searchQuery.value.toLowerCase().trim();
+  if (!q) return variableGroups;
 
   return variableGroups
-    .map(group => ({
+    .map((group) => ({
       ...group,
-      vars: group.vars.filter(v =>
-        v.name.toLowerCase().includes(q) ||
-        v.label.toLowerCase().includes(q) ||
-        v.desc.toLowerCase().includes(q)
-      )
+      vars: group.vars.filter(
+        (v) =>
+          v.name.toLowerCase().includes(q) ||
+          v.label.toLowerCase().includes(q) ||
+          v.desc.toLowerCase().includes(q),
+      ),
     }))
-    .filter(group => group.vars.length > 0)
-})
+    .filter((group) => group.vars.length > 0);
+});
 
-const changedCount = computed(() => Object.keys(customValues).length)
+const changedCount = computed(() => Object.keys(customValues).length);
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 function getKey(v) {
-  return `root:${v.name}`
+  return `root:${v.name}`;
 }
 
 function getDefault(v) {
-  return v.default
+  return v.default;
 }
 
 function getDisplayValue(v) {
-  const key = getKey(v)
-  if (computedReady.value && computedValues[v.name] && computedValues[v.name] !== '') {
-    return computedValues[v.name]
+  const key = getKey(v);
+  if (
+    computedReady.value &&
+    computedValues[v.name] &&
+    computedValues[v.name] !== ""
+  ) {
+    return computedValues[v.name];
   }
-  if (key in customValues) return customValues[key]
-  return v.default
+  if (key in customValues) return customValues[key];
+  return v.default;
 }
 
 function setCurrentValue(v, value) {
-  const key = getKey(v)
-  if (value === '' || value === v.default) {
-    delete customValues[key]
+  const key = getKey(v);
+  if (value === "" || value === v.default) {
+    delete customValues[key];
   } else {
-    customValues[key] = value
+    customValues[key] = value;
   }
-  updateIframeStyles()
+  updateIframeStyles();
 }
 
 function isChanged(v) {
-  return getKey(v) in customValues
+  return getKey(v) in customValues;
 }
 
 function resetVar(v) {
-  delete customValues[getKey(v)]
-  updateIframeStyles()
+  delete customValues[getKey(v)];
+  updateIframeStyles();
 }
 
 function resetAll() {
-  Object.keys(customValues).forEach(k => delete customValues[k])
-  updateIframeStyles()
+  Object.keys(customValues).forEach((k) => delete customValues[k]);
+  updateIframeStyles();
 }
 
 function toggleGroup(label) {
-  expandedGroups[label] = !expandedGroups[label]
+  expandedGroups[label] = !expandedGroups[label];
 }
 
 function togglePopover(varName) {
-  activePopover.value = activePopover.value === varName ? null : varName
+  activePopover.value = activePopover.value === varName ? null : varName;
 }
 
 function closePopover() {
-  activePopover.value = null
+  activePopover.value = null;
 }
 
 function handleDocumentClick(event) {
-  if (activePopover.value && !event.target.closest('.popover-container')) {
-    closePopover()
+  if (activePopover.value && !event.target.closest(".popover-container")) {
+    closePopover();
   }
 }
 
 function highlightMatch(text, query) {
-  if (!query) return text
-  const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi')
-  return text.replace(regex, '<mark class="search-highlight">$1</mark>')
+  if (!query) return text;
+  const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
+  return text.replace(regex, '<mark class="search-highlight">$1</mark>');
 }
 
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 async function copyToClipboard(text, type) {
   try {
-    await navigator.clipboard.writeText(text)
-    copiedFeedback.value = type
-    setTimeout(() => copiedFeedback.value = null, 2000)
+    await navigator.clipboard.writeText(text);
+    copiedFeedback.value = type;
+    setTimeout(() => (copiedFeedback.value = null), 2000);
   } catch (err) {
-    console.error('Failed to copy:', err)
+    console.error("Failed to copy:", err);
   }
 }
 
 function toggleCompare() {
-  compareMode.value = !compareMode.value
-  computedReady.value = false
+  compareMode.value = !compareMode.value;
+  computedReady.value = false;
   if (iframeRef.value?.contentWindow) {
-    iframeRef.value.contentWindow.postMessage({
-      type: 'set-compare-mode',
-      enabled: compareMode.value
-    }, '*')
+    iframeRef.value.contentWindow.postMessage(
+      {
+        type: "set-compare-mode",
+        enabled: compareMode.value,
+      },
+      "*",
+    );
     setTimeout(() => {
-      requestComputedValues()
-    }, 0)
+      requestComputedValues();
+    }, 0);
   }
 }
 
 function toggleSidebar() {
-  sidebarCollapsed.value = !sidebarCollapsed.value
+  sidebarCollapsed.value = !sidebarCollapsed.value;
 }
 
 // ── iframe Communication ────────────────────────────────────────────────────
 
 function buildCustomCSS() {
-  const rootVars = []
+  const rootVars = [];
 
   for (const [key, value] of Object.entries(customValues)) {
-    const [, ...nameParts] = key.split(':')
-    const name = nameParts.join(':')
-    rootVars.push(`  ${name}: ${value};`)
+    const [, ...nameParts] = key.split(":");
+    const name = nameParts.join(":");
+    rootVars.push(`  ${name}: ${value};`);
   }
 
-  const allRootLines = [...rootVars]
+  const allRootLines = [...rootVars];
   if (!allRootLines.length) {
-    return `/* No custom variables set */`
+    return `/* No custom variables set */`;
   }
 
   return `:root,
 :host {
-${allRootLines.join('\n')}
+${allRootLines.join("\n")}
 }
-`
+`;
 }
 
 function updateIframeStyles() {
-  if (!iframeRef.value?.contentWindow) return
-  iframeRef.value.contentWindow.postMessage({
-    type: 'update-size-css',
-    css: buildCustomCSS()
-  }, '*')
-  setTimeout(requestComputedValues, 80)
+  if (!iframeRef.value?.contentWindow) return;
+  iframeRef.value.contentWindow.postMessage(
+    {
+      type: "update-size-css",
+      css: buildCustomCSS(),
+    },
+    "*",
+  );
+  setTimeout(requestComputedValues, 80);
 }
 
 // ── Export ─────────────────────────────────────────────────────────────────
 
 function exportCSS() {
-  showExportModal.value = true
+  showExportModal.value = true;
 }
 
 function closeExportModal() {
-  showExportModal.value = false
+  showExportModal.value = false;
 }
 
 function downloadCSS() {
-  const name = 'custom'
-  const css = buildCustomCSS()
+  const name = "custom";
+  const css = buildCustomCSS();
   const header = `/* Semanticus CSS Custom Size
  * Generated by Semanticus CSS Size Builder
- * ${new Date().toISOString().split('T')[0]}
+ * ${new Date().toISOString().split("T")[0]}
  */
 
-`
-  const blob = new Blob([header + css], { type: 'text/css' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = `semanticus.size.${name}.css`
-  a.click()
-  URL.revokeObjectURL(url)
+`;
+  const blob = new Blob([header + css], { type: "text/css" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `semanticus.size.${name}.css`;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 const exportSnippet = computed(() => {
-  const cssPath = '/css/semanticus.size.custom.css'
-  return `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n<link rel="stylesheet" href="${cssPath}">`
-})
+  const cssPath = "/css/semanticus.size.custom.css";
+  return `<link rel="stylesheet" href="${cdnBaseUrl("/dist/semanticus.css")}">\n<link rel="stylesheet" href="${cssPath}">`;
+});
 const highlightedExportSnippet = computed(() => {
-  return hljs.highlight(exportSnippet.value, { language: 'html' }).value;
-})
+  return hljs.highlight(exportSnippet.value, { language: "html" }).value;
+});
 
 const inlineSnippet = computed(() => {
-  const css = buildCustomCSS().trimEnd()
-  return `<link rel="stylesheet" href="${cdnBaseUrl('/dist/semanticus.css')}">\n<style>\n${css}\n</style>`
-})
+  const css = buildCustomCSS().trimEnd();
+  return `<link rel="stylesheet" href="${cdnBaseUrl("/dist/semanticus.css")}">\n<style>\n${css}\n</style>`;
+});
 const highlightedInlineSnippet = computed(() => {
-  return hljs.highlight(inlineSnippet.value, { language: 'html' }).value;
-})
+  return hljs.highlight(inlineSnippet.value, { language: "html" }).value;
+});
 
 function triggerImport() {
   if (fileInputRef.value) {
-    fileInputRef.value.value = ''
-    fileInputRef.value.click()
+    fileInputRef.value.value = "";
+    fileInputRef.value.click();
   }
 }
 
 function handleFileImport(event) {
-  const file = event.target.files?.[0]
-  if (!file) return
-  const reader = new FileReader()
+  const file = event.target.files?.[0];
+  if (!file) return;
+  const reader = new FileReader();
   reader.onload = (e) => {
-    const text = e.target?.result
-    if (typeof text === 'string') {
-      parseAndApplyCSS(text)
+    const text = e.target?.result;
+    if (typeof text === "string") {
+      parseAndApplyCSS(text);
     }
-  }
-  reader.readAsText(file)
+  };
+  reader.readAsText(file);
 }
 
 function parseAndApplyCSS(text) {
   // Match --var-name: value; lines
-  const regex = /--[\w-]+\s*:\s*[^;]+/g
-  const matches = text.matchAll(regex)
-  let changed = false
+  const regex = /--[\w-]+\s*:\s*[^;]+/g;
+  const matches = text.matchAll(regex);
+  let changed = false;
   for (const match of matches) {
-    const [full] = match
-    const colonIdx = full.indexOf(':')
-    const name = full.slice(0, colonIdx).trim()
-    const value = full.slice(colonIdx + 1).trim()
+    const [full] = match;
+    const colonIdx = full.indexOf(":");
+    const name = full.slice(0, colonIdx).trim();
+    const value = full.slice(colonIdx + 1).trim();
     if (name in varDefaults) {
-      const key = `root:${name}`
-      const def = varDefaults[name]
+      const key = `root:${name}`;
+      const def = varDefaults[name];
       if (value === def) {
         if (key in customValues) {
-          delete customValues[key]
-          changed = true
+          delete customValues[key];
+          changed = true;
         }
       } else {
-        customValues[key] = value
-        changed = true
+        customValues[key] = value;
+        changed = true;
       }
     }
   }
   if (changed) {
-    updateIframeStyles()
+    updateIframeStyles();
   }
 }
 
 function requestComputedValues() {
-  if (!iframeRef.value?.contentWindow) return
-  const reqId = Date.now()
-  pendingRequestId.value = reqId
-  const payload = []
+  if (!iframeRef.value?.contentWindow) return;
+  const reqId = Date.now();
+  pendingRequestId.value = reqId;
+  const payload = [];
   for (const group of variableGroups) {
     for (const v of group.vars) {
-      payload.push({ name: v.name })
+      payload.push({ name: v.name });
     }
   }
-  iframeRef.value.contentWindow.postMessage({
-    type: 'request-computed-values',
-    requestId: reqId,
-    vars: payload
-  }, '*')
+  iframeRef.value.contentWindow.postMessage(
+    {
+      type: "request-computed-values",
+      requestId: reqId,
+      vars: payload,
+    },
+    "*",
+  );
 }
 
 function handleMessage(event) {
-  if (event.data && event.data.type === 'computed-values') {
-    if (event.source !== iframeRef.value?.contentWindow) return
-    if (event.data.requestId !== pendingRequestId.value) return
-    Object.assign(computedValues, event.data.values)
-    computedReady.value = true
+  if (event.data && event.data.type === "computed-values") {
+    if (event.source !== iframeRef.value?.contentWindow) return;
+    if (event.data.requestId !== pendingRequestId.value) return;
+    Object.assign(computedValues, event.data.values);
+    computedReady.value = true;
   }
 }
 
 // ── Lifecycle ───────────────────────────────────────────────────────────────
 
 onMounted(() => {
-  window.addEventListener('message', handleMessage)
-  document.addEventListener('click', handleDocumentClick)
-})
+  window.addEventListener("message", handleMessage);
+  document.addEventListener("click", handleDocumentClick);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('message', handleMessage)
-  document.removeEventListener('click', handleDocumentClick)
-})
+  window.removeEventListener("message", handleMessage);
+  document.removeEventListener("click", handleDocumentClick);
+});
 
-const IFRAME_INIT_DELAY_MS = 300
+const IFRAME_INIT_DELAY_MS = 300;
 
 function onIframeLoad() {
   setTimeout(() => {
-    updateIframeStyles()
-    requestComputedValues()
-  }, IFRAME_INIT_DELAY_MS)
+    updateIframeStyles();
+    requestComputedValues();
+  }, IFRAME_INIT_DELAY_MS);
 }
 
 defineExpose({
@@ -535,7 +894,7 @@ defineExpose({
   toggleCompare,
   triggerImport,
   resetAll,
-})
+});
 </script>
 
 <template>
@@ -543,106 +902,195 @@ defineExpose({
     <component :is="'style'" v-html="cssStyles"></component>
     <div
       class="builder-body"
-      :style="{ gridTemplateColumns: sidebarCollapsed ? '0px auto 1fr' : 'minmax(280px, 30%) auto 1fr' }"
+      :style="{
+        gridTemplateColumns: sidebarCollapsed
+          ? '0px auto 1fr'
+          : 'minmax(280px, 30%) auto 1fr',
+      }"
     >
       <!-- Sidebar: Variable Editors -->
       <aside class="builder-sidebar" :class="{ collapsed: sidebarCollapsed }">
         <div class="search-box">
-          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+          <svg
+            class="search-icon"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
           <input
             v-model="searchQuery"
             type="search"
             placeholder="Search variables..."
             class="search-input"
-          >
+          />
         </div>
 
         <div class="var-groups">
-          <div
-            v-for="group in filteredGroups"
-            :key="group.label"
-            class="var-group"
-          >
-            <button class="group-header" @click="toggleGroup(group.label)">
-              <svg :class="['chevron', { expanded: expandedGroups[group.label] }]" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6" /></svg>
-              <span class="group-label">{{ group.label }}</span>
-              <span class="group-count">{{ group.vars.length }}</span>
-            </button>
+          <template v-for="(group, index) in filteredGroups" :key="group.label">
+            <div
+              v-if="
+                index === 0 || group.tier !== filteredGroups[index - 1].tier
+              "
+              class="tier-header"
+            >
+              {{ group.tier }}
+            </div>
+            <div class="var-group">
+              <button class="group-header" @click="toggleGroup(group.label)">
+                <svg
+                  :class="[
+                    'chevron',
+                    { expanded: expandedGroups[group.label] },
+                  ]"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+                <span class="group-label">{{ group.label }}</span>
+                <span class="group-count">{{ group.vars.length }}</span>
+              </button>
 
-            <div v-show="expandedGroups[group.label]" class="group-vars">
-              <div
-                v-for="v in group.vars"
-                :key="v.name"
-                :class="['var-row', { changed: isChanged(v) }]"
-              >
-                <div class="var-label-row">
-                  <label class="var-label" :for="'input-' + v.name">
-                    <code class="var-name-label" v-html="highlightMatch(v.name, searchQuery)"></code>
-                  </label>
-                  <div class="popover-container">
-                    <button
-                      type="button"
-                      class="help-trigger"
-                      :aria-expanded="activePopover === v.name"
-                      @click.stop="togglePopover(v.name)"
-                      title="Show details"
-                    >
-                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
-                    </button>
-                    <div
-                      v-if="activePopover === v.name"
-                      class="help-popover"
-                      @click.stop
-                    >
-                      <div class="popover-header">
-                        <code class="var-name-popover">{{ v.name }}</code>
-                        <button
-                          type="button"
-                          class="popover-close"
-                          @click.stop="closePopover"
-                        >✕</button>
-                      </div>
-                      <div class="popover-content">
-                        <p class="popover-short-label" v-html="highlightMatch(v.label, searchQuery)"></p>
-                        <p class="popover-desc" v-html="highlightMatch(v.desc, searchQuery)"></p>
-                        <div class="popover-default">
-                          <span class="default-label">Default:</span>
-                          <code class="default-value">{{ getDefault(v) }}</code>
-                        </div>
-                        <div class="popover-copy-css">
+              <div v-show="expandedGroups[group.label]" class="group-vars">
+                <div
+                  v-for="v in group.vars"
+                  :key="v.name"
+                  :class="['var-row', { changed: isChanged(v) }]"
+                >
+                  <div class="var-label-row">
+                    <label class="var-label" :for="'input-' + v.name">
+                      <code
+                        class="var-name-label"
+                        v-html="highlightMatch(v.name, searchQuery)"
+                      ></code>
+                    </label>
+                    <div class="popover-container">
+                      <button
+                        type="button"
+                        class="help-trigger"
+                        :aria-expanded="activePopover === v.name"
+                        @click.stop="togglePopover(v.name)"
+                        title="Show details"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="14"
+                          height="14"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                          <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                      </button>
+                      <div
+                        v-if="activePopover === v.name"
+                        class="help-popover"
+                        @click.stop
+                      >
+                        <div class="popover-header">
+                          <code class="var-name-popover">{{ v.name }}</code>
                           <button
                             type="button"
-                            class="copy-css-btn"
-                            @click.stop="copyToClipboard(`${v.name}: ${getDisplayValue(v)};`, 'cssRule')"
+                            class="popover-close"
+                            @click.stop="closePopover"
                           >
-                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            {{ copiedFeedback === 'cssRule' ? 'Copied CSS!' : 'Copy CSS Rule' }}
+                            ✕
                           </button>
+                        </div>
+                        <div class="popover-content">
+                          <p
+                            class="popover-short-label"
+                            v-html="highlightMatch(v.label, searchQuery)"
+                          ></p>
+                          <p
+                            class="popover-desc"
+                            v-html="highlightMatch(v.desc, searchQuery)"
+                          ></p>
+                          <div class="popover-default">
+                            <span class="default-label">Default:</span>
+                            <code class="default-value">{{
+                              getDefault(v)
+                            }}</code>
+                          </div>
+                          <div class="popover-copy-css">
+                            <button
+                              type="button"
+                              class="copy-css-btn"
+                              @click.stop="
+                                copyToClipboard(
+                                  `${v.name}: ${getDisplayValue(v)};`,
+                                  'cssRule',
+                                )
+                              "
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="12"
+                                height="12"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                              >
+                                <rect
+                                  x="9"
+                                  y="9"
+                                  width="13"
+                                  height="13"
+                                  rx="2"
+                                />
+                                <path
+                                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                />
+                              </svg>
+                              {{
+                                copiedFeedback === "cssRule"
+                                  ? "Copied CSS!"
+                                  : "Copy CSS Rule"
+                              }}
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <button
+                      v-if="isChanged(v)"
+                      class="reset-var-btn"
+                      @click="resetVar(v)"
+                      title="Reset to default"
+                    >
+                      ✕
+                    </button>
                   </div>
-                  <button
-                    v-if="isChanged(v)"
-                    class="reset-var-btn"
-                    @click="resetVar(v)"
-                    title="Reset to default"
-                  >✕</button>
-                </div>
 
-                <div class="var-input-row">
-                  <input
-                    type="text"
-                    class="text-input"
-                    :id="'input-' + v.name"
-                    :value="getDisplayValue(v)"
-                    :placeholder="getDefault(v)"
-                    @change="setCurrentValue(v, $event.target.value)"
-                  >
+                  <div class="var-input-row">
+                    <input
+                      type="text"
+                      class="text-input"
+                      :id="'input-' + v.name"
+                      :value="getDisplayValue(v)"
+                      :placeholder="getDefault(v)"
+                      @change="setCurrentValue(v, $event.target.value)"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
       </aside>
 
@@ -653,7 +1101,20 @@ defineExpose({
         :title="sidebarCollapsed ? 'Show sidebar' : 'Hide sidebar'"
         :class="{ collapsed: sidebarCollapsed }"
       >
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline :points="sidebarCollapsed ? '9 18 15 12 9 6' : '15 18 9 12 15 6'" /></svg>
+        <svg
+          viewBox="0 0 24 24"
+          width="14"
+          height="14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline
+            :points="sidebarCollapsed ? '9 18 15 12 9 6' : '15 18 9 12 15 6'"
+          />
+        </svg>
       </button>
 
       <!-- Preview -->
@@ -680,7 +1141,11 @@ defineExpose({
     </div>
 
     <!-- Export Modal -->
-    <div v-if="showExportModal" class="export-overlay" @click="closeExportModal">
+    <div
+      v-if="showExportModal"
+      class="export-overlay"
+      @click="closeExportModal"
+    >
       <div class="export-modal" @click.stop>
         <div class="export-header">
           <h3 class="export-title">Export Your Size Overrides</h3>
@@ -689,27 +1154,55 @@ defineExpose({
         <div class="export-content">
           <!-- Export Mode Toggle -->
           <div class="export-mode-toggle">
-            <label class="export-mode-option" :class="{ active: exportMode === 'inline' }">
+            <label
+              class="export-mode-option"
+              :class="{ active: exportMode === 'inline' }"
+            >
               <input
                 type="radio"
                 v-model="exportMode"
                 value="inline"
                 class="export-mode-input"
-              >
+              />
               <span class="export-mode-label">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
                 Code Snippet
               </span>
             </label>
-            <label class="export-mode-option" :class="{ active: exportMode === 'file' }">
+            <label
+              class="export-mode-option"
+              :class="{ active: exportMode === 'file' }"
+            >
               <input
                 type="radio"
                 v-model="exportMode"
                 value="file"
                 class="export-mode-input"
-              >
+              />
               <span class="export-mode-label">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                  />
+                  <polyline points="13 2 13 9 20 9" />
+                </svg>
                 Download CSS file
               </span>
             </label>
@@ -717,36 +1210,61 @@ defineExpose({
 
           <!-- External File Mode -->
           <div v-if="exportMode === 'file'">
-            <p class="export-description">Download the <strong>semanticus.size.custom.css</strong> to your <strong>stylesheets</strong> folder and include these lines in your HTML:</p>
+            <p class="export-description">
+              Download the <strong>semanticus.size.custom.css</strong> to your
+              <strong>stylesheets</strong> folder and include these lines in
+              your HTML:
+            </p>
             <div class="export-code-block">
               <pre><code class="language-html" v-html="highlightedExportSnippet"></code></pre>
               <button
                 class="copy-snippet-btn"
                 @click="copyToClipboard(exportSnippet, 'snippet')"
               >
-                {{ copiedFeedback === 'snippet' ? 'Copied!' : 'Copy' }}
+                {{ copiedFeedback === "snippet" ? "Copied!" : "Copy" }}
               </button>
             </div>
           </div>
 
           <!-- Inline Mode -->
           <div v-else>
-            <p class="export-description">Copy this snippet to use inline styles directly in your HTML:</p>
+            <p class="export-description">
+              Copy this snippet to use inline styles directly in your HTML:
+            </p>
             <div class="export-code-block">
               <pre><code class="language-html" v-html="highlightedInlineSnippet"></code></pre>
               <button
                 class="copy-snippet-btn"
                 @click="copyToClipboard(inlineSnippet, 'inlineSnippet')"
               >
-                {{ copiedFeedback === 'inlineSnippet' ? 'Copied!' : 'Copy' }}
+                {{ copiedFeedback === "inlineSnippet" ? "Copied!" : "Copy" }}
               </button>
             </div>
           </div>
         </div>
         <div class="export-footer">
-          <button class="export-btn-secondary" @click="closeExportModal">Cancel</button>
-          <button v-if="exportMode === 'file'" class="export-btn-primary" @click="downloadCSS">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+          <button class="export-btn-secondary" @click="closeExportModal">
+            Cancel
+          </button>
+          <button
+            v-if="exportMode === 'file'"
+            class="export-btn-primary"
+            @click="downloadCSS"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
             Download semanticus.size.custom.css
           </button>
         </div>
@@ -795,7 +1313,9 @@ defineExpose({
   align-items: center;
   justify-content: center;
   color: var(--vp-c-text-3);
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
   flex-shrink: 0;
   padding: 0;
   position: relative;
@@ -860,6 +1380,16 @@ defineExpose({
 
 .var-group {
   border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.tier-header {
+  padding: 0.625rem 0.75rem 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vp-c-brand);
+  border-bottom: 1px solid var(--vp-c-brand);
 }
 
 .group-header {

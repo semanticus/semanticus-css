@@ -1,84 +1,62 @@
 .text-reset {
-  --color-text-opacity: 100%;
-
   color: inherit !important;
 }
 
 .text-body {
-  color: oklch(from var(--color-text) l c h / var(--color-text-opacity)) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-muted {
-  --color-text: var(--color-text-muted);
+  --typography-color: var(--color-muted);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-primary {
-  --color-text: oklch(from var(--color-primary-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--primary-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-secondary {
-  --color-text: oklch(from var(--color-secondary-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--secondary-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-contrast {
-  --color-text: oklch(from var(--color-contrast-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--contrast-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-success {
-  --color-text: oklch(from var(--color-success-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--success-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-info {
-  --color-text: oklch(from var(--color-info-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--info-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-warning {
-  --color-text: oklch(from var(--color-warning-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--warning-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
+  color: var(--typography-color) !important;
 }
 
 .text-danger {
-  --color-text: oklch(from var(--color-danger-text) l c h / var(--color-text-opacity));
-  --color-text-muted: color-mix(in srgb, var(--color-text), transparent 40%);
+  --typography-color: var(--danger-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text) !important;
-}
-
-.text-opacity-10 {
-  --color-text-opacity: 10%;
-}
-
-.text-opacity-25 {
-  --color-text-opacity: 25%;
-}
-
-.text-opacity-50 {
-  --color-text-opacity: 50%;
-}
-
-.text-opacity-75 {
-  --color-text-opacity: 75%;
-}
-
-.text-opacity-100 {
-  --color-text-opacity: 100%;
+  color: var(--typography-color) !important;
 }

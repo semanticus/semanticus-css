@@ -1,10 +1,10 @@
 # Semantic Styling
 
-Style plain HTML elements without adding any classes. Just write semantic HTML and Semanticus CSS handles the rest.
+Style plain HTML elements without adding any classes. Just write semantic HTML and **Semanticus CSS** handles the rest.
 
 ## Accessibility as part of the design
 
-In Semanticus CSS, accessibility is not treated as a separate pass after the interface is already designed.
+In **Semanticus CSS**, accessibility is not treated as a separate pass after the interface is already designed.
 
 The semantics docs highlight patterns where accessible HTML naturally produces better styling hooks and clearer UI states.
 

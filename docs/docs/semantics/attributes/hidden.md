@@ -8,16 +8,10 @@ import { HiddenDemo } from "@demos/semantics/attributes";
 
 # [hidden]
 
-Elements with the `[hidden]` attribute are hidden by default. For `<template>` elements, see [&lt;template&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template).
+Elements with the `[hidden]` attribute are hidden by default.
 
 ## Basic Usage
 
 Content with `hidden` attribute is not displayed.
 
 <HtmlPreviewer :code="HiddenDemo.main()" />
-
-## Toggle Visibility
-
-Hidden content can be shown by removing the attribute.
-
-<HtmlPreviewer :code="HiddenDemo.toggle()" />

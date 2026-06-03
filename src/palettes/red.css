@@ -1,31 +1,27 @@
 :root,
 :host {
-  /* --color-red-950: #1c0d06; */
-  /* --color-red-900: #30130a; */
-  /* --color-red-850: #45150c; */
-  /* --color-red-800: #5c160d; */
-  /* --color-red-750: #72170f; */
-  /* --color-red-700: #861d13; */
-  /* --color-red-650: #9b2318; */
-  /* --color-red-600: #af291d; */
-  --color-red-550: #c52f21;
-  /* --color-red-500: #d93526; */
-  /* --color-red-450: #ee402e; */
-  /* --color-red-400: #f06048; */
-  --color-red-350: #f17961;
-  /* --color-red-300: #f38f79; */
-  /* --color-red-250: #f5a390; */
-  /* --color-red-200: #f5b7a8; */
-  /* --color-red-150: #f6cabf; */
-  /* --color-red-100: #f8dcd6; */
-  /* --color-red-50: #faeeeb; */
-  /* --color-red: var(--color-red-550); */
+  /* --_color-red-950: #1c0d06; */
+  /* --_color-red-900: #30130a; */
+  /* --_color-red-850: #45150c; */
+  /* --_color-red-800: #5c160d; */
+  /* --_color-red-750: #72170f; */
+  /* --_color-red-700: #861d13; */
+  /* --_color-red-650: #9b2318; */
+  /* --_color-red-600: #af291d; */
+  --_color-red-550: #c52f21;
+  /* --_color-red-500: #d93526; */
+  /* --_color-red-450: #ee402e; */
+  /* --_color-red-400: #f06048; */
+  --_color-red-350: #f17961;
+  /* --_color-red-300: #f38f79; */
+  /* --_color-red-250: #f5a390; */
+  /* --_color-red-200: #f5b7a8; */
+  /* --_color-red-150: #f6cabf; */
+  /* --_color-red-100: #f8dcd6; */
+  /* --_color-red-50: #faeeeb; */
+  /* --color-red: var(--_color-red-550); */
 
   /* System tokens */
-  --color-primary-text: light-dark(var(--color-red-550), var(--color-red-350));
-  --color-primary-fill: var(--color-red-550);
-  --color-primary-on-fill: white;
-
-  /* Component tokens */
-  --switch-thumb-glow: light-dark(0 0 0 oklch(0% 0 0deg / 0), 0 0 0 oklch(0% 0 0deg / 0));
+  --primary-color: light-dark(var(--_color-red-550), var(--_color-red-350));
+  --primary-background-color: var(--_color-red-550);
 }

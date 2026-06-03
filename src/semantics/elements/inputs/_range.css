@@ -1,0 +1,69 @@
+/* See ./_common.css for shared styles */
+
+[type="range"] {
+  --_input-range-thumb-size: var(--input-range-thumb-size);
+  --_input-range-thumb-background-color: var(--_inputs-accent-color);
+  --_input-range-thumb-border-color: var(--input-range-thumb-border-color);
+  --_input-range-thumb-border-width: var(--input-range-thumb-border-width);
+  --_input-range-thumb-margin-top: var(--input-range-thumb-margin-top);
+  --_input-range-track-height: var(--input-range-track-height);
+  --_input-range-track-background-color: var(
+    --input-range-track-background-color
+  );
+
+  accent-color: var(--_inputs-accent-color);
+  appearance: none;
+  width: 100%;
+  height: var(--_input-range-thumb-size);
+  background: none;
+  padding: 0;
+  border-width: 0;
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: var(--_input-range-track-height);
+    border-radius: var(--_inputs-border-radius);
+    background-color: var(--_input-range-track-background-color);
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: var(--_input-range-track-height);
+    border-radius: var(--_inputs-border-radius);
+    background-color: var(--_input-range-track-background-color);
+  }
+
+  &::-moz-range-thumb,
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: var(--_input-range-thumb-size);
+    height: var(--_input-range-thumb-size);
+    margin-top: var(--_input-range-thumb-margin-top);
+    border: var(--_input-range-thumb-border-width) solid
+      var(--_input-range-thumb-border-color);
+    border-radius: 50%;
+    background-color: var(--_input-range-thumb-background-color);
+    cursor: pointer;
+    transition: transform var(--transition);
+  }
+
+  &:is(:active, :focus, :focus-visible) {
+    --_input-range-thumb-border-color: var(--_inputs-outline-color);
+
+    outline: none !important; /* We are outlining the file-selector-button instead */
+    box-shadow: none !important;
+
+    &::-moz-range-thumb,
+    &::-webkit-slider-thumb {
+      outline: var(--outline-width) solid var(--_inputs-outline-color);
+      outline-offset: calc((var(--focus-ring-width) * -1));
+    }
+  }
+
+  &:active {
+    &::-moz-range-thumb,
+    &::-webkit-slider-thumb {
+      transform: scale(1.25);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+/* See ./_common.css and ./_checkbox-radio.css for shared styles */
+
+[type="radio"] {
+  --_inputs-border-radius: 50%;
+
+  &:is(:checked, :checked:active, :checked:focus) {
+    --_inputs-background-color: var(--input-radio-background-color);
+
+    border-width: 0.35em;
+  }
+}

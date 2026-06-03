@@ -1,64 +1,102 @@
 import { renderElement } from "@scripts/utils";
 
-export function main(attrs: Record<string, string> = {}, value: string = "") {
-  return renderElement("input", {
-    placeholder: "Text",
-    ...attrs,
+function defaultAttrs(attrs: Record<string, string>) {
+  const mergedAttrs = {
     type: "text",
-    name: "text",
+    ...attrs,
+  };
+  mergedAttrs["placeholder"] ||= `Type your ${mergedAttrs["type"]}`;
+  return mergedAttrs;
+}
+
+export function main(attrs: Record<string, string> = {}) {
+  return renderElement("input", defaultAttrs(attrs));
+}
+
+export function withLabel(attrs: Record<string, string> = {}) {
+  const mergedAttrs = defaultAttrs({
+    type: "email",
+    ...attrs,
+  });
+  mergedAttrs["id"] ||= `input-${mergedAttrs["type"]}`;
+  const label =
+    attrs["placeholder"] ||
+    `${mergedAttrs["type"].charAt(0).toUpperCase()}${mergedAttrs["type"].slice(1)}`;
+
+  return `<label for="${mergedAttrs["id"]}">${label}</label>
+${main(mergedAttrs)}`;
+}
+
+export function withHelperText(
+  attrs: Record<string, string> = {},
+  helperText: string = "Cannot be empty.",
+) {
+  const mergedAttrs = {
+    type: "email",
+    ...attrs,
+  };
+  mergedAttrs["id"] ||= `input-${mergedAttrs["type"]}`;
+  mergedAttrs["aria-describedby"] ||= `${mergedAttrs["id"]}-helper`;
+
+  return `${withLabel(mergedAttrs)}
+<small id="${mergedAttrs["aria-describedby"]}">${helperText}</small>`;
+}
+
+export function validationStatesWithTextHelper() {
+  return `${withHelperText({ id: "first-name", "aria-invalid": "false", value: "John", placeholder: "First Name", type: "text" }, "First name looks good!")}
+
+${withHelperText({ id: "last-name", "aria-invalid": "true", placeholder: "Last Name", type: "text" }, "Last name cannot be empty.")}`;
+}
+
+export function miscellaneousTypes() {
+  return [
+    withLabel({ type: "number" }),
+    withLabel({ type: "password" }),
+    withLabel({ type: "telefone" }),
+    withLabel({ type: "url" }),
+  ].join("\n");
+}
+
+export function dateTypes() {
+  return `${withLabel({ type: "date" })}
+
+${withLabel({ type: "datetime-local" })}
+
+${withLabel({ type: "month" })}
+
+${withLabel({ type: "time" })}`;
+}
+
+export function button(
+  attrs: Record<string, string> = {},
+  value: string = "Input Button",
+) {
+  return renderElement("input", {
+    ...attrs,
+    type: "button",
     value: value,
   });
 }
 
-export function withLabel() {
-  return `<label for="message">Message</label>
-${main({ id: 'message' })}
-`;
-}
-
-export function withHelperText() {
-  return `<label for="name">Name</label>
-${main({ id: 'name', 'aria-describedby': 'name-helper', placeholder: "Your name" })}
-<small id="name-helper">Cannot be empty.</small>
-`;
-}
-
-export function validationStates() {
-  return `${main({ 'aria-invalid': 'false' })}
-
-${main({ 'aria-invalid': 'true' })}`;
-}
-
-export function validationStatesWithTextHelper() {
-  return `${main({ 'aria-invalid': 'false', 'aria-describedby': 'valid-helper' }, 'John Doe')}
-<small id="valid-helper">Looks good!</small>
-
-${main({ 'aria-invalid': 'true', 'aria-describedby': 'invalid-helper', placeholder: "Your name" }, '')}
-<small id="invalid-helper">Cannot be empty.</small>
-`;
-}
-
-export function button(attrs: Record<string, string> = {}, value: string = "Input Button") {
-  return renderElement("input", {
-    ...attrs,
-    type: "button",
-    value: value
-  });
-}
-
-export function submit(attrs: Record<string, string> = {}, value: string = "Input Submit") {
+export function submit(
+  attrs: Record<string, string> = {},
+  value: string = "Input Submit",
+) {
   return renderElement("input", {
     ...attrs,
     type: "submit",
-    value: value
+    value: value,
   });
 }
 
-export function reset(attrs: Record<string, string> = {}, value: string = "Input Reset") {
+export function reset(
+  attrs: Record<string, string> = {},
+  value: string = "Input Reset",
+) {
   return renderElement("input", {
     ...attrs,
     type: "reset",
-    value: value
+    value: value,
   });
 }
 
@@ -66,121 +104,6 @@ export function buttons(attrs: Record<string, string> = {}) {
   return `${button(attrs)}
 ${submit(attrs)}
 ${reset(attrs)}`;
-}
-
-export function loginForm() {
-  return `<form>
-  <label for="email">Email</label>
-  <input type="email" id="email" placeholder="you@example.com">
-  <label for="password">Password</label>
-  <input type="password" id="password" placeholder="Password">
-  ${submit({}, "Sign In")}
-</form>
-`;
-}
-
-export function email(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "email",
-    placeholder: "email@example.com",
-    "aria-label": "Email",
-    autocomplete: "email",
-  });
-}
-
-export function number(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "number",
-    placeholder: "Number",
-    "aria-label": "Number",
-  });
-}
-
-export function password(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "password",
-    placeholder: "Password",
-    "aria-label": "Password",
-  });
-}
-
-export function telephone(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "tel",
-    placeholder: "Tel",
-    "aria-label": "Tel",
-    autocomplete: "tel",
-  });
-}
-
-export function url(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "url",
-    placeholder: "https://example.com",
-    "aria-label": "Url",
-  });
-}
-
-export function date(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "date",
-    "aria-label": "Date",
-  });
-}
-
-export function datetime(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "datetime-local",
-    "aria-label": "Datetime local",
-  });
-}
-
-export function month(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "month",
-    "aria-label": "Month",
-  });
-}
-
-export function time(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "time",
-    "aria-label": "Time",
-  });
-}
-
-export function search(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "search",
-    placeholder: "Search",
-    "aria-label": "Search",
-  });
-}
-
-export function color(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "color",
-    value: "#ff9500",
-    "aria-label": "Color picker",
-  });
-}
-
-export function file(attrs: Record<string, string> = {}) {
-  return renderElement("input", {
-    ...attrs,
-    type: "file",
-  });
 }
 
 export function checkboxBasic(attrs: Record<string, string> = {}) {

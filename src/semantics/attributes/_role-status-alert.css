@@ -1,17 +1,26 @@
-[role="status"],
-[role="alert"] {
-  --color-background: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
-  );
-  --border-color: var(--dialog-border);
-  --alert-size: var(--border-size);
+:is([role="status"], [role="alert"]) {
+  --_alert-color: var(--alert-color);
+  --_alert-background-color: var(--alert-background-color);
+  --_alert-spacing: var(--alert-spacing);
+  --_alert-border-color: var(--alert-border-color);
+  --_alert-border-width: var(--alert-border-width);
+  --_alert-border-accent-width: var(--alert-border-accent-width);
+  --_alert-border-radius: var(--alert-border-radius);
+  --typography-color: var(--_alert-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
-  color: var(--color-text);
+  color: var(--_alert-color);
   display: grid;
   grid-template-columns: 1fr;
   gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
+  padding: var(--_alert-spacing);
+  margin-bottom: var(--_alert-spacing);
+  border-radius: var(--_alert-border-radius);
+  border: var(--_alert-border-width) solid var(--_alert-border-color);
+  border-inline-start-width: var(--_alert-border-accent-width);
+  border-inline-start-color: var(--_alert-border-color);
+  background: var(--_alert-background-color);
 
   &:empty {
     display: none;
@@ -33,16 +42,8 @@
     }
   }
 
-  padding: var(--spacing);
-  margin-bottom: var(--spacing);
-  border-radius: var(--radius);
-  border: var(--border-size) solid var(--border-color);
-  border-inline-start-width: var(--alert-size);
-  border-inline-start-color: var(--dialog-border);
-  background: var(--color-background);
-
   &:is(.ghost, .subtle) {
-    --alert-size: calc(var(--border-size) * 4);
+    --_alert-border-accent-width: calc(var(--_alert-border-width) * 4);
   }
 
   > * {
@@ -57,16 +58,21 @@
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
-  transition: opacity 0.2s ease-in-out, top 0.2s ease-in-out, right 0.2s ease-in-out, left 0.2s ease-in-out, bottom 0.2s ease-in-out;
+  transition:
+    opacity 0.2s ease-in-out,
+    top 0.2s ease-in-out,
+    right 0.2s ease-in-out,
+    left 0.2s ease-in-out,
+    bottom 0.2s ease-in-out;
 
   &[popover] {
     display: none;
-    box-shadow: var(--shadow);
+    box-shadow: var(--menu-box-shadow);
     left: unset;
     right: 0;
     bottom: 0;
     top: unset;
-    margin: var(--spacing);
+    margin: var(--_alert-spacing);
 
     &:popover-open {
       display: grid;

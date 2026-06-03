@@ -7,23 +7,27 @@
   --grid-gutter-y: 0;
 
   /* Gradient */
-  --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
 
   /* Borders & radii */
   --border-radius-pill: 50rem;
-  --border-radius-1: var(--radius);
-  --border-radius-2: calc(var(--radius) * 2);
-  --border-radius-3: calc(var(--radius) * 4);
-  --border-radius-4: calc(var(--radius) * 6);
-  --border-radius-5: calc(var(--radius) * 8);
+  --border-radius-1: var(--border-radius);
+  --border-radius-2: calc(var(--border-radius) * 2);
+  --border-radius-3: calc(var(--border-radius) * 4);
+  --border-radius-4: calc(var(--border-radius) * 6);
+  --border-radius-5: calc(var(--border-radius) * 8);
 
   /* Border-width scale */
   --border-style: solid;
-  --border-width-1: var(--border-size);
-  --border-width-2: calc(var(--border-size) * 2);
-  --border-width-3: calc(var(--border-size) * 3);
-  --border-width-4: calc(var(--border-size) * 4);
-  --border-width-5: calc(var(--border-size) * 5);
+  --border-width-1: var(--border-width);
+  --border-width-2: calc(var(--border-width) * 2);
+  --border-width-3: calc(var(--border-width) * 3);
+  --border-width-4: calc(var(--border-width) * 4);
+  --border-width-5: calc(var(--border-width) * 5);
 
   /* Spacing scale */
   --spacing-1: calc(var(--spacing) * 0.25);
@@ -33,7 +37,10 @@
   --spacing-5: calc(var(--spacing) * 3);
 
   /* Shadows */
-  --shadow-sm: light-dark(0 0.0625rem 0.125rem rgba(129, 145, 181, 0.1), 0 0.0625rem 0.125rem rgba(7, 8.5, 12, 0.1));
-  --shadow-md: light-dark(0.0625rem 0.125rem 0.5rem rgba(129, 145, 181, 0.15), 0.0625rem 0.125rem 0.5rem rgba(7, 8.5, 12, 0.15));
-  --shadow-lg: light-dark(0.125rem 0.25rem 1rem rgba(129, 145, 181, 0.2), 0.125rem 0.25rem 1rem rgba(7, 8.5, 12, 0.2));
+  --shadow-sm: 0 0.05rem 0.3rem
+    light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+  --shadow-md: 0 0.15rem 0.6rem
+    light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+  --shadow-lg: 0 0.15rem 1rem
+    light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
 }

@@ -1,5 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
-import { OverviewDemo } from "@demos/index";
+import {
+  AllButtonsVariationsDemo,
+  AllCardsVariationsDemo,
+  AllComponentsDemo,
+  AllInputsVariationsDemo,
+  AllLinksVariationsDemo,
+  NestedVariationsDemo,
+  VariantsDemo,
+  UtilitiesColorsDemo,
+  AllListsVariationsDemo,
+  AllDetailsAsButtonVariationsDemo,
+  AllGroupsVariationsDemo,
+} from "@demos/overview";
 
 const meta: Meta = {
   title: "Overview",
@@ -8,10 +20,46 @@ const meta: Meta = {
 
 export default meta;
 
-export const fullBundle: StoryObj = {
-  render: () => OverviewDemo.fullBundle(),
+export const allComponents: StoryObj = {
+  render: () => AllComponentsDemo.main(),
 };
 
-export const fullBundleColors: StoryObj = {
-  render: () => OverviewDemo.fullBundleColors(),
+export const variants: StoryObj = {
+  render: () => VariantsDemo.main(),
+};
+
+export const nestedVariations: StoryObj = {
+  render: () => NestedVariationsDemo.main(),
+};
+
+export const allButtonsVariations: StoryObj = {
+  render: () => AllButtonsVariationsDemo.main(),
+};
+
+export const allInputsVariations: StoryObj = {
+  render: () => AllInputsVariationsDemo.main(),
+};
+
+export const allCardsVariations: StoryObj = {
+  render: () => AllCardsVariationsDemo.main(),
+};
+
+export const allDetailsAsButtonVariations: StoryObj = {
+  render: () => AllDetailsAsButtonVariationsDemo.main(),
+};
+
+export const allGroupsVariations: StoryObj = {
+  render: () => AllGroupsVariationsDemo.main(),
+};
+
+export const allLinksVariations: StoryObj = {
+  render: () => AllLinksVariationsDemo.main(),
+};
+
+export const allListsVariations: StoryObj = {
+  render: () => AllListsVariationsDemo.main(),
+};
+
+export const utilitiesColors: StoryObj = {
+  render: () => UtilitiesColorsDemo.main(),
 };

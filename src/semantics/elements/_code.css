@@ -2,11 +2,22 @@ pre,
 code,
 kbd,
 samp {
+  --font-family: var(--font-family-monospace);
+}
+
+kbd {
+  --font-weight: var(--kbd-font-weight);
+}
+
+pre,
+code,
+kbd,
+samp {
   font-size: 0.875em;
   font-family: var(--font-family);
-  border-radius: var(--radius);
-  background: var(--code-fill);
-  color: var(--code-text);
+  border-radius: var(--border-radius);
+  background: var(--code-background-color);
+  color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
 }
@@ -19,12 +30,11 @@ samp {
 }
 
 pre {
-  -ms-overflow-style: scrollbar;
-  color: var(--color-text);
+  color: var(--typography-color);
   display: block;
   font-style: normal;
   font-weight: var(--font-weight);
-  margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-margin-block);
   margin-top: 0;
   overflow: auto;
 
@@ -44,7 +54,7 @@ pre {
 }
 
 kbd {
-  background-color: var(--kbd-fill);
-  color: var(--kbd-text);
+  background-color: var(--kbd-background-color);
+  color: var(--kbd-color);
   vertical-align: baseline;
 }

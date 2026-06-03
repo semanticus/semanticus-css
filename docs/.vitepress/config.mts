@@ -305,38 +305,38 @@ export default defineConfig({
     logo: "/logo.svg",
     siteTitle: "Semanticus CSS",
     nav: [
-      { text: "About", link: "/about/" },
       { text: "Guide", link: "/guide/" },
       { text: "Docs", link: "/docs/" },
       { text: "Examples", link: "/examples/" },
     ],
     sidebar: {
-      "/about/": [
-        { text: "About", link: "/about/" },
-        { text: "Vision", link: "/about/vision" },
-        { text: "Contributing", link: "/about/contributing" },
-        { text: "Token Conventions", link: "/about/token-conventions" },
-        { text: "Roadmap", link: "/about/roadmap" },
-        { text: "Usecase Scenarios", link: "/about/usecase-scenarios" },
-      ],
       "/guide/": [
+        { text: "About", link: "/guide/about" },
+        { text: "Vision", link: "/guide/vision" },
         { text: "Getting Started", link: "/guide/" },
         { text: "Light & Dark Modes", link: "/guide/light-dark-modes" },
         { text: "Palettes", link: "/guide/palettes" },
         { text: "Sizes", link: "/guide/sizes" },
+        { text: "Token Convention", link: "/guide/token-convention" },
         { text: "CSS Variables", link: "/guide/css-variables" },
+        { text: "Contributing", link: "/guide/contributing" },
+        { text: "Roadmap", link: "/guide/roadmap" },
       ],
       "/docs/": [
         {
           text: "Composites",
           items: [
+            { text: "Accordions", link: "/docs/composites/accordions" },
             { text: "Alerts", link: "/docs/composites/alerts" },
             { text: "Buttons", link: "/docs/composites/buttons" },
-            { text: "Card List", link: "/docs/composites/card-list" },
             { text: "Card", link: "/docs/composites/card" },
+            { text: "Card Group", link: "/docs/composites/card-group" },
+            { text: "Card List", link: "/docs/composites/card-list" },
             { text: "Dropdown", link: "/docs/composites/dropdown" },
+            { text: "Groups", link: "/docs/composites/groups" },
             { text: "Layout", link: "/docs/composites/layout" },
             { text: "Links", link: "/docs/composites/links" },
+            { text: "Lists", link: "/docs/composites/lists" },
             { text: "Loading", link: "/docs/composites/loading" },
             { text: "Modal", link: "/docs/composites/modal" },
             { text: "Pagination", link: "/docs/composites/pagination" },
@@ -380,6 +380,10 @@ export default defineConfig({
                   link: "/docs/semantics/elements/dialog",
                 },
                 {
+                  text: "&lt;dl&gt;",
+                  link: "/docs/semantics/elements/dl",
+                },
+                {
                   text: "&lt;img&gt; / &lt;video&gt; / &lt;audio&gt;",
                   link: "/docs/semantics/elements/embedded",
                 },
@@ -390,6 +394,10 @@ export default defineConfig({
                 {
                   text: "&lt;figure&gt;",
                   link: "/docs/semantics/elements/figure",
+                },
+                {
+                  text: "&lt;footer&gt;",
+                  link: "/docs/semantics/elements/footer",
                 },
                 {
                   text: "&lt;header&gt;",
@@ -408,12 +416,12 @@ export default defineConfig({
                   text: "&lt;label&gt;",
                   link: "/docs/semantics/elements/label",
                 },
-                {
-                  text: "&lt;ul&gt; / &lt;ol&gt; / &lt;dl&gt;",
-                  link: "/docs/semantics/elements/lists",
-                },
                 { text: "&lt;main&gt;", link: "/docs/semantics/elements/main" },
                 { text: "&lt;nav&gt;", link: "/docs/semantics/elements/nav" },
+                {
+                  text: "&lt;ol&gt;",
+                  link: "/docs/semantics/elements/ol",
+                },
                 {
                   text: "&lt;progress&gt;",
                   link: "/docs/semantics/elements/progress",
@@ -433,6 +441,10 @@ export default defineConfig({
                 {
                   text: "&lt;textarea&gt;",
                   link: "/docs/semantics/elements/textarea",
+                },
+                {
+                  text: "&lt;ul&gt;",
+                  link: "/docs/semantics/elements/ul",
                 },
               ],
             },
@@ -472,6 +484,10 @@ export default defineConfig({
                 {
                   text: '[role="link"]',
                   link: "/docs/semantics/attributes/role-link",
+                },
+                {
+                  text: '[role="list"]',
+                  link: "/docs/semantics/attributes/role-list",
                 },
                 // {
                 //   text: '[role="search"]',
@@ -545,9 +561,11 @@ export default defineConfig({
       ],
       "/examples/": [
         { text: "Starter HTML template", link: "/examples/" },
-        { text: "Documentation Page", link: "/examples/documentation-page" },
-        { text: "Login Page", link: "/examples/login-page" },
-        { text: "Landing Page", link: "/examples/landing-page" },
+        {
+          text: "Demo Page",
+          link: "/examples/demo-page.html",
+          target: "_blank",
+        },
       ],
     },
     socialLinks: [

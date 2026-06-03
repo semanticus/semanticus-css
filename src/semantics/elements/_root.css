@@ -1,0 +1,27 @@
+/* modern-normalize */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:where(:root, :host) {
+  background-color: var(--background-color);
+  color: var(--typography-color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  text-underline-offset: var(--text-underline-offset);
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  tab-size: 4;
+}
+
+::selection {
+  background-color: var(--selection-background-color);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}

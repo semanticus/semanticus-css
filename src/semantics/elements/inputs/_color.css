@@ -1,0 +1,21 @@
+/* See ./_common.css for shared styles */
+
+[type="color"] {
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: 0;
+    border-radius: calc(var(--_inputs-border-radius) * 0.5);
+  }
+
+  &::-moz-color-swatch {
+    border: 0;
+    border-radius: calc(var(--_inputs-border-radius) * 0.5);
+  }
+}
