@@ -322,8 +322,11 @@
 
   /* --- Input Range --- */
   --input-range-thumb-size: 1.25rem;
+  --input-range-thumb-margin-top: -0.4375rem;
   --input-range-thumb-border-color: var(--background-color);
+  --input-range-thumb-border-width: var(--focus-ring-width);
   --input-range-track-background-color: var(--inputs-border-color);
+  --input-range-track-height: 0.375rem;
 
   /* --- Input Search --- */
   --input-search-border-radius: 5rem;
@@ -346,6 +349,7 @@
   --nav-breadcrumb-divider: ">";
 
   /* --- Progress Bar --- */
+  --progress-accent-color: var(--primary-background-color);
   --progress-track-background-color: light-dark(
     var(--color-slate-100),
     var(--color-slate-850)

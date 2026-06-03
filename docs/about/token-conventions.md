@@ -26,6 +26,7 @@ a CSS longhand property name** whenever possible.
 
   /* Color & Typography */
   --color
+  --color-hover-effect
   --color-muted
   --typography-color
   --typography-spacing-vertical
@@ -132,8 +133,8 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   /* Input subtypes */
   --input-checkbox-border-width
   --input-radio-background-color
-  --input-range-thumb-size
-  --input-range-track-background-color
+  --input-range-thumb-size / --input-range-thumb-margin-top / --input-range-thumb-border-width
+  --input-range-track-background-color / --input-range-track-height
   --input-range-thumb-border-color
   --input-search-border-radius
   --input-switch-thumb-background-color
@@ -178,7 +179,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --nav-link-gap / --nav-breadcrumb-divider
 
   /* Progress */
-  --progress-track-background-color
+  --progress-accent-color / --progress-track-background-color
 
   /* Tooltip */
   --tooltip-background-color / --tooltip-color
@@ -282,14 +283,15 @@ Tokens at Tiers 1-3 must use CSS longhand property names:
 | `--spacing` / `--spacing-base` / `--spacing-scale` | Density values used across multiple properties |
 | `--transition` | Composite value — splitting adds tokens without benefit |
 | `--nav-breadcrumb-divider` | Content string, not a CSS property value |
+| `--opacity-disabled` | Generic opacity value used to indicate disabled state |
 
 ### State Ordering
 
 State always comes last:
 ```css
 --buttons-background-color-hover
---input-switch-background-color-checked
 --details-summary-color-open
+--inputs-background-color-focus
 ```
 
 ### Spacing Tokens
