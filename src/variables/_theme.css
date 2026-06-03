@@ -10,51 +10,62 @@
     color-scheme: dark;
   }
 
-  /* ===== COLORS ===== */
+  /* ===== PRIVATE HELPER VARIABLES ===== */
 
-  /* --- Slate --- */
-  --color-slate-950: #0e1118;
-  --color-slate-900: #181c25;
-  --color-slate-850: #202632;
-  --color-slate-800: #2a3140;
-  --color-slate-700: #3d475c;
-  --color-slate-750: #333c4e;
-  --color-slate-650: #48536b;
-  --color-slate-600: #525f7a;
-  --color-slate-550: #5d6b89;
-  --color-slate-350: #909ebe;
-  --color-slate-300: #a0acc7;
-  --color-slate-250: #b0b9d0;
-  --color-slate-200: #bfc7d9;
-  --color-slate-150: #cfd5e2;
-  --color-slate-100: #dfe3eb;
-  --color-slate-50: #eff1f4;
+  /* --- Color Slate --- */
+  --_color-slate-950: #0e1118;
+  --_color-slate-900: #181c25;
+  --_color-slate-850: #202632;
+  --_color-slate-800: #2a3140;
+  --_color-slate-700: #3d475c;
+  --_color-slate-750: #333c4e;
+  --_color-slate-650: #48536b;
+  --_color-slate-600: #525f7a;
+  --_color-slate-550: #5d6b89;
+  --_color-slate-350: #909ebe;
+  --_color-slate-300: #a0acc7;
+  --_color-slate-250: #b0b9d0;
+  --_color-slate-200: #bfc7d9;
+  --_color-slate-150: #cfd5e2;
+  --_color-slate-100: #dfe3eb;
+  --_color-slate-50: #eff1f4;
 
-  /* --- Zinc --- */
-  --color-zinc-950: #0f1114;
-  --color-zinc-900: #191c20;
-  --color-zinc-850: #23262c;
-  --color-zinc-750: #373c44;
-  --color-zinc-700: #424751;
-  --color-zinc-650: #4d535e;
-  --color-zinc-600: #5c6370;
-  --color-zinc-550: #646b79;
-  --color-zinc-500: #6f7887;
-  --color-zinc-450: #7b8495;
-  --color-zinc-400: #8891a4;
-  --color-zinc-350: #969eaf;
-  --color-zinc-300: #a4acba;
-  --color-zinc-250: #b3b9c5;
-  --color-zinc-200: #c2c7d0;
-  --color-zinc-100: #e0e3e7;
-  --color-zinc-50: #f0f1f3;
+  /* --- Color Zinc --- */
+  --_color-zinc-950: #0f1114;
+  --_color-zinc-900: #191c20;
+  --_color-zinc-850: #23262c;
+  --_color-zinc-750: #373c44;
+  --_color-zinc-700: #424751;
+  --_color-zinc-650: #4d535e;
+  --_color-zinc-600: #5c6370;
+  --_color-zinc-550: #646b79;
+  --_color-zinc-500: #6f7887;
+  --_color-zinc-450: #7b8495;
+  --_color-zinc-400: #8891a4;
+  --_color-zinc-350: #969eaf;
+  --_color-zinc-300: #a4acba;
+  --_color-zinc-250: #b3b9c5;
+  --_color-zinc-200: #c2c7d0;
+  --_color-zinc-100: #e0e3e7;
+  --_color-zinc-50: #f0f1f3;
+
+  /* --- Color Jade --- */
+  --_color-jade-250: #00cc88;
+  --_color-jade-450: #029764;
+
+  /* --- Color Red --- */
+  --_color-red-250: #f5a390;
+  --_color-red-450: #ee402e;
+
+  /* Scale factor that changes according to a given breakpoint, making the --spacing var responsive */
+  --_spacing-scale: 1;
 
   /* ===== SYSTEM TOKENS ===== */
 
   /* --- Background Color and its variants --- */
   --background-color: light-dark(
     white,
-    color-mix(in srgb, var(--color-slate-950), var(--color-slate-900))
+    color-mix(in srgb, var(--_color-slate-950), var(--_color-slate-900))
   );
   /* Actionable state */
   --primary-background-color-hover: color-mix(
@@ -63,21 +74,21 @@
     var(--color-hover-shade) 30%
   );
   /* Subdued state */
-  --secondary-background-color: var(--color-slate-550);
+  --secondary-background-color: var(--_color-slate-550);
   --secondary-background-color-hover: color-mix(
     in srgb,
     var(--secondary-background-color),
     var(--color-hover-shade) 30%
   );
   /* Valid state */
-  --success-background-color: #029764;
+  --success-background-color: var(--_color-jade-450);
   --success-background-color-hover: color-mix(
     in srgb,
     var(--success-background-color),
     var(--color-hover-shade) 30%
   );
   /* Invalid state */
-  --danger-background-color: #ee402e;
+  --danger-background-color: var(--_color-red-450);
   --danger-background-color-hover: color-mix(
     in srgb,
     var(--danger-background-color),
@@ -85,7 +96,7 @@
   );
 
   /* --- Color and its variants --- */
-  --color: light-dark(var(--color-zinc-750), var(--color-zinc-200));
+  --color: light-dark(var(--_color-zinc-750), var(--_color-zinc-200));
   /* Actionable state */
   --primary-color-hover: color-mix(
     in srgb,
@@ -93,21 +104,24 @@
     var(--color-hover-shade) 30%
   );
   /* Subdued state */
-  --secondary-color: light-dark(var(--color-slate-550), var(--color-zinc-350));
+  --secondary-color: light-dark(
+    var(--_color-slate-550),
+    var(--_color-zinc-350)
+  );
   --secondary-color-hover: color-mix(
     in srgb,
     var(--secondary-color),
     var(--color-hover-shade) 30%
   );
   /* Valid state */
-  --success-color: light-dark(#029764, #00cc88);
+  --success-color: light-dark(var(--_color-jade-450), var(--_color-jade-250));
   --success-color-hover: color-mix(
     in srgb,
     var(--success-color),
     var(--color-hover-shade) 30%
   );
   /* Invalid state */
-  --danger-color: light-dark(#ee402e, #f5a390);
+  --danger-color: light-dark(var(--_color-red-450), var(--_color-red-250));
   --danger-color-hover: color-mix(
     in srgb,
     var(--danger-color),
@@ -159,7 +173,7 @@
   --font-family: var(--font-family-sans-serif);
 
   /* --- Borders & Effects --- */
-  --border-color: light-dark(var(--color-slate-100), var(--color-slate-800));
+  --border-color: light-dark(var(--_color-slate-100), var(--_color-slate-800));
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 1px;
@@ -169,11 +183,12 @@
   /* --- Internal Helpers --- */
   /* Used for margins and padding throughout the components */
   --spacing: calc(0.75rem * var(--_spacing-scale));
-  /* Scale factor that changes according to a given breakpoint, making the --spacing var responsive */
-  --_spacing-scale: 1;
 
   /* Used to derive colors representing the hover state */
-  --color-hover-shade: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+  --color-hover-shade: light-dark(
+    var(--_color-zinc-700),
+    var(--_color-zinc-300)
+  );
 
   /* ===== COMPONENT TOKENS ===== */
 
@@ -194,10 +209,10 @@
     0 0 0 0.0625rem light-dark(rgb(129 145 181 / 0.015), rgb(7 9 12 / 0.015));
   --backdrop-background-color: light-dark(
     oklch(
-      from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c
+      from color-mix(in srgb, var(--_color-zinc-100), var(--_color-zinc-50)) l c
         h / 0.75
     ),
-    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
+    oklch(from color-mix(in srgb, black, var(--_color-zinc-950)) l c h / 0.75)
   );
 
   /* Focus ring used across interactive elements, typically used in combination with --outline-width */
@@ -215,10 +230,10 @@
 
   /* --- Code --- */
   --code-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 75%, white),
-    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+    color-mix(in srgb, var(--_color-slate-50) 75%, white),
+    color-mix(in srgb, var(--_color-slate-900) 75%, var(--_color-slate-850))
   );
-  --code-color: light-dark(var(--color-zinc-550), var(--color-zinc-400));
+  --code-color: light-dark(var(--_color-zinc-550), var(--_color-zinc-400));
   --kbd-background-color: var(--color);
   --kbd-color: var(--background-color);
   --kbd-font-weight: bolder;
@@ -234,15 +249,15 @@
   --details-dropdown-spacing-vertical: var(--inputs-spacing-vertical);
   --details-dropdown-spacing-horizontal: var(--inputs-spacing-horizontal);
 
-  --details-menu-background-color: light-dark(white, var(--color-slate-900));
+  --details-menu-background-color: light-dark(white, var(--_color-slate-900));
   --details-menu-border-color: light-dark(
-    var(--color-slate-50),
-    var(--color-slate-850)
+    var(--_color-slate-50),
+    var(--_color-slate-850)
   );
   --details-menu-color: var(--color);
   --details-menu-background-color-hover: light-dark(
-    var(--color-slate-50),
-    var(--color-slate-850)
+    var(--_color-slate-50),
+    var(--_color-slate-850)
   );
 
   /* --- Dialog --- */
@@ -250,12 +265,12 @@
   --dialog-background-color: var(--background-color);
   /* Affects dialogs and cards's header & footers */
   --dialog-marginals-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-50), transparent 95%)
+    color-mix(in srgb, var(--_color-slate-50) 25%, white),
+    color-mix(in srgb, var(--_color-slate-50), transparent 95%)
   );
   --dialog-marginals-border-color: color-mix(
     in srgb,
-    light-dark(var(--color-slate-900), var(--color-zinc-350)),
+    light-dark(var(--_color-slate-900), var(--_color-zinc-350)),
     transparent 90%
   );
 
@@ -292,24 +307,24 @@
   /* Affects input, select, textarea and details elements */
   --inputs-accent-color: var(--primary-background-color);
   --inputs-accent-color-muted: light-dark(
-    var(--color-slate-200),
-    var(--color-slate-750)
+    var(--_color-slate-200),
+    var(--_color-slate-750)
   );
   --inputs-spacing-vertical: 0.5rem;
   --inputs-spacing-horizontal: 0.7rem;
   --inputs-background-color: light-dark(
-    color-mix(in srgb, var(--color-slate-50) 25%, white),
-    color-mix(in srgb, var(--color-slate-900), var(--color-slate-850))
+    color-mix(in srgb, var(--_color-slate-50) 25%, white),
+    color-mix(in srgb, var(--_color-slate-900), var(--_color-slate-850))
   );
   --inputs-background-color-focus: light-dark(
     white,
-    color-mix(in srgb, var(--color-slate-900) 75%, var(--color-slate-850))
+    color-mix(in srgb, var(--_color-slate-900) 75%, var(--_color-slate-850))
   );
   --inputs-border-color: light-dark(
-    var(--color-slate-150),
-    var(--color-slate-800)
+    var(--_color-slate-150),
+    var(--_color-slate-800)
   );
-  --inputs-color: light-dark(var(--color-zinc-850), var(--color-zinc-100));
+  --inputs-color: light-dark(var(--_color-zinc-850), var(--_color-zinc-100));
   --inputs-placeholder-color: var(--color-muted);
 
   /* --- Input Checkbox --- */
@@ -352,8 +367,8 @@
   /* --- Progress Bar --- */
   --progress-accent-color: var(--primary-background-color);
   --progress-track-background-color: light-dark(
-    var(--color-slate-100),
-    var(--color-slate-850)
+    var(--_color-slate-100),
+    var(--_color-slate-850)
   );
 
   /* --- Selection of text --- */
@@ -375,7 +390,7 @@
 
   /* --- Tooltip --- */
   --tooltip-background-color: var(--contrast-background-color);
-  --tooltip-color: light-dark(white, var(--color-zinc-900));
+  --tooltip-color: light-dark(white, var(--_color-zinc-900));
 }
 
 /* ===== ICONS ===== */

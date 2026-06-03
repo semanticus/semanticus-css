@@ -1,27 +1,27 @@
 :root,
 :host {
-  /* --color-orange-950: #1b0d06; */
-  /* --color-orange-900: #2d1509; */
-  /* --color-orange-850: #411a0a; */
-  /* --color-orange-800: #561e0a; */
-  /* --color-orange-750: #6b220a; */
-  /* --color-orange-700: #7f270b; */
-  /* --color-orange-650: #942d0d; */
-  /* --color-orange-600: #a83410; */
-  --color-orange-550: #bd3c13;
-  --color-orange-500: #d24317;
-  /* --color-orange-450: #e74b1a; */
-  /* --color-orange-400: #f45d2c; */
-  --color-orange-350: #f56b3d;
-  /* --color-orange-300: #f68e68; */
-  /* --color-orange-250: #f8a283; */
-  /* --color-orange-200: #f8b79f; */
-  /* --color-orange-150: #f8cab9; */
-  /* --color-orange-100: #f9dcd2; */
-  /* --color-orange-50: #faeeea; */
-  /* --color-orange: var(--color-orange-550); */
+  /* --_color-orange-950: #1b0d06; */
+  /* --_color-orange-900: #2d1509; */
+  /* --_color-orange-850: #411a0a; */
+  /* --_color-orange-800: #561e0a; */
+  /* --_color-orange-750: #6b220a; */
+  /* --_color-orange-700: #7f270b; */
+  /* --_color-orange-650: #942d0d; */
+  /* --_color-orange-600: #a83410; */
+  --_color-orange-550: #bd3c13;
+  --_color-orange-500: #d24317;
+  /* --_color-orange-450: #e74b1a; */
+  /* --_color-orange-400: #f45d2c; */
+  --_color-orange-350: #f56b3d;
+  /* --_color-orange-300: #f68e68; */
+  /* --_color-orange-250: #f8a283; */
+  /* --_color-orange-200: #f8b79f; */
+  /* --_color-orange-150: #f8cab9; */
+  /* --_color-orange-100: #f9dcd2; */
+  /* --_color-orange-50: #faeeea; */
+  /* --color-orange: var(--_color-orange-550); */
 
   /* System tokens */
-  --primary-color: light-dark(var(--color-orange-550), var(--color-orange-350));
-  --primary-background-color: var(--color-orange-500);
+  --primary-color: light-dark(var(--_color-orange-550), var(--_color-orange-350));
+  --primary-background-color: var(--_color-orange-500);
 }
