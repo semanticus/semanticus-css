@@ -21,34 +21,14 @@ a CSS longhand property name** whenever possible.
 
 ```css
 :root, :host {
-  /* Background Color */
   --background-color
-
-  /* Color */
   --color
-
-  /* Typography */
-  --typography-spacing-vertical
-  --typography-color
-  --color-muted
-  --line-height
-  --font-weight
-  --font-size
-  --text-underline-offset
   --font-family
-
-  /* Border */
+  --font-size
   --border-color
   --border-radius
-  --border-width
-
-  /* Outline */
   --outline-width
-
-  /* Opacity */
   --opacity-disabled
-
-  /* Transition */
   --transition
 
   /* Exceptions */
@@ -83,17 +63,8 @@ custom palettes.
   --secondary-background-color-hover
   --secondary-outline-color
 
-  --contrast-color
-  --contrast-color-hover
-  --contrast-background-color
-  --contrast-background-color-hover
-  --contrast-outline-color
-
-  --success-color / --success-background-color / --success-outline-color
-  --info-color    / --info-background-color    / --info-outline-color
-  --warning-color / --warning-background-color / --warning-outline-color
-  --danger-color  / --danger-background-color  / --danger-outline-color
-  /* (each with *-hover variants) */
+  /* Also: contrast, success, info, warning, danger */
+  /* (each with color, background-color, outline-color, and *-hover variants) */
 }
 ```
 
@@ -111,89 +82,31 @@ of that component (e.g., all buttons, all inputs, all dialogs).
 
 ```css
 :root, :host {
-  /* Selection */
-  --selection-background-color
-
-  /* Backdrop */
-  --backdrop-background-color
-
   /* Building Blocks */
   --focus-ring-width
   --menu-box-shadow
+  --selection-background-color
+  --backdrop-background-color
 
-  /* Buttons — button, input[type=button/submit/reset], [role=button] */
+  /* Buttons */
   --buttons-color / --buttons-color-hover
-  --buttons-padding-block / --buttons-padding-inline
   --buttons-background-color / --buttons-background-color-hover
+  --buttons-padding-block / --buttons-padding-inline
 
-  /* Inputs — input, select, textarea, details */
-  --inputs-spacing-vertical / --inputs-spacing-horizontal
+  /* Inputs */
   --inputs-background-color / --inputs-background-color-focus
-  --inputs-border-color
-  --inputs-color
-  --inputs-accent-color
-  --inputs-accent-color-muted
-  --inputs-placeholder-color
+  --inputs-border-color / --inputs-color
+  --inputs-accent-color / --inputs-placeholder-color
 
-  /* Input subtypes */
-  --input-checkbox-border-width
-  --input-radio-background-color
-  --input-range-thumb-size / --input-range-thumb-margin-top / --input-range-thumb-border-width
-  --input-range-track-background-color / --input-range-track-height
-  --input-range-thumb-border-color
-  --input-search-border-radius
-  --input-switch-thumb-background-color
-  --input-switch-border-width
-  --input-switch-border-radius
+  /* Dialog */
+  --dialog-background-color / --dialog-border-color
 
-  /* Dialog — also affects cards */
-  --dialog-border-color / --dialog-background-color
-  --dialog-marginals-background-color / --dialog-marginals-border-color
-
-  /* Details — accordions and dropdowns */
+  /* Details */
   --details-summary-background-color
-  --details-summary-color / --details-summary-color-open
   --details-dropdown-color / --details-dropdown-border-color
-  --details-dropdown-spacing-vertical / --details-dropdown-spacing-horizontal
-  --details-menu-background-color / --details-menu-border-color
-  --details-menu-color / --details-menu-background-color-hover
+  --details-menu-background-color / --details-menu-color
 
-  /* Links */
-  --links-color / --links-color-hover / --links-text-decoration
-
-  /* Headings */
-  --heading-font-weight
-  --h1-font-size / --h1-line-height / --h1-margin-top
-  --h2-font-size / --h2-line-height / --h2-margin-top
-  /* ... through h6 */
-
-  /* Lists */
-  --lists-marker-color
-
-  /* Code */
-  --code-background-color / --code-color
-  --kbd-background-color / --kbd-color / --kbd-font-weight
-
-  /* Mark */
-  --mark-background-color
-
-  /* Table */
-  --table-header-font-weight / --table-header-border-width
-
-  /* Navigation */
-  --nav-link-gap / --nav-breadcrumb-divider
-
-  /* Progress */
-  --progress-accent-color / --progress-track-background-color
-
-  /* Tooltip */
-  --tooltip-background-color / --tooltip-color
-
-  /* Misc */
-  --small-font-size
-  --sidebar-size
-  --group-buttons-padding-inline
-  --icons-background-position-gap / --icons-width
+  /* Links, Headings, Lists, Code, Mark, Table, Navigation, Progress, Tooltip… */
 }
 ```
 
@@ -285,9 +198,7 @@ Tokens at Tiers 1-3 must use CSS longhand property names:
 
 | Token | Reason |
 | --- | --- |
-| `--spacing` | Density value used across multiple properties |
-| `--transition` | Composite value — splitting adds tokens without benefit |
-| `--nav-breadcrumb-divider` | Content string, not a CSS property value |
+| `--spacing` | Responsive density value used across multiple properties |
 | `--color-hover-shade` | Internal helper color mixed into base colors via `color-mix()` to derive hover-state variants — not a standalone property value |
 
 ### State Ordering
