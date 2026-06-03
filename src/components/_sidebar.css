@@ -14,13 +14,13 @@ aside.sidebar {
     transform 0.2s ease-in-out;
 
   &:popover-open {
-    margin: 0 !important;
+    margin: 0;
     display: flex !important;
-    width: 60% !important;
+    width: 100%;
     box-shadow: var(--menu-box-shadow);
-    background-color: var(--background-color) !important;
+    background-color: var(--background-color);
     left: 0;
-    right: unset;
+    bottom: 0;
 
     &[data-placement="right"] {
       left: unset;
