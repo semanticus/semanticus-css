@@ -45,7 +45,7 @@ To avoid having to memorize arbitrary token names, these type of tokens (with on
   --color: light-dark(#373c44, #c2c7d0);
 
   /* --- Typography --- */
-  --typography-spacing-vertical: 1rem;
+  --typography-margin-block: 1rem;
   --typography-color: var(--color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
   --line-height: 1.5;

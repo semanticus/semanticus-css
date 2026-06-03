@@ -199,9 +199,9 @@ const variableGroups = [
         default: "calc(0.75rem * var(--_spacing-scale))",
       },
       {
-        name: "--typography-spacing-vertical",
-        label: "Typography Vertical",
-        desc: "Vertical margin below typographic elements.",
+        name: "--typography-margin-block",
+        label: "Typography Margin",
+        desc: "Vertical margin for typographic elements (p, headings, lists, etc.).",
         default: "1rem",
       },
     ],

@@ -72,7 +72,7 @@
   --color: light-dark(var(--_color-zinc-750), var(--_color-zinc-200));
 
   /* --- Typography --- */
-  --typography-spacing-vertical: 1rem;
+  --typography-margin-block: 1rem;
   --typography-color: var(--color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
   --line-height: 1.5;

@@ -25,6 +25,7 @@ a CSS longhand property name** whenever possible.
   --color
   --font-family
   --font-size
+  --typography-margin-block
   --border-color
   --border-radius
   --outline-width
@@ -215,7 +216,7 @@ State always comes last:
 Use `spacing` as the property segment:
 ```css
 --spacing                       /* global density */
---typography-spacing-vertical   /* block margins */
+--typography-margin-block   /* block margins */
 --inputs-spacing-vertical       /* form padding */
 --buttons-padding-block
 --details-dropdown-spacing-vertical

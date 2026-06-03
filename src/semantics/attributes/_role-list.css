@@ -8,13 +8,13 @@
   list-style-type: disc;
   margin-top: 0;
   margin-inline: 0;
-  margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-margin-block);
   padding-inline-start: 40px;
 
   > * {
     display: list-item;
     text-align: match-parent;
-    margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+    margin-bottom: calc(var(--typography-margin-block) * 0.25);
 
     &::marker {
       color: var(--_lists-marker-color);

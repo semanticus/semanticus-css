@@ -7,12 +7,12 @@ blockquote {
   display: block;
   font-style: normal;
   font-weight: var(--font-weight);
-  margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(--typography-margin-block);
   margin-top: 0;
   padding: var(--spacing);
 
   & footer {
-    margin-top: calc(var(--typography-spacing-vertical) * 0.5);
+    margin-top: calc(var(--typography-margin-block) * 0.5);
     color: var(--color-muted);
   }
 }

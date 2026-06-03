@@ -30,7 +30,7 @@
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
   --_spacing-scale: 1;
   --spacing: calc(1rem * var(--_spacing-scale));
-  --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
+  --typography-margin-block: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
   --inputs-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
   --inputs-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
