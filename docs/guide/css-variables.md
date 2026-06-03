@@ -59,11 +59,6 @@ These set the document-wide baseline. They use the CSS property name directly.
   --background-color: light-dark(white, #0e1118);
   --color: light-dark(#373c44, #c2c7d0);
   --border-color: light-dark(#dfe3eb, #202632);
-  --selection-background-color: color-mix(in srgb, var(--primary-background-color), white 75%);
-  --backdrop-background-color: light-dark(
-    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
-    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
-  );
 }
 ```
 
@@ -85,7 +80,6 @@ These set the document-wide baseline. They use the CSS property name directly.
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 1px;
-  --focus-ring-width: 0.125rem;
   --transition: 0.2s ease-in-out;
   --opacity-disabled: 0.5;
 }
@@ -140,6 +134,34 @@ Defined by palette files. Override these to create custom color themes.
 
 Scoped to a component type. Change one of these and every instance updates.
 
+### Selection
+
+```css
+:root {
+  --selection-background-color: color-mix(in srgb, var(--primary-color), white 75%);
+}
+```
+
+### Backdrop
+
+```css
+:root {
+  --backdrop-background-color: light-dark(
+    oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75),
+    oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
+  );
+}
+```
+
+### Building Blocks
+
+```css
+:root {
+  --focus-ring-width: 0.125rem;
+  --menu-box-shadow: /* layered shadow with border */;
+}
+```
+
 ### Buttons
 
 ```css
@@ -192,7 +214,6 @@ Scoped to a component type. Change one of these and every instance updates.
 :root {
   --dialog-border-color: var(--border-color);
   --dialog-background-color: var(--background-color);
-  --dialog-box-shadow: var(--menu-box-shadow);
   --dialog-marginals-background-color: light-dark(#fbfcfc, #2a3140);
   --dialog-marginals-border-color: color-mix(
     in srgb, light-dark(#181c25, #a4acba), transparent 90%

@@ -172,20 +172,27 @@ const variableGroups = [
         type: varType("var(--color)"),
         default: "var(--color)",
       },
+    ],
+  },
+  {
+    label: "Selection",
+    vars: [
       {
         name: "--selection-background-color",
         label: "Selection Background",
-        desc: "Background color for text selections.",
-        type: varType(
-          "color-mix(in srgb, var(--primary-background-color), white 75%)",
-        ),
-        default:
-          "color-mix(in srgb, var(--primary-background-color), white 75%)",
+        desc: "Background color for ::selection text highlights.",
+        type: varType("color-mix(in srgb, var(--primary-color), white 75%)"),
+        default: "color-mix(in srgb, var(--primary-color), white 75%)",
       },
+    ],
+  },
+  {
+    label: "Backdrop",
+    vars: [
       {
         name: "--backdrop-background-color",
         label: "Backdrop",
-        desc: "Default backdrop color for modals, dialogs, and other overlays.",
+        desc: "Background color for ::backdrop pseudo-element (dialog, sidebar).",
         type: varType(
           "light-dark(oklch(from color-mix(in srgb, var(--color-zinc-100), var(--color-zinc-50)) l c h / 0.75), oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75))",
         ),

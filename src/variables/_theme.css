@@ -173,19 +173,13 @@
   --border-radius: 0.25rem;
   --border-width: 0.0625rem;
   --outline-width: 1px;
-  --focus-ring-width: 0.125rem;
   --transition: 0.2s ease-in-out;
   --opacity-disabled: 0.5;
 
   /* ===== COMPONENT TOKENS ===== */
 
-  --selection-background-color: color-mix(
-    in srgb,
-    var(--primary-color),
-    white 75%
-  );
-
-  /* --- Components Building Blocks --- */
+  /* --- Building Blocks --- */
+  /* All purpose shadow, used by dialog, dropdown and toast components */
   --menu-box-shadow:
     0.0145rem 0.029rem 0.174rem
       light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
@@ -206,6 +200,10 @@
     ),
     oklch(from color-mix(in srgb, black, var(--color-zinc-950)) l c h / 0.75)
   );
+
+  /* Focus ring used across interactive elements, typically used in combination with --outline-width */
+  /* each component decides to which css property they should be applied */
+  --focus-ring-width: 0.125rem;
 
   /* --- Buttons --- */
   /* Affects button, input[type="button"], input[type="submit"], input[type="reset"], and elements with role="button" */
@@ -251,7 +249,6 @@
   /* --- Dialog --- */
   --dialog-border-color: var(--border-color);
   --dialog-background-color: var(--background-color);
-  --dialog-box-shadow: var(--menu-box-shadow);
   /* Affects dialogs and cards's header & footers */
   --dialog-marginals-background-color: light-dark(
     color-mix(in srgb, var(--color-slate-50) 25%, white),
@@ -354,11 +351,18 @@
     var(--color-slate-850)
   );
 
-  /* --- Small --- */
-  --small-font-size: 80%;
+  /* --- Selection of text --- */
+  --selection-background-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    white 75%
+  );
 
   /* --- Sidebar --- */
   --sidebar-size: 25%;
+
+  /* --- Small --- */
+  --small-font-size: 80%;
 
   /* --- Table --- */
   --table-header-font-weight: 600;

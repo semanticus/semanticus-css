@@ -25,7 +25,6 @@ a CSS longhand property name** whenever possible.
 :root, :host {
   /* Background */
   --background-color
-  --selection-background-color
 
   /* Color & Typography */
   --color
@@ -48,14 +47,11 @@ a CSS longhand property name** whenever possible.
   --border-radius
   --border-width
   --outline-width
-  --focus-ring-width
   --transition
   --opacity-disabled
 
   /* Overlays */
-  --backdrop-background-color
-}
-```
+
 
 System Tokens affect the entire page. Setting `--background-color` on a modifier
 class changes the background of every component that reads it.
@@ -115,6 +111,16 @@ of that component (e.g., all buttons, all inputs, all dialogs).
 
 ```css
 :root, :host {
+  /* Selection */
+  --selection-background-color
+
+  /* Backdrop */
+  --backdrop-background-color
+
+  /* Building Blocks */
+  --focus-ring-width
+  --menu-box-shadow
+
   /* Buttons — button, input[type=button/submit/reset], [role=button] */
   --buttons-color / --buttons-color-hover
   --buttons-padding-block / --buttons-padding-inline
@@ -142,7 +148,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --input-switch-border-radius
 
   /* Dialog — also affects cards */
-  --dialog-border-color / --dialog-background-color / --dialog-box-shadow
+  --dialog-border-color / --dialog-background-color
   --dialog-marginals-background-color / --dialog-marginals-border-color
 
   /* Details — accordions and dropdowns */
