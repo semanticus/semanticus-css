@@ -73,6 +73,10 @@
         border-bottom-right-radius: var(--_card-border-radius);
       }
 
+      > :last-child {
+        margin-bottom: 0;
+      }
+
       &:is([aria-current]:not([aria-current="false"])) {
         background: color-mix(
           in srgb,

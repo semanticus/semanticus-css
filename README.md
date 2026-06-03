@@ -26,16 +26,16 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 ### Option 1: CDN (quick start)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@1.1.0/dist/semanticus.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.css">
 
 <!-- costumize it with a palette or size variation if needed -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@1.1.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@1.1.0/dist/semanticus.size.pico.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.palette.blue.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.size.pico.css">
 ```
 
 ### Option 2: Install manually
 
-Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-1.1.0.tgz), move the ones you need to your **stylesheets** folder and include them in your HTML `<head>`:
+Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-3.0.0.tgz), move the ones you need to your **stylesheets** folder and include them in your HTML `<head>`:
 
 ```html
 <link rel="stylesheet" href="/css/semanticus.css">
@@ -141,7 +141,7 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@2.0.0/dist/semanticus.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.css">
 </head>
 <body class="content-grid">
   <header>
@@ -218,13 +218,13 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Bundle | Gzip |
 | --- | --- |
 | Pico (semantics only) | 10.2 KB |
-| Semanticus (semantics only) | 10.8 KB |
+| Semanticus (semantics only) | 10.9 KB |
 | Pico (semantics + classes) | 11.5 KB |
 | Semanticus (semantics + components + variants) | 13.8 KB |
 | Bootstrap (utilities + grid) | 16.3 KB |
-| Semanticus (utilities + grid) | 10.2 KB |
+| Semanticus (utilities + grid) | 10.6 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 23.6 KB |
+| Semanticus (full bundle) | 24.0 KB |
 
 ## License
 

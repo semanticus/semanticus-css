@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="/semanticus.css" />
+  </head>
+
+  <body>
+    <div class="row g-0">
+      <div
+        data-theme="contrast"
+        class="bg-body d-none d-xl-flex col col-xl-1"
+      ></div>
+
+      <aside
+        data-theme="contrast"
+        class="sidebar bg-body d-none d-md-flex col-5 col-md-3 col-xl-2"
+        popover="auto"
+        id="left-sidebar"
+      >
+        <nav class="py-d px-4">
+          <ul>
+            <li>
+              <img
+                class="float-left"
+                style="width: 30px"
+                src="https://semanticus.design/logo.svg"
+                alt="logo"
+              />
+              <strong class="fs-6 ms-1 pt-4">Semanticus CSS</strong>
+            </li>
+            <li><hr /></li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#getting-started" aria-current="page">Getting Started</a>
+            </li>
+            <li><a href="#advanced-usage">Advanced Usage</a></li>
+            <li><a href="#uninstall">Uninstall</a></li>
+
+            <li class="flex-grow-1"></li>
+            <li>
+              <button
+                class="w-100 ghost"
+                command="show-modal"
+                commandfor="auth-modal"
+              >
+                Insights
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="col-12 col-md-9 col-xl-8">
+        <header class="border-bottom mx-4">
+          <nav>
+            <input
+              type="search"
+              name="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+
+            <ul>
+              <li><a href="#guide" aria-current="page">Guide</a></li>
+              <li><a href="#docs">Docs</a></li>
+              <li>
+                <button
+                  command="show-modal"
+                  commandfor="auth-modal"
+                  class="secondary"
+                >
+                  Log In
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <nav class="d-flex d-xl-none border-bottom pb-d mb-d mx-4">
+          <button
+            role="link"
+            class="d-inline-block d-md-none"
+            popovertarget="left-sidebar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <!-- Icon from Tabler Icons by Paweł Kuna - https://github.com/tabler/tabler-icons/blob/master/LICENSE -->
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h10M4 18h14"
+              />
+            </svg>
+            <small>menu</small>
+          </button>
+          <p></p>
+          <button
+            role="link"
+            class="d-inline-block"
+            popovertarget="right-sidebar"
+          >
+            <small>on this page</small>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <!-- Icon from Tabler Icons by Paweł Kuna - https://github.com/tabler/tabler-icons/blob/master/LICENSE -->
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16m-10 6h10M6 18h14"
+              />
+            </svg>
+          </button>
+        </nav>
+
+        <div class="row p-d">
+          <div class="content-grid col-12 col-xl-10">
+            <article class="full-width">
+              <hgroup>
+                <h1>Getting Started</h1>
+                <p>Welcome to the demo page!</p>
+              </hgroup>
+
+              <figure class="breakout">
+                <img
+                  class="w-100"
+                  src="https://picsum.photos/800/400"
+                  alt="Responsive placeholder image"
+                />
+              </figure>
+
+              <p></p>
+              <p>
+                This fake documentation page, is meant to showcase how
+                <a href="https://semanticus.design/" target="_blank"
+                  >Semanticus CSS</a
+                >
+                can be used in a real case scenario, without any custom
+                <code>CSS</code>, and <code>JavaScript</code>.
+              </p>
+
+              <blockquote>
+                Well that's not entirely true! The form inside the
+                authentication modal, triggered by the "Log In" button, does
+                have a <code>onsubmit</code> handler, to showcase a success
+                toast after submission.
+              </blockquote>
+
+              <hr />
+
+              <h2 id="install">Install</h2>
+
+              <section>
+                <details name="install-accordion-group" open>
+                  <summary class="ghost" role="button">
+                    Quick CDN installation
+                  </summary>
+                  <article>
+                    <p>
+                      Include these lines directly from a CDN in your HTML
+                      <code>&lt;head&gt;</code>:
+                    </p>
+                    <pre><code>  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.css&quot;&gt;
+
+  &lt;!-- customize it with a palette or size variation if needed --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.palette.blue.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.0.0/dist/semanticus.size.pico.css&quot;&gt;</code></pre>
+                  </article>
+                </details>
+              </section>
+
+              <section>
+                <details name="install-accordion-group">
+                  <summary class="ghost" role="button">
+                    Manual installation
+                  </summary>
+                  <article>
+                    <p>
+                      Download the
+                      <a
+                        href="https://registry.npmjs.org/@semanticus%2Fsemanticus-css/-/semanticus-css-3.0.0.tgz"
+                        target="_blank"
+                        >distribution files</a
+                      >, move the ones you need to your stylesheets folder and
+                      include them in your HTML <code>&lt;head&gt;</code>:
+                    </p>
+                    <pre><code>  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/semanticus.css&quot;&gt;
+
+  &lt;!-- customize it with a palette or size variation if needed --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/semanticus.palette.blue.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/semanticus.size.pico.css&quot;&gt;</code></pre>
+                  </article>
+                </details>
+              </section>
+
+              <section>
+                <details name="install-accordion-group">
+                  <summary class="ghost" role="button">Node import</summary>
+
+                  <article>
+                    <p>Install the package via npm:</p>
+                    <pre><code>npm install semanticus-css</code></pre>
+
+                    <p>Then import the styles in your JavaScript entry file:</p>
+                    <pre><code>  import &#39;semanticus-css&#39;;
+
+  // Or import only the semantic layer
+  import &#39;semanticus-css/semantics&#39;;
+
+  // Or add a palette / size on top
+  import &#39;semanticus-css/palettes/blue&#39;;
+  import &#39;semanticus-css/sizes/pico&#39;;</code></pre>
+                  </article>
+                </details>
+              </section>
+
+              <p>
+                Looking for alternative color palettes or sizing options? Check
+                out the
+                <a
+                  href="https://semanticus.design/guide/palettes.html"
+                  target="_blank"
+                  >Palettes</a
+                >
+                or
+                <a
+                  href="https://semanticus.design/guide/sizes.html"
+                  target="_blank"
+                  >Sizes</a
+                >
+                guides.
+              </p>
+
+              <hr />
+
+              <h2 id="usage">Usage</h2>
+
+              <p>
+                Beautiful default styles for plain
+                <strong>ARIA-centric</strong> HTML — simply write plain HTML and
+                <strong>Semantic Styling</strong>
+                will make it look great by default.
+              </p>
+
+              <div role="list" class="card">
+                <article>
+                  <hgroup>
+                    <h1>Hello World</h1>
+                    <p>
+                      Look at me, I'm <strong>bold</strong> and
+                      <em>stylish!</em>
+                    </p>
+                  </hgroup>
+
+                  <button>Click me</button>
+                </article>
+
+                <div class="secondary subtle p-0">
+                  <pre><code>  &lt;article&gt;
+    &lt;hgroup&gt;
+      &lt;h1&gt;Hello World&lt;/h1&gt;
+      &lt;p&gt;Look at me, I'm &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;stylish!&lt;/em&gt;&lt;/p&gt;
+    &lt;/hgroup&gt;
+    &lt;button&gt;Click me&lt;/button&gt;
+  &lt;/article&gt;</code></pre>
+                </div>
+              </div>
+
+              <p>
+                <strong>Semanticus CSS</strong> is built on four complementary
+                layers:
+              </p>
+
+              <ol>
+                <li>Semantic Styling</li>
+                <li>Components</li>
+                <li>Variants</li>
+                <li>Utility Classes</li>
+              </ol>
+
+              <p>
+                Check more at
+                <a href="https://semanticus.design/docs" target="_blank"
+                  >Semanticus CSS documentation</a
+                >
+              </p>
+            </article>
+
+            <footer class="border-top py-4">
+              <nav>
+                <div class="card p-2 position-relative flex-grow-1">
+                  <p class="text-muted"><small>Previous page</small></p>
+                  <a href="#about" class="stretched-link">About</a>
+                </div>
+
+                <div class="card p-2 text-end position-relative flex-grow-1">
+                  <p class="text-muted">
+                    <small class="text-muted">Next page</small>
+                  </p>
+                  <a href="#advance-usage" class="stretched-link"
+                    >Advance Usage</a
+                  >
+                </div>
+              </nav>
+            </footer>
+          </div>
+
+          <aside
+            class="sidebar border-start ps-d d-none d-xl-block col-4 col-xl-2"
+            popover="auto"
+            id="right-sidebar"
+            data-placement="right"
+          >
+            <nav>
+              <ul>
+                <li class="fs-6 pt-d pt-xl-0"><strong>On this page</strong></li>
+                <li class="d-block d-xl-none"><hr /></li>
+                <li><a href="#install">Install</a></li>
+                <li><a href="#usage">Usage</a></li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+      </main>
+
+      <dialog
+        id="auth-modal"
+        class="w-30"
+        aria-labelledby="auth-modal-title"
+        aria-describedby="auth-modal-description"
+      >
+        <header class="full-width">
+          <hgroup>
+            <h2 id="auth-modal-title">Welcome!</h2>
+            <p>Log in, to see more exclusive content.</p>
+          </hgroup>
+
+          <button
+            aria-label="Close"
+            commandfor="auth-modal"
+            class="icon-close float-end"
+            command="close"
+          ></button>
+        </header>
+
+        <article
+          id="auth-modal-description"
+          style="--content-grid-content-max-width: 40ch"
+        >
+          <div role="status" class="info ghost">
+            <p>
+              or <a href="#signup">sign up</a> if you don't have an account yet.
+            </p>
+          </div>
+
+          <form
+            id="auth-form"
+            method="dialog"
+            onsubmit="
+              document.getElementById('successful-toast-content').textContent =
+                `Welcome back, ${document.getElementById('input-email').value}!`;
+              document.getElementById('successful-toast').showPopover();
+            "
+          >
+            <fieldset>
+              <label for="input-email">Email</label>
+              <input
+                type="email"
+                required="true"
+                placeholder="Type your email"
+                id="input-email"
+              />
+
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Type your password"
+              />
+            </fieldset>
+          </form>
+
+          <fieldset class="mt-d">
+            <button class="w-100 mb-d" form="auth-form">Enter</button>
+            <button
+              class="w-100 secondary"
+              commandfor="auth-modal"
+              command="close"
+            >
+              Cancel
+            </button>
+          </fieldset>
+        </article>
+      </dialog>
+
+      <div id="successful-toast" role="status" class="success" popover>
+        <p id="successful-toast-content"></p>
+        <button
+          aria-label="Close"
+          class="icon-close"
+          popovertarget="successful-toast"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>

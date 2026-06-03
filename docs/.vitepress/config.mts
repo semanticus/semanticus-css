@@ -561,9 +561,11 @@ export default defineConfig({
       ],
       "/examples/": [
         { text: "Starter HTML template", link: "/examples/" },
-        { text: "Documentation Page", link: "/examples/documentation-page" },
-        { text: "Login Page", link: "/examples/login-page" },
-        { text: "Landing Page", link: "/examples/landing-page" },
+        {
+          text: "Demo Page",
+          link: "/examples/demo-page.html",
+          target: "_blank",
+        },
       ],
     },
     socialLinks: [

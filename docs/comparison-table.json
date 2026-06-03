@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T09:33:37.400Z",
+  "generatedAt": "2026-06-03T14:33:25.329Z",
   "pico": {
     "version": "2.1.1"
   },
@@ -13,7 +13,7 @@
     },
     "semanticusSemantics": {
       "label": "Semanticus (semantics only)",
-      "gzipKB": "10.8"
+      "gzipKB": "10.9"
     },
     "picoFullBundle": {
       "label": "Pico (semantics + classes)",
@@ -33,7 +33,7 @@
     },
     "semanticusUtilitiesAndGrid": {
       "label": "Semanticus (utilities + grid)",
-      "gzipKB": "10.2"
+      "gzipKB": "10.6"
     },
     "bootstrapCssBundle": {
       "label": "Bootstrap (CSS bundle only)",
@@ -45,7 +45,7 @@
     },
     "semanticusFullBundle": {
       "label": "Semanticus (full bundle)",
-      "gzipKB": "23.6"
+      "gzipKB": "24.0"
     }
   }
 }
