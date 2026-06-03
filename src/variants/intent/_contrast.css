@@ -34,7 +34,7 @@ details summary[role="button"].contrast {
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       &::after {
-        filter: brightness(0) invert(0);
+        filter: brightness(0);
       }
     }
   }
