@@ -38,7 +38,6 @@ a CSS longhand property name** whenever possible.
 
   /* Spacing */
   --spacing
-  --spacing-base
   --spacing-scale
 
   /* Borders & Effects */
@@ -279,7 +278,7 @@ Tokens at Tiers 1-3 must use CSS longhand property names:
 
 | Token | Reason |
 | --- | --- |
-| `--spacing` / `--spacing-base` / `--spacing-scale` | Density values used across multiple properties |
+| `--spacing` / `--spacing-scale` | Density values used across multiple properties |
 | `--transition` | Composite value — splitting adds tokens without benefit |
 | `--nav-breadcrumb-divider` | Content string, not a CSS property value |
 | `--color-hover-shade` | Internal helper color mixed into base colors via `color-mix()` to derive hover-state variants — not a standalone property value |

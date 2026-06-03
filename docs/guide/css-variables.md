@@ -67,9 +67,8 @@ These set the document-wide baseline. They use the CSS property name directly.
 
 ```css
 :root {
-  --spacing-base: 0.75rem;
   --spacing-scale: 1;
-  --spacing: calc(var(--spacing-base) * var(--spacing-scale));
+  --spacing: calc(0.75rem * var(--spacing-scale));
   --typography-spacing-vertical: 1rem;
 }
 ```

@@ -326,12 +326,6 @@ const variableGroups = [
     label: "Spacing",
     vars: [
       {
-        name: "--spacing-base",
-        label: "Spacing Base",
-        desc: "Base spacing unit.",
-        default: "0.75rem",
-      },
-      {
         name: "--spacing-scale",
         label: "Spacing Scale",
         desc: "Responsive spacing multiplier.",
@@ -340,8 +334,8 @@ const variableGroups = [
       {
         name: "--spacing",
         label: "Spacing",
-        desc: "Applied spacing; product of spacing-base × spacing-scale.",
-        default: "calc(var(--spacing-base) * var(--spacing-scale))",
+        desc: "Applied spacing; product of 0.75rem × spacing-scale.",
+        default: "calc(0.75rem * var(--spacing-scale))",
       },
       {
         name: "--typography-spacing-vertical",
