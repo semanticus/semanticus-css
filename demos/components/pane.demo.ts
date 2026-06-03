@@ -40,13 +40,13 @@ export function intentVariants(
   return renderElement(
     "section",
     {},
-    `${main("div", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${main("div", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
+    `${main("section", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${main("section", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
   );
 }
 
@@ -65,13 +65,13 @@ export function withHgroupIntentVariants(
   return renderElement(
     "section",
     {},
-    `${withHgroup("div", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
-${withHgroup("div", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
+    `${withHgroup("section", classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+${withHgroup("section", classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`,
   );
 }
 
@@ -90,8 +90,8 @@ export function overviewDefaultAndModifiersVariants(
     "section",
     attrs,
     `${renderGrid(`${withHgroup()}
-${withHgroup("div", { class: "subtle" })}
-${withHgroup("div", { class: "ghost" })}`)}`,
+${withHgroup("section", { class: "subtle" })}
+${withHgroup("section", { class: "ghost" })}`)}`,
   );
 }
 

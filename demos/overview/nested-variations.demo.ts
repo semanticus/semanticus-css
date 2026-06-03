@@ -20,7 +20,7 @@ function content() {
 
 function card(attrs: Record<string, string> = {}) {
   return renderElement(
-    "div",
+    "section",
     classMergeAttributes("pane", attrs),
     `<header>
     <h2>Card title</h2>
@@ -40,7 +40,7 @@ function card(attrs: Record<string, string> = {}) {
 
 function pane(attrs: Record<string, string> = {}) {
   return renderElement(
-    "div",
+    "section",
     classMergeAttributes("pane", attrs),
     `<header>
     <h2>Pane title</h2>

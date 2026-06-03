@@ -51,7 +51,7 @@ export function fullWidth(
   <p>This section is the one that started the content grid.</p>
 </hgroup>
 
-<div class="full-width pane primary">
+<section class="full-width pane primary">
   <hgroup>
     <h2>Full-width section</h2>
     <p>This section spans edge-to-edge, but the text inside is still constrained
@@ -64,7 +64,7 @@ export function fullWidth(
     This pull quote breaks out of the content column into the breakout area —
     noticeably wider, but still with padding on each side.
   </blockquote>
-</div>
+</section>
 
 <p>Back to normal content flow.</p>`,
   );
@@ -95,18 +95,18 @@ export function nestedFullWidth(
 
   <p>You can even nest another <code>.full-width</code> inside a <code>.full-width</code>.</p>
 
-  <div class="full-width pane">
+  <section class="full-width pane">
     <hgroup>
       <h3>Nested full-width section</h3>
       <p>This inner ".full-width" also spans edge-to-edge within the outer one,
         and its children are still constrained to the content column.</p>
     </hgroup>
     <p>Unless the parent has padding.</p>
-  </div>
+  </section>
 
-  <div class="breakout pane contrast">
+  <section class="breakout pane contrast">
     This pane breaks out wider than the surrounding content.
-  </div>
+  </section>
 
   <p>Back to the outer section's content column.</p>
 </section>
