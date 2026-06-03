@@ -68,7 +68,7 @@
 
   /* Subtle colors */
 
-  /* Private helper to devive subtle color variants from the base colors */
+  /* Private helper to derive subtle color variants from the base colors */
   --_subtle-color-shade: light-dark(
     var(--_color-zinc-250),
     var(--_color-slate-750)
