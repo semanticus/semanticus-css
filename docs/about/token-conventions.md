@@ -198,7 +198,7 @@ Tokens at Tiers 1-3 must use CSS longhand property names:
 
 | Token | Reason |
 | --- | --- |
-| `--spacing` | Responsive density value used across multiple properties |
+| `--spacing` | Responsive value used for margins and padding throughout the page |
 | `--color-hover-shade` | Internal helper color mixed into base colors via `color-mix()` to derive hover-state variants — not a standalone property value |
 
 ### State Ordering

@@ -105,7 +105,7 @@
 
   /* --- Exceptions --- */
 
-  /* Used for margins and padding throughout the page */
+  /* Responsive value used for margins and padding throughout the page */
   --spacing: calc(0.75rem * var(--_spacing-scale));
 
   /* Internal helper used to derive colors representing the hover state */
