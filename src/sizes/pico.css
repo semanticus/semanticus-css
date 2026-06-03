@@ -28,8 +28,8 @@
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
-  --spacing-scale: 1;
-  --spacing: calc(1rem * var(--spacing-scale));
+  --_spacing-scale: 1;
+  --spacing: calc(1rem * var(--_spacing-scale));
   --typography-spacing-vertical: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
   --inputs-spacing-vertical: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
   --inputs-spacing-horizontal: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
@@ -47,7 +47,7 @@
   :host {
     --font-size: 106.25%;
     --sidebar-size: max(25%, 150px);
-    --spacing-scale: 1.25;
+    --_spacing-scale: 1.25;
   }
 }
 
@@ -56,7 +56,7 @@
   :host {
     --font-size: 112.5%;
     --sidebar-size: max(22%, 180px);
-    --spacing-scale: 1.5;
+    --_spacing-scale: 1.5;
   }
 }
 
@@ -65,7 +65,7 @@
   :host {
     --font-size: 118.75%;
     --sidebar-size: max(20%, 200px);
-    --spacing-scale: 1.75;
+    --_spacing-scale: 1.75;
   }
 }
 
@@ -74,7 +74,7 @@
   :host {
     --font-size: 125%;
     --sidebar-size: max(18%, 220px);
-    --spacing-scale: 2;
+    --_spacing-scale: 2;
   }
 }
 
@@ -83,6 +83,6 @@
   :host {
     --font-size: 131.25%;
     --sidebar-size: clamp(240px, 16%, 300px);
-    --spacing-scale: 2.25;
+    --_spacing-scale: 2.25;
   }
 }
