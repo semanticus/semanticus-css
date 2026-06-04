@@ -57,9 +57,3 @@ body:has(.sidebar:popover-open) {
   }
 }
 
-@starting-style {
-  .sidebar:popover-open {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-}
