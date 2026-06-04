@@ -224,7 +224,7 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Bootstrap (utilities + grid) | 16.3 KB |
 | Semanticus (utilities + grid) | 10.6 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 23.6 KB |
+| Semanticus (full bundle) | 23.7 KB |
 
 ## License
 
