@@ -32,7 +32,6 @@ To convey **intent** and **importance**, panes can be styled with different vari
 
 <HtmlPreviewer :code="PaneDemo.ghostVariants()" :codeCollapsed="true" />
 
-
 <script setup>
 import { PaneDemo } from "@demos/components";
 </script>

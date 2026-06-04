@@ -155,3 +155,17 @@ export function verticalSidebarNavigation(attrs: Record<string, string> = {}) {
 </ul>`,
   );
 }
+
+export function simpleVerticalSidebarNavigation(
+  attrs: Record<string, string> = {},
+) {
+  return main(
+    { ...attrs },
+    `<ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#getting-started" aria-current="page">Getting Started</a></li>
+  <li><a href="#advanced-usage">Advanced Usage</a></li>
+  <li><a href="#uninstall">Uninstall</a></li>
+</ul>`,
+  );
+}

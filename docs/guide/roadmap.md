@@ -39,11 +39,11 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Pane |
 | ✅ | Toasts |
 | ✅ | Tooltip |
-| ⌛ | Accordion List |
-| ⌛ | Offcanvas |
-| ⌛ | Carousel |
-| ⌛ | Badge |
+| ✅ | Sidebar |
 | ⌛ | Tabs |
+| ⌛ | Badge |
+| ⌛ | Carousel |
+| ⌛ | Accordion List |
 | ⌛ | Popper |
 
 ## Variants & Utilities
@@ -88,8 +88,8 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Alert hide/show interaction |
 | ✅ | Alert Dialog |
 | ✅ | Anchor Positioning tooltips |
-| ⌛ | Carousel |
 | ⌛ | Tabs |
+| ⌛ | Carousel |
 | ⌛ | Popper |
 
 ## Documentation & Tooling
@@ -118,12 +118,12 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Toasts documentation |
 | ✅ | GitHub check to prevent PRs that fail the visual regression tests |
 | ✅ | Navigation composite documentation |
+| ✅ | Sidebar component documentation |
+| ⌛ | Rails scaffold pages |
 | ⌛ | Tabs composite documentation |
-| ⌛ | Offcanvas component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Landing page example |
 | ⌛ | Login page example |
-| ⌛ | Rails scaffold pages |
 | ⌛ | Account settings page example |
 | ⌛ | Replacing **vitepress** with **astro** and use **Semanticus CSS** to style documentation |
 | ⌛ | Migration guide from Pico CSS |

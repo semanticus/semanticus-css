@@ -1,26 +1,31 @@
-aside.sidebar {
+/* Preventing scrollbars on the page while the sidebar is open */
+body:has(.sidebar:popover-open) {
+  overflow-x: hidden;
+}
+
+.sidebar {
   z-index: 1020;
   position: sticky !important;
-  top: 0;
   max-height: 100svh;
   align-self: stretch;
   display: flex;
   flex-direction: column;
-
-  /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
-  /* Gracefully degrades to instant appearance in unsupported browsers */
-  transition:
-    opacity 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
+  top: 0; /* for position sticky to take effect */
 
   &:popover-open {
     margin: 0;
     display: flex !important;
     width: 100%;
     box-shadow: var(--menu-box-shadow);
-    background-color: var(--background-color);
     left: 0;
     bottom: 0;
+
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      opacity 0.3s,
+      transform 0.3s,
+      display 0.3s allow-discrete;
 
     &[data-placement="right"] {
       left: unset;
@@ -38,9 +43,13 @@ aside.sidebar {
 }
 
 @starting-style {
-  aside.sidebar:popover-open {
+  .sidebar:popover-open {
     opacity: 0;
     transform: translateX(-20px);
+
+    > * :has(&) {
+      overflow-x: hidden;
+    }
 
     &[data-placement="right"] {
       transform: translateX(20px);
@@ -50,5 +59,12 @@ aside.sidebar {
   aside.sidebar:popover-open::backdrop {
     backdrop-filter: none;
     background-color: transparent;
+  }
+}
+
+@starting-style {
+  .sidebar:popover-open {
+    opacity: 0;
+    transform: translateX(-20px);
   }
 }
