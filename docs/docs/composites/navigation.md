@@ -25,9 +25,9 @@ Check out [Pagination](/docs/composites/pagination) for more examples of navigat
 
 ### Breadcrumbs
 
-Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>`, which is the semantic equivalent of a way to represent the current page's location within a navigational hierarchy,
+Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>`. This represents the current page's location within a navigational hierarchy.
 
-Each breadcrumb item represented as an `<li>` element and the current page is typically indicated by adding the `aria-current="page"` attribute either to the `<a>` or corresponding `<li>` element.
+Each breadcrumb item is represented as an `<li>` element, and the current page is typically indicated by adding the `aria-current="page"` attribute either to the `<a>` or corresponding `<li>` element.
 
 > **Accessibility:** Don't forget to add `aria-label="Breadcrumbs"` to the `<nav>` element for better accessibility.
 
