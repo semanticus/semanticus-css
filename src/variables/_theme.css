@@ -245,7 +245,6 @@
 
   /* --- Details --- */
   /* Affects accordions and dropdowns */
-  --details-summary-background-color: transparent;
   --details-summary-color: var(--color);
   --details-summary-color-open: var(--color-muted);
 

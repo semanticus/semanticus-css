@@ -135,7 +135,7 @@ details:has(> summary[aria-haspopup="menu"]) {
         color var(--transition);
 
       &:is(:active, :focus) {
-        --_details-summary-color: unset;
+        --_details-summary-color: var(--details-summary-color);
 
         outline: var(--outline-width) solid
           var(--_details-summary-outline-color);

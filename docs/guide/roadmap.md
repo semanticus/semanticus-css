@@ -116,7 +116,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Grid System documentation |
 | ✅ | Pagination documentation |
 | ✅ | Toasts documentation |
-| ✅ | Github check to prevent PRs that fail the visual regression tests |
+| ✅ | GitHub check to prevent PRs that fail the visual regression tests |
 | ✅ | Navigation composite documentation |
 | ⌛ | Tabs composite documentation |
 | ⌛ | Offcanvas component documentation |

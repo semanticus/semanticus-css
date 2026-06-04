@@ -103,8 +103,7 @@ of that component (e.g., all buttons, all inputs, all dialogs).
   --dialog-background-color / --dialog-border-color
 
   /* Details */
-  --details-summary-background-color
-  --details-dropdown-color / --details-dropdown-border-color
+  --details-dropdown-background-color / --details-dropdown-color / --details-dropdown-border-color
   --details-menu-background-color / --details-menu-color
 
   /* Links, Headings, Lists, Code, Mark, Table, Navigation, Progress, Tooltip… */
