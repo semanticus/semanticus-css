@@ -3,7 +3,6 @@ import {
   expect,
   PageAssertionsToHaveScreenshotOptions,
 } from "@playwright/test";
-import { variations } from "@scripts/utils";
 
 test.use({ viewport: { width: 1024, height: 900 } });
 
