@@ -136,14 +136,21 @@ function safeNormalizePath(inputPath: string): string {
 }
 
 function serverStaticFile(req: http.IncomingMessage, res: http.ServerResponse) {
-  let relPath = safeNormalizePath((req.url || "").replace(/^\/*/, ""));
+  let relPath: string;
+  try {
+    const url = new URL(req.url || "/", "http://localhost");
+    relPath = safeNormalizePath(url.pathname.replace(/^\/*/, ""));
+  } catch {
+    res.writeHead(400, { "Content-Type": "text/html" });
+    res.end("<h1>400 Bad Request</h1>");
+    return;
+  }
 
   if (relPath === "semanticus.css") {
     relPath = path.join("dist", relPath);
   } else if (!relPath.startsWith("dist")) {
     relPath = path.join("docs", "public", relPath);
   }
-
   const filePath = path.resolve(projectRoot, relPath);
 
   const ext = path.extname(filePath).toLowerCase();
