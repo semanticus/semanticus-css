@@ -8,7 +8,7 @@ Check out [Pagination](/docs/composites/pagination) for more examples of navigat
 
 ## Basic Usage
 
-- `<nav>` is a flex container that, using `justify-content: space-between;`, to distribute its children across the horizontal axis;
+- `<nav>` is a flex container that uses `justify-content: space-between` to distribute its children across the horizontal axis;
 - All direct children of `<nav>` will have their `margin-block` set to 0;
 - In case of a single child, it will grow to fill the available space;
 
