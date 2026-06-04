@@ -4,7 +4,7 @@ title: nav
 
 # &lt;nav&gt;
 
-**Semanticus CSS** adds some opiniated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
+**Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
 > **Accessibility:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
 
