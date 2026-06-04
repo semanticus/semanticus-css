@@ -117,13 +117,13 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Pagination documentation |
 | ✅ | Toasts documentation |
 | ✅ | Github check to prevent PRs that fail the visual regression tests |
-| 🚧 | Navigation composite documentation |
+| ✅ | Navigation composite documentation |
 | ⌛ | Tabs composite documentation |
 | ⌛ | Offcanvas component documentation |
 | ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Landing page example |
 | ⌛ | Login page example |
-| ⌛ | CRUD pages examples |
+| ⌛ | Rails scaffold pages |
 | ⌛ | Account settings page example |
 | ⌛ | Replacing **vitepress** with **astro** and use **Semanticus CSS** to style documentation |
 | ⌛ | Migration guide from Pico CSS |

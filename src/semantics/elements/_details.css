@@ -3,7 +3,6 @@ summary {
 }
 
 details {
-  --_details-summary-background-color: var(--details-summary-background-color);
   --_details-summary-color: var(--details-summary-color);
   --_details-summary-color-focus: var(--primary-color-hover);
   --_details-summary-color-open: var(--details-summary-color-open);
@@ -16,14 +15,14 @@ details {
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
-
     color: var(--_details-summary-color);
-    background-color: var(--_details-summary-background-color);
 
     &:not([role]) {
-      &:focus {
+      &:is(:active, :focus) {
         --_details-summary-color: var(--_details-summary-color-focus);
+      }
 
+      &:focus-visible {
         outline: var(--outline-width) solid
           var(--_details-summary-outline-color);
         box-shadow: 0 0 0 var(--focus-ring-width)
@@ -99,14 +98,13 @@ details:has(> summary[aria-haspopup="menu"]) {
   position: relative;
 
   > summary[aria-haspopup="menu"] {
+    --_details-dropdown-background-color: var(
+      --details-dropdown-background-color
+    );
     --_details-dropdown-color: var(--details-dropdown-color);
     --_details-dropdown-border-color: var(--details-dropdown-border-color);
-    --_details-dropdown-padding-block: var(
-      --details-dropdown-padding-block
-    );
-    --_details-dropdown-padding-inline: var(
-      --details-dropdown-padding-inline
-    );
+    --_details-dropdown-padding-block: var(--details-dropdown-padding-block);
+    --_details-dropdown-padding-inline: var(--details-dropdown-padding-inline);
     --_details-summary-color: var(--_details-dropdown-color);
 
     &::after {
@@ -117,6 +115,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     &:not([role]) {
+      background-color: var(--_details-dropdown-background-color);
       border: var(--border-width) solid var(--_details-dropdown-border-color);
       border-radius: var(--border-radius);
       padding: var(--_details-dropdown-padding-block)
@@ -124,8 +123,8 @@ details:has(> summary[aria-haspopup="menu"]) {
       display: flex;
       align-items: center;
       height: calc(
-        1rem * var(--line-height) + var(--_details-dropdown-padding-block) *
-          2 + var(--border-width) * 2
+        1rem * var(--line-height) + var(--_details-dropdown-padding-block) * 2 +
+          var(--border-width) * 2
       );
       line-height: inherit;
       cursor: pointer;
@@ -134,6 +133,15 @@ details:has(> summary[aria-haspopup="menu"]) {
         background-color var(--transition),
         border-color var(--transition),
         color var(--transition);
+
+      &:is(:active, :focus) {
+        --_details-summary-color: unset;
+
+        outline: var(--outline-width) solid
+          var(--_details-summary-outline-color);
+        box-shadow: 0 0 0 var(--focus-ring-width)
+          var(--_details-summary-outline-color);
+      }
 
       &[aria-invalid="false"] {
         --_details-dropdown-border-color: var(--success-background-color);

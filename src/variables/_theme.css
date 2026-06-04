@@ -245,12 +245,13 @@
 
   /* --- Details --- */
   /* Affects accordions and dropdowns */
-  --details-summary-background-color: var(--inputs-background-color);
+  --details-summary-background-color: transparent;
   --details-summary-color: var(--color);
   --details-summary-color-open: var(--color-muted);
 
   /* --- Dropdown styling applied to the summary element --- */
   --details-dropdown-color: var(--inputs-placeholder-color);
+  --details-dropdown-background-color: var(--inputs-background-color);
   --details-dropdown-border-color: var(--inputs-border-color);
   --details-dropdown-padding-block: var(--inputs-padding-block);
   --details-dropdown-padding-inline: var(--inputs-padding-inline);
