@@ -137,7 +137,7 @@ function safeNormalizePath(inputPath: string): string {
   return normalized;
 }
 
-function serverStaticFile(req: http.IncomingMessage, res: http.ServerResponse) {
+function serveStaticFile(req: http.IncomingMessage, res: http.ServerResponse) {
   let relPath: string;
   try {
     const url = new URL(req.url || "/", "http://localhost");
