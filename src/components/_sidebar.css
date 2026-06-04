@@ -46,16 +46,12 @@ body:has(.sidebar:popover-open) {
     opacity: 0;
     transform: translateX(-20px);
 
-    > * :has(&) {
-      overflow-x: hidden;
-    }
-
     &[data-placement="right"] {
       transform: translateX(20px);
     }
   }
 
-  aside.sidebar:popover-open::backdrop {
+  .sidebar:popover-open::backdrop {
     backdrop-filter: none;
     background-color: transparent;
   }
