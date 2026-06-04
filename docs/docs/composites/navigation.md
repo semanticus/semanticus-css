@@ -2,7 +2,7 @@
 
 Navigation is implemented using the `<nav>` element, as its fundamental building block but it's actually a combination of several elements working together.
 
-**Semanticus CSS** adds some opiniated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
+**Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
 Check out [Pagination](/docs/composites/pagination) for more examples of navigation patterns.
 
