@@ -36,7 +36,7 @@ And updated existing ones using the latest web platform features and patterns, e
 - **Tooltips** use the [ARIA: tooltip pattern](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tooltip_role)
 - **Dropdowns** use the [ARIA: menu pattern](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
 - **Modals** use the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API)
-- **Breadcrumbs** don't rely on an the **i18n** `aria-label` property, but instead use the native semantics of `<nav>` and `<ol>` elements.
+- **Breadcrumbs** don't rely on the **i18n** `aria-label` property, but instead use the native semantics of `<nav>` and `<ol>` elements.
 
 ### Size Comparison
 
