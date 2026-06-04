@@ -2,7 +2,7 @@
 
 The `.sidebar` class sets the element as **sticky** so that it remains visible as the user scrolls down the page, if used in combination with the [Invoker Commands API](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API), it will act as a slider that can be opened and closed by the user.
 
-Check out the <a href="/examples/demo-page.html" target="_black">Demo Page</a> which demonstrates all 3 behaviors mentioned below. 
+Check out the <a href="/examples/demo-page.html" target="_blank">Demo Page</a> which demonstrates all 3 behaviors mentioned below.
 
 ## Sticky Demonstration
 
