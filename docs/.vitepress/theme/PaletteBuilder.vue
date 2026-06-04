@@ -763,13 +763,6 @@ const variableGroups = [
     label: "Details / Accordion",
     vars: [
       {
-        name: "--details-summary-background-color",
-        label: "Summary Background",
-        desc: "Accordion summary background color.",
-        type: varType("var(--inputs-background-color)"),
-        default: "var(--inputs-background-color)",
-      },
-      {
         name: "--details-summary-color",
         label: "Summary Text",
         desc: "Accordion summary text color.",
@@ -782,20 +775,6 @@ const variableGroups = [
         desc: "Accordion summary text when open.",
         type: varType("var(--color-muted)"),
         default: "var(--color-muted)",
-      },
-      {
-        name: "--details-dropdown-color",
-        label: "Dropdown Text",
-        desc: "Dropdown trigger text color.",
-        type: varType("var(--inputs-placeholder-color)"),
-        default: "var(--inputs-placeholder-color)",
-      },
-      {
-        name: "--details-dropdown-border-color",
-        label: "Dropdown Border",
-        desc: "Dropdown trigger border color.",
-        type: varType("var(--inputs-border-color)"),
-        default: "var(--inputs-border-color)",
       },
     ],
   },
@@ -890,6 +869,27 @@ const variableGroups = [
         desc: "Dropdown menu text color.",
         type: varType("var(--color)"),
         default: "var(--color)",
+      },
+      {
+        name: "--details-dropdown-color",
+        label: "Dropdown Trigger Text",
+        desc: "Dropdown trigger text color.",
+        type: varType("var(--inputs-placeholder-color)"),
+        default: "var(--inputs-placeholder-color)",
+      },
+      {
+        name: "--details-dropdown-background-color",
+        label: "Dropdown Trigger Background",
+        desc: "Dropdown trigger background color.",
+        type: varType("var(--inputs-background-color)"),
+        default: "var(--inputs-background-color)",
+      },
+      {
+        name: "--details-dropdown-border-color",
+        label: "Dropdown Trigger Border",
+        desc: "Dropdown trigger border color.",
+        type: varType("var(--inputs-border-color)"),
+        default: "var(--inputs-border-color)",
       },
       {
         name: "--details-menu-background-color-hover",
