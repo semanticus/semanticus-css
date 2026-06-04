@@ -4,13 +4,13 @@ title: nav
 
 # &lt;nav&gt;
 
-**Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
+**Semanticus CSS** adds opinionated styling to `<nav>` to reduce boilerplate for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
 > **Accessibility:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
 
 ## Basic Usage
 
-- `<nav>` is a flex container that, using `justify-content: space-between;`, to distribute its children across the horizontal axis;
+- `<nav>` is a flex container that uses `justify-content: space-between` to distribute its children across the horizontal axis;
 - All direct children of `<nav>` will have their `margin-block` set to 0;
 - In case of a single child, it will grow to fill the available space;
 
@@ -18,7 +18,7 @@ title: nav
 
 ## Horizontal Navigation
 
-- `<ul>` children will become a horizontal flex container also;
+- `<ul>` children also become a horizontal flex container;
 - `<li>` children will become unstyled and inlined;
 - `<a>` children will lose their underline except on `:hover`.
 - `<button>` and `<details>` (**Dropdowns**) children will automatically match the height and padding of links.
@@ -27,9 +27,9 @@ title: nav
 
 ### Breadcrumbs
 
-Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>`, which is the semantic equivalent of a way to represent the current page's location within a navigational hierarchy,
+Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>` — the semantic way to represent the current page's location within a navigational hierarchy.
 
-Each breadcrumb item represented as an `<li>` element and the current page is typically indicated by adding the `aria-current="page"` attribute either to the `<a>` or corresponding `<li>` element.
+Each breadcrumb item is represented as an `<li>` element, and the current page is typically indicated by adding `aria-current="page"` to the `<a>` or the corresponding `<li>` element.
 
 > **Accessibility:** Don't forget to add `aria-label="Breadcrumbs"` to the `<nav>` element for better accessibility.
 
