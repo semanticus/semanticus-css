@@ -5,6 +5,8 @@ export function main(attrs: Record<string, string> = {}) {
   return renderElement("header", attrs, NavDemo.logoTaglineLinks());
 }
 
-export function withSearchDropdownAndLinks(attrs: Record<string, string> = {}) {
-  return renderElement("header", attrs, NavDemo.searchDropdownAndLinks());
+export function withSearchAndDropdownExample(
+  attrs: Record<string, string> = {},
+) {
+  return renderElement("header", attrs, NavDemo.searchAndDropdownExample());
 }

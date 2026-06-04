@@ -4,12 +4,13 @@ const config: StorybookConfig = {
   framework: "@storybook/html-vite",
   stories: [
     "../stories/overview.stories.ts",
-    "../stories/**/*.stories.@(ts|js)"
+    "../stories/**/*.stories.@(ts|js)",
   ],
   addons: ["@storybook/addon-docs"],
   docs: {
     defaultName: "Overview",
   },
+  staticDirs: ["../docs/public"],
 };
 
 export default config;

@@ -23,13 +23,10 @@
         <nav class="py-d px-4">
           <ul>
             <li>
-              <img
-                class="float-left"
-                style="width: 30px"
-                src="https://semanticus.design/logo.svg"
-                alt="logo"
-              />
-              <strong class="fs-6 ms-1 pt-4">Semanticus CSS</strong>
+              <div class="hstack gap-1">
+                <img style="width: 30px" src="../logo.svg" alt="Brand logo" />
+                <strong class="fs-6">Semanticus CSS</strong>
+              </div>
             </li>
             <li><hr /></li>
             <li>
@@ -44,7 +41,7 @@
             <li class="flex-grow-1"></li>
             <li>
               <button
-                class="w-100 ghost"
+                class="ghost"
                 command="show-modal"
                 commandfor="auth-modal"
               >
@@ -56,7 +53,7 @@
       </aside>
 
       <main class="col-12 col-md-9 col-xl-8">
-        <header class="border-bottom mx-4">
+        <header class="border-bottom mb-2 mx-4">
           <nav>
             <input
               type="search"
@@ -72,7 +69,7 @@
                 <button
                   command="show-modal"
                   commandfor="auth-modal"
-                  class="secondary"
+                  class="contrast"
                 >
                   Log In
                 </button>
@@ -81,7 +78,7 @@
           </nav>
         </header>
 
-        <nav class="d-flex d-xl-none border-bottom pb-d mb-d mx-4">
+        <nav class="d-flex d-xl-none border-bottom pb-2 mb-d mx-4">
           <button
             role="link"
             class="d-inline-block d-md-none"
@@ -170,9 +167,7 @@
 
               <section>
                 <details name="install-accordion-group" open>
-                  <summary class="ghost" role="button">
-                    Quick CDN installation
-                  </summary>
+                  <summary role="button">Quick CDN installation</summary>
                   <article>
                     <p>
                       Include these lines directly from a CDN in your HTML
@@ -189,9 +184,7 @@
 
               <section>
                 <details name="install-accordion-group">
-                  <summary class="ghost" role="button">
-                    Manual installation
-                  </summary>
+                  <summary role="button">Manual installation</summary>
                   <article>
                     <p>
                       Download the
@@ -213,7 +206,7 @@
 
               <section>
                 <details name="install-accordion-group">
-                  <summary class="ghost" role="button">Node import</summary>
+                  <summary role="button">Node import</summary>
 
                   <article>
                     <p>Install the package via npm:</p>
@@ -343,7 +336,6 @@
 
       <dialog
         id="auth-modal"
-        class="w-30"
         aria-labelledby="auth-modal-title"
         aria-describedby="auth-modal-description"
       >
@@ -356,7 +348,7 @@
           <button
             aria-label="Close"
             commandfor="auth-modal"
-            class="icon-close float-end"
+            class="icon-close align-self-start"
             command="close"
           ></button>
         </header>

@@ -4,35 +4,43 @@ title: nav
 
 # &lt;nav&gt;
 
-The `<nav>` element is a landmark that identifies a region of navigation links.
+**Semanticus CSS** adds opinionated styling to `<nav>` to reduce boilerplate for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
-Screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation.
-
-> **Important:** Assistive technologies implicitly add the `role="navigation"`, so it's best not to combine it with other roles like `role="group"`.
+> **Accessibility:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
 
 ## Basic Usage
 
+- `<nav>` is a flex container that uses `justify-content: space-between` to distribute its children across the horizontal axis;
+- All direct children of `<nav>` will have their `margin-block` set to 0;
+- In case of a single child, it will grow to fill the available space;
+
 <HtmlPreviewer :code="NavDemo.main()" />
 
-`<ul>` are automatically distributed horizontally.
+## Horizontal Navigation
 
-`<li>` are unstyled and inlined.
+- `<ul>` children also become a horizontal flex container;
+- `<li>` children will become unstyled and inlined;
+- `<a>` children will lose their underline except on `:hover`.
+- `<button>` and `<details>` (**Dropdowns**) children will automatically match the height and padding of links.
 
-`<a>` are underlined only on `:hover`.
+<HtmlPreviewer :code="NavDemo.horizontalHeaderNavigation({}, 'Acme Corp')" />
 
-You can use `<button>` inside `<li>`. Button sizes automatically match link size and margin.
+### Breadcrumbs
 
-## Breadcrumbs
+Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>` — the semantic way to represent the current page's location within a navigational hierarchy.
 
-Breadcrumb navigation allows users to keep track of their location within the website.
+Each breadcrumb item is represented as an `<li>` element, and the current page is typically indicated by adding `aria-current="page"` to the `<a>` or the corresponding `<li>` element.
+
+> **Accessibility:** Don't forget to add `aria-label="Breadcrumbs"` to the `<nav>` element for better accessibility.
 
 <HtmlPreviewer :code="NavDemo.breadcrumbs()" />
 
-## Vertical stacking
+## Vertical Navigation
 
-Navs get stacked vertically when inside a `<aside>`.
+- `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside an `<aside>`;
+- When `<nav>` is a direct child of an `<aside>` it will stretch itself to fill the available height.
 
-<HtmlPreviewer :code="NavDemo.verticalInAside()" />
+<HtmlPreviewer :code="NavDemo.sidebarExample()" />
 
 ## Button-Based Pagination
 

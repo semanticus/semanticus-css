@@ -52,22 +52,3 @@
 a[role="button"] {
   display: inline-block;
 }
-
-aside {
-  nav {
-    a:not([role="button"]),
-    [role="link"] {
-      display: block !important;
-      width: 100%;
-    }
-  }
-}
-
-nav {
-  a:not([role="button"]),
-  [role="link"] {
-    &:not(:hover) {
-      --_links-text-decoration: none;
-    }
-  }
-}

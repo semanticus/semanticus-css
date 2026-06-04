@@ -146,11 +146,11 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
 <body class="content-grid">
   <header>
     <nav>
-      <h3><a href="#">Acme Corp</a></h3>
+      <a href="#" class="fs-3"><strong>Acme Corp</strong></a>
 
       <ul>
         <li><a href="#">About</a></li>
-        <li><a href="#" role="button" class="secondary">Log In</a></li>
+        <li><a href="#" role="button" class="contrast">Log In</a></li>
       </ul>
     </nav>
   </header>

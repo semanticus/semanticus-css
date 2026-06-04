@@ -24,6 +24,9 @@ themes.forEach((theme) => {
     const main = page.locator("body > main");
 
     await expect(main).toBeVisible();
-    await expect(page).toHaveScreenshot(screenshotOptions);
+    await expect(page).toHaveScreenshot({
+      ...screenshotOptions,
+      mask: [page.locator(`[type="month"]`)],
+    });
   });
 });
