@@ -19,7 +19,6 @@ body:has(.sidebar:popover-open) {
     box-shadow: var(--menu-box-shadow);
     left: 0;
     bottom: 0;
-
     opacity: 1;
     transform: translateX(0);
     transition:
