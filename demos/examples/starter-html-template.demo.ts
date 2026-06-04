@@ -12,11 +12,11 @@ export function main(
     },
     `<header>
   <nav>
-    <h3><a href="#">Acme Corp</a></h3>
+    <a href="#" class="fs-3"><strong>Acme Corp</strong></a>
 
     <ul>
       <li><a href="#">About</a></li>
-      <li><a href="#" role="button" class="secondary">Log In</a></li>
+      <li><a href="#" role="button" class="contrast">Log In</a></li>
     </ul>
   </nav>
 </header>

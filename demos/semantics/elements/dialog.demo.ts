@@ -21,7 +21,7 @@ function thankYouContent() {
 }
 
 function thankYouWithCloseButtonContent(attrs: Record<string, string>) {
-  return `${closeButton({ commandfor: attrs.id, class: 'float-end' })}
+  return `${closeButton({ commandfor: attrs.id, class: "float-end" })}
 
 <h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
 
@@ -40,7 +40,12 @@ function closeButton(attrs: Record<string, string>) {
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  const mergedAttrs = { id: defaultId, ...attrs, "aria-labelledby": "modal-title", "aria-describedby": "modal-description" };
+  const mergedAttrs = {
+    id: defaultId,
+    ...attrs,
+    "aria-labelledby": "modal-title",
+    "aria-describedby": "modal-description",
+  };
 
   return renderElement("dialog", mergedAttrs, slot || thankYouContent());
 }
@@ -73,8 +78,10 @@ export function modalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
   return modal(attrs, headerAndFooterContent(attrs));
 }
 
-export function showModalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-    return `<button command="show-modal" commandfor="dialog-header-footer" class="contrast">Show Modal</button>
+export function showModalWithHeaderAndFooter(
+  attrs: Record<string, string> = {},
+) {
+  return `<button command="show-modal" commandfor="dialog-header-footer" class="contrast">Show Modal</button>
 
 ${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 }
@@ -82,7 +89,7 @@ ${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 function headerAndFooterContent(attrs: Record<string, string>) {
   return `<header>
   <h2 id="modal-title">Confirm Your Membership</h2>
-  ${closeButton({ commandfor: attrs.id || defaultId })}
+  ${closeButton({ class: "align-self-start", commandfor: attrs.id || defaultId })}
 </header>
 
 <article id="modal-description">
@@ -105,7 +112,10 @@ function headerAndFooterContent(attrs: Record<string, string>) {
 </footer>`;
 }
 
-export function dialogAlert(attrs: Record<string, string> = {}, slot: string = "") {
+export function dialogAlert(
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
   const mergedAttrs = { id: "dialog-alert", ...attrs, role: "alertdialog" };
 
   return main(mergedAttrs, slot || dialogAlertContent(mergedAttrs));
@@ -122,6 +132,7 @@ ${dialogAlert(mergedAttrs)}`;
 function dialogAlertContent(attrs: Record<string, string>) {
   return `<header>
   <h2 id="modal-title">Are you sure?</h2>
+  ${closeButton({ class: "align-self-start", commandfor: attrs.id || defaultId })}
 </header>
 
 <div id="modal-description">

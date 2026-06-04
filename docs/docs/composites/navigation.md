@@ -1,12 +1,10 @@
----
-title: nav
----
+# Navigation
 
-# &lt;nav&gt;
+Navigation is implemented using the `<nav>` element, as its fundamental building block but it's actually a combination of several elements working together.
 
 **Semanticus CSS** adds some opiniated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
-> **Accessibility:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
+Check out [Pagination](/docs/composites/pagination) for more examples of navigation patterns.
 
 ## Basic Usage
 
@@ -42,25 +40,11 @@ Each breadcrumb item represented as an `<li>` element and the current page is ty
 
 <HtmlPreviewer :code="NavDemo.sidebarExample()" />
 
-## Button-Based Pagination
+## Search and Dropdown Example
 
-The simplest pagination pattern uses buttons within a group:
-
-> **Note:** When a step isn't available yet but should be announced, use `aria-disabled="true"` instead of the native `disabled` attribute to keep the element focusable and discoverable by assistive technology users.
-> Remember that `aria-disabled` does not block activation on its own, so you must also prevent activation/navigation in code (for example, in a JavaScript handler).
-> In case you want to remove it from the tab order as well, add `tabindex="-1"`.
-
-<HtmlPreviewer :code="PaginationDemo.buttons()" />
-
-## Link-Based Pagination
-
-For server-side rendering or distinct page URLs, use anchor elements with `role="button"`:
-
-> **Note:** `disabled` is not a valid attribute for `<a>` elements, so in this case you really need to use `aria-disabled="true"` instead.
-
-<HtmlPreviewer :code="PaginationDemo.links()" />
+<HtmlPreviewer :code="NavDemo.searchAndDropdownExample()" />
 
 <script setup>
 import { PaginationDemo } from "@demos/composites";
-import { NavDemo } from "@demos/semantics/elements";
+import { AsideDemo, NavDemo } from "@demos/semantics/elements";
 </script>

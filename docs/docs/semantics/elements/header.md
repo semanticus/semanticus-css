@@ -18,4 +18,4 @@ The `<header>` element represents introductory content for its nearest sectionin
 
 ## With Search, Dropdown, and Links
 
-<HtmlPreviewer :code="HeaderDemo.withSearchDropdownAndLinks()" />
+<HtmlPreviewer :code="HeaderDemo.withSearchAndDropdownExample()" />

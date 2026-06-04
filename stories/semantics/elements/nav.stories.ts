@@ -17,8 +17,8 @@ export const logoTaglineLinks: StoryObj = {
   render: (args) => args.html,
 };
 
-export const searchDropdownAndLinks: StoryObj = {
-  args: { html: NavDemo.searchDropdownAndLinks() },
+export const searchAndDropdownExample: StoryObj = {
+  args: { html: NavDemo.searchAndDropdownExample() },
   render: (args) => args.html,
 };
 
@@ -37,12 +37,12 @@ export const pageLinks: StoryObj = {
   render: (args) => args.html,
 };
 
-export const verticalInAside: StoryObj = {
-    args: { html: NavDemo.verticalInAside() },
+export const sidebarExample: StoryObj = {
+  args: { html: NavDemo.sidebarExample() },
   render: (args) => args.html,
 };
 
 export const breadcrumbs: StoryObj = {
-    args: { html: NavDemo.breadcrumbs() },
+  args: { html: NavDemo.breadcrumbs() },
   render: (args) => args.html,
 };

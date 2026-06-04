@@ -1,7 +1,9 @@
 aside {
+  display: flex;
+  flex-direction: column;
   padding: var(--spacing);
 
-  :where(ol, ul, li) {
+  :is(nav, ol, ul) {
     align-items: stretch !important;
     display: flex;
     flex-direction: column;

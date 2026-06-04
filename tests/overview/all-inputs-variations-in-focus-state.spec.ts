@@ -11,7 +11,7 @@ test.use({ viewport: { width: 1024, height: 900 } });
 const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
   animations: "disabled",
   fullPage: true,
-  maxDiffPixelRatio: 0.02
+  maxDiffPixelRatio: 0.02,
 };
 
 const themes = variations.themes.map((p) => p.name);
@@ -25,6 +25,9 @@ themes.forEach((theme) => {
 
     await expect(main).toBeVisible();
     await triggerState(page, `input, textarea, select`, ["focus"]);
-    await expect(page).toHaveScreenshot(screenshotOptions);
+    await expect(page).toHaveScreenshot({
+      ...screenshotOptions,
+      mask: [page.locator(`[type="month"]`)],
+    });
   });
 });

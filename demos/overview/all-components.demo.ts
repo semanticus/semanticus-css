@@ -173,13 +173,13 @@ function navigation() {
   <h2>Navigation</h2>
 
   <section>
-    ${NavDemo.main()}
+    ${NavDemo.horizontalHeaderNavigation()}
   </section>
 
   <br>
 
   <section>
-    <h4>Breadcrumbs (aria-label="breadcrumb")</h4>
+    <h4>Breadcrumbs</h4>
     ${NavDemo.breadcrumbs()}
   </section>
 
@@ -187,7 +187,7 @@ function navigation() {
 
   <section>
     <h4>Sidebar</h4>
-    ${NavDemo.verticalInAside()}
+    ${NavDemo.sidebarExample()}
   </section>
 </section>`;
 }
