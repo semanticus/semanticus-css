@@ -78,7 +78,7 @@ aside {
 
 /* Breadcrumbs */
 
-:not(aside) nav:has(ol:only-child) {
+nav:has(> ol:only-child) {
   align-items: center;
   justify-content: start;
 
