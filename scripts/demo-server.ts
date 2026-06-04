@@ -164,14 +164,17 @@ function serverStaticFile(req: http.IncomingMessage, res: http.ServerResponse) {
 
     return;
   } catch (error) {
-    res.writeHead(error.code === "ENOENT" ? 404 : 500, {
+    const err = error as NodeJS.ErrnoException;
+    const statusCode = err.code === "ENOENT" ? 404 : 500;
+
+    res.writeHead(statusCode, {
       "Content-Type": "text/html",
     });
 
     res.end(
-      error.code === "ENOENT"
+      err.code === "ENOENT"
         ? "<h1>404 Not Found</h1>"
-        : "Server Error: " + error.code,
+        : "Server Error: " + (err.code ?? "UNKNOWN"),
     );
   }
 }
