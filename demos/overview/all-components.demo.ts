@@ -2,7 +2,6 @@ import { renderElement } from "@scripts/utils";
 
 import {
   DropdownDemo,
-  SearchDemo,
   AccordionsDemo,
   InputsDemo,
   LinksDemo,
@@ -12,8 +11,6 @@ import {
 } from "@demos/composites";
 import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
-  ADemo,
-  FieldsetDemo,
   ProgressDemo,
   TableDemo,
   DialogDemo,
@@ -21,68 +18,8 @@ import {
   NavDemo,
   HgroupDemo,
   RoleTooltipDemo,
-  RoleLinkDemo,
   TextDemo,
-  RoleGroupDemo,
 } from "@demos/semantics";
-
-function links() {
-  return `<section id="links">
-  <h2>Links</h2>
-
-  <section class="auto-grid">
-    ${ADemo.main()}
-    ${ADemo.active({}, "Current")}
-    ${ADemo.main({ "aria-disabled": "true" }, "Disabled")}
-    ${RoleLinkDemo.main("button")}
-    ${RoleLinkDemo.active("button", {}, "Current")}
-    ${RoleLinkDemo.main("button", { "aria-disabled": "true" }, "Disabled")}
-  </section>
-</section>`;
-}
-
-function fieldsets() {
-  return `<section id="fieldsets">
-  <hgroup>
-    <h2>Fieldsets</h2>
-    <p>Use fieldsets to group related form elements together.</p>
-  </hgroup>
-
-  <section>
-    ${FieldsetDemo.formInput()}
-  </section>
-
-  <section>
-    <h4>Group fieldset (role="group")</h4>
-
-    <section>
-      ${FieldsetDemo.groupInputButton()}
-      ${FieldsetDemo.groupMultipleInputs()}
-      ${FieldsetDemo.groupSelectButton()}
-    </section>
-  </section>
-
-  <section>
-    <h4>Search fieldset (role="search")</h4>
-
-    <section>
-      ${SearchDemo.main()}
-    </section>
-  </section>
-
-  <section id="fieldsets-disabled-state">
-    <h4>Disabled State</h4>
-
-    <section>
-      ${FieldsetDemo.formInput({ disabled: "disabled" })}
-      ${FieldsetDemo.groupInputButton({ disabled: "disabled" })}
-      ${FieldsetDemo.groupMultipleInputs({ disabled: "disabled" })}
-      ${FieldsetDemo.groupSelectButton({ disabled: "disabled" })}
-      ${SearchDemo.main({ disabled: "disabled" })}
-    </section>
-  </section>
-</section>`;
-}
 
 function tooltips() {
   return `<section id="tooltips">
@@ -260,6 +197,10 @@ function address() {
     ${TextDemo.address()}
   </section>
 </section>`;
+}
+
+export function rtlMode(attrs: Record<string, string> = {}) {
+  return main({ ...attrs, dir: "rtl" });
 }
 
 export function main(attrs: Record<string, string> = {}) {
