@@ -37,7 +37,7 @@ Each breadcrumb item represented as an `<li>` element and the current page is ty
 
 ## Vertical Navigation
 
-- `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside a `<aside>`;
+- `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside an `<aside>`;
 - When `<nav>` is a direct child of an `<aside>` it will stretch itself to fill the available height.
 
 <HtmlPreviewer :code="NavDemo.sidebarExample()" />
