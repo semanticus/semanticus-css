@@ -45,6 +45,5 @@ Each breadcrumb item represented as an `<li>` element and the current page is ty
 <HtmlPreviewer :code="NavDemo.searchAndDropdownExample()" />
 
 <script setup>
-import { PaginationDemo } from "@demos/composites";
-import { AsideDemo, NavDemo } from "@demos/semantics/elements";
+import { NavDemo } from "@demos/semantics/elements";
 </script>
