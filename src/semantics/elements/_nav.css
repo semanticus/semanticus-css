@@ -78,10 +78,6 @@ aside {
 
 /* Breadcrumbs */
 
-[dir="rtl"] :where(nav[aria-label="breadcrumb"]) ul li:not(:last-child)::after {
-  content: "\\";
-}
-
 :not(aside) nav:has(ol:only-child) {
   align-items: center;
   justify-content: start;
