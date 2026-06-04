@@ -158,27 +158,26 @@ function serveStaticFile(req: http.IncomingMessage, res: http.ServerResponse) {
   const ext = path.extname(filePath).toLowerCase();
   const contentType = mimeTypes[ext] || "application/octet-stream";
 
-  try {
-    const content = fs.readFileSync(filePath);
+  const stream = fs.createReadStream(filePath);
 
+  stream.on("open", () => {
     res.writeHead(200, { "Content-Type": contentType });
-    res.end(content);
+  });
 
-    return;
-  } catch (error) {
+  stream.on("error", (error) => {
     const err = error as NodeJS.ErrnoException;
     const statusCode = err.code === "ENOENT" ? 404 : 500;
 
-    res.writeHead(statusCode, {
-      "Content-Type": "text/html",
-    });
-
+    res.writeHead(statusCode, { "Content-Type": "text/html" });
     res.end(
       err.code === "ENOENT"
         ? "<h1>404 Not Found</h1>"
         : "Server Error: " + (err.code ?? "UNKNOWN"),
     );
-  }
+  });
+
+  stream.pipe(res);
+  return;
 }
 
 const server = http.createServer(async (req, res) => {
