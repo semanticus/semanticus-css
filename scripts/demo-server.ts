@@ -125,11 +125,13 @@ async function runDemo(
 function safeNormalizePath(inputPath: string): string {
   const normalized = path.normalize(inputPath);
 
-  // If it starts with '..' or '..\' it escaped the original bounds
-  if (normalized.startsWith("..") || path.isAbsolute(normalized)) {
-    throw new Error(
-      "Security Error: Path traversal detected outside of bounds.",
-    );
+  // Guard against path traversal (e.g. "../x") and absolute paths.
+  if (
+    normalized === ".." ||
+    normalized.startsWith(`..${path.sep}`) ||
+    path.isAbsolute(normalized)
+  ) {
+    throw new Error("Security Error: Path traversal detected outside of bounds.");
   }
 
   return normalized;
