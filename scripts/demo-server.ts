@@ -227,7 +227,7 @@ const server = http.createServer(async (req, res) => {
       console.error("[demo-server]", err);
     }
 
-    serverStaticFile(req, res);
+    serveStaticFile(req, res);
   }
 });
 
