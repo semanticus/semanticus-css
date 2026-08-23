@@ -1,6 +1,17 @@
 hgroup {
   margin-bottom: var(--typography-margin-block);
 
+  & > mark:first-child {
+    --mark-background-color: none;
+    padding: 0;
+    font-weight: bolder;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: var(--typography-margin-block);
+  }
+
   & > * {
     margin-block: 0 !important;
 

@@ -15,6 +15,14 @@ export function paragraphs() {
 <p>Use paragraphs to structure text content into readable blocks.</p>`;
 }
 
+export function hgroup() {
+  return `<hgroup>
+  <mark>Eyebrow</mark>
+  <h2>Heading Group</h2>
+  <p>The <strong>first &lt;mark&gt; child</strong> gets special styling and the <strong>last child</strong> text becomes muted.</p>
+</hgroup>`;
+}
+
 export function codeBlock() {
   return `<pre><code>function greet(name) {
   return \`Hello, \${name}!\`;

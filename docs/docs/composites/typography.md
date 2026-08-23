@@ -18,6 +18,10 @@ See [Typography Utilities](/docs/utilities/typography) for more details.
 
 <HtmlPreviewer :code="TextDemo.paragraphs()" />
 
+## Hgroup
+
+<HtmlPreviewer :code="TextDemo.hgroup()" />
+
 ## Address
 
 The `<address>` element provides contact information for the nearest `<article>` or the document body. Semanticus removes the default italic style and adds vertical spacing.
