@@ -1,8 +1,8 @@
 hgroup {
   margin-bottom: var(--typography-margin-block);
 
-  & > mark:first-child {
-    --mark-background-color: none;
+  & > mark:first-of-type {
+    --mark-background-color: transparent;
     padding: 0;
     font-weight: bolder;
     color: var(--primary-color);
