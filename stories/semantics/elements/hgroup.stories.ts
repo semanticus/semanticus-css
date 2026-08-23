@@ -8,6 +8,9 @@ const meta: Meta = {
 export default meta;
 
 export const basicUsage: StoryObj = {
-  args: { html: HgroupDemo.main() },
-  render: (args) => args.html,
+  render: () => HgroupDemo.main(),
+};
+
+export const withEyebrow: StoryObj = {
+  render: () => HgroupDemo.withEyebrow(),
 };

@@ -13,3 +13,7 @@ The `<hgroup>` element groups a heading with related metadata — such as a subh
 ## Basic Usage
 
 <HtmlPreviewer :code="HgroupDemo.main()" />
+
+## With Eyebrow
+
+<HtmlPreviewer :code="HgroupDemo.withEyebrow()" />
