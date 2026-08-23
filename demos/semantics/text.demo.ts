@@ -19,7 +19,7 @@ export function hgroup() {
   return `<hgroup>
   <mark>Eyebrow</mark>
   <h2>Heading Group</h2>
-  <p>The <strong>first &lt;mark&gt; child</strong> gets special styling and the <strong>last child</strong> text becomes muted.</p>
+  <p>The <strong>first &lt;mark&gt; child</strong> gets special styling and the text of the first <strong>p element</strong> after the heading becomes muted.</p>
 </hgroup>`;
 }
 

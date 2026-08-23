@@ -8,17 +8,14 @@ hgroup {
     color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    display: block;
-    margin-bottom: var(--typography-margin-block);
+  }
+
+  & > :where(h1, h2, h3, h4, h5, h6) + p {
+    color: var(--color-muted);
+    --font-weight: unset;
   }
 
   & > * {
     margin-block: 0 !important;
-
-    &:not(:first-child):last-child {
-      color: var(--color-muted);
-      --font-weight: unset;
-      font-size: 1rem;
-    }
   }
 }

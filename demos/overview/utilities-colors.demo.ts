@@ -8,8 +8,8 @@ function typographySection(cssClass: string) {
   </section>
 
   <hgroup>
-    <h2>HGroup</h2>
-    <p>last child gets muted text</p>
+    <h2>Title</h2>
+    <p>Description</p>
   </hgroup>
 
   <p>The paragraph element is the most basic block of text content.</p>

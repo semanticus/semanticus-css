@@ -14,3 +14,7 @@ export const basicUsage: StoryObj = {
 export const withEyebrow: StoryObj = {
   render: () => HgroupDemo.withEyebrow(),
 };
+
+export const withoutDescription: StoryObj = {
+  render: () => HgroupDemo.withoutDescription(),
+};
