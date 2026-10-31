@@ -9,8 +9,8 @@ button,
 [type="submit"],
 [type="reset"],
 [type="button"],
-[type="file"]::file-selector-button,
-[role="button"] {
+[role="button"],
+[type="file"]::file-selector-button {
   --_buttons-background-color-hover: var(--buttons-background-color-hover);
   --_buttons-background-color: var(--buttons-background-color);
   --_buttons-color-hover: var(--buttons-color-hover);
@@ -49,7 +49,13 @@ button,
     outline: var(--outline-width) solid var(--_buttons-outline-color);
     box-shadow: 0 0 0 var(--focus-ring-width) var(--_buttons-outline-color);
   }
+}
 
+button,
+[type="submit"],
+[type="reset"],
+[type="button"],
+[role="button"] {
   &[aria-busy="true"] {
     pointer-events: none;
 
@@ -57,6 +63,11 @@ button,
       filter: brightness(0) invert(1);
     }
   }
+}
+
+[type="file"][aria-busy="true"]::file-selector-button {
+  pointer-events: none;
+  filter: brightness(0) invert(1);
 }
 
 [type="submit"] {
