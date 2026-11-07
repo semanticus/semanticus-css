@@ -43,7 +43,7 @@ jobs:
         run: npm run build
 
       - name: Initialize snapshots
-        if: ${{inputs.update_snapshots == 'true'}}
+        if: ${{ inputs.update_snapshots }}
         run: npx playwright test --update-snapshots --reporter html
 
       - name: Run Playwright tests

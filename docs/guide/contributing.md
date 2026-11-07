@@ -126,7 +126,9 @@ npm run test:dev
 
 Playwright's pixel-level snapshots are sensitive to the OS and browser rendering engine. To ensure that snapshots are always generated in the same environment as CI, this project ships a **dev container** (`.devcontainer/devcontainer.json`) based on the official Playwright Docker image (`mcr.microsoft.com/playwright:v1.60.0-noble`, Ubuntu 24.04).
 
-**You must generate and update snapshots inside the dev container.** Snapshots committed from a different OS (macOS, Windows, a different Linux distro) will differ from the ones used in CI and will cause test failures on every run.
+**Generate and update Linux snapshots inside the dev container or CI's matching Playwright container.** Snapshot paths include the operating system: macOS and Windows baselines can be kept separately, but they do not replace the Linux baselines required by CI. Include Linux baselines when adding a new visual test.
+
+To generate baselines through CI, run the **CI checks** workflow on the branch containing the new tests and enable **Regenerate visual snapshots**. Download the `playwright-snapshots` artifact, review the generated Linux images, and commit the changes under `tests/_snapshots/chromium/linux/`. Normal CI runs continue to compare against committed baselines; regeneration only runs when explicitly requested.
 
 #### Opening the dev container
 
