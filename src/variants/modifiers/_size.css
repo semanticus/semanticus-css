@@ -27,12 +27,12 @@
 :is(
   .size-sm, .size-lg,
   :is([role="group"], [role="search"]):is(.size-sm, .size-lg) > :where(
-    button, [role="button"], input, select, textarea, details, label
+    button, .button, [role="button"], input, select, textarea, details, label
   ):not(:is(.size-sm, .size-md, .size-lg)),
   label:is(.size-sm, .size-lg) > :where(input, select, textarea):not(:is(.size-sm, .size-md, .size-lg)),
   :is([role="group"], [role="search"]):is(.size-sm, .size-lg) > label:not(:is(.size-sm, .size-md, .size-lg)) > :where(input, select, textarea):not(:is(.size-sm, .size-md, .size-lg))
 ) {
-  &:is(button, [role="button"], [type="button"], [type="submit"], [type="reset"]) {
+  &:is(button, .button, [role="button"], [type="button"], [type="submit"], [type="reset"]) {
     --details-summary-line-height: var(--line-height);
     --buttons-font-size: var(--size-control-font-size);
     --buttons-padding-block: var(--size-padding-block);

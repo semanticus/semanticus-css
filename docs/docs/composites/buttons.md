@@ -3,6 +3,7 @@
 Buttons are implemented using different approaches:
 - Using the native [&lt;button&gt;](/docs/semantics/elements/button) element
 - Using [Input Buttons](/docs/semantics/elements/input#input-buttons) elements like `<input type="button">` or `<input type="submit">`
+- Styling anchors with `.button` while preserving their link semantics
 - Combining [[role=button]](/docs/semantics/attributes/role-button) with elements like `<a>`, `<div>`, etc.
 
 The choice of element depends on the context and the desired behavior of the button.
@@ -12,6 +13,12 @@ The choice of element depends on the context and the desired behavior of the but
 See the [&lt;button&gt;](/docs/semantics/elements/button) for more details on button variations.
 
 <HtmlPreviewer :code="ButtonDemo.main()" />
+
+## Links styled as buttons
+
+Use `.button` on an anchor for navigation that looks like a button. The anchor keeps its native link semantics and keyboard behavior; use a native `<button>` for actions.
+
+<HtmlPreviewer :code="ButtonDemo.links()" />
 
 ## Input Types
 

@@ -16,7 +16,7 @@ nav {
     }
   }
 
-  a:not([role="button"]),
+  a:not([role="button"], .button),
   [role="link"] {
     &:not(:hover) {
       --_links-text-decoration: none;
@@ -25,6 +25,7 @@ nav {
 
   :is(
     button,
+    .button,
     [role="button"],
     [type="button"],
     select,
@@ -69,7 +70,7 @@ aside {
   }
 
   nav {
-    :is(a, [role="link"], button, [role="button"]) {
+    :is(a, [role="link"], button, .button, [role="button"]) {
       display: block;
       width: 100%;
     }

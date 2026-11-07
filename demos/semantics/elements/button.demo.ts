@@ -11,6 +11,11 @@ export function main(
   return renderElement("button", attrs, slot);
 }
 
+export function links() {
+  return `${renderElement("a", { href: "/guide", class: "button" }, "Read the guide")}
+${renderElement("a", { href: "/download", class: "button secondary ghost size-sm" }, "Download")}`;
+}
+
 export function overviewCloseButton() {
   return `${closeButton()}
 

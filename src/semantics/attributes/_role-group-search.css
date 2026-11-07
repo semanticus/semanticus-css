@@ -40,6 +40,7 @@
     [type="submit"],
     [type="reset"],
     [type="button"],
+    .button,
     [role="button"]
   ) {
     /* Buttons inside search/group combos get wider horizontal padding */
@@ -94,7 +95,8 @@
     [type="submit"]:focus,
     [type="button"]:focus,
     [type="reset"]:focus,
-    [role="button"]:focus
+    [role="button"]:focus,
+    .button:focus
   ) {
     box-shadow: 0 0 0 var(--focus-ring-width) var(--_group-outline-color);
   }
@@ -112,6 +114,7 @@
       [type="submit"],
       [type="reset"],
       [type="button"],
+      .button,
       [role="button"]
     ) {
       outline: var(--outline-width) solid var(--buttons-background-color);
