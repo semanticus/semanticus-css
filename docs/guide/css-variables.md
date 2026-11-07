@@ -192,6 +192,7 @@ Scoped to a component type. Change one of these and every instance updates.
   --buttons-background-color: var(--primary-background-color);
   --buttons-color-hover: white;
   --buttons-color: white;
+  --buttons-border-radius: var(--border-radius);
   --buttons-padding-block: var(--inputs-padding-block);
   --buttons-padding-inline: var(--inputs-padding-inline);
 
