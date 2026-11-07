@@ -1,4 +1,4 @@
-:where(a:not([role="button"])),
+:where(a:not([role="button"], .button)),
 [role="link"] {
   --_links-color: var(--links-color);
   --_links-color-hover: var(--links-color-hover);
@@ -49,6 +49,7 @@
   }
 }
 
+a.button,
 a[role="button"] {
   display: inline-block;
 }

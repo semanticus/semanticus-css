@@ -12,6 +12,14 @@ On how to turn non-button elements into buttons, see [[role="button"]](/docs/sem
 
 <HtmlPreviewer :code="ButtonDemo.main()" />
 
+## Links styled as buttons
+
+Use `.button` on an anchor to give it button styling while preserving its link semantics and native keyboard behavior:
+
+<HtmlPreviewer :code="ButtonDemo.links()" />
+
+For actions, use a native `<button>`. Use `role="button"` only when the element behaves as a button, including the appropriate keyboard interaction.
+
 ## Variants
 
 ### Intent Variants

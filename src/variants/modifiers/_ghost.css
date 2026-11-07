@@ -42,6 +42,7 @@
       [type="submit"],
       [type="reset"],
       [type="button"],
+      .button,
       [role="button"]
     )[aria-busy="true"],
   [type="file"][aria-busy="true"]::file-selector-button {
