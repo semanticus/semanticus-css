@@ -98,11 +98,17 @@ In both scenarios, you will probably want add or update the existing `*.demo.ts`
 
 Semanticus CSS uses [Playwright](https://playwright.dev/docs/test-snapshots) for visual regression testing.
 
-To run the test suite, use:
+Before the first local test run, install the configured Chromium browser and build the CSS:
 
 ```bash
+npx playwright install chromium
+npm run build
 npm test
 ```
+
+Repeat the browser installation after upgrading Playwright. The dev container already includes the matching browsers. Subsequent local runs only need `npm test` after rebuilding any CSS changes.
+
+If browser installation reaches 100% and then stalls during extraction on Node 26 or Node 24.16+, check that dependencies are up to date with `npm ci`. Playwright 1.60.0 fixes the [archive extraction hang](https://github.com/microsoft/playwright/issues/40724) present in 1.59.1.
 
 To run a specific test:
 
@@ -118,7 +124,7 @@ npm run test:dev
 
 ### Snapshot consistency and the dev container
 
-Playwright's pixel-level snapshots are sensitive to the OS and browser rendering engine. To ensure that snapshots are always generated in the same environment as CI, this project ships a **dev container** (`.devcontainer/devcontainer.json`) based on the official Playwright Docker image (`mcr.microsoft.com/playwright:v1.59.1-noble`, Ubuntu 24.04).
+Playwright's pixel-level snapshots are sensitive to the OS and browser rendering engine. To ensure that snapshots are always generated in the same environment as CI, this project ships a **dev container** (`.devcontainer/devcontainer.json`) based on the official Playwright Docker image (`mcr.microsoft.com/playwright:v1.60.0-noble`, Ubuntu 24.04).
 
 **You must generate and update snapshots inside the dev container.** Snapshots committed from a different OS (macOS, Windows, a different Linux distro) will differ from the ones used in CI and will cause test failures on every run.
 

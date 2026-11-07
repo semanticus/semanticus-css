@@ -1,6 +1,6 @@
 {
   "name": "Playwright (Linux/Ubuntu 24.04)",
-  "image": "mcr.microsoft.com/playwright:v1.59.1-noble",
+  "image": "mcr.microsoft.com/playwright:v1.60.0-noble",
   "postCreateCommand": "npm ci",
   "remoteUser": "pwuser",
   "mounts": [
