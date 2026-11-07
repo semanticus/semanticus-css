@@ -20,6 +20,22 @@ Use `.button` on an anchor to give it button styling while preserving its link s
 
 For actions, use a native `<button>`. Use `role="button"` only when the element behaves as a button, including the appropriate keyboard interaction.
 
+## Border radius
+
+Use `--buttons-border-radius` to customize button corners independently of the global `--border-radius`. It defaults to `var(--border-radius)`, preserving the existing appearance.
+
+```css
+:root {
+  --buttons-border-radius: 999px;
+}
+```
+
+This applies to native buttons, button inputs, `.button`, `[role="button"]`, and file selector buttons. For an individual button, set `--_buttons-border-radius` directly:
+
+```html
+<button style="--_buttons-border-radius: 0">Square button</button>
+```
+
 ## Variants
 
 ### Intent Variants

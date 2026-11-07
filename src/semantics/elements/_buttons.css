@@ -19,13 +19,14 @@ button,
   --_buttons-outline-color: var(--primary-outline-color);
   --_buttons-padding-block: var(--buttons-padding-block);
   --_buttons-padding-inline: var(--buttons-padding-inline);
+  --_buttons-border-radius: var(--buttons-border-radius);
   --_buttons-border-color: var(--_buttons-background-color);
   --_buttons-border-color-hover: var(--_buttons-background-color-hover);
 
   padding-block: var(--_buttons-padding-block);
   padding-inline: var(--_buttons-padding-inline);
   border: var(--border-width) solid var(--_buttons-border-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--_buttons-border-radius);
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);
   font-weight: var(--font-weight);
