@@ -11,7 +11,7 @@
   vertical-align: middle;
   width: 100%;
 
-  & > *:not(details),
+  & > :not(details, input[type="checkbox"], input[type="radio"]),
   & input:not([type="checkbox"], [type="radio"]),
   & select {
     position: relative;
@@ -53,10 +53,10 @@
     position: relative;
     margin-bottom: 0;
     /* Constrain details height to just the button, not the dropdown menu */
-    height: calc(
+    height: var(--details-dropdown-height, calc(
       1rem * var(--line-height) + var(--inputs-padding-block) * 2 +
         var(--border-width) * 2
-    );
+    ));
     overflow: visible;
 
     &:not(:first-child) {
@@ -84,7 +84,7 @@
       height: 100%;
 
       &::after {
-        height: calc(1rem * var(--line-height, 1.5));
+        height: calc(var(--buttons-font-size) * var(--line-height, 1.5));
       }
     }
   }
@@ -123,12 +123,12 @@
 [role="search"] {
   --_group-border-radius: var(--input-search-border-radius);
 
-  & > :first-child {
+  & > :first-child:not(input[type="checkbox"], input[type="radio"]) {
     border-top-left-radius: var(--_group-border-radius);
     border-bottom-left-radius: var(--_group-border-radius);
   }
 
-  & > :last-child {
+  & > :last-child:not(input[type="checkbox"], input[type="radio"]) {
     border-top-right-radius: var(--_group-border-radius);
     border-bottom-right-radius: var(--_group-border-radius);
   }

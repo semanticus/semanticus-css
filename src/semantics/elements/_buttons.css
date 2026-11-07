@@ -28,7 +28,7 @@ button,
   background-color: var(--_buttons-background-color);
   color: var(--_buttons-color);
   font-weight: var(--font-weight);
-  font-size: 1rem;
+  font-size: var(--buttons-font-size);
   line-height: var(--line-height);
   text-align: center;
   text-decoration: none;

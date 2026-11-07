@@ -230,6 +230,7 @@
   --buttons-background-color: var(--primary-background-color);
   --buttons-color-hover: white;
   --buttons-color: white;
+  --buttons-font-size: 1rem;
   --buttons-padding-block: var(--inputs-padding-block);
   --buttons-padding-inline: var(--inputs-padding-inline);
 
@@ -318,6 +319,7 @@
     var(--_color-slate-200),
     var(--_color-slate-750)
   );
+  --inputs-font-size: 1rem;
   --inputs-padding-block: 0.5rem;
   --inputs-padding-inline: 0.7rem;
   --inputs-background-color: light-dark(

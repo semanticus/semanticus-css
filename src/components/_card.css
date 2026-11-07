@@ -23,6 +23,7 @@
     width: auto;
     margin-inline: calc(var(--_card-spacing) * -1);
     padding-inline: var(--_card-spacing);
+    padding-block: var(--card-marginals-padding-block, var(--spacing));
     background-color: var(--_card-marginals-background-color);
     display: flex;
     gap: calc(var(--nav-link-gap) * 1.5);
@@ -32,6 +33,7 @@
   /* Header styling */
   > header {
     margin-top: calc(var(--_card-spacing) * -1);
+    margin-bottom: var(--card-marginals-margin-block, var(--spacing));
     border-bottom: var(--_card-border-width) solid
       var(--_card-marginals-border-color);
     border-top-right-radius: var(--_card-border-radius);
@@ -42,6 +44,7 @@
   /* Footer styling */
   > footer {
     margin-bottom: calc(var(--_card-spacing) * -1);
+    margin-top: var(--card-marginals-margin-block, var(--spacing));
     border-top: var(--_card-border-width) solid
       var(--_card-marginals-border-color);
     border-bottom-right-radius: var(--_card-border-radius);

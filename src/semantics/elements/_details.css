@@ -11,7 +11,7 @@ details {
   display: block;
 
   > summary {
-    line-height: 1rem;
+    line-height: var(--details-summary-line-height, 1rem);
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
@@ -61,7 +61,7 @@ details {
       text-align: left;
 
       &::after {
-        height: calc(1rem * var(--line-height, 1.5));
+        height: calc(var(--buttons-font-size) * var(--line-height, 1.5));
         filter: brightness(0) invert(1);
       }
     }
@@ -79,7 +79,7 @@ details {
   }
 
   &[open] > summary {
-    margin-bottom: var(--spacing);
+    margin-bottom: var(--details-spacing, var(--spacing));
 
     &:not([role]):not(:focus) {
       --_details-summary-color: var(--_details-summary-color-open);
@@ -108,13 +108,14 @@ details:has(> summary[aria-haspopup="menu"]) {
     --_details-summary-color: var(--_details-dropdown-color);
 
     &::after {
-      height: calc(1rem * var(--line-height, 1.5));
+      height: calc(var(--details-dropdown-font-size, var(--buttons-font-size)) * var(--line-height, 1.5));
       margin-inline-start: 0.25rem;
       margin-left: auto;
       transform: rotate(0deg) translateX(0.2rem);
     }
 
     &:not([role]) {
+      font-size: var(--details-dropdown-font-size, inherit);
       background-color: var(--_details-dropdown-background-color);
       border: var(--border-width) solid var(--_details-dropdown-border-color);
       border-radius: var(--border-radius);
@@ -123,7 +124,7 @@ details:has(> summary[aria-haspopup="menu"]) {
       display: flex;
       align-items: center;
       height: calc(
-        1rem * var(--line-height) + var(--_details-dropdown-padding-block) * 2 +
+        var(--details-dropdown-font-size, 1rem) * var(--line-height) + var(--_details-dropdown-padding-block) * 2 +
           var(--border-width) * 2
       );
       line-height: inherit;
@@ -171,6 +172,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     background-color: var(--details-menu-background-color);
     box-shadow: var(--menu-box-shadow);
     color: var(--details-menu-color);
+    font-size: var(--details-menu-font-size, inherit);
     white-space: nowrap;
     opacity: 0;
     transition:
@@ -186,24 +188,24 @@ details:has(> summary[aria-haspopup="menu"]) {
     & > li {
       width: 100%;
       margin-bottom: 0;
-      padding: calc(var(--inputs-padding-block) * 0.5)
-        var(--inputs-padding-inline);
+      padding: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5))
+        var(--details-menu-padding-inline, var(--inputs-padding-inline));
       list-style: none;
 
       &:first-of-type {
-        margin-top: calc(var(--inputs-padding-block) * 0.5);
+        margin-top: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5));
       }
 
       &:last-of-type {
-        margin-bottom: calc(var(--inputs-padding-block) * 0.5);
+        margin-bottom: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5));
       }
 
       & a {
         display: block;
-        margin: calc(var(--inputs-padding-block) * -0.5)
-          calc(var(--inputs-padding-inline) * -1);
-        padding: calc(var(--inputs-padding-block) * 0.5)
-          var(--inputs-padding-inline);
+        margin: calc(var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5)) * -1)
+          calc(var(--details-menu-padding-inline, var(--inputs-padding-inline)) * -1);
+        padding: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5))
+          var(--details-menu-padding-inline, var(--inputs-padding-inline));
         overflow: hidden;
         border-radius: 0;
         color: var(--details-menu-color);
@@ -267,8 +269,8 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex !important;
     align-items: center !important;
     height: auto !important;
-    padding: calc(var(--nav-link-gap) - var(--border-width) * 2)
-      var(--nav-link-gap) !important;
+    padding: var(--details-dropdown-nav-padding-block, calc(var(--nav-link-gap) - var(--border-width) * 2))
+      var(--details-dropdown-nav-padding-inline, var(--nav-link-gap)) !important;
 
     &::after {
       transform: rotate(0deg) translateX(0rem);

@@ -538,6 +538,7 @@ export default defineConfig({
               items: [
                 { text: ".ghost", link: "/docs/variants/modifiers/ghost" },
                 { text: ".striped", link: "/docs/variants/modifiers/striped" },
+                { text: ".size-*", link: "/docs/variants/modifiers/size" },
                 { text: ".subtle", link: "/docs/variants/modifiers/subtle" },
               ],
             },

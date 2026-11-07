@@ -1,0 +1,116 @@
+/* .size-md preserves normal component and contextual styling. */
+.size-sm {
+  --size-control-font-size: .875rem;
+  --size-padding-block: .25rem;
+  --size-padding-inline: .5rem;
+  --size-spacing: calc(var(--spacing) * .5);
+  --size-range-scale: .875;
+}
+
+.size-lg {
+  --size-control-font-size: 1.125rem;
+  --size-padding-block: .625rem;
+  --size-padding-inline: 1rem;
+  --size-spacing: calc(var(--spacing) * 1.5);
+  --size-range-scale: 1.125;
+}
+
+.size-md {
+  --size-control-font-size: initial;
+  --size-padding-block: initial;
+  --size-padding-inline: initial;
+  --size-spacing: initial;
+  --size-range-scale: initial;
+}
+
+/* Only supported elements opt into sizing. Explicit child sizes take precedence. */
+:is(
+  .size-sm, .size-lg,
+  :is([role="group"], [role="search"]):is(.size-sm, .size-lg) > :where(
+    button, [role="button"], input, select, textarea, details, label
+  ):not(:is(.size-sm, .size-md, .size-lg)),
+  label:is(.size-sm, .size-lg) > :where(input, select, textarea):not(:is(.size-sm, .size-md, .size-lg)),
+  :is([role="group"], [role="search"]):is(.size-sm, .size-lg) > label:not(:is(.size-sm, .size-md, .size-lg)) > :where(input, select, textarea):not(:is(.size-sm, .size-md, .size-lg))
+) {
+  &:is(button, [role="button"], [type="button"], [type="submit"], [type="reset"]) {
+    --details-summary-line-height: var(--line-height);
+    --buttons-font-size: var(--size-control-font-size);
+    --buttons-padding-block: var(--size-padding-block);
+    --_buttons-padding-block: var(--size-padding-block);
+    --buttons-padding-inline: var(--size-padding-inline);
+    --_buttons-padding-inline: var(--size-padding-inline);
+  }
+
+  &:is(input, select, textarea):not([type="hidden"]) {
+    --inputs-font-size: var(--size-control-font-size);
+    --inputs-padding-block: var(--size-padding-block);
+    --inputs-padding-inline: var(--size-padding-inline);
+  }
+
+  &:is(label) {
+    --label-font-size: var(--size-control-font-size);
+  }
+
+  &[type="range"] {
+    --_input-range-thumb-size: calc(var(--input-range-thumb-size) * var(--size-range-scale));
+    --_input-range-track-height: calc(var(--input-range-track-height) * var(--size-range-scale));
+    --_input-range-thumb-margin-top: calc(
+      (var(--_input-range-track-height) - var(--_input-range-thumb-size)) / 2
+    );
+  }
+
+  &[type="file"] {
+    --buttons-font-size: var(--size-control-font-size);
+  }
+
+  &:is(details):has(> summary[aria-haspopup="menu"]) {
+    --details-summary-line-height: var(--line-height);
+    --details-dropdown-font-size: var(--size-control-font-size);
+    --details-dropdown-padding-block: var(--size-padding-block);
+    --details-dropdown-padding-inline: var(--size-padding-inline);
+    --details-dropdown-nav-padding-block: var(--size-padding-block);
+    --details-dropdown-nav-padding-inline: var(--size-padding-inline);
+    --details-dropdown-height: calc(
+      var(--details-dropdown-font-size) * var(--line-height) +
+        var(--details-dropdown-padding-block) * 2 + var(--border-width) * 2
+    );
+    --details-menu-font-size: var(--size-control-font-size);
+    --details-menu-padding-block: calc(var(--size-padding-block) * 0.5);
+    --details-menu-padding-inline: var(--size-padding-inline);
+    --buttons-font-size: var(--size-control-font-size);
+    --buttons-padding-block: var(--size-padding-block);
+    --buttons-padding-inline: var(--size-padding-inline);
+    --nav-link-gap: var(--size-spacing);
+    --group-buttons-padding-inline: var(--size-padding-inline);
+  }
+
+  &:is([role="status"], [role="alert"]) {
+    --_alert-spacing: var(--size-spacing);
+  }
+
+  &:is(dialog) {
+    --dialog-spacing: var(--size-spacing);
+  }
+
+  &:is(details):not(:has(> summary[aria-haspopup="menu"])) {
+    --details-spacing: var(--size-spacing);
+    --typography-margin-block: var(--size-spacing);
+
+    > summary[role="button"] {
+      --details-summary-line-height: var(--line-height);
+      --buttons-font-size: var(--size-control-font-size);
+      --_buttons-padding-block: var(--size-padding-block);
+      --_buttons-padding-inline: var(--size-padding-inline);
+    }
+  }
+
+  &.card {
+    --_card-spacing: var(--size-spacing);
+    --card-marginals-padding-block: var(--size-spacing);
+    --card-marginals-margin-block: var(--size-spacing);
+  }
+
+  &.pane {
+    --_pane-spacing: var(--size-spacing);
+  }
+}
