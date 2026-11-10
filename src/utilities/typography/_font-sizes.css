@@ -21,3 +21,7 @@
 .fs-6 {
   font-size: var(--h6-font-size) !important;
 }
+
+.fs-small {
+  font-size: var(--small-font-size) !important;
+}

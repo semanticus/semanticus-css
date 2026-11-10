@@ -27,6 +27,7 @@ const fontSizeHtml = `<p class="fs-1">.fs-1 text</p>
 <p class="fs-4">.fs-4 text</p>
 <p class="fs-5">.fs-5 text</p>
 <p class="fs-6">.fs-6 text</p>
+<p class="fs-small">.fs-small text</p>
 `;
 const fontWeightHtml = `<p class="fw-bold">Bold text.</p>
 <p class="fw-bolder">Bolder weight text (relative to parent).</p>
