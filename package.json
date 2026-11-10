@@ -1,6 +1,6 @@
 {
   "name": "@semanticus/semanticus-css",
-  "version": "3.4.1",
+  "version": "3.5.0",
   "description": "lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities",
   "author": "Joao Goncalves",
   "style": "./dist/semanticus.css",
@@ -65,7 +65,7 @@
     "src/**/*.css"
   ],
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
+    "@playwright/test": "^1.65.0",
     "@storybook/addon-docs": "^10.4.0",
     "@storybook/html-vite": "^10.4.0",
     "@types/node": "^25.6.0",
@@ -76,7 +76,7 @@
     "storybook": "^10.4.0",
     "stylelint": "^17.7.0",
     "stylelint-config-standard": "^40.0.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.23.15",
     "vitepress": "^2.0.0-alpha.17"
   },
   "scripts": {

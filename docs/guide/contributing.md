@@ -108,7 +108,7 @@ npm test
 
 Repeat the browser installation after upgrading Playwright. The dev container already includes the matching browsers. Subsequent local runs only need `npm test` after rebuilding any CSS changes.
 
-If browser installation reaches 100% and then stalls during extraction on Node 26 or Node 24.16+, check that dependencies are up to date with `npm ci`. Playwright 1.60.0 fixes the [archive extraction hang](https://github.com/microsoft/playwright/issues/40724) present in 1.59.1.
+If browser installation reaches 100% and then stalls during extraction on Node 26 or Node 24.16+, check that dependencies are up to date with `npm ci`. Playwright 1.60.0+ fixes the [archive extraction hang](https://github.com/microsoft/playwright/issues/40724) present in 1.59.1.
 
 To run a specific test:
 
@@ -124,7 +124,7 @@ npm run test:dev
 
 ### Snapshot consistency and the dev container
 
-Playwright's pixel-level snapshots are sensitive to the OS and browser rendering engine. To ensure that snapshots are always generated in the same environment as CI, this project ships a **dev container** (`.devcontainer/devcontainer.json`) based on the official Playwright Docker image (`mcr.microsoft.com/playwright:v1.60.0-noble`, Ubuntu 24.04).
+Playwright's pixel-level snapshots are sensitive to the OS and browser rendering engine. To ensure that snapshots are always generated in the same environment as CI, this project ships a **dev container** (`.devcontainer/devcontainer.json`) based on the official Playwright Docker image (`mcr.microsoft.com/playwright:v1.65.0-noble`, Ubuntu 24.04).
 
 **Generate and update Linux snapshots inside the dev container or CI's matching Playwright container.** Snapshot paths include the operating system: macOS and Windows baselines can be kept separately, but they do not replace the Linux baselines required by CI. Include Linux baselines when adding a new visual test.
 
