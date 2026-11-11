@@ -1,5 +1,5 @@
 small {
-  --font-size: var(--small-font-size);
+  --font-size: var(--font-size-sm);
 
   font-size: var(--font-size);
 

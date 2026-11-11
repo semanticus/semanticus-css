@@ -379,10 +379,22 @@ const variableGroups = [
         default: "1.5rem",
       },
       {
-        name: "--small-font-size",
+        name: "--font-size-sm",
         label: "Small Font Size",
         desc: "Font size for <small> text.",
         default: "80%",
+      },
+      {
+        name: "--font-size-md",
+        label: "Medium Font Size",
+        desc: "Font size for medium text (default).",
+        default: "100%",
+      },
+      {
+        name: "--font-size-lg",
+        label: "Large Font Size",
+        desc: "Font size for large text.",
+        default: "120%",
       },
     ],
   },
