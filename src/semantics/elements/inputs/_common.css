@@ -19,6 +19,8 @@ textarea {
   --_inputs-border-radius: var(--border-radius);
   --_inputs-outline-color: var(--primary-outline-color);
 
+  caret-color: var(--primary-outline-color);
+
   /* Non button inputs */
   &:not([type="button"], [type="submit"], [type="reset"], [type="file"]) {
     padding: var(--inputs-padding-block) var(--inputs-padding-inline);
@@ -64,6 +66,11 @@ textarea {
 
   &::placeholder {
     color: var(--inputs-placeholder-color);
+  }
+
+  &:autofill {
+    box-shadow: var(--input-autofill-box-shadow) !important;
+    -webkit-text-fill-color: var(--input-autofill-text-fill-color) !important;
   }
 }
 
