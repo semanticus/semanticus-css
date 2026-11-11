@@ -340,6 +340,8 @@
   );
   --inputs-color: light-dark(var(--_color-zinc-850), var(--_color-zinc-100));
   --inputs-placeholder-color: var(--color-muted);
+  --input-autofill-box-shadow: 0 0 0 100px var(--inputs-background-color-focus) inset;
+  --input-autofill-text-fill-color: var(--inputs-color);
 
   /* --- Input Checkbox --- */
   --input-checkbox-border-width: 0.125rem;
@@ -386,6 +388,7 @@
   );
 
   /* --- Selection of text --- */
+  --selection-color: var(--typography-color);
   --selection-background-color: color-mix(
     in srgb,
     var(--primary-color),
