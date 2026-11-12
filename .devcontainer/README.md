@@ -10,3 +10,7 @@ Key points
   the container workspace `node_modules` path.
 - The container runs `npm ci` on first create (`postCreateCommand`) to populate
   the volume with project dependencies.
+- The devcontainer runs as `pwuser` (`remoteUser` and `containerUser`) to match
+  the Playwright image defaults and avoid user-resolution failures on Podman.
+- `updateRemoteUserUID` is disabled because Podman already maps the host UID
+  with `--userns=keep-id`.
