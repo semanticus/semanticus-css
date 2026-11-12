@@ -12,5 +12,10 @@
         "ms-playwright.playwright"
       ]
     }
-  }
+  },
+  "runArgs": [
+    "--userns=keep-id"
+  ],
+  "containerUser": "pwuser",
+  "updateRemoteUserUID": false
 }
