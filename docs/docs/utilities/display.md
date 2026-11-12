@@ -1,4 +1,10 @@
 <script setup>
+const displayByThemeHtml = `<div class="d-theme-system-none p-2 text-bg-contrast">.d-theme-system-none | visible when [data-theme] is not set to either "light" or "dark"</div>
+<div class="d-theme-manual-none p-2 text-bg-contrast">.d-theme-manual-none | visible when [data-theme] is set to either "light" or "dark"</div>
+<hr>
+<div class="d-theme-light-none p-2 text-bg-contrast">.d-theme-light-none | visible when color scheme is not ligh</div>
+<div class="d-theme-dark-none p-2 text-bg-contrast">.d-theme-dark-none | visible when color scheme is not dark</div>
+`;
 const displayInlineHtml = `<div class="d-inline p-2 text-bg-primary">d-inline</div>
 <div class="d-inline p-2 text-bg-secondary">d-inline</div>
 `;
@@ -52,6 +58,10 @@ const visuallyHiddenHtml = `<p>There is a visually hidden heading between these 
 # Display
 
 Toggle the display value of elements responsively with display utilities. Also includes utilities for overflow and visibility.
+
+## Display: none by theme
+
+<HtmlPreviewer :code="displayByThemeHtml" />
 
 ## Display Property
 
