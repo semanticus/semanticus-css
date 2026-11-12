@@ -42,6 +42,30 @@
   display: none !important;
 }
 
+@media (prefers-color-scheme: light) {
+  .d-theme-light-none {
+    display: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .d-theme-dark-none {
+    display: none !important;
+  }
+}
+
+:root:is([data-theme="light"], [data-theme="dark"]) {
+  .d-theme-system-none {
+    display: none !important;
+  }
+}
+
+:root:not([data-theme="light"], [data-theme="dark"]) {
+  .d-theme-manual-none {
+    display: none !important;
+  }
+}
+
 @media (--breakpoint-sm) {
   .d-sm-inline {
     display: inline !important;
