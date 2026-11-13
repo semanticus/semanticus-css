@@ -60,8 +60,6 @@ button,
 .button,
 [role="button"] {
   &[aria-busy="true"] {
-    pointer-events: none;
-
     &:before {
       filter: brightness(0) invert(1);
     }
@@ -69,7 +67,6 @@ button,
 }
 
 [type="file"][aria-busy="true"]::file-selector-button {
-  pointer-events: none;
   filter: brightness(0) invert(1);
 }
 

@@ -26,5 +26,5 @@ export function form(attrs: Record<string, string> = {}) {
 <input type="text" disabled>
 <label>Email</label>
 <input type="email" disabled>
-<button disabled>Submit</button>`);
+<button type="submit" disabled>Submit</button>`);
 }
