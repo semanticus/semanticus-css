@@ -204,7 +204,7 @@ export function overview() {
 }
 
 export function scale() {
-  return `<div class="auto-grid" style="--auto-grid-min-column: 18rem">${["", ...sizeOptions].map(size => `<section data-size="${size || "default"}">
+  return `<div class="auto-grid">${["", ...sizeOptions].map(size => `<section>
   <h3>${size ? `.${size}` : "No modifier"}</h3>
   <label class="${size}">Name <input value="Example"></label>
   <p><button type="button" class="${size}">Action</button></p>

@@ -33,11 +33,6 @@ nav,
     select,
     input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])
   ) {
-    --inputs-padding-block: calc(var(--nav-link-gap) - var(--border-width) * 2);
-    --inputs-padding-inline: var(--nav-link-gap);
-    --_buttons-padding-block: var(--inputs-padding-block);
-    --_buttons-padding-inline: var(--inputs-padding-inline);
-
     width: auto;
     height: auto;
   }
