@@ -61,13 +61,13 @@
 
   /* --- Exceptions --- */
 
-  /* Scale factor that changes according to a given breakpoint, helping make `--spacing` responsive */
+  /* Multipliers to expand or contract spacing and font size */
   --spacing-multiplier: 1;
+  --font-size-multiplier: 1;
 
-  /* Responsive value used for margins and padding throughout the page */
+  /* --- Base values used for all sorts of spacing related calculations --- */
   --spacing: calc(1rem * var(--spacing-multiplier));
 
-  /* --- Space Scale --- */
   --spacing-1: calc(var(--spacing) * 0.25);
   --spacing-2: calc(var(--spacing) * 0.5);
   --spacing-3: calc(var(--spacing) * 0.75);
@@ -98,7 +98,7 @@
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 100%;
+  --font-size: calc(1rem * var(--font-size-multiplier));
   --text-underline-offset: 0.1rem;
   --font-family-emoji:
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -242,8 +242,8 @@
   --buttons-color: white;
   --buttons-border-radius: var(--border-radius);
   --buttons-font-size: 1rem;
-  --buttons-padding-block: var(--inputs-padding-block);
-  --buttons-padding-inline: var(--inputs-padding-inline);
+  --buttons-padding-block: var(--spacing-2);
+  --buttons-padding-inline: var(--spacing-3);
 
   /* --- Code --- */
   --code-background-color: light-dark(
@@ -264,8 +264,8 @@
   --details-dropdown-color: var(--inputs-placeholder-color);
   --details-dropdown-background-color: var(--inputs-background-color);
   --details-dropdown-border-color: var(--inputs-border-color);
-  --details-dropdown-padding-block: var(--inputs-padding-block);
-  --details-dropdown-padding-inline: var(--inputs-padding-inline);
+  --details-dropdown-padding-block: var(--spacing-2);
+  --details-dropdown-padding-inline: var(--spacing-3);
 
   /* --- Menu styling applied to the ul[role="menu"] element --- */
   --details-menu-background-color: light-dark(white, var(--_color-slate-900));
@@ -296,7 +296,7 @@
 
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
-  --group-buttons-padding-inline: 1rem;
+  --group-buttons-padding-inline: var(--spacing-4);
 
   /* --- Headings --- */
   --heading-font-weight: 700;
@@ -333,9 +333,9 @@
     var(--_color-slate-200),
     var(--_color-slate-750)
   );
-  --inputs-font-size: 1rem;
-  --inputs-padding-block: 0.5rem;
-  --inputs-padding-inline: 0.7rem;
+  --inputs-font-size: var(--font-size);
+  --inputs-padding-block: var(--spacing-2);
+  --inputs-padding-inline: var(--spacing-3);
   --inputs-background-color: light-dark(
     color-mix(in srgb, var(--_color-slate-50) 25%, white),
     color-mix(in srgb, var(--_color-slate-900), var(--_color-slate-850))
@@ -416,6 +416,37 @@
   /* --- Tooltip --- */
   --tooltip-background-color: var(--contrast-background-color);
   --tooltip-color: light-dark(white, var(--_color-zinc-900));
+
+  /* ===== RESPONSIVE ADJUSTMENTS ===== */
+  @media (--breakpoint-xs) {
+    --spacing-multiplier: 0.7;
+    --sidebar-size: max(25%, 150px);
+  }
+
+  @media (--breakpoint-sm) {
+    --spacing-multiplier: 0.8;
+    --sidebar-size: max(25%, 150px);
+  }
+
+  @media (--breakpoint-md) {
+    --spacing-multiplier: 0.9;
+    --sidebar-size: max(22%, 180px);
+  }
+
+  @media (--breakpoint-lg) {
+    --spacing-multiplier: 1;
+    --sidebar-size: max(20%, 200px);
+  }
+
+  @media (--breakpoint-xl) {
+    --spacing-multiplier: 1.1;
+    --sidebar-size: max(18%, 220px);
+  }
+
+  @media (--breakpoint-xxl) {
+    --spacing-multiplier: 1.2;
+    --sidebar-size: clamp(240px, 16%, 300px);
+  }
 }
 
 /* ===== ICONS ===== */
@@ -461,59 +492,4 @@ body {
   --theme: dark;
 
   color-scheme: dark;
-}
-
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (--breakpoint-xs) {
-  :root,
-  :host {
-    --font-size: 100%;
-    --spacing-multiplier: 0.8;
-    --sidebar-size: max(25%, 150px);
-  }
-}
-
-@media (--breakpoint-sm) {
-  :root,
-  :host {
-    --font-size: 101%;
-    --spacing-multiplier: 0.8;
-    --sidebar-size: max(25%, 150px);
-  }
-}
-
-@media (--breakpoint-md) {
-  :root,
-  :host {
-    --font-size: 102%;
-    --spacing-multiplier: 0.9;
-    --sidebar-size: max(22%, 180px);
-  }
-}
-
-@media (--breakpoint-lg) {
-  :root,
-  :host {
-    --font-size: 104%;
-    --spacing-multiplier: 1;
-    --sidebar-size: max(20%, 200px);
-  }
-}
-
-@media (--breakpoint-xl) {
-  :root,
-  :host {
-    --font-size: 106%;
-    --spacing-multiplier: 1.1;
-    --sidebar-size: max(18%, 220px);
-  }
-}
-
-@media (--breakpoint-xxl) {
-  :root,
-  :host {
-    --font-size: 108%;
-    --spacing-multiplier: 1.2;
-    --sidebar-size: clamp(240px, 16%, 300px);
-  }
 }
