@@ -514,6 +514,7 @@ export default defineConfig({
             { text: ".container", link: "/docs/components/container" },
             { text: ".content-grid", link: "/docs/components/content-grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
+            { text: ".nav", link: "/docs/components/nav" },
             { text: ".pane", link: "/docs/components/pane" },
             { text: ".sidebar", link: "/docs/components/sidebar" },
           ],

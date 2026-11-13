@@ -1,6 +1,6 @@
 # Navigation
 
-Navigation is implemented using the `<nav>` element as its fundamental building block, but it's actually a combination of several elements working together.
+Navigation is implemented using the `<nav>` element, but you can also use the [`.nav` component class](/docs/components/nav) add the same styling to any other element, like `<header>` or `<footer>`.
 
 **Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
@@ -8,11 +8,15 @@ Check out [Pagination](/docs/composites/pagination) for more examples of navigat
 
 ## Basic Usage
 
-- `<nav>` is a flex container that uses `justify-content: space-between` to distribute its children across the horizontal axis;
-- All direct children of `<nav>` will have their `margin-block` set to 0;
+- `<nav>` and `.nav` uses `justify-content: space-between` to distribute its children across the horizontal axis;
+- All direct children will have their `margin-block` set to 0;
 - In case of a single child, it will grow to fill the available space;
 
-<HtmlPreviewer :code="NavDemo.main()" />
+<HtmlPreviewer :code="NavElementDemo.main()" />
+
+or
+
+<HtmlPreviewer :code="NavDemo.header()" />
 
 ## Horizontal Navigation
 
@@ -21,7 +25,7 @@ Check out [Pagination](/docs/composites/pagination) for more examples of navigat
 - `<a>` children will lose their underline except on `:hover`.
 - `<button>` and `<details>` (**Dropdowns**) children will automatically match the height and padding of links.
 
-<HtmlPreviewer :code="NavDemo.horizontalHeaderNavigation({}, 'Acme Corp')" />
+<HtmlPreviewer :code="NavElementDemo.horizontalHeaderNavigation({}, 'Acme Corp')" />
 
 ### Breadcrumbs
 
@@ -31,19 +35,20 @@ Each breadcrumb item is represented as an `<li>` element, and the current page i
 
 > **Accessibility:** Don't forget to add `aria-label="Breadcrumbs"` to the `<nav>` element for better accessibility.
 
-<HtmlPreviewer :code="NavDemo.breadcrumbs()" />
+<HtmlPreviewer :code="NavElementDemo.breadcrumbs()" />
 
 ## Vertical Navigation
 
 - `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside an `<aside>`;
 - When `<nav>` is a direct child of an `<aside>` it will stretch itself to fill the available height.
 
-<HtmlPreviewer :code="NavDemo.sidebarExample()" />
+<HtmlPreviewer :code="NavElementDemo.sidebarExample()" />
 
 ## Search and Dropdown Example
 
-<HtmlPreviewer :code="NavDemo.searchAndDropdownExample()" />
+<HtmlPreviewer :code="NavElementDemo.searchAndDropdownExample()" />
 
 <script setup>
-import { NavDemo } from "@demos/semantics/elements";
+import { NavDemo } from "@demos/components";
+import { NavDemo as NavElementDemo } from "@demos/semantics/elements";
 </script>
