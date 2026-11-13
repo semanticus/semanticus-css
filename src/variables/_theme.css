@@ -65,7 +65,7 @@
   --spacing-multiplier: 1;
 
   /* Responsive value used for margins and padding throughout the page */
-  --spacing: calc(0.75rem * var(--spacing-multiplier));
+  --spacing: calc(1rem * var(--spacing-multiplier));
 
   /* --- Space Scale --- */
   --spacing-1: calc(var(--spacing) * 0.25);
@@ -98,7 +98,7 @@
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 97%;
+  --font-size: 100%;
   --text-underline-offset: 0.1rem;
   --font-family-emoji:
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -464,47 +464,56 @@ body {
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (--breakpoint-xs) {
+  :root,
+  :host {
+    --font-size: 100%;
+    --spacing-multiplier: 0.8;
+    --sidebar-size: max(25%, 150px);
+  }
+}
+
 @media (--breakpoint-sm) {
   :root,
   :host {
-    --font-size: 98%;
+    --font-size: 101%;
+    --spacing-multiplier: 0.8;
     --sidebar-size: max(25%, 150px);
-    --spacing-multiplier: 1.1;
   }
 }
 
 @media (--breakpoint-md) {
   :root,
   :host {
-    --font-size: 99%;
+    --font-size: 102%;
+    --spacing-multiplier: 0.9;
     --sidebar-size: max(22%, 180px);
-    --spacing-multiplier: 1.2;
   }
 }
 
 @media (--breakpoint-lg) {
   :root,
   :host {
-    --font-size: 100%;
+    --font-size: 104%;
+    --spacing-multiplier: 1;
     --sidebar-size: max(20%, 200px);
-    --spacing-multiplier: 1.3;
   }
 }
 
 @media (--breakpoint-xl) {
   :root,
   :host {
-    --font-size: 101%;
+    --font-size: 106%;
+    --spacing-multiplier: 1.1;
     --sidebar-size: max(18%, 220px);
-    --spacing-multiplier: 1.4;
   }
 }
 
 @media (--breakpoint-xxl) {
   :root,
   :host {
-    --font-size: 102%;
+    --font-size: 108%;
+    --spacing-multiplier: 1.2;
     --sidebar-size: clamp(240px, 16%, 300px);
-    --spacing-multiplier: 1.5;
   }
 }
