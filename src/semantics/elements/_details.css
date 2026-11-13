@@ -273,8 +273,6 @@ nav details:has(> summary[aria-haspopup="menu"]) {
     display: flex !important;
     align-items: center !important;
     height: auto !important;
-    padding: var(--details-dropdown-nav-padding-block, calc(var(--nav-link-gap) - var(--border-width) * 2))
-      var(--details-dropdown-nav-padding-inline, var(--nav-link-gap)) !important;
 
     &::after {
       transform: rotate(0deg) translateX(0rem);

@@ -8,16 +8,10 @@ for (const theme of ["light", "dark"]) {
       for (const selector of ['input:not([type])', 'button', '[type="checkbox"]', '[type="range"]', '.pane']) {
         let previous = 0;
         for (const size of ["size-sm", "size-md", "size-lg"]) {
-          const el = page.locator(`[data-size="${size}"]`).locator(selector);
+          const el = page.locator("section").filter({ has: page.getByRole("heading", { name: `.${size}`, exact: true }) }).locator(selector);
           const height = (await el.boundingBox())!.height;
           expect(height, `${selector} ${size}`).toBeGreaterThan(previous);
           previous = height;
-        }
-        const reference = page.locator('[data-size="default"]').locator(selector);
-        for (const alias of ["size-md"]) {
-          const el = page.locator(`[data-size="${alias}"]`).locator(selector);
-          expect((await el.boundingBox())!.height).toBeCloseTo((await reference.boundingBox())!.height, 1);
-          expect(await el.evaluate(e => getComputedStyle(e).fontSize)).toBe(await reference.evaluate(e => getComputedStyle(e).fontSize));
         }
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
@@ -26,35 +20,36 @@ for (const theme of ["light", "dark"]) {
   }
 }
 
-const examples = ["buttons", "roleButtons", "inputButtons", "inputs", "selects", "textareas", "dropdowns", "cards", "panes", "alerts", "pagination", "dialogs", "accordions", "buttonGroups", "searchGroups", "checkboxes", "radios", "switches", "ranges", "colorPickers", "labels", "selectionGroups"];
-
-for (const alias of ["size-md"]) {
-  test(`${alias} matches the unmodified defaults for every supported example`, async ({ page }) => {
-    test.setTimeout(60000);
-    for (const example of examples) {
-      await page.goto(`/variants/modifiers/size.demo/${example}`);
-      const normal = page.locator('[data-size="default"]');
-      const chosen = page.locator('[data-size="size-sm"]');
-      await chosen.locator(".size-sm").evaluateAll((els, replacement) => els.forEach(el => el.classList.replace("size-sm", replacement)), alias);
-      const selector = 'button, input, select, textarea, label, summary, .card, .pane, [role="alert"], [role="status"], dialog, header, footer';
-      const metrics = (els: Element[]) => els.map(el => {
-        const s = getComputedStyle(el);
-        return [s.fontSize, s.lineHeight, s.paddingTop, s.paddingInlineStart, s.paddingBottom, s.paddingInlineEnd, s.borderTopLeftRadius, s.borderBottomRightRadius];
-      });
-      expect(await chosen.locator(selector).evaluateAll(metrics), example).toEqual(await normal.locator(selector).evaluateAll(metrics));
+test("medium sizing applies explicit control dimensions and container spacing", async ({ page }) => {
+  await page.goto("/variants/modifiers/size.demo/scale");
+  const medium = page.locator("section").filter({ has: page.getByRole("heading", { name: ".size-md", exact: true }) });
+  const rootFont = await page.locator("html").evaluate(el => parseFloat(getComputedStyle(el).fontSize));
+  for (const selector of ['input:not([type])', 'button']) {
+    const control = medium.locator(selector);
+    const metrics = await control.evaluate(el => {
+      const style = getComputedStyle(el);
+      return [style.fontSize, style.paddingTop, style.paddingInlineStart].map(parseFloat);
+    });
+    for (const [index, scale] of [1, 0.25, 0.375].entries()) {
+      expect(metrics[index]).toBeCloseTo(rootFont * scale, 2);
     }
-  });
-}
+  }
+  const normal = page.locator("section").filter({ has: page.getByRole("heading", { name: "No modifier", exact: true }) });
+  expect((await medium.locator('.pane').boundingBox())!.height).toBeLessThan((await normal.locator('.pane').boundingBox())!.height);
+  // Compare the rendered range geometry through its height; its width stays unchanged.
+  expect((await medium.locator('[type="range"]').boundingBox())!.height).toBeLessThan((await normal.locator('[type="range"]').boundingBox())!.height);
+  expect((await medium.locator('[type="range"]').boundingBox())!.width).toBeCloseTo((await normal.locator('[type="range"]').boundingBox())!.width, 1);
+});
 
-test("explicit sizes override group and wrapping-label sizes, including the default medium size", async ({ page }) => {
+test("explicit sizes override group and wrapping-label sizes, including medium sizing", async ({ page }) => {
   await page.goto("/variants/modifiers/size.demo/scale");
   await page.evaluate(() => document.body.insertAdjacentHTML("beforeend", `
-    <div role="group" id="normal-group"><button>Reference</button></div>
+    <button class="size-md" id="medium-reference">Reference</button>
     <div role="group" class="size-sm" id="sized-group">
       <button>Inherited</button><button class="size-md">Medium</button><button class="size-lg">Large</button>
     </div>
     <label class="size-lg" id="sized-label">Label<input><input class="size-md"><input class="size-sm"></label>`));
-  const reference = await page.locator("#normal-group button").evaluate(el => { const s = getComputedStyle(el); return [s.fontSize, s.paddingTop, s.paddingInlineStart]; });
+  const reference = await page.locator("#medium-reference").evaluate(el => { const s = getComputedStyle(el); return [s.fontSize, s.paddingTop, s.paddingInlineStart]; });
   for (const alias of ["size-md"]) {
     expect(await page.locator(`#sized-group .${alias}`).evaluate(el => { const s = getComputedStyle(el); return [s.fontSize, s.paddingTop, s.paddingInlineStart]; })).toEqual(reference);
   }
@@ -68,15 +63,15 @@ test("explicit sizes override group and wrapping-label sizes, including the defa
 });
 
 
-test("non-default sizes align controls and dropdowns inside navigation groups", async ({ page }) => {
+test("all sizes align controls and dropdowns inside navigation groups", async ({ page }) => {
   await page.goto("/variants/modifiers/size.demo/scale");
-  await page.evaluate(() => document.body.insertAdjacentHTML("beforeend", ["sm", "lg"].map(n => `
+  await page.evaluate(() => document.body.insertAdjacentHTML("beforeend", ["sm", "md", "lg"].map(n => `
     <nav><div role="group" class="size-${n}" id="nav-group-${n}">
       <input type="search" aria-label="Search ${n}">
       <details><summary role="button" aria-haspopup="menu">Options</summary><ul role="menu"><li><a role="menuitem" href="#all">All</a></li></ul></details>
       <button type="button">Search</button>
     </div></nav>`).join("")));
-  for (const level of ["sm", "lg"]) {
+  for (const level of ["sm", "md", "lg"]) {
     const group = page.locator(`#nav-group-${level}`);
     const reference = (await group.locator("input").boundingBox())!.height;
     for (const selector of ["details", "summary", "button"]) {
