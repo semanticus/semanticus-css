@@ -42,13 +42,13 @@
   display: none !important;
 }
 
-@media (prefers-color-scheme: light) {
+@container style(--theme: light) {
   .d-theme-light-none {
     display: none !important;
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@container style(--theme: dark) {
   .d-theme-dark-none {
     display: none !important;
   }
