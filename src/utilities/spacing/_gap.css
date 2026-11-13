@@ -3,27 +3,27 @@
 }
 
 .gap-d {
-  gap: var(--spacing) !important;
+  gap: var(--spacer) !important;
 }
 
 .gap-1 {
-  gap: var(--spacing-1) !important;
+  gap: var(--spacer-1) !important;
 }
 
 .gap-2 {
-  gap: var(--spacing-2) !important;
+  gap: var(--spacer-2) !important;
 }
 
 .gap-3 {
-  gap: var(--spacing-3) !important;
+  gap: var(--spacer-3) !important;
 }
 
 .gap-4 {
-  gap: var(--spacing-4) !important;
+  gap: var(--spacer-4) !important;
 }
 
 .gap-5 {
-  gap: var(--spacing-5) !important;
+  gap: var(--spacer-5) !important;
 }
 
 .row-gap-0 {
@@ -31,27 +31,27 @@
 }
 
 .row-gap-d {
-  row-gap: var(--spacing) !important;
+  row-gap: var(--spacer) !important;
 }
 
 .row-gap-1 {
-  row-gap: var(--spacing-1) !important;
+  row-gap: var(--spacer-1) !important;
 }
 
 .row-gap-2 {
-  row-gap: var(--spacing-2) !important;
+  row-gap: var(--spacer-2) !important;
 }
 
 .row-gap-3 {
-  row-gap: var(--spacing-3) !important;
+  row-gap: var(--spacer-3) !important;
 }
 
 .row-gap-4 {
-  row-gap: var(--spacing-4) !important;
+  row-gap: var(--spacer-4) !important;
 }
 
 .row-gap-5 {
-  row-gap: var(--spacing-5) !important;
+  row-gap: var(--spacer-5) !important;
 }
 
 .column-gap-0 {
@@ -59,27 +59,27 @@
 }
 
 .column-gap-d {
-  column-gap: var(--spacing) !important;
+  column-gap: var(--spacer) !important;
 }
 
 .column-gap-1 {
-  column-gap: var(--spacing-1) !important;
+  column-gap: var(--spacer-1) !important;
 }
 
 .column-gap-2 {
-  column-gap: var(--spacing-2) !important;
+  column-gap: var(--spacer-2) !important;
 }
 
 .column-gap-3 {
-  column-gap: var(--spacing-3) !important;
+  column-gap: var(--spacer-3) !important;
 }
 
 .column-gap-4 {
-  column-gap: var(--spacing-4) !important;
+  column-gap: var(--spacer-4) !important;
 }
 
 .column-gap-5 {
-  column-gap: var(--spacing-5) !important;
+  column-gap: var(--spacer-5) !important;
 }
 
 @media (--breakpoint-sm) {
@@ -87,64 +87,64 @@
     gap: 0 !important;
   }
   .gap-sm-d {
-    gap: var(--spacing) !important;
+    gap: var(--spacer) !important;
   }
   .gap-sm-1 {
-    gap: var(--spacing-1) !important;
+    gap: var(--spacer-1) !important;
   }
   .gap-sm-2 {
-    gap: var(--spacing-2) !important;
+    gap: var(--spacer-2) !important;
   }
   .gap-sm-3 {
-    gap: var(--spacing-3) !important;
+    gap: var(--spacer-3) !important;
   }
   .gap-sm-4 {
-    gap: var(--spacing-4) !important;
+    gap: var(--spacer-4) !important;
   }
   .gap-sm-5 {
-    gap: var(--spacing-5) !important;
+    gap: var(--spacer-5) !important;
   }
   .row-gap-sm-0 {
     row-gap: 0 !important;
   }
   .row-gap-sm-d {
-    row-gap: var(--spacing) !important;
+    row-gap: var(--spacer) !important;
   }
   .row-gap-sm-1 {
-    row-gap: var(--spacing-1) !important;
+    row-gap: var(--spacer-1) !important;
   }
   .row-gap-sm-2 {
-    row-gap: var(--spacing-2) !important;
+    row-gap: var(--spacer-2) !important;
   }
   .row-gap-sm-3 {
-    row-gap: var(--spacing-3) !important;
+    row-gap: var(--spacer-3) !important;
   }
   .row-gap-sm-4 {
-    row-gap: var(--spacing-4) !important;
+    row-gap: var(--spacer-4) !important;
   }
   .row-gap-sm-5 {
-    row-gap: var(--spacing-5) !important;
+    row-gap: var(--spacer-5) !important;
   }
   .column-gap-sm-0 {
     column-gap: 0 !important;
   }
   .column-gap-sm-d {
-    column-gap: var(--spacing) !important;
+    column-gap: var(--spacer) !important;
   }
   .column-gap-sm-1 {
-    column-gap: var(--spacing-1) !important;
+    column-gap: var(--spacer-1) !important;
   }
   .column-gap-sm-2 {
-    column-gap: var(--spacing-2) !important;
+    column-gap: var(--spacer-2) !important;
   }
   .column-gap-sm-3 {
-    column-gap: var(--spacing-3) !important;
+    column-gap: var(--spacer-3) !important;
   }
   .column-gap-sm-4 {
-    column-gap: var(--spacing-4) !important;
+    column-gap: var(--spacer-4) !important;
   }
   .column-gap-sm-5 {
-    column-gap: var(--spacing-5) !important;
+    column-gap: var(--spacer-5) !important;
   }
 }
 
@@ -153,64 +153,64 @@
     gap: 0 !important;
   }
   .gap-md-d {
-    gap: var(--spacing) !important;
+    gap: var(--spacer) !important;
   }
   .gap-md-1 {
-    gap: var(--spacing-1) !important;
+    gap: var(--spacer-1) !important;
   }
   .gap-md-2 {
-    gap: var(--spacing-2) !important;
+    gap: var(--spacer-2) !important;
   }
   .gap-md-3 {
-    gap: var(--spacing-3) !important;
+    gap: var(--spacer-3) !important;
   }
   .gap-md-4 {
-    gap: var(--spacing-4) !important;
+    gap: var(--spacer-4) !important;
   }
   .gap-md-5 {
-    gap: var(--spacing-5) !important;
+    gap: var(--spacer-5) !important;
   }
   .row-gap-md-0 {
     row-gap: 0 !important;
   }
   .row-gap-md-d {
-    row-gap: var(--spacing) !important;
+    row-gap: var(--spacer) !important;
   }
   .row-gap-md-1 {
-    row-gap: var(--spacing-1) !important;
+    row-gap: var(--spacer-1) !important;
   }
   .row-gap-md-2 {
-    row-gap: var(--spacing-2) !important;
+    row-gap: var(--spacer-2) !important;
   }
   .row-gap-md-3 {
-    row-gap: var(--spacing-3) !important;
+    row-gap: var(--spacer-3) !important;
   }
   .row-gap-md-4 {
-    row-gap: var(--spacing-4) !important;
+    row-gap: var(--spacer-4) !important;
   }
   .row-gap-md-5 {
-    row-gap: var(--spacing-5) !important;
+    row-gap: var(--spacer-5) !important;
   }
   .column-gap-md-0 {
     column-gap: 0 !important;
   }
   .column-gap-md-d {
-    column-gap: var(--spacing) !important;
+    column-gap: var(--spacer) !important;
   }
   .column-gap-md-1 {
-    column-gap: var(--spacing-1) !important;
+    column-gap: var(--spacer-1) !important;
   }
   .column-gap-md-2 {
-    column-gap: var(--spacing-2) !important;
+    column-gap: var(--spacer-2) !important;
   }
   .column-gap-md-3 {
-    column-gap: var(--spacing-3) !important;
+    column-gap: var(--spacer-3) !important;
   }
   .column-gap-md-4 {
-    column-gap: var(--spacing-4) !important;
+    column-gap: var(--spacer-4) !important;
   }
   .column-gap-md-5 {
-    column-gap: var(--spacing-5) !important;
+    column-gap: var(--spacer-5) !important;
   }
 }
 
@@ -219,64 +219,64 @@
     gap: 0 !important;
   }
   .gap-lg-d {
-    gap: var(--spacing) !important;
+    gap: var(--spacer) !important;
   }
   .gap-lg-1 {
-    gap: var(--spacing-1) !important;
+    gap: var(--spacer-1) !important;
   }
   .gap-lg-2 {
-    gap: var(--spacing-2) !important;
+    gap: var(--spacer-2) !important;
   }
   .gap-lg-3 {
-    gap: var(--spacing-3) !important;
+    gap: var(--spacer-3) !important;
   }
   .gap-lg-4 {
-    gap: var(--spacing-4) !important;
+    gap: var(--spacer-4) !important;
   }
   .gap-lg-5 {
-    gap: var(--spacing-5) !important;
+    gap: var(--spacer-5) !important;
   }
   .row-gap-lg-0 {
     row-gap: 0 !important;
   }
   .row-gap-lg-d {
-    row-gap: var(--spacing) !important;
+    row-gap: var(--spacer) !important;
   }
   .row-gap-lg-1 {
-    row-gap: var(--spacing-1) !important;
+    row-gap: var(--spacer-1) !important;
   }
   .row-gap-lg-2 {
-    row-gap: var(--spacing-2) !important;
+    row-gap: var(--spacer-2) !important;
   }
   .row-gap-lg-3 {
-    row-gap: var(--spacing-3) !important;
+    row-gap: var(--spacer-3) !important;
   }
   .row-gap-lg-4 {
-    row-gap: var(--spacing-4) !important;
+    row-gap: var(--spacer-4) !important;
   }
   .row-gap-lg-5 {
-    row-gap: var(--spacing-5) !important;
+    row-gap: var(--spacer-5) !important;
   }
   .column-gap-lg-0 {
     column-gap: 0 !important;
   }
   .column-gap-lg-d {
-    column-gap: var(--spacing) !important;
+    column-gap: var(--spacer) !important;
   }
   .column-gap-lg-1 {
-    column-gap: var(--spacing-1) !important;
+    column-gap: var(--spacer-1) !important;
   }
   .column-gap-lg-2 {
-    column-gap: var(--spacing-2) !important;
+    column-gap: var(--spacer-2) !important;
   }
   .column-gap-lg-3 {
-    column-gap: var(--spacing-3) !important;
+    column-gap: var(--spacer-3) !important;
   }
   .column-gap-lg-4 {
-    column-gap: var(--spacing-4) !important;
+    column-gap: var(--spacer-4) !important;
   }
   .column-gap-lg-5 {
-    column-gap: var(--spacing-5) !important;
+    column-gap: var(--spacer-5) !important;
   }
 }
 
@@ -285,64 +285,64 @@
     gap: 0 !important;
   }
   .gap-xl-d {
-    gap: var(--spacing) !important;
+    gap: var(--spacer) !important;
   }
   .gap-xl-1 {
-    gap: var(--spacing-1) !important;
+    gap: var(--spacer-1) !important;
   }
   .gap-xl-2 {
-    gap: var(--spacing-2) !important;
+    gap: var(--spacer-2) !important;
   }
   .gap-xl-3 {
-    gap: var(--spacing-3) !important;
+    gap: var(--spacer-3) !important;
   }
   .gap-xl-4 {
-    gap: var(--spacing-4) !important;
+    gap: var(--spacer-4) !important;
   }
   .gap-xl-5 {
-    gap: var(--spacing-5) !important;
+    gap: var(--spacer-5) !important;
   }
   .row-gap-xl-0 {
     row-gap: 0 !important;
   }
   .row-gap-xl-d {
-    row-gap: var(--spacing) !important;
+    row-gap: var(--spacer) !important;
   }
   .row-gap-xl-1 {
-    row-gap: var(--spacing-1) !important;
+    row-gap: var(--spacer-1) !important;
   }
   .row-gap-xl-2 {
-    row-gap: var(--spacing-2) !important;
+    row-gap: var(--spacer-2) !important;
   }
   .row-gap-xl-3 {
-    row-gap: var(--spacing-3) !important;
+    row-gap: var(--spacer-3) !important;
   }
   .row-gap-xl-4 {
-    row-gap: var(--spacing-4) !important;
+    row-gap: var(--spacer-4) !important;
   }
   .row-gap-xl-5 {
-    row-gap: var(--spacing-5) !important;
+    row-gap: var(--spacer-5) !important;
   }
   .column-gap-xl-0 {
     column-gap: 0 !important;
   }
   .column-gap-xl-d {
-    column-gap: var(--spacing) !important;
+    column-gap: var(--spacer) !important;
   }
   .column-gap-xl-1 {
-    column-gap: var(--spacing-1) !important;
+    column-gap: var(--spacer-1) !important;
   }
   .column-gap-xl-2 {
-    column-gap: var(--spacing-2) !important;
+    column-gap: var(--spacer-2) !important;
   }
   .column-gap-xl-3 {
-    column-gap: var(--spacing-3) !important;
+    column-gap: var(--spacer-3) !important;
   }
   .column-gap-xl-4 {
-    column-gap: var(--spacing-4) !important;
+    column-gap: var(--spacer-4) !important;
   }
   .column-gap-xl-5 {
-    column-gap: var(--spacing-5) !important;
+    column-gap: var(--spacer-5) !important;
   }
 }
 
@@ -351,63 +351,63 @@
     gap: 0 !important;
   }
   .gap-xxl-d {
-    gap: var(--spacing) !important;
+    gap: var(--spacer) !important;
   }
   .gap-xxl-1 {
-    gap: var(--spacing-1) !important;
+    gap: var(--spacer-1) !important;
   }
   .gap-xxl-2 {
-    gap: var(--spacing-2) !important;
+    gap: var(--spacer-2) !important;
   }
   .gap-xxl-3 {
-    gap: var(--spacing-3) !important;
+    gap: var(--spacer-3) !important;
   }
   .gap-xxl-4 {
-    gap: var(--spacing-4) !important;
+    gap: var(--spacer-4) !important;
   }
   .gap-xxl-5 {
-    gap: var(--spacing-5) !important;
+    gap: var(--spacer-5) !important;
   }
   .row-gap-xxl-0 {
     row-gap: 0 !important;
   }
   .row-gap-xxl-d {
-    row-gap: var(--spacing) !important;
+    row-gap: var(--spacer) !important;
   }
   .row-gap-xxl-1 {
-    row-gap: var(--spacing-1) !important;
+    row-gap: var(--spacer-1) !important;
   }
   .row-gap-xxl-2 {
-    row-gap: var(--spacing-2) !important;
+    row-gap: var(--spacer-2) !important;
   }
   .row-gap-xxl-3 {
-    row-gap: var(--spacing-3) !important;
+    row-gap: var(--spacer-3) !important;
   }
   .row-gap-xxl-4 {
-    row-gap: var(--spacing-4) !important;
+    row-gap: var(--spacer-4) !important;
   }
   .row-gap-xxl-5 {
-    row-gap: var(--spacing-5) !important;
+    row-gap: var(--spacer-5) !important;
   }
   .column-gap-xxl-0 {
     column-gap: 0 !important;
   }
   .column-gap-xxl-d {
-    column-gap: var(--spacing) !important;
+    column-gap: var(--spacer) !important;
   }
   .column-gap-xxl-1 {
-    column-gap: var(--spacing-1) !important;
+    column-gap: var(--spacer-1) !important;
   }
   .column-gap-xxl-2 {
-    column-gap: var(--spacing-2) !important;
+    column-gap: var(--spacer-2) !important;
   }
   .column-gap-xxl-3 {
-    column-gap: var(--spacing-3) !important;
+    column-gap: var(--spacer-3) !important;
   }
   .column-gap-xxl-4 {
-    column-gap: var(--spacing-4) !important;
+    column-gap: var(--spacer-4) !important;
   }
   .column-gap-xxl-5 {
-    column-gap: var(--spacing-5) !important;
+    column-gap: var(--spacer-5) !important;
   }
 }

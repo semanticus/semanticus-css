@@ -28,14 +28,14 @@
   --transition: 0.2s ease-in-out; /* Default transition timing for interactive state changes */
 
   /* Spacing – shared base unit used for padding, margins, and gaps throughout the layout */
-  --_spacing-scale: 1;
-  --spacing: calc(1rem * var(--_spacing-scale));
+  --spacing-multiplier: 1;
+  --spacing: calc(1rem * var(--spacing-multiplier));
   --typography-margin-block: 1rem; /* Vertical margin below typographic elements (p, lists, etc.) */
   --inputs-padding-block: 0.75rem; /* Vertical padding inside form inputs, selects, and textareas */
   --inputs-padding-inline: 1rem; /* Horizontal padding inside form inputs, selects, and textareas */
 
   --group-buttons-padding-inline: 1rem;
-  --nav-link-gap: calc(var(--spacing) * 0.5); /* padding inside nav links */
+  --nav-link-gap: var(--spacing-2); /* padding inside nav links */
   --nav-breadcrumb-divider: ">"; /* Character displayed between breadcrumb items */
 
   --sidebar-size: 25%; /* Sidebar width */
@@ -47,7 +47,7 @@
   :host {
     --font-size: 106.25%;
     --sidebar-size: max(25%, 150px);
-    --_spacing-scale: 1.25;
+    --spacing-multiplier: 1.25;
   }
 }
 
@@ -56,7 +56,7 @@
   :host {
     --font-size: 112.5%;
     --sidebar-size: max(22%, 180px);
-    --_spacing-scale: 1.5;
+    --spacing-multiplier: 1.5;
   }
 }
 
@@ -65,7 +65,7 @@
   :host {
     --font-size: 118.75%;
     --sidebar-size: max(20%, 200px);
-    --_spacing-scale: 1.75;
+    --spacing-multiplier: 1.75;
   }
 }
 
@@ -74,7 +74,7 @@
   :host {
     --font-size: 125%;
     --sidebar-size: max(18%, 220px);
-    --_spacing-scale: 2;
+    --spacing-multiplier: 2;
   }
 }
 
@@ -83,6 +83,6 @@
   :host {
     --font-size: 131.25%;
     --sidebar-size: clamp(240px, 16%, 300px);
-    --_spacing-scale: 2.25;
+    --spacing-multiplier: 2.25;
   }
 }

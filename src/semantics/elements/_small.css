@@ -17,7 +17,7 @@ small {
       fieldset
     )
     + & {
-    margin-top: calc(var(--spacing) * -0.75);
+    margin-top: calc(var(--spacing-3) * -1);
   }
 
   :where(input, select, textarea, fieldset)[aria-invalid="false"] + & {

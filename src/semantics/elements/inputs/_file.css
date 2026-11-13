@@ -20,7 +20,7 @@
 
   &::file-selector-button {
     margin-left: var(--focus-ring-width);
-    margin-right: calc(var(--spacing) / 2);
+    margin-right: var(--spacing-2);
     padding: calc(var(--inputs-padding-block) * 0.5)
       var(--inputs-padding-inline);
   }

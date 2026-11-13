@@ -4,7 +4,7 @@ figure {
   padding: 0;
 
   & figcaption {
-    padding: calc(var(--spacing) * 0.5) 0;
+    padding: var(--spacing-2) 0;
     color: var(--color-muted);
   }
 }

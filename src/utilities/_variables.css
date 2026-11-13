@@ -2,8 +2,18 @@
 :host {
   --max-z-index: 1050;
 
+  /* Base spacing value */
+  --spacer: var(--spacing);
+
+  /* Spacing scale */
+  --spacer-1: var(--spacing-1);
+  --spacer-2: var(--spacing-2);
+  --spacer-3: var(--spacing);
+  --spacer-4: var(--spacing-5);
+  --spacer-5: var(--spacing-8);
+
   /* Grid */
-  --grid-gutter-x: var(--spacing);
+  --grid-gutter-x: var(--spacer);
   --grid-gutter-y: 0;
 
   /* Gradient */
@@ -29,12 +39,7 @@
   --border-width-4: calc(var(--border-width) * 4);
   --border-width-5: calc(var(--border-width) * 5);
 
-  /* Spacing scale */
-  --spacing-1: calc(var(--spacing) * 0.25);
-  --spacing-2: calc(var(--spacing) * 0.5);
-  --spacing-3: var(--spacing);
-  --spacing-4: calc(var(--spacing) * 1.5);
-  --spacing-5: calc(var(--spacing) * 3);
+
 
   /* Shadows */
   --shadow-sm: 0 0.05rem 0.3rem

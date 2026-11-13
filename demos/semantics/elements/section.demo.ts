@@ -3,7 +3,7 @@ import { renderElement } from "@scripts/utils";
 export function main(attrs: Record<string, string> = {}) {
   return `${renderElement("section", attrs, `<hgroup>
   <h2>Introduction</h2>
-  <p>Sections group thematically related content. Each section gets a bottom margin via <code>--spacing-vertical</code>.</p>
+  <p>Sections group thematically related content.</p>
 </hgroup>`)}
 
 ${renderElement("section", {}, `<hgroup>

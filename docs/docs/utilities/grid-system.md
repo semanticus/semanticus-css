@@ -12,7 +12,7 @@ The grid uses three building blocks:
 
 - **`.row`** — a flex container that wraps columns and applies negative horizontal margins to compensate for column gutters.
 - **`[class*="col-"]` / `.col`** — flex children that define the column width. All columns are full-width by default (mobile-first) and sized by breakpoint modifiers.
-- **`--grid-gutter-x`** — a CSS custom property (defaults to `--spacing`) that controls the horizontal gap between columns.
+- **`--grid-gutter-x`** — a CSS custom property (defaults to `--spacer`) that controls the horizontal gap between columns.
 - **`--grid-gutter-y`** — a CSS custom property (defaults to `0`) that controls the vertical gap between wrapped rows of columns.
 
 Columns in a row should sum to **12** or fewer. Columns that overflow wrap to the next line automatically.
@@ -24,7 +24,7 @@ Columns in a row should sum to **12** or fewer. Columns that overflow wrap to th
 | **Class prefix** | `.col-` | `.col-sm-` | `.col-md-` | `.col-lg-` |
 | **Auto-width** | `.col` | `.col-sm` | `.col-md` | `.col-lg` |
 | **# of columns** | 12 | 12 | 12 | 12 |
-| **H. Gutter** | `--grid-gutter-x` (= `--spacing`) | ← same | ← same | ← same |
+| **H. Gutter** | `--grid-gutter-x` (= `--spacer`) | ← same | ← same | ← same |
 | **V. Gutter** | `--grid-gutter-y` (= `0`) | ← same | ← same | ← same |
 | **Nestable** | Yes | Yes | Yes | Yes |
 | **Offsets** | `.col-offset-*` | `.col-offset-sm-*` | `.col-offset-md-*` | `.col-offset-lg-*` |
@@ -100,10 +100,10 @@ The scale maps to the project spacing scale:
 | Step | Value |
 |---|---|
 | `0` | `0` |
-| `1` | `--spacing-1` (× 0.25) |
-| `2` | `--spacing-2` (× 0.5) |
-| `3` | `--spacing-3` (× 1, default horizontal gutter) |
-| `4` | `--spacing-4` (× 1.5) |
-| `5` | `--spacing-5` (× 3) |
+| `1` | `--spacer-1` (× 0.25) |
+| `2` | `--spacer-2` (× 0.5) |
+| `3` | `--spacer-3` (× 1, default horizontal gutter) |
+| `4` | `--spacer-4` (× 1.5) |
+| `5` | `--spacer-5` (× 3) |
 
 <HtmlPreviewer :code="GridDemo.gutterClasses()" />

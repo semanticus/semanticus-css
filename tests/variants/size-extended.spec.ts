@@ -59,6 +59,16 @@ for (const theme of ["light", "dark"]) {
       const dialog = page.getByRole("dialog");
       const defaultWidth = (await dialog.boundingBox())!.width;
       const defaultPadding = await dialog.evaluate(el => getComputedStyle(el).paddingTop);
+      // An unset dialog slot must fall back to the framework's base spacing.
+      const baseSpacing = await dialog.evaluate(el => {
+        const probe = document.createElement("div");
+        probe.style.paddingTop = "var(--spacing)";
+        el.append(probe);
+        const height = parseFloat(getComputedStyle(probe).paddingTop);
+        probe.remove();
+        return height;
+      });
+      expect(parseFloat(defaultPadding)).toBeCloseTo(baseSpacing, 2);
       const defaultHeaderPadding = await dialog.locator("header").evaluate(el => getComputedStyle(el).paddingTop);
       const defaultFont = await dialog.locator("p").evaluate(el => getComputedStyle(el).fontSize);
       const defaultButtonHeight = (await dialog.getByRole("button", { name: "Cancel" }).boundingBox())!.height;

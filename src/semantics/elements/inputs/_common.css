@@ -61,7 +61,7 @@ textarea {
   }
 
   label > & {
-    margin-top: calc(var(--spacing) * 0.25);
+    margin-top: var(--spacing-1);
   }
 
   &::placeholder {

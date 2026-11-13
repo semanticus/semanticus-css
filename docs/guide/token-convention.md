@@ -214,9 +214,9 @@ State always comes last:
 
 Use `spacing` as the property segment:
 ```css
---spacing                       /* global density */
+--spacing                   /* global density */
 --typography-margin-block   /* block margins */
---inputs-padding-block       /* form padding */
+--inputs-padding-block      /* form padding */
 --buttons-padding-block
 --details-dropdown-padding-block
 ```

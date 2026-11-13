@@ -79,7 +79,7 @@ To avoid having to memorize arbitrary token names, these tokens (with only a few
   /* --- Exceptions --- */
 
   /* Responsive value used for margins and padding throughout the page */
-  --spacing: calc(0.75rem * var(--_spacing-scale));
+  --spacing: calc(0.75rem * var(--_space-d-scale));
 
   /* Internal helper used to derive colors representing the hover state */
   --color-hover-shade: light-dark(
@@ -335,7 +335,7 @@ Scoped to a component type. Change one of these and every instance updates.
   --mark-background-color: light-dark(#c79400, #e8ae01);
 
   /* --- Navigation --- */
-  --nav-link-gap: calc(var(--spacing) * 0.5);
+  --nav-link-gap: var(--spacing-2);
   --nav-breadcrumb-divider: ">";
 
   /* --- Progress Bar --- */

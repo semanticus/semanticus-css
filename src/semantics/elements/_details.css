@@ -262,7 +262,7 @@ details:has(> summary[aria-haspopup="menu"]) {
 }
 
 label > details:has(> summary[aria-haspopup="menu"]) {
-  margin-top: calc(var(--spacing) * 0.25);
+  margin-top: var(--spacing-1);
 }
 
 nav details:has(> summary[aria-haspopup="menu"]) {

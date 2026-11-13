@@ -8,7 +8,7 @@
 .container {
   @media (--breakpoint-sm) {
     max-width: 510px;
-    padding-inline: calc(var(--spacing) / 2);
+    padding-inline: var(--spacing-2);
   }
 
   @media (--breakpoint-md) {

@@ -2,7 +2,7 @@
   --size-control-font-size: 0.875rem;
   --size-padding-block: 0.25rem;
   --size-padding-inline: 0.5rem;
-  --size-spacing: calc(var(--spacing) * 0.5);
+  --size-spacing: var(--spacing-2);
   --size-range-scale: 0.875;
 }
 
@@ -10,7 +10,7 @@
   --size-control-font-size: 1rem;
   --size-padding-block: 0.25rem;
   --size-padding-inline: 0.375rem;
-  --size-spacing: calc(var(--spacing) * 0.75);
+  --size-spacing: var(--spacing-3);
   --size-range-scale: 0.9;
 }
 
@@ -18,7 +18,7 @@
   --size-control-font-size: 1.125rem;
   --size-padding-block: 0.625rem;
   --size-padding-inline: 1rem;
-  --size-spacing: calc(var(--spacing) * 1.5);
+  --size-spacing: var(--spacing-5);
   --size-range-scale: 1.125;
 }
 

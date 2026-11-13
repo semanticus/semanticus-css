@@ -16,7 +16,7 @@
     }
 
     &:not(:empty)::before {
-      margin-inline-end: calc(var(--spacing) * 0.5);
+      margin-inline-end: var(--spacing-2);
     }
 
     &:empty {

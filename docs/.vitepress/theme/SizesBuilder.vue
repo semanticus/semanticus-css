@@ -196,7 +196,7 @@ const variableGroups = [
         name: "--spacing",
         label: "Spacing",
         desc: "Applied spacing; product of 0.75rem × spacing scale.",
-        default: "calc(0.75rem * var(--_spacing-scale))",
+        default: "calc(0.75rem * var(--_space-d-scale))",
       },
       {
         name: "--typography-margin-block",
@@ -406,7 +406,7 @@ const variableGroups = [
         name: "--nav-link-gap",
         label: "Nav Link Gap",
         desc: "Spacing inside nav links.",
-        default: "calc(var(--spacing) * 0.5)",
+        default: "var(--spacing-2)",
       },
       {
         name: "--nav-breadcrumb-divider",
