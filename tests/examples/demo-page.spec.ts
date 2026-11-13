@@ -13,6 +13,13 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
 };
 
 test("/examples/demo-page.html - visual snapshot", async ({ page }) => {
+  // Preserve the masked image's layout without depending on the photo service.
+  await page.route("https://picsum.photos/800/400", (route) =>
+    route.fulfill({
+      contentType: "image/svg+xml",
+      body: '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"></svg>',
+    }),
+  );
   await page.goto("/examples/demo-page.html");
   const main = page.locator("main");
 
