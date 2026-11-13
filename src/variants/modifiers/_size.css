@@ -88,6 +88,9 @@
 
   &:is(details):has(> summary[aria-haspopup="menu"]) {
     --details-summary-line-height: var(--line-height);
+    --buttons-font-size: var(--size-control-font-size);
+    --buttons-padding-block: var(--size-padding-block);
+    --buttons-padding-inline: var(--size-padding-inline);
     --details-dropdown-font-size: var(--size-control-font-size);
     --details-dropdown-padding-block: var(--size-padding-block);
     --details-dropdown-padding-inline: var(--size-padding-inline);
