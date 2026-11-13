@@ -6,6 +6,8 @@ title: nav
 
 **Semanticus CSS** adds opinionated styling to `<nav>` to reduce boilerplate for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
+To apply the same styling and layout behavior to another element, such as a `<header>` or `<footer>`, use the [`.nav` component class](/docs/components/nav).
+
 > **Accessibility:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
 
 ## Basic Usage

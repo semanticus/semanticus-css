@@ -12,4 +12,5 @@ Components provide reusable structure and presentation for common UI patterns th
 |-----------|-------------|----------|
 | [`.card`](./card) | Visual container with background, shadow, and optional header/footer | Any block element |
 | [`.container`](./container) | Responsive width wrapper with horizontal padding | Any block element |
+| [`.nav`](./nav) | Same styling and layout behavior as `<nav>` | For example, `<header>` or `<footer>` |
 | [`.striped`](/docs/variants/modifiers/striped) | Alternating row background colors | `<table>` |

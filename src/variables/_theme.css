@@ -369,6 +369,7 @@
   --links-color: var(--primary-color);
   --links-color-hover: var(--primary-color-hover);
   --links-text-decoration: underline;
+  --links-text-decoration-active: underline;
 
   /* --- Lists (ul, ol and role="list") --- */
   --lists-marker-color: var(--primary-color);

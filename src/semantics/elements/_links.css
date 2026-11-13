@@ -3,6 +3,7 @@
   --_links-color: var(--links-color);
   --_links-color-hover: var(--links-color-hover);
   --_links-text-decoration: var(--links-text-decoration);
+  --_links-text-decoration-active: var(--links-text-decoration-active);
   --_links-outline-color: var(--primary-outline-color);
 
   padding: 0;
@@ -23,6 +24,7 @@
     border-color: transparent;
 
     color: var(--_links-color-hover);
+    text-decoration: var(--_links-text-decoration-active);
     text-decoration-color: var(--_links-color-hover);
   }
 

@@ -1,4 +1,5 @@
-nav {
+nav,
+.nav {
   --typography-margin-block: 0;
   --heading-margin-top: 0;
 
@@ -7,6 +8,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   overflow: visible;
+  flex-wrap: wrap;
 
   > * {
     margin-block: 0 !important;
@@ -65,11 +67,11 @@ nav {
 }
 
 aside {
-  > nav {
+  > :is(nav, .nav) {
     flex-grow: 1;
   }
 
-  nav {
+  :is(nav, .nav) {
     :is(a, [role="link"], button, .button, [role="button"]) {
       display: block;
       width: 100%;
@@ -79,37 +81,40 @@ aside {
 
 /* Breadcrumbs */
 
-nav:has(> ol:only-child) {
-  align-items: center;
-  justify-content: start;
+nav,
+.nav {
+  &:has(> ol:only-child) {
+    align-items: center;
+    justify-content: start;
 
-  ol li {
-    &:not(:first-child) {
-      margin-inline-start: calc(var(--nav-link-gap) * 2);
+    ol li {
+      &:not(:first-child) {
+        margin-inline-start: calc(var(--nav-link-gap) * 2);
+      }
+
+      &:not(:last-child)::after {
+        display: inline-block;
+        position: absolute;
+        width: calc(var(--nav-link-gap) * 3);
+        content: var(--nav-breadcrumb-divider);
+        color: var(--color-muted);
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+      }
     }
 
-    &:not(:last-child)::after {
-      display: inline-block;
-      position: absolute;
-      width: calc(var(--nav-link-gap) * 3);
-      content: var(--nav-breadcrumb-divider);
-      color: var(--color-muted);
-      text-align: center;
+    li[aria-current]:not([aria-current="false"]) > :is(a, [role="link"]),
+    a[aria-current]:not([aria-current="false"]),
+    [role="link"][aria-current]:not([aria-current="false"]) {
+      background-color: transparent;
+      color: inherit;
       text-decoration: none;
-      white-space: nowrap;
-    }
-  }
+      font-weight: inherit;
 
-  li[aria-current]:not([aria-current="false"]) > :is(a, [role="link"]),
-  a[aria-current]:not([aria-current="false"]),
-  [role="link"][aria-current]:not([aria-current="false"]) {
-    background-color: transparent;
-    color: inherit;
-    text-decoration: none;
-    font-weight: inherit;
-
-    &:is(:hover, :active, :focus) {
-      text-decoration: var(--_links-text-decoration);
+      &:is(:hover, :active, :focus) {
+        text-decoration: var(--_links-text-decoration);
+      }
     }
   }
 }
