@@ -1,22 +1,26 @@
-[aria-busy="true"]:not(input, select, textarea, html, form) {
-  white-space: nowrap;
+[aria-busy="true"] {
+  &:not(input, select, textarea, html, form),
+  &form:has([type="submit"]) [type="submit"] {
+    white-space: nowrap;
+    cursor: progress;
 
-  &::before {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: var(--icon-loading);
-    background-size: 1em auto;
-    background-repeat: no-repeat;
-    content: "";
-    vertical-align: -0.125em;
-  }
+    &::before {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      background-image: var(--icon-loading);
+      background-size: 1em auto;
+      background-repeat: no-repeat;
+      content: "";
+      vertical-align: -0.125em;
+    }
 
-  &:not(:empty)::before {
-    margin-inline-end: calc(var(--spacing) * 0.5);
-  }
+    &:not(:empty)::before {
+      margin-inline-end: calc(var(--spacing) * 0.5);
+    }
 
-  &:empty {
-    text-align: center;
+    &:empty {
+      text-align: center;
+    }
   }
 }
