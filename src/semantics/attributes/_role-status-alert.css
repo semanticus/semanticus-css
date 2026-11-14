@@ -1,7 +1,9 @@
 :is([role="status"], [role="alert"]) {
   --_alert-color: var(--alert-color);
   --_alert-background-color: var(--alert-background-color);
-  --_alert-spacing: var(--alert-spacing);
+  --_alert-padding-inline: var(--alert-padding-inline);
+  --_alert-padding-block: var(--alert-padding-block);
+  --_alert-margin-block: var(--alert-margin-block);
   --_alert-border-color: var(--alert-border-color);
   --_alert-border-width: var(--alert-border-width);
   --_alert-border-accent-width: var(--alert-border-accent-width);
@@ -14,8 +16,9 @@
   grid-template-columns: 1fr;
   gap: calc(var(--nav-link-gap) * 1.5);
   align-items: start;
-  padding: var(--_alert-spacing);
-  margin-bottom: var(--_alert-spacing);
+  padding-block: var(--_alert-padding-block);
+  padding-inline: var(--_alert-padding-inline);
+  margin-block-end: var(--_alert-margin-block);
   border-radius: var(--_alert-border-radius);
   border: var(--_alert-border-width) solid var(--_alert-border-color);
   border-inline-start-width: var(--_alert-border-accent-width);
@@ -72,7 +75,7 @@
     right: 0;
     bottom: 0;
     top: unset;
-    margin: var(--_alert-spacing);
+    margin: auto;
 
     &:popover-open {
       display: grid;

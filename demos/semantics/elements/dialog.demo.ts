@@ -1,4 +1,4 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 import * as ButtonDemo from "@demos/semantics/elements/button.demo";
 
 const defaultId = "dialog-basic";
@@ -40,12 +40,12 @@ function closeButton(attrs: Record<string, string>) {
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  const mergedAttrs = {
+  const mergedAttrs = classMergeAttributes("card", {
     id: defaultId,
     ...attrs,
     "aria-labelledby": "modal-title",
     "aria-describedby": "modal-description",
-  };
+  });
 
   return renderElement("dialog", mergedAttrs, slot || thankYouContent());
 }
@@ -88,8 +88,8 @@ ${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 
 function headerAndFooterContent(attrs: Record<string, string>) {
   return `<header>
-  <h2 id="modal-title">Confirm Your Membership</h2>
-  ${closeButton({ class: "align-self-start", commandfor: attrs.id || defaultId })}
+  <h1 id="modal-title">Confirm Your Membership</h1>
+  ${closeButton({ class: "fs-3", commandfor: attrs.id || defaultId })}
 </header>
 
 <article id="modal-description">
@@ -105,10 +105,10 @@ function headerAndFooterContent(attrs: Record<string, string>) {
 </article>
 
 <footer>
+  <button commandfor="${attrs.id || defaultId}" command="close">Confirm</button>
   <button class="secondary" commandfor="${attrs.id || defaultId}" command="close">
     Cancel
   </button>
-  <button commandfor="${attrs.id || defaultId}" command="close">Confirm</button>
 </footer>`;
 }
 
@@ -131,8 +131,8 @@ ${dialogAlert(mergedAttrs)}`;
 
 function dialogAlertContent(attrs: Record<string, string>) {
   return `<header>
-  <h2 id="modal-title">Are you sure?</h2>
-  ${closeButton({ class: "align-self-start", commandfor: attrs.id || defaultId })}
+  <h1 id="modal-title">Are you sure?</h1>
+  ${closeButton({ class: "fs-3", commandfor: attrs.id || defaultId })}
 </header>
 
 <div id="modal-description">
@@ -140,7 +140,7 @@ function dialogAlertContent(attrs: Record<string, string>) {
 </div>
 
 <footer>
-  <button class="secondary" commandfor="${attrs.id}" command="close">No</button>
   <button commandfor="${attrs.id}" command="close">Yes</button>
+  <button class="secondary" commandfor="${attrs.id}" command="close">No</button>
 </footer>`;
 }

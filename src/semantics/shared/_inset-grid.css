@@ -1,33 +1,21 @@
 header,
 footer,
+.card,
 .inset-grid {
   --_inset-grid-inline: var(--spacing);
   --_inset-grid-block: var(--spacing);
 
-  display: flex;
-  flex-direction: column;
   padding-inline: var(--_inset-grid-inline);
   padding-block: var(--_inset-grid-block);
 
-  > :is(.bleed-start, .bleed-end, .bleed-inline) {
-    max-inline-size: none;
-    box-sizing: border-box;
+  > .bleed-start,
+  > .bleed-inline {
+    margin-inline-start: calc(-1 * var(--_inset-grid-inline));
   }
 
-  > .bleed-start {
-    align-self: flex-end;
-    inline-size: calc(100% + var(--_inset-grid-inline));
-  }
-
-  > .bleed-end {
-    align-self: flex-start;
-    inline-size: calc(100% + var(--_inset-grid-inline));
-  }
-
-  > .bleed-inline,
-  > .bleed-start.bleed-end {
-    align-self: center;
-    inline-size: calc(100% + 2 * var(--_inset-grid-inline));
+  > .bleed-end,
+  > .bleed-inline {
+    margin-inline-end: calc(-1 * var(--_inset-grid-inline));
   }
 
   &:has(> :is(.bleed-top, .bleed-block):first-child) {

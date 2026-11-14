@@ -1,6 +1,8 @@
 @import "./elements/_root.css";
 
 @import "./shared/_inset-grid.css";
+@import "./shared/_card.css";
+@import "./shared/_navigation.css";
 
 @import "./attributes/_aria-busy.css";
 @import "./attributes/_aria-disabled.css";

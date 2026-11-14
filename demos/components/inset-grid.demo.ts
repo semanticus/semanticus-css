@@ -58,3 +58,8 @@ export function directionalBleed() {
 export function blockBleed() {
   return main("section", {}, `<div class="bleed-inline bleed-block bg-primary-subtle">A single child can reach all four edges.</div>`);
 }
+
+export function horizontal() {
+  return main("header", { class: "d-flex justify-content-between align-items-center" }, `<a class="bleed-start bg-primary-subtle" href="#">Brand</a>
+<a class="bleed-end bg-secondary-subtle" href="#">Account</a>`);
+}

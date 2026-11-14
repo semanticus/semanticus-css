@@ -11,18 +11,17 @@ body:has(dialog[open]) {
 }
 
 dialog {
-  --_dialog-spacing: var(--dialog-spacing, var(--spacing));
-  --_dialog-border-color: var(--dialog-border-color);
-  --_dialog-background-color: var(--dialog-background-color);
+  --_inset-grid-inline: var(--spacing);
+  --_inset-grid-block: var(--spacing-3);
+  --_dialog-border-radius: var(--dialog-border-radius, var(--border-radius));
 
   max-height: calc(100vh - var(--spacing-8));
-  margin: auto;
+  margin: auto !important;
   overflow: auto;
-  padding: var(--_dialog-spacing);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--_dialog-border-color);
-  background: var(--_dialog-background-color);
+  border-radius: var(--_dialog-border-radius);
+  border: 0;
   box-shadow: var(--menu-box-shadow);
+  padding: 0;
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */
@@ -51,43 +50,6 @@ dialog {
     transition:
       backdrop-filter 0.2s ease-in-out,
       background-color 0.2s ease-in-out;
-  }
-
-  > header,
-  > footer {
-    width: auto;
-    margin-inline: calc(var(--_dialog-spacing) * -1);
-    padding-inline: var(--_dialog-spacing);
-    padding-block: var(--_dialog-spacing);
-    background-color: var(--dialog-marginals-background-color);
-    display: flex;
-    gap: calc(var(--nav-link-gap) * 1.5);
-    align-items: center;
-  }
-
-  /* Header styling */
-  > header {
-    margin-top: calc(var(--_dialog-spacing) * -1);
-    margin-bottom: var(--_dialog-spacing);
-    border-bottom: var(--border-width) solid
-      var(--dialog-marginals-border-color);
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
-    justify-content: space-between;
-  }
-
-  /* Footer styling */
-  > footer {
-    margin-bottom: calc(var(--_dialog-spacing) * -1);
-    margin-top: var(--_dialog-spacing);
-    border-top: var(--border-width) solid var(--dialog-marginals-border-color);
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-    justify-content: end;
-  }
-
-  > :last-child:is(hgroup, h1, h2, h3, h4, h5, h6) {
-    margin-bottom: 0;
   }
 }
 

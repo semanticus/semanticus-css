@@ -33,7 +33,7 @@ for (const width of [390, 1440]) {
 }
 
 for (const direction of ['ltr', 'rtl']) {
-  test(`directional bleed and block spacers in ${direction}`, async ({ page }) => {
+  test(`directional bleed and block padding in ${direction}`, async ({ page }) => {
     await page.setContent(`<section class="inset-grid" dir="${direction}" style="--spacing: 24px">
       <header class="bleed-inline bleed-top">Header</header>
       <div class="bleed-start" id="start">Start</div>
@@ -66,3 +66,45 @@ for (const direction of ['ltr', 'rtl']) {
     expect(single.height).toBeCloseTo(singleContainer.height);
   });
 }
+
+for (const direction of ['ltr', 'rtl']) {
+  for (const layout of ['flex', 'grid']) {
+    test(`horizontal ${layout} supports edge bleed in ${direction}`, async ({ page }) => {
+      await page.setContent(`<header class="inset-grid" dir="${direction}" style="--spacing: 24px; display: ${layout}; gap: 16px; grid-template-columns: 1fr 1fr">
+        <div class="bleed-start" style="flex: 1">Start</div>
+        <div class="bleed-end" style="flex: 1">End</div>
+      </header>`);
+      await page.addStyleTag({ content: readFileSync('dist/semanticus-no-utilities.css', 'utf8') });
+      const header = page.locator('header');
+      const parent = (await header.boundingBox())!;
+      const start = (await header.locator('.bleed-start').boundingBox())!;
+      const end = (await header.locator('.bleed-end').boundingBox())!;
+      expect(start.y).toBeCloseTo(end.y);
+      if (direction === 'ltr') {
+        expect(start.x).toBeCloseTo(parent.x);
+        expect(end.x + end.width).toBeCloseTo(parent.x + parent.width);
+        expect(end.x - start.x - start.width).toBeCloseTo(16);
+      } else {
+        expect(end.x).toBeCloseTo(parent.x);
+        expect(start.x + start.width).toBeCloseTo(parent.x + parent.width);
+        expect(start.x - end.x - end.width).toBeCloseTo(16);
+      }
+      expect(await header.evaluate(el => getComputedStyle(el).flexDirection)).toBe('row');
+    });
+  }
+}
+
+test('normal flow preserves bare text and inline links', async ({ page }) => {
+  await page.setContent('<section class="inset-grid" style="--spacing: 24px">Before <a href="#">a link</a> after</section>');
+  await page.addStyleTag({ content: readFileSync('dist/semanticus-no-utilities.css', 'utf8') });
+  const layout = await page.locator('section').evaluate(el => {
+    const range = document.createRange();
+    range.selectNodeContents(el.firstChild!);
+    const text = range.getBoundingClientRect();
+    const link = el.querySelector('a')!.getBoundingClientRect();
+    return { display: getComputedStyle(el).display, inset: text.x - el.getBoundingClientRect().x, sameLine: Math.abs(text.y - link.y) < 2 };
+  });
+  expect(layout.display).toBe('block');
+  expect(layout.inset).toBeCloseTo(24);
+  expect(layout.sameLine).toBe(true);
+});

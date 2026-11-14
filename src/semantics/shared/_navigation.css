@@ -1,0 +1,72 @@
+nav,
+header,
+footer,
+.nav {
+  --typography-margin-block: 0;
+
+  display: flex;
+  gap: calc(var(--nav-link-gap) * 1.5);
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+  flex-wrap: wrap;
+
+  > * {
+    margin-block: 0 !important;
+
+    &:only-child {
+      flex-grow: 1;
+    }
+  }
+
+  a:not([role="button"], .button),
+  [role="link"] {
+    &:not(:hover) {
+      --_links-text-decoration: none;
+    }
+  }
+
+  :is(
+    button,
+    .button,
+    [role="button"],
+    [type="button"],
+    select,
+    input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])
+  ) {
+    width: auto;
+    height: auto;
+  }
+
+  ul,
+  ol {
+    align-items: center;
+    display: flex;
+    gap: calc(var(--nav-link-gap) * 1.5);
+    list-style: none;
+    margin-bottom: 0 !important;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      &::before {
+        float: left;
+        content: "";
+      }
+    }
+  }
+}
+
+aside {
+  > :is(nav, .nav) {
+    flex-grow: 1;
+  }
+
+  :is(nav, .nav) {
+    :is(a, [role="link"], button, .button, [role="button"]) {
+      display: block;
+      width: 100%;
+    }
+  }
+}

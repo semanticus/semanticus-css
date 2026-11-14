@@ -4,17 +4,17 @@ aside: false
 
 # Inset Grid
 
-Use `.inset-grid` on a block element to give its content the same inset as a card. Direct children sit in a flexible central column, with padding forming the inline gutters. Add `.bleed-inline` to a direct child to span both gutters and reach the container’s inline edges.
+Use `.inset-grid` on a block element to give its content the same inset as a card. Padding supplies the inset without setting `display`, alignment, or flex direction. Add `.bleed-inline` to a direct child to span both gutters and reach the container’s inline edges.
 
 ## Basic Usage
 
-Apply `.inset-grid` to a container. Each direct child is placed in the central content column:
+Apply `.inset-grid` to a container. Content follows the element’s normal layout inside the padding:
 
 <HtmlPreviewer :code="InsetGridDemo.main()" />
 
 ## Full Bleed
 
-Add `.bleed-inline` to a direct child to span the gutters without negative margins:
+Add `.bleed-inline` to a direct child to span the gutters using negative inline margins:
 
 <HtmlPreviewer :code="InsetGridDemo.fullBleed()" />
 
@@ -52,15 +52,23 @@ Block modifiers only affect the container’s outer spacing; they do not move mi
 | `--_inset-grid-inline` | `var(--spacing)` | Width of each inline gutter |
 | `--_inset-grid-block` | `var(--spacing)` | Top and bottom padding size |
 
-Despite its name, `.inset-grid` uses a column flex layout with padding. Bleeding children expand across one or both inline gutters; no negative margins are needed.
+Despite its name, `.inset-grid` does not create a grid or flex layout. Inline bleed modifiers replace the corresponding child margins with the negative inset value. Top and bottom modifiers remove the container’s corresponding padding when its first or last child requests it.
 
 Override the inline and block spacing independently using the existing spacing tokens:
 
 <HtmlPreviewer :code="InsetGridDemo.customSpacing()" />
 
-`.bleed-inline` affects only the inline axis; block padding remains unless a block bleed modifier removes them. Existing child margins still apply. Bare text stays inside the padding. Wrap mixed inline content, such as text with a link, in a paragraph so it flows together instead of becoming separate flex items. The modifier affects direct children only and does not change their display type or create another grid. Nested `.inset-grid` elements establish their own gutters.
+`.bleed-inline` affects only the inline axis; block padding remains unless a block bleed modifier removes them. Margins on edges without an inline bleed modifier still apply. Bare text and inline links retain normal flow unless you choose a flex or grid layout yourself. The modifier affects direct children only and does not change their display type or create another grid. Nested `.inset-grid` elements establish their own gutters.
 
 Unlike `.content-grid`, this component has no maximum content width or breakout tier. It fills its available container width and works in both left-to-right and right-to-left layouts. It is included in the full and no-utilities bundles.
+
+## Horizontal Layouts
+
+Choose a layout directly on the container; no inner wrapper is required:
+
+<HtmlPreviewer :code="InsetGridDemo.horizontal()" />
+
+For horizontal rows, use `.bleed-start` on the item at the inline start edge and `.bleed-end` on the item at the inline end edge. A middle item with bleed modifiers can overlap its neighbors. Bleed modifiers adjust margins, not explicit widths: fixed-width children and replaced elements such as images may need width styling or a block wrapper to fill the available space.
 
 ## Nested Inset Grids
 

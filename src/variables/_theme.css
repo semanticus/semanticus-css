@@ -276,21 +276,6 @@
     var(--_color-slate-850)
   );
 
-  /* --- Dialog --- */
-  --dialog-border-color: var(--border-color);
-  --dialog-background-color: var(--background-color);
-
-  /* Shade styling, applied to header & footer elements */
-  --dialog-marginals-background-color: light-dark(
-    color-mix(in srgb, var(--_color-slate-50) 25%, white),
-    color-mix(in srgb, var(--_color-slate-50), transparent 95%)
-  );
-  --dialog-marginals-border-color: color-mix(
-    in srgb,
-    light-dark(var(--_color-slate-900), var(--_color-zinc-350)),
-    transparent 90%
-  );
-
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
   --group-buttons-padding-inline: var(--spacing);
@@ -426,6 +411,45 @@
   /* --- Tooltip --- */
   --tooltip-background-color: var(--contrast-background-color);
   --tooltip-color: light-dark(white, var(--_color-zinc-900));
+
+  /* --- Alert Default Styling --- */
+  --alert-color: var(--color);
+  --alert-background-color: var(--background-color);
+  --alert-padding-inline: var(--spacing);
+  --alert-padding-block: var(--spacing-3);
+  --alert-margin-block: var(--spacing);
+  --alert-border-color: var(--border-color);
+  --alert-border-width: var(--border-width);
+  --alert-border-accent-width: var(--alert-border-width);
+  --alert-border-radius: var(--border-radius);
+
+  /* --- Card Default Styling --- */
+  --card-color: var(--color);
+  --card-background-color: var(--background-color);
+  --card-padding-inline: var(--spacing);
+  --card-padding-block: var(--spacing-3);
+  --card-margin-block: var(--spacing);
+  --card-border-color: var(--border-color);
+  --card-border-width: var(--border-width);
+  --card-border-radius: var(--border-radius);
+  /* Shade styling, applied to header & footer elements */
+  --card-marginals-background-color: light-dark(
+    color-mix(in srgb, var(--_color-slate-50) 25%, white),
+    color-mix(in srgb, var(--_color-slate-50), transparent 95%)
+  );
+  --card-marginals-border-color: color-mix(
+    in srgb,
+    light-dark(var(--_color-slate-900), var(--_color-zinc-350)),
+    transparent 90%
+  );
+
+  /* --- Pane Default Styling --- */
+  --pane-color: var(--color);
+  --pane-background-color: var(--background-color);
+  --pane-padding-inline: var(--spacing);
+  --pane-padding-block: var(--spacing-3);
+  --pane-border-color: var(--background-color);
+  --pane-border-width: 0;
 
   /* ===== RESPONSIVE ADJUSTMENTS ===== */
   @media (--breakpoint-sm) {

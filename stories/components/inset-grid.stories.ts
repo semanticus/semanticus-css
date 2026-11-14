@@ -14,3 +14,4 @@ export const nested: StoryObj = { render: () => InsetGridDemo.nested() };
 export const rightToLeft: StoryObj = { render: () => InsetGridDemo.rtl() };
 export const directionalBleed: StoryObj = { render: () => InsetGridDemo.directionalBleed() };
 export const blockBleed: StoryObj = { render: () => InsetGridDemo.blockBleed() };
+export const horizontal: StoryObj = { render: () => InsetGridDemo.horizontal() };

@@ -1,7 +1,8 @@
 .pane {
+  --_pane-padding-inline: var(--pane-padding-inline);
+  --_pane-padding-block: var(--pane-padding-block);
   --_pane-color: var(--pane-color);
   --_pane-background-color: var(--pane-background-color);
-  --_pane-spacing: var(--pane-spacing);
   --_pane-border-color: var(--pane-border-color);
   --_pane-border-width: var(--pane-border-width);
   --typography-color: var(--_pane-color);
@@ -10,7 +11,8 @@
   background: var(--_pane-background-color);
   border: var(--_pane-border-width) solid var(--_pane-border-color);
   color: var(--_pane-color);
-  padding: var(--_pane-spacing);
+  padding-block: var(--_pane-padding-block);
+  padding-inline: var(--_pane-padding-inline);
 
   > :last-child {
     margin-bottom: 0 !important;

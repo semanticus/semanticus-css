@@ -11,14 +11,14 @@ Components provide reusable structure and presentation for common UI patterns th
 | Component | Description | Elements |
 |-----------|-------------|----------|
 | [`.card`](./card) | Visual container with background, shadow, and optional header/footer | Any block element |
-| [`.inset-grid`](./inset-grid) | Card-sized insets using flex layout and padding, with directional bleed modifiers | Any block element |
+| [`.inset-grid`](./inset-grid) | Card-sized insets using padding, with directional bleed modifiers | Any block element |
 | [`.container`](./container) | Responsive width wrapper with horizontal padding | Any block element |
 | [`.nav`](./nav) | Same styling and layout behavior as `<nav>` | For example, `<header>` or `<footer>` |
 | [`.striped`](/docs/variants/modifiers/striped) | Alternating row background colors | `<table>` |
 
 ## Inset Grid and Bleed Modifiers
 
-Use [`.inset-grid`](./inset-grid) for card-sized internal padding without negative margins. A column flex layout allows direct children to expand across the inline gutters. The component adds layout only; borders, backgrounds, and other decoration are optional.
+Use [`.inset-grid`](./inset-grid) for card-sized internal padding while keeping the element’s chosen layout. Negative inline margins let direct children extend across the gutters. The component adds layout only; borders, backgrounds, and other decoration are optional.
 
 Apply bleed modifiers to direct children:
 
