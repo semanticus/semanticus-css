@@ -1,6 +1,83 @@
 :root,
 :host {
-  /* ===== VARIANT TOKENS ===== */
+/* ===== TIER 2: VARIANT TOKENS ===== */
+
+  /* --- Primary Intent --- */
+  --primary-background-color-hover: color-mix(
+    in srgb,
+    var(--primary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-color-hover: color-mix(
+    in srgb,
+    var(--primary-color),
+    var(--color-hover-shade) 30%
+  );
+  --primary-outline-color: color-mix(
+    in srgb,
+    var(--primary-color),
+    light-dark(white, black) 30%
+  );
+
+  /* --- Secondary Intent --- */
+  --secondary-background-color: var(--_color-slate-550);
+  --secondary-background-color-hover: color-mix(
+    in srgb,
+    var(--secondary-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-color: light-dark(
+    var(--_color-slate-550),
+    var(--_color-zinc-350)
+  );
+  --secondary-color-hover: color-mix(
+    in srgb,
+    var(--secondary-color),
+    var(--color-hover-shade) 30%
+  );
+  --secondary-outline-color: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Success Intent --- */
+  --success-background-color: var(--_color-jade-450);
+  --success-background-color-hover: color-mix(
+    in srgb,
+    var(--success-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-color: light-dark(var(--_color-jade-450), var(--_color-jade-250));
+  --success-color-hover: color-mix(
+    in srgb,
+    var(--success-color),
+    var(--color-hover-shade) 30%
+  );
+  --success-outline-color: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    light-dark(white, black)
+  );
+
+  /* --- Danger Intent --- */
+  --danger-background-color: var(--_color-red-450);
+  --danger-background-color-hover: color-mix(
+    in srgb,
+    var(--danger-background-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-color: light-dark(var(--_color-red-450), var(--_color-red-250));
+  --danger-color-hover: color-mix(
+    in srgb,
+    var(--danger-color),
+    var(--color-hover-shade) 30%
+  );
+  --danger-outline-color: color-mix(
+    in srgb,
+    var(--danger-color) 70%,
+    light-dark(white, black)
+  );
 
   /* --- Contrast --- */
   --contrast-background-color: light-dark(

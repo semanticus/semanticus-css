@@ -13,7 +13,9 @@
 
 @import "./variables/_breakpoints.css";
 @import "./variables/_theme.css";
+@import "./variables/_system.css";
 @import "./variables/_variants.css";
+@import "./variables/_components.css";
 
 @import './components/_root.css';
 @import './attributes/modules.css';

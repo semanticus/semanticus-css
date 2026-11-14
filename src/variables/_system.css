@@ -1,0 +1,95 @@
+:root,
+:host {
+  /* ===== TIER 1: SYSTEM TOKENS ===== */
+
+  /* --- Base values used for padding, margins and other space related calculations --- */
+  --spacing: 1rem;
+  --spacing-1: calc(var(--spacing) * 0.25); /* 2 fourths smaller */
+  --spacing-2: calc(var(--spacing) * 0.5); /* half smaller */
+  --spacing-3: calc(var(--spacing) * 0.75); /* fourth smaller */
+  --spacing-4: var(--spacing); /* default */
+  --spacing-5: calc(var(--spacing) * 1.25); /* fourth larger */
+  --spacing-6: calc(var(--spacing) * 1.5); /* half larger */
+  --spacing-7: calc(var(--spacing) * 1.75); /* 3 fourths larger */
+  --spacing-8: calc(var(--spacing) * 2); /* double */
+  --spacing-9: calc(var(--spacing) * 3); /* triple */
+
+  /* Internal helper used to derive colors representing the hover state */
+  --color-hover-shade: light-dark(
+    var(--_color-zinc-700),
+    var(--_color-zinc-300)
+  );
+
+  /* --- Background Color --- */
+  --background-color: light-dark(
+    white,
+    color-mix(in srgb, var(--_color-slate-950), var(--_color-slate-900))
+  );
+
+  /* --- Color --- */
+  --color: light-dark(var(--_color-zinc-750), var(--_color-zinc-200));
+  --color-muted-fade: 40%;
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent var(--color-muted-fade));
+
+  /* --- Typography --- */
+  --typography-margin-block: var(--spacing);
+  --typography-color: var(--color);
+  --line-height: 1.5;
+  --font-weight: 400; /* normal */
+  --font-size: 1rem;
+  --text-underline-offset: 0.1rem;
+  --font-family-emoji:
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif:
+    system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial,
+    "Helvetica Neue", sans-serif, var(--font-family-emoji);
+  --font-family-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace, var(--font-family-emoji);
+  --font-family: var(--font-family-sans-serif);
+
+  /* --- Border --- */
+  --border-color: light-dark(var(--_color-slate-100), var(--_color-slate-800));
+  --border-radius: 0.25rem;
+  --border-width: 0.0625rem;
+
+  /* --- Outline --- */
+  --outline-width: 1px;
+
+  /* --- Opacity --- */
+  --opacity-disabled: 0.5;
+
+  /* --- Transition --- */
+  --transition: 0.2s ease-in-out;
+
+  /* ===== RESPONSIVE ADJUSTMENTS ===== */
+  @media (--breakpoint-sm) {
+    --font-size: 1.01rem;
+    --spacing: 1.02rem;
+    --sidebar-size: max(25%, 150px);
+  }
+
+  @media (--breakpoint-md) {
+    --font-size: 1.02rem;
+    --spacing: 1.03rem;
+    --sidebar-size: max(22%, 180px);
+  }
+
+  @media (--breakpoint-lg) {
+    --font-size: 1.03rem;
+    --spacing: 1.05rem;
+    --sidebar-size: max(20%, 200px);
+  }
+
+  @media (--breakpoint-xl) {
+    --font-size: 1.035rem;
+    --spacing: 1.1rem;
+    --sidebar-size: max(18%, 220px);
+  }
+
+  @media (--breakpoint-xxl) {
+    --font-size: 1.04rem;
+    --spacing: 1.2rem;
+    --sidebar-size: clamp(240px, 16%, 300px);
+  }
+}
