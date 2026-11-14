@@ -1,8 +1,0 @@
-footer {
-  padding-block: var(--spacing);
-  margin-top: var(--spacing);
-
-  & > * {
-    margin-block: 0 !important;
-  }
-}

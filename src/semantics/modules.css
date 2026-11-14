@@ -1,5 +1,7 @@
 @import "./elements/_root.css";
 
+@import "./shared/_inset-grid.css";
+
 @import "./attributes/_aria-busy.css";
 @import "./attributes/_aria-disabled.css";
 @import "./attributes/_disabled.css";
@@ -23,8 +25,7 @@
 @import "./elements/_embedded.css";
 @import "./elements/_fieldset.css";
 @import "./elements/_figure.css";
-@import "./elements/_footer.css";
-@import "./elements/_header.css";
+@import "./elements/_header+footer.css";
 @import "./elements/_headings.css";
 @import "./elements/_hgroup.css";
 @import "./elements/_hr.css";

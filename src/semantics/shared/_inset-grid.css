@@ -1,9 +1,17 @@
+dialog,
+header,
+footer,
+.card,
+.pane,
 .inset-grid {
+  --_inset-grid-inline: var(--spacing);
+  --_inset-grid-block: var(--spacing);
+
   display: grid;
   grid-template-columns:
-    [bleed-start] var(--inset-grid-padding-inline, var(--spacing))
+    [bleed-start] var(--_inset-grid-inline)
     [content-start] minmax(0, 1fr)
-    [content-end] var(--inset-grid-padding-inline, var(--spacing))
+    [content-end] var(--_inset-grid-inline)
     [bleed-end];
 
   /* Generated grid items supply block spacing without padding. */
@@ -11,7 +19,7 @@
   &::after {
     content: "";
     grid-column: bleed;
-    block-size: var(--inset-grid-padding-block, var(--spacing));
+    block-size: var(--_inset-grid-block);
   }
 
   > * {
