@@ -15,6 +15,7 @@ function typographySection(cssClass: string) {
   <p>The paragraph element is the most basic block of text content.</p>
   <p class="text-muted">Text explicitly marked as muted.</p>
   <a href="#">Regular Link</a>
+  <small>Small text</small>
 </section>`;
 }
 

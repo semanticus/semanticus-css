@@ -12,7 +12,7 @@ export function main(
     },
     `<header>
   <nav>
-    <a href="#" class="fs-3"><strong>Acme Corp</strong></a>
+    <a href="#" class="fs-2"><strong>Acme Corp</strong></a>
 
     <ul>
       <li><a href="#">About</a></li>

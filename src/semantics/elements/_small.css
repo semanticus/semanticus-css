@@ -1,7 +1,7 @@
 small {
-  --font-size: var(--font-size-sm);
+  --font-size: var(--h6-font-size);
 
-  font-size: var(--font-size);
+  font-size: var(--font-size); /*Needs to be here to overwrite user agent styles */
 
   :where(input, select, textarea, fieldset) + & {
     display: block;

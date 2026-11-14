@@ -9,8 +9,8 @@
   --spacer-1: var(--spacing-1);
   --spacer-2: var(--spacing-2);
   --spacer-3: var(--spacing);
-  --spacer-4: var(--spacing-5);
-  --spacer-5: var(--spacing-8);
+  --spacer-4: var(--spacing-6);
+  --spacer-5: var(--spacing-9);
 
   /* Grid */
   --grid-gutter-x: var(--spacer);

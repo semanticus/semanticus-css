@@ -21,15 +21,12 @@ const textTransformHtml = `<p class="text-lowercase">Lowercased text.</p>
 <p class="text-uppercase">Uppercased text.</p>
 <p class="text-capitalize">capitalized text.</p>
 `;
-const fontSizeHtml = `<p class="fs-1">.fs-1 text</p>
-<p class="fs-2">.fs-2 text</p>
-<p class="fs-3">.fs-3 text</p>
-<p class="fs-4">.fs-4 text</p>
-<p class="fs-5">.fs-5 text</p>
-<p class="fs-6">.fs-6 text</p>
-<p class="fs-sm">.fs-sm text</p>
-<p class="fs-md">.fs-md text</p>
-<p class="fs-lg">.fs-lg text</p>
+const fontSizeHtml = `<p class="fs-1">Same as h1</p>
+<p class="fs-2">Same as h2</p>
+<p class="fs-3">Same as h3</p>
+<p class="fs-4">Same as h4 and the default font size</p>
+<p class="fs-5">Same as h5 element</p>
+<p class="fs-6">Same as h6 and small elements</p>
 `;
 const fontWeightHtml = `<p class="fw-bold">Bold text.</p>
 <p class="fw-bolder">Bolder weight text (relative to parent).</p>

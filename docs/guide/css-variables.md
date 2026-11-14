@@ -269,9 +269,6 @@ Scoped to a component type. Change one of these and every instance updates.
   --h6-font-size: 1rem;
   --h6-margin-top: 1.5rem;
   --h6-line-height: 1.25;
-  --font-size-sm: 80%;
-  --font-size-md: 100%;
-  --font-size-lg: 120%;
 
   /* --- Icons --- */
   --icons-background-position-gap: 0.75rem;
