@@ -11,14 +11,14 @@ Components provide reusable structure and presentation for common UI patterns th
 | Component | Description | Elements |
 |-----------|-------------|----------|
 | [`.card`](./card) | Visual container with background, shadow, and optional header/footer | Any block element |
-| [`.inset-grid`](./inset-grid) | Card-sized insets using grid gutters and block spacers, with directional bleed modifiers | Any block element |
+| [`.inset-grid`](./inset-grid) | Card-sized insets using flex layout and padding, with directional bleed modifiers | Any block element |
 | [`.container`](./container) | Responsive width wrapper with horizontal padding | Any block element |
 | [`.nav`](./nav) | Same styling and layout behavior as `<nav>` | For example, `<header>` or `<footer>` |
 | [`.striped`](/docs/variants/modifiers/striped) | Alternating row background colors | `<table>` |
 
 ## Inset Grid and Bleed Modifiers
 
-Use [`.inset-grid`](./inset-grid) for card-sized internal spacing without container padding or negative margins. Direct children sit inside inline gutters, while generated grid items provide the top and bottom spacing. The component adds layout only; borders, backgrounds, and other decoration are optional.
+Use [`.inset-grid`](./inset-grid) for card-sized internal padding without negative margins. A column flex layout allows direct children to expand across the inline gutters. The component adds layout only; borders, backgrounds, and other decoration are optional.
 
 Apply bleed modifiers to direct children:
 
@@ -27,9 +27,9 @@ Apply bleed modifiers to direct children:
 | `.bleed-inline` | Spans both inline gutters |
 | `.bleed-start` | Reaches the inline start edge: left in LTR, right in RTL |
 | `.bleed-end` | Reaches the inline end edge: right in LTR, left in RTL |
-| `.bleed-top` | Removes the top spacer when used on the first child |
-| `.bleed-bottom` | Removes the bottom spacer when used on the last child |
-| `.bleed-block` | Removes the top spacer for the first child and the bottom spacer for the last child |
+| `.bleed-top` | Removes the top padding when used on the first child |
+| `.bleed-bottom` | Removes the bottom padding when used on the last child |
+| `.bleed-block` | Removes the top padding for the first child and the bottom padding for the last child |
 
 ```html
 <section class="inset-grid">

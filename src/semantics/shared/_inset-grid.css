@@ -1,46 +1,40 @@
-dialog,
 header,
 footer,
-.card,
-.pane,
 .inset-grid {
   --_inset-grid-inline: var(--spacing);
   --_inset-grid-block: var(--spacing);
 
-  display: grid;
-  grid-template-columns:
-    [bleed-start] var(--_inset-grid-inline)
-    [content-start] minmax(0, 1fr)
-    [content-end] var(--_inset-grid-inline)
-    [bleed-end];
+  display: flex;
+  flex-direction: column;
+  padding-inline: var(--_inset-grid-inline);
+  padding-block: var(--_inset-grid-block);
 
-  /* Generated grid items supply block spacing without padding. */
-  &::before,
-  &::after {
-    content: "";
-    grid-column: bleed;
-    block-size: var(--_inset-grid-block);
-  }
-
-  > * {
-    grid-column: content;
-    min-inline-size: 0;
+  > :is(.bleed-start, .bleed-end, .bleed-inline) {
+    max-inline-size: none;
+    box-sizing: border-box;
   }
 
   > .bleed-start {
-    grid-column-start: bleed-start;
+    align-self: flex-end;
+    inline-size: calc(100% + var(--_inset-grid-inline));
   }
 
   > .bleed-end {
-    grid-column-end: bleed-end;
+    align-self: flex-start;
+    inline-size: calc(100% + var(--_inset-grid-inline));
   }
 
-  > .bleed-inline {
-    grid-column: bleed;
+  > .bleed-inline,
+  > .bleed-start.bleed-end {
+    align-self: center;
+    inline-size: calc(100% + 2 * var(--_inset-grid-inline));
   }
 
-  &:has(> :is(.bleed-top, .bleed-block):first-child)::before,
-  &:has(> :is(.bleed-bottom, .bleed-block):last-child)::after {
-    display: none;
+  &:has(> :is(.bleed-top, .bleed-block):first-child) {
+    padding-block-start: 0;
+  }
+
+  &:has(> :is(.bleed-bottom, .bleed-block):last-child) {
+    padding-block-end: 0;
   }
 }

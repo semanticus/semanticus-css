@@ -8,23 +8,24 @@ export function main(
   return renderElement(
     tagName,
     classMergeAttributes("inset-grid border", attrs),
-    slot || `<h2>Comfortably inset</h2>
-<p>Every direct child sits inside gutters matching the default card spacing.</p>`,
+    slot || `Content gets padded.`,
   );
 }
 
 export function fullBleed() {
-  return main("section", {}, `<header class="bleed-inline bleed-top bg-primary-subtle"><h2>Inset text, full-width feature</h2></header>
-<p>The heading and this paragraph stay inside the gutters.</p>
-<div class="bleed-inline bg-primary-subtle">
-  <p>A bleed-inline band reaches both inline edges. Its contents keep their normal layout.</p>
-</div>
-<p>Following content returns to the inset column.</p>`);
+  return main("section", {}, `<hgroup>
+  <h2>Inset text, full-width feature</h2>
+  <p>The heading and this paragraph stay inside the gutters.</p>
+</hgroup>
+
+<p class="bleed-inline text-bg-contrast">A bleed-inline band reaches both inline edges. Its contents keep their normal layout.</p>
+
+Following content returns to the inset column.`);
 }
 
 export function customSpacing() {
   return main("section", {
-    style: "--inset-grid-padding-inline: var(--spacing-6); --inset-grid-padding-block: var(--spacing-2)",
+    style: "--_inset-grid-inline: var(--spacing-6); --_inset-grid-block: var(--spacing-2)",
   }, `<h2>Independent spacing</h2>
 <p>Wider inline gutters and smaller block padding use the existing spacing scale.</p>
 <div class="bleed-inline bg-primary-subtle">This band still spans the entire container.</div>`);
@@ -43,7 +44,7 @@ export function nested() {
 export function rtl() {
   return main("section", { dir: "rtl", lang: "ar" }, `<h2>محتوى بهوامش داخلية</h2>
 <p>يبقى النص داخل الهوامش الجانبية.</p>
-<div class="bleed-inline bg-primary-subtle">يمتد هذا القسم إلى حافتي الحاوية.</div>`);
+<div class="bleed-start bg-primary-subtle">يمتد هذا القسم إلى حافتي الحاوية.</div>`);
 }
 
 export function directionalBleed() {

@@ -5,7 +5,7 @@ for (const width of [390, 1440]) {
   for (const direction of ['ltr', 'rtl']) {
     test(`inset grid gutters and full bleed at ${width}px ${direction}`, async ({ page }) => {
       await page.setViewportSize({ width, height: 800 });
-      await page.setContent(`<section class="inset-grid" dir="${direction}" style="--card-spacing: 24px">
+      await page.setContent(`<section class="inset-grid" dir="${direction}" style="--spacing: 24px">
         <div id="regular">Inset content</div>
         <div id="bleed" class="bleed-inline">Full width</div>
         <section class="inset-grid" id="nested"><div>Nested content</div></section>
@@ -24,7 +24,7 @@ for (const width of [390, 1440]) {
       const nestedChild = await page.locator('#nested > div').boundingBox();
       expect(nestedChild!.x - nested!.x).toBeCloseTo(24);
       await container.evaluate(el => {
-        (el as HTMLElement).style.setProperty('--inset-grid-padding-inline', '12px');
+        (el as HTMLElement).style.setProperty('--_inset-grid-inline', '12px');
       });
       const customized = await page.locator('#regular').boundingBox();
       expect(customized!.width).toBeCloseTo(bounds!.width - 24);
@@ -34,7 +34,7 @@ for (const width of [390, 1440]) {
 
 for (const direction of ['ltr', 'rtl']) {
   test(`directional bleed and block spacers in ${direction}`, async ({ page }) => {
-    await page.setContent(`<section class="inset-grid" dir="${direction}" style="--card-spacing: 24px">
+    await page.setContent(`<section class="inset-grid" dir="${direction}" style="--spacing: 24px">
       <header class="bleed-inline bleed-top">Header</header>
       <div class="bleed-start" id="start">Start</div>
       <div class="bleed-end" id="end">End</div>
@@ -55,7 +55,8 @@ for (const direction of ['ltr', 'rtl']) {
       expect(item.width).toBeCloseTo(bounds.width - 24);
     }
     expect((await page.locator('#both').boundingBox())!.width).toBeCloseTo(bounds.width);
-    expect(await container.evaluate(el => getComputedStyle(el).padding)).toBe('0px');
+    expect(await container.evaluate(el => getComputedStyle(el).paddingBlockStart)).toBe('0px');
+    expect(await container.evaluate(el => getComputedStyle(el).paddingBlockEnd)).toBe('0px');
     await page.locator('header').evaluate(el => el.classList.remove('bleed-top'));
     expect((await page.locator('header').boundingBox())!.y - bounds.y).toBeCloseTo(24);
     await container.evaluate(el => { el.innerHTML = '<div class="bleed-inline bleed-block">Only child</div>'; });
