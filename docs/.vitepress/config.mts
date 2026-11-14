@@ -312,11 +312,9 @@ export default defineConfig({
     sidebar: {
       "/guide/": [
         { text: "About", link: "/guide/about" },
-        { text: "Vision", link: "/guide/vision" },
         { text: "Getting Started", link: "/guide/" },
         { text: "Light & Dark Modes", link: "/guide/light-dark-modes" },
         { text: "Palettes", link: "/guide/palettes" },
-        { text: "Sizes", link: "/guide/sizes" },
         { text: "Token Convention", link: "/guide/token-convention" },
         { text: "CSS Variables", link: "/guide/css-variables" },
         { text: "Contributing", link: "/guide/contributing" },

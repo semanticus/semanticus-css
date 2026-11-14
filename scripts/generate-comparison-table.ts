@@ -20,7 +20,6 @@ const bsDir   = path.join(tmpDir, `bootstrap@${BOOTSTRAP_VERSION}`);
 
 const CDN = 'https://cdn.jsdelivr.net/npm';
 const downloads = [
-  { url: `${CDN}/@picocss/pico@${PICO_VERSION}/css/pico.classless.min.css`,           dest: path.join(picoDir, 'pico.classless.min.css') },
   { url: `${CDN}/@picocss/pico@${PICO_VERSION}/css/pico.min.css`,                     dest: path.join(picoDir, 'pico.min.css') },
   { url: `${CDN}/bootstrap@${BOOTSTRAP_VERSION}/dist/css/bootstrap.min.css`,          dest: path.join(bsDir, 'css', 'bootstrap.min.css') },
   { url: `${CDN}/bootstrap@${BOOTSTRAP_VERSION}/dist/css/bootstrap-utilities.min.css`,dest: path.join(bsDir, 'css', 'bootstrap-utilities.min.css') },
@@ -77,14 +76,10 @@ interface BundleResult {
 }
 
 const entries: Record<string, BundleEntry> = {
-  picoSemantics:             { label: 'Pico (semantics only)',                            files: [path.join(picoDir, 'pico.classless.min.css')] },
-  semanticusSemantics:       { label: 'Semanticus (components, legacy semantics alias)',                      files: [dist('semanticus-semantics.css')] },
   picoFullBundle:            { label: 'Pico (semantics + classes)',                       files: [path.join(picoDir, 'pico.min.css')] },
-  semanticusNoUtilities:     { label: 'Semanticus (components without utilities)',   files: [dist('semanticus-no-utilities.css')] },
-  bootstrapUtilities:        { label: 'Bootstrap (utilities only)',                       files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
+  semanticusNoUtilities:     { label: 'Semanticus (semantics + classes without utilities and grid)',   files: [dist('semanticus-no-utilities.css')] },
   bootstrapUtilitiesAndGrid: { label: 'Bootstrap (utilities + grid)',                     files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
   semanticusUtilitiesAndGrid:{ label: 'Semanticus (utilities + grid)',                    files: [dist('semanticus-utilities.css')] },
-  bootstrapCssBundle:        { label: 'Bootstrap (CSS bundle only)',                      files: [path.join(bsDir, 'css', 'bootstrap.min.css')] },
   bootstrapFullBundle:       { label: 'Bootstrap (full bundle)',                          files: [path.join(bsDir, 'css', 'bootstrap.min.css'), path.join(bsDir, 'js', 'bootstrap.bundle.min.js')] },
   semanticusFullBundle:      { label: 'Semanticus (full bundle)',                         files: [dist('semanticus.css')] },
 };

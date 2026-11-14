@@ -8,7 +8,7 @@ Hopefully this will change and your name gets added to the list of contributors 
 
 The [roadmap](/guide/roadmap), bug fixes and keeping up to date with new emerging patterns is a daunting task for one person alone and I'd love for you to be part of shaping the future of this project.
 
-When contributing, please keep the [Core Principles](/guide/vision) in mind.
+When contributing, please keep the [Core Principles](/guide/about) in mind.
 
 ## Code Guidelines
 

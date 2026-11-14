@@ -73,9 +73,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | When combining `.ghost` and `.subtle` in the same element, `.subtle` seems to take precedence |
 | ✅ | **shadow** utility classes don't seem to affect `.card` styling |
 | ✅ | When hovering an **accordion** or **dropdown** with `.ghost`, the chevron icon doesn't change color |
+| ✅ | Groups are not prepared for dir="rtl" |
 | ⌛ | Multiple toasts with the same placement overlap |
 | ⌛ | `<button role="link">` seems to behave differently than a normal link |
-| ⌛ | Groups are not prepared for dir="rtl" |
 
 ## Interactive Patterns
 
@@ -121,13 +121,9 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Sidebar component documentation |
 | ⌛ | Rails scaffold pages |
 | ⌛ | Tabs composite documentation |
-| ⌛ | Replacing **stylelint** with **biomejs** |
 | ⌛ | Landing page example |
 | ⌛ | Login page example |
 | ⌛ | Account settings page example |
-| ⌛ | Replacing **vitepress** with **astro** and use **Semanticus CSS** to style documentation |
-| ⌛ | Migration guide from Pico CSS |
-| ⌛ | Migration guide from Bootstrap |
 
 ## Visual Regression Testing
 

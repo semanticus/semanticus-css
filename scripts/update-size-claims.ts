@@ -69,37 +69,25 @@ for (const filePath of singleClaimFiles) {
 // ─── 2. Size comparison table rows in README.md ───────────────────────────────
 
 const readmePath = path.join(repoRoot, "README.md");
-let readme = fs.readFileSync(readmePath, "utf8");
-let readmeChanged = false;
+const readme = fs.readFileSync(readmePath, "utf8");
+const sectionPattern = /(### Size comparison[^\S\n]*\n\s*\n)\|[^\n]*\n\|[^\n]*\n(?:\|[^\n]*(?:\n|$))*/;
 
-console.log("\nUpdating README.md size table...");
-for (const [, { label, gzipKB }] of Object.entries(entries)) {
-  const rowPattern = new RegExp(
-    `(\\|\\s*${label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*\\|\\s*)([\\d.]+ KB)(\\s*\\|)`,
-    "g",
-  );
-  const original = readme;
-  readme = readme.replace(rowPattern, (match, prefix, oldValue, suffix) => {
-    if (oldValue !== `${gzipKB} KB`) {
-      const oldKB = parseFloat(oldValue);
-      const newKB = parseFloat(gzipKB);
-      const diff = newKB - oldKB;
-      const sign = diff > 0 ? "+" : "";
-      const color = diff < 0 ? "\x1b[32m" : diff > 0 ? "\x1b[31m" : "";
-      const reset = color ? "\x1b[0m" : "";
-      console.log(
-        `  updated  "${label}" → ${gzipKB} KB (was ${oldValue}, ${color}${sign}${diff.toFixed(1)} KB${reset})`,
-      );
-    }
-    return `${prefix}${gzipKB} KB${suffix}`;
-  });
-  if (readme !== original) {
-    readmeChanged = true;
-  } else {
-    console.log(`  no change "${label}" (${gzipKB} KB)`);
-  }
+if (!sectionPattern.test(readme)) {
+  throw new Error("README.md Size comparison table not found.");
 }
 
-if (readmeChanged) {
-  fs.writeFileSync(readmePath, readme);
+// Use the same entries and order as the generated documentation data.
+// Rebuild the table so renamed or removed bundles cannot leave stale rows.
+const table = [
+  "| Bundle | Gzip |",
+  "| --- | --- |",
+  ...Object.values(entries).map(({ label, gzipKB }) => `| ${label} | ${gzipKB} KB |`),
+].join("\n");
+const updatedReadme = readme.replace(sectionPattern, (_, heading) => `${heading.trimEnd()}\n\n${table}\n`);
+
+if (updatedReadme !== readme) {
+  fs.writeFileSync(readmePath, updatedReadme);
+  console.log("  updated README.md size table");
+} else {
+  console.log("  no change README.md size table");
 }
