@@ -159,3 +159,7 @@ Use `.column-gap-{size}` for horizontal spacing only.
 ### Form Layout with Spacing
 
 <HtmlPreviewer :code="practicalHtml" />
+
+## Customizing the scale
+
+Utility suffixes read `--spacer-1` through `--spacer-5`, mapped to `--spacing-1`, `--spacing-2`, `--spacing`, `--spacing-6`, and `--spacing-9`. Their base multipliers are 0.25, 0.5, 1, 1.5, and 3, which are based off bootstrap utility classes.

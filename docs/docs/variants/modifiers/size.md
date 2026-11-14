@@ -166,7 +166,7 @@ Generic wrappers still do not apply size behavior. Explicit child size classes o
 
 The component slots `--buttons-font-size`, `--inputs-font-size`, and `--label-font-size` remain available. Dropdowns expose `--details-dropdown-font-size`, `--details-menu-font-size`, `--details-menu-padding-block`, and `--details-menu-padding-inline`, alongside their trigger-padding tokens. `--details-dropdown-height` keeps grouped controls aligned. `--dialog-spacing` controls dialog interiors and marginals; `--details-spacing` controls the gap after an open accordion summary.
 
-Controls retain their semantic focus, disabled, and validation styles. Smaller levels also reduce hit areas, so keep enough separation and assess touch target sizes. Container sizing changes spacing rather than content typography, dialog width, or slider width. The HTML `small` element and its existing `--font-size-sm` token retain their fine-print semantics.
+Controls retain their semantic focus, disabled, and validation styles. Smaller levels also reduce hit areas, so keep enough separation and assess touch target sizes. Container sizing changes spacing rather than content typography, dialog width, or slider width. The HTML `small` element and its existing `--h6-font-size` token retain their fine-print semantics.
 
 <script setup>
 import { SizeDemo } from "@demos/variants";

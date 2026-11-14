@@ -92,4 +92,4 @@ This works at any nesting depth — you can place a `data-theme="contrast"` elem
 3. **Dark theme (explicit)** — Applied via `[data-theme="dark"]` regardless of OS preference
 4. **Element-level contrast** — Applied via `[data-theme="contrast"]` using `@container style()` queries to invert the current theme
 
-All semantic color variables (`--primary-color`, `--background-color`, `--color`, etc.) are redefined in each theme to ensure optimal contrast and readability.
+Semantic color variables such as `--primary-color`, `--background-color`, and `--color` use `light-dark()` to select values according to the active color scheme. The theme also supplies `--theme` for internal style queries and switches it alongside `color-scheme`.

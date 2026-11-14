@@ -17,7 +17,7 @@ export function main(attrs: Record<string, string> = {}) {
 <section id="buttons">
   <h2>Buttons</h2>
 
-  <section class="auto-grid">
+  <section class="d-flex gap-d">
     <button>Primary</button>
     <button class="secondary">Secondary</button>
     <button class="contrast">Contrast</button>
@@ -33,7 +33,7 @@ export function main(attrs: Record<string, string> = {}) {
 <section id="links">
   <h2>Links</h2>
 
-  <section class="auto-grid">
+  <section class="d-flex gap-d">
     ${ADemo.main()}
     ${RoleLinkDemo.main("button")}
     ${RoleLinkDemo.main("div")}
