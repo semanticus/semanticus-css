@@ -213,6 +213,8 @@
     var(--_color-slate-50),
     var(--_color-slate-850)
   );
+  --menu-border-width: var(--border-width);
+  --menu-border-radius: var(--border-radius);
   --menu-border-color: var(--inputs-border-color);
   --menu-box-shadow:
     0.0145rem 0.029rem 0.174rem

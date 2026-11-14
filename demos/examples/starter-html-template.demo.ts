@@ -10,7 +10,7 @@ export function main(
       ...attrs,
       class: ["content-grid", ...(attrs.class ? [attrs.class] : [])].join(" "),
     },
-    `<header>
+    `<header class="full-width">
   <nav>
     <a href="#" class="fs-2"><strong>Acme Corp</strong></a>
 

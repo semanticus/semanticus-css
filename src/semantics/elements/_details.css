@@ -8,6 +8,8 @@ details {
   --_details-summary-color-open: var(--summary-color-open);
   --_details-summary-outline-color: var(--primary-outline-color);
   --_details-margin-block: var(--inputs-margin-block);
+  --_details-padding-block: var(--inputs-padding-block);
+  --_details-padding-inline: var(--inputs-padding-inline);
 
   display: block;
 
@@ -60,6 +62,7 @@ details {
     &[role="button"] {
       width: 100%;
       text-align: left;
+      margin-bottom: var(--_details-margin-block);
 
       &::after {
         height: calc(var(--buttons-font-size) * var(--line-height, 1.5));
@@ -103,8 +106,6 @@ details:has(> summary[aria-haspopup="menu"]) {
     --_details-dropdown-background-color: var(--inputs-background-color);
     --_details-dropdown-color: var(--inputs-placeholder-color);
     --_details-dropdown-border-color: var(--inputs-border-color);
-    --_details-dropdown-padding-block: var(--inputs-padding-block);
-    --_details-dropdown-padding-inline: var(--inputs-padding-inline);
     --_details-summary-color: var(--_details-dropdown-color);
 
     height: calc(
@@ -122,15 +123,15 @@ details:has(> summary[aria-haspopup="menu"]) {
     &:not([role]) {
       font-size: var(--dropdown-font-size, inherit);
       background-color: var(--_details-dropdown-background-color);
-      border: var(--border-width) solid var(--_details-dropdown-border-color);
-      border-radius: var(--border-radius);
-      padding: var(--_details-dropdown-padding-block)
-        var(--_details-dropdown-padding-inline);
+      border: var(--inputs-border-width) solid var(--_details-dropdown-border-color);
+      border-radius: var(--inputs-border-radius);
+      padding-block: var(--_details-padding-block);
+      padding-inline: var(--_details-padding-inline);
       display: flex;
       align-items: center;
       height: calc(
-        var(--dropdown-font-size, 1rem) * var(--line-height) + var(--_details-dropdown-padding-block) * 2 +
-          var(--border-width) * 2
+        var(--dropdown-font-size, 1rem) * var(--line-height) + var(--_details-padding-block) * 2 +
+          var(--inputs-border-width) * 2
       );
       line-height: inherit;
       cursor: pointer;
@@ -172,8 +173,8 @@ details:has(> summary[aria-haspopup="menu"]) {
     margin: 0;
     margin-top: var(--focus-ring-width);
     padding: 0;
-    border: var(--border-width) solid var(--menu-border-color);
-    border-radius: var(--border-radius);
+    border: var(--menu-border-width) solid var(--menu-border-color);
+    border-radius: var(--menu-border-radius);
     background-color: var(--menu-background-color);
     box-shadow: var(--menu-box-shadow);
     color: var(--menu-color);

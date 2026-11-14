@@ -144,7 +144,7 @@ Here's an off-to-a-great-start HTML template using semantic styling, its variant
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.8.0/dist/semanticus.css">
 </head>
 <body class="content-grid">
-  <header>
+  <header class="full-width">
     <nav>
       <a href="#" class="fs-3"><strong>Acme Corp</strong></a>
 
