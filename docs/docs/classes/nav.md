@@ -4,7 +4,7 @@ title: .nav
 
 # .nav
 
-The `.nav` class applies the same styling and layout behavior as the [`<nav>` element](/docs/semantics/elements/nav) to another element. Use it on a `<header>` or `<footer>`, for example, to arrange branding, links, and actions without adding an extra wrapper.
+The `.nav` class applies the same styling and layout behavior as the [`<nav>` element](/docs/elements/nav) to another element. Use it on a `<header>` or `<footer>`, for example, to arrange branding, links, and actions without adding an extra wrapper.
 
 ## Basic Usage
 
@@ -26,7 +26,7 @@ Like `<nav>`, `.nav`:
 - Adjusts button and form control sizing to fit the navigation layout.
 - Applies the same breadcrumb styling when its only direct child is an `<ol>`.
 
-See the [`<nav>` documentation](/docs/semantics/elements/nav) for navigation patterns and examples.
+See the [`<nav>` documentation](/docs/elements/nav) for navigation patterns and examples.
 
 ## Accessibility
 

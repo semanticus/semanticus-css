@@ -6,7 +6,7 @@ title: button
 
 The `<button>` element is a native interactive control that is keyboard-accessible and focusable by default, requiring no additional ARIA.
 
-On how to turn non-button elements into buttons, see [[role="button"]](/docs/semantics/attributes/role-button).
+On how to turn non-button elements into buttons, see [[role="button"]](/docs/attributes/role-button).
 
 ## Basic Usage
 

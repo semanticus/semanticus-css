@@ -12,7 +12,7 @@ Check the [Toasts](/docs/composites/toasts) page for instructions on how to crea
 
 Simply add `role="status"` or `role="alert"` to any HTML element in combination with **variant** classes to create an alert message.
 
-Check out the [[role="status"]](/docs/semantics/attributes/role-status#intent-variants) documentation page for all the different variants and modifier combinations.
+Check out the [[role="status"]](/docs/attributes/role-status#intent-variants) documentation page for all the different variants and modifier combinations.
 
 > **Note:** Alerts without content will be hidden, this way you can add the element to the DOM from the start and it will only be shown and announced when you update its content, without the need to worry about adding/removing it from the DOM.
 
@@ -36,13 +36,13 @@ When an element contains 3 children, `role="status|alert"` will set a three-colu
 
 In case you want to add an icon to the left and no close button on the right, since two children will cause the first element to strech, we need to add an empty element as the last child with `aria-hidden="true"` to make sure it is ignored by assistive technologies, this way the first child (icon) and the last child (empty element) will fit their content, and the middle one (message) will take up the remaining space.
 
-Check out [.icon-*](/docs/components/icons) components area for more icons.
+Check out [.icon-*](/docs/classes/icons) components area for more icons.
 
 <HtmlPreviewer :code="AlertsDemo.withIconAndOrCloseButtonExample()" />
 
 ## Little bit of everything
 
-References: [Icons](/docs/components/icons), [Close Button](/docs/composites/buttons#close-button), [Danger Intent](/docs/variants/intent/danger), [Ghost Modifier](/docs/variants/modifiers/ghost), [Font Size Utility Classes](/docs/utilities/typography#font-size)
+References: [Icons](/docs/classes/icons), [Close Button](/docs/composites/buttons#close-button), [Danger Intent](/docs/variants/intent/danger), [Ghost Modifier](/docs/variants/modifiers/ghost), [Font Size Utility Classes](/docs/utilities/typography#font-size)
 
 <HtmlPreviewer :code="AlertsDemo.littleBitOfEverything()" />
 

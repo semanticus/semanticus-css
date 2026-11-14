@@ -1,8 +1,8 @@
 # Lists
 
 Lists are implemented using different approaches:
-- Using the native [&lt;ul&gt;](/docs/semantics/elements/ul) element
-- Combining [[role=list]](/docs/semantics/attributes/role-list) with elements like `<div>`, `<section>`, etc.
+- Using the native [&lt;ul&gt;](/docs/elements/ul) element
+- Combining [[role=list]](/docs/attributes/role-list) with elements like `<div>`, `<section>`, etc.
 
 The choice of element depends on the context and the desired behavior of the button.
 

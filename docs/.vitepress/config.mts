@@ -66,7 +66,7 @@ export default defineConfig({
       gtag('config', '${process.env.GTAG_ID}');`,
         ],
       ],
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
   markdown: {
     config: (md) => {
       // No custom markdown plugins needed
@@ -129,53 +129,6 @@ export default defineConfig({
               } else {
                 res.statusCode = 404;
                 res.end("Palette not found");
-              }
-              return;
-            }
-            next();
-          });
-
-          // Serve size CSS files
-          server.middlewares.use((req, res, next) => {
-            const url = req.url || "";
-            if (url.includes("/semanticus.size.")) {
-              const filename = url.replace(/^\//, "");
-              // Remove query parameters for matching (e.g., ?t=123456)
-              const cleanFilename = filename.split("?")[0];
-              const match = cleanFilename.match(
-                /semanticus\.size\.(\w+)\.css$/,
-              );
-              const sizeName = match ? match[1] : "";
-
-              if (!sizeName) {
-                next();
-                return;
-              }
-
-              res.setHeader("Content-Type", "text/css");
-              res.setHeader(
-                "Cache-Control",
-                "no-cache, no-store, must-revalidate",
-              );
-              res.setHeader("Pragma", "no-cache");
-              res.setHeader("Expires", "0");
-
-              if (sizeName === "default") {
-                res.statusCode = 204;
-                res.end();
-                return;
-              }
-
-              const sizePath = path.join(
-                semanticusDistPath,
-                `semanticus.size.${sizeName}.css`,
-              );
-
-              if (fs.existsSync(sizePath)) {
-                fs.createReadStream(sizePath).pipe(res);
-              } else {
-                res.statusCode = 404;
-                res.end("Size not found");
               }
               return;
             }
@@ -350,176 +303,173 @@ export default defineConfig({
           ],
         },
         {
-          text: "Semantic Styling API",
+          text: "Attributes",
+          collapsed: true,
           items: [
             {
-              text: "Elements",
-              collapsed: true,
-              items: [
-                { text: "&lt;a&gt;", link: "/docs/semantics/elements/a" },
-                {
-                  text: "&lt;article&gt;",
-                  link: "/docs/semantics/elements/article",
-                },
-                {
-                  text: "&lt;aside&gt;",
-                  link: "/docs/semantics/elements/aside",
-                },
-                { text: "&lt;body&gt;", link: "/docs/semantics/elements/body" },
-                {
-                  text: "&lt;button&gt;",
-                  link: "/docs/semantics/elements/button",
-                },
-                {
-                  text: "&lt;details&gt;",
-                  link: "/docs/semantics/elements/details",
-                },
-                {
-                  text: "&lt;dialog&gt;",
-                  link: "/docs/semantics/elements/dialog",
-                },
-                {
-                  text: "&lt;dl&gt;",
-                  link: "/docs/semantics/elements/dl",
-                },
-                {
-                  text: "&lt;img&gt; / &lt;video&gt; / &lt;audio&gt;",
-                  link: "/docs/semantics/elements/embedded",
-                },
-                {
-                  text: "&lt;fieldset&gt;",
-                  link: "/docs/semantics/elements/fieldset",
-                },
-                {
-                  text: "&lt;figure&gt;",
-                  link: "/docs/semantics/elements/figure",
-                },
-                {
-                  text: "&lt;footer&gt;",
-                  link: "/docs/semantics/elements/footer",
-                },
-                {
-                  text: "&lt;header&gt;",
-                  link: "/docs/semantics/elements/header",
-                },
-                {
-                  text: "&lt;hgroup&gt;",
-                  link: "/docs/semantics/elements/hgroup",
-                },
-                { text: "&lt;hr&gt;", link: "/docs/semantics/elements/hr" },
-                {
-                  text: "&lt;input&gt;",
-                  link: "/docs/semantics/elements/input",
-                },
-                {
-                  text: "&lt;label&gt;",
-                  link: "/docs/semantics/elements/label",
-                },
-                { text: "&lt;main&gt;", link: "/docs/semantics/elements/main" },
-                { text: "&lt;nav&gt;", link: "/docs/semantics/elements/nav" },
-                {
-                  text: "&lt;ol&gt;",
-                  link: "/docs/semantics/elements/ol",
-                },
-                {
-                  text: "&lt;progress&gt;",
-                  link: "/docs/semantics/elements/progress",
-                },
-                {
-                  text: "&lt;section&gt;",
-                  link: "/docs/semantics/elements/section",
-                },
-                {
-                  text: "&lt;select&gt;",
-                  link: "/docs/semantics/elements/select",
-                },
-                {
-                  text: "&lt;table&gt;",
-                  link: "/docs/semantics/elements/table",
-                },
-                {
-                  text: "&lt;textarea&gt;",
-                  link: "/docs/semantics/elements/textarea",
-                },
-                {
-                  text: "&lt;ul&gt;",
-                  link: "/docs/semantics/elements/ul",
-                },
-              ],
+              text: "[aria-busy]",
+              link: "/docs/attributes/aria-busy",
             },
             {
-              text: "Attributes",
-              collapsed: true,
-              items: [
-                {
-                  text: "[aria-busy]",
-                  link: "/docs/semantics/attributes/aria-busy",
-                },
-                {
-                  text: "[aria-disabled]",
-                  link: "/docs/semantics/attributes/aria-disabled",
-                },
-                {
-                  text: "[aria-invalid]",
-                  link: "/docs/semantics/attributes/aria-invalid",
-                },
-                {
-                  text: "[disabled]",
-                  link: "/docs/semantics/attributes/disabled",
-                },
-                { text: "[hidden]", link: "/docs/semantics/attributes/hidden" },
-                {
-                  text: '[role="alert"]',
-                  link: "/docs/semantics/attributes/role-alert",
-                },
-                {
-                  text: '[role="button"]',
-                  link: "/docs/semantics/attributes/role-button",
-                },
-                {
-                  text: '[role="group"]',
-                  link: "/docs/semantics/attributes/role-group",
-                },
-                {
-                  text: '[role="link"]',
-                  link: "/docs/semantics/attributes/role-link",
-                },
-                {
-                  text: '[role="list"]',
-                  link: "/docs/semantics/attributes/role-list",
-                },
-                // {
-                //   text: '[role="search"]',
-                //   link: "/docs/semantics/attributes/role-search",
-                // },
-                {
-                  text: '[role="status"]',
-                  link: "/docs/semantics/attributes/role-status",
-                },
-                {
-                  text: '[role="tooltip"]',
-                  link: "/docs/semantics/attributes/role-tooltip",
-                },
-              ],
+              text: "[aria-disabled]",
+              link: "/docs/attributes/aria-disabled",
+            },
+            {
+              text: "[aria-invalid]",
+              link: "/docs/attributes/aria-invalid",
+            },
+            {
+              text: "[disabled]",
+              link: "/docs/attributes/disabled",
+            },
+            { text: "[hidden]", link: "/docs/attributes/hidden" },
+            {
+              text: '[role="alert"]',
+              link: "/docs/attributes/role-alert",
+            },
+            {
+              text: '[role="button"]',
+              link: "/docs/attributes/role-button",
+            },
+            {
+              text: '[role="group"]',
+              link: "/docs/attributes/role-group",
+            },
+            {
+              text: '[role="link"]',
+              link: "/docs/attributes/role-link",
+            },
+            {
+              text: '[role="list"]',
+              link: "/docs/attributes/role-list",
+            },
+            // {
+            //   text: '[role="search"]',
+            //   link: "/docs/attributes/role-search",
+            // },
+            {
+              text: '[role="status"]',
+              link: "/docs/attributes/role-status",
+            },
+            {
+              text: '[role="tooltip"]',
+              link: "/docs/attributes/role-tooltip",
             },
           ],
         },
         {
-          text: "Components API",
+          text: "Elements",
+          collapsed: true,
           items: [
-            { text: ".auto-grid", link: "/docs/components/auto-grid" },
-            { text: ".card", link: "/docs/components/card" },
-            { text: ".container", link: "/docs/components/container" },
-            { text: ".content-grid", link: "/docs/components/content-grid" },
-            { text: ".inset-grid", link: "/docs/components/inset-grid" },
-            { text: ".icon-*", link: "/docs/components/icons" },
-            { text: ".nav", link: "/docs/components/nav" },
-            { text: ".pane", link: "/docs/components/pane" },
-            { text: ".sidebar", link: "/docs/components/sidebar" },
+            { text: "&lt;a&gt;", link: "/docs/elements/a" },
+            {
+              text: "&lt;article&gt;",
+              link: "/docs/elements/article",
+            },
+            {
+              text: "&lt;aside&gt;",
+              link: "/docs/elements/aside",
+            },
+            { text: "&lt;body&gt;", link: "/docs/elements/body" },
+            {
+              text: "&lt;button&gt;",
+              link: "/docs/elements/button",
+            },
+            {
+              text: "&lt;details&gt;",
+              link: "/docs/elements/details",
+            },
+            {
+              text: "&lt;dialog&gt;",
+              link: "/docs/elements/dialog",
+            },
+            {
+              text: "&lt;dl&gt;",
+              link: "/docs/elements/dl",
+            },
+            {
+              text: "&lt;img&gt; / &lt;video&gt; / &lt;audio&gt;",
+              link: "/docs/elements/embedded",
+            },
+            {
+              text: "&lt;fieldset&gt;",
+              link: "/docs/elements/fieldset",
+            },
+            {
+              text: "&lt;figure&gt;",
+              link: "/docs/elements/figure",
+            },
+            {
+              text: "&lt;footer&gt;",
+              link: "/docs/elements/footer",
+            },
+            {
+              text: "&lt;header&gt;",
+              link: "/docs/elements/header",
+            },
+            {
+              text: "&lt;hgroup&gt;",
+              link: "/docs/elements/hgroup",
+            },
+            { text: "&lt;hr&gt;", link: "/docs/elements/hr" },
+            {
+              text: "&lt;input&gt;",
+              link: "/docs/elements/input",
+            },
+            {
+              text: "&lt;label&gt;",
+              link: "/docs/elements/label",
+            },
+            { text: "&lt;main&gt;", link: "/docs/elements/main" },
+            { text: "&lt;nav&gt;", link: "/docs/elements/nav" },
+            {
+              text: "&lt;ol&gt;",
+              link: "/docs/elements/ol",
+            },
+            {
+              text: "&lt;progress&gt;",
+              link: "/docs/elements/progress",
+            },
+            {
+              text: "&lt;section&gt;",
+              link: "/docs/elements/section",
+            },
+            {
+              text: "&lt;select&gt;",
+              link: "/docs/elements/select",
+            },
+            {
+              text: "&lt;table&gt;",
+              link: "/docs/elements/table",
+            },
+            {
+              text: "&lt;textarea&gt;",
+              link: "/docs/elements/textarea",
+            },
+            {
+              text: "&lt;ul&gt;",
+              link: "/docs/elements/ul",
+            },
           ],
         },
         {
-          text: "Variants API",
+          text: "Classes",
+          collapsed: false,
+          items: [
+            { text: ".auto-grid", link: "/docs/classes/auto-grid" },
+            { text: ".card", link: "/docs/classes/card" },
+            { text: ".container", link: "/docs/classes/container" },
+            { text: ".content-grid", link: "/docs/classes/content-grid" },
+            { text: ".inset-grid", link: "/docs/classes/inset-grid" },
+            { text: ".icon-*", link: "/docs/classes/icons" },
+            { text: ".nav", link: "/docs/classes/nav" },
+            { text: ".pane", link: "/docs/classes/pane" },
+            { text: ".sidebar", link: "/docs/classes/sidebar" },
+          ],
+        },
+        {
+          text: "Variants",
+          collapsed: false,
           items: [
             {
               text: "Intent",
@@ -545,7 +495,8 @@ export default defineConfig({
           ],
         },
         {
-          text: "Utilities API",
+          text: "Utilities",
+          collapsed: false,
           items: [
             { text: "Borders", link: "/docs/utilities/borders" },
             { text: "Colors", link: "/docs/utilities/colors" },

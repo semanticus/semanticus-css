@@ -54,7 +54,7 @@ import '@semanticus/semanticus-css/palettes/blue';
 
 > **Note:** The `import` syntax requires a bundler that supports CSS imports (e.g., Vite, Webpack, Rollup, or Parcel).
 
-Check out the [Palettes](https://semanticus.design/guide/palettes.html) and [Sizes](https://semanticus.design/guide/sizes.html) guides for more options.
+Check out the [Palettes](https://semanticus.design/guide/palettes.html) guide for alternative color palettes.
 
 ### Bundle choices and v4 source imports
 
@@ -68,7 +68,7 @@ For custom source bundles, replace `src/semantics/modules.css` with `src/compone
 
 ### Semantic HTML and ARIA
 
-Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](https://semanticus.design/docs/semantics/) will make it look great by default.
+Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](https://semanticus.design/docs/elements/) will make it look great by default.
 
 ```html
 <article>
@@ -83,7 +83,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — simply write plain 
 
 ### Component classes
 
-Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](https://semanticus.design/docs/components/) when you need a specific UI pattern.
+Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](https://semanticus.design/docs/classes/) when you need a specific UI pattern.
 
 ```html
 <article class="card">
@@ -183,7 +183,7 @@ You can override its variables to create your own themes and styles. For example
 }
 ```
 
-Check out the [CSS Variables](https://semanticus.design/guide/css-variables.html) guide for more details or the [Palettes](https://semanticus.design/guide/palettes.html) and [Sizes](https://semanticus.design/guide/sizes.html) builders to help you create your own custom styles.
+Check out the [CSS Variables](https://semanticus.design/guide/css-variables.html) guide for more details or the [Palettes](https://semanticus.design/guide/palettes.html) builder to help you customize your styles.
 
 ## Browser Support
 

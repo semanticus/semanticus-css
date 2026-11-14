@@ -8,7 +8,7 @@ Any element with `role="button"` is rendered as a button.
 
 This is useful when a non-button element (e.g. `<div>`, `<span>`) needs to behave and look like a button.
 
-This role can also be applied to `<details>` elements to create [Accordion buttons](/docs/semantics/elements/details#as-a-button) and [Dropdown buttons](/docs/composites/dropdown#as-a-button).
+This role can also be applied to `<details>` elements to create [Accordion buttons](/docs/composites/accordions#as-a-button) and [Dropdown buttons](/docs/composites/dropdown#as-a-button).
 
 ## Basic Usage
 

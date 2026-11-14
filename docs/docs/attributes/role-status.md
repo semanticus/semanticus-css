@@ -8,7 +8,7 @@ Adding `role="status"` to an element will stylize it as an **alert** message, fo
 
 > **Accessibility:** This role will let screen readers decide the best time to announce the message, so for typical feedback messages, like `Profile updated` or `Failed to save, please check for validation errors.`, this is the recommended role to use.
 
-For critical messages like `We couldn't reserve your seat due to connection failure. Please check your internet connection.`, or time-sensitive information like `Your reserved seat will be released in 5 minutes.` you can consider using [role="alert"](/docs/semantics/attributes/role-alert) instead.
+For critical messages like `We couldn't reserve your seat due to connection failure. Please check your internet connection.`, or time-sensitive information like `Your reserved seat will be released in 5 minutes.` you can consider using [role="alert"](/docs/attributes/role-alert) instead.
 
 ## Basic Usage
 

@@ -30,7 +30,7 @@ Use `<small>` element associated with a form control via `aria-describedby` to a
 
 ## Validation States
 
-Just like any form elements, validation states are provided with `aria-invalid`. See more at [[aria-invalid]](/docs/semantics/attributes/aria-invalid)
+Just like any form elements, validation states are provided with `aria-invalid`. See more at [[aria-invalid]](/docs/attributes/aria-invalid)
 
 > **Note:** The `<small>` element automatically inherits the validation state colors.
 

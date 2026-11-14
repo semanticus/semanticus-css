@@ -8,7 +8,7 @@ Modals are implemented using the `<dialog>` element in combination with the [Inv
 4. The modal will display with a backdrop and trap focus automatically
 5. Close the modal through the use of a button with `command="close"` (alternatively, you can use JS to `document.querySelector('#your-modal-id').close()`)
 
-Check out the [Dialog element documentation](/docs/semantics/elements/dialog) for more examples of how to structure your modal content.
+Check out the [Dialog element documentation](/docs/elements/dialog) for more examples of how to structure your modal content.
 
 ## Basic Modal
 

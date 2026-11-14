@@ -1,6 +1,6 @@
 # Card Group
 
-Card groups are implemented by adding the `.card` class to an element with [[role=group]](/docs/semantics/attributes/role-group) attribute which will make the element and its children look like a [Card List](/docs/composites/card-list) except stacked horizontally.
+Card groups are implemented by adding the `.card` class to an element with [[role=group]](/docs/attributes/role-group) attribute which will make the element and its children look like a [Card List](/docs/composites/card-list) except stacked horizontally.
 
 ## Basic Usage
 

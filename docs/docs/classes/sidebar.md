@@ -14,7 +14,7 @@ By default the sidebar will be sticky, meaning it will remain visible as the use
 
 When combined with the `popover` attribute, the sidebar becomes interactive and can be opened by clicking on an element with the `popovertarget` attribute pointing to the sidebar's id.
 
-By default adding a `popover` attribute will not make the sidebar invisible, it's up to you, to decide when the sidebar should be visible or not, maybe by adding the [[hidden]](/docs/semantics/attributes/hidden) attribute to the sidebar, or through responsive [display](/docs/utilities/display) **utility classes**.
+By default adding a `popover` attribute will not make the sidebar invisible, it's up to you, to decide when the sidebar should be visible or not, maybe by adding the [[hidden]](/docs/attributes/hidden) attribute to the sidebar, or through responsive [display](/docs/utilities/display) **utility classes**.
 
 <HtmlPreviewer :code="SidebarDemo.popoverExample()"/>
 

@@ -25,7 +25,7 @@ Screen readers may announce:
 
 > "Email subscription, group"
 
-See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
+See [&lt;fieldset&gt;](/docs/elements/fieldset) for more examples of grouping form controls.
 
 ## Button Group
 

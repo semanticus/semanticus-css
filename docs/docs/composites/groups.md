@@ -1,6 +1,6 @@
 # Groups
 
-Groups are implemented using the [[role=group]](/docs/semantics/attributes/role-group) attribute, combined with elements like `<div>`, `<section>`.
+Groups are implemented using the [[role=group]](/docs/attributes/role-group) attribute, combined with elements like `<div>`, `<section>`.
 
 Its used as a building block for grouping:
 - Buttons together in a menu, or [Pagination](/docs/composites/pagination) area;
@@ -23,7 +23,7 @@ Screen readers may announce:
 
 > "Email subscription, group"
 
-See [&lt;fieldset&gt;](/docs/semantics/elements/fieldset) for more examples of grouping form controls.
+See [&lt;fieldset&gt;](/docs/elements/fieldset) for more examples of grouping form controls.
 
 ## Button Group
 

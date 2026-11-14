@@ -28,10 +28,9 @@ The framework has Components, Attributes, Variants, and Utilities modules, backe
 - `src/no-utilities.css` — legacy alias for components without utilities → `semanticus-semantics.css`
 - `src/utilities.css` — utilities only → `semanticus-utilities.css`
 
-### Palettes & Sizes
+### Palettes
 
 - `src/palettes/` — 20 color palette overrides (e.g., `blue.css`, `zinc.css`)
-- `src/sizes/` — optional size overrides; currently absent, so `build:sizes` skips generation.
 - These are standalone variable overrides meant to be loaded **after** a base bundle.
 
 ## Build System
@@ -46,7 +45,7 @@ The framework has Components, Attributes, Variants, and Utilities modules, backe
 ```bash
 npm start              # Build + Docs dev server
 npm test               # Playwright visual regression
-npm run build          # Build all bundles + palettes + sizes (CI-safe, no network calls)
+npm run build          # Build all bundles + palettes (CI-safe, no network calls)
 npm run build:css      # Build minified CSS bundles
 npm run demo:server    # Run demo server used for visual regression testing
 npm run docs:dev       # Dev server for docs
@@ -90,7 +89,6 @@ All generated files land in `dist/`:
 - `semanticus-semantics.css` — legacy alias of the no-utilities bundle
 - `semanticus-utilities.css` — utilities only
 - `semanticus.palette.<name>.css`
-- `semanticus.size.<name>.css`
 
 ## Browser Support
 
@@ -115,12 +113,11 @@ Features **not** currently used (and therefore still considered browser-support 
 2. **Utility class** → add to the appropriate `src/utilities/<category>/_<file>.css`
 3. **Variant class** → add to `src/variants/_<file>.css` and import in `src/variants/modules.css`
 4. **Palette** → add `src/palettes/<name>.css` and register it in `scripts/build-palettes.ts`
-5. **Size** → add `src/sizes/<name>.css` and register it in `scripts/build-sizes.ts`
-6. **Rebuild** with `npm run build`
-7. **Lint** with `npm run lint`
-8. **Update docs** in `docs/` if user-facing
-9. **Update visual snapshots** with `npm run test:update-snapshots` if applicable
-10. **Consider version bump** → see Semantic Versioning section below
+5. **Rebuild** with `npm run build`
+6. **Lint** with `npm run lint`
+7. **Update docs** in `docs/` if user-facing
+8. **Update visual snapshots** with `npm run test:update-snapshots` if applicable
+9. **Consider version bump** → see Semantic Versioning section below
 
 ## Semantic Versioning
 

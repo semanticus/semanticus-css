@@ -35,12 +35,12 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 
 ## Related
 
-- [&lt;a&gt;](/docs/semantics/elements/a) - Anchor element styling and active state semantics
-- [&lt;button&gt;](/docs/semantics/elements/button) - Button element styling
-- [&lt;nav&gt;](/docs/semantics/elements/nav) - Navigation element semantics
-- [[aria-disabled]](/docs/semantics/attributes/aria-disabled) - Disabled state semantics
-- [[disabled]](/docs/semantics/attributes/disabled) - Disabled state semantics
-- [[role="group"]](/docs/semantics/attributes/role-group) - For grouping related controls
+- [&lt;a&gt;](/docs/elements/a) - Anchor element styling and active state semantics
+- [&lt;button&gt;](/docs/elements/button) - Button element styling
+- [&lt;nav&gt;](/docs/elements/nav) - Navigation element semantics
+- [[aria-disabled]](/docs/attributes/aria-disabled) - Disabled state semantics
+- [[disabled]](/docs/attributes/disabled) - Disabled state semantics
+- [[role="group"]](/docs/attributes/role-group) - For grouping related controls
 
 <script setup>
 import { PaginationDemo } from "@demos/composites";

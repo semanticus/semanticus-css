@@ -1,6 +1,6 @@
 # Accordions
 
-Accordions are implemented using the [&lt;details&gt;](/docs/semantics/elements/details) and `<summary>` elements, which provide a native way to create collapsible content sections with keyboard navigation and screen reader support without the need for JavaScript.
+Accordions are implemented using the [&lt;details&gt;](/docs/elements/details) and `<summary>` elements, which provide a native way to create collapsible content sections with keyboard navigation and screen reader support without the need for JavaScript.
 
 ## Basic Usage
 

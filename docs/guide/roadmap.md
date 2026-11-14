@@ -9,7 +9,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Removed `--pico` prefix from all CSS variables |
 | ✅ | Utility composition system |
 | ✅ | Consolidated **Pico CSS** and **Bootstrap** css variables into one unified system |
-| ✅ | Reduced overall spacing, in favor or a leanner look and kept **Pico CSS** original sizes in a separate dist file |
+| ✅ | Reduced overall spacing for a leaner look |
 | ✅ | Removed `<article>`'s **card** style |
 | ✅ | Two layer CSS variables token system |
 | ✅ | Reducing CSS variables footprint with light/dark mode optimization |
@@ -102,7 +102,7 @@ Legend: ✅ Completed | 🚧 In Progress | ⌛️ Pending
 | ✅ | Simplified the build process by removing the need for Sass |
 | ✅ | Live code previewer and editor |
 | ✅ | Live code previewer codeCollapsed option |
-| ✅ | Palette and Size builder |
+| ✅ | Palette builder |
 | ✅ | ARIA pattern documentation |
 | ✅ | **Semantic Styling** API exhaustive documentation |
 | ✅ | **Components** API exhaustive documentation |

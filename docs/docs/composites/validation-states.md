@@ -45,4 +45,4 @@ Pair with `aria-describedby` to link helper text that explains the validation re
 
 ## Reference
 
-For detailed implementation of `aria-invalid` on specific elements, see the [\[aria-invalid\]](/docs/semantics/attributes/aria-invalid) documentation.
+For detailed implementation of `aria-invalid` on specific elements, see the [\[aria-invalid\]](/docs/attributes/aria-invalid) documentation.

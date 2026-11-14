@@ -4,7 +4,7 @@
 
 Use it to group related content together, create sections within a page, or to highlight important information and extend it with different variants and modifiers to suit the needs of your application.
 
-Check out the [.content-grid](/docs/components/content-grid#full-width) or [Examples](/examples/) pages for examples on how you can use panes in a layout.
+Check out the [.content-grid](/docs/classes/content-grid#full-width) or [Examples](/examples/) pages for examples on how you can use panes in a layout.
 
 ## Basic Usage
 

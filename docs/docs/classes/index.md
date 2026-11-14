@@ -1,4 +1,4 @@
-# Components
+# Classes
 
 Minimal set of reusable building blocks that extend the **Semantic Styling**.
 
@@ -6,7 +6,7 @@ Minimal set of reusable building blocks that extend the **Semantic Styling**.
 
 Components provide reusable structure and presentation for common UI patterns that are not tied to a specific semantic state. They help keep layouts and repeated interface patterns consistent by offering shared building blocks such as containers, cards, and striped tables instead of re-creating the same styling in each feature.
 
-## Available Components
+## Available Classes
 
 | Component | Description | Elements |
 |-----------|-------------|----------|

@@ -1,6 +1,6 @@
 # Navigation
 
-Navigation is implemented using the `<nav>` element, but you can also use the [`.nav` component class](/docs/components/nav) add the same styling to any other element, like `<header>` or `<footer>`.
+Navigation is implemented using the `<nav>` element, but you can also use the [`.nav` component class](/docs/classes/nav) add the same styling to any other element, like `<header>` or `<footer>`.
 
 **Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 

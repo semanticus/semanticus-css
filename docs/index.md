@@ -60,13 +60,13 @@ Add **Semanticus CSS** to your project via CDN, manual download, or npm:
 
 ### Semantic HTML and ARIA
 
-Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](/docs/semantics/) will make it look great by default.
+Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](/docs/elements/) will make it look great by default.
 
 <HtmlPreviewer :code="GettingStartedDemo.semanticStyling()" />
 
 ### Component classes
 
-Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](/docs/components/) when you need a specific UI pattern.
+Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](/docs/classes/) when you need a specific UI pattern.
 
 <HtmlPreviewer :code="GettingStartedDemo.components()" />
 

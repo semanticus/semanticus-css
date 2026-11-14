@@ -6,7 +6,7 @@ Add **Semanticus CSS** to your project either via **CDN**, **manual download**, 
 
 <InstallGuide />
 
-Looking for alternative color palettes or sizing options? Check out the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) guides.
+Looking for alternative color palettes? Check out the [Palettes](/guide/palettes) guide.
 
 ## Bundle choices
 
@@ -23,13 +23,13 @@ For custom source bundles, replace `src/semantics/modules.css` with `src/compone
 
 ### Semantic HTML and ARIA
 
-Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](/docs/semantics/) will make it look great by default.
+Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](/docs/elements/) will make it look great by default.
 
 <HtmlPreviewer :code="GettingStartedDemo.semanticStyling()" />
 
 ### Component classes
 
-Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](/docs/components/) when you need a specific UI pattern.
+Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](/docs/classes/) when you need a specific UI pattern.
 
 <HtmlPreviewer :code="GettingStartedDemo.components()" />
 

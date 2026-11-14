@@ -18,7 +18,6 @@ When contributing, please keep the [Core Principles](/guide/about) in mind.
 2. **Utility class** → add to the appropriate `src/utilities/<category>/_<file>.css`
 3. **Variant class** → add to `src/variants/_<file>.css` and import in `src/variants/modules.css`
 4. **Palette** → add `src/palettes/<name>.css` and register it in `scripts/build-palettes.ts`
-5. **Size** → add `src/sizes/<name>.css` and register it in `scripts/build-sizes.ts`
 
 ### Code Style
 

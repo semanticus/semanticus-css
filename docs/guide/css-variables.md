@@ -12,8 +12,7 @@ After importing any semanticus-css bundle, override CSS variables defined on `:r
 }
 ```
 
-To help you create your own custom styles, check out the [Palettes](/guide/palettes)
-or [Sizes](/guide/sizes) builder tools.
+To help you create a custom color palette, use the [Palettes](/guide/palettes) builder.
 
 ## The 4-Tier Token System
 
@@ -426,4 +425,4 @@ component instance**:
 }
 ```
 
-For interactive builders, use the [Palettes](/guide/palettes) or [Sizes](/guide/sizes) tools.
+Use the [Palettes](/guide/palettes) builder to customize colors interactively.

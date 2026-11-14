@@ -21,10 +21,6 @@ export const variations = {
     { name: 'zinc', label: 'Zinc', color: '#646b79', description: 'A modern zinc color palette' },
     { name: 'slate', label: 'Slate', color: '#525f7a', description: 'A cool slate color palette' }
   ],
-  sizes: [
-    { name: 'default', label: 'Default', description: 'Standard sizing for all elements' },
-    { name: 'pico', label: 'PicoCSS', description: 'PicoCSS original values' }
-  ],
   themes: [
     { name: 'light', label: 'Light', description: 'A bright and clean light theme' },
     { name: 'dark', label: 'Dark', description: 'A sleek and modern dark theme' }

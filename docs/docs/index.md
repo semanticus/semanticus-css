@@ -1,32 +1,17 @@
 # Overview
 
-The docs are organized into five sections:
+The docs are organized into six sections:
 
-- **Composites**
-  UI patterns that you can use as building blocks for your applications, implemented using the component and utility modules of **Semanticus CSS**.
-
-- **Layer 1 - Semantic Styling**
-
-  Beautiful default styles for plain **ARIA-centric** HTML — no classes needed.
-
-- **Layer 2 - Components**
-
-  Minimal set of reusable building blocks that extend the **Semantic Styling**.
-
-- **Layer 3 - Variants**
-
-  CSS classes that tweak the **Semantic Styling** and **Components**
-
-- **Layer 4 - Utilities**
-
-  Utility classes for **spacing**, **layout**, **colors**, and more — adapted to the **Semantic Styling** and **Components** values for a consistent design.
+- [Composites](/docs/composites/): UI patterns built from semantic HTML, attributes, classes, variants, and utilities.
+- [Attributes](/docs/attributes/): styling for HTML and ARIA attributes, roles, and states.
+- [Elements](/docs/elements/): default styles for native HTML elements.
+- [Classes](/docs/classes/): reusable classes for containers, cards, navigation, and layout.
+- [Variants](/docs/variants/): intent and modifier classes that adjust presentation.
+- [Utilities](/docs/utilities/): control over spacing, layout, colors, and other individual properties.
 
 ## How to go about it
 
-The order is simple:
-
-1. Start with the **Composites** section to learn how to make use of the **Semantic Styling** with minimal markup.
-2. Add a **component** or **variant** when you need a specific UI pattern or visual variation.
-3. Add **utilities** when you need fine-grained control.
-
-This gives you a path from minimal markup to more customized interfaces without abandoning the semantic base.
+1. Start with **Composites** to learn common patterns with minimal markup.
+2. Use native **Elements** and the appropriate **Attributes** for semantics and accessibility.
+3. Add **Classes** or **Variants** when you need a specific UI pattern or visual variation.
+4. Add **Utilities** when you need fine-grained control.

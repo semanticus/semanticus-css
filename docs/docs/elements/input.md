@@ -6,7 +6,7 @@ title: input
 
 The `<input>` element accepts user data in many formats defined by its `type` attribute — text, email, password, date, color, and more.
 
-For validation states see [[aria-invalid]](/docs/semantics/attributes/aria-invalid).
+For validation states see [[aria-invalid]](/docs/attributes/aria-invalid).
 
 For helper text below inputs see [&lt;small&gt;](/docs/utilities/typography#font-size).
 
@@ -30,7 +30,7 @@ Use `<small>` element associated with a form control via `aria-describedby` to a
 
 ## Validation States
 
-Validation states are provided with `aria-invalid`. See more at [[aria-invalid]](/docs/semantics/attributes/aria-invalid)
+Validation states are provided with `aria-invalid`. See more at [[aria-invalid]](/docs/attributes/aria-invalid)
 
 > **Note:** The `<small>` element automatically inherits the validation state colors.
 
