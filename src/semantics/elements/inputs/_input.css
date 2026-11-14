@@ -5,8 +5,8 @@ input {
 
   &:not([type="checkbox"], [type="radio"], [type="range"]) {
     height: calc(
-      var(--inputs-font-size) * var(--line-height) + var(--inputs-padding-block) * 2 +
-        var(--_inputs-border-width) * 2
+      var(--inputs-font-size) * var(--line-height) + (var(--inputs-padding-block) * 2) +
+        (var(--_inputs-border-width) * 2)
     );
   }
 

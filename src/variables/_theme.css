@@ -203,7 +203,17 @@
   /* ===== TIER 3: COMPONENT TOKENS ===== */
 
   /* --- Building Blocks --- */
-  /* All purpose shadow, used by dialog, dropdown and toast components */
+
+  /* Styling, used by any component (like ul[role="menu"]) that requires a menu like features */
+  --menu-color: var(--color);
+  --menu-padding-block: var(--inputs-padding-block);
+  --menu-padding-inline: var(--inputs-padding-inline);
+  --menu-background-color: light-dark(white, var(--_color-slate-900));
+  --menu-background-color-hover: light-dark(
+    var(--_color-slate-50),
+    var(--_color-slate-850)
+  );
+  --menu-border-color: var(--inputs-border-color);
   --menu-box-shadow:
     0.0145rem 0.029rem 0.174rem
       light-dark(rgb(129 145 181 / 0.01698), rgb(7 9 12 / 0.01698)),
@@ -256,25 +266,6 @@
   /* Affects accordions and dropdowns */
   --details-summary-color: var(--color);
   --details-summary-color-open: var(--color-muted);
-
-  /* --- Dropdown styling applied to the summary element --- */
-  --details-dropdown-color: var(--inputs-placeholder-color);
-  --details-dropdown-background-color: var(--inputs-background-color);
-  --details-dropdown-border-color: var(--inputs-border-color);
-  --details-dropdown-padding-block: var(--spacing-2);
-  --details-dropdown-padding-inline: var(--spacing-3);
-
-  /* --- Menu styling applied to the ul[role="menu"] element --- */
-  --details-menu-background-color: light-dark(white, var(--_color-slate-900));
-  --details-menu-border-color: light-dark(
-    var(--_color-slate-50),
-    var(--_color-slate-850)
-  );
-  --details-menu-color: var(--color);
-  --details-menu-background-color-hover: light-dark(
-    var(--_color-slate-50),
-    var(--_color-slate-850)
-  );
 
   /* --- Group --- */
   /* Affects elements with role="group" and its children */
@@ -331,6 +322,9 @@
   --inputs-font-size: var(--font-size);
   --inputs-padding-block: var(--spacing-2);
   --inputs-padding-inline: var(--spacing-3);
+  --inputs-margin-block: var(--spacing);
+  --inputs-border-width: var(--border-width);
+  --inputs-border-radius: var(--border-radius);
   --inputs-background-color: light-dark(
     color-mix(in srgb, var(--_color-slate-50) 25%, white),
     color-mix(in srgb, var(--_color-slate-900), var(--_color-slate-850))

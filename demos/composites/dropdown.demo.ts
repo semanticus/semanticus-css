@@ -10,10 +10,10 @@ export function main(attrs: Record<string, string> = {}) {
     attrs,
     `<summary aria-haspopup="menu">Dropdown</summary>
 <ul role="menu">
-  <li><a role="menuitem" href="#">Solid</a></li>
-  <li><a role="menuitem" href="#">Liquid</a></li>
-  <li><a role="menuitem" href="#">Gas</a></li>
-  <li><a role="menuitem" href="#">Plasma</a></li>
+  <li><a role="menuitem" href="#">My account</a></li>
+  <li><a role="menuitem" href="#">My profile</a></li>
+  <li><hr></li>
+  <li><a role="menuitem" href="#">Log out</a></li>
 </ul>`,
   );
 }
@@ -23,13 +23,13 @@ export function withRadios() {
   <summary aria-haspopup="menu">Select a phase of matter...</summary>
   <ul role="menu">
     <li>
-      <label>
+      <label role="menuitem">
         <input type="radio" name="phase" value="solid" />
         Solid
       </label>
     </li>
     <li>
-      <label>
+      <label role="menuitem">
         <input type="radio" name="phase" value="liquid" />
         Liquid
       </label>
@@ -46,13 +46,13 @@ export function withCheckboxes(attrs: Record<string, string> = {}) {
     `<summary aria-haspopup="menu">Select phases of matter...</summary>
 <ul role="menu">
   <li>
-    <label>
+    <label role="menuitem">
       <input type="checkbox" name="solid" />
       Solid
     </label>
   </li>
   <li>
-    <label>
+    <label role="menuitem">
       <input type="checkbox" name="liquid" />
       Liquid
     </label>
@@ -143,6 +143,7 @@ export function inNav() {
         <ul role="menu" dir="rtl">
           <li><a role="menuitem" href="#">My Profile</a></li>
           <li><a role="menuitem" href="#">My Settings</a></li>
+          <li><hr></li>
           <li><a role="menuitem" href="#">Logout</a></li>
         </ul>
       </details>

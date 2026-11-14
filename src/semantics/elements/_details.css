@@ -3,15 +3,16 @@ summary {
 }
 
 details {
-  --_details-summary-color: var(--details-summary-color);
+  --_details-summary-color: var(--summary-color);
   --_details-summary-color-focus: var(--primary-color-hover);
-  --_details-summary-color-open: var(--details-summary-color-open);
+  --_details-summary-color-open: var(--summary-color-open);
   --_details-summary-outline-color: var(--primary-outline-color);
+  --_details-margin-block: var(--inputs-margin-block);
 
   display: block;
 
   > summary {
-    line-height: var(--details-summary-line-height, 1rem);
+    line-height: var(--summary-line-height, 1rem);
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
@@ -79,7 +80,7 @@ details {
   }
 
   &[open] > summary {
-    margin-bottom: var(--details-spacing, var(--spacing));
+    margin-bottom: var(--_details-margin-block);
 
     &:not([role]):not(:focus) {
       --_details-summary-color: var(--_details-summary-color-open);
@@ -96,26 +97,30 @@ details {
  */
 details:has(> summary[aria-haspopup="menu"]) {
   position: relative;
+  margin-bottom: var(--_details-margin-block);
 
   > summary[aria-haspopup="menu"] {
-    --_details-dropdown-background-color: var(
-      --details-dropdown-background-color
-    );
-    --_details-dropdown-color: var(--details-dropdown-color);
-    --_details-dropdown-border-color: var(--details-dropdown-border-color);
-    --_details-dropdown-padding-block: var(--details-dropdown-padding-block);
-    --_details-dropdown-padding-inline: var(--details-dropdown-padding-inline);
+    --_details-dropdown-background-color: var(--inputs-background-color);
+    --_details-dropdown-color: var(--inputs-placeholder-color);
+    --_details-dropdown-border-color: var(--inputs-border-color);
+    --_details-dropdown-padding-block: var(--inputs-padding-block);
+    --_details-dropdown-padding-inline: var(--inputs-padding-inline);
     --_details-summary-color: var(--_details-dropdown-color);
 
+    height: calc(
+      var(--inputs-font-size) * var(--line-height) + (var(--inputs-padding-block) * 2) +
+        (var(--inputs-border-width) * 2)
+    ) !important;
+
     &::after {
-      height: calc(var(--details-dropdown-font-size, var(--buttons-font-size)) * var(--line-height, 1.5));
+      height: calc((var(--inputs-font-size) * var(--line-height)) + (var(--inputs-border-width) * 2));
       margin-inline-start: 0.25rem;
       margin-left: auto;
       transform: rotate(0deg) translateX(0.2rem);
     }
 
     &:not([role]) {
-      font-size: var(--details-dropdown-font-size, inherit);
+      font-size: var(--dropdown-font-size, inherit);
       background-color: var(--_details-dropdown-background-color);
       border: var(--border-width) solid var(--_details-dropdown-border-color);
       border-radius: var(--border-radius);
@@ -124,7 +129,7 @@ details:has(> summary[aria-haspopup="menu"]) {
       display: flex;
       align-items: center;
       height: calc(
-        var(--details-dropdown-font-size, 1rem) * var(--line-height) + var(--_details-dropdown-padding-block) * 2 +
+        var(--dropdown-font-size, 1rem) * var(--line-height) + var(--_details-dropdown-padding-block) * 2 +
           var(--border-width) * 2
       );
       line-height: inherit;
@@ -136,7 +141,7 @@ details:has(> summary[aria-haspopup="menu"]) {
         color var(--transition);
 
       &:is(:active, :focus) {
-        --_details-summary-color: var(--details-summary-color);
+        --_details-summary-color: var(--summary-color);
 
         outline: var(--outline-width) solid
           var(--_details-summary-outline-color);
@@ -167,14 +172,15 @@ details:has(> summary[aria-haspopup="menu"]) {
     margin: 0;
     margin-top: var(--focus-ring-width);
     padding: 0;
-    border: var(--border-width) solid var(--details-menu-border-color);
+    border: var(--border-width) solid var(--menu-border-color);
     border-radius: var(--border-radius);
-    background-color: var(--details-menu-background-color);
+    background-color: var(--menu-background-color);
     box-shadow: var(--menu-box-shadow);
-    color: var(--details-menu-color);
-    font-size: var(--details-menu-font-size, inherit);
+    color: var(--menu-color);
+    font-size: var(--menu-font-size, inherit);
     white-space: nowrap;
     opacity: 0;
+    gap: 0;
     transition:
       opacity var(--transition),
       transform 0s ease-in-out 1s;
@@ -188,29 +194,24 @@ details:has(> summary[aria-haspopup="menu"]) {
     & > li {
       width: 100%;
       margin-bottom: 0;
-      padding: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5))
-        var(--details-menu-padding-inline, var(--inputs-padding-inline));
       list-style: none;
+      color: var(--menu-color);
+      padding-block: var(--menu-padding-block);
+      padding-inline: var(--menu-padding-inline);
 
-      &:first-of-type {
-        margin-top: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5));
+      &:has(>:where([role="menuitem"], hr):only-child) {
+        padding: 0;
       }
 
-      &:last-of-type {
-        margin-bottom: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5));
-      }
-
-      & a {
+      >[role="menuitem"]:only-child {
+        margin: 0;
         display: block;
-        margin: calc(var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5)) * -1)
-          calc(var(--details-menu-padding-inline, var(--inputs-padding-inline)) * -1);
-        padding: var(--details-menu-padding-block, calc(var(--inputs-padding-block) * 0.5))
-          var(--details-menu-padding-inline, var(--inputs-padding-inline));
-        overflow: hidden;
-        border-radius: 0;
-        color: var(--details-menu-color);
-        text-decoration: none;
+        width: 100%;
+        padding-block: var(--menu-padding-block);
+        padding-inline: var(--menu-padding-inline);
+        color: var(--menu-color);
         text-overflow: ellipsis;
+        text-decoration: none;
 
         &:is(
           [aria-current]:not([aria-current="false"]),
@@ -218,16 +219,27 @@ details:has(> summary[aria-haspopup="menu"]) {
           :active,
           :focus
         ) {
-          background-color: var(--details-menu-background-color-hover);
+          background-color: var(--menu-background-color-hover);
+          text-decoration: none;
         }
       }
 
-      & label {
-        width: 100%;
+      &:first-child {
+        >[role="menuitem"]:only-child {
+          border-top-left-radius: var(--border-radius);
+          border-top-right-radius: var(--border-radius);
+        }
       }
 
-      &:has(label):hover {
-        background-color: var(--details-menu-background-color-hover);
+      &:last-child {
+        >[role="menuitem"]:only-child {
+          border-bottom-left-radius: var(--border-radius);
+          border-bottom-right-radius: var(--border-radius);
+        }
+      }
+
+      > hr:only-child {
+        margin: 0;
       }
     }
   }
