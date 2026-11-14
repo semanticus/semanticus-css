@@ -3,7 +3,7 @@
 The docs are organized into five sections:
 
 - **Composites**
-  UI patterns that you can use as building blocks for your applications, implemented using all four layers of **Semanticus CSS**.
+  UI patterns that you can use as building blocks for your applications, implemented using the component and utility modules of **Semanticus CSS**.
 
 - **Layer 1 - Semantic Styling**
 

@@ -5,10 +5,6 @@
 
 **Semanticus** is a lightweight CSS framework that prioritizes semantic HTML and ARIA-focused accessibility, with a small set of atomic utilities.
 
-## Vision
-
-Contribute to a more accessible friendly world wide web.
-
 ## Mission
 
 Enable authors to write clean, semantic HTML that looks great by default, guide them toward ARIA-centric patterns, and ensure core functionality works without JavaScript while allowing deliberate customization via a small, consistent set of utilities.
@@ -28,9 +24,8 @@ Enable authors to write clean, semantic HTML that looks great by default, guide 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.8.0/dist/semanticus.css">
 
-<!-- costumize it with a palette or size variation if needed -->
+<!-- costumize it with a palette if needed -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.8.0/dist/semanticus.palette.blue.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@semanticus/semanticus-css@3.8.0/dist/semanticus.size.pico.css">
 ```
 
 ### Option 2: Install manually
@@ -40,9 +35,8 @@ Download the [distribution files](https://registry.npmjs.org/@semanticus%2Fseman
 ```html
 <link rel="stylesheet" href="/css/semanticus.css">
 
-<!-- customize it with a palette or size variation if needed -->
+<!-- customize it with a palette if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
-<link rel="stylesheet" href="/css/semanticus.size.pico.css">
 ```
 
 ### Option 3: NPM
@@ -54,23 +48,25 @@ npm install @semanticus/semanticus-css
 ```js
 import '@semanticus/semanticus-css';
 
-// Or import only the semantic layer
-import '@semanticus/semanticus-css/semantics';
-
-// Or add a palette / size on top
+// Or add a palette on top
 import '@semanticus/semanticus-css/palettes/blue';
-import '@semanticus/semanticus-css/sizes/pico';
 ```
 
 > **Note:** The `import` syntax requires a bundler that supports CSS imports (e.g., Vite, Webpack, Rollup, or Parcel).
 
 Check out the [Palettes](https://semanticus.design/guide/palettes.html) and [Sizes](https://semanticus.design/guide/sizes.html) guides for more options.
 
+### Bundle choices and v4 source imports
+
+The full bundle includes Components and Utilities. `/no-utilities` includes all semantic HTML and ARIA styles, component classes, and variants. `/utilities` includes atomic utilities only. The legacy `/semantics` import now contains the same CSS as `/no-utilities`.
+
+For custom source bundles, replace `src/semantics/modules.css` with `src/components/modules.css`. Keep `src/attributes/modules.css` and `src/variants/modules.css` as separate imports, following the order in `src/index.css`. Source entry points are `src/index.css`, `src/no-utilities.css`, and `src/utilities.css`.
+
 ## How It Works
 
-**Semanticus CSS** is built on four complementary layers:
+**Semanticus CSS** is organized into **Components** (native HTML styles and component classes), **Attributes** (ARIA and HTML attribute styles), **Variants**, and **Utilities**. The examples below show how to use them together.
 
-### 1. Semantic Styling
+### Semantic HTML and ARIA
 
 Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](https://semanticus.design/docs/semantics/) will make it look great by default.
 
@@ -85,7 +81,7 @@ Beautiful default styles for plain **ARIA-centric** HTML — simply write plain 
 </article>
 ```
 
-### 2. Components
+### Component classes
 
 Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](https://semanticus.design/docs/components/) when you need a specific UI pattern.
 
@@ -100,7 +96,7 @@ Minimal set of reusable building blocks that extend the **Semantic Styling** - a
 </article>
 ```
 
-### 3. Variants
+### Variants
 
 CSS classes that tweak the **Semantic Styling** and **Components** - throw in a [variant](https://semanticus.design/docs/variants/) when you want to add or reduce visual flair.
 
@@ -115,7 +111,7 @@ CSS classes that tweak the **Semantic Styling** and **Components** - throw in a 
 </article>
 ```
 
-### 4. Utilities
+### Utilities
 
 [Utility](https://semanticus.design/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
 
@@ -218,13 +214,13 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Bundle | Gzip |
 | --- | --- |
 | Pico (semantics only) | 10.2 KB |
-| Semanticus (semantics only) | 11.6 KB |
+| Semanticus (components, legacy semantics alias) | 14.6 KB |
 | Pico (semantics + classes) | 11.5 KB |
-| Semanticus (semantics + components + variants) | 15.0 KB |
+| Semanticus (components without utilities) | 14.6 KB |
 | Bootstrap (utilities + grid) | 16.0 KB |
-| Semanticus (utilities + grid) | 10.6 KB |
+| Semanticus (utilities + grid) | 10.5 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 25.3 KB |
+| Semanticus (full bundle) | 24.8 KB |
 
 ## License
 

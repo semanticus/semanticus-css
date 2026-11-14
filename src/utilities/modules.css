@@ -10,8 +10,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-@import './_variables.css';
-
 /* borders */
 @import './borders/_border-radius.css';
 @import './borders/_border-style.css';

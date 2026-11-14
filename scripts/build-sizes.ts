@@ -23,7 +23,9 @@ if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 
 console.log('Building Semanticus CSS sizes (bundled with LightningCSS)...\n');
 
-const files = fs.readdirSync(srcDir).filter((f) => f.endsWith('.css'));
+const files = fs.existsSync(srcDir)
+  ? fs.readdirSync(srcDir).filter((f) => f.endsWith('.css'))
+  : [];
 if (files.length === 0) {
   console.log('No size files found in', srcDir);
   process.exit(0);

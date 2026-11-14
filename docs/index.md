@@ -56,27 +56,27 @@ Add **Semanticus CSS** to your project via CDN, manual download, or npm:
 
 ## How It Works
 
-**Semanticus CSS** is built on four complementary layers:
+**Semanticus CSS** is organized into **Components** (native HTML styles and component classes), **Attributes** (ARIA and HTML attribute styles), **Variants**, and **Utilities**. The examples below show how to use them together.
 
-### 1. Semantic Styling
+### Semantic HTML and ARIA
 
 Beautiful default styles for plain **ARIA-centric** HTML — simply write plain HTML and [Semantic Styling](/docs/semantics/) will make it look great by default.
 
 <HtmlPreviewer :code="GettingStartedDemo.semanticStyling()" />
 
-### 2. Components
+### Component classes
 
 Minimal set of reusable building blocks that extend the **Semantic Styling** - add a [component](/docs/components/) when you need a specific UI pattern.
 
 <HtmlPreviewer :code="GettingStartedDemo.components()" />
 
-### 3. Variants
+### Variants
 
 CSS classes that tweak the **Semantic Styling** and **Components** - throw in a [variant](/docs/variants/) when you want to add or reduce visual flair.
 
 <HtmlPreviewer :code="GettingStartedDemo.variants()" />
 
-### 4. Utilities
+### Utilities
 
 [Utility](/docs/utilities/) classes adapted to the same **CSS variables** as the **Semantic Styling** and **Components** for a consistent design - use them when you need fine-grained control over **spacing**, **layout**, **colors**, and more.
 

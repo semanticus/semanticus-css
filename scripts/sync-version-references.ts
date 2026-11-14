@@ -17,7 +17,8 @@ const repoRoot = path.join(__dirname, "..");
 // Specific files to update (entry points with version headers)
 const specificFiles = [
   path.join(repoRoot, "src", "index.css"),
-  path.join(repoRoot, "src", "semantics", "index.css"),
+  path.join(repoRoot, "src", "no-utilities.css"),
+  path.join(repoRoot, "src", "utilities.css"),
   path.join(repoRoot, "LICENSE"),
   path.join(repoRoot, "NOTICE"),
 ];
@@ -56,7 +57,7 @@ const cdnUrlPattern = new RegExp(
 );
 
 // Header version pattern: "Semanticus CSS v0.8.0"
-const headerVersionPattern = /(Semanticus CSS v)\d+\.\d+\.\d+/g;
+const headerVersionPattern = /(Semanticus CSS(?: Utilities Bundle)? v)\d+\.\d+\.\d+/g;
 
 // Copyright pattern - only updates copyright lines matching the package author
 // Matches: "Copyright (c) YYYY" followed by the author name from package.json

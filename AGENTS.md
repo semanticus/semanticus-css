@@ -11,27 +11,27 @@ Quick reference for AI agents working on this codebase.
 
 ## Architecture
 
-The framework is organized into 6 layers, all in `src/`:
+The framework has Components, Attributes, Variants, and Utilities modules, backed by shared variables:
 
-| Layer | Path | Purpose |
-|-------|------|---------|
-| Variables | `src/variables/_all.css` | Global CSS custom properties (colors, spacing, typography, theming) |
-| Semantics | `src/semantics/` | Styles for raw HTML elements + ARIA roles (buttons, inputs, nav, dialog, typography, etc.) |
-| Components | `src/components/` | Component-specific styles (`.card`, `.modal`, `.accordion`, etc.) |
-| Variants | `src/variants/` | Tweaks existing element styles via CSS variables only (`.secondary`, `.contrast`, etc.) |
-| Utilities | `src/utilities/` | Atomic utility classes (spacing, colors, flexbox, grid, display, positioning, typography, effects, borders, sizing) |
+| Module | Path | Purpose |
+|--------|------|---------|
+| Variables | `src/variables/` | Shared theme, breakpoint, variant, and utility tokens |
+| Components | `src/components/` | Native HTML styles and component classes |
+| Attributes | `src/attributes/` | ARIA and HTML attribute styles |
+| Variants | `src/variants/` | Intent variants and modifiers |
+| Utilities | `src/utilities/` | Atomic utility classes |
 
 ### Entry Points
 
-- `src/index.css` — full bundle (variables + normalize + semantics + components + variants + utilities) → `semanticus.css`
-- `src/no-utilities.css` — standard bundle (variables + normalize + semantics + components + variants) → `semanticus-no-utilities.css`
-- `src/semantics/index.css` — semantics only → `semanticus-semantics.css`
-- `src/utilities/index.css` — utilities only → `semanticus-utilities.css`
+- `src/index.css` — full bundle (variables + attributes + components + variants + utilities) → `semanticus.css`
+- `src/no-utilities.css` — standard bundle (variables + attributes + components + variants) → `semanticus-no-utilities.css`
+- `src/no-utilities.css` — legacy alias for components without utilities → `semanticus-semantics.css`
+- `src/utilities.css` — utilities only → `semanticus-utilities.css`
 
 ### Palettes & Sizes
 
-- `src/palettes/` — 19 color palette overrides (e.g., `blue.css`, `zinc.css`)
-- `src/sizes/` — size variant overrides (e.g., `pico.css`)
+- `src/palettes/` — 20 color palette overrides (e.g., `blue.css`, `zinc.css`)
+- `src/sizes/` — optional size overrides; currently absent, so `build:sizes` skips generation.
 - These are standalone variable overrides meant to be loaded **after** a base bundle.
 
 ## Build System
@@ -75,7 +75,7 @@ When contributing code or edits, follow the project's motto and core principles:
 
 - **Prefer semantics over classes:** Implement features using native elements and ARIA roles before adding new utility classes.
 - **Follow ARIA patterns:** Use established ARIA patterns (menus, tooltips, dialogs, etc.) rather than creating ad-hoc components that duplicate behavior.
-- **Add files to the right layer:** New semantic styles → `src/semantics/_<name>.css`; utilities → `src/utilities/<category>/_<name>.css`; then import in the layer's `modules.css`.
+- **Add files to the right layer:** New semantic styles → `src/components/_<name>.css`; utilities → `src/utilities/<category>/_<name>.css`; then import in the layer's `modules.css`.
 - **Use CSS variables:** Expose themeable values via `--*` properties rather than hard-coded values.
 - **Document and test:** Update docs in `docs/` for user-facing changes and run visual tests (`npm test`) when relevant.
 - **Accessibility as first-class:** Include ARIA attributes, keyboard support, and focus styles; mention accessibility rationale in PRs and docs.
@@ -86,8 +86,8 @@ When contributing code or edits, follow the project's motto and core principles:
 All generated files land in `dist/`:
 
 - `semanticus.css` — full bundle (everything including utilities)
-- `semanticus-no-utilities.css` — standard bundle (semantics + components + variants, no utilities)
-- `semanticus-semantics.css` — semantics only
+- `semanticus-no-utilities.css` — standard bundle (components without utilities)
+- `semanticus-semantics.css` — legacy alias of the no-utilities bundle
 - `semanticus-utilities.css` — utilities only
 - `semanticus.palette.<name>.css`
 - `semanticus.size.<name>.css`
@@ -111,7 +111,7 @@ Features **not** currently used (and therefore still considered browser-support 
 
 ## Adding a New Feature
 
-1. **Semantic component** → add `src/semantics/_<element>.css` and import it in `src/semantics/modules.css`
+1. **Semantic component** → add `src/components/_<element>.css` and import it in `src/components/modules.css`
 2. **Utility class** → add to the appropriate `src/utilities/<category>/_<file>.css`
 3. **Variant class** → add to `src/variants/_<file>.css` and import in `src/variants/modules.css`
 4. **Palette** → add `src/palettes/<name>.css` and register it in `scripts/build-palettes.ts`

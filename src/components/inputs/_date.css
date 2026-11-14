@@ -41,6 +41,8 @@
   background-image: var(--icon-time);
 }
 
+/* Firefox date controls use their native picker indicator. */
+/* stylelint-disable-next-line at-rule-no-vendor-prefix, at-rule-prelude-no-invalid */
 @-moz-document url-prefix() {
   [type="date"],
   [type="datetime-local"],

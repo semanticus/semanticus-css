@@ -7,7 +7,7 @@ This project incorporates concepts and code adapted from
 the following MIT-licensed projects:
 
 Pico CSS v2.1.1
-The codebase in `src/semantics` is adapted from Pico CSS (https://picocss.com)
+The codebase in `src/components` is adapted from Pico CSS (https://picocss.com)
 Original work: Copyright (c) 2019-2024 Pico CSS
 Licensed under MIT (https://github.com/picocss/pico/blob/main/LICENSE)
 
@@ -17,7 +17,7 @@ Original work: Copyright (c) 2011-2026 The Bootstrap Authors
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 
 modern-normalize v3.0.1
-Reset and normalization styles from Pico CSS in `src/semantics` got improved with missing normalization styles from modern-normalize (https://github.com/sindresorhus/modern-normalize)
+Reset and normalization styles from Pico CSS in `src/components` got improved with missing normalization styles from modern-normalize (https://github.com/sindresorhus/modern-normalize)
 Copyright (c) Sindre Sorhus
 Copyright (c) Jonathan Neal
 Copyright (c) Nicolas Gallagher

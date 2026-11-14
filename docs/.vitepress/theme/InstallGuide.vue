@@ -15,28 +15,25 @@ const copiedFeedback = ref(null)
 
 const manualSnippet = `<link rel="stylesheet" href="/css/semanticus.css">
 
-<!-- customize it with a palette or size variation if needed -->
+<!-- customize it with a palette if needed -->
 <link rel="stylesheet" href="/css/semanticus.palette.blue.css">
-<link rel="stylesheet" href="/css/semanticus.size.pico.css">`
+`
 
 const cdnSnippet = computed(() => {
   return `<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.css`)}">
 
-<!-- customize it with a palette or size variation if needed -->
+<!-- customize it with a palette if needed -->
 <link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.palette.blue.css`)}">
-<link rel="stylesheet" href="${cdnBaseUrl(`/dist/semanticus.size.pico.css`)}">`
+`
 })
 
-const npmInstallSnippet = 'npm install semanticus-css'
+const npmInstallSnippet = 'npm install @semanticus/semanticus-css'
 
-const npmImportSnippet = `import 'semanticus-css';
+const npmImportSnippet = `import '@semanticus/semanticus-css';
 
-// Or import only the semantic layer
-import 'semanticus-css/semantics';
-
-// Or add a palette / size on top
-import 'semanticus-css/palettes/blue';
-import 'semanticus-css/sizes/pico';`
+// Or add a palette on top
+import '@semanticus/semanticus-css/palettes/blue';
+`
 
 const tarballUrl = npmRegistryTarballUrl();
 

@@ -22,7 +22,6 @@
   &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
     background-color: transparent;
     border-color: transparent;
-
     color: var(--_links-color-hover);
     text-decoration: var(--_links-text-decoration-active);
     text-decoration-color: var(--_links-color-hover);

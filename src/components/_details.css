@@ -85,7 +85,7 @@ details {
   &[open] > summary {
     margin-bottom: var(--_details-margin-block);
 
-    &:not([role]):not(:focus) {
+    &:not([role], :focus) {
       --_details-summary-color: var(--_details-summary-color-open);
     }
 

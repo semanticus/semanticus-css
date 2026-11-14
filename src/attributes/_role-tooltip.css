@@ -104,22 +104,26 @@
 @media (hover: hover) and (pointer: fine) {
   [role="tooltip"] {
     --tooltip-slide-to: translate(-50%, -0.25rem);
+
     transform: translate(-50%, 0.75rem);
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
 
     &[data-placement="bottom"] {
       --tooltip-slide-to: translate(-50%, 0.25rem);
+
       transform: translate(-50%, -0.75rem);
     }
 
     &[data-placement="left"] {
       --tooltip-slide-to: translate(-0.25rem, -50%);
+
       transform: translate(0.75rem, -50%);
     }
 
     &[data-placement="right"] {
       --tooltip-slide-to: translate(0.25rem, -50%);
+
       transform: translate(-0.75rem, -50%);
     }
   }

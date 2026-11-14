@@ -1,6 +1,6 @@
 :root,
 :host {
-  /* ===== MISSING VARIANT TOKENS ===== */
+  /* ===== VARIANT TOKENS ===== */
 
   /* --- Contrast --- */
   --contrast-background-color: light-dark(

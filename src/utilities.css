@@ -1,5 +1,5 @@
 /*!
- * Semanticus CSS Utilities Bundle v0.9.0 (https://semanticus.design/)
+ * Semanticus CSS Utilities Bundle v4.0.0 (https://semanticus.design/)
  *
  * Atomic utility classes (spacing, colors, flexbox, grid, display, positioning, typography, effects, borders, sizing)
  *
@@ -9,8 +9,8 @@
  * Licensed under MIT (https://github.com/semanticus/semanticus-css/blob/main/LICENSE)
  */
 
-/* Variables */
-@import '../variables/_breakpoints.css';
+@import './variables/_breakpoints.css';
 
-/* Utilities */
-@import './modules.css';
+@import './variables/_utilities.css';
+
+@import './utilities/modules.css';

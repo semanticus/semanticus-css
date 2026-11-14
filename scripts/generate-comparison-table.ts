@@ -78,9 +78,9 @@ interface BundleResult {
 
 const entries: Record<string, BundleEntry> = {
   picoSemantics:             { label: 'Pico (semantics only)',                            files: [path.join(picoDir, 'pico.classless.min.css')] },
-  semanticusSemantics:       { label: 'Semanticus (semantics only)',                      files: [dist('semanticus-semantics.css')] },
+  semanticusSemantics:       { label: 'Semanticus (components, legacy semantics alias)',                      files: [dist('semanticus-semantics.css')] },
   picoFullBundle:            { label: 'Pico (semantics + classes)',                       files: [path.join(picoDir, 'pico.min.css')] },
-  semanticusNoUtilities:     { label: 'Semanticus (semantics + components + variants)',   files: [dist('semanticus-no-utilities.css')] },
+  semanticusNoUtilities:     { label: 'Semanticus (components without utilities)',   files: [dist('semanticus-no-utilities.css')] },
   bootstrapUtilities:        { label: 'Bootstrap (utilities only)',                       files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css')] },
   bootstrapUtilitiesAndGrid: { label: 'Bootstrap (utilities + grid)',                     files: [path.join(bsDir, 'css', 'bootstrap-utilities.min.css'), path.join(bsDir, 'css', 'bootstrap-grid.min.css')] },
   semanticusUtilitiesAndGrid:{ label: 'Semanticus (utilities + grid)',                    files: [dist('semanticus-utilities.css')] },
