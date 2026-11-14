@@ -95,7 +95,7 @@ export function nestedFullWidth(
 
   <p>You can even nest another <code>.full-width</code> inside a <code>.full-width</code>.</p>
 
-  <section class="full-width pane">
+  <section class="full-width pane contrast subtle">
     <hgroup>
       <h3>Nested full-width section</h3>
       <p>This inner ".full-width" also spans edge-to-edge within the outer one,

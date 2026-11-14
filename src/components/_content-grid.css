@@ -19,6 +19,15 @@
   --content-grid-content-max-width: 70ch;
   --content-grid-breakout-max-width: 90ch;
 
+  @media (--breakpoint-xl) {
+    --content-grid-content-max-width: 80ch;
+    --content-grid-breakout-max-width: 95ch;
+  }
+
+  @media (--breakpoint-xxl) {
+    --content-grid-breakout-max-width: 110ch;
+  }
+
   /* Internal computed value */
   --content-grid-breakout-size: max(
     0px,
