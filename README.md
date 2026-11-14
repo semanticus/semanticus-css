@@ -218,13 +218,13 @@ It aims to address the friction that often appears shortly after installing **Pi
 | Bundle | Gzip |
 | --- | --- |
 | Pico (semantics only) | 10.2 KB |
-| Semanticus (semantics only) | 11.5 KB |
+| Semanticus (semantics only) | 11.6 KB |
 | Pico (semantics + classes) | 11.5 KB |
-| Semanticus (semantics + components + variants) | 14.7 KB |
+| Semanticus (semantics + components + variants) | 15.0 KB |
 | Bootstrap (utilities + grid) | 16.0 KB |
 | Semanticus (utilities + grid) | 10.6 KB |
 | Bootstrap (full bundle) | 53.8 KB |
-| Semanticus (full bundle) | 25.0 KB |
+| Semanticus (full bundle) | 25.3 KB |
 
 ## License
 

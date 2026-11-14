@@ -513,6 +513,7 @@ export default defineConfig({
             { text: ".card", link: "/docs/components/card" },
             { text: ".container", link: "/docs/components/container" },
             { text: ".content-grid", link: "/docs/components/content-grid" },
+            { text: ".inset-grid", link: "/docs/components/inset-grid" },
             { text: ".icon-*", link: "/docs/components/icons" },
             { text: ".nav", link: "/docs/components/nav" },
             { text: ".pane", link: "/docs/components/pane" },

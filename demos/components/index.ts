@@ -5,3 +5,4 @@ export * as IconsDemo from "./icons.demo";
 export * as NavDemo from "./nav.demo";
 export * as PaneDemo from "./pane.demo";
 export * as SidebarDemo from "./sidebar.demo";
+export * as InsetGridDemo from "./inset-grid.demo";

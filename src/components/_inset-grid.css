@@ -1,0 +1,38 @@
+.inset-grid {
+  display: grid;
+  grid-template-columns:
+    [bleed-start] var(--inset-grid-padding-inline, var(--spacing))
+    [content-start] minmax(0, 1fr)
+    [content-end] var(--inset-grid-padding-inline, var(--spacing))
+    [bleed-end];
+
+  /* Generated grid items supply block spacing without padding. */
+  &::before,
+  &::after {
+    content: "";
+    grid-column: bleed;
+    block-size: var(--inset-grid-padding-block, var(--spacing));
+  }
+
+  > * {
+    grid-column: content;
+    min-inline-size: 0;
+  }
+
+  > .bleed-start {
+    grid-column-start: bleed-start;
+  }
+
+  > .bleed-end {
+    grid-column-end: bleed-end;
+  }
+
+  > .bleed-inline {
+    grid-column: bleed;
+  }
+
+  &:has(> :is(.bleed-top, .bleed-block):first-child)::before,
+  &:has(> :is(.bleed-bottom, .bleed-block):last-child)::after {
+    display: none;
+  }
+}
