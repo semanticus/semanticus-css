@@ -10,7 +10,7 @@ The `<ul>` element is used as a building block for composites like [Card List](/
 
 ## Basic Usage
 
-<HtmlPreviewer :code="UlDemo.main({ ariaCurrent: true })" />
+<HtmlPreviewer :code="UlDemo.nested()" />
 
 ## Card List
 

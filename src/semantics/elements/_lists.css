@@ -8,17 +8,32 @@ ul {
   color: var(--typography-color);
   font-style: normal;
   font-weight: var(--font-weight);
-}
 
-:where(ol, ul) li {
-  margin-bottom: calc(var(--typography-margin-block) * 0.25);
-
-  &::marker {
-    color: var(--_lists-marker-color);
+  dl, ol, ul {
+    margin: 0;
+    margin-top: calc(var(--typography-margin-block) * 0.25);
   }
 }
 
-:where(dl, ol, ul) :where(dl, ol, ul) {
-  margin: 0;
-  margin-top: calc(var(--typography-margin-block) * 0.25);
+ol, ul {
+  padding-inline-start: var(--spacing-5);
+
+  li {
+    margin-bottom: calc(var(--typography-margin-block) * 0.25);
+    padding-inline-start: var(--spacing-1);
+
+    &::marker {
+      color: var(--_lists-marker-color);
+    }
+  }
+}
+
+dl {
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-inline-start: var(--spacing-4);
+  }
 }

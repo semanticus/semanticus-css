@@ -12,7 +12,7 @@ export function all(
     "div",
     { class: "auto-grid" },
     `<div>
-  <h5>Card List</h5>
+  <h5>DIV Card List</h5>
   ${RoleListDemo.cardList("div", attrs, options)}
 </div>
 
@@ -29,6 +29,11 @@ export function all(
 <div>
   <h5>Description List</h5>
   ${DlDemo.main(attrs)}
+</div>
+
+<div>
+  <h5>DL Card List</h5>
+  ${DlDemo.cardList(attrs)}
 </div>
 `,
   );

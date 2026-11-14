@@ -1,4 +1,7 @@
-import { renderElement } from "@scripts/utils";
+import {
+  renderElement,
+  classMergeAttributes,
+} from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
   return renderElement(
@@ -11,5 +14,19 @@ export function main(attrs: Record<string, string> = {}) {
 <dt>Multiple terms</dt>
 <dt>Share one definition</dt>
 <dd>This definition applies to both terms above.</dd>`,
+  );
+}
+
+export function cardList(attrs: Record<string, string> = {}, variant: string = "") {
+  return renderElement(
+    "dl",
+    classMergeAttributes("card", classMergeAttributes(variant, attrs)),
+    `<dt>Category</dt>
+<dd>Books</dd>
+<dt>Type</dt>
+<dd>Fiction</dd>
+<dt>DT without DD</dt>
+<dt>Author</dt>
+<dd>John Doe</dd>`,
   );
 }

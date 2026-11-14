@@ -30,4 +30,7 @@
 
   /* --- Progress Bar Individual Styling --- */
   --_progress-accent-color: var(--intent-background-color);
+
+  /* --- Lists Individual Styling --- */
+  --_lists-marker-color: var(--intent-color);
 }
