@@ -10,10 +10,10 @@ export function main(attrs: Record<string, string> = {}) {
     attrs,
     `<summary aria-haspopup="menu">Dropdown</summary>
 <ul role="menu">
-  <li><a role="menuitem" href="#">My account</a></li>
-  <li><a role="menuitem" href="#">My profile</a></li>
-  <li><hr></li>
-  <li><a role="menuitem" href="#">Log out</a></li>
+  <li role="menuitem"><a href="#">My account</a></li>
+  <li role="menuitem"><a href="#">My profile</a></li>
+  <li role="menuitem"><hr></li>
+  <li role="menuitem"><a href="#">Log out</a></li>
 </ul>`,
   );
 }
@@ -22,18 +22,18 @@ export function withRadios() {
   return `<details>
   <summary aria-haspopup="menu">Select a phase of matter...</summary>
   <ul role="menu">
-    <li>
-      <label role="menuitem">
+    <li role="menuitem">
+      <label>
         <input type="radio" name="phase" value="solid" /> Solid
       </label>
     </li>
-    <li>
-      <label role="menuitem">
+    <li role="menuitem">
+      <label>
         <input type="radio" name="phase" value="liquid" /> Liquid
       </label>
     </li>
-    <li>
-      <label role="menuitem">
+    <li role="menuitem">
+      <label>
         <input type="radio" name="phase" value="gas" /> Gas
       </label>
     </li>
@@ -48,18 +48,18 @@ export function withCheckboxes(attrs: Record<string, string> = {}) {
     attrs,
     `<summary aria-haspopup="menu">Select phases of matter...</summary>
 <ul role="menu">
-  <li>
-    <label role="menuitem">
+  <li role="menuitem">
+    <label>
       <input type="checkbox" name="solid" /> Solid
     </label>
   </li>
-  <li>
-    <label role="menuitem">
+  <li role="menuitem">
+    <label>
       <input type="checkbox" name="liquid" /> Liquid
     </label>
   </li>
-  <li>
-    <label role="menuitem">
+  <li role="menuitem">
+    <label>
       <input type="checkbox" name="gas" /> Gas
     </label>
   </li>
@@ -73,9 +73,9 @@ export function asButton(attrs: Record<string, string> = {}) {
     {},
     `${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown as a button")}
 <ul role="menu">
-  <li><a role="menuitem" href="#">Solid</a></li>
-  <li><a role="menuitem" href="#">Liquid</a></li>
-  <li><a role="menuitem" href="#">Gas</a></li>
+  <li role="menuitem"><a href="#">Solid</a></li>
+  <li role="menuitem"><a href="#">Liquid</a></li>
+  <li role="menuitem"><a href="#">Gas</a></li>
 </ul>`,
   );
 }
@@ -86,9 +86,9 @@ export function asButtonWithLargeItem(attrs: Record<string, string> = {}) {
     {},
     `${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown as a button")}
 <ul role="menu">
-<li><a role="menuitem" href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
-  <li><a role="menuitem" href="#">Liquid</a></li>
-  <li><a role="menuitem" href="#">Gas</a></li>
+<li role="menuitem"><a href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
+  <li role="menuitem"><a href="#">Liquid</a></li>
+  <li role="menuitem"><a href="#">Gas</a></li>
 </ul>`,
   );
 }
@@ -101,9 +101,9 @@ export function asButtonReversedWithLargeItem(
     {},
     `${renderElement("summary", { ...attrs, role: "button", "aria-haspopup": "menu" }, "Dropdown with reversed menu")}
 <ul role="menu" dir="rtl">
-  <li><a role="menuitem" href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
-  <li><a role="menuitem" href="#">Liquid</a></li>
-  <li><a role="menuitem" href="#">Gas</a></li>
+  <li role="menuitem"><a href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
+  <li role="menuitem"><a href="#">Liquid</a></li>
+  <li role="menuitem"><a href="#">Gas</a></li>
 </ul>`,
   );
 }
@@ -112,9 +112,9 @@ export function validationStates() {
   return `<details>
   <summary aria-haspopup="menu" aria-invalid="false">Valid phase of matter: Solid</summary>
   <ul role="menu">
-    <li><a role="menuitem" href="#">Solid</a></li>
-    <li><a role="menuitem" href="#">Liquid</a></li>
-    <li><a role="menuitem" href="#">Gas</a></li>
+    <li role="menuitem"><a href="#">Solid</a></li>
+    <li role="menuitem"><a href="#">Liquid</a></li>
+    <li role="menuitem"><a href="#">Gas</a></li>
   </ul>
 </details>
 
@@ -123,9 +123,9 @@ export function validationStates() {
 <details>
   <summary aria-haspopup="menu" aria-invalid="true">Debated classification: Plasma</summary>
   <ul role="menu">
-    <li><a role="menuitem" href="#">Solid</a></li>
-    <li><a role="menuitem" href="#">Liquid</a></li>
-    <li><a role="menuitem" href="#">Gas</a></li>
+    <li role="menuitem"><a href="#">Solid</a></li>
+    <li role="menuitem"><a href="#">Liquid</a></li>
+    <li role="menuitem"><a href="#">Gas</a></li>
   </ul>
 </details>
 `;
@@ -142,10 +142,10 @@ export function inNav() {
       <details>
         <summary aria-haspopup="menu">Account</summary>
         <ul role="menu" dir="rtl">
-          <li><a role="menuitem" href="#">My Profile</a></li>
-          <li><a role="menuitem" href="#">My Settings</a></li>
-          <li><hr></li>
-          <li><a role="menuitem" href="#">Logout</a></li>
+          <li role="menuitem"><a href="#">My Profile</a></li>
+          <li role="menuitem"><a href="#">My Settings</a></li>
+          <li role="menuitem"><hr></li>
+          <li role="menuitem"><a href="#">Logout</a></li>
         </ul>
       </details>
     </li>

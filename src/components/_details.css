@@ -162,27 +162,14 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
   }
 
-  & > :where(summary + ul[role="menu"]) {
-    display: flex;
-    z-index: var(--max-z-index);
+  > summary + ul[role="menu"] {
+    opacity: 0;
+    width: 100%;
     position: absolute;
     inset-inline-start: 0;
-    flex-direction: column;
-    width: 100%;
-    min-width: fit-content;
     margin-block-start: var(--focus-ring-width);
     margin-block-end: 0;
     margin-inline: 0;
-    padding: 0;
-    border: var(--menu-border-width) solid var(--menu-border-color);
-    border-radius: var(--menu-border-radius);
-    background-color: var(--menu-background-color);
-    box-shadow: var(--menu-box-shadow);
-    color: var(--menu-color);
-    font-size: var(--menu-font-size, inherit);
-    white-space: nowrap;
-    opacity: 0;
-    gap: 0;
     transition:
       opacity var(--transition),
       transform 0s ease-in-out 1s;
@@ -194,55 +181,7 @@ details:has(> summary[aria-haspopup="menu"]) {
     }
 
     & > li {
-      width: 100%;
-      margin-bottom: 0;
       list-style: none;
-      color: var(--menu-color);
-      padding-block: var(--menu-padding-block);
-      padding-inline: var(--menu-padding-inline);
-
-      &:has(>:where([role="menuitem"], hr):only-child) {
-        padding: 0;
-      }
-
-      >[role="menuitem"]:only-child {
-        margin: 0;
-        display: block;
-        width: 100%;
-        padding-block: var(--menu-padding-block);
-        padding-inline: var(--menu-padding-inline);
-        color: var(--menu-color);
-        text-overflow: ellipsis;
-        text-decoration: none;
-
-        &:is(
-          [aria-current]:not([aria-current="false"]),
-          :hover,
-          :active,
-          :focus
-        ) {
-          background-color: var(--menu-background-color-hover);
-          text-decoration: none;
-        }
-      }
-
-      &:first-child {
-        >[role="menuitem"]:only-child {
-          border-top-left-radius: var(--border-radius);
-          border-top-right-radius: var(--border-radius);
-        }
-      }
-
-      &:last-child {
-        >[role="menuitem"]:only-child {
-          border-bottom-left-radius: var(--border-radius);
-          border-bottom-right-radius: var(--border-radius);
-        }
-      }
-
-      > hr:only-child {
-        margin: 0;
-      }
     }
   }
 
@@ -273,10 +212,6 @@ details:has(> summary[aria-haspopup="menu"]) {
     content: "";
     cursor: default;
   }
-}
-
-label > details:has(> summary[aria-haspopup="menu"]) {
-  margin-top: var(--spacing-1);
 }
 
 nav details:has(> summary[aria-haspopup="menu"]) {

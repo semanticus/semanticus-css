@@ -3,7 +3,7 @@ small {
 
   font-size: var(--font-size); /* Needs to be here to overwrite user agent styles */
 
-  :where(input, select, textarea, fieldset) + & {
+  :where(input, textarea, select, details, label, fieldset) + & {
     display: block;
     width: 100%;
     margin-bottom: var(--spacing);
@@ -11,11 +11,12 @@ small {
   }
 
   :where(
-      input:not([type="checkbox"], [type="radio"], [role="switch"]),
-      select,
-      textarea,
-      fieldset
-    )
+    input:not([type="checkbox"], [type="radio"], [role="switch"]),
+    textarea,
+    select,
+    details,
+    fieldset
+  )
     + & {
     margin-top: calc(var(--spacing-3) * -1);
   }

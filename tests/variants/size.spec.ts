@@ -104,7 +104,7 @@ test("size controls align in groups and dropdowns also resize in navigation", as
   await page.evaluate(() => document.body.insertAdjacentHTML("beforeend", `
     <div role="search" id="compact-search">
       <input class="size-sm" type="search" aria-label="Search">
-      <details class="size-sm"><summary role="button" aria-haspopup="menu">Options</summary><ul role="menu"><li><a role="menuitem" href="#">Item</a></li></ul></details>
+      <details class="size-sm"><summary role="button" aria-haspopup="menu">Options</summary><ul role="menu"><li role="menuitem"><a href="#">Item</a></li></ul></details>
       <button class="size-sm">Search</button>
     </div>
     <nav id="compact-nav"><ul>

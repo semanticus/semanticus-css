@@ -6,14 +6,14 @@ import {
   InputsDemo,
   ListsDemo,
   GroupsDemo,
+  NavigationDemo,
 } from "@demos/composites";
-import { CardDemo, ContentGridDemo, IconsDemo, SidebarDemo } from "@demos/components";
+import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
 import {
   ProgressDemo,
   TableDemo,
   DialogDemo,
   FigureDemo,
-  NavDemo,
   HgroupDemo,
   RoleTooltipDemo,
   TextDemo,
@@ -112,21 +112,21 @@ function navigation() {
   <h2>Navigation</h2>
 
   <section>
-    ${NavDemo.horizontalNavigation()}
+    ${NavigationDemo.header({ class: "pane secondary subtle" })}
   </section>
 
   <br>
 
   <section>
     <h4>Breadcrumbs</h4>
-    ${NavDemo.breadcrumbs()}
+    ${NavigationDemo.breadcrumbs({ class: "pane secondary subtle" })}
   </section>
 
   <br>
 
   <section>
     <h4>Sidebar</h4>
-    ${SidebarDemo.verticalSidebarNavigation()}
+    ${NavigationDemo.sidebar({ class: "pane secondary subtle w-50" })}
   </section>
 </section>`;
 }

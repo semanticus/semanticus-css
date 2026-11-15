@@ -1,60 +1,44 @@
-import { renderElement, ListOptions } from "@scripts/utils";
-import * as UlDemo from "@demos/semantics/elements/ul.demo";
-import * as OlDemo from "@demos/semantics/elements/ol.demo";
-import * as DlDemo from "@demos/semantics/elements/dl.demo";
-import * as RoleListDemo from "@demos/semantics/attributes/role-list.demo";
+import { NavDemo } from "@demos/semantics";
+import { renderElement } from "@scripts/utils";
 
-export function all(
-  attrs: Record<string, string> = {},
-  options: ListOptions = {},
-) {
-  return renderElement(
-    "div",
-    { class: "auto-grid" },
-    `<div>
-  <h5>DIV Card List</h5>
-  ${RoleListDemo.cardList("div", attrs, options)}
-</div>
+export function header(attrs: Record<string, string> = {}) {
+  return renderElement("header", attrs, `<strong class="fs-3">Acme Corp</strong>
 
-<div>
-  <h5>Unordered List</h5>
-  ${UlDemo.main(attrs, options)}
-</div>
+<nav>
+  <ul>
+    <li><a href="#explore" aria-current="page">Explore</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-<div>
-  <h5>Ordered List</h5>
-  ${OlDemo.main(attrs, options)}
-</div>
-
-<div>
-  <h5>Description List</h5>
-  ${DlDemo.main(attrs)}
-</div>
-
-<div>
-  <h5>DL Card List</h5>
-  ${DlDemo.cardList(attrs)}
-</div>
-`,
-  );
+<nav>
+  <a href="#login">Log in</a>
+  <a href="#signup" role="button">Sign up</a>
+</nav>`);
 }
 
-export function overview(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "section",
-    { class: "d-flex" },
-    `${UlDemo.main(attrs, { ariaCurrent: true })}
+export function sidebar(attrs: Record<string, string> = {}) {
+  attrs.style = "height: 400px; width: 250px;";
 
-${RoleListDemo.main("div", attrs, { ariaCurrent: true })}`,
-  );
+  return renderElement("aside", attrs, `<div class="border-bottom pb-2">
+  <strong class="fs-3">Acme Corp</strong>
+</div>
+
+<nav class="flex-grow-1">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#getting-started" aria-current="page">Getting Started</a></li>
+    <li><a href="#advanced-usage">Advanced Usage</a></li>
+    <li><a href="#uninstall">Uninstall</a></li>
+  </ul>
+</nav>
+
+<nav>
+  <button class="ghost">Support</button>
+</nav>`);
 }
 
-export function overviewCardList(attrs: Record<string, string> = {}) {
-  return renderElement(
-    "section",
-    { class: "auto-grid" },
-    `${UlDemo.cardList(attrs, { ariaCurrent: true })}
-
-${RoleListDemo.cardList("div", attrs, { ariaCurrent: true })}`,
-  );
+export function breadcrumbs(attrs: Record<string, string> = {}) {
+  return NavDemo.breadcrumbs(attrs);
 }

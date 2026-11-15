@@ -26,9 +26,9 @@ export function withSearchAndNavigationExample(
       <details>
         <summary aria-haspopup="menu">About</summary>
         <ul dir="rtl" role="menu">
-          <li><a role="menuitem" href="#services">Services</a></li>
-          <li><a role="menuitem" href="#company">Company</a></li>
-          <li><a role="menuitem" href="#careers">Careers</a></li>
+          <li role="menuitem"><a href="#services">Services</a></li>
+          <li role="menuitem"><a href="#company">Company</a></li>
+          <li role="menuitem"><a href="#careers">Careers</a></li>
         </ul>
       </details>
     </li>

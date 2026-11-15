@@ -4,7 +4,7 @@ title: nav
 
 # &lt;nav&gt;
 
-**Semanticus CSS** adds opinionated styling to `<nav>` to reduce boilerplate for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
+**Semanticus CSS** adds opinionated styling to `<nav>` to reduce boilerplate for common navigation patterns like **horizontal menus**, **sidebars**, **breadcrumbs**, and **pagination**.
 
 ## Basic Usage
 

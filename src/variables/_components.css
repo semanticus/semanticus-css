@@ -169,6 +169,7 @@
   --links-color-hover: var(--primary-color-hover);
   --links-text-decoration: underline;
   --links-text-decoration-active: underline;
+  --links-font-weight-active: 500;
 
   /* --- Lists (ul, ol and role="list") --- */
   --lists-marker-color: var(--primary-color);
@@ -241,7 +242,7 @@
   --pane-color: var(--color);
   --pane-background-color: var(--background-color);
   --pane-padding-inline: var(--spacing);
-  --pane-padding-block: var(--spacing-3);
+  --pane-padding-block: var(--spacing);
   --pane-border-color: var(--background-color);
   --pane-border-width: 0;
 }

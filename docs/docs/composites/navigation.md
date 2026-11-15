@@ -1,52 +1,20 @@
 # Navigation
 
-Navigation is implemented using the `<nav>` element, which in combination with `<header>` and `<footer>`, you can easily 
+Navigation is implemented using the `<nav>` element, which in combination with `<header>` and `<footer>`, give you
 
-**Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
+**Semanticus CSS** adds some opinionated styling to `<header>`, `<footer>`, `<aside>` and `<nav>`, in order to reduce boilerplate code for common navigation patterns like **topbar navigation**, **sidebar navigation**, **breadcrumbs** and [pagination](/docs/composites/pagination).
 
-Check out [Pagination](/docs/composites/pagination) for more examples of navigation patterns.
+## Topbar navigation
 
-## Basic Usage
+<HtmlPreviewer :code="NavigationDemo.header()" />
 
-- `<nav>` and `.nav` uses `justify-content: space-between` to distribute its children across the horizontal axis;
-- All direct children will have their `margin-block` set to 0;
-- In case of a single child, it will grow to fill the available space;
+## Sidebar navigation
 
-<HtmlPreviewer :code="NavElementDemo.main()" />
+<HtmlPreviewer :code="NavigationDemo.sidebar()" />
 
-or
+## Breadcrumbs
 
-<HtmlPreviewer :code="NavDemo.header()" />
-
-## Horizontal Navigation
-
-- `<ul>` children will become a horizontal flex container also;
-- `<li>` children will become unstyled and inlined;
-- `<a>` children will lose their underline except on `:hover`.
-- `<button>` and `<details>` (**Dropdowns**) children will automatically match the height and padding of links.
-
-<HtmlPreviewer :code="NavElementDemo.horizontalHeaderNavigation({}, 'Acme Corp')" />
-
-### Breadcrumbs
-
-Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>`. This represents the current page's location within a navigational hierarchy.
-
-Each breadcrumb item is represented as an `<li>` element, and the current page is typically indicated by adding the `aria-current="page"` attribute either to the `<a>` or corresponding `<li>` element.
-
-> **Accessibility:** Don't forget to add `aria-label="Breadcrumbs"` to the `<nav>` element for better accessibility.
-
-<HtmlPreviewer :code="NavElementDemo.breadcrumbs()" />
-
-## Vertical Navigation
-
-- `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside an `<aside>`;
-- When `<nav>` is a direct child of an `<aside>` it will stretch itself to fill the available height.
-
-<HtmlPreviewer :code="NavElementDemo.sidebarExample()" />
-
-## Search and Dropdown Example
-
-<HtmlPreviewer :code="NavElementDemo.searchAndDropdownExample()" />
+<HtmlPreviewer :code="NavigationDemo.breadcrumbs()" />
 
 <script setup>
 import { NavigationDemo } from "@demos/composites";

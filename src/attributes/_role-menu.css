@@ -1,0 +1,62 @@
+[role="menu"] {
+  z-index: var(--max-z-index);
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  padding: 0;
+  border: var(--menu-border-width) solid var(--menu-border-color);
+  border-radius: var(--menu-border-radius);
+  background-color: var(--menu-background-color);
+  box-shadow: var(--menu-box-shadow);
+  color: var(--menu-color);
+  font-size: var(--menu-font-size, inherit);
+  white-space: nowrap;
+  gap: 0;
+
+  [role="menuitem"] {
+    width: 100%;
+    margin-bottom: 0;
+    color: var(--menu-color);
+    padding-block: var(--menu-padding-block);
+    padding-inline: var(--menu-padding-inline);
+
+    &:has(>:only-child) {
+      padding: 0;
+    }
+
+    &:first-child > :only-child {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+
+    &:last-child > :only-child {
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    > :not(hr):only-child {
+      margin: 0;
+      display: block;
+      width: 100%;
+      padding-block: var(--menu-padding-block);
+      padding-inline: var(--menu-padding-inline);
+      color: var(--menu-color);
+      text-overflow: ellipsis;
+      text-decoration: none;
+
+      &:is(
+        [aria-current]:not([aria-current="false"]),
+        :hover,
+        :active,
+        :focus
+      ) {
+        background-color: var(--menu-background-color-hover);
+        text-decoration: none;
+      }
+    }
+
+    > hr:only-child {
+      margin: 0;
+    }
+  }
+}

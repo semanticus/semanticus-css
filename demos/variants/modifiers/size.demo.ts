@@ -121,7 +121,7 @@ export function searchGroups(size: SizeModifier = "size-sm") {
 </div>
 <div role="group" aria-label="Search with scope" class="${size}">
   <input type="search" aria-label="Scoped search" placeholder="Search">
-  <details><summary role="button" aria-haspopup="menu">Scope</summary><ul role="menu"><li><a role="menuitem" href="#all">All</a></li></ul></details>
+  <details><summary role="button" aria-haspopup="menu">Scope</summary><ul role="menu"><li role="menuitem"><a href="#all">All</a></li></ul></details>
   <button type="button">Go</button>
 </div>`, size);
 }

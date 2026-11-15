@@ -28,7 +28,7 @@
   }
 
   &:is([aria-current]:not([aria-current="false"])) {
-    font-weight: 500;
+    font-weight: var(--links-font-weight-active);
   }
 
   &:focus-visible {

@@ -64,10 +64,6 @@ textarea {
     margin-bottom: var(--_inputs-margin-block);
   }
 
-  label > & {
-    margin-top: var(--spacing-1);
-  }
-
   &::placeholder {
     color: var(--inputs-placeholder-color);
   }

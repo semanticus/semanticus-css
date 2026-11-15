@@ -2,6 +2,7 @@ nav {
   --typography-margin-block: 0;
 
   display: flex;
+  align-self: stretch;
   gap: var(--spacing);
   align-items: center;
   justify-content: space-between;
@@ -18,8 +19,16 @@ nav {
 
   a:not([role="button"], .button),
   [role="link"] {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+
     &:not(:hover) {
       --_links-text-decoration: none;
+    }
+
+    &:is([aria-current]:not([aria-current="false"])):hover {
+      --_links-text-decoration-active: none;
     }
   }
 
@@ -27,47 +36,32 @@ nav {
   ol {
     align-items: center;
     display: flex;
+    align-self: stretch;
     gap: var(--nav-link-gap);
     list-style: none;
     margin-bottom: 0 !important;
     padding: 0;
 
     li {
-      display: inline-block;
+      display: flex;
+      align-self: stretch;
       padding-inline-start: unset;
     }
   }
-}
 
-/* Navigation inside a sidebar */
-
-aside {
-  > nav {
-    flex-grow: 1;
-
-    :is(a, [role="link"], button, .button, [role="button"]) {
-      display: block;
-      width: 100%;
-    }
-  }
-}
-
-/* Breadcrumbs */
-
-nav {
+  /* Breadcrumbs */
   &:has(> ol:only-child) {
     align-items: center;
     justify-content: start;
 
     ol li {
       &:not(:first-child) {
-        margin-inline-start: calc(var(--nav-link-gap) * 2);
+        margin-inline-start: calc(var(--nav-link-gap) * -1);
       }
 
       &:not(:last-child)::after {
         display: inline-block;
-        position: absolute;
-        width: calc(var(--nav-link-gap) * 3);
+        width: calc(var(--nav-link-gap) * 2);
         content: var(--nav-breadcrumb-divider);
         color: var(--color-muted);
         text-align: center;

@@ -1,8 +1,17 @@
 label {
   font-size: var(--label-font-size, inherit);
-}
 
-label:has([type="checkbox"], [type="radio"]) {
-  width: fit-content;
-  cursor: pointer;
+  &:has([type="checkbox"], [type="radio"]) {
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  & > :where(
+    input,
+    select,
+    textarea,
+    details:has(> summary[aria-haspopup="menu"])
+   ) {
+    margin-top: var(--spacing-1);
+  }
 }

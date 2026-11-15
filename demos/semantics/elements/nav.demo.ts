@@ -30,7 +30,6 @@ export function basicUsage(
 
 export function horizontalNavigation(
   attrs: Record<string, string> = {},
-  brandName: string = "Semanticus CSS",
 ) {
   return main(
     attrs,

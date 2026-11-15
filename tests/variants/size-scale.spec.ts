@@ -68,7 +68,7 @@ test("all sizes align controls and dropdowns inside navigation groups", async ({
   await page.evaluate(() => document.body.insertAdjacentHTML("beforeend", ["sm", "md", "lg"].map(n => `
     <nav><div role="group" class="size-${n}" id="nav-group-${n}">
       <input type="search" aria-label="Search ${n}">
-      <details><summary role="button" aria-haspopup="menu">Options</summary><ul role="menu"><li><a role="menuitem" href="#all">All</a></li></ul></details>
+      <details><summary role="button" aria-haspopup="menu">Options</summary><ul role="menu"><li role="menuitem"><a href="#all">All</a></li></ul></details>
       <button type="button">Search</button>
     </div></nav>`).join("")));
   for (const level of ["sm", "md", "lg"]) {
