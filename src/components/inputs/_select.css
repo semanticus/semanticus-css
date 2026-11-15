@@ -4,6 +4,10 @@ select {
   text-transform: none;
   appearance: none;
 
+  &:has(option[value=""]:checked) {
+    color: var(--inputs-placeholder-color);
+  }
+
   &:not([multiple], [size]) {
     background-image: var(--icon-chevron);
     background-position: center right var(--icons-background-position-gap);

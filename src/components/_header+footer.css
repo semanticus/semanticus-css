@@ -1,9 +1,17 @@
 header,
 footer {
-  --_inset-grid-inline: var(--spacing);
-  --_inset-grid-block: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+  flex-wrap: wrap;
+  gap: var(--spacing);
 
-  & > * {
+  > * {
     margin-block: 0 !important;
+
+    &:only-child {
+      flex-grow: 1;
+    }
   }
 }

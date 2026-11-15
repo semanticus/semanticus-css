@@ -6,28 +6,30 @@ title: nav
 
 **Semanticus CSS** adds opinionated styling to `<nav>` to reduce boilerplate for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
-To apply the same styling and layout behavior to another element, such as a `<header>` or `<footer>`, use the [`.nav` component class](/docs/classes/nav).
-
-> **Accessibility:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
-
 ## Basic Usage
 
 - `<nav>` is a flex container that uses `justify-content: space-between` to distribute its children across the horizontal axis;
 - All direct children of `<nav>` will have their `margin-block` set to 0;
 - In case of a single child, it will grow to fill the available space;
 
-<HtmlPreviewer :code="NavDemo.main()" />
+<HtmlPreviewer :code="NavDemo.basicUsage()" />
 
 ## Horizontal Navigation
 
 - `<ul>` children also become a horizontal flex container;
 - `<li>` children will become unstyled and inlined;
 - `<a>` children will lose their underline except on `:hover`.
-- `<button>` and `<details>` (**Dropdowns**) children will automatically match the height and padding of links.
 
-<HtmlPreviewer :code="NavDemo.horizontalHeaderNavigation({}, 'Acme Corp')" />
+<HtmlPreviewer :code="NavDemo.horizontalNavigation({}, 'Acme Corp')" />
 
-### Breadcrumbs
+## Vertical Navigation
+
+- `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside an `<aside>`;
+- When `<nav>` is a direct child of an `<aside>` it will stretch itself to fill the available height.
+
+<HtmlPreviewer :code="NavDemo.verticalNavigation()" />
+
+## Breadcrumbs
 
 Breadcrumbs are implemented using a single `<ol>` element inside a `<nav>` — the semantic way to represent the current page's location within a navigational hierarchy.
 
@@ -36,13 +38,6 @@ Each breadcrumb item is represented as an `<li>` element, and the current page i
 > **Accessibility:** Don't forget to add `aria-label="Breadcrumbs"` to the `<nav>` element for better accessibility.
 
 <HtmlPreviewer :code="NavDemo.breadcrumbs()" />
-
-## Vertical Navigation
-
-- `<nav>`, `<ul>` and `<ol>` elements get stacked vertically when inside an `<aside>`;
-- When `<nav>` is a direct child of an `<aside>` it will stretch itself to fill the available height.
-
-<HtmlPreviewer :code="NavDemo.sidebarExample()" />
 
 ## Button-Based Pagination
 
@@ -61,6 +56,10 @@ For server-side rendering or distinct page URLs, use anchor elements with `role=
 > **Note:** `disabled` is not a valid attribute for `<a>` elements, so in this case you really need to use `aria-disabled="true"` instead.
 
 <HtmlPreviewer :code="PaginationDemo.links()" />
+
+## Accessibility
+
+> **Important:** Keep in mind this element has the implicit `role="navigation"`, which means screen readers expose it as a navigation landmark, allowing users to jump directly to or skip past the navigation, so it's best not to combine it with other roles like `role="group"` and `role="list"`.
 
 <script setup>
 import { PaginationDemo } from "@demos/composites";

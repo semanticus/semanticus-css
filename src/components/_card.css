@@ -1,3 +1,4 @@
+dialog,
 .card {
   --_card-padding-inline: var(--card-padding-inline);
   --_card-padding-block: var(--card-padding-block);
@@ -31,8 +32,11 @@
 
   > header,
   > footer {
+    gap: var(--_inset-grid-inline);
     background-color: var(--_card-marginals-background-color);
     margin-inline: calc(-1 * var(--_inset-grid-inline));
+    padding-inline: var(--_inset-grid-inline);
+    padding-block: var(--_inset-grid-block);
   }
 
   /* Header styling */

@@ -12,6 +12,8 @@ See [Typography Utilities](/docs/utilities/typography) for more details.
 
 ## Headings
 
+By default headings don't have a margin at the top, except when they are preceeded by a sibling.
+
 <HtmlPreviewer :code="TextDemo.headings()" />
 
 ## Paragraphs

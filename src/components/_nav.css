@@ -1,3 +1,57 @@
+nav {
+  --typography-margin-block: 0;
+
+  display: flex;
+  gap: var(--spacing);
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+  flex-wrap: wrap;
+
+  > * {
+    margin-block: 0 !important;
+
+    &:only-child {
+      flex-grow: 1;
+    }
+  }
+
+  a:not([role="button"], .button),
+  [role="link"] {
+    &:not(:hover) {
+      --_links-text-decoration: none;
+    }
+  }
+
+  ul,
+  ol {
+    align-items: center;
+    display: flex;
+    gap: var(--nav-link-gap);
+    list-style: none;
+    margin-bottom: 0 !important;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding-inline-start: unset;
+    }
+  }
+}
+
+/* Navigation inside a sidebar */
+
+aside {
+  > nav {
+    flex-grow: 1;
+
+    :is(a, [role="link"], button, .button, [role="button"]) {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
 /* Breadcrumbs */
 
 nav {

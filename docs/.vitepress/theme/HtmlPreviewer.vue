@@ -74,7 +74,7 @@ const props = defineProps({
   },
   minHeight: {
     type: Number,
-    default: 100
+    default: 70
   },
   autoResize: {
     type: Boolean,
@@ -97,7 +97,8 @@ const uid = `html-previewer-${Math.random().toString(36).substr(2, 9)}`;
 const codeExpanded = ref(false);
 const highlightedCode = hljs.highlight(props.code || '', { language: 'html' }).value;
 
-const iframeContent = computed(() => {
+const 
+iframeContent = computed(() => {
   return `
 <!DOCTYPE html>
 <html lang="en" data-theme="${isDark.value ? 'dark' : 'light'}">
@@ -109,7 +110,7 @@ const iframeContent = computed(() => {
   <style>
     body {
       margin: 0;
-      padding: 1.5rem;
+      padding: 32px 24px;
     }
   </style>
 </head>
@@ -218,6 +219,11 @@ watch(isDark, () => {
 <template>
   <div class="html-preview-container">
     <div class="preview-iframe-container language-html">
+      <div class="guideline" data-position="top"></div>
+      <div class="guideline" data-position="right"></div>
+      <div class="guideline" data-position="bottom"></div>
+      <div class="guideline" data-position="left"></div>
+      
       <!-- Only render iframe on client side to ensure proper postMessage communication -->
       <ClientOnly>
         <iframe
@@ -276,6 +282,43 @@ watch(isDark, () => {
 .preview-iframe-container {
   border-bottom: 1px solid var(--vp-c-divider);
 
+  &:hover {
+    .guideline {
+      display: block;
+    }
+  }
+
+  .guideline {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    &[data-position="top"] {
+      bottom: unset;
+      height: 32px;
+      border-bottom: 1px dashed var(--vp-code-color);
+    }
+    &[data-position="right"] {
+      left: unset;
+      width: 24px;
+      border-left: 1px dashed var(--vp-code-color);
+    }
+    &[data-position="bottom"] {
+      top: unset;
+      height: 32px;
+      border-top: 1px dashed var(--vp-code-color);
+    }
+    &[data-position="left"] {
+      right: unset;
+      width: 24px;
+      border-right: 1px dashed var(--vp-code-color);
+    }
+  }
+
   .lang {
     top: unset !important;
     bottom: 2px;
@@ -284,12 +327,11 @@ watch(isDark, () => {
 
 .preview-iframe {
   width: 100%;
-  min-height: 100px;
+  min-height: 70px;
   border: none;
 }
 
 .preview-iframe-fallback {
-  background: var(--vp-c-bg-soft, #f3f4f6);
   display: flex;
   align-items: center;
   justify-content: center;

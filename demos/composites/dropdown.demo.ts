@@ -24,14 +24,17 @@ export function withRadios() {
   <ul role="menu">
     <li>
       <label role="menuitem">
-        <input type="radio" name="phase" value="solid" />
-        Solid
+        <input type="radio" name="phase" value="solid" /> Solid
       </label>
     </li>
     <li>
       <label role="menuitem">
-        <input type="radio" name="phase" value="liquid" />
-        Liquid
+        <input type="radio" name="phase" value="liquid" /> Liquid
+      </label>
+    </li>
+    <li>
+      <label role="menuitem">
+        <input type="radio" name="phase" value="gas" /> Gas
       </label>
     </li>
   </ul>
@@ -47,14 +50,17 @@ export function withCheckboxes(attrs: Record<string, string> = {}) {
 <ul role="menu">
   <li>
     <label role="menuitem">
-      <input type="checkbox" name="solid" />
-      Solid
+      <input type="checkbox" name="solid" /> Solid
     </label>
   </li>
   <li>
     <label role="menuitem">
-      <input type="checkbox" name="liquid" />
-      Liquid
+      <input type="checkbox" name="liquid" /> Liquid
+    </label>
+  </li>
+  <li>
+    <label role="menuitem">
+      <input type="checkbox" name="gas" /> Gas
     </label>
   </li>
 </ul>`,
@@ -70,7 +76,6 @@ export function asButton(attrs: Record<string, string> = {}) {
   <li><a role="menuitem" href="#">Solid</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
-  <li><a role="menuitem" href="#">Plasma</a></li>
 </ul>`,
   );
 }
@@ -84,7 +89,6 @@ export function asButtonWithLargeItem(attrs: Record<string, string> = {}) {
 <li><a role="menuitem" href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
-  <li><a role="menuitem" href="#">Plasma</a></li>
 </ul>`,
   );
 }
@@ -100,7 +104,6 @@ export function asButtonReversedWithLargeItem(
   <li><a role="menuitem" href="#">Very large item, with a very large description, bigger than the parent's width</a></li>
   <li><a role="menuitem" href="#">Liquid</a></li>
   <li><a role="menuitem" href="#">Gas</a></li>
-  <li><a role="menuitem" href="#">Plasma</a></li>
 </ul>`,
   );
 }
@@ -112,7 +115,6 @@ export function validationStates() {
     <li><a role="menuitem" href="#">Solid</a></li>
     <li><a role="menuitem" href="#">Liquid</a></li>
     <li><a role="menuitem" href="#">Gas</a></li>
-    <li><a role="menuitem" href="#">Plasma</a></li>
   </ul>
 </details>
 
@@ -124,7 +126,6 @@ export function validationStates() {
     <li><a role="menuitem" href="#">Solid</a></li>
     <li><a role="menuitem" href="#">Liquid</a></li>
     <li><a role="menuitem" href="#">Gas</a></li>
-    <li><a role="menuitem" href="#">Plasma</a></li>
   </ul>
 </details>
 `;

@@ -4,12 +4,10 @@ import {
   DropdownDemo,
   AccordionsDemo,
   InputsDemo,
-  LinksDemo,
-  ButtonsDemo,
   ListsDemo,
   GroupsDemo,
 } from "@demos/composites";
-import { CardDemo, ContentGridDemo, IconsDemo } from "@demos/components";
+import { CardDemo, ContentGridDemo, IconsDemo, SidebarDemo } from "@demos/components";
 import {
   ProgressDemo,
   TableDemo,
@@ -19,6 +17,10 @@ import {
   HgroupDemo,
   RoleTooltipDemo,
   TextDemo,
+  ButtonDemo,
+  RoleButtonDemo,
+  ADemo,
+  RoleLinkDemo,
 } from "@demos/semantics";
 
 function tooltips() {
@@ -110,7 +112,7 @@ function navigation() {
   <h2>Navigation</h2>
 
   <section>
-    ${NavDemo.horizontalHeaderNavigation()}
+    ${NavDemo.horizontalNavigation()}
   </section>
 
   <br>
@@ -124,7 +126,7 @@ function navigation() {
 
   <section>
     <h4>Sidebar</h4>
-    ${NavDemo.sidebarExample()}
+    ${SidebarDemo.verticalSidebarNavigation()}
   </section>
 </section>`;
 }
@@ -210,19 +212,18 @@ export function main(attrs: Record<string, string> = {}) {
     `<br>
 
 <section id="buttons">
-  <h2>Buttons</h2>
-  ${ButtonsDemo.all()}
+  <h2>Buttons & Links</h2>
+  <div class="d-flex gap-d">
+    ${ButtonDemo.main(attrs)}
+    ${RoleButtonDemo.main("div", attrs)}
+    ${ADemo.main(attrs)}
+    ${RoleLinkDemo.main("button", attrs)}
+    ${RoleLinkDemo.main("div", attrs)}
+  </div>
 </section>
 
 <hr>
-<br>
 
-<section id="links">
-  <h2>Links</h2>
-  ${LinksDemo.all()}
-</section>
-
-<hr>
 <br>
 
 <section id="inputs">

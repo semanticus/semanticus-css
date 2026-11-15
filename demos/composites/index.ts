@@ -7,6 +7,7 @@ export * as InputsDemo from "./inputs.demo";
 export * as LayoutDemo from "./layout.demo";
 export * as LinksDemo from "./links.demo";
 export * as ListsDemo from "./lists.demo";
+export * as NavigationDemo from "./navigation.demo";
 export * as PaginationDemo from "./pagination.demo";
 export * as SearchDemo from "./search.demo";
 export * as ToastsDemo from "./toasts.demo";

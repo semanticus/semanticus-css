@@ -177,7 +177,7 @@
   --mark-background-color: light-dark(#c79400, #e8ae01);
 
   /* --- Navigation --- */
-  --nav-link-gap: var(--spacing-2);
+  --nav-link-gap: var(--spacing-3);
   --nav-breadcrumb-divider: ">";
 
   /* --- Progress Bar --- */

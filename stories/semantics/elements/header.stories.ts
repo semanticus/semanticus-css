@@ -12,7 +12,7 @@ export const basicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
-export const withSearchAndDropdownExample: StoryObj = {
-  args: { html: HeaderDemo.withSearchAndDropdownExample() },
+export const withSearchAndNavigationExample: StoryObj = {
+  args: { html: HeaderDemo.withSearchAndNavigationExample() },
   render: (args) => args.html,
 };

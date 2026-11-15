@@ -17,16 +17,6 @@ export const logoTaglineLinks: StoryObj = {
   render: (args) => args.html,
 };
 
-export const searchAndDropdownExample: StoryObj = {
-  args: { html: NavDemo.searchAndDropdownExample() },
-  render: (args) => args.html,
-};
-
-export const copyrightAndContactUs: StoryObj = {
-  args: { html: NavDemo.copyrightAndContactUs() },
-  render: (args) => args.html,
-};
-
 export const pagesLinks: StoryObj = {
   args: { html: NavDemo.pagesLinks() },
   render: (args) => args.html,
@@ -37,8 +27,13 @@ export const pageLinks: StoryObj = {
   render: (args) => args.html,
 };
 
-export const sidebarExample: StoryObj = {
-  args: { html: NavDemo.sidebarExample() },
+export const horizontalNavigation: StoryObj = {
+  args: { html: NavDemo.horizontalNavigation() },
+  render: (args) => args.html,
+};
+
+export const verticalNavigation: StoryObj = {
+  args: { html: NavDemo.verticalNavigation() },
   render: (args) => args.html,
 };
 

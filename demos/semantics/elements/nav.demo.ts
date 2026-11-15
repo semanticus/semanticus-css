@@ -14,45 +14,35 @@ export function main(attrs: Record<string, string> = {}, slot: string = "") {
   );
 }
 
-export function horizontalHeaderNavigation(
+export function basicUsage(
+  attrs: Record<string, string> = {}
+) {
+  return main(attrs, `<a href="#details" class="secondary">
+  <span class="icon-search" aria-hidden="true"></span>View
+</a>
+<a href="#edit">
+  <span class="icon-checkbox" aria-hidden="true"></span>Edit
+</a>
+<a href="#details" class="danger">
+  <span class="icon-invalid" aria-hidden="true"></span>Delete
+</a>`);
+}
+
+export function horizontalNavigation(
   attrs: Record<string, string> = {},
   brandName: string = "Semanticus CSS",
 ) {
   return main(
     attrs,
-    `<div>
-  <img style="width: 30px" src="https://semanticus.design/logo.svg" alt="Brand logo">
-  <strong class="fs-6">${brandName}</strong>
-</div>
+    `<ul>
+  <li><a href="#careers">Careers</a></li>
+  <li><a href="#about" aria-current="page">About us</a></li>
+  <li><a href="#contact">Contact us</a></li>
+</ul>
 
 <ul>
-  <li><a href="#about">About</a></li>
-  <li><a href="#products" aria-current="page">Products</a></li>
-  <li><button>Log In</button></li>
-</ul>`,
-  );
-}
-
-export function horizontalHeaderWithSearchAndDropdown(
-  attrs: Record<string, string> = {},
-) {
-  return main(
-    attrs,
-    `<input type="search" name="search" placeholder="Search" aria-label="Search" />
-
-<ul>
-  <li><a href="#" aria-current="page">Products</a></li>
-  <li>
-    <details>
-      <summary aria-haspopup="menu">About</summary>
-      <ul dir="rtl" role="menu">
-        <li><a role="menuitem" href="#">Services</a></li>
-        <li><a role="menuitem" href="#">Portfolio</a></li>
-        <li><a role="menuitem" href="#">Careers</a></li>
-      </ul>
-    </details>
-  </li>
-  <li><button>Log In</button></li>
+  <li><a href="#terms-of-service">Terms of Service</a></li>
+  <li><a href="#privacy-policy">Privacy Policy</a></li>
 </ul>`,
   );
 }
@@ -65,37 +55,6 @@ export function logoTaglineLinks() {
 
   <ul>
     <li><a href="#!">Log out</a></li>
-  </ul>
-</nav>`;
-}
-
-export function searchAndDropdownExample() {
-  return `<nav>
-  <input type="search" name="search" placeholder="Search" aria-label="Search" />
-
-  <ul>
-    <li><a href="#" aria-current="page">Docs</a></li>
-    <li>
-      <details>
-        <summary aria-haspopup="menu">About</summary>
-        <ul dir="rtl" role="menu">
-          <li><a role="menuitem" href="#services">Services</a></li>
-          <li><a role="menuitem" href="#company">Company</a></li>
-          <li><a role="menuitem" href="#careers">Careers</a></li>
-        </ul>
-      </details>
-    </li>
-    <li><a href="#" role="button" class="contrast">Log In</a></li>
-  </ul>
-</nav>`;
-}
-
-export function copyrightAndContactUs() {
-  return `<nav>
-  <p>Copyright</p>
-
-  <ul>
-    <li><a href="#!">Contact Us</a></li>
   </ul>
 </nav>`;
 }
@@ -129,30 +88,21 @@ export function breadcrumbs(attrs: Record<string, string> = {}) {
   );
 }
 
-export function sidebarExample(attrs: Record<string, string> = {}) {
-  return AsideDemo.sidebarWithFixedSize({}, verticalSidebarNavigation(attrs));
-}
-
-export function verticalSidebarNavigation(attrs: Record<string, string> = {}) {
-  return main(
-    { ...attrs },
-    `<ul>
-  <li>
-    <div class="hstack gap-1">
-      <img style="width: 30px" src="https://semanticus.design/logo.svg" alt="Brand logo" />
-      <strong class="fs-6">Semanticus CSS</strong>
-    </div>
-  </li>
-  <li><hr /></li>
-
+export function verticalNavigation(attrs: Record<string, string> = {}) {
+  return AsideDemo.main({ class: "pane secondary subtle", style: "width: 200px; height: 300px;" },
+    main(
+      { ...attrs },
+      `<ul>
   <li><a href="#about">About</a></li>
   <li><a href="#getting-started" aria-current="page">Getting Started</a></li>
   <li><a href="#advanced-usage">Advanced Usage</a></li>
   <li><a href="#uninstall">Uninstall</a></li>
+</ul>
 
-  <li class="flex-grow-1"></li>
+<ul>
   <li><button class="ghost">Support</button></li>
 </ul>`,
+    )
   );
 }
 

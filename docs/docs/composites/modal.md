@@ -12,9 +12,7 @@ Check out the [Dialog element documentation](/docs/elements/dialog) for more exa
 
 ## Basic Modal
 
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 200px;&quot;&gt;
-${DialogDemo.showModal()}
-&lt;/div&gt;`" />
+<HtmlPreviewer :code="DialogDemo.showModal()" min-height="250" />
 
 > **Remark:** When it comes to modals, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="dialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` and if you open the dialog using the **Invoker Commands API** or the `.showModal()` method, it automatically applies `aria-modal="true"`.
 >
@@ -31,9 +29,7 @@ Dialog alerts are modal windows that require user interaction before they can be
 
 > **Warning:** Be mindful that the role `role="alertdialog"` tells screen readers to treat the dialog as a high-priority alert, immediately interrupting the current reading to announce its contents, so it's important to consider the use of this role versus simply using a less intrusive [Modal](/docs/composites/modal).
 
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 250px;&quot;&gt;
-${DialogDemo.showDialogAlert()}
-&lt;/div&gt;`" />
+<HtmlPreviewer :code="DialogDemo.showDialogAlert()" min-height="250" />
 
 > **Remark:** When it comes to these types of dialogs that interrupt the user’s workflow, **ARIA** dictates that the HTML element should have `aria-modal="true"` and `role="alertdialog"` attributes, but in the case of the `<dialog>` element, the browser automatically applies the `role="dialog"` so you only need to change the role to `alertdialog`.
 

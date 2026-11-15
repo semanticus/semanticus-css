@@ -1,6 +1,6 @@
 # Navigation
 
-Navigation is implemented using the `<nav>` element, but you can also use the [`.nav` component class](/docs/classes/nav) add the same styling to any other element, like `<header>` or `<footer>`.
+Navigation is implemented using the `<nav>` element, which in combination with `<header>` and `<footer>`, you can easily 
 
 **Semanticus CSS** adds some opinionated styling to `<nav>`, in order to reduce boilerplate code for common navigation patterns like **horizontal navs**, **breadcrumbs**, and **sidebars**.
 
@@ -49,6 +49,5 @@ Each breadcrumb item is represented as an `<li>` element, and the current page i
 <HtmlPreviewer :code="NavElementDemo.searchAndDropdownExample()" />
 
 <script setup>
-import { NavDemo } from "@demos/components";
-import { NavDemo as NavElementDemo } from "@demos/semantics/elements";
+import { NavigationDemo } from "@demos/composites";
 </script>

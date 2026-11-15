@@ -1,5 +1,4 @@
-header,
-footer,
+dialog:not(.reset),
 .card,
 .inset-grid {
   --_inset-grid-inline: var(--spacing);
@@ -8,21 +7,29 @@ footer,
   padding-inline: var(--_inset-grid-inline);
   padding-block: var(--_inset-grid-block);
 
-  > .bleed-start,
-  > .bleed-inline {
-    margin-inline-start: calc(-1 * var(--_inset-grid-inline));
-  }
-
-  > .bleed-end,
-  > .bleed-inline {
-    margin-inline-end: calc(-1 * var(--_inset-grid-inline));
-  }
-
   &:has(> :is(.bleed-top, .bleed-block):first-child) {
     padding-block-start: 0;
   }
 
   &:has(> :is(.bleed-bottom, .bleed-block):last-child) {
     padding-block-end: 0;
+  }
+
+  > :is(.bleed-start, .bleed-inline) {
+    margin-inline-start: calc(-1 * var(--_inset-grid-inline));
+    padding-inline-start: var(--_inset-grid-inline);
+  }
+
+  > :is(.bleed-end, .bleed-inline) {
+    margin-inline-end: calc(-1 * var(--_inset-grid-inline));
+    padding-inline-end: var(--_inset-grid-inline);
+  }
+
+  > :is(.bleed-top, .bleed-block):first-child {
+    padding-block-start: var(--_inset-grid-block);
+  }
+
+  > :is(.bleed-bottom, .bleed-block):last-child {
+    padding-block-end: var(--_inset-grid-block);
   }
 }

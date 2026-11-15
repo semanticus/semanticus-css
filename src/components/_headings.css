@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: var(--heading-margin-top);
+  margin-top: 0;
   margin-bottom: var(--typography-margin-block);
   font-weight: var(--heading-font-weight);
   font-size: var(--font-size);
@@ -63,4 +63,8 @@ h6 {
   --heading-color-fade: var(--h6-color-fade);
   --heading-margin-top: var(--h6-margin-top);
   --heading-font-weight: var(--h6-font-weight);
+}
+
+* + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--heading-margin-top);
 }

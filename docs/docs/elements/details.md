@@ -16,7 +16,7 @@ Check out [Accordion](/docs/composites/accordions) documentation pages for more 
 
 Check out [Dropdown](/docs/composites/dropdown) documentation pages for more details and examples.
 
-<HtmlPreviewer :code="DropdownDemo.main()" />
+<HtmlPreviewer :code="DropdownDemo.main()" min-height="250" />
 
 <script setup>
 import { AccordionsDemo } from "@demos/composites";

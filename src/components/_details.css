@@ -170,8 +170,9 @@ details:has(> summary[aria-haspopup="menu"]) {
     flex-direction: column;
     width: 100%;
     min-width: fit-content;
-    margin: 0;
-    margin-top: var(--focus-ring-width);
+    margin-block-start: var(--focus-ring-width);
+    margin-block-end: 0;
+    margin-inline: 0;
     padding: 0;
     border: var(--menu-border-width) solid var(--menu-border-color);
     border-radius: var(--menu-border-radius);

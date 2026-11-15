@@ -12,7 +12,7 @@ The choice of element depends on the context and the desired behavior of the but
 
 See the [&lt;button&gt;](/docs/elements/button) for more details on button variations.
 
-<HtmlPreviewer :code="ButtonDemo.main()" />
+<HtmlPreviewer :code="ButtonDemo.basicButtons()" />
 
 ## Links styled as buttons
 

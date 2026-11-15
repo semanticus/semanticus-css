@@ -1,11 +1,24 @@
 import * as InputDemo from "@demos/semantics/elements/input.demo";
 import * as SelectDemo from "@demos/semantics/elements/select.demo";
 import * as TextareaDemo from "@demos/semantics/elements/textarea.demo";
+import { DropdownDemo } from "@demos/composites";
 
 export function all(attrs: Record<string, string> = {}) {
   const randomIdSuffix: string = Math.random().toString(16).slice(2);
 
-  return `${InputDemo.withHelperText({ ...attrs, id: `input-text-${randomIdSuffix}` })}
+  return `<section class="auto-grid">
+  <fieldset>
+    ${InputDemo.main({ ...attrs, id: `input-first-name-${randomIdSuffix}` })}
+  </fieldset>
+  <fieldset>
+    ${SelectDemo.main({ ...attrs, id: `input-last-name-${randomIdSuffix}` })}
+  </fieldset>
+  <fieldset>
+    ${DropdownDemo.main()}
+  </fieldset>
+</section>
+
+  ${InputDemo.withHelperText({ ...attrs, id: `input-text-${randomIdSuffix}` })}
 
   ${SelectDemo.withHelperText({ ...attrs, id: `input-select-${randomIdSuffix}` })}
 

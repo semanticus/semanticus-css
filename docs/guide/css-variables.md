@@ -527,7 +527,6 @@ These defaults include buttons, inputs, headings, menus, cards, panes, and alert
   --mark-background-color: light-dark(#c79400, #e8ae01);
 
   /* --- Navigation --- */
-  --nav-link-gap: var(--spacing-2);
   --nav-breadcrumb-divider: ">";
 
   /* --- Progress Bar --- */

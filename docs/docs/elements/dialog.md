@@ -12,27 +12,15 @@ See more about using `<dialog>` as a **modal** in the [Modal composite documenta
 
 ## Basic Usage
 
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 200px;&quot;&gt;
-${DialogDemo.main({ open: true })}
-&lt;/div&gt;`" />
+<HtmlPreviewer :code="DialogDemo.main({ open: true })" min-height="280" />
 
-## With Close Button
+## With a Close Button, Header and Footer
 
-Add a [Close Button](/docs/composites/buttons#close-button) with the utility class `.float-end` to position it on the right side of the dialog.
+By making use of the fact that the `<header>` element spaces its children, adding a [Close Button](/docs/composites/buttons#close-button) to it, display it side by side with the heading.
 
-> **Note:** In case you are using the `no-utilities` bundle, `.float-end` won't be avaible, in which case using a `<header>`, as seen in the next section, is a good alternative to position the close button on the right side of the dialog.
+> **Note:** Inside a `<dialog>` the `<footer>` will justify its content to the end.
 
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 150px;&quot;&gt;
-${DialogDemo.withCloseButton({ open: true })}
-&lt;/div&gt;`" />
-
-## With Header and Footer
-
-> **Note:** Inside `<dialog>`, the `<header>` will justify its content to the left and right and `<footer>` will justify its content to the right, allowing you to add a close button or other actions, without needing to use utility classes.
-
-<HtmlPreviewer :code="`&lt;div style=&quot;min-height: 275px;&quot;&gt;
-${DialogDemo.withHeaderAndFooter({ open: true })}
-&lt;/div&gt;`" />
+<HtmlPreviewer :code="DialogDemo.withHeaderAndFooter({ open: true })" min-height="350" />
 
 <script setup>
 import { DialogDemo } from "@demos/semantics/elements";

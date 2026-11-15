@@ -11,9 +11,16 @@ export function main(
   return renderElement("button", attrs, slot);
 }
 
+export function basicButtons() {
+  return `${main({}, "Create")}
+
+${main({ class: "secondary" }, "Cancel")}`;
+}
+
 export function links() {
   return `${renderElement("a", { href: "/guide", class: "button" }, "Read the guide")}
-${renderElement("a", { href: "/download", class: "button secondary ghost size-sm" }, "Download")}`;
+
+${renderElement("a", { href: "/download", class: "button secondary ghost" }, "Download")}`;
 }
 
 export function overviewCloseButton() {

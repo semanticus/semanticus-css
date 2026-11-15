@@ -21,17 +21,15 @@ function thankYouContent() {
 }
 
 function thankYouWithCloseButtonContent(attrs: Record<string, string>) {
-  return `${closeButton({ commandfor: attrs.id, class: "float-end" })}
+  return `<h2 id="modal-title">&#x1F4C5; Thank You for Registering!</h2>
 
-<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
-
-<br>
-
-<article id="modal-description">
+<article id="modal-description" class="text-center">
   <p>
     We're excited to have you join us for our
     upcoming event.
   </p>
+
+  <button commandfor="${attrs.id}" command="close">See You There</button>
 </article>`;
 }
 
@@ -40,7 +38,7 @@ function closeButton(attrs: Record<string, string>) {
 }
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  const mergedAttrs = classMergeAttributes("card", {
+  const mergedAttrs = classMergeAttributes("", {
     id: defaultId,
     ...attrs,
     "aria-labelledby": "modal-title",
@@ -48,12 +46,6 @@ export function main(attrs: Record<string, string> = {}, slot: string = "") {
   });
 
   return renderElement("dialog", mergedAttrs, slot || thankYouContent());
-}
-
-export function withCloseButton(attrs: Record<string, string> = {}) {
-  const mergedAttrs = { id: "dialog-close-button", ...attrs };
-
-  return main(mergedAttrs, thankYouWithCloseButtonContent(mergedAttrs));
 }
 
 export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
@@ -130,14 +122,11 @@ ${dialogAlert(mergedAttrs)}`;
 }
 
 function dialogAlertContent(attrs: Record<string, string>) {
-  return `<header>
+  return `<hgroup>
+  ${closeButton({ class: "fs-3 float-end", commandfor: attrs.id || defaultId })}
   <h1 id="modal-title">Are you sure?</h1>
-  ${closeButton({ class: "fs-3", commandfor: attrs.id || defaultId })}
-</header>
-
-<div id="modal-description">
-  <p>Are you sure you want to proceed with this action?</p>
-</div>
+  <p id="modal-description">This action is irreversible, proceed with caution.</p>
+</hgroup>
 
 <footer>
   <button commandfor="${attrs.id}" command="close">Yes</button>

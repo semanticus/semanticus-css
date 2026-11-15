@@ -462,7 +462,6 @@ export default defineConfig({
             { text: ".content-grid", link: "/docs/classes/content-grid" },
             { text: ".inset-grid", link: "/docs/classes/inset-grid" },
             { text: ".icon-*", link: "/docs/classes/icons" },
-            { text: ".nav", link: "/docs/classes/nav" },
             { text: ".pane", link: "/docs/classes/pane" },
             { text: ".sidebar", link: "/docs/classes/sidebar" },
           ],

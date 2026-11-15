@@ -32,8 +32,10 @@ export function customSpacing() {
 }
 
 export function nested() {
-  return main("section", {}, `<h2>Nested gutters</h2>
-<p>The inner section spans the outer gutters and establishes its own inset.</p>
+  return main("section", {}, `<hgroup>
+  <h2>Nested gutters</h2>
+  <p>The inner section spans the outer gutters and establishes its own inset.</p>
+</hgroup>
 <section class="bleed-inline inset-grid bg-primary-subtle">
   <h3>Inset content inside a bleed-inline section</h3>
   <p>Combining both classes restores gutters for the section’s own children.</p>
@@ -42,16 +44,18 @@ export function nested() {
 }
 
 export function rtl() {
-  return main("section", { dir: "rtl", lang: "ar" }, `<h2>محتوى بهوامش داخلية</h2>
-<p>يبقى النص داخل الهوامش الجانبية.</p>
-<div class="bleed-start bg-primary-subtle">يمتد هذا القسم إلى حافتي الحاوية.</div>`);
+  return main("section", { dir: "rtl", lang: "ar" }, `<hgroup>
+  <h2>محتوى بهوامش داخلية</h2>
+  <p>يبقى النص داخل الهوامش الجانبية.</p>
+</hgroup>
+<div class="bleed-start text-bg-contrast">يمتد هذا القسم إلى حافتي الحاوية.</div>`);
 }
 
 export function directionalBleed() {
   return main("section", {}, `<header class="bleed-inline bleed-top bg-primary-subtle"><h2>Flush with the top edge</h2></header>
 <p>Normal content keeps both inline gutters.</p>
-<div class="bleed-start bg-primary-subtle">This band reaches the inline start edge.</div>
-<div class="bleed-end bg-secondary-subtle">This band reaches the inline end edge.</div>
+<div class="bleed-start text-bg-contrast">This band reaches the inline start edge.</div>
+<div class="bleed-end text-bg-contrast">This band reaches the inline end edge.</div>
 <footer class="bleed-inline bleed-bottom bg-primary-subtle">Flush with the bottom edge</footer>`);
 }
 

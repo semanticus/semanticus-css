@@ -19,7 +19,7 @@ export function rightSidebar(attrs: Record<string, string> = {}) {
 }
 
 export function sidebarWithFixedSize(attrs: Record<string, string> = {}, slot: string = "") {
-  const { height = "300px", width = "200px", ...rest } = attrs;
+  const { height = "400px", width = "200px", ...rest } = attrs;
 
   return main(classMergeAttributes("", { ...rest, style: `height: ${height}; width: ${width}` }), slot);
 }

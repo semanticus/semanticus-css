@@ -1,7 +1,6 @@
 aside {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing);
 
   :is(nav, ol, ul) {
     align-items: stretch !important;

@@ -1,12 +1,37 @@
-import * as NavDemo from "@demos/semantics/elements/nav.demo";
 import { renderElement } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("header", attrs, NavDemo.logoTaglineLinks());
+  return renderElement("header", attrs, `<hgroup>
+  <h1>My account</h1>
+  <p>Manage your account settings</p>
+</hgroup>
+
+<nav>
+  <button>Save</button>
+  <button class="secondary subtle">Cancel</button>
+</nav>`);
 }
 
-export function withSearchAndDropdownExample(
+export function withSearchAndNavigationExample(
   attrs: Record<string, string> = {},
 ) {
-  return renderElement("header", attrs, NavDemo.searchAndDropdownExample());
+  return renderElement("header", attrs, `<strong>Acme Corp</strong>
+
+<input class="w-auto" type="search" name="search" placeholder="Search" aria-label="Search" />
+
+<nav>
+  <ul>
+    <li><a href="#" aria-current="page">Docs</a></li>
+    <li>
+      <details>
+        <summary aria-haspopup="menu">About</summary>
+        <ul dir="rtl" role="menu">
+          <li><a role="menuitem" href="#services">Services</a></li>
+          <li><a role="menuitem" href="#company">Company</a></li>
+          <li><a role="menuitem" href="#careers">Careers</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</nav>`);
 }
