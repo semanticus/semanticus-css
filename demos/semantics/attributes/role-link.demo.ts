@@ -50,7 +50,7 @@ export function intentVariants(
 ) {
   return renderElement(
     "section",
-    { class: "auto-grid" },
+    { class: "d-flex gap-d" },
     `${main(tagName, classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
 ${main(tagName, classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
 ${main(tagName, classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}

@@ -10,7 +10,7 @@ import { AriaInvalidDemo } from "@demos/semantics/attributes";
 
 Validation states provide visual feedback to users about the validity of form input.
 
-Use the `aria-invalid` attribute to indicate validation state:
+Use the [[aria-invalid]](/docs/attributes/aria-invalid) attribute to indicate validation state:
 
 - `aria-invalid="true"` — Indicates the field has failed validation
 - `aria-invalid="false"` — Indicates the field has passed validation

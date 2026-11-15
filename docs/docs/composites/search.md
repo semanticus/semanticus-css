@@ -4,7 +4,7 @@ title: Search
 
 # Search
 
-Combine `role="search"` with a `<fieldset>` to create a stylized search input with proper semantics and accessibility.
+Combine [[role="search"]](/docs/attributes/role-search) with a [&lt;fieldset&gt;](/docs/elements/fieldset) to create a stylized search input with proper semantics and accessibility.
 
 Screen readers expose it as a "search" landmark, allowing users to jump directly to the search form.
 

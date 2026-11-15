@@ -6,21 +6,25 @@ title: dialog
 
 The `<dialog>` element represents a modal or non-modal dialog.
 
-See more about using `<dialog>` as a **modal** in the [Modal composite documentation](/docs/composites/modal).
+**Semanticus CSS** adds some basic styling to the `<dialog>` element but keeps it to a minimum so you can have the freedom to costumize it or simply combine it with the `.card` component.
 
-> **Make sure:** To include `aria-labelledby` and `aria-describedby` attributes pointing to the modal's title and content for better accessibility.
+See more other examples at [Modal composite documentation](/docs/composites/modal).
 
 ## Basic Usage
 
+Plain and simple look, overwriting the browser's default style.
+
 <HtmlPreviewer :code="DialogDemo.main({ open: true })" min-height="280" />
 
-## With a Close Button, Header and Footer
+## As a card with a header and footer
 
-By making use of the fact that the `<header>` element spaces its children, adding a [Close Button](/docs/composites/buttons#close-button) to it, display it side by side with the heading.
+Combiniting it with the `.card` component, makes the `<dialog>` look and feel like a typical modal from any other frontend framework.
 
-> **Note:** Inside a `<dialog>` the `<footer>` will justify its content to the end.
+<HtmlPreviewer :code="DialogDemo.cardWithHeaderAndFooter({ open: true })" min-height="380" />
 
-<HtmlPreviewer :code="DialogDemo.withHeaderAndFooter({ open: true })" min-height="350" />
+## Accessibility
+
+> **Make sure:** To include `aria-labelledby` and `aria-describedby` attributes pointing to the modal's title and content for better accessibility.
 
 <script setup>
 import { DialogDemo } from "@demos/semantics/elements";

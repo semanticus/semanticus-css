@@ -34,7 +34,7 @@ export function active(
 export function intentVariants(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
-    { class: "auto-grid" },
+    { class: "d-flex gap-d" },
     `${main(classMergeAttributes("primary", attrs), "Primary")}
 ${main(classMergeAttributes("secondary", attrs), "Secondary")}
 ${main(classMergeAttributes("contrast", attrs), "Contrast")}

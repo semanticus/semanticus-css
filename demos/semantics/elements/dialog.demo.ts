@@ -3,23 +3,6 @@ import * as ButtonDemo from "@demos/semantics/elements/button.demo";
 
 const defaultId = "dialog-basic";
 
-function thankYouContent() {
-  return `<h3 id="modal-title">&#x1F4C5; Thank You for Registering!</h3>
-
-<article id="modal-description">
-  <p>
-    We're excited to have you join us for our
-    upcoming event. Please arrive at the museum
-    on time to check in and get started.
-  </p>
-
-  <ul>
-    <li>Date: Saturday, April 15</li>
-    <li>Time: 10:00am - 12:00pm</li>
-  </ul>
-</article>`;
-}
-
 function thankYouWithCloseButtonContent(attrs: Record<string, string>) {
   return `<h2 id="modal-title">&#x1F4C5; Thank You for Registering!</h2>
 
@@ -29,7 +12,7 @@ function thankYouWithCloseButtonContent(attrs: Record<string, string>) {
     upcoming event.
   </p>
 
-  <button commandfor="${attrs.id}" command="close">See You There</button>
+  <button class="secondary" commandfor="${attrs.id}" command="close">Close</button>
 </article>`;
 }
 
@@ -45,11 +28,11 @@ export function main(attrs: Record<string, string> = {}, slot: string = "") {
     "aria-describedby": "modal-description",
   });
 
-  return renderElement("dialog", mergedAttrs, slot || thankYouContent());
+  return renderElement("dialog", mergedAttrs, slot || thankYouWithCloseButtonContent(mergedAttrs));
 }
 
-export function withHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return main(attrs, headerAndFooterContent(attrs));
+export function cardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
+  return main(classMergeAttributes("card", attrs), headerAndFooterContent(attrs));
 }
 
 export function modal(attrs: Record<string, string> = {}, slot: string = "") {
@@ -58,24 +41,16 @@ export function modal(attrs: Record<string, string> = {}, slot: string = "") {
   return main(mergedAttrs, slot || thankYouWithCloseButtonContent(mergedAttrs));
 }
 
-export function showModal(attrs: Record<string, string> = {}) {
-  const mergedAttrs = { id: "dialog-modal", ...attrs };
-
-  return `<button command="show-modal" commandfor="${mergedAttrs.id}" class="contrast">Show Modal</button>
-
-${modal(mergedAttrs)}`;
+export function modalCardWithHeaderAndFooter(attrs: Record<string, string> = {}) {
+  return modal(classMergeAttributes("card", attrs), headerAndFooterContent(attrs));
 }
 
-export function modalWithHeaderAndFooter(attrs: Record<string, string> = {}) {
-  return modal(attrs, headerAndFooterContent(attrs));
-}
-
-export function showModalWithHeaderAndFooter(
+export function showModalCardWithHeaderAndFooter(
   attrs: Record<string, string> = {},
 ) {
   return `<button command="show-modal" commandfor="dialog-header-footer" class="contrast">Show Modal</button>
 
-${modalWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
+${modalCardWithHeaderAndFooter({ ...attrs, id: "dialog-header-footer" })}`;
 }
 
 function headerAndFooterContent(attrs: Record<string, string>) {
@@ -104,24 +79,24 @@ function headerAndFooterContent(attrs: Record<string, string>) {
 </footer>`;
 }
 
-export function dialogAlert(
-  attrs: Record<string, string> = {},
-  slot: string = "",
-) {
-  const mergedAttrs = { id: "dialog-alert", ...attrs, role: "alertdialog" };
-
-  return main(mergedAttrs, slot || dialogAlertContent(mergedAttrs));
-}
-
-export function showDialogAlert(attrs: Record<string, string> = {}) {
+export function showDialogCardAlert(attrs: Record<string, string> = {}) {
   const mergedAttrs = { id: "dialog-alert", ...attrs };
 
   return `<button command="show-modal" commandfor="${mergedAttrs.id}" class="contrast">Show Dialog Alert</button>
 
-${dialogAlert(mergedAttrs)}`;
+${dialogCardAlert(mergedAttrs)}`;
 }
 
-function dialogAlertContent(attrs: Record<string, string>) {
+export function dialogCardAlert(
+  attrs: Record<string, string> = {},
+  slot: string = "",
+) {
+  const mergedAttrs = { id: "dialog-alert", ...classMergeAttributes("card", attrs), role: "alertdialog" };
+
+  return main(mergedAttrs, slot || dialogCardAlertContent(mergedAttrs));
+}
+
+function dialogCardAlertContent(attrs: Record<string, string>) {
   return `<hgroup>
   ${closeButton({ class: "fs-3 float-end", commandfor: attrs.id || defaultId })}
   <h1 id="modal-title">Are you sure?</h1>

@@ -1,6 +1,6 @@
 # Alerts
 
-Alerts are implemented using the **ARIA** roles `role="status"` and `role="alert"`, which are designed to provide feedback to users.
+Alerts are implemented using the **ARIA** roles [[role="status"]](/docs/attributes/role-status) and [[role="alert"]](/docs/attributes/role-alert), which are designed to provide feedback to users.
 
 > **Accessibility:** Since `role="alert"` disrupts the user’s workflow and is announced immediately by screen readers, it should only be used for critical messages like `We couldn't reserve your seat due to connection failure. Please check your internet connection.`, or time-sensitive information like `Your reserved seat will be released in 5 minutes.`.
 >

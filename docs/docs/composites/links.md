@@ -1,6 +1,6 @@
 # Links
 
-Links are implemented using the `<a>` element and whenever you need to stylize an element like one, you can use the `role="link"` **ARIA: link role**.
+Links are implemented using the [&lt;a&gt;](/docs/elements/a) element and whenever you need to stylize an element like one, you can use the [[role="link"]](/docs/attributes/role-link) **ARIA: link role**.
 
 ## Basic Usage
 

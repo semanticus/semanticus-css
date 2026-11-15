@@ -1,6 +1,6 @@
 # Card List
 
-Card lists are implemented by adding the `.card` class to a `<div role="list">` or a `<ul>` element.
+Card lists are implemented by adding the [.card](/docs/classes/card) class to a `<div role="list">` or a `<ul>` element.
 
 The examples below use the [&lt;ul&gt;](/docs/elements/ul) approach but you can in case you want to use a different container element, check out [[role=list]](/docs/attributes/role-list) which behaves the same way.
 

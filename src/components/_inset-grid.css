@@ -1,4 +1,4 @@
-dialog:not(.reset),
+dialog,
 .card,
 .inset-grid {
   --_inset-grid-inline: var(--spacing);

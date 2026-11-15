@@ -2,8 +2,8 @@
 
 Pagination is a navigation pattern that allows users to move between pages of content.
 
-- Use a `<nav>` element with an `aria-label` to identify the pagination region
-- Wrap page controls in a `role="group"` for proper semantic grouping
+- Use a [&lt;nav&gt;](/docs/elements/nav) element with an `aria-label` to identify the pagination region
+- Wrap page controls in a [[role="group"]](/docs/attributes/role-group) for proper semantic grouping
 - Use buttons when pagination triggers dynamic content updates without page reloads
 - Use anchor links when pagination navigates to distinct URLs
 
