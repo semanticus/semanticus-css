@@ -159,13 +159,13 @@ export function asButtonIntentVariants(
   attrs: Record<string, string> = {},
   modifier: string = "",
 ) {
-  return `${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`primary ${modifier}`.trim(), attrs)))}
-  ${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`secondary ${modifier}`.trim(), attrs)))}
-  ${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`contrast ${modifier}`.trim(), attrs)))}
-  ${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`success ${modifier}`.trim(), attrs)))}
-  ${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`info ${modifier}`.trim(), attrs)))}
-  ${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`warning ${modifier}`.trim(), attrs)))}
-  ${renderElement("div", { class: "mb-d" }, asButton(classMergeAttributes(`danger ${modifier}`.trim(), attrs)))}`;
+  return `${renderElement("div", {}, asButton(classMergeAttributes(`primary ${modifier}`.trim(), attrs)))}
+  ${renderElement("div", {}, asButton(classMergeAttributes(`secondary ${modifier}`.trim(), attrs)))}
+  ${renderElement("div", {}, asButton(classMergeAttributes(`contrast ${modifier}`.trim(), attrs)))}
+  ${renderElement("div", {}, asButton(classMergeAttributes(`success ${modifier}`.trim(), attrs)))}
+  ${renderElement("div", {}, asButton(classMergeAttributes(`info ${modifier}`.trim(), attrs)))}
+  ${renderElement("div", {}, asButton(classMergeAttributes(`warning ${modifier}`.trim(), attrs)))}
+  ${renderElement("div", {}, asButton(classMergeAttributes(`danger ${modifier}`.trim(), attrs)))}`;
 }
 
 export function asButtonSubtleVariants(attrs: Record<string, string> = {}) {

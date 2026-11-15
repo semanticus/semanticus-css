@@ -26,10 +26,6 @@ nav {
     &:not(:hover) {
       --_links-text-decoration: none;
     }
-
-    &:is([aria-current]:not([aria-current="false"])):hover {
-      --_links-text-decoration-active: none;
-    }
   }
 
   ul,
