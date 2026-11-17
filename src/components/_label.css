@@ -1,6 +1,10 @@
 label {
   font-size: var(--label-font-size, inherit);
 
+  > :last-child {
+    margin-bottom: 0 !important;
+  }
+
   &:has([type="checkbox"], [type="radio"]) {
     width: fit-content;
     cursor: pointer;
