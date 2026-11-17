@@ -76,37 +76,31 @@
   --h1-font-size: 200%;
   --h1-font-weight: 700;  /* bold */
   --h1-line-height: 1.2;
-  --h1-margin-top: var(--spacing-6);
 
   --h2-color-fade: 10%;
   --h2-font-size: 150%;
   --h2-font-weight: 700;  /* bold */
   --h2-line-height: 1.25;
-  --h2-margin-top: var(--spacing-6);
 
   --h3-color-fade: 20%;
   --h3-font-size: 125%;
   --h3-font-weight: 600;  /* semi bold */
   --h3-line-height: 1.3;
-  --h3-margin-top: var(--spacing-6);
 
   --h4-color-fade: 30%;
   --h4-font-size: 100%;
   --h4-font-weight: 600;  /* semi bold */
   --h4-line-height: 1.35;
-  --h4-margin-top: var(--spacing-6);
 
   --h5-color-fade: 35%;
   --h5-font-size: 90%;
   --h5-font-weight: 600;  /* semi bold */
   --h5-line-height: 1.4;
-  --h5-margin-top: var(--spacing-6);
 
   --h6-color-fade: 40%; /* same as muted */
   --h6-font-size: 80%; /* same as <small> */
   --h6-font-weight: 600;  /* semi bold */
   --h6-line-height: 1.4;
-  --h6-margin-top: var(--spacing-6);
 
   /* --- Icons --- */
   --icons-background-position-gap: 0.75rem;
@@ -122,7 +116,7 @@
   --inputs-font-size: var(--font-size);
   --inputs-padding-block: var(--spacing-2);
   --inputs-padding-inline: var(--spacing-3);
-  --inputs-margin-block: var(--spacing);
+  --inputs-margin-block: var(--margin-block);
   --inputs-border-width: var(--border-width);
   --inputs-border-radius: var(--border-radius);
   --inputs-background-color: light-dark(
@@ -212,7 +206,7 @@
   --alert-background-color: var(--background-color);
   --alert-padding-inline: var(--spacing);
   --alert-padding-block: var(--spacing-3);
-  --alert-margin-block: var(--spacing);
+  --alert-margin-block: var(--margin-block);
   --alert-border-color: var(--border-color);
   --alert-border-width: var(--border-width);
   --alert-border-accent-width: var(--alert-border-width);
@@ -223,20 +217,10 @@
   --card-background-color: var(--background-color);
   --card-padding-inline: var(--spacing);
   --card-padding-block: var(--spacing-3);
-  --card-margin-block: var(--spacing);
+  --card-margin-block: var(--margin-block);
   --card-border-color: var(--border-color);
   --card-border-width: var(--border-width);
   --card-border-radius: var(--border-radius);
-  /* Shade styling, applied to header & footer elements */
-  --card-marginals-background-color: light-dark(
-    color-mix(in srgb, var(--_color-slate-50) 25%, white),
-    color-mix(in srgb, var(--_color-slate-50), transparent 95%)
-  );
-  --card-marginals-border-color: color-mix(
-    in srgb,
-    light-dark(var(--_color-slate-900), var(--_color-zinc-350)),
-    transparent 90%
-  );
 
   /* --- Dialog Default Styling --- */
   --dialog-border-radius: var(--card-border-radius);
@@ -251,7 +235,18 @@
   --pane-padding-inline: var(--spacing);
   --pane-padding-block: var(--spacing);
   --pane-border-color: var(--background-color);
+  --pane-border-radius: 0;
   --pane-border-width: 0;
+    /* Shade styling, applied to header & footer elements */
+  --pane-marginals-background-color: light-dark(
+    color-mix(in srgb, var(--_color-slate-50) 25%, white),
+    color-mix(in srgb, var(--_color-slate-50), transparent 95%)
+  );
+  --pane-marginals-border-color: color-mix(
+    in srgb,
+    light-dark(var(--_color-slate-900), var(--_color-zinc-350)),
+    transparent 90%
+  );
 }
 
 /* ===== ICONS ===== */

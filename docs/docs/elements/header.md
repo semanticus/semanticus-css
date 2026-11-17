@@ -8,7 +8,7 @@ The `<header>` element represents introductory content for its nearest sectionin
 
 ## Basic Usage
 
-By default `<header>` has a `margin-bottom` and a `padding-block` of its own, so in order to avoid unwanted extra spacing, it will also set its direct children `margin-block` to `0`;
+By default `<header>` has a `padding-block` of its own, so in order to avoid unwanted extra spacing from its children, it sets their `margin-block` to `0`;
 
 <HtmlPreviewer :code="HeaderDemo.main()" />
 

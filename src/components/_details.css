@@ -3,11 +3,10 @@ summary {
 }
 
 details {
-  --_details-summary-color: var(--summary-color);
+  --_details-summary-color: var(--color);
   --_details-summary-color-focus: var(--primary-color-hover);
-  --_details-summary-color-open: var(--summary-color-open);
   --_details-summary-outline-color: var(--primary-outline-color);
-  --_details-margin-block: var(--inputs-margin-block);
+  --_details-margin-block: var(--typography-margin-block);
   --_details-padding-block: var(--inputs-padding-block);
   --_details-padding-inline: var(--inputs-padding-inline);
 
@@ -19,6 +18,7 @@ details {
     cursor: pointer;
     transition: color var(--transition);
     color: var(--_details-summary-color);
+    padding-block: var(--_details-padding-block);
 
     &:not([role]) {
       &:is(:active, :focus) {
@@ -83,11 +83,7 @@ details {
   }
 
   &[open] > summary {
-    margin-bottom: var(--_details-margin-block);
-
-    &:not([role], :focus) {
-      --_details-summary-color: var(--_details-summary-color-open);
-    }
+    margin-bottom: calc(var(--_details-margin-block) - var(--_details-padding-block) * 0.5);
 
     &::after {
       transform: rotate(0);
@@ -99,15 +95,17 @@ details {
  * Dropdown (details with summary[aria-haspopup="menu"])
  */
 details:has(> summary[aria-haspopup="menu"]) {
+  --_details-margin-block: var(--inputs-margin-block);
+
   position: relative;
   margin-bottom: var(--_details-margin-block);
 
-  > summary[aria-haspopup="menu"] {
+  > summary {
     --_details-dropdown-background-color: var(--inputs-background-color);
-    --_details-dropdown-color: var(--inputs-placeholder-color);
     --_details-dropdown-border-color: var(--inputs-border-color);
-    --_details-summary-color: var(--_details-dropdown-color);
+    --_details-summary-color: var(--inputs-placeholder-color);
 
+    margin-bottom: 0;
     height: calc(
       var(--inputs-font-size) * var(--line-height) + (var(--inputs-padding-block) * 2) +
         (var(--inputs-border-width) * 2)
@@ -115,8 +113,7 @@ details:has(> summary[aria-haspopup="menu"]) {
 
     &::after {
       height: calc((var(--inputs-font-size) * var(--line-height)) + (var(--inputs-border-width) * 2));
-      margin-inline-start: 0.25rem;
-      margin-left: auto;
+      margin-inline-start: auto;
       transform: rotate(0deg) translateX(0.2rem);
     }
 

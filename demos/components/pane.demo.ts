@@ -33,6 +33,24 @@ export function withHgroup(
   );
 }
 
+export function withHeaderAndFooter(
+  tagName: string = "div",
+  attrs: Record<string, string> = {},
+) {
+  return renderElement(
+    tagName,
+    classMergeAttributes("pane", attrs),
+    `<header>
+  <h2>Pane title</h2>
+</header>
+<p>Panes support optional header and footer sections that are visually distinct from the main content.</p>
+<footer>
+  <button class="secondary">Cancel</button>
+  <button>Confirm</button>
+</footer>`,
+  );
+}
+
 export function intentVariants(
   attrs: Record<string, string> = {},
   modifier: string = "",

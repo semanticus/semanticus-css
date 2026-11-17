@@ -1,4 +1,5 @@
 .card,
+.pane,
 .inset-grid {
   --_inset-grid-inline: var(--spacing);
   --_inset-grid-block: var(--spacing);

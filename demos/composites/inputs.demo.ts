@@ -68,9 +68,19 @@ export function all(attrs: Record<string, string> = {}) {
   <fieldset>
     ${InputDemo.withHelperText({ ...attrs, type: "time", id: `input-time-${randomIdSuffix}` })}
   </fieldset>
+</section>
+
+<section class="auto-grid">
+  <fieldset>
+    ${InputDemo.withHelperText({ ...attrs, type: "range", id: `input-range-${randomIdSuffix}` })}
+  </fieldset>
 
   <fieldset>
     ${InputDemo.withHelperText({ ...attrs, type: "color", value: "#ff0000", id: `input-color-${randomIdSuffix}` })}
+  </fieldset>
+
+  <fieldset>
+    ${InputDemo.withHelperText({ ...attrs, type: "file", id: `input-file-${randomIdSuffix}` })}
   </fieldset>
 </section>
 
@@ -80,37 +90,40 @@ export function all(attrs: Record<string, string> = {}) {
   </fieldset>
 
   <fieldset>
-    <label>
-      Inline Checkbox
-      ${InputDemo.main({ ...attrs, type: "checkbox", id: `input-checkbox2-${randomIdSuffix}` })}
-      <small>Cannot be empty.</small>
-    </label>
-  </fieldset>
-
-  <fieldset>
     ${InputDemo.withHelperText({ ...attrs, placeholder: "Radio", type: "radio", id: `input-radio1-${randomIdSuffix}`, checked: "true" })}
-  </fieldset>
-
-  <fieldset>
-    <label>
-      Inline Radio
-      ${InputDemo.main({ ...attrs, type: "radio", id: `input-radio2-${randomIdSuffix}` })}
-    </label>
-    <small>Cannot be empty.</small>
   </fieldset>
 
   <fieldset>
     ${InputDemo.withHelperText({ ...attrs, placeholder: "Switch", type: "checkbox", role: "switch", checked: "true", id: `input-switch1-${randomIdSuffix}` })}
   </fieldset>
+</section>
+
+<section class="auto-grid">
+  <fieldset>
+    <label>
+      ${InputDemo.main({ ...attrs, type: "checkbox", id: `input-checkbox2-${randomIdSuffix}` })}
+      Inline Checkbox
+      <small>Cannot be empty.</small>
+    </label>
+  </fieldset>
 
   <fieldset>
     <label>
-      Inline Switch
+      ${InputDemo.main({ ...attrs, type: "radio", id: `input-radio2-${randomIdSuffix}` })}
+      Inline Radio
+    </label>
+    <small>Cannot be empty.</small>
+  </fieldset>
+
+  <fieldset>
+    <label>
       ${InputDemo.main({ ...attrs, type: "checkbox", role: "switch", id: `input-switch2-${randomIdSuffix}` })}
+      Inline Switch
     </label>
     <small>Cannot be empty.</small>
   </fieldset>
 </section>
+
 
 <section class="auto-grid">
   <div>
@@ -125,15 +138,8 @@ export function all(attrs: Record<string, string> = {}) {
     ${SelectDemo.multipleSelect({ ...attrs, id: `input-multiselect-${randomIdSuffix}`, "aria-describedby": "multiple-select-helper" })}
     <small id="multiple-select-helper">Select one or more</small>
   </fieldset>
-</section>
-
-<section class="auto-grid">
-  <fieldset>
-    ${InputDemo.withHelperText({ ...attrs, type: "range", id: `input-range-${randomIdSuffix}` })}
-  </fieldset>
 
   <fieldset>
-    ${InputDemo.withHelperText({ ...attrs, type: "file", id: `input-file-${randomIdSuffix}` })}
   </fieldset>
 </section>
 `;

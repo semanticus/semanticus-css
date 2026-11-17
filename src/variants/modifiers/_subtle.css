@@ -27,8 +27,8 @@
 
     /* Readability adjustments */
     --_alert-color: light-dark(#191c20, white);
-    --_card-color: light-dark(#191c20, white);
     --_pane-color: light-dark(#191c20, white);
+    --_card-color: light-dark(#191c20, white);
     --_buttons-color: light-dark(#191c20, white);
     --_buttons-color-hover: white;
   }

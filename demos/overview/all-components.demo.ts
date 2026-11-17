@@ -42,8 +42,6 @@ function accordions() {
     ${AccordionsDemo.entangledAccordions()}
   </section>
 
-  <br>
-
   <section>
     <h4>Button Style (role="button")</h4>
 
@@ -60,8 +58,6 @@ function dropdowns() {
     ${DropdownDemo.main()}
   </section>
 
-  <br>
-
   <section>
     <h4>Button Style (role="button")</h4>
 
@@ -71,7 +67,7 @@ function dropdowns() {
 }
 
 function modal() {
-  return `<section id="modal">
+  return `<section id="modal" class="mb-4">
   <hgroup>
     <h2>Modal</h2>
     <p>Click the button below to open a modal dialog</p>
@@ -100,7 +96,7 @@ function progressBars() {
 }
 
 function figures() {
-  return `<section id="figures">
+  return `<section id="figures" class="mb-4">
   <h2>Figures</h2>
 
   ${FigureDemo.withoutImage()}
@@ -108,25 +104,25 @@ function figures() {
 }
 
 function navigation() {
-  return `<section id="navigation">
+  return `<section id="navigation" class="mb-4">
   <h2>Navigation</h2>
 
   <section>
+    <h4>Top bar</h4>
+
     ${NavigationDemo.topBar({ class: "pane secondary subtle" })}
   </section>
 
   <section>
+    <h4>Bottom bar</h4>
+
     ${NavigationDemo.bottomBar({ class: "pane secondary subtle" })}
   </section>
-
-  <br>
 
   <section>
     <h4>Breadcrumbs</h4>
     ${NavigationDemo.breadcrumbs({ class: "pane secondary subtle" })}
   </section>
-
-  <br>
 
   <section>
     <h4>Sidebar</h4>
@@ -151,10 +147,8 @@ function typography() {
     </section>
   </section>
 
-  <br>
-
   <section>
-    <h4>Inline Elements</h4>
+    <h3>Inline Elements</h3>
     ${TextDemo.inlineElements()}
   </section>
 </section>`;
@@ -217,7 +211,7 @@ export function main(attrs: Record<string, string> = {}) {
 
 <section id="buttons">
   <h2>Buttons & Links</h2>
-  <div class="d-flex gap-d">
+  <div class="d-flex gap-d align-items-center mb-4">
     ${ButtonDemo.main(attrs)}
     ${RoleButtonDemo.main("div", attrs)}
     ${ADemo.main(attrs)}
@@ -228,15 +222,12 @@ export function main(attrs: Record<string, string> = {}) {
 
 <hr>
 
-<br>
-
 <section id="inputs">
   <h2>Inputs</h2>
   ${InputsDemo.all()}
 </section>
 
 <hr>
-<br>
 
 <section id="groups">
   <h2>Groups</h2>
@@ -244,7 +235,6 @@ export function main(attrs: Record<string, string> = {}) {
 </section>
 
 <hr>
-<br>
 
 <section id="cards">
   <h2>Cards</h2>
@@ -252,7 +242,6 @@ export function main(attrs: Record<string, string> = {}) {
 </section>
 
 <hr>
-<br>
 
 <section id="content-grid">
   <hgroup>
@@ -260,57 +249,47 @@ export function main(attrs: Record<string, string> = {}) {
     <p>This example is wrapped in <code>.container</code> and has <code>.pane</code> examples</p>
   </hgroup>
 
-
   <div class="container">
     ${ContentGridDemo.nestedFullWidth()}
   </div>
 </section>
 
 <hr>
-<br>
 
-<section id="icons">
+<section id="icons" class="mb-4">
   <h2>All Icons</h2>
   ${IconsDemo.allIcons({ testMode: true })}
 </section>
 
 <hr>
-<br>
 
 ${tooltips()}
 
 <hr>
-<br>
 
 ${accordions()}
 
 <hr>
-<br>
 
 ${dropdowns()}
 
 <hr>
-<br>
 
 ${modal()}
 
 <hr>
-<br>
 
 ${tables()}
 
 <hr>
-<br>
 
 ${progressBars()}
 
 <hr>
-<br>
 
 ${figures()}
 
 <hr>
-<br>
 
 ${navigation()}
 
@@ -319,27 +298,22 @@ ${navigation()}
 ${typography()}
 
 <hr>
-<br>
 
 ${headingGroup()}
 
 <hr>
-<br>
 
 ${lists()}
 
 <hr>
-<br>
 
 ${blockquotes()}
 
 <hr>
-<br>
 
 ${codeBlocks()}
 
 <hr>
-<br>
 
 ${address()}`,
   );

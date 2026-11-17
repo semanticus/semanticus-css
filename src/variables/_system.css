@@ -1,6 +1,6 @@
 :root,
 :host {
-  /* ===== TIER 1: SYSTEM TOKENS ===== */
+  /* ===== TIER 0: BASE TOKENS ===== */
 
   /* --- Base values used for padding, margins and other space related calculations --- */
   --spacing: 1rem;
@@ -14,11 +14,19 @@
   --spacing-8: calc(var(--spacing) * 2); /* double */
   --spacing-9: calc(var(--spacing) * 3); /* triple */
 
+  --margin-block: var(--spacing-5);
+
+  --headings-margin-top: var(--spacing-8);
+  --typography-margin-block: var(--spacing);
+  --typography-color: var(--color);
+
   /* Internal helper used to derive colors representing the hover state */
   --color-hover-shade: light-dark(
     var(--_color-zinc-700),
     var(--_color-zinc-300)
   );
+
+  /* ===== TIER 1: SYSTEM TOKENS ===== */
 
   /* --- Background Color --- */
   --background-color: light-dark(
@@ -32,8 +40,6 @@
   --color-muted: color-mix(in srgb, var(--typography-color), transparent var(--color-muted-fade));
 
   /* --- Typography --- */
-  --typography-margin-block: var(--spacing);
-  --typography-color: var(--color);
   --line-height: 1.5;
   --font-weight: 400; /* normal */
   --font-size: 1rem;

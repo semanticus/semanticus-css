@@ -7,7 +7,6 @@
 @import "./_blockquote.css";
 @import "./_body.css";
 @import "./_buttons.css";
-@import "./_card.css";
 @import "./_code.css";
 @import "./_container.css";
 @import "./_content-grid.css";
@@ -38,3 +37,6 @@
 @import "./_sub.css";
 @import "./_sup.css";
 @import "./_table.css";
+
+/* Needs to be imported after _pane.css for proper cascading of variables. */
+@import "./_card.css";

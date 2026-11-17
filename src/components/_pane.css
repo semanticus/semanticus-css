@@ -1,23 +1,78 @@
+.card,
 .pane {
-  --_pane-padding-inline: var(--pane-padding-inline);
-  --_pane-padding-block: var(--pane-padding-block);
+  --typography-color: var(--_pane-color);
+  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
+
   --_pane-color: var(--pane-color);
   --_pane-background-color: var(--pane-background-color);
   --_pane-border-color: var(--pane-border-color);
   --_pane-border-width: var(--pane-border-width);
-  --typography-color: var(--_pane-color);
-  --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
+  --_pane-border-radius: var(--pane-border-radius);
+  --_pane-padding-inline: var(--pane-padding-inline);
+  --_pane-padding-block: var(--pane-padding-block);
+  --_pane-marginals-background-color: var(--pane-marginals-background-color);
+  --_pane-marginals-border-color: var(--pane-marginals-border-color);
+
+  --_inset-grid-inline: var(--_pane-padding-inline);
+  --_inset-grid-block: var(--_pane-padding-block);
 
   background: var(--_pane-background-color);
   border: var(--_pane-border-width) solid var(--_pane-border-color);
+  border-radius: var(--_pane-border-radius);
   color: var(--_pane-color);
   padding-block: var(--_pane-padding-block);
   padding-inline: var(--_pane-padding-inline);
 
-  > :last-child {
-    margin-bottom: 0 !important;
+  &:has(> :is(header):first-child) {
+    padding-block-start: 0;
   }
 
+  &:has(> :is(footer):last-child) {
+    padding-block-end: 0;
+  }
+
+  > :where(h1, h2, h3, h4, h5, h6, hgroup):first-of-type {
+    margin-top: 0;
+  }
+
+  > header,
+  > footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--_pane-padding-inline);
+    background-color: var(--_pane-marginals-background-color);
+    margin-inline: calc(-1 * var(--_pane-padding-inline));
+    padding-inline: var(--_pane-padding-inline);
+    padding-block: var(--_pane-padding-block);
+
+    > * {
+      margin-block: 0 !important;
+    }
+  }
+
+  > header {
+    margin-bottom: var(--_pane-padding-block);
+    border-bottom: var(--_pane-border-width) solid
+      var(--_pane-marginals-border-color);
+    border-top-right-radius: var(--_pane-border-radius);
+    border-top-left-radius: var(--_pane-border-radius);
+  }
+
+  > footer {
+    margin-top: var(--_pane-padding-block);
+    border-top: var(--_pane-border-width) solid var(--_pane-marginals-border-color);
+    border-bottom-right-radius: var(--_pane-border-radius);
+    border-bottom-left-radius: var(--_pane-border-radius);
+    justify-content: flex-end;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.pane {
   &:is(.content-grid, .full-width) {
     padding-inline: 0;
   }

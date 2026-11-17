@@ -3,7 +3,7 @@
 input {
   overflow: visible;
 
-  &:not([type="checkbox"], [type="radio"], [type="range"]) {
+  &:not([type="checkbox"], [type="radio"]) {
     height: calc(
       var(--inputs-font-size) * var(--line-height) + (var(--inputs-padding-block) * 2) +
         (var(--_inputs-border-width) * 2)

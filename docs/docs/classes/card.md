@@ -1,6 +1,6 @@
 # Card
 
-The `.card` class creates a visually distinct container with background, border-radius, and shadow styling. It can be applied to any block-level element.
+The `.card`, extends the [.pane](/docs/classes/pane) class, adding background, border-radius, and just like `.pane`, it styles [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer) as well as removes the `margin-top` of the first child `h1`, `h2`, `h3`, `h4`, `h5`, `h6` and `hgroup`.
 
 ## Basic Usage
 
@@ -11,12 +11,6 @@ The `.card` class creates a visually distinct container with background, border-
 Cards support `<header>` and `<footer>` child elements with distinct background styling.
 
 <HtmlPreviewer :code="CardDemo.withHeaderAndFooter()" />
-
-## Using with Different Elements
-
-The `.card` class works on any semantic element. Choose the element that best matches your content's meaning:
-
-<HtmlPreviewer :code="CardDemo.htmlElements()" />
 
 ## Variants
 

@@ -9,7 +9,7 @@
   width: 1.25em;
   height: 1.25em;
   margin-top: -0.125em;
-  margin-inline-end: 0.5em;
+  margin-inline-end: var(--spacing-1);
   vertical-align: middle;
   cursor: pointer;
   accent-color: var(--_inputs-accent-color);

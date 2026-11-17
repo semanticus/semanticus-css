@@ -472,7 +472,7 @@ These defaults include buttons, inputs, headings, menus, cards, panes, and alert
   --inputs-font-size: var(--font-size);
   --inputs-padding-block: var(--spacing-2);
   --inputs-padding-inline: var(--spacing-3);
-  --inputs-margin-block: var(--spacing);
+  --inputs-margin-block: var(--margin-block);
   --inputs-border-width: var(--border-width);
   --inputs-border-radius: var(--border-radius);
   --inputs-background-color: light-dark(
@@ -560,7 +560,7 @@ These defaults include buttons, inputs, headings, menus, cards, panes, and alert
   --alert-background-color: var(--background-color);
   --alert-padding-inline: var(--spacing);
   --alert-padding-block: var(--spacing-3);
-  --alert-margin-block: var(--spacing);
+  --alert-margin-block: var(--margin-block;
   --alert-border-color: var(--border-color);
   --alert-border-width: var(--border-width);
   --alert-border-accent-width: var(--alert-border-width);
@@ -571,7 +571,7 @@ These defaults include buttons, inputs, headings, menus, cards, panes, and alert
   --card-background-color: var(--background-color);
   --card-padding-inline: var(--spacing);
   --card-padding-block: var(--spacing-3);
-  --card-margin-block: var(--spacing);
+  --card-margin-block: var(--margin-block);
   --card-border-color: var(--border-color);
   --card-border-width: var(--border-width);
   --card-border-radius: var(--border-radius);

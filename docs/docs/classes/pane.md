@@ -1,6 +1,7 @@
 # Pane
 
-`.pane` is a basic building block for creating structured content areas in your UI. It serves as a container that has `padding`, `margin-bottom` and a `background-color`.
+`.pane` is a basic building block for creating structured content areas in your UI.
+It serves as a container that has `padding` and styles [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer) as well as removes the `margin-top` of the first child `h1`, `h2`, `h3`, `h4`, `h5`, `h6` and `hgroup`.
 
 Use it to group related content together, create sections within a page, or to highlight important information and extend it with different variants and modifiers to suit the needs of your application.
 
@@ -8,11 +9,19 @@ Check out the [.content-grid](/docs/classes/content-grid#full-width) or [Example
 
 ## Basic Usage
 
+By default it has no background, so besides it's padding it doesn't add much visual weight.
+
 <HtmlPreviewer :code="PaneDemo.main()"/>
 
-## With Hgroup
+Until you apply a variant or modifier that changes its background or border, the pane remains visually lightweight.
 
-<HtmlPreviewer :code="PaneDemo.withHgroup('div', { class: 'primary' })"/>
+<HtmlPreviewer :code="PaneDemo.withHgroup('div', { class: 'secondary subtle' })"/>
+
+## Pane with Header and Footer
+
+Panes support `<header>` and `<footer>` child elements with distinct background styling.
+
+<HtmlPreviewer :code="PaneDemo.withHeaderAndFooter('div', { class: 'success' })" />
 
 ## Variants
 

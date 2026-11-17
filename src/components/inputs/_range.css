@@ -14,7 +14,6 @@
   accent-color: var(--_inputs-accent-color);
   appearance: none;
   width: 100%;
-  height: var(--_input-range-thumb-size);
   background: none;
   padding: 0;
   border-width: 0;
