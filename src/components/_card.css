@@ -1,19 +1,17 @@
 .card {
-  --_card-padding-inline: var(--card-padding-inline);
-  --_card-padding-block: var(--card-padding-block);
   --_card-color: var(--card-color);
   --_card-background-color: var(--card-background-color);
   --_card-border-color: var(--card-border-color);
   --_card-border-width: var(--card-border-width);
   --_card-border-radius: var(--card-border-radius);
-
+  --_card-padding: var(--card-padding);
+  
   --_pane-color: var(--_card-color);
   --_pane-background-color: var(--_card-background-color);
   --_pane-border-color: var(--_card-border-color);
   --_pane-border-width: var(--_card-border-width);
   --_pane-border-radius: var(--_card-border-radius);
-  --_pane-padding-inline: var(--_card-padding-inline);
-  --_pane-padding-block: var(--_card-padding-block);
+  --_pane-padding: var(--card-padding);
 
   margin-bottom: var(--spacing);
 
@@ -42,11 +40,10 @@
       background: var(--_card-background-color);
       color: var(--_card-color);
       margin: 0;
-      padding-block: var(--_card-padding-block);
-      padding-inline: var(--_card-padding-inline);
+      padding-block: var(--_pane-nav-padding-block);
+      padding-inline: var(--_pane-nav-padding-inline);
       border-radius: 0;
-      border: var(--_card-border-width) solid
-        var(--_pane-marginals-border-color);
+      border: var(--_card-border-width) solid var(--_pane-nav-border-color);
 
       &:first-child {
         border-top-left-radius: var(--_card-border-radius);

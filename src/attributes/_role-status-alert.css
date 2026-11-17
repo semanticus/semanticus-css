@@ -1,9 +1,8 @@
 :is([role="status"], [role="alert"]) {
   --_alert-color: var(--alert-color);
   --_alert-background-color: var(--alert-background-color);
-  --_alert-padding-inline: var(--alert-padding-inline);
-  --_alert-padding-block: var(--alert-padding-block);
-  --_alert-margin-block: var(--alert-margin-block);
+  --_alert-padding: var(--alert-padding);
+  --_alert-margin-block: var(--spacing);
   --_alert-border-color: var(--alert-border-color);
   --_alert-border-width: var(--alert-border-width);
   --_alert-border-accent-width: var(--alert-border-accent-width);
@@ -14,10 +13,9 @@
   color: var(--_alert-color);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--_alert-padding-inline);
+  gap: var(--_alert-padding);
   align-items: start;
-  padding-block: var(--_alert-padding-block);
-  padding-inline: var(--_alert-padding-inline);
+  padding: var(--_alert-padding);
   margin-block-end: var(--_alert-margin-block);
   border-radius: var(--_alert-border-radius);
   border: var(--_alert-border-width) solid var(--_alert-border-color);

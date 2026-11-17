@@ -127,8 +127,8 @@
 
   &.card {
     --_card-spacing: var(--size-spacing);
-    --card-marginals-padding-block: var(--size-spacing);
-    --card-marginals-margin-block: var(--size-spacing);
+    --card-nav-padding-block: var(--size-spacing);
+    --card-nav-margin-block: var(--size-spacing);
   }
 
   &.pane {

@@ -3,25 +3,24 @@
   --typography-color: var(--_pane-color);
   --color-muted: color-mix(in srgb, var(--typography-color), transparent 40%);
 
+  --_pane-padding: var(--pane-padding);
+  --_inset-grid-block: var(--_pane-padding);
+  --_inset-grid-inline: var(--_pane-padding);
+
   --_pane-color: var(--pane-color);
   --_pane-background-color: var(--pane-background-color);
   --_pane-border-color: var(--pane-border-color);
   --_pane-border-width: var(--pane-border-width);
   --_pane-border-radius: var(--pane-border-radius);
-  --_pane-padding-inline: var(--pane-padding-inline);
-  --_pane-padding-block: var(--pane-padding-block);
-  --_pane-marginals-background-color: var(--pane-marginals-background-color);
-  --_pane-marginals-border-color: var(--pane-marginals-border-color);
-
-  --_inset-grid-inline: var(--_pane-padding-inline);
-  --_inset-grid-block: var(--_pane-padding-block);
+  --_pane-nav-background-color: var(--pane-nav-background-color);
+  --_pane-nav-border-color: var(--pane-nav-border-color);
+  --_pane-nav-padding-block: var(--pane-nav-padding-block);
+  --_pane-nav-padding-inline: var(--pane-nav-padding-inline);
 
   background: var(--_pane-background-color);
   border: var(--_pane-border-width) solid var(--_pane-border-color);
   border-radius: var(--_pane-border-radius);
   color: var(--_pane-color);
-  padding-block: var(--_pane-padding-block);
-  padding-inline: var(--_pane-padding-inline);
 
   &:has(> :is(header):first-child) {
     padding-block-start: 0;
@@ -33,14 +32,14 @@
 
   > header,
   > footer {
+    margin-inline: calc(-1 * var(--_pane-padding));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--_pane-padding-inline);
-    background-color: var(--_pane-marginals-background-color);
-    margin-inline: calc(-1 * var(--_pane-padding-inline));
-    padding-inline: var(--_pane-padding-inline);
-    padding-block: var(--_pane-padding-block);
+    gap: var(--_pane-nav-padding-inline);
+    background-color: var(--_pane-nav-background-color);
+    padding-inline: var(--_pane-nav-padding-inline);
+    padding-block: var(--_pane-nav-padding-block);
 
     > * {
       margin-block: 0 !important;
@@ -48,16 +47,16 @@
   }
 
   > header {
-    margin-bottom: var(--_pane-padding-block);
+    margin-bottom: var(--_inset-grid-block);
     border-bottom: var(--_pane-border-width) solid
-      var(--_pane-marginals-border-color);
+      var(--_pane-nav-border-color);
     border-top-right-radius: var(--_pane-border-radius);
     border-top-left-radius: var(--_pane-border-radius);
   }
 
   > footer {
-    margin-top: var(--_pane-padding-block);
-    border-top: var(--_pane-border-width) solid var(--_pane-marginals-border-color);
+    margin-top: var(--_inset-grid-block);
+    border-top: var(--_pane-border-width) solid var(--_pane-nav-border-color);
     border-bottom-right-radius: var(--_pane-border-radius);
     border-bottom-left-radius: var(--_pane-border-radius);
     justify-content: flex-end;

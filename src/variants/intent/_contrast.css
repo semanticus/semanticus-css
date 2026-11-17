@@ -16,7 +16,7 @@
   --_alert-color: light-dark(#fff, #191c20);
 
   --_pane-color: light-dark(#fff, #191c20);
-  --_pane-marginals-background-color: color-mix(
+  --_pane-nav-background-color: color-mix(
     in srgb,
     light-dark(var(--_color-slate-50), var(--_color-slate-900)),
     transparent 90%

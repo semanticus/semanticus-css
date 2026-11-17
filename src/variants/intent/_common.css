@@ -17,17 +17,17 @@
   /* --- Pane Individual Styling --- */
   --_pane-color: #fff;
   --_pane-background-color: var(--intent-background-color);
-  --_pane-marginals-background-color: color-mix(
+  --_pane-nav-background-color: color-mix(
     in srgb,
     light-dark(var(--_color-slate-900), var(--_color-slate-50)),
     transparent 90%
   );
-  --_pane-border-color: var(--_pane-marginals-background-color);
+  --_pane-border-color: var(--_pane-nav-background-color);
 
   /* --- Card Individual Styling --- */
   --_card-color: #fff;
   --_card-background-color: var(--intent-background-color);
-  --_card-border-color: var(--_pane-marginals-background-color);
+  --_card-border-color: var(--_pane-nav-background-color);
 
   /* --- Progress Bar Individual Styling --- */
   --_progress-accent-color: var(--intent-background-color);

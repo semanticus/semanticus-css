@@ -15,7 +15,7 @@
   --_pane-background-color: transparent;
   --_pane-border-color: var(--intent-background-color, var(--border-color));
   --_pane-border-width: var(--border-width);
-  --_pane-marginals-background-color: var(--pane-marginals-background-color);
+  --_pane-nav-background-color: var(--pane-nav-background-color);
 
   /* --- Card Individual Styling --- */
   --_card-color: var(--intent-color, var(--card-color));
