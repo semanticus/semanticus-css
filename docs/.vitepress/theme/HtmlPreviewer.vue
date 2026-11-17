@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
 import semanticusStyles from '../../../dist/semanticus.css?raw';
+import boxModelInspectorScript from 'box-model-inspector/dist/box-model-inspector.js?raw';
 import hljs from 'highlight.js/lib/core'
 import html from 'highlight.js/lib/languages/xml'
 import { useData } from 'vitepress'
@@ -95,6 +96,7 @@ const iframeHeight = ref(props.minHeight);
 const code = ref(props.code);
 const uid = `html-previewer-${Math.random().toString(36).substr(2, 9)}`;
 const codeExpanded = ref(false);
+const inspectMode = ref(false);
 const highlightedCode = hljs.highlight(props.code || '', { language: 'html' }).value;
 
 const 
@@ -110,7 +112,28 @@ iframeContent = computed(() => {
   <style>
     body {
       margin: 0;
-      padding: 32px 24px;
+      padding: 46px 24px;
+    }
+
+    body.html-previewer-inspect-active,
+    body.html-previewer-inspect-active * {
+      cursor: crosshair !important;
+    }
+
+    .box-model .content {
+      background: rgb(109 238 245 / 50%);
+    }
+
+    .box-model .margin div {
+      background: rgb(251 176 91 / 65%);
+    }
+
+    .box-model .padding div {
+      background: rgb(139 234 127 / 65%);
+    }
+
+    .box-model .border div {
+      background-color: rgb(234 228 105 / 80%);
     }
   </style>
 </head>
@@ -118,6 +141,62 @@ iframeContent = computed(() => {
   ${code.value}
 
   <script>
+    ${boxModelInspectorScript}
+
+    let boxInspector = null;
+    let inspectActive = true;
+
+    if (window.BoxModelInspector && !window.BoxModelInspector.__htmlPreviewerPatched) {
+      const originalRefresh = window.BoxModelInspector.prototype.refresh;
+      window.BoxModelInspector.prototype.refresh = function refreshWithViewportOffsets() {
+        if (!this.boxModel.hidden) {
+          const el = this.el;
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          const dimensions = {
+            offset: {
+              left: rect.left + window.scrollX,
+              top: rect.top + window.scrollY
+            },
+            width: el.clientWidth,
+            height: el.clientHeight,
+            outerHeight: rect.height,
+            outerWidth: rect.width
+          };
+          this._elDimensions = dimensions;
+          this.boxModel.wrapper.style.display = 'block';
+          this.boxModel.wrapper.style.left = dimensions.offset.left + 'px';
+          this.boxModel.wrapper.style.top = dimensions.offset.top + 'px';
+          this.boxModel.wrapper.style.height = dimensions.outerHeight + 'px';
+          this.boxModel.wrapper.style.width = dimensions.outerWidth + 'px';
+          this._calculatePadding();
+          this._calculateMargin();
+          return;
+        }
+        return originalRefresh.call(this);
+      };
+      window.BoxModelInspector.__htmlPreviewerPatched = true;
+    }
+
+    function setInspectMode(active) {
+      inspectActive = active;
+      document.body.classList.toggle('html-previewer-inspect-active', inspectActive);
+      if (!boxInspector && window.BoxModelInspector) {
+        boxInspector = new window.BoxModelInspector({
+          className: 'box-model',
+          appendTo: document.body
+        });
+        boxInspector.hide();
+      }
+      if (!boxInspector) return;
+      if (!inspectActive) {
+        boxInspector.hide();
+        return;
+      }
+      boxInspector.show();
+      boxInspector.refresh();
+    }
+
     // Send height updates to parent for auto-resize
     function sendHeight() {
       const height = document.documentElement.scrollHeight;
@@ -151,6 +230,9 @@ iframeContent = computed(() => {
 
     // Handle messages from parent (e.g., height request)
     window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'html-previewer-toggle-inspector' && event.data.id === '${uid}') {
+        setInspectMode(Boolean(event.data.active));
+      }
       if (event.data && event.data.type === 'html-previewer-request-height' && event.data.id === '${uid}') {
         sendHeight();
       }
@@ -177,6 +259,27 @@ iframeContent = computed(() => {
       }
     });
 
+    document.addEventListener('mousemove', function(e) {
+      if (!inspectActive || !boxInspector) return;
+      const inspectTarget = e.target?.nodeType === 1 ? e.target : null;
+      if (!inspectTarget || inspectTarget.closest('.box-model')) return;
+      boxInspector.setElement(inspectTarget);
+    });
+
+    window.addEventListener('scroll', function() {
+      if (inspectActive && boxInspector) {
+        boxInspector.refresh();
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (inspectActive && boxInspector) {
+        boxInspector.refresh();
+      }
+    });
+
+    setInspectMode(true);
+
     // Send initial height immediately and at intervals
     sendHeightMultipleTimes();
   <\/script>
@@ -187,6 +290,22 @@ iframeContent = computed(() => {
 
 function updateContent(event) {
   code.value = event.target.innerText;
+}
+
+function postToIframe(data) {
+  if (iframeRef.value?.contentWindow) {
+    iframeRef.value.contentWindow.postMessage({ ...data, id: uid }, '*');
+  }
+}
+
+function toggleInspector() {
+  inspectMode.value = !inspectMode.value;
+  postToIframe({ type: 'html-previewer-toggle-inspector', active: inspectMode.value });
+}
+
+function handleIframeLoad() {
+  postToIframe({ type: 'html-previewer-toggle-inspector', active: inspectMode.value });
+  postToIframe({ type: 'html-previewer-request-height' });
 }
 
 // Handle messages from the iframe (for auto-resize)
@@ -202,9 +321,7 @@ onMounted(() => {
   injectHighlightStyles();
   // Request initial height after a short delay to ensure iframe is ready
   setTimeout(() => {
-    if (iframeRef.value?.contentWindow) {
-      iframeRef.value.contentWindow.postMessage({ type: 'html-previewer-request-height', id: uid }, '*');
-    }
+    postToIframe({ type: 'html-previewer-request-height' });
   }, 100);
 });
 
@@ -219,11 +336,6 @@ watch(isDark, () => {
 <template>
   <div class="html-preview-container">
     <div class="preview-iframe-container language-html">
-      <div class="guideline" data-position="top"></div>
-      <div class="guideline" data-position="right"></div>
-      <div class="guideline" data-position="bottom"></div>
-      <div class="guideline" data-position="left"></div>
-      
       <!-- Only render iframe on client side to ensure proper postMessage communication -->
       <ClientOnly>
         <iframe
@@ -233,6 +345,7 @@ watch(isDark, () => {
           sandbox="allow-scripts allow-same-origin"
           :style="{ height: iframeHeight + 'px' }"
           :srcdoc="iframeContent"
+          @load="handleIframeLoad"
         ></iframe>
         <template #fallback>
           <!-- SSR fallback: show a placeholder with minHeight -->
@@ -241,6 +354,15 @@ watch(isDark, () => {
       </ClientOnly>
 
       <span class="lang">live preview</span>
+      <button
+        type="button"
+        class="inspect-toggle-btn"
+        :class="{ active: inspectMode }"
+        :aria-pressed="inspectMode"
+        @click="toggleInspector"
+      >
+        {{ inspectMode ? 'inspecting' : 'inspect' }}
+      </button>
     </div>
 
     <!-- Collapsed overlay — centered toggle button -->
@@ -282,43 +404,6 @@ watch(isDark, () => {
 .preview-iframe-container {
   border-bottom: 1px solid var(--vp-c-divider);
 
-  &:hover {
-    .guideline {
-      display: block;
-    }
-  }
-
-  .guideline {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-
-    &[data-position="top"] {
-      bottom: unset;
-      height: 32px;
-      border-bottom: 1px dashed var(--vp-code-color);
-    }
-    &[data-position="right"] {
-      left: unset;
-      width: 24px;
-      border-left: 1px dashed var(--vp-code-color);
-    }
-    &[data-position="bottom"] {
-      top: unset;
-      height: 32px;
-      border-top: 1px dashed var(--vp-code-color);
-    }
-    &[data-position="left"] {
-      right: unset;
-      width: 24px;
-      border-right: 1px dashed var(--vp-code-color);
-    }
-  }
-
   .lang {
     top: unset !important;
     bottom: 2px;
@@ -341,6 +426,26 @@ watch(isDark, () => {
   content: 'Loading preview...';
   color: var(--vp-c-text-2, #6b7280);
   font-size: 0.875rem;
+}
+
+.inspect-toggle-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+  background: var(--vp-code-block-bg);
+  color: var(--vp-c-text-2);
+  font-size: 0.75rem;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.inspect-toggle-btn.active {
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-brand-1);
 }
 
 .language-html {
