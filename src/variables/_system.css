@@ -3,7 +3,7 @@
   /* ===== TIER 0: BASE TOKENS ===== */
 
   /* --- Base values used for padding, margins and other space related calculations --- */
-  --spacing: 1rem;
+  --spacing: 1.5rem;
   --spacing-1: calc(var(--spacing) * 0.25); /* 2 fourths smaller */
   --spacing-2: calc(var(--spacing) * 0.5); /* half smaller */
   --spacing-3: calc(var(--spacing) * 0.75); /* fourth smaller */
@@ -14,10 +14,9 @@
   --spacing-8: calc(var(--spacing) * 2); /* double */
   --spacing-9: calc(var(--spacing) * 3); /* triple */
 
-  --margin-block: var(--spacing-5);
-
-  --headings-margin-top: var(--spacing-8);
-  --typography-margin-block: var(--spacing);
+  --headings-margin-top: var(--spacing-6);
+  --headings-margin-bottom: var(--spacing-3);
+  --typography-margin-block: var(--spacing-2);
   --typography-color: var(--color);
 
   /* Internal helper used to derive colors representing the hover state */
@@ -70,32 +69,22 @@
 
   /* ===== RESPONSIVE ADJUSTMENTS ===== */
   @media (--breakpoint-sm) {
-    --font-size: 1.01rem;
-    --spacing: 1.02rem;
     --sidebar-size: max(25%, 150px);
   }
 
   @media (--breakpoint-md) {
-    --font-size: 1.02rem;
-    --spacing: 1.03rem;
     --sidebar-size: max(22%, 180px);
   }
 
   @media (--breakpoint-lg) {
-    --font-size: 1.03rem;
-    --spacing: 1.05rem;
     --sidebar-size: max(20%, 200px);
   }
 
   @media (--breakpoint-xl) {
-    --font-size: 1.035rem;
-    --spacing: 1.1rem;
     --sidebar-size: max(18%, 220px);
   }
 
   @media (--breakpoint-xxl) {
-    --font-size: 1.04rem;
-    --spacing: 1.2rem;
     --sidebar-size: clamp(240px, 16%, 300px);
   }
 }

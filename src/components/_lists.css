@@ -4,7 +4,7 @@ ul {
   --_lists-marker-color: var(--lists-marker-color);
 
   margin-top: 0;
-  margin-bottom: var(--margin-block);
+  margin-bottom: var(--spacing);
   color: var(--typography-color);
   font-style: normal;
   font-weight: var(--font-weight);

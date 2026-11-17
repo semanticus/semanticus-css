@@ -459,7 +459,7 @@ These defaults include buttons, inputs, headings, menus, cards, panes, and alert
   --h6-margin-top: var(--spacing-6);
 
   /* --- Icons --- */
-  --icons-background-position-gap: 0.75rem;
+  --inputs-icon-background-position-gap: 0.75rem;
   --icons-width: 1em;
 
   /* --- Inputs --- */
@@ -472,7 +472,6 @@ These defaults include buttons, inputs, headings, menus, cards, panes, and alert
   --inputs-font-size: var(--font-size);
   --inputs-padding-block: var(--spacing-2);
   --inputs-padding-inline: var(--spacing-3);
-  --inputs-margin-block: var(--margin-block);
   --inputs-border-width: var(--border-width);
   --inputs-border-radius: var(--border-radius);
   --inputs-background-color: light-dark(

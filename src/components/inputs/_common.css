@@ -18,7 +18,6 @@ textarea {
   --_inputs-accent-color-muted: var(--inputs-accent-color-muted);
   --_inputs-border-width: var(--inputs-border-width);
   --_inputs-border-radius: var(--inputs-border-radius);
-  --_inputs-margin-block: var(--inputs-margin-block);
   --_inputs-padding-block: var(--inputs-padding-block);
   --_inputs-padding-inline: var(--inputs-padding-inline);
 
@@ -61,7 +60,7 @@ textarea {
 
   &:not([type="checkbox"], [type="radio"]) {
     width: 100%;
-    margin-bottom: var(--_inputs-margin-block);
+    margin-bottom: var(--spacing);
   }
 
   &::placeholder {

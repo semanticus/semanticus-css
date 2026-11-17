@@ -24,10 +24,10 @@ export function all(attrs: Record<string, string> = {}) {
   return renderElement(
     "section",
     { class: "row" },
-    `${renderElement("div", { class: "col-3" }, main("div", attrs))}
-${renderElement("div", { class: "col-3" }, withHeader("div", attrs))}
-${renderElement("div", { class: "col-3" }, withFooter("div", attrs))}
-${renderElement("div", { class: "col-3" }, withHeaderAndFooter("div", attrs))}
+    `${renderElement("div", { class: "col-6" }, main("div", attrs))}
+${renderElement("div", { class: "col-6" }, withHeader("div", attrs))}
+${renderElement("div", { class: "col-6" }, withFooter("div", attrs))}
+${renderElement("div", { class: "col-6" }, withHeaderAndFooter("div", attrs))}
 `,
   );
 }
@@ -59,8 +59,8 @@ export function withFooter(
 </hgroup>
 <p>This is a sample Card</p>
 <footer>
-  <button class="secondary">Cancel</button>
   <button>Confirm</button>
+  <button class="secondary">Cancel</button>
 </footer>`,
   );
 }
@@ -77,8 +77,8 @@ export function withHeaderAndFooter(
 </header>
 <p>Cards support optional header and footer sections that are visually distinct from the main content.</p>
 <footer>
-  <button class="secondary">Cancel</button>
   <button>Confirm</button>
+  <button class="secondary">Cancel</button>
 </footer>`,
   );
 }

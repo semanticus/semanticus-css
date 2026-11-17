@@ -1,9 +1,6 @@
 hgroup {
-  margin-bottom: var(--margin-block);
-
-  &:has(> :where(h1, h2, h3, h4, h5, h6)) {
-    margin-top: var(--headings-margin-top);
-  }
+  margin-bottom: var(--headings-margin-bottom);
+  margin-top: var(--headings-margin-top);
 
   & > mark:first-of-type {
     --mark-background-color: transparent;

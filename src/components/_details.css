@@ -3,10 +3,10 @@ summary {
 }
 
 details {
-  --_details-summary-color: var(--color);
-  --_details-summary-color-focus: var(--primary-color-hover);
-  --_details-summary-outline-color: var(--primary-outline-color);
-  --_details-margin-block: var(--typography-margin-block);
+  --_summary-color: var(--color);
+  --_summary-color-focus: var(--primary-color-hover);
+  --_summary-outline-color: var(--primary-outline-color);
+  --_summary-margin-block: var(--typography-margin-block);
   --_details-padding-block: var(--inputs-padding-block);
   --_details-padding-inline: var(--inputs-padding-inline);
 
@@ -17,19 +17,19 @@ details {
     list-style-type: none;
     cursor: pointer;
     transition: color var(--transition);
-    color: var(--_details-summary-color);
+    color: var(--_summary-color);
     padding-block: var(--_details-padding-block);
 
     &:not([role]) {
       &:is(:active, :focus) {
-        --_details-summary-color: var(--_details-summary-color-focus);
+        --_summary-color: var(--_summary-color-focus);
       }
 
       &:focus-visible {
         outline: var(--outline-width) solid
-          var(--_details-summary-outline-color);
+          var(--_summary-outline-color);
         box-shadow: 0 0 0 var(--focus-ring-width)
-          var(--_details-summary-outline-color);
+          var(--_summary-outline-color);
       }
     }
 
@@ -62,7 +62,6 @@ details {
     &[role="button"] {
       width: 100%;
       text-align: left;
-      margin-bottom: var(--_details-margin-block);
 
       &::after {
         height: calc(var(--buttons-font-size) * var(--line-height, 1.5));
@@ -83,7 +82,7 @@ details {
   }
 
   &[open] > summary {
-    margin-bottom: calc(var(--_details-margin-block) - var(--_details-padding-block) * 0.5);
+    margin-bottom: var(--_summary-margin-block);
 
     &::after {
       transform: rotate(0);
@@ -95,7 +94,7 @@ details {
  * Dropdown (details with summary[aria-haspopup="menu"])
  */
 details:has(> summary[aria-haspopup="menu"]) {
-  --_details-margin-block: var(--inputs-margin-block);
+  --_details-margin-block: var(--spacing);
 
   position: relative;
   margin-bottom: var(--_details-margin-block);
@@ -103,7 +102,7 @@ details:has(> summary[aria-haspopup="menu"]) {
   > summary {
     --_details-dropdown-background-color: var(--inputs-background-color);
     --_details-dropdown-border-color: var(--inputs-border-color);
-    --_details-summary-color: var(--inputs-placeholder-color);
+    --_summary-color: var(--inputs-placeholder-color);
 
     margin-bottom: 0;
     height: calc(
@@ -139,22 +138,22 @@ details:has(> summary[aria-haspopup="menu"]) {
         color var(--transition);
 
       &:is(:active, :focus) {
-        --_details-summary-color: var(--summary-color);
+        --_summary-color: var(--summary-color);
 
         outline: var(--outline-width) solid
-          var(--_details-summary-outline-color);
+          var(--_summary-outline-color);
         box-shadow: 0 0 0 var(--focus-ring-width)
-          var(--_details-summary-outline-color);
+          var(--_summary-outline-color);
       }
 
       &[aria-invalid="false"] {
         --_details-dropdown-border-color: var(--success-background-color);
-        --_details-summary-outline-color: var(--success-outline-color);
+        --_summary-outline-color: var(--success-outline-color);
       }
 
       &[aria-invalid="true"] {
         --_details-dropdown-border-color: var(--danger-background-color);
-        --_details-summary-outline-color: var(--danger-outline-color);
+        --_summary-outline-color: var(--danger-outline-color);
       }
     }
   }

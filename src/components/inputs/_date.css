@@ -6,11 +6,11 @@
 [type="time"],
 [type="week"] {
   background-image: var(--icon-date);
-  background-position: center right var(--icons-background-position-gap);
+  background-position: center right var(--inputs-icon-background-position-gap);
   background-size: var(--icons-width) auto;
   background-repeat: no-repeat;
   padding-right: calc(
-    var(--icons-width) + var(--icons-background-position-gap)
+    var(--icons-width) + var(--inputs-icon-background-position-gap)
   );
 
   &::-webkit-calendar-picker-indicator {
@@ -18,7 +18,7 @@
     margin-right: calc(
       (var(--icons-width) + (var(--_inputs-border-width) * 2)) * -1
     );
-    margin-left: var(--icons-background-position-gap);
+    margin-left: var(--inputs-icon-background-position-gap);
 
     /* Attempt at hidding the native icon, without hiding the outline in the process */
     background: transparent;

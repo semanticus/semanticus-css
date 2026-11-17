@@ -6,7 +6,7 @@
   border-radius: var(--_group-border-radius);
   display: inline-flex;
   gap: 0;
-  margin-bottom: var(--margin-block);
+  margin-bottom: var(--spacing);
   position: relative;
   vertical-align: middle;
   width: 100%;

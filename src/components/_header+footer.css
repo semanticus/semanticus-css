@@ -6,9 +6,9 @@ footer {
 }
 
 header {
-  margin-bottom: var(--margin-block);
+  margin-bottom: var(--spacing);
 }
 
 footer {
-  margin-top: var(--margin-block);
+  margin-top: var(--spacing);
 }

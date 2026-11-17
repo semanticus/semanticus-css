@@ -82,8 +82,8 @@ export function nestedFullWidth(
   <p>This section is the one that started the content grid.</p>
 </hgroup>
 
-<div role="status" class="breakout">
-  This alert message breaks out of the content column into the breakout area —
+<div role="status" class="breakout danger ghost">
+  This alert message breaks out of the content column into the breakout area.
 </div>
 
 <section class="full-width pane primary">

@@ -67,7 +67,7 @@ function dropdowns() {
 }
 
 function modal() {
-  return `<section id="modal" class="mb-4">
+  return `<section id="modal" class="mb-d">
   <hgroup>
     <h2>Modal</h2>
     <p>Click the button below to open a modal dialog</p>
@@ -96,7 +96,7 @@ function progressBars() {
 }
 
 function figures() {
-  return `<section id="figures" class="mb-4">
+  return `<section id="figures" class="mb-d">
   <h2>Figures</h2>
 
   ${FigureDemo.withoutImage()}
@@ -104,7 +104,7 @@ function figures() {
 }
 
 function navigation() {
-  return `<section id="navigation" class="mb-4">
+  return `<section id="navigation" class="mb-d">
   <h2>Navigation</h2>
 
   <section>
@@ -156,9 +156,8 @@ function typography() {
 
 function headingGroup() {
   return `<section id="headingGroup">
-  <header>
-    ${HgroupDemo.main()}
-  </header>
+
+  ${HgroupDemo.main()}
 </section>`;
 }
 
@@ -211,7 +210,7 @@ export function main(attrs: Record<string, string> = {}) {
 
 <section id="buttons">
   <h2>Buttons & Links</h2>
-  <div class="d-flex gap-d align-items-center mb-4">
+  <div class="d-flex gap-d align-items-center mb-d">
     ${ButtonDemo.main(attrs)}
     ${RoleButtonDemo.main("div", attrs)}
     ${ADemo.main(attrs)}
@@ -256,7 +255,7 @@ export function main(attrs: Record<string, string> = {}) {
 
 <hr>
 
-<section id="icons" class="mb-4">
+<section id="icons" class="mb-d">
   <h2>All Icons</h2>
   ${IconsDemo.allIcons({ testMode: true })}
 </section>

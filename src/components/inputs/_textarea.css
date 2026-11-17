@@ -6,7 +6,7 @@ textarea {
   resize: vertical;
 
   &[aria-invalid] {
-    background-position: top right var(--icons-background-position-gap);
+    background-position: top right var(--inputs-icon-background-position-gap);
     background-repeat: no-repeat;
     background-size: var(--icons-width)
       calc(
@@ -25,6 +25,6 @@ textarea {
 
   &[dir="rtl"],
   [dir="rtl"] & {
-    background-position: top left var(--icons-background-position-gap);
+    background-position: top left var(--inputs-icon-background-position-gap);
   }
 }

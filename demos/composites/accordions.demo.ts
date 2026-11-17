@@ -21,7 +21,7 @@ export function entangledAccordions() {
   </p>
 </details>
 
-<hr />
+<hr class="my-1" />
 
 <details name="accordion-group" open>
   <summary>Accordion 2</summary>
@@ -45,7 +45,7 @@ export function faqExample() {
     </div>
   </details>
 
-  <hr />
+  <hr class="my-1" />
 
   <details>
     <summary>Can I customize the colors?</summary>
@@ -54,7 +54,7 @@ export function faqExample() {
     </div>
   </details>
 
-  <hr />
+  <hr class="my-1" />
 
   <details>
     <summary>Is JavaScript required?</summary>
@@ -82,11 +82,17 @@ export function asButtonIntentVariants(
   modifier: string = "",
 ) {
   return `${asButton(classMergeAttributes(`primary ${modifier}`.trim(), attrs))}
+<hr class="my-2" />
 ${asButton(classMergeAttributes(`secondary ${modifier}`.trim(), attrs))}
+<hr class="my-2" />
 ${asButton(classMergeAttributes(`contrast ${modifier}`.trim(), attrs))}
+<hr class="my-2" />
 ${asButton(classMergeAttributes(`success ${modifier}`.trim(), attrs))}
+<hr class="my-2" />
 ${asButton(classMergeAttributes(`info ${modifier}`.trim(), attrs))}
+<hr class="my-2" />
 ${asButton(classMergeAttributes(`warning ${modifier}`.trim(), attrs))}
+<hr class="my-2" />
 ${asButton(classMergeAttributes(`danger ${modifier}`.trim(), attrs))}`;
 }
 

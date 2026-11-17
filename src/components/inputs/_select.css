@@ -10,12 +10,12 @@ select {
 
   &:not([multiple], [size]) {
     background-image: var(--icon-chevron);
-    background-position: center right var(--icons-background-position-gap);
+    background-position: center right var(--inputs-icon-background-position-gap);
     background-repeat: no-repeat;
     background-size: var(--icons-width) auto;
     padding-inline-end: calc(
       var(--inputs-padding-inline) + var(--icons-width) +
-        var(--icons-background-position-gap)
+        var(--inputs-icon-background-position-gap)
     );
   }
 
@@ -26,7 +26,7 @@ select {
 
   &[dir="rtl"],
   [dir="rtl"] & {
-    background-position: center left var(--icons-background-position-gap);
+    background-position: center left var(--inputs-icon-background-position-gap);
   }
 
   &:invalid {

@@ -14,7 +14,7 @@
   color: var(--_alert-color);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-3);
+  gap: var(--_alert-padding-inline);
   align-items: start;
   padding-block: var(--_alert-padding-block);
   padding-inline: var(--_alert-padding-inline);

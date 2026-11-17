@@ -6,7 +6,7 @@ small {
   :where(input, textarea, select, details, label, fieldset) + & {
     display: block;
     width: 100%;
-    margin-bottom: var(--margin-block);
+    margin-bottom: var(--spacing);
     color: var(--color-muted);
   }
 
@@ -18,7 +18,7 @@ small {
     fieldset
   )
     + & {
-    margin-top: calc(var(--margin-block) * -0.75);
+    margin-top: calc(var(--spacing) * -0.75);
   }
 
   :where(input, select, textarea, fieldset)[aria-invalid="false"] + & {

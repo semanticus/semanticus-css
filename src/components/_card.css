@@ -6,7 +6,6 @@
   --_card-border-color: var(--card-border-color);
   --_card-border-width: var(--card-border-width);
   --_card-border-radius: var(--card-border-radius);
-  --_card-margin-block: var(--card-margin-block);
 
   --_pane-color: var(--_card-color);
   --_pane-background-color: var(--_card-background-color);
@@ -16,7 +15,7 @@
   --_pane-padding-inline: var(--_card-padding-inline);
   --_pane-padding-block: var(--_card-padding-block);
 
-  margin-bottom: var(--_card-margin-block);
+  margin-bottom: var(--spacing);
 
   /*
   display: block;
