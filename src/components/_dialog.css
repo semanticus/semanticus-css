@@ -11,16 +11,25 @@ body:has(dialog[open]) {
 }
 
 dialog {
-  --_inset-grid-inline: var(--spacing);
-  --_inset-grid-block: var(--spacing-3);
+  --_dialog-grid-inline: var(--dialog-padding-inline);
+  --_dialog-grid-block: var(--dialog-padding-block);
+  --_dialog-border-radius: var(--dialog-border-radius);
+  --_dialog-box-shadow: var(--dialog-box-shadow);
+  --_dialog-max-height: var(--dialog-max-height);
 
-  max-height: calc(100vh - var(--spacing-8));
+  max-height: var(--_dialog-max-height);
   margin: auto !important;
   overflow: auto;
-  border-radius: var(--border-radius);
+  border-radius: var(--_dialog-border-radius);
   border: 0;
-  box-shadow: var(--menu-box-shadow);
-  padding: 0;
+  box-shadow: var(--_dialog-box-shadow);
+  padding-inline: var(--_dialog-grid-inline);
+  padding-block: var(--_dialog-grid-block);
+
+  >:only-child {
+    max-height: var(--_dialog-max-height);
+    overflow: auto;
+  }
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
   /* Gracefully degrades to instant appearance in unsupported browsers */

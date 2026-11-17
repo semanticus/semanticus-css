@@ -238,6 +238,13 @@
     transparent 90%
   );
 
+  /* --- Dialog Default Styling --- */
+  --dialog-border-radius: var(--card-border-radius);
+  --dialog-padding-inline: var(--card-padding-inline);
+  --dialog-padding-block: var(--card-padding-block);
+  --dialog-box-shadow: var(--menu-box-shadow);
+  --dialog-max-height: calc(100vh - var(--spacing-8));
+
   /* --- Pane Default Styling --- */
   --pane-color: var(--color);
   --pane-background-color: var(--background-color);

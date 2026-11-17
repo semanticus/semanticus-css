@@ -16,6 +16,9 @@
   --_inset-grid-block: var(--_card-padding-block);
 
   color: var(--_card-color);
+  display: block;
+  position: relative;
+  overflow: visible;
   margin-bottom: var(--_card-margin-block);
   border-radius: var(--_card-border-radius);
   border: var(--_card-border-width) solid var(--_card-border-color);
@@ -29,6 +32,15 @@
     padding-block-end: 0;
   }
 
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+
   > header,
   > footer {
     gap: var(--_inset-grid-inline);
@@ -40,6 +52,9 @@
 
   /* Header styling */
   > header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     margin-bottom: var(--_inset-grid-block);
     border-bottom: var(--_card-border-width) solid
       var(--_card-marginals-border-color);
@@ -49,6 +64,9 @@
 
   /* Footer styling */
   > footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
     margin-top: var(--_inset-grid-block);
     border-top: var(--_card-border-width) solid var(--_card-marginals-border-color);
     border-bottom-right-radius: var(--_card-border-radius);

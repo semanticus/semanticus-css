@@ -7,14 +7,26 @@ const meta: Meta = {
 
 export default meta;
 
-export const headings: StoryObj = {
-  render: () => NavigationDemo.header(),
+export const topBar: StoryObj = {
+  render: () => NavigationDemo.topBar(),
 };
 
-export const paragraphs: StoryObj = {
+export const sidebar: StoryObj = {
   render: () => NavigationDemo.sidebar(),
 };
 
-export const address: StoryObj = {
+export const bottomBar: StoryObj = {
+  render: () => NavigationDemo.bottomBar(),
+};
+
+export const breadcrumbs: StoryObj = {
   render: () => NavigationDemo.breadcrumbs(),
+};
+
+export const pageTitleAndControls: StoryObj = {
+  render: () => NavigationDemo.pageTitleAndControls(),
+};
+
+export const formControls: StoryObj = {
+  render: () => NavigationDemo.formControls(),
 };

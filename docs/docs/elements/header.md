@@ -2,28 +2,32 @@
 title: header
 ---
 
-<script setup>
-import { HeaderDemo } from "@demos/semantics/elements";
-</script>
-
 # &lt;header&gt;
 
 The `<header>` element represents introductory content for its nearest sectioning ancestor — typically containing a logo, site title, and primary navigation.
 
-**Semanticus CSS** adds opinionated styling to `<header>` to reduce boilerplate for common navigation patterns.
-
 ## Basic Usage
 
-- `<header>` is a flex container that uses `justify-content: space-between` to distribute its children across the horizontal axis;
-- All direct children of `<nav>` will have their `margin-block` set to 0;
-- In case of a single child, it will grow to fill the available space;
+By default `<header>` has a `margin-bottom` and a `padding-block` of its own, so in order to avoid unwanted extra spacing, it will also set its direct children `margin-block` to `0`;
 
 <HtmlPreviewer :code="HeaderDemo.main()" />
 
+You can also combine it with [.nav](/docs/classes/nav) class, to distribute its children across the horizontal axis.
+
+<HtmlPreviewer :code="HeaderDemo.pageTitleAndControls()" />
+
+## As a topbar
+
+<HtmlPreviewer :code="HeaderDemo.topBar()" />
+
 ## With search and navigation
 
-<HtmlPreviewer :code="HeaderDemo.withSearchAndNavigationExample()" />
+<HtmlPreviewer :code="HeaderDemo.withSearchAndNavigation()" />
 
 ## Accessibility
 
 > **Important:** Assistive technologies implicitly add the `role="banner"`, so it's best not to combine it with other roles like `role="region"` or `role="group"`.
+
+<script setup>
+import { HeaderDemo } from "@demos/semantics/elements";
+</script>

@@ -1,17 +1,16 @@
 header,
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: visible;
-  flex-wrap: wrap;
-  gap: var(--spacing);
+  padding-block: var(--spacing);
 
-  > * {
+  > :last-child {
     margin-block: 0 !important;
-
-    &:only-child {
-      flex-grow: 1;
-    }
   }
+}
+
+header {
+  margin-bottom: var(--spacing);
+}
+
+footer {
+  margin-top: var(--spacing);
 }

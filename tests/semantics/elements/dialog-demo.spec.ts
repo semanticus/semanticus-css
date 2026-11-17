@@ -14,7 +14,7 @@ const screenshotOptions: PageAssertionsToHaveScreenshotOptions = {
 
 test("/semantics/elements/dialog.demo - interaction", async ({ page }) => {
   await page.goto(
-    "/semantics/elements/dialog.demo/showModalWithHeaderAndFooter",
+    "/semantics/elements/dialog.demo/showModalCardWithHeaderAndFooter",
   );
   const button = page.locator("body > button");
   const dialog = page.locator("dialog");

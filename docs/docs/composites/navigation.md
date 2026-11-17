@@ -1,20 +1,36 @@
 # Navigation
 
-Navigation is implemented using the [&lt;nav&gt;](/docs/elements/nav) element, which in combination with [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer), give you
+Navigation is implemented using the [&lt;nav&gt;](/docs/elements/nav) element or the component class [.nav](/docs/classes/nav), which in combination with [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer), can help reduce boilerplate code.
 
-**Semanticus CSS** adds some opinionated styling to `<header>`, `<footer>`, `<aside>` and `<nav>`, in order to reduce boilerplate code for common navigation patterns like **topbar navigation**, **sidebar navigation**, **breadcrumbs** and [pagination](/docs/composites/pagination).
+## Top bar
 
-## Topbar navigation
+The [&lt;nav&gt;](/docs/elements/nav) element or [.nav](/docs/classes/nav) class, use `display: flex` and `justify-content: space-between` to distribute its children across the horizontal axis.
 
-<HtmlPreviewer :code="NavigationDemo.header()" />
+So by combining them with the [&lt;header&gt;](/docs/elements/header), you can produce a **topbar navigation** style with minimum boilerplate code.
 
-## Sidebar navigation
+<HtmlPreviewer :code="NavigationDemo.topBar()" />
+
+## Sidebar
+
+By combining an [&lt;aside&gt;](/docs/elements/aside) element with a [&lt;nav&gt;](/docs/elements/nav), you can [vertically stack](/docs/elements/nav#vertical-navigation) items.
 
 <HtmlPreviewer :code="NavigationDemo.sidebar()" />
+
+## Bottom bar
+
+<HtmlPreviewer :code="NavigationDemo.bottomBar()" />
+
+## Page title and navigation controls
+
+<HtmlPreviewer :code="NavigationDemo.pageTitleAndControls()" />
 
 ## Breadcrumbs
 
 <HtmlPreviewer :code="NavigationDemo.breadcrumbs()" />
+
+## Form controls
+
+<HtmlPreviewer :code="NavigationDemo.formControls()" />
 
 <script setup>
 import { NavigationDemo } from "@demos/composites";

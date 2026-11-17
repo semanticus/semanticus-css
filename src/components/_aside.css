@@ -1,21 +1,24 @@
 aside {
+  --nav-flex-direction: column;
+  --nav-align-items: stretch;
+
   display: flex;
+  gap: var(--nav-link-gap);
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--spacing);
+  overflow: visible;
 
   > :only-child {
     flex-grow: 1;
   }
 
-  :is(nav, ol, ul) {
+  > :is(nav, ol, ul) {
     align-items: stretch !important;
     display: flex;
     flex-direction: column;
-  }
 
-  > nav {
-    :is(a, [role="link"], button, .button, [role="button"]) {
+    > li > :is(a, [role="link"], button, .button, [role="button"]),
+    > :is(a, [role="link"], button, .button, [role="button"]) {
       flex-grow: 1;
     }
   }

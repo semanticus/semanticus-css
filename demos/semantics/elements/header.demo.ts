@@ -1,7 +1,11 @@
-import { renderElement } from "@scripts/utils";
+import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}) {
-  return renderElement("header", attrs, `<hgroup>
+  return renderElement("header", attrs, `<h1>My account</h1>`);
+}
+
+export function pageTitleAndControls(attrs: Record<string, string> = {}) {
+  return renderElement("header", classMergeAttributes("nav", attrs), `<hgroup>
   <h1>My account</h1>
   <p>Manage your account settings</p>
 </hgroup>
@@ -12,12 +16,29 @@ export function main(attrs: Record<string, string> = {}) {
 </nav>`);
 }
 
-export function withSearchAndNavigationExample(
+export function topBar(attrs: Record<string, string> = {}) {
+  return renderElement("header", classMergeAttributes("nav", attrs), `<strong>Acme Corp</strong>
+
+<nav>
+  <ul>
+    <li><a href="#" aria-current="page">Explore</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<nav>
+  <a href="#">Log in</a>
+  <a href="#" role="button">Sign up</a>
+</nav>`);
+}
+
+export function withSearchAndNavigation(
   attrs: Record<string, string> = {},
 ) {
-  return renderElement("header", attrs, `<strong>Acme Corp</strong>
+  return renderElement("header", classMergeAttributes("nav", attrs), `<strong>Acme Corp</strong>
 
-<input class="w-auto" type="search" name="search" placeholder="Search" aria-label="Search" />
+<input type="search" name="search" placeholder="Search" aria-label="Search" />
 
 <nav>
   <ul>

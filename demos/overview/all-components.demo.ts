@@ -77,7 +77,7 @@ function modal() {
     <p>Click the button below to open a modal dialog</p>
   </hgroup>
 
-  ${DialogDemo.showModalWithHeaderAndFooter()}
+  ${DialogDemo.showModalCardWithHeaderAndFooter()}
 </section>`;
 }
 
@@ -112,7 +112,11 @@ function navigation() {
   <h2>Navigation</h2>
 
   <section>
-    ${NavigationDemo.header({ class: "pane secondary subtle" })}
+    ${NavigationDemo.topBar({ class: "pane secondary subtle" })}
+  </section>
+
+  <section>
+    ${NavigationDemo.bottomBar({ class: "pane secondary subtle" })}
   </section>
 
   <br>
