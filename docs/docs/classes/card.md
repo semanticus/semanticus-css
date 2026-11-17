@@ -1,6 +1,6 @@
 # Card
 
-The `.card`, extends the [.pane](/docs/classes/pane) class, adding background, border-radius, and just like `.pane`, it styles [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer) as well as removes the `margin-top` of the first child `h1`, `h2`, `h3`, `h4`, `h5`, `h6` and `hgroup`.
+The `.card`, extends the [.pane](/docs/classes/pane) class, by adding `background`, `border-radius`, and removing the `margin-top` of the first child `h1`, `h2`, `h3`, `h4`, `h5`, `h6` and `hgroup`.
 
 ## Basic Usage
 
@@ -8,7 +8,7 @@ The `.card`, extends the [.pane](/docs/classes/pane) class, adding background, b
 
 ## Card with Header and Footer
 
-Cards support `<header>` and `<footer>` child elements with distinct background styling.
+Just like [.pane](/docs/classes/pane), `.card` supports `<header>` and `<footer>` child elements with distinct background styling.
 
 <HtmlPreviewer :code="CardDemo.withHeaderAndFooter()" />
 

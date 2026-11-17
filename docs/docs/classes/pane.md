@@ -1,7 +1,7 @@
 # Pane
 
 `.pane` is a basic building block for creating structured content areas in your UI.
-It serves as a container that has `padding` and styles [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer) as well as removes the `margin-top` of the first child `h1`, `h2`, `h3`, `h4`, `h5`, `h6` and `hgroup`.
+It serves as a container that has `padding` and styles [&lt;header&gt;](/docs/elements/header) and [&lt;footer&gt;](/docs/elements/footer).
 
 Use it to group related content together, create sections within a page, or to highlight important information and extend it with different variants and modifiers to suit the needs of your application.
 

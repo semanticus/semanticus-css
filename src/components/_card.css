@@ -32,6 +32,10 @@
   }
   */
 
+  > :where(h1, h2, h3, h4, h5, h6, hgroup):first-of-type {
+    margin-top: 0;
+  }
+
   &:is(ul, dl, [role="list"], [role="group"]) {
     padding: 0;
 

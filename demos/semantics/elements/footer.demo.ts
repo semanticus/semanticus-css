@@ -32,7 +32,7 @@ export function bottomBarWithAside(attrs: Record<string, string> = {}) {
 export function formControls(attrs: Record<string, string> = {}) {
   return renderElement("footer", attrs, `<button class="w-100" type="submit">Sign in</button>
 
-<hr>
+<hr class="my-4">
 
 <aside>
   <nav>

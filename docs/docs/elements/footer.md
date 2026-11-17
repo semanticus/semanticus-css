@@ -8,7 +8,7 @@ The `<footer>` element represents the footer for its nearest sectioning ancestor
 
 ## Basic Usage
 
-By default `<footer>` has a `padding-block` of its own, so in order to avoid unwanted extra spacing from its children, it sets their `margin-block` to `0`;
+In order to avoid unwanted extra spacing from its children, `<footer>` it sets their `margin-block` to `0`;
 
 <HtmlPreviewer :code="FooterDemo.main()" />
 

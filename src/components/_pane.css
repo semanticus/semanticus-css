@@ -31,10 +31,6 @@
     padding-block-end: 0;
   }
 
-  > :where(h1, h2, h3, h4, h5, h6, hgroup):first-of-type {
-    margin-top: 0;
-  }
-
   > header,
   > footer {
     display: flex;
