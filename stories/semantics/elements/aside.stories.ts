@@ -12,12 +12,7 @@ export const basicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
-export const leftSidebar: StoryObj = {
-  args: { html: AsideDemo.leftSidebar() },
-  render: (args) => args.html,
-};
-
-export const rightSidebar: StoryObj = {
-  args: { html: AsideDemo.rightSidebar() },
+export const withDocsLinks: StoryObj = {
+  args: { html: AsideDemo.withDocsLinks() },
   render: (args) => args.html,
 };

@@ -88,33 +88,37 @@ export function breadcrumbs(attrs: Record<string, string> = {}) {
 }
 
 export function verticalNavigation(attrs: Record<string, string> = {}) {
-  return AsideDemo.main({ class: "pane secondary subtle", style: "width: 200px; height: 300px;" },
-    main(
-      { ...attrs },
-      `<ul>
-  <li><a href="#about">About</a></li>
-  <li><a href="#getting-started" aria-current="page">Getting Started</a></li>
-  <li><a href="#advanced-usage">Advanced Usage</a></li>
-  <li><a href="#uninstall">Uninstall</a></li>
-</ul>
-
-<ul>
-  <li><button class="ghost">Support</button></li>
-</ul>`,
-    )
-  );
+  return AsideDemo.withFixedSize(attrs, docsAndHelpLinks());
 }
 
-export function simpleVerticalSidebarNavigation(
+export function docsLinks(
   attrs: Record<string, string> = {},
 ) {
   return main(
     { ...attrs },
     `<ul>
-  <li><a href="#about">About</a></li>
-  <li><a href="#getting-started" aria-current="page">Getting Started</a></li>
-  <li><a href="#advanced-usage">Advanced Usage</a></li>
-  <li><a href="#uninstall">Uninstall</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#" aria-current="page">Getting Started</a></li>
+  <li><a href="#">Advanced Usage</a></li>
+  <li><a href="#">Uninstall</a></li>
 </ul>`,
   );
+}
+
+export function helpLinks(
+  attrs: Record<string, string> = {},
+) {
+  return main(
+    { ...attrs },
+    `<button class="ghost">Support</button>
+<a href="#" role="button">Download</a>`,
+  );
+}
+
+export function docsAndHelpLinks(
+  attrs: Record<string, string> = {}
+) {
+  return `${docsLinks(attrs)}
+
+${helpLinks(attrs)}`;
 }

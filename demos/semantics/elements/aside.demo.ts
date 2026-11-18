@@ -2,15 +2,21 @@ import * as NavDemo from "@demos/semantics/elements/nav.demo";
 import { renderElement, classMergeAttributes } from "@scripts/utils";
 
 export function main(attrs: Record<string, string> = {}, slot: string = "") {
-  return renderElement("aside", attrs, slot || `<h4>BrandName</h4>
-  <a href="#">Dashboard</a>`);
+  return renderElement("aside", attrs, slot || `<strong>Title</strong>
+<span>Description</span>`);
+}
+
+export function withFixedSize(attrs: Record<string, string> = {}, slot: string = "") {
+  attrs.style ||= "height: 400px; width: 300px";
+
+  return main(attrs, slot);
 }
 
 export function leftSidebar(attrs: Record<string, string> = {}) {
   return renderElement("aside", { ...attrs, class: `sidebar ${attrs.class || ""}`.trim() }, `<h4>Guide</h4>
-  ${NavDemo.pagesLinks()}
+${NavDemo.pagesLinks()}
 
-  <a href="#" role="button" class="ghost">Support</a>`);
+<a href="#" role="button" class="ghost">Support</a>`);
 }
 
 export function rightSidebar(attrs: Record<string, string> = {}) {
@@ -18,8 +24,7 @@ export function rightSidebar(attrs: Record<string, string> = {}) {
   ${NavDemo.pageLinks()}`);
 }
 
-export function sidebarWithFixedSize(attrs: Record<string, string> = {}, slot: string = "") {
-  const { height = "400px", width = "200px", ...rest } = attrs;
-
-  return main(classMergeAttributes("", { ...rest, style: `height: ${height}; width: ${width}` }), slot);
+export function withDocsLinks(attrs: Record<string, string> = {}) {
+  return main(attrs, `${NavDemo.docsLinks()}`);
 }
+

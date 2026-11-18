@@ -14,6 +14,8 @@ So by combining them with the [&lt;header&gt;](/docs/elements/header), you can p
 
 By combining an [&lt;aside&gt;](/docs/elements/aside) element with a [&lt;nav&gt;](/docs/elements/nav), you can [vertically stack](/docs/elements/nav#vertical-navigation) items.
 
+See more examples in how to open a [.sidebar](/docs/classes/sidebar) without javascript.
+
 <HtmlPreviewer :code="NavigationDemo.sidebar()" />
 
 ## Bottom bar

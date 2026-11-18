@@ -12,21 +12,6 @@ export const basicUsage: StoryObj = {
   render: (args) => args.html,
 };
 
-export const logoTaglineLinks: StoryObj = {
-  args: { html: NavDemo.logoTaglineLinks() },
-  render: (args) => args.html,
-};
-
-export const pagesLinks: StoryObj = {
-  args: { html: NavDemo.pagesLinks() },
-  render: (args) => args.html,
-};
-
-export const pageLinks: StoryObj = {
-  args: { html: NavDemo.pageLinks() },
-  render: (args) => args.html,
-};
-
 export const horizontalNavigation: StoryObj = {
   args: { html: NavDemo.horizontalNavigation() },
   render: (args) => args.html,

@@ -2,7 +2,6 @@
 
 @import "./_abbr.css";
 @import "./_address.css";
-@import "./_aside.css";
 @import "./_auto-grid.css";
 @import "./_blockquote.css";
 @import "./_body.css";
@@ -38,5 +37,6 @@
 @import "./_sup.css";
 @import "./_table.css";
 
-/* Needs to be imported after _pane.css for proper cascading of variables. */
+/* These modules need to be imported after all the others for proper cascading of variables. */
 @import "./_card.css";
+@import "./_aside.css";

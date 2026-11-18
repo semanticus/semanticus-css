@@ -1,7 +1,4 @@
-aside {
-  --nav-flex-direction: column;
-  --nav-align-items: stretch;
-
+:is(aside) {
   display: flex;
   gap: var(--nav-link-gap);
   flex-direction: column;
@@ -12,14 +9,24 @@ aside {
     flex-grow: 1;
   }
 
-  > :is(nav, ol, ul) {
+  > nav {
     align-items: stretch !important;
     display: flex;
     flex-direction: column;
 
-    > li > :is(a, [role="link"], button, .button, [role="button"]),
-    > :is(a, [role="link"], button, .button, [role="button"]) {
-      flex-grow: 1;
+    > :is(a, [role="link"], button, .button, [role="button"]),
+    > :where(ul, ol) > li > :is(a, [role="link"], button, .button, [role="button"]) {
+      display: block;
+      width: 100%;
+    }
+
+    > ul,
+    > ol {
+      flex-direction: column !important;
+
+      > li {
+        width: 100%;
+      }
     }
   }
 }

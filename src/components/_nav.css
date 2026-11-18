@@ -1,14 +1,11 @@
 nav,
 .nav {
   --typography-margin-block: 0;
-  --_nav-flex-direction: var(--nav-flex-direction, row);
-  --_nav-align-items: var(--nav-align-items, center);
 
   display: flex;
-  flex-direction: var(--_nav-flex-direction);
-  align-self: stretch;
+  flex-direction: row;
   gap: var(--nav-link-gap);
-  align-items: var(--_nav-align-items);
+  align-items: center;
   justify-content: space-between;
   overflow: visible;
   flex-wrap: wrap;
@@ -31,11 +28,6 @@ nav,
   > :where(a, [role="link"]),
   > :where(ul, ol) > li > :where(a, [role="link"]) {
     &:not([role="button"], .button) {
-      display: flex;
-      flex-direction: var(--_nav-flex-direction);
-      align-self: stretch;
-      align-items: var(--_nav-align-items);
-
       &:not(:hover) {
         --_links-text-decoration: none;
       }
@@ -44,26 +36,22 @@ nav,
 
   > ul,
   > ol {
-    align-items: var(--_nav-align-items);
+    align-items: center;
     display: flex;
-    flex-direction: var(--_nav-flex-direction);
-    align-self: stretch;
+    flex-direction: row;
     gap: var(--nav-link-gap);
     list-style: none;
     margin-bottom: 0 !important;
     padding: 0;
 
     > li {
-      display: flex;
-      flex-direction: var(--_nav-flex-direction);
-      align-self: stretch;
       padding-inline-start: unset;
     }
   }
 
   /* Breadcrumbs */
   &:has(> ol:only-child) {
-    align-items: var(--_nav-align-items);
+    align-items: center;
     justify-content: start;
 
     ol {

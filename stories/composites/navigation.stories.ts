@@ -19,12 +19,12 @@ export const bottomBar: StoryObj = {
   render: () => NavigationDemo.bottomBar(),
 };
 
-export const breadcrumbs: StoryObj = {
-  render: () => NavigationDemo.breadcrumbs(),
-};
-
 export const pageTitleAndControls: StoryObj = {
   render: () => NavigationDemo.pageTitleAndControls(),
+};
+
+export const breadcrumbs: StoryObj = {
+  render: () => NavigationDemo.breadcrumbs(),
 };
 
 export const formControls: StoryObj = {

@@ -1,3 +1,15 @@
+function attrToString(key: string, value: string | undefined | null) {
+  if (value === null) {
+    return undefined;
+  }
+
+  if (value === undefined) {
+    return key;
+  }
+
+  return (value ?? "") !== "" ? `${key}="${value}"` : undefined;
+}
+
 export function renderAttributes(
   attrs?: Record<string, string | undefined | null>,
 ): string {
@@ -8,7 +20,7 @@ export function renderAttributes(
   }
 
   const renderedAttrs = Object.entries(attributes)
-    .map(([key, val]) => ((val ?? "") !== "" ? `${key}="${val}"` : undefined))
+    .map(([key, val]) => attrToString(key, val))
     .filter((attribute) => attribute !== undefined)
     .join(" ")
     .trim();
