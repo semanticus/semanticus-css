@@ -85,24 +85,3 @@ button,
 [type="button"] {
   appearance: auto;
 }
-
-aside {
-  nav {
-    :where(
-      button,
-      .button,
-      [role="button"],
-      [type="button"],
-      input:not(
-        [type="checkbox"],
-        [type="radio"],
-        [type="range"],
-        [type="file"]
-      ),
-      select
-    ) {
-      display: block !important;
-      width: 100%;
-    }
-  }
-}

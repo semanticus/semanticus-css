@@ -29,8 +29,23 @@ dialog {
     overflow: auto;
   }
 
+  &.card > header {
+    position: sticky;
+    top: 0;
+  }
+
   &:has(> .card:only-child) {
     padding: 0;
+    position: relative;
+
+    > .card {
+      margin: 0;
+
+      > header {
+        position: sticky;
+        top: 0;
+      }
+    }
   }
 
   /* Opening animation using @starting-style (Chrome 117+, Firefox 129+, Safari 17.4+) */
